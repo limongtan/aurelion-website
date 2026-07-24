@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Aurelion</title>
+<meta name="description" content="Get in touch with Aurelion Sdn. Bhd. — Kuala Lumpur, Malaysia. Email, phone, WhatsApp and office location." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --void:#0A0A0F; --ink:#101019; --ink-2:#15151F;
+  --gold:#D4A843; --gold-bright:#F0CB6E; --gold-deep:#A57E2A;
+  --aurora:#3AA0A0; --snow:#F7F5EF; --mist:#A6A8B8; --mist-dim:#6E7080;
+  --line:rgba(247,245,239,.10); --line-gold:rgba(212,168,67,.30);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"Space Grotesk",ui-monospace,"SF Mono",Menlo,monospace;
+  --maxw:1200px; --pad:clamp(1.25rem,5vw,3rem);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--void);color:var(--snow);line-height:1.7;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+::selection{background:var(--gold);color:var(--void)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:2px}
+
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);margin:1rem 0 1.1rem}
+p{color:var(--mist)}
+.gold-text{color:var(--gold)}
+.container{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);width:100%}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.95rem 1.7rem;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;letter-spacing:.01em;white-space:nowrap}
+.btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));color:#1a1303;box-shadow:0 8px 30px -10px rgba(212,168,67,.5)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 40px -10px rgba(212,168,67,.7)}
+.btn-ghost{background:transparent;color:var(--snow);border-color:rgba(247,245,239,.28)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn .arr{transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 0;background:rgba(10,10,15,.78);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.35rem}
+.brand .mark{width:34px;height:34px}
+.brand b{font-weight:600}
+.nav-link{font-size:.92rem;color:var(--mist);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s}
+.nav-link:hover{color:var(--gold)}
+
+/* ---------- background ---------- */
+.bg-stage{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(1200px 700px at 70% -10%,rgba(28,44,102,.55),transparent 60%),radial-gradient(900px 600px at 10% 110%,rgba(58,160,160,.12),transparent 55%),var(--void)}
+#starfield{position:absolute;inset:0}
+
+/* ---------- layout ---------- */
+main{flex:1;padding-top:clamp(7rem,14vw,10rem);padding-bottom:clamp(3.5rem,8vw,6rem)}
+.head{max-width:640px}
+.head p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--snow);font-weight:300;margin-bottom:.4rem}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);margin-top:clamp(2.5rem,6vw,4rem);align-items:start}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+.cinfo-item{display:flex;gap:1.1rem;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.cinfo-item:first-of-type{border-top:1px solid var(--line)}
+.cinfo-item .ic{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(212,168,67,.10);border:1px solid var(--line-gold)}
+.cinfo-item .ic svg{width:22px;height:22px;color:var(--gold)}
+.cinfo-item .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.cinfo-item .v{color:var(--snow);font-weight:400;line-height:1.55}
+.cinfo-item .v a{border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.cinfo-item .v a:hover{color:var(--gold);border-color:var(--gold)}
+
+.quick-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+.soc{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;border:1px solid var(--line);color:var(--mist);font-family:var(--mono);font-size:.5rem;line-height:1;text-align:center;transition:border-color .3s,color .3s,transform .3s}
+.soc svg{width:20px;height:20px}
+.soc:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.soc.red{font-weight:700;letter-spacing:.02em}
+
+.map-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:360px;background:var(--ink-2)}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05) brightness(.9)}
+.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--mist);gap:.4rem;padding:2rem;z-index:0}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding:2.2rem 0}
+.footer .container{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+.footer p{color:var(--mist-dim);font-size:.85rem}
+.creds-mini{display:flex;flex-wrap:wrap;gap:1.2rem}
+.creds-mini span{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist-dim)}
+</style>
+</head>
+<body>
+
+<div class="bg-stage"><canvas id="starfield"></canvas></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <a href="index.html#home" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 5 L33 30 H26 L20 17 L14 30 H7 Z" fill="url(#gm)"/><path d="M20 1.5 L21.4 5.4 L25.3 4 L23.9 7.9 L27.8 9.3 L23.9 10.7 L25.3 14.6 L21.4 13.2 L20 17.1 L18.6 13.2 L14.7 14.6 L16.1 10.7 L12.2 9.3 L16.1 7.9 L14.7 4 L18.6 5.4 Z" fill="#F0CB6E"/><defs><linearGradient id="gm" x1="7" y1="5" x2="33" y2="30"><stop stop-color="#F0CB6E"/><stop offset="1" stop-color="#A57E2A"/></linearGradient></defs></svg>
+      <span><b>Aurelion</b></span>
+    </a>
+    <a href="index.html" class="nav-link">← Back to site</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow">Contact us</div>
+      <h1>Come find us.</h1>
+      <p class="lead">We reply within one business day. Whether it's a workshop, a coaching engagement, or a conversation about what "great" looks like for your team — we'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- LEFT: details -->
+      <div class="contact-info">
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div><div class="l">Office</div><div class="v">Aurelion Sdn. Bhd.<br>Unit 773, Level 6 &amp; 7, Residensi Tribeca,<br>No. 215, Jalan Imbi, 55100 Kuala Lumpur, Malaysia</div></div>
+        </div>
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+          <div><div class="l">Email</div><div class="v"><a href="mailto:the.aurelion.space@gmail.com">the.aurelion.space@gmail.com</a></div></div>
+        </div>
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
+          <div><div class="l">Phone &amp; WhatsApp</div><div class="v"><a href="tel:+601115219100">+60 111-521-9100</a></div></div>
+        </div>
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></div>
+          <div><div class="l">Follow the journey</div>
+            <div class="socials">
+              <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+              <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+              <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4 0 2 2 0 014 0zM3.4 8.6h3.1V21H3.4zM9 8.6h3v1.7h.05c.42-.8 1.45-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21h-3.1v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+              <a class="soc red" href="#" aria-label="RED · Xiaohongshu">RED<br>小红书</a>
+              <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 4 4 4.3v3c-1.5 0-2.9-.4-4-1.2v6.4A6.5 6.5 0 119.5 9v3.1a3.4 3.4 0 103.4 3.4V3z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <a class="btn btn-gold" href="mailto:the.aurelion.space@gmail.com">Email us <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="tel:+601115219100">Call</a>
+          <a class="btn btn-ghost" href="https://wa.me/601115219100" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: map -->
+      <div class="map-wrap">
+        <div class="map-fallback">Loading map…<br><a class="gold-text" href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener" style="pointer-events:auto">Open in Google Maps →</a></div>
+        <iframe title="Aurelion office map" loading="lazy" src="https://www.google.com/maps?q=Residensi+Tribeca,+215+Jalan+Imbi,+55100+Kuala+Lumpur,+Malaysia&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Aurelion Sdn. Bhd. All rights reserved.</p>
+    <div class="creds-mini">
+      <span>HRD Corp Accredited</span>
+      <span>LPI Certified</span>
+      <span>Kuala Lumpur</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* starfield — matches the main site */
+(function(){
+  const canvas=document.getElementById('starfield');
+  if(!canvas)return;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ctx=canvas.getContext('2d');
+  let w,h,stars,raf;
+  function size(){
+    w=canvas.width=innerWidth*devicePixelRatio;
+    h=canvas.height=innerHeight*devicePixelRatio;
+    canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';
+    const count=Math.min(170,Math.floor(innerWidth*innerHeight/9000));
+    stars=Array.from({length:count},()=>({
+      x:Math.random()*w,y:Math.random()*h,
+      r:(Math.random()*1.4+0.3)*devicePixelRatio,
+      a:Math.random()*0.6+0.2,
+      tw:Math.random()*0.02+0.005,
+      gold:Math.random()>0.86
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(const s of stars){
+      if(!reduce){s.a+=s.tw;if(s.a>0.85||s.a<0.18)s.tw*=-1;}
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,7);
+      ctx.fillStyle=s.gold?`rgba(240,203,110,${s.a})`:`rgba(247,245,239,${s.a})`;
+      if(s.gold){ctx.shadowColor='rgba(240,203,110,.8)';ctx.shadowBlur=6*devicePixelRatio;}else{ctx.shadowBlur=0;}
+      ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    if(!reduce)raf=requestAnimationFrame(draw);
+  }
+  size();draw();
+  let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{cancelAnimationFrame(raf);size();draw();},200);});
+})();
+</script>
+</body>
+</html>
