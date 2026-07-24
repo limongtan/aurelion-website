@@ -3,1159 +3,195 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aurelion — Accelerating Human Adaptive Capacity in the AI Era</title>
-<meta name="description" content="Aurelion Sdn. Bhd. — HRD Corp-accredited corporate training, leadership development, coaching and consultancy. In the age of AI, your edge is still human." />
+<title>Aurelion — Contact</title>
+<meta name="description" content="Get in touch with Aurelion Sdn. Bhd. — Kuala Lumpur, Malaysia. Email, phone, WhatsApp and office location." />
 
-<!-- Fonts: Fraunces (display serif), Inter (body), Space Grotesk (data/labels). Fallbacks keep it elegant if blocked. -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* ============================================================
-   AURELION — design tokens
-   Concept: "The Ascent" — aurora (dawn/sky) + lion (leadership).
-   ============================================================ */
 :root{
-  --void:#0A0A0F;        /* near-black cosmos */
-  --ink:#101019;         /* lifted panel black */
-  --ink-2:#15151F;       /* card black */
-  --midnight:#0E1430;    /* deep navy (brand-adjacent) */
-  --gold:#D4A843;        /* Aurelion gold */
-  --gold-bright:#F0CB6E; /* highlight gold */
-  --gold-deep:#A57E2A;
-  --aurora:#3AA0A0;      /* teal — the "aurora" accent */
-  --aurora-2:#2BD4B4;
-  --indigo:#1c2c66;      /* aurora depth (reads as night, not purple) */
-  --snow:#F7F5EF;        /* warm white text */
-  --mist:#A6A8B8;        /* muted secondary text */
-  --mist-dim:#6E7080;
-  --line:rgba(247,245,239,.10);
-  --line-gold:rgba(212,168,67,.30);
-
+  --void:#0A0A0F; --ink:#101019; --ink-2:#15151F;
+  --gold:#D4A843; --gold-bright:#F0CB6E; --gold-deep:#A57E2A;
+  --aurora:#3AA0A0; --snow:#F7F5EF; --mist:#A6A8B8; --mist-dim:#6E7080;
+  --line:rgba(247,245,239,.10); --line-gold:rgba(212,168,67,.30);
   --serif:"Fraunces",Georgia,"Times New Roman",serif;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"Space Grotesk",ui-monospace,"SF Mono",Menlo,monospace;
-
-  --maxw:1200px;
-  --pad:clamp(1.25rem,5vw,3rem);
-  --sect:clamp(4.5rem,10vw,9rem);
+  --maxw:1200px; --pad:clamp(1.25rem,5vw,3rem);
   --ease:cubic-bezier(.22,.61,.36,1);
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--sans);
-  background:var(--void);
-  color:var(--snow);
-  line-height:1.7;
-  overflow-x:hidden;
-  font-weight:400;
-  -webkit-font-smoothing:antialiased;
-}
+body{font-family:var(--sans);background:var(--void);color:var(--snow);line-height:1.7;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 ::selection{background:var(--gold);color:var(--void)}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
 :focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:2px}
 
-/* ---------- shared typography helpers ---------- */
-.eyebrow{
-  font-family:var(--mono);
-  font-size:.74rem;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  color:var(--gold);
-  font-weight:500;
-  display:inline-flex;
-  align-items:center;
-  gap:.7rem;
-}
-.eyebrow::before{
-  content:"";width:26px;height:1px;background:var(--gold);opacity:.7;
-}
-.eyebrow.center::before{display:none}
-
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.02em}
-h2{font-size:clamp(2rem,4.6vw,3.5rem);margin-bottom:1.2rem}
-h3{font-size:clamp(1.2rem,2vw,1.5rem);letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);margin:1rem 0 1.1rem}
 p{color:var(--mist)}
-.lead{font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--snow);font-weight:300;line-height:1.6}
-strong,b{color:var(--snow);font-weight:600}
 .gold-text{color:var(--gold)}
-
-.container{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
-section{position:relative}
+.container{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);width:100%}
 
 /* ---------- buttons ---------- */
-.btn{
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-family:var(--sans);font-weight:600;font-size:.95rem;
-  padding:1rem 1.8rem;border-radius:100px;cursor:pointer;border:1px solid transparent;
-  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;
-  letter-spacing:.01em;white-space:nowrap;
-}
-.btn-gold{
-  background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));
-  color:#1a1303;box-shadow:0 8px 30px -10px rgba(212,168,67,.5);
-}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.95rem 1.7rem;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;letter-spacing:.01em;white-space:nowrap}
+.btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));color:#1a1303;box-shadow:0 8px 30px -10px rgba(212,168,67,.5)}
 .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 40px -10px rgba(212,168,67,.7)}
 .btn-ghost{background:transparent;color:var(--snow);border-color:rgba(247,245,239,.28)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
 .btn .arr{transition:transform .35s var(--ease)}
 .btn:hover .arr{transform:translateX(4px)}
 
-/* ============================================================
-   NAV
-   ============================================================ */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:1.1rem 0;
-  transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;
-  border-bottom:1px solid transparent;
-}
-.nav.scrolled{
-  background:rgba(10,10,15,.78);
-  backdrop-filter:blur(18px) saturate(1.2);
-  -webkit-backdrop-filter:blur(18px) saturate(1.2);
-  border-bottom:1px solid var(--line);
-  padding:.7rem 0;
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--serif);font-size:1.4rem;letter-spacing:.02em;color:var(--snow)}
-.brand .mark{width:30px;height:30px;flex:none}
-.brand b{font-weight:600;letter-spacing:.16em;font-family:var(--mono);font-size:1.05rem;text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:2rem}
-.nav-links a{font-size:.9rem;color:var(--mist);font-weight:500;transition:color .25s;position:relative}
-.nav-links a:hover{color:var(--snow)}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{margin-left:.5rem;padding:.7rem 1.3rem;font-size:.88rem}
-.burger{display:none;background:none;border:none;cursor:pointer;width:30px;height:22px;position:relative}
-.burger span{position:absolute;left:0;width:100%;height:2px;background:var(--snow);border-radius:2px;transition:.3s var(--ease)}
-.burger span:nth-child(1){top:0}
-.burger span:nth-child(2){top:10px}
-.burger span:nth-child(3){top:20px}
-.burger.open span:nth-child(1){top:10px;transform:rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 0;background:rgba(10,10,15,.78);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.35rem}
+.brand .mark{width:34px;height:34px}
+.brand b{font-weight:600}
+.nav-cta{font-size:.92rem;color:var(--mist);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s}
+.nav-cta:hover{color:var(--gold)}
 
-/* mobile menu */
-.mobile-menu{
-  position:fixed;inset:0;z-index:99;background:rgba(8,8,12,.97);backdrop-filter:blur(12px);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;
-  opacity:0;pointer-events:none;transition:opacity .4s;
-}
-.mobile-menu.open{opacity:1;pointer-events:auto}
-.mobile-menu a{font-family:var(--serif);font-size:1.7rem;color:var(--snow)}
-.mobile-menu a:hover{color:var(--gold)}
+/* ---------- background ---------- */
+.bg-stage{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(1200px 700px at 70% -10%,rgba(28,44,102,.55),transparent 60%),radial-gradient(900px 600px at 10% 110%,rgba(58,160,160,.12),transparent 55%),var(--void)}
+#starfield{position:absolute;inset:0}
 
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{
-  position:relative;min-height:100svh;display:flex;align-items:center;
-  overflow:hidden;padding-top:6rem;padding-bottom:4rem;
-  background:
-    radial-gradient(120% 80% at 50% -10%, #15183a 0%, #0b0c1c 38%, var(--void) 72%);
-}
-#starfield{position:absolute;inset:0;z-index:0;display:block}
-.aurora-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.aurora{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;mix-blend-mode:screen;will-change:transform,opacity}
-.aurora.a1{width:70vw;height:55vh;left:-10vw;top:-5vh;background:radial-gradient(circle,rgba(212,168,67,.55),transparent 65%);animation:drift1 22s var(--ease) infinite alternate}
-.aurora.a2{width:65vw;height:60vh;right:-12vw;top:6vh;background:radial-gradient(circle,rgba(58,160,160,.5),transparent 65%);animation:drift2 28s var(--ease) infinite alternate}
-.aurora.a3{width:80vw;height:45vh;left:5vw;top:32vh;background:radial-gradient(circle,rgba(28,44,102,.7),transparent 70%);animation:drift3 26s var(--ease) infinite alternate}
-@keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(8vw,5vh) scale(1.15)}}
-@keyframes drift2{from{transform:translate(0,0) scale(1.05)}to{transform:translate(-6vw,8vh) scale(.92)}}
-@keyframes drift3{from{transform:translate(-4vw,0) scale(1)}to{transform:translate(6vw,-4vh) scale(1.1)}}
+/* ---------- layout ---------- */
+main{flex:1;padding-top:clamp(7rem,14vw,10rem);padding-bottom:clamp(3.5rem,8vw,6rem)}
+.head{max-width:640px}
+.head p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--snow);font-weight:300;margin-bottom:.4rem}
 
-.peaks{position:absolute;left:0;right:0;bottom:-1px;z-index:1;width:100%;height:auto;pointer-events:none}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);margin-top:clamp(2.5rem,6vw,4rem);align-items:start}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
 
-.hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);width:100%}
-.hero-content{max-width:880px}
-.hero h1{
-  font-size:clamp(2.7rem,7.2vw,6rem);font-weight:600;line-height:1.0;margin:1.6rem 0 1.5rem;
-  letter-spacing:-.03em;
-}
-.hero h1 .shimmer{
-  background:linear-gradient(100deg,var(--gold) 10%,var(--gold-bright) 40%,#fff 50%,var(--gold-bright) 60%,var(--gold) 90%);
-  background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:shine 6s linear infinite;
-}
-@keyframes shine{to{background-position:200% center}}
-.hero .lead{max-width:620px;margin-bottom:2.4rem}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.cinfo-item{display:flex;gap:1.1rem;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.cinfo-item:first-of-type{border-top:1px solid var(--line)}
+.cinfo-item .ic{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(212,168,67,.10);border:1px solid var(--line-gold)}
+.cinfo-item .ic svg{width:22px;height:22px;color:var(--gold)}
+.cinfo-item .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.cinfo-item .v{color:var(--snow);font-weight:400;line-height:1.55}
+.cinfo-item .v a{border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.cinfo-item .v a:hover{color:var(--gold);border-color:var(--gold)}
 
-.trust{display:flex;align-items:center;gap:1.4rem 2rem;flex-wrap:wrap;padding-top:1.8rem;border-top:1px solid var(--line);max-width:760px}
-.trust-label{font-family:var(--mono);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mist-dim)}
-.trust-items{display:flex;gap:1rem 1.6rem;flex-wrap:wrap;align-items:center}
-.trust-items span{font-family:var(--serif);font-size:1rem;color:var(--mist);letter-spacing:.02em;font-weight:400}
-.trust-items .dot{color:var(--gold);font-family:var(--sans)}
+.quick-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
 
-.badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.4rem}
-.badge{
-  display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--gold-bright);border:1px solid var(--line-gold);
-  padding:.4rem .8rem;border-radius:100px;background:rgba(212,168,67,.06);
-}
-.badge svg{width:13px;height:13px}
-
-.scroll-cue{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--mist-dim);font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
-.scroll-cue .mouse{width:20px;height:32px;border:1.5px solid var(--mist-dim);border-radius:12px;position:relative}
-.scroll-cue .mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:6px;background:var(--gold);border-radius:2px;transform:translateX(-50%);animation:wheel 1.8s var(--ease) infinite}
-@keyframes wheel{0%{opacity:0;top:6px}40%{opacity:1}80%{opacity:0;top:14px}}
-
-/* ============================================================
-   reveal-on-scroll
-   ============================================================ */
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
-
-/* ============================================================
-   WHY NOW (data)
-   ============================================================ */
-.why{padding:var(--sect) 0;background:linear-gradient(180deg,var(--void),#08080d)}
-.why-head{max-width:780px;margin-bottom:3.5rem}
-.why-head h2{margin-top:1.2rem}
-.stats{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-}
-.stat{background:var(--ink);padding:2.4rem 2rem;position:relative;transition:background .4s}
-.stat:hover{background:var(--ink-2)}
-.stat .node{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-bottom:1.4rem;box-shadow:0 0 0 4px rgba(212,168,67,.12)}
-.stat .num{font-family:var(--mono);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;color:var(--snow);line-height:1;letter-spacing:-.02em}
-.stat .num .unit{color:var(--gold);font-size:.5em;font-weight:500;margin-left:.1em}
-.stat .desc{margin-top:1rem;color:var(--mist);font-size:.98rem;line-height:1.55}
-.stat .src{margin-top:1rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--mist-dim);text-transform:uppercase}
-
-.flip{
-  margin-top:2.6rem;padding:2.6rem clamp(1.5rem,4vw,3rem);border-radius:16px;
-  background:
-    radial-gradient(120% 160% at 85% 0%, rgba(58,160,160,.14), transparent 55%),
-    linear-gradient(135deg, rgba(212,168,67,.10), rgba(16,16,25,.4));
-  border:1px solid var(--line-gold);position:relative;overflow:hidden;
-}
-.flip .eyebrow{margin-bottom:1rem}
-.flip p{font-size:clamp(1.15rem,2vw,1.5rem);color:var(--snow);font-family:var(--serif);font-weight:400;line-height:1.4;max-width:920px}
-.flip p em{color:var(--gold);font-style:normal}
-
-/* ============================================================
-   HRD strip
-   ============================================================ */
-.hrd{padding:clamp(3rem,6vw,4.5rem) 0;background:#08080d;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.hrd-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-.hrd h3{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:1rem}
-.hrd p{font-size:1.05rem}
-.hrd .pill-stat{
-  background:linear-gradient(135deg,rgba(212,168,67,.12),rgba(16,16,25,.5));
-  border:1px solid var(--line-gold);border-radius:16px;padding:2rem;text-align:center;
-}
-.hrd .pill-stat .big{font-family:var(--mono);font-size:clamp(2.6rem,6vw,4rem);color:var(--gold);font-weight:600;line-height:1}
-.hrd .pill-stat .cap{color:var(--mist);font-size:.92rem;margin-top:.8rem;line-height:1.5}
-
-/* ============================================================
-   SERVICES
-   ============================================================ */
-.services{padding:var(--sect) 0}
-.sect-head{max-width:720px;margin-bottom:3.4rem}
-.sect-head h2{margin-top:1.2rem}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.card{
-  background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:2.2rem 2rem;
-  position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .4s,background .4s;
-}
-.card::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--aurora));transition:width .5s var(--ease)}
-.card:hover{transform:translateY(-6px);border-color:var(--line-gold);background:var(--ink-2)}
-.card:hover::before{width:100%}
-.card .ic{width:46px;height:46px;margin-bottom:1.4rem;color:var(--gold)}
-.card h3{margin-bottom:.7rem;color:var(--snow)}
-.card p{font-size:.96rem;line-height:1.6}
-.card .tag{display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aurora-2);border:1px solid rgba(43,212,180,.25);padding:.3rem .65rem;border-radius:100px}
-
-/* ============================================================
-   WHY AURELION (approach)
-   ============================================================ */
-.approach{padding:var(--sect) 0;position:relative;overflow:hidden;background:#07070c}
-.approach .aurora-bg{position:absolute;width:90vw;height:60vh;right:-20vw;top:10%;background:radial-gradient(circle,rgba(58,160,160,.16),transparent 65%);filter:blur(70px);pointer-events:none}
-.approach .aurora-bg.two{left:-25vw;right:auto;top:50%;background:radial-gradient(circle,rgba(212,168,67,.14),transparent 65%)}
-.approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:center;position:relative;z-index:1}
-.approach h2{margin-top:1.2rem;margin-bottom:1.6rem}
-.approach .lead{margin-bottom:1.4rem}
-.pillars{display:flex;flex-direction:column;gap:1.4rem}
-.pillar{display:flex;gap:1.2rem;padding:1.5rem;border:1px solid var(--line);border-radius:14px;background:rgba(16,16,25,.5);transition:border-color .4s,transform .4s}
-.pillar:hover{border-color:var(--line-gold);transform:translateX(4px)}
-.pillar .pic{flex:none;width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(212,168,67,.18),rgba(58,160,160,.12));color:var(--gold)}
-.pillar .pic svg{width:22px;height:22px}
-.pillar h3{font-size:1.12rem;margin-bottom:.35rem;color:var(--snow)}
-.pillar p{font-size:.93rem;line-height:1.55}
-
-.quote-block{margin-top:2.4rem;padding-left:1.6rem;border-left:2px solid var(--gold)}
-.quote-block p{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.7rem);color:var(--snow);font-weight:400;line-height:1.4;font-style:italic}
-
-.frameworks{margin-top:3rem;display:flex;gap:.7rem;flex-wrap:wrap}
-.fw{font-family:var(--sans);font-size:.85rem;color:var(--mist);border:1px solid var(--line);padding:.55rem 1rem;border-radius:100px;background:rgba(16,16,25,.6);transition:.3s}
-.fw:hover{color:var(--gold);border-color:var(--line-gold)}
-
-/* ============================================================
-   FOUNDERS
-   ============================================================ */
-.founders{padding:var(--sect) 0}
-.founder-lead{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:clamp(2rem,5vw,3.5rem);margin-bottom:1.4rem;position:relative;overflow:hidden}
-.founder-lead::after{content:"";position:absolute;right:-10%;top:-20%;width:50%;height:140%;background:radial-gradient(circle,rgba(212,168,67,.1),transparent 60%);pointer-events:none}
-.fl-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,3.5rem);align-items:center;position:relative;z-index:1}
-.fl-portrait{
-  aspect-ratio:4/5;border-radius:16px;border:1px solid var(--line-gold);overflow:hidden;position:relative;
-  background:
-    radial-gradient(80% 60% at 50% 20%, rgba(212,168,67,.25), transparent 60%),
-    linear-gradient(160deg,var(--midnight),var(--void));
-  display:grid;place-items:center;text-align:center;
-}
-.fl-portrait .ph{color:var(--mist-dim);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:1rem;line-height:1.8}
-.fl-portrait .lion{width:46%;opacity:.9;margin-bottom:.8rem}
-.fl-role{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
-.fl-grid h3{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1.2rem;color:var(--snow);letter-spacing:-.02em}
-.fl-grid p{margin-bottom:1rem;font-size:1.02rem}
-.journey{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
-.journey .step{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--mist);display:flex;align-items:center;gap:.5rem}
-.journey .step b{color:var(--gold);font-weight:600}
-.journey .sep{color:var(--mist-dim)}
-.creds{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
-
-.founders-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-.fcard{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:border-color .4s,transform .4s}
-.fcard:hover{border-color:var(--line-gold);transform:translateY(-4px)}
-.fcard .av{
-  flex:none;width:84px;height:84px;border-radius:14px;overflow:hidden;
-  background:radial-gradient(70% 60% at 50% 25%, rgba(58,160,160,.3), transparent 60%),linear-gradient(160deg,var(--midnight),var(--void));
-  display:grid;place-items:center;border:1px solid var(--line-gold);
-}
-.fcard .av svg{width:44%;opacity:.85}
-.fcard h3{font-size:1.3rem;color:var(--snow);margin-bottom:.2rem}
-.fcard .r{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
-.fcard p{font-size:.92rem;line-height:1.55}
-
-/* ============================================================
-   RATANA (AI proof)
-   ============================================================ */
-.ratana{padding:var(--sect) 0;background:#07070c}
-.ratana-inner{
-  border:1px solid var(--line-gold);border-radius:22px;overflow:hidden;
-  background:
-    radial-gradient(120% 120% at 100% 0%, rgba(58,160,160,.16), transparent 55%),
-    radial-gradient(100% 100% at 0% 100%, rgba(212,168,67,.1), transparent 55%),
-    var(--ink);
-  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center;
-  padding:clamp(2rem,5vw,4rem);
-}
-.ratana .eyebrow{margin-bottom:1.2rem}
-.ratana h2{margin-bottom:1.2rem}
-.ratana p{font-size:1.05rem;margin-bottom:1.4rem}
-.ratana .feat{display:flex;flex-direction:column;gap:.7rem;margin:1.6rem 0}
-.ratana .feat li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;color:var(--mist);font-size:.95rem}
-.ratana .feat svg{flex:none;width:18px;height:18px;color:var(--gold);margin-top:.2rem}
-.ratana-visual{
-  aspect-ratio:1/1;border-radius:18px;border:1px solid var(--line);position:relative;overflow:hidden;
-  background:linear-gradient(160deg,#0c1024,#07070c);display:grid;place-items:center;
-}
-.orbit{position:absolute;border:1px solid var(--line);border-radius:50%}
-.orbit.o1{width:55%;height:55%}
-.orbit.o2{width:78%;height:78%}
-.orbit.o3{width:96%;height:96%}
-.orbit .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);top:-5px;left:calc(50% - 4px);box-shadow:0 0 12px var(--gold)}
-.orbit.o2 .dot{background:var(--aurora-2);box-shadow:0 0 12px var(--aurora-2)}
-.orbit.o3 .dot{background:var(--snow)}
-.orbit.o1{animation:spin 14s linear infinite}
-.orbit.o2{animation:spin 22s linear infinite reverse}
-.orbit.o3{animation:spin 30s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.ratana-core{width:34%;height:34%;border-radius:50%;background:radial-gradient(circle,var(--gold-bright),var(--gold-deep));display:grid;place-items:center;box-shadow:0 0 50px rgba(212,168,67,.5);z-index:2}
-.ratana-core span{font-family:var(--serif);font-weight:600;color:#1a1303;font-size:1.1rem;letter-spacing:.04em}
-
-/* ============================================================
-   PROGRAMS
-   ============================================================ */
-.programs{padding:var(--sect) 0}
-.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.prog{background:var(--ink);padding:2rem;transition:background .4s}
-.prog:hover{background:var(--ink-2)}
-.prog .n{font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.1em}
-.prog h3{font-size:1.15rem;margin:.8rem 0 .5rem;color:var(--snow)}
-.prog p{font-size:.9rem}
-
-/* ============================================================
-   BOOKING / PULSE CHECK
-   ============================================================ */
-.book{padding:var(--sect) 0;background:linear-gradient(180deg,#08080d,var(--void))}
-.book-head{max-width:760px;margin:0 auto 3rem;text-align:center}
-.book-head .eyebrow{margin-bottom:1.2rem}
-.book-head h2{margin-bottom:1rem}
-.book-head p{font-size:1.08rem}
-.form-wrap{max-width:820px;margin:0 auto;background:var(--ink);border:1px solid var(--line);border-radius:22px;padding:clamp(1.6rem,4vw,3rem)}
-.fgroup{margin-bottom:2.2rem}
-.fgroup .qlabel{display:block;font-family:var(--sans);font-weight:600;color:var(--snow);font-size:1rem;margin-bottom:.4rem}
-.fgroup .qhint{color:var(--mist-dim);font-size:.84rem;margin-bottom:1rem}
-.qnum{font-family:var(--mono);color:var(--gold);font-size:.78rem;margin-right:.5rem}
-
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-.field label{display:block;font-size:.82rem;color:var(--mist);margin-bottom:.4rem;font-weight:500}
-.field input,.field textarea,.field select{
-  width:100%;background:var(--void);border:1px solid var(--line);border-radius:10px;
-  padding:.85rem 1rem;color:var(--snow);font-family:var(--sans);font-size:.95rem;transition:border-color .3s,background .3s;
-}
-.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);background:#0c0c14}
-.field textarea{resize:vertical;min-height:90px}
-.field input::placeholder,.field textarea::placeholder{color:var(--mist-dim)}
-
-.opts{display:flex;flex-wrap:wrap;gap:.6rem}
-.opt{position:relative;cursor:pointer}
-.opt input{position:absolute;opacity:0;width:0;height:0}
-.opt span{
-  display:inline-block;padding:.65rem 1.1rem;border:1px solid var(--line);border-radius:100px;
-  font-size:.9rem;color:var(--mist);transition:.25s;background:rgba(16,16,25,.5);user-select:none;
-}
-.opt:hover span{border-color:var(--line-gold);color:var(--snow)}
-.opt input:checked+span{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1303;border-color:var(--gold);font-weight:600}
-.opt input:focus-visible+span{outline:2px solid var(--gold-bright);outline-offset:2px}
-
-.scale-row{display:flex;align-items:center;gap:1.2rem}
-.scale-row input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--aurora));outline:none}
-.scale-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--snow);border:3px solid var(--gold);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5)}
-.scale-row input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--snow);border:3px solid var(--gold);cursor:pointer}
-.scale-val{font-family:var(--mono);font-size:1.4rem;color:var(--gold);min-width:2.4ch;text-align:center;font-weight:600}
-.scale-ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--mist-dim);margin-top:.4rem;font-family:var(--mono);letter-spacing:.05em}
-
-.toggle-line{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem;cursor:pointer;color:var(--mist);font-size:.92rem}
-.toggle-line input{accent-color:var(--gold);width:18px;height:18px}
-
-.submit-row{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:.5rem}
-.form-note{font-size:.8rem;color:var(--mist-dim);flex:1;min-width:200px}
-
-.success{
-  display:none;text-align:center;padding:2rem 1rem;
-}
-.success.show{display:block;animation:fadeUp .6s var(--ease)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-.success .check{width:64px;height:64px;margin:0 auto 1.4rem;border-radius:50%;background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));display:grid;place-items:center}
-.success .check svg{width:32px;height:32px;color:#1a1303}
-.success h3{font-size:1.8rem;margin-bottom:.8rem;color:var(--snow)}
-.success p{max-width:480px;margin:0 auto 1.6rem}
-
-/* ============================================================
-   CONTACT
-   ============================================================ */
-.contact{padding:var(--sect) 0}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
-.contact-info h2{margin-top:1.2rem;margin-bottom:1.8rem}
-.cinfo-item{display:flex;gap:1.1rem;margin-bottom:1.8rem;align-items:flex-start}
-.cinfo-item .ic{flex:none;width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(212,168,67,.16),rgba(58,160,160,.1));color:var(--gold)}
-.cinfo-item .ic svg{width:20px;height:20px}
-.cinfo-item .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:.3rem}
-.cinfo-item .v{color:var(--snow);font-size:1.02rem;line-height:1.5}
-.cinfo-item .v a:hover{color:var(--gold)}
-.socials{display:flex;gap:.8rem;margin-top:.6rem;flex-wrap:wrap}
-.soc{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--mist);transition:.3s}
-.soc:hover{color:var(--gold);border-color:var(--line-gold);transform:translateY(-3px)}
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+.soc{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;border:1px solid var(--line);color:var(--mist);font-family:var(--mono);font-size:.5rem;line-height:1;text-align:center;transition:border-color .3s,color .3s,transform .3s}
 .soc svg{width:20px;height:20px}
-.soc.red{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.02em;color:var(--mist)}
-.soc.red:hover{color:var(--gold)}
-.map-wrap{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:420px;position:relative;background:var(--ink)}
-.map-wrap iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3) invert(.92) hue-rotate(180deg) contrast(.9)}
-.map-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:2rem;color:var(--mist);pointer-events:none}
+.soc:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.soc.red{font-weight:700;letter-spacing:.02em}
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.footer{padding:clamp(3.5rem,7vw,5.5rem) 0 2.5rem;background:#06060a;border-top:1px solid var(--line)}
-.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem}
-.foot-brand .brand{margin-bottom:1.2rem}
-.foot-brand p{font-size:.95rem;max-width:340px;font-family:var(--serif);font-style:italic;color:var(--mist)}
-.foot-col h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
-.foot-col a{display:block;color:var(--mist);font-size:.92rem;margin-bottom:.7rem;transition:color .25s}
-.foot-col a:hover{color:var(--snow)}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--line)}
-.foot-bottom p{font-size:.82rem;color:var(--mist-dim)}
-.foot-bottom .creds-mini{display:flex;gap:1.2rem;flex-wrap:wrap}
-.foot-bottom .creds-mini span{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--mist-dim);text-transform:uppercase}
+.map-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:360px;background:var(--ink-2)}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05) brightness(.9)}
+.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--mist);gap:.4rem;padding:2rem;z-index:0}
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media(max-width:1024px){
-  .nav-links{display:none}
-  .burger{display:block}
-  .stats,.cards,.prog-grid{grid-template-columns:repeat(2,1fr)}
-  .approach-grid,.hrd-inner,.ratana-inner,.fl-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
-  .founders-row{grid-template-columns:1fr}
-  .foot-top{grid-template-columns:1fr 1fr}
-  .fl-portrait{max-width:340px}
-  .ratana-visual{max-width:380px;margin:0 auto}
-}
-@media(max-width:620px){
-  .stats,.cards,.prog-grid,.grid2,.founders-row{grid-template-columns:1fr}
-  .foot-top{grid-template-columns:1fr}
-  .hero-ctas{flex-direction:column;align-items:stretch}
-  .hero-ctas .btn{justify-content:center}
-  .trust{flex-direction:column;align-items:flex-start}
-  .submit-row{flex-direction:column;align-items:stretch}
-  .submit-row .btn{justify-content:center;width:100%}
-  .nav-cta{display:none}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding:2.2rem 0}
+.footer .container{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+.footer p{color:var(--mist-dim);font-size:.85rem}
+.creds-mini{display:flex;flex-wrap:wrap;gap:1.2rem}
+.creds-mini span{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist-dim)}
 </style>
 </head>
 <body>
 
-<!-- ============================ NAV ============================ -->
-<nav class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="#home" class="brand" aria-label="Aurelion home">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 5 L33 30 H26 L20 17 L14 30 H7 Z" fill="url(#gm)"/>
-        <path d="M20 1.5 L21.4 5.4 L25.3 4 L23.9 7.9 L27.8 9.3 L23.9 10.7 L25.3 14.6 L21.4 13.2 L20 17.1 L18.6 13.2 L14.7 14.6 L16.1 10.7 L12.2 9.3 L16.1 7.9 L14.7 4 L18.6 5.4 Z" fill="#F0CB6E" opacity="0.95"/>
-        <defs><linearGradient id="gm" x1="7" y1="5" x2="33" y2="30"><stop stop-color="#F0CB6E"/><stop offset="1" stop-color="#A57E2A"/></linearGradient></defs>
-      </svg>
+<div class="bg-stage"><canvas id="starfield"></canvas></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <a href="#" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 5 L33 30 H26 L20 17 L14 30 H7 Z" fill="url(#gm)"/><path d="M20 1.5 L21.4 5.4 L25.3 4 L23.9 7.9 L27.8 9.3 L23.9 10.7 L25.3 14.6 L21.4 13.2 L20 17.1 L18.6 13.2 L14.7 14.6 L16.1 10.7 L12.2 9.3 L16.1 7.9 L14.7 4 L18.6 5.4 Z" fill="#F0CB6E"/><defs><linearGradient id="gm" x1="7" y1="5" x2="33" y2="30"><stop stop-color="#F0CB6E"/><stop offset="1" stop-color="#A57E2A"/></linearGradient></defs></svg>
       <span><b>Aurelion</b></span>
     </a>
-    <div class="nav-links">
-      <a href="#why">Why Now</a>
-      <a href="#services">What We Do</a>
-      <a href="#approach">Why Aurelion</a>
-      <a href="#founders">Founders</a>
-      <a href="#programs">Programs</a>
-      <a href="#contact">Contact</a>
-      <a href="#book" class="btn btn-gold nav-cta">Book a conversation</a>
-    </div>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a href="mailto:the.aurelion.space@gmail.com" class="nav-cta">Email us →</a>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#why">Why Now</a>
-  <a href="#services">What We Do</a>
-  <a href="#approach">Why Aurelion</a>
-  <a href="#founders">Founders</a>
-  <a href="#programs">Programs</a>
-  <a href="#contact">Contact</a>
-  <a href="#book" class="btn btn-gold">Book a conversation</a>
-</div>
-
-<!-- ============================ HERO ============================ -->
-<header class="hero" id="home">
-  <canvas id="starfield" aria-hidden="true"></canvas>
-  <div class="aurora-wrap" aria-hidden="true">
-    <div class="aurora a1"></div>
-    <div class="aurora a2"></div>
-    <div class="aurora a3"></div>
-  </div>
-
-  <svg class="peaks" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="ridge1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1430"/><stop offset="1" stop-color="#07070c"/></linearGradient>
-      <linearGradient id="ridge2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0a18"/><stop offset="1" stop-color="#0a0a0f"/></linearGradient>
-      <linearGradient id="dawn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D4A843" stop-opacity="0"/><stop offset=".5" stop-color="#F0CB6E" stop-opacity=".8"/><stop offset="1" stop-color="#D4A843" stop-opacity="0"/></linearGradient>
-    </defs>
-    <path d="M0,210 L240,120 L420,190 L640,90 L820,180 L1040,110 L1240,200 L1440,140 L1440,320 L0,320 Z" fill="url(#ridge1)"/>
-    <path d="M0,210 L240,120 L420,190 L640,90 L820,180 L1040,110 L1240,200 L1440,140" fill="none" stroke="url(#dawn)" stroke-width="1.5"/>
-    <path d="M0,260 L180,200 L380,255 L560,180 L760,250 L980,190 L1200,260 L1440,210 L1440,320 L0,320 Z" fill="url(#ridge2)"/>
-  </svg>
-
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="badges reveal in">
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>HRD Corp Accredited</span>
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>LPI Certified Consultants</span>
-      </div>
-      <div class="eyebrow reveal in d1">Leadership · Training · Coaching · Consultancy — Kuala Lumpur</div>
-      <h1 class="reveal in d2">In the age of AI,<br>your edge is still <span class="shimmer">human.</span></h1>
-      <p class="lead reveal in d3">Aurelion accelerates human adaptive capacity in the AI era — building the leadership, resilience and clarity that machines can't replicate, and your competitors can't copy.</p>
-      <div class="hero-ctas reveal in d4">
-        <a href="#book" class="btn btn-gold">Book a conversation <span class="arr">→</span></a>
-        <a href="#why" class="btn btn-ghost">See why it's urgent</a>
-      </div>
-      <div class="trust reveal in d5">
-        <span class="trust-label">Trusted by teams at</span>
-        <div class="trust-items">
-          <span>Petronas</span><span class="dot">•</span>
-          <span>Shell</span><span class="dot">•</span>
-          <span>Government of Sarawak</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span>Scroll</div>
-</header>
-
-<!-- ============================ WHY NOW ============================ -->
-<section class="why" id="why">
+<main>
   <div class="container">
-    <div class="why-head reveal">
-      <div class="eyebrow">Why now</div>
-      <h2>The ground is shifting faster than your last org chart.</h2>
-      <p class="lead">AI is rewriting how work works. The organizations that win the next decade won't be the ones with the best tools — they'll be the ones whose people can adapt, lead, and stay human while everything else changes. The data is unambiguous, and the clock is already running.</p>
+    <div class="head">
+      <div class="eyebrow">Contact us</div>
+      <h1>Come find us.</h1>
+      <p class="lead">We reply within one business day. Whether it's a workshop, a coaching engagement, or a conversation about what "great" looks like for your team — we'd love to hear from you.</p>
     </div>
 
-    <div class="stats reveal">
-      <div class="stat">
-        <div class="node"></div>
-        <div class="num" data-count="39" data-suffix="%">0<span class="unit">%</span></div>
-        <div class="desc">of workers' core skills will be transformed or made obsolete by 2030.</div>
-        <div class="src">WEF · Future of Jobs 2025</div>
-      </div>
-      <div class="stat">
-        <div class="node"></div>
-        <div class="num">59<span class="unit"> in 100</span></div>
-        <div class="desc">workers will need reskilling or upskilling by 2030 — 1 in 9 won't get it in time.</div>
-        <div class="src">WEF · Future of Jobs 2025</div>
-      </div>
-      <div class="stat">
-        <div class="node"></div>
-        <div class="num">1<span class="unit"> in 5</span></div>
-        <div class="desc">employees worldwide is actually engaged at work. Engagement is falling, not rising.</div>
-        <div class="src">Gallup · State of the Global Workplace</div>
-      </div>
-      <div class="stat">
-        <div class="node"></div>
-        <div class="num" data-count="10" data-prefix="$" data-suffix="T">$0<span class="unit">T</span></div>
-        <div class="desc">lost every year to disengagement — roughly 9% of global GDP, walking out the door.</div>
-        <div class="src">Gallup · State of the Global Workplace</div>
-      </div>
-      <div class="stat">
-        <div class="node"></div>
-        <div class="num" data-count="70" data-suffix="%">0<span class="unit">%</span></div>
-        <div class="desc">of the variance in a team's engagement traces to one person: the manager.</div>
-        <div class="src">Gallup · It's the Manager</div>
-      </div>
-      <div class="stat">
-        <div class="node"></div>
-        <div class="num" data-count="44" data-suffix="%">0<span class="unit">%</span></div>
-        <div class="desc">of managers have ever received formal training to lead. The other 56% are improvising.</div>
-        <div class="src">Gallup · State of the Global Workplace</div>
-      </div>
-    </div>
-
-    <div class="flip reveal">
-      <div class="eyebrow">The part most people miss</div>
-      <p>The skills the future rewards most aren't technical. The fastest-growing capabilities to 2030 are <em>analytical thinking, resilience, flexibility, leadership and influence</em> — the deeply human skills AI can't replicate. That is precisely what we build.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ HRD STRIP ============================ -->
-<section class="hrd">
-  <div class="container hrd-inner">
-    <div class="reveal">
-      <div class="eyebrow">Already paid for</div>
-      <h3>Your training budget may already be sitting in an account.</h3>
-      <p>As an <strong>HRD Corp-accredited provider</strong>, our programs are claimable under your company's existing HRD levy — the 1% of payroll that registered Malaysian employers already contribute every month. In 2025, more than half of eligible companies left those funds unclaimed. Put yours to work, and let your levy fund the growth your team needs. <span class="gold-text">Ask us how to claim.</span></p>
-    </div>
-    <div class="pill-stat reveal d1">
-      <div class="big">53%</div>
-      <div class="cap">of HRD Corp-registered employers left their training funds <strong style="color:var(--snow)">unclaimed</strong> in 2025 — money already paid, simply unused.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ SERVICES ============================ -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="sect-head reveal">
-      <div class="eyebrow">What we do</div>
-      <h2>One firm. Every lever for human performance.</h2>
-      <p class="lead">From the boardroom to the back office, from a single executive to your entire organization — we design transformative learning that sticks long after the room empties.</p>
-    </div>
-    <div class="cards">
-      <div class="card reveal">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h20v14H2z"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 3 3-4 3 3 3-4"/></svg>
-        <h3>Corporate Training & Workshops</h3>
-        <p>High-impact, experiential sessions in emotional intelligence, resilience, adaptability and communication — designed to change behavior, not just fill a slide deck.</p>
-        <span class="tag">HRD Corp claimable</span>
-      </div>
-      <div class="card reveal d1">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .8-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.9L3 8.8 9 8z"/></svg>
-        <h3>Leadership Development</h3>
-        <p>Our adaptive, "open-source" leadership model turns managers into multipliers. Because 70% of team engagement comes down to them — and most have never been trained.</p>
-        <span class="tag">Manager capability</span>
-      </div>
-      <div class="card reveal d2">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5c2.5.5 5 2.5 5 5.5"/></svg>
-        <h3>Executive & Team Coaching</h3>
-        <p>LPI-informed coaching for individuals and intact teams. We start from data — real personality insight — so growth is precise, personal and measurable.</p>
-        <span class="tag">1:1 & team</span>
-      </div>
-      <div class="card reveal">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l18-7-7 18-2.5-7.5z"/><path d="M11.5 14.5L21 4"/></svg>
-        <h3>Keynotes & Conferences</h3>
-        <p>Talks that move a room of hundreds — on the future of work, human adaptability and the inner edge. Memorable, evidence-led, and impossible to scroll past.</p>
-        <span class="tag">Events & summits</span>
-      </div>
-      <div class="card reveal d1">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20l6-12 4 7 3-5 5 10z"/><circle cx="17" cy="5" r="2"/></svg>
-        <h3>Team Retreats & Offsites</h3>
-        <p>Experiential away-days that rebuild trust, cohesion and shared purpose — engineered as transformation, not just a day out of the office.</p>
-        <span class="tag">Cohesion & culture</span>
-      </div>
-      <div class="card reveal d2">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20V8M10 20V4M16 20v-8M22 20H2"/></svg>
-        <h3>Strategy & Culture Consulting</h3>
-        <p>We partner with leadership to embed cultures of trust, collaboration and sustainable performance — aligning your people to where the organization is headed.</p>
-        <span class="tag">Org transformation</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ WHY AURELION ============================ -->
-<section class="approach" id="approach">
-  <div class="aurora-bg" aria-hidden="true"></div>
-  <div class="aurora-bg two" aria-hidden="true"></div>
-  <div class="container approach-grid">
-    <div class="reveal">
-      <div class="eyebrow">Why Aurelion</div>
-      <h2>There is no other firm built quite like this one.</h2>
-      <p class="lead">Few people have journeyed from a Silicon-Valley-style startup to a Himalayan monastery and back into the boardroom. That rare vantage point is the difference between information and transformation.</p>
-      <div class="quote-block">
-        <p>"Most training teaches people what to do. We develop who they become when it counts — adaptable, grounded, and impossible to rattle."</p>
-      </div>
-      <div class="frameworks">
-        <span class="fw">Emotional Intelligence</span>
-        <span class="fw">Dynamic Mindfulness</span>
-        <span class="fw">Adversity Quotient</span>
-        <span class="fw">Intrinsic Motivation</span>
-        <span class="fw">Adaptive "Open-Source" Leadership</span>
-      </div>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal">
-        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
-        <div><h3>Boardroom-tested</h3><p>Founded by a Carlson School of Management graduate who scaled a US tech startup. We speak business, ROI and performance — fluently.</p></div>
-      </div>
-      <div class="pillar reveal d1">
-        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3C7 7 7 13 12 21c5-8 5-14 0-18z"/><circle cx="12" cy="10" r="2"/></svg></div>
-        <div><h3>Forged in stillness</h3><p>17 years of monastic discipline across the Himalayas and Asia — the deepest possible training in focus, composure and clarity under pressure, translated into tools your people can use Monday morning.</p></div>
-      </div>
-      <div class="pillar reveal d2">
-        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <div><h3>Certified & accredited</h3><p>HRD Corp-accredited and LPI-certified. Rigor and recognized frameworks — never guesswork, never generic.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ FOUNDERS ============================ -->
-<section class="founders" id="founders">
-  <div class="container">
-    <div class="sect-head reveal">
-      <div class="eyebrow">The founders</div>
-      <h2>The people behind the practice.</h2>
-    </div>
-
-    <div class="founder-lead reveal">
-      <div class="fl-grid">
-        <div class="fl-portrait">
-          <!-- Replace this placeholder with Zhi-Harn's photo -->
-          <svg class="lion" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <circle cx="50" cy="50" r="46" stroke="#D4A843" stroke-width="1.5" opacity=".5"/>
-            <path d="M50 22 L62 56 H54 L50 42 L46 56 H38 Z" fill="#D4A843"/>
-            <path d="M50 14 L52 22 L60 19 L57 27 L65 30 L57 33 L60 41 L52 38 L50 46 L48 38 L40 41 L43 33 L35 30 L43 27 L40 19 L48 22 Z" fill="#F0CB6E"/>
-          </svg>
-          <div class="ph">Photo:<br>Zhi-Harn Wang</div>
+    <div class="contact-grid">
+      <!-- LEFT: details -->
+      <div class="contact-info">
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div><div class="l">Office</div><div class="v">Aurelion Sdn. Bhd.<br>Unit 773, Level 6 &amp; 7, Residensi Tribeca,<br>No. 215, Jalan Imbi, 55100 Kuala Lumpur, Malaysia</div></div>
         </div>
-        <div>
-          <div class="fl-role">Principal Founder & Director</div>
-          <h3>Zhi-Harn Wang</h3>
-          <p>A former edu-tech entrepreneur and Theravāda monk ordained under the renowned meditation master Pa-Auk Sayadaw, Zhi-Harn brings a synthesis almost no one in this field can match: entrepreneurial fire, contemplative depth, and rigorous leadership-development expertise.</p>
-          <p>As an Accredited HRD Corp Trainer and LPI Certified Consultant, he develops the distinctly human capacities that decide success in an AI-driven world — adaptability, resilience, self-awareness, sound judgment, and the ability to inspire collective excellence.</p>
-          <div class="journey">
-            <span class="step"><b>Minnesota</b> Carlson School of Management</span><span class="sep">→</span>
-            <span class="step"><b>uTead Inc.</b> VP, Tech Startup</span><span class="sep">→</span>
-            <span class="step"><b>2008–2025</b> Monastery, Himalayas & Asia</span><span class="sep">→</span>
-            <span class="step"><b>2026</b> Aurelion</span>
-          </div>
-          <div class="creds">
-            <span class="badge">HRD Corp Accredited Trainer</span>
-            <span class="badge">LPI Certified Consultant</span>
-          </div>
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+          <div><div class="l">Email</div><div class="v"><a href="mailto:the.aurelion.space@gmail.com">the.aurelion.space@gmail.com</a></div></div>
         </div>
-      </div>
-    </div>
-
-    <div class="founders-row">
-      <div class="fcard reveal">
-        <div class="av">
-          <svg class="lion" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 24 L62 58 H54 L50 44 L46 58 H38 Z" fill="#3AA0A0"/><path d="M50 16 L52 24 L60 21 L57 29 L64 31 L57 33 L60 41 L52 38 L50 46 L48 38 L40 41 L43 33 L36 31 L43 29 L40 21 L48 24 Z" fill="#2BD4B4"/></svg>
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
+          <div><div class="l">Phone &amp; WhatsApp</div><div class="v"><a href="tel:+601115219100">+60 111-521-9100</a></div></div>
         </div>
-        <div>
-          <h3>Andy Tan</h3>
-          <div class="r">Chief Strategy Officer</div>
-          <p>Architect of Aurelion's strategy and financial-resilience programs. An LPI Certified Consultant who turns capability-building into measurable organizational results. <span style="color:var(--mist-dim);font-style:italic">— bio to be finalized</span></p>
-        </div>
-      </div>
-      <div class="fcard reveal d1">
-        <div class="av">
-          <svg class="lion" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 24 L62 58 H54 L50 44 L46 58 H38 Z" fill="#D4A843"/><path d="M50 16 L52 24 L60 21 L57 29 L64 31 L57 33 L60 41 L52 38 L50 46 L48 38 L40 41 L43 33 L36 31 L43 29 L40 21 L48 24 Z" fill="#F0CB6E"/></svg>
-        </div>
-        <div>
-          <h3>Aurie · Zong Yuan</h3>
-          <div class="r">Chief Growth Officer</div>
-          <p>Drives Aurelion's growth, partnerships and client experience. An LPI Certified Consultant blending edu-tech entrepreneurship with deep facilitation craft. <span style="color:var(--mist-dim);font-style:italic">— bio to be finalized</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ RATANA ============================ -->
-<section class="ratana" id="ratana">
-  <div class="container">
-    <div class="ratana-inner reveal">
-      <div>
-        <div class="eyebrow">We practice what we teach</div>
-        <h2>Meet Ratana — our human-insight engine.</h2>
-        <p>In the AI era, we don't just talk about adaptation. We build with it. Ratana is our proprietary AI platform that turns personality assessments into deep, actionable understanding — so our coaching and team work start from evidence, not guesswork.</p>
-        <ul class="feat">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Reads LPI, MBTI & DISC reports and translates them into clear, practical insight</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Maps team dynamics, clash points and strengths at a glance</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Built on a living knowledge base of leadership science</li>
-        </ul>
-        <a href="#book" class="btn btn-ghost">See it in a session <span class="arr">→</span></a>
-      </div>
-      <div class="ratana-visual" aria-hidden="true">
-        <div class="orbit o1"><span class="dot"></span></div>
-        <div class="orbit o2"><span class="dot"></span></div>
-        <div class="orbit o3"><span class="dot"></span></div>
-        <div class="ratana-core"><span>Ratana</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ PROGRAMS ============================ -->
-<section class="programs" id="programs">
-  <div class="container">
-    <div class="sect-head reveal">
-      <div class="eyebrow">Ways to work with us</div>
-      <h2>Built for corporations — and for the curious.</h2>
-      <p class="lead">Whether you're an enterprise rolling out leadership at scale or an individual who wants to grow, there's a doorway in.</p>
-    </div>
-    <div class="prog-grid">
-      <div class="prog reveal"><div class="n">Format</div><h3>Half & Full-Day Workshops</h3><p>Focused, experiential sessions for intact teams and departments.</p></div>
-      <div class="prog reveal d1"><div class="n">Format</div><h3>Multi-Day Intensives</h3><p>Deep-dive leadership and resilience programs that build lasting capability.</p></div>
-      <div class="prog reveal d2"><div class="n">Format</div><h3>Public Seminars</h3><p>Open-enrollment events for individuals and small teams — anyone can join.</p></div>
-      <div class="prog reveal"><div class="n">Format</div><h3>Conferences & Summits</h3><p>Keynotes and breakout experiences for large-scale gatherings.</p></div>
-      <div class="prog reveal d1"><div class="n">Format</div><h3>Corporate Retreats</h3><p>Immersive offsites that reset culture, trust and direction.</p></div>
-      <div class="prog reveal d2"><div class="n">Format</div><h3>Ongoing Coaching</h3><p>Continuous executive and team engagements for sustained growth.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ BOOKING / PULSE CHECK ============================ -->
-<section class="book" id="book">
-  <div class="container">
-    <div class="book-head reveal">
-      <div class="eyebrow center">Book a conversation</div>
-      <h2>Let's pulse-check your situation.</h2>
-      <p>Ten quick questions, designed by our master trainers and organizational psychologists. They tell us exactly where you are — so when we talk, we're already solving, not surveying. Takes about three minutes.</p>
-    </div>
-
-    <div class="form-wrap reveal">
-      <form id="pulseForm" novalidate>
-
-        <!-- Contact block -->
-        <div class="fgroup">
-          <label class="qlabel">First, who are we speaking with?</label>
-          <div class="qhint">So we can reply to the right person.</div>
-          <div class="grid2">
-            <div class="field"><label>Full name *</label><input type="text" name="name" required placeholder="Your name" /></div>
-            <div class="field"><label>Role / title</label><input type="text" name="role" placeholder="e.g. Head of L&D" /></div>
-            <div class="field"><label>Company / organization *</label><input type="text" name="company" required placeholder="Company name" /></div>
-            <div class="field"><label>Work email *</label><input type="email" name="email" required placeholder="you@company.com" /></div>
-            <div class="field"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+60 …" /></div>
-            <div class="field"><label>Team / company size</label>
-              <select name="size">
-                <option value="">Select…</option>
-                <option>Just me / very small</option>
-                <option>10–50</option>
-                <option>51–200</option>
-                <option>201–1,000</option>
-                <option>1,000+</option>
-              </select>
+        <div class="cinfo-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></div>
+          <div><div class="l">Follow the journey</div>
+            <div class="socials">
+              <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+              <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+              <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4 0 2 2 0 014 0zM3.4 8.6h3.1V21H3.4zM9 8.6h3v1.7h.05c.42-.8 1.45-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21h-3.1v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+              <a class="soc red" href="#" aria-label="RED · Xiaohongshu">RED<br>小红书</a>
+              <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 4 4 4.3v3c-1.5 0-2.9-.4-4-1.2v6.4A6.5 6.5 0 119.5 9v3.1a3.4 3.4 0 103.4 3.4V3z"/></svg></a>
             </div>
           </div>
         </div>
 
-        <!-- Q1 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">01</span>What kind of engagement are you exploring?</label>
-          <div class="qhint">Select all that apply.</div>
-          <div class="opts">
-            <label class="opt"><input type="checkbox" name="q1" value="In-house training / workshop"><span>In-house training / workshop</span></label>
-            <label class="opt"><input type="checkbox" name="q1" value="Leadership development"><span>Leadership development</span></label>
-            <label class="opt"><input type="checkbox" name="q1" value="Executive / team coaching"><span>Executive / team coaching</span></label>
-            <label class="opt"><input type="checkbox" name="q1" value="Keynote / conference speaker"><span>Keynote / conference speaker</span></label>
-            <label class="opt"><input type="checkbox" name="q1" value="Team retreat / offsite"><span>Team retreat / offsite</span></label>
-            <label class="opt"><input type="checkbox" name="q1" value="Strategy & culture consulting"><span>Strategy & culture consulting</span></label>
-            <label class="opt"><input type="checkbox" name="q1" value="Not sure — help me scope it"><span>Not sure — help me scope it</span></label>
-          </div>
+        <div class="quick-actions">
+          <a class="btn btn-gold" href="mailto:the.aurelion.space@gmail.com">Email us <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="tel:+601115219100">Call</a>
+          <a class="btn btn-ghost" href="https://wa.me/601115219100" target="_blank" rel="noopener">WhatsApp</a>
         </div>
+      </div>
 
-        <!-- Q2 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">02</span>Which best describes where your team is right now?</label>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="q2" value="Scaling fast & feeling the strain"><span>Scaling fast & feeling the strain</span></label>
-            <label class="opt"><input type="radio" name="q2" value="Stable but plateaued"><span>Stable but plateaued</span></label>
-            <label class="opt"><input type="radio" name="q2" value="Going through change / restructure / AI adoption"><span>Going through change / restructure / AI adoption</span></label>
-            <label class="opt"><input type="radio" name="q2" value="High-performing & want to stay ahead"><span>High-performing & want to stay ahead</span></label>
-            <label class="opt"><input type="radio" name="q2" value="Struggling with morale / retention"><span>Struggling with morale / retention</span></label>
-          </div>
-        </div>
-
-        <!-- Q3 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">03</span>What's the single biggest people challenge you want us to move the needle on?</label>
-          <div class="qhint">Pick up to two.</div>
-          <div class="opts">
-            <label class="opt"><input type="checkbox" name="q3" value="Leadership capability"><span>Leadership capability</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Engagement & motivation"><span>Engagement & motivation</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Adaptability & change-readiness"><span>Adaptability & change-readiness</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Team cohesion & communication"><span>Team cohesion & communication</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Resilience & burnout"><span>Resilience & burnout</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Navigating AI / automation"><span>Navigating AI / automation</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Talent retention"><span>Talent retention</span></label>
-            <label class="opt"><input type="checkbox" name="q3" value="Decision-making under pressure"><span>Decision-making under pressure</span></label>
-          </div>
-        </div>
-
-        <!-- Q4 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">04</span>If this works, what does success look like 12 months from now?</label>
-          <div class="qhint">A sentence or two is perfect.</div>
-          <div class="field"><textarea name="q4" placeholder="e.g. Our managers lead change without us holding their hand; turnover drops; the team feels energized again."></textarea></div>
-        </div>
-
-        <!-- Q5 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">05</span>How would you rate your team's current adaptability to change?</label>
-          <div class="scale-row">
-            <input type="range" name="q5" min="1" max="10" value="5" oninput="document.getElementById('v5').textContent=this.value">
-            <span class="scale-val" id="v5">5</span>
-          </div>
-          <div class="scale-ends"><span>1 · Resistant</span><span>10 · Thrives on change</span></div>
-        </div>
-
-        <!-- Q6 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">06</span>How ready are your managers to lead through uncertainty?</label>
-          <div class="scale-row">
-            <input type="range" name="q6" min="1" max="10" value="5" oninput="document.getElementById('v6').textContent=this.value">
-            <span class="scale-val" id="v6">5</span>
-          </div>
-          <div class="scale-ends"><span>1 · Need a lot of support</span><span>10 · Fully equipped</span></div>
-        </div>
-
-        <!-- Q7 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">07</span>What's prompting you to look into this <em>now</em>?</label>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="q7" value="A specific upcoming event / launch"><span>A specific upcoming event / launch</span></label>
-            <label class="opt"><input type="radio" name="q7" value="Leadership / board mandate"><span>Leadership / board mandate</span></label>
-            <label class="opt"><input type="radio" name="q7" value="A problem that's become urgent"><span>A problem that's become urgent</span></label>
-            <label class="opt"><input type="radio" name="q7" value="Annual training plan / budget cycle"><span>Annual training plan / budget cycle</span></label>
-            <label class="opt"><input type="radio" name="q7" value="Just exploring options"><span>Just exploring options</span></label>
-          </div>
-        </div>
-
-        <!-- Q8 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">08</span>Roughly how many people would take part?</label>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="q8" value="1–15"><span>1–15</span></label>
-            <label class="opt"><input type="radio" name="q8" value="16–40"><span>16–40</span></label>
-            <label class="opt"><input type="radio" name="q8" value="41–100"><span>41–100</span></label>
-            <label class="opt"><input type="radio" name="q8" value="100+"><span>100+</span></label>
-            <label class="opt"><input type="radio" name="q8" value="Company-wide"><span>Company-wide</span></label>
-          </div>
-        </div>
-
-        <!-- Q9 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">09</span>Ideal timing?</label>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="q9" value="Within a month"><span>Within a month</span></label>
-            <label class="opt"><input type="radio" name="q9" value="1–3 months"><span>1–3 months</span></label>
-            <label class="opt"><input type="radio" name="q9" value="3–6 months"><span>3–6 months</span></label>
-            <label class="opt"><input type="radio" name="q9" value="Flexible / planning ahead"><span>Flexible / planning ahead</span></label>
-          </div>
-        </div>
-
-        <!-- Q10 -->
-        <div class="fgroup">
-          <label class="qlabel"><span class="qnum">10</span>Anything else we should know before we talk?</label>
-          <div class="qhint">Context, constraints, or what "great" looks like to you. Optional.</div>
-          <div class="field"><textarea name="q10" placeholder="Tell us anything that helps us prepare…"></textarea></div>
-        </div>
-
-        <label class="toggle-line"><input type="checkbox" name="hrdf"> We're an HRD Corp-registered employer (interested in claimable training)</label>
-
-        <div class="submit-row">
-          <button type="submit" class="btn btn-gold">Send my pulse-check <span class="arr">→</span></button>
-          <p class="form-note">We reply within 1 business day. Your details stay private and are used only to prepare for our conversation.</p>
-        </div>
-      </form>
-
-      <!-- success state -->
-      <div class="success" id="successPanel">
-        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <h3>Thank you — we've got your pulse-check.</h3>
-        <p>A founder will personally review your answers and reach out within one business day. In the meantime, your email app can open with a copy of your responses so nothing gets lost.</p>
-        <a href="#" id="mailtoBtn" class="btn btn-ghost">Open a copy in email <span class="arr">→</span></a>
+      <!-- RIGHT: map -->
+      <div class="map-wrap">
+        <div class="map-fallback">Loading map…<br><a class="gold-text" href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener" style="pointer-events:auto">Open in Google Maps →</a></div>
+        <iframe title="Aurelion office map" loading="lazy" src="https://www.google.com/maps?q=Residensi+Tribeca,+215+Jalan+Imbi,+55100+Kuala+Lumpur,+Malaysia&output=embed"></iframe>
       </div>
     </div>
   </div>
-</section>
+</main>
 
-<!-- ============================ CONTACT ============================ -->
-<section class="contact" id="contact">
-  <div class="container contact-grid">
-    <div class="contact-info reveal">
-      <div class="eyebrow">Contact us</div>
-      <h2>Come find us.</h2>
-
-      <div class="cinfo-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-        <div><div class="l">Office</div><div class="v">Aurelion Sdn. Bhd.<br>Unit 773, Level 6 & 7, Residensi Tribeca,<br>No. 215, Jalan Imbi, 55100 Kuala Lumpur, Malaysia</div></div>
-      </div>
-      <div class="cinfo-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
-        <div><div class="l">Email</div><div class="v"><a href="mailto:the.aurelion.space@gmail.com">the.aurelion.space@gmail.com</a></div></div>
-      </div>
-      <div class="cinfo-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
-        <div><div class="l">Phone</div><div class="v"><a href="tel:+601115219100">+60 111-521-9100</a></div></div>
-      </div>
-      <div class="cinfo-item">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></div>
-        <div><div class="l">Follow the journey</div>
-          <div class="socials">
-            <!-- Replace href="#" with your real profile links -->
-            <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-            <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
-            <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4 0 2 2 0 014 0zM3.4 8.6h3.1V21H3.4zM9 8.6h3v1.7h.05c.42-.8 1.45-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21h-3.1v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
-            <a class="soc red" href="#" aria-label="RED · Xiaohongshu">RED<br>小红书</a>
-            <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 4 4 4.3v3c-1.5 0-2.9-.4-4-1.2v6.4A6.5 6.5 0 119.5 9v3.1a3.4 3.4 0 103.4 3.4V3z"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="map-wrap reveal d1">
-      <div class="map-fallback">Loading map…<br><a class="gold-text" href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener" style="pointer-events:auto">Open in Google Maps →</a></div>
-      <iframe title="Aurelion office map" loading="lazy" src="https://www.google.com/maps?q=Residensi+Tribeca,+215+Jalan+Imbi,+55100+Kuala+Lumpur,+Malaysia&output=embed"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ FOOTER ============================ -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <a href="#home" class="brand">
-          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 5 L33 30 H26 L20 17 L14 30 H7 Z" fill="url(#gm2)"/><path d="M20 1.5 L21.4 5.4 L25.3 4 L23.9 7.9 L27.8 9.3 L23.9 10.7 L25.3 14.6 L21.4 13.2 L20 17.1 L18.6 13.2 L14.7 14.6 L16.1 10.7 L12.2 9.3 L16.1 7.9 L14.7 4 L18.6 5.4 Z" fill="#F0CB6E"/><defs><linearGradient id="gm2" x1="7" y1="5" x2="33" y2="30"><stop stop-color="#F0CB6E"/><stop offset="1" stop-color="#A57E2A"/></linearGradient></defs></svg>
-          <span><b>Aurelion</b></span>
-        </a>
-        <p>To accelerate human adaptive capacity in the AI era.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Explore</h4>
-        <a href="#why">Why Now</a>
-        <a href="#services">What We Do</a>
-        <a href="#approach">Why Aurelion</a>
-        <a href="#founders">Founders</a>
-        <a href="#programs">Programs</a>
-      </div>
-      <div class="foot-col">
-        <h4>Get in touch</h4>
-        <a href="#book">Book a conversation</a>
-        <a href="mailto:the.aurelion.space@gmail.com">Email us</a>
-        <a href="tel:+601115219100">+60 111-521-9100</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener">Kuala Lumpur, Malaysia</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <p>© <span id="year"></span> Aurelion Sdn. Bhd. All rights reserved.</p>
-      <div class="creds-mini">
-        <span>HRD Corp Accredited</span>
-        <span>LPI Certified</span>
-        <span>Est. 2026 · Kuala Lumpur</span>
-      </div>
+    <p>© <span id="year"></span> Aurelion Sdn. Bhd. All rights reserved.</p>
+    <div class="creds-mini">
+      <span>HRD Corp Accredited</span>
+      <span>LPI Certified</span>
+      <span>Kuala Lumpur</span>
     </div>
   </div>
 </footer>
 
 <script>
-/* ---------- year ---------- */
 document.getElementById('year').textContent=new Date().getFullYear();
 
-/* ---------- nav scroll state ---------- */
-const nav=document.getElementById('nav');
-const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
-onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-
-/* ---------- mobile menu ---------- */
-const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
-const toggleMenu=open=>{burger.classList.toggle('open',open);menu.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''};
-burger.addEventListener('click',()=>toggleMenu(!menu.classList.contains('open')));
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-
-/* ---------- reveal on scroll ---------- */
-const io=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ---------- count-up ---------- */
-const countEls=document.querySelectorAll('[data-count]');
-const cio=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    const el=e.target,target=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
-    const dur=1400,start=performance.now();
-    const tick=now=>{
-      const p=Math.min((now-start)/dur,1);
-      const eased=1-Math.pow(1-p,3);
-      const val=Math.round(eased*target);
-      el.innerHTML=pre+val+'<span class="unit">'+suf+'</span>';
-      if(p<1)requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-    cio.unobserve(el);
-  });
-},{threshold:0.5});
-countEls.forEach(el=>cio.observe(el));
-
-/* ---------- starfield ---------- */
+/* starfield */
 (function(){
   const canvas=document.getElementById('starfield');
   if(!canvas)return;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx=canvas.getContext('2d');
   let w,h,stars,raf;
-  const hero=canvas.parentElement;
   function size(){
-    const r=hero.getBoundingClientRect();
-    w=canvas.width=r.width*devicePixelRatio;
-    h=canvas.height=r.height*devicePixelRatio;
-    canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';
-    const count=Math.min(170,Math.floor(r.width*r.height/9000));
+    w=canvas.width=innerWidth*devicePixelRatio;
+    h=canvas.height=innerHeight*devicePixelRatio;
+    canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';
+    const count=Math.min(170,Math.floor(innerWidth*innerHeight/9000));
     stars=Array.from({length:count},()=>({
-      x:Math.random()*w,y:Math.random()*h*0.92,
+      x:Math.random()*w,y:Math.random()*h,
       r:(Math.random()*1.4+0.3)*devicePixelRatio,
       a:Math.random()*0.6+0.2,
       tw:Math.random()*0.02+0.005,
@@ -1175,56 +211,8 @@ countEls.forEach(el=>cio.observe(el));
     if(!reduce)raf=requestAnimationFrame(draw);
   }
   size();draw();
-  let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{cancelAnimationFrame(raf);size();draw();},200);});
+  let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{cancelAnimationFrame(raf);size();draw();},200);});
 })();
-
-/* ---------- form submit ---------- */
-const form=document.getElementById('pulseForm');
-form.addEventListener('submit',function(ev){
-  ev.preventDefault();
-  // basic required validation
-  let ok=true;
-  ['name','company','email'].forEach(n=>{
-    const f=form.elements[n];
-    if(!f.value.trim()){ok=false;f.style.borderColor='#c0563f';}else{f.style.borderColor='';}
-  });
-  if(!ok){form.querySelector('[style*="c0563f"]').focus();return;}
-
-  // compile answers
-  const fd=new FormData(form);
-  const get=n=>fd.getAll(n).filter(Boolean).join(', ')||'—';
-  const lines=[
-    'NEW AURELION ENQUIRY',
-    '====================',
-    'Name: '+get('name'),
-    'Role: '+get('role'),
-    'Company: '+get('company'),
-    'Email: '+get('email'),
-    'Phone: '+get('phone'),
-    'Size: '+get('size'),
-    '',
-    '01 Engagement type: '+get('q1'),
-    '02 Where the team is: '+get('q2'),
-    '03 Biggest challenge: '+get('q3'),
-    '04 Success in 12 months: '+get('q4'),
-    '05 Adaptability (1-10): '+get('q5'),
-    '06 Manager readiness (1-10): '+get('q6'),
-    '07 Why now: '+get('q7'),
-    '08 Headcount: '+get('q8'),
-    '09 Timing: '+get('q9'),
-    '10 Anything else: '+get('q10'),
-    'HRD Corp registered: '+(form.elements['hrdf'].checked?'Yes':'No')
-  ].join('\n');
-
-  const subject=encodeURIComponent('Pulse-check enquiry — '+get('company'));
-  const body=encodeURIComponent(lines);
-  document.getElementById('mailtoBtn').setAttribute('href','mailto:the.aurelion.space@gmail.com?subject='+subject+'&body='+body);
-
-  form.style.display='none';
-  const panel=document.getElementById('successPanel');
-  panel.classList.add('show');
-  panel.scrollIntoView({behavior:'smooth',block:'center'});
-});
 </script>
 </body>
 </html>
