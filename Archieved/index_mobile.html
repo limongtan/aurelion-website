@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B1020">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Aurelion · LPI Temperament Atlas</title>
+<meta name="description" content="Your team's chemistry, made visible. The ONARD Team Map by Aurelion — certified LPI practice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>/* ══════════ Aurelion · LPI Temperament Atlas — Mobile ══════════ */
+:root{
+  --ink-0:#0B1020; --ink-1:#111830; --ink-2:#182138; --ink-3:#22304D;
+  --paper:#F4EFE4; --paper-dim:#C6CADD; --paper-faint:#8C94B1;
+  --gold:#E4B75B; --gold-soft:rgba(228,183,91,.14);
+  --dim-O:#9B7EDE; --dim-N:#E06CA8; --dim-A:#5B8DEF; --dim-R:#43C88F; --dim-D:#E8635C;
+  --m-zw:#E8B54D; --m-lch:#3FD1BE; --m-fm:#F0824F; --m-ed:#A8D65C; --m-jg:#7FD4F0; --m-sm:#C98BE8;
+  --green:#43C88F;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Sora",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:16px; --r-sm:12px;
+  --top-h:54px; --nav-h:62px;
+  --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.16);
+  --wash:rgba(255,255,255,.035); --wash2:rgba(255,255,255,.055);
+  --btn-ink:#0B1020;
+  --ease:cubic-bezier(.22,.9,.3,1);
+  --sab:env(safe-area-inset-bottom,0px);
+  --sat:env(safe-area-inset-top,0px);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+html,body{height:100%;overscroll-behavior-y:none}
+body{
+  background:var(--ink-0);color:var(--paper);
+  font-family:var(--font-body);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  touch-action:manipulation;
+}
+img,svg{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+b,strong{font-weight:600}
+::selection{background:var(--gold);color:var(--btn-ink)}
+
+/* ── ambient aurora ── */
+.aurora{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.16}
+.aurora .a1{width:70vw;height:70vw;background:var(--dim-O);top:-22vw;right:-24vw}
+.aurora .a2{width:60vw;height:60vw;background:var(--gold);bottom:6vh;left:-30vw;opacity:.08}
+
+/* ══════════ Top bar ══════════ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  height:calc(var(--top-h) + var(--sat));padding-top:var(--sat);
+  display:flex;align-items:center;justify-content:space-between;
+  padding-left:18px;padding-right:14px;
+  background:rgba(11,16,32,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:600;font-size:17px;letter-spacing:.2px}
+.brand svg{width:26px;height:26px;flex:none}
+.brand small{display:block;font-family:var(--font-body);font-weight:500;font-size:8.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);line-height:1.1}
+.compass{display:flex;align-items:center;gap:8px;padding:5px 6px 5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--wash)}
+.compass .pct{font-size:11px;font-weight:600;letter-spacing:.6px;color:var(--gold);min-width:30px;text-align:right;font-variant-numeric:tabular-nums}
+.compass svg{width:30px;height:30px}
+.compass .ring-bg{stroke:var(--ink-3);fill:none}
+.compass .ring-fg{stroke:var(--gold);fill:none;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .8s var(--ease)}
+.compass .star{fill:var(--gold)}
+.compass:active{transform:scale(.96)}
+
+/* ══════════ Views ══════════ */
+.view{
+  display:none;position:relative;z-index:1;
+  padding:calc(var(--top-h) + var(--sat) + 10px) 0 calc(var(--nav-h) + var(--sab) + 28px);
+  min-height:100dvh;
+}
+.view.on{display:block;animation:viewIn .34s var(--ease)}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pad{padding-left:20px;padding-right:20px}
+section{padding:30px 0 8px}
+
+/* type */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.eyebrow::before{content:"";width:20px;height:1px;background:var(--gold)}
+h1.mega{font-family:var(--font-display);font-weight:600;font-size:clamp(38px,11vw,48px);line-height:1.04;letter-spacing:-.5px;margin:2px 0 14px}
+h1.mega b{color:var(--gold);font-weight:700}
+h2.st{font-family:var(--font-display);font-weight:600;font-size:clamp(25px,7vw,30px);line-height:1.16;margin-bottom:10px}
+h2.st em{color:var(--gold);font-style:italic}
+.sub{font-size:14.5px;color:var(--paper-dim);line-height:1.7;margin-bottom:18px}
+.sub strong,.sub b{color:var(--paper)}
+.microsub{font-size:13px;color:var(--paper-faint);margin:-8px 0 16px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:14px;font-weight:600;font-size:15px;letter-spacing:.2px;transition:transform .15s var(--ease),box-shadow .2s;user-select:none}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,#F0CE84,var(--gold) 55%,#C99B3F);color:var(--btn-ink);box-shadow:0 10px 26px -10px rgba(228,183,91,.55)}
+.btn-ghost{border:1px solid var(--line-strong);background:var(--wash);color:var(--paper)}
+.btn-block{display:flex;width:100%}
+.cta-row{display:flex;flex-direction:column;gap:10px;margin:18px 0 6px}
+
+/* cards */
+.card{background:linear-gradient(180deg,var(--ink-2),var(--ink-1));border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.card h3{font-family:var(--font-display);font-size:19px;font-weight:600;line-height:1.25;margin-bottom:8px}
+.card p{font-size:14px;color:var(--paper-dim);line-height:1.68}
+.card p b{color:var(--paper)}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* ══════════ Bottom navigation ══════════ */
+.bnav{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  height:calc(var(--nav-h) + var(--sab));padding-bottom:var(--sab);
+  display:grid;grid-template-columns:repeat(5,1fr);
+  background:rgba(13,18,36,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-top:1px solid var(--line);
+}
+.bnav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--paper-faint);position:relative;transition:color .2s}
+.bnav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.bnav button span{font-size:9.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
+.bnav button.on{color:var(--gold)}
+.bnav button.on::before{content:"";position:absolute;top:0;width:26px;height:2.5px;border-radius:0 0 3px 3px;background:var(--gold)}
+.bnav button .done{position:absolute;top:7px;right:calc(50% - 19px);width:6px;height:6px;border-radius:50%;background:var(--green);opacity:0;transform:scale(0);transition:all .3s var(--ease)}
+.bnav button.visited .done{opacity:1;transform:scale(1)}
+.bnav button:active{transform:scale(.94)}
+
+/* ══════════ Toast ══════════ */
+.toast{
+  position:fixed;left:50%;top:calc(var(--top-h) + var(--sat) + 12px);transform:translate(-50%,-16px);z-index:80;
+  display:flex;align-items:center;gap:9px;max-width:88vw;
+  background:linear-gradient(135deg,#1c2542,#151d36);border:1px solid rgba(228,183,91,.45);
+  border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600;color:var(--paper);
+  box-shadow:0 16px 40px -12px rgba(0,0,0,.7);opacity:0;pointer-events:none;transition:all .45s var(--ease);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast .tk{color:var(--gold);font-size:15px}
+.toast small{display:block;font-weight:400;font-size:11px;color:var(--paper-dim)}
+
+/* ══════════ Journey sheet + generic sheet ══════════ */
+.scrim{position:fixed;inset:0;z-index:70;background:rgba(5,8,18,.6);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.show{opacity:1;pointer-events:auto}
+.sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:75;
+  background:linear-gradient(180deg,#161f3a,var(--ink-1));
+  border-radius:24px 24px 0 0;border-top:1px solid var(--line-strong);
+  max-height:88dvh;display:flex;flex-direction:column;
+  transform:translateY(102%);transition:transform .4s var(--ease);
+  box-shadow:0 -20px 60px rgba(0,0,0,.6);
+}
+.sheet.show{transform:none}
+.sheet .grab{flex:none;padding:10px 0 4px;display:flex;justify-content:center}
+.sheet .grab i{width:40px;height:4px;border-radius:99px;background:var(--ink-3)}
+.sheet .sc{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:6px 20px calc(24px + var(--sab));overscroll-behavior:contain}
+
+/* journey */
+.jhead{text-align:center;padding:6px 0 14px}
+.jhead h3{font-family:var(--font-display);font-size:22px}
+.jhead p{font-size:13px;color:var(--paper-dim);margin-top:4px}
+.jbar{height:6px;border-radius:99px;background:var(--ink-3);margin:14px 0 20px;overflow:hidden}
+.jbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#C99B3F,var(--gold));transition:width .8s var(--ease)}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-bottom:8px}
+.badge{border:1px solid var(--line);border-radius:var(--r-sm);padding:13px 14px;background:var(--wash);transition:all .3s}
+.badge .bi{font-size:19px;filter:grayscale(1);opacity:.4}
+.badge b{display:block;font-size:12.5px;margin-top:6px;color:var(--paper-faint)}
+.badge span{font-size:10.5px;color:var(--paper-faint);line-height:1.45;display:block;margin-top:2px;opacity:.8}
+.badge.got{border-color:rgba(228,183,91,.5);background:var(--gold-soft)}
+.badge.got .bi{filter:none;opacity:1}
+.badge.got b{color:var(--gold)}
+.badge.got span{color:var(--paper-dim)}
+.jfoot{font-size:11px;color:var(--paper-faint);text-align:center;padding-top:12px;border-top:1px solid var(--line);margin-top:6px}
+
+/* ══════════ Carousels ══════════ */
+.carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.carousel>*{flex:0 0 82%;scroll-snap-align:center}
+.carousel.tight>*{flex:0 0 74%}
+.cdots{display:flex;justify-content:center;gap:6px;margin:6px 0 4px}
+.cdots i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);transition:all .25s var(--ease)}
+.cdots i.on{background:var(--gold);width:18px;border-radius:99px}
+.swipehint{display:flex;align-items:center;justify-content:center;gap:6px;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--paper-faint);margin-bottom:8px}
+.swipehint::after{content:"→";animation:nudge 1.6s infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+/* chips scroller */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 20px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--line);background:var(--wash);font-size:12.5px;font-weight:600;color:var(--paper-dim);white-space:nowrap;transition:all .2s}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--mc,var(--gold))}
+.chip.on{border-color:var(--mc,var(--gold));color:var(--paper);background:color-mix(in srgb,var(--mc,var(--gold)) 14%,transparent)}
+.chip:active{transform:scale(.95)}
+
+/* ══════════ STORY ══════════ */
+.hero{padding-top:14px}
+.hero .lead{font-size:15px;color:var(--paper-dim);line-height:1.7}
+.hero .tagline{font-size:17px;margin:4px 0 12px;color:var(--paper)}
+.hero .tagline em{color:var(--gold);font-style:italic;font-family:var(--font-display)}
+.hero-map{margin:20px auto 4px;width:min(88vw,400px);position:relative}
+.hero-map .cap{text-align:center;font-size:11.5px;color:var(--paper-faint);margin-top:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.stat{border:1px solid var(--line);border-radius:var(--r-sm);background:var(--wash);padding:14px 16px}
+.stat b{font-family:var(--font-display);font-size:26px;color:var(--gold);font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--paper-faint);margin-top:2px}
+
+.jteaser{display:flex;align-items:center;gap:14px;margin-top:20px;border:1px solid rgba(228,183,91,.35);background:var(--gold-soft);border-radius:var(--r);padding:15px 17px}
+.jteaser svg{width:34px;height:34px;flex:none}
+.jteaser b{font-size:13.5px;display:block}
+.jteaser span{font-size:12px;color:var(--paper-dim)}
+.jteaser .go{margin-left:auto;color:var(--gold);font-size:20px}
+
+.boardrooms{margin-top:8px}
+.b-chip{flex:none;border:1px solid var(--line);border-radius:10px;background:var(--wash);padding:11px 16px;font-family:var(--font-display);font-size:13.5px;color:var(--paper-dim);white-space:nowrap}
+.gemline{font-size:13px;color:var(--paper-dim);padding:8px 20px 0}
+.src{display:block;font-size:10.5px;color:var(--paper-faint);line-height:1.5;margin-top:10px}
+
+.creator .fac-photo{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--ink-3),var(--ink-2));border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:19px;color:var(--gold);flex:none}
+.creator .ctop{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.creator .role{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.creator p+p{margin-top:10px}
+
+.lineage{margin-top:6px}
+.line-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.line-item:last-child{border-bottom:0}
+.line-item .era{flex:none;width:64px;font-family:var(--font-display);font-size:13px;color:var(--gold);padding-top:2px}
+.line-item p{font-size:13.5px;color:var(--paper-dim);line-height:1.6}
+
+.dim-card{border-top:3px solid var(--dc);min-height:100%}
+.dim-card .dl{font-family:var(--font-display);font-size:42px;font-weight:700;color:var(--dc);line-height:1}
+.dim-card .dn{font-size:13px;font-weight:600;letter-spacing:.4px;margin:6px 0 10px}
+.dim-card ul li{font-size:13.5px;color:var(--paper-dim);padding:3px 0 3px 16px;position:relative}
+.dim-card ul li::before{content:"·";position:absolute;left:2px;color:var(--dc);font-weight:700}
+.dim-card .craves{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);font-size:12px;color:var(--paper-dim)}
+.dim-card .craves b{color:var(--dc)}
+
+.o-spot{border:1px solid rgba(155,126,222,.4);background:linear-gradient(160deg,rgba(155,126,222,.12),transparent 60%)}
+.o-spot .O{font-family:var(--font-display);font-size:46px;font-weight:700;color:var(--dim-O);float:left;margin:-6px 14px 0 0;line-height:1}
+.o-spot .unlockline{clear:both;margin-top:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim-O);display:flex;align-items:center;gap:7px}
+
+.soma{border-left:3px solid var(--sc)}
+.soma .greek{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--sc)}
+.needq{font-family:var(--font-display);font-style:italic;font-size:17px;margin:6px 0 8px;color:var(--paper)}
+.punch{border:1px solid rgba(228,183,91,.35);background:var(--gold-soft);border-radius:var(--r);padding:22px;font-family:var(--font-display);font-size:19px;line-height:1.4;text-align:center;margin:6px 0 14px}
+.punch small{display:block;font-family:var(--font-body);font-size:12.5px;color:var(--paper-dim);margin-top:10px;line-height:1.6}
+.punch .src{margin-top:8px}
+
+.skep{min-height:100%}
+.skep .big{font-family:var(--font-display);font-size:34px;color:var(--gold);line-height:1.05}
+.skep .big small{font-size:15px;color:var(--paper-dim)}
+.skep p{margin-top:8px}
+
+/* ══════════ MAP ══════════ */
+.ftoggle{position:relative;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line-strong);border-radius:13px;background:var(--wash);padding:4px;margin:4px 0 14px}
+.ftoggle .thumb{position:absolute;top:4px;left:4px;width:calc(50% - 4px);height:calc(100% - 8px);border-radius:10px;background:linear-gradient(135deg,#F0CE84,var(--gold));transition:transform .35s var(--ease)}
+.ftoggle button{position:relative;z-index:1;min-height:42px;font-size:13px;font-weight:600;color:var(--paper-dim);border-radius:10px;transition:color .25s}
+.ftoggle button.active{color:var(--btn-ink)}
+.ftoggle.opt .thumb{transform:translateX(100%)}
+
+.mapwrap{width:min(94vw,440px);margin:0 auto}
+.qmap{width:100%;height:auto}
+.q-frame{fill:var(--wash);stroke:var(--line-strong)}
+.q-grid{stroke:var(--line);stroke-dasharray:2 6}
+.q-band{fill:rgba(255,255,255,.045)}
+.q-axis{stroke:var(--line-strong);stroke-width:1.5}
+.q-axis-label{font-size:15px;letter-spacing:2.5px;fill:var(--paper-faint);font-weight:600}
+.q-corner{font-family:var(--font-display);font-size:40px;font-weight:700}
+.q-corner-sub{font-size:12.5px;letter-spacing:2px;fill:var(--paper-faint)}
+.q-o-ring{fill:none;stroke:var(--dim-O);stroke-dasharray:4 6;opacity:.8}
+.q-o-label{font-family:var(--font-display);font-size:30px;font-weight:700;fill:var(--dim-O)}
+.member{cursor:pointer}
+.member .halo{fill:none;stroke-dasharray:4 7;opacity:.55;stroke-width:1.6}
+.member .core{stroke:rgba(0,0,0,.35);stroke-width:1;filter:drop-shadow(0 0 10px currentColor)}
+.member .tap{fill:transparent}
+.member .tag-txt{font-size:17px;font-weight:700;letter-spacing:.5px}
+.member .tag-arc{font-size:13px;font-weight:700;letter-spacing:1.5px}
+.member{transition:opacity .25s,transform .5s var(--ease)}
+.qmap.focus .member{opacity:.22}
+.qmap.focus .member.hot{opacity:1}
+.member.ghost{opacity:.13}
+.maphint{text-align:center;font-size:11.5px;color:var(--paper-faint);margin:8px 0 4px}
+.mapkeys{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--paper-dim);padding:8px 2px 0}
+.mapkeys i{display:inline-block;width:20px;height:0;border-top:2px dashed var(--dim-O);margin-right:8px;vertical-align:middle}
+.mapkeys i.band{border-top:8px solid rgba(255,255,255,.09);width:20px}
+.fnote{display:none;border:1px solid rgba(228,183,91,.4);background:var(--gold-soft);border-radius:var(--r-sm);padding:14px 16px;font-size:13px;line-height:1.65;color:var(--paper-dim);margin-top:12px}
+.fnote.show{display:block;animation:viewIn .35s var(--ease)}
+
+.orail{margin-top:22px}
+.orail h4{font-family:var(--font-display);font-size:17px;margin-bottom:6px}
+.orail .osub{font-size:13px;color:var(--paper-dim);line-height:1.65}
+.ortrack{position:relative;height:96px;margin:44px 6px 4px}
+.or-bar{position:absolute;left:0;right:0;top:58px;height:3px;border-radius:99px;background:linear-gradient(90deg,var(--ink-3),var(--dim-O))}
+.or-cap{position:absolute;top:76px;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--paper-faint)}
+.or-dot{position:absolute;top:59.5px}
+.or-dot i{display:block;width:13px;height:13px;border-radius:50%;background:var(--mc);transform:translate(-50%,-50%);box-shadow:0 0 12px var(--mc)}
+.or-dot b{position:absolute;transform:translateX(-50%);font-size:11px;color:var(--mc);white-space:nowrap}
+.or-dot em{position:absolute;transform:translateX(-50%);font-style:normal;font-size:9.5px;color:var(--paper-faint);white-space:nowrap}
+
+.ptabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 12px}
+.ptabs button{min-height:42px;border:1px solid var(--line);border-radius:11px;font-size:13px;font-weight:600;color:var(--paper-dim);background:var(--wash)}
+.ptabs button.active{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+.ptitle{font-family:var(--font-display);font-size:18px}
+.psub{font-size:12.5px;color:var(--paper-faint);margin:3px 0 12px}
+.pcard{width:100%;text-align:left;border:1px solid var(--line);border-left:3px solid var(--mc,var(--gold));border-radius:var(--r-sm);background:linear-gradient(180deg,var(--ink-2),var(--ink-1));padding:15px 16px;margin-bottom:10px;transition:transform .15s}
+.pcard:active{transform:scale(.985)}
+.pc-top{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.avatar{width:34px;height:34px;border-radius:50%;background:color-mix(in srgb,var(--mc,var(--gold)) 22%,var(--ink-2));border:1.5px solid var(--mc,var(--gold));color:var(--mc,var(--gold));display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none}
+.pc-name{font-size:14px;font-weight:600}
+.pc-name em{display:block;font-style:normal;font-size:11px;color:var(--paper-faint);font-weight:500}
+.pc-go{margin-left:auto;width:18px;height:18px;color:var(--paper-faint);flex:none}
+.pc-st{display:inline-block;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mc,var(--gold));font-weight:600;margin-bottom:5px}
+.pcard p{font-size:13px;color:var(--paper-dim);line-height:1.62}
+.pcard p b{color:var(--paper)}
+.pc-avs{display:flex;gap:6px;margin-top:10px}
+.pc-avs .avatar{width:27px;height:27px;font-size:9px}
+.pcard .pd-nums{display:flex;align-items:center;gap:10px;font-family:var(--font-display);margin-bottom:4px}
+.pcard .b4{font-size:19px;color:var(--paper-faint);text-decoration:line-through;text-decoration-thickness:1.5px}
+.pcard .af{font-size:25px;color:var(--gold)}
+.pcard .d-arr{width:30px;stroke:var(--gold);stroke-width:2;fill:none;stroke-linecap:round}
+.pcard .pd-l{font-size:13.5px;display:block;margin-bottom:4px}
+.pcard .plain{margin-top:7px;font-size:12.5px;color:var(--paper-faint);border-top:1px dashed var(--line);padding-top:7px}
+
+/* ══════════ Dossier sheet ══════════ */
+.dossier-head{display:flex;gap:13px;align-items:center;padding:2px 0 12px}
+.dossier-head .avatar{width:52px;height:52px;font-size:15px}
+.dossier-head .arch{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mc,var(--gold));font-weight:600}
+.dossier-head h3{font-family:var(--font-display);font-size:24px;line-height:1.1}
+.dossier-head .role{font-size:12px;color:var(--paper-faint)}
+.spectrum{display:flex;height:7px;border-radius:99px;overflow:hidden;gap:2px;margin-bottom:12px}
+.spectrum i{border-radius:2px}
+.spectrum .sO{background:var(--dim-O)}.spectrum .sN{background:var(--dim-N)}.spectrum .sA{background:var(--dim-A)}.spectrum .sR{background:var(--dim-R)}.spectrum .sD{background:var(--dim-D)}
+.essence{font-family:var(--font-display);font-style:italic;font-size:15.5px;line-height:1.55;color:var(--paper);margin-bottom:14px}
+.score-row{display:grid;grid-template-columns:82px 1fr 34px;align-items:center;gap:10px;margin-bottom:8px}
+.score-row .lbl{font-size:11.5px;color:var(--paper-dim)}
+.score-track{height:6px;border-radius:99px;background:var(--ink-3);overflow:hidden}
+.score-fill{height:100%;border-radius:99px;width:0;transition:width .9s var(--ease)}
+.score-row b{font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+.dtabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none;position:sticky;top:0;background:linear-gradient(180deg,#161f3a 70%,transparent);z-index:2}
+.dtabs::-webkit-scrollbar{display:none}
+.dtab{flex:none;min-height:38px;padding:0 15px;border-radius:999px;border:1px solid var(--line);background:var(--wash);font-size:12.5px;font-weight:600;color:var(--paper-dim);white-space:nowrap}
+.dtab.active{border-color:var(--mc,var(--gold));color:var(--mc,var(--gold));background:color-mix(in srgb,var(--mc,var(--gold)) 12%,transparent)}
+.dpane{display:none;padding:12px 0 6px}
+.dpane.active{display:block;animation:viewIn .3s var(--ease)}
+.dpane h4{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);margin:14px 0 8px}
+.dpane h4:first-child{margin-top:2px}
+.dlist li{position:relative;padding:6px 0 6px 20px;font-size:13.5px;color:var(--paper-dim);line-height:1.6;border-bottom:1px solid var(--line)}
+.dlist li:last-child{border-bottom:0}
+.dlist li::before{content:"—";position:absolute;left:0;color:var(--paper-faint)}
+.dlist.calm li::before{content:"✓";color:var(--green)}
+.dlist.warn li::before{content:"!";color:var(--dim-D);font-weight:700;left:4px}
+.dnote{font-size:11.5px;color:var(--paper-faint);margin-top:12px;font-style:italic}
+.dnav{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:14px;border-top:1px solid var(--line);margin-top:8px}
+.dnav button{min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--wash);font-size:12.5px;font-weight:600;color:var(--paper-dim);display:flex;align-items:center;justify-content:center;gap:8px}
+.dnav .nm{color:var(--mc2)}
+
+/* ══════════ LAB ══════════ */
+.labcount{display:flex;gap:10px;margin-bottom:14px}
+.lc-box{flex:1;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--wash);padding:12px 14px}
+.lc-box b{font-family:var(--font-display);font-size:23px;color:var(--gold);font-variant-numeric:tabular-nums}
+.lc-box span{display:block;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--paper-faint)}
+.picker{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:6px}
+.lab-chip{display:flex;align-items:center;gap:9px;min-height:52px;padding:8px 13px;border:1px solid var(--line);border-radius:13px;background:var(--wash);text-align:left;transition:all .2s}
+.lab-chip .dot{width:10px;height:10px;border-radius:50%;background:var(--mc);flex:none;box-shadow:0 0 8px var(--mc)}
+.lab-chip b{font-size:13.5px;display:block}
+.lab-chip small{font-size:10px;color:var(--paper-faint);display:block;line-height:1.3}
+.lab-chip.on{border-color:var(--mc);background:color-mix(in srgb,var(--mc) 13%,transparent)}
+.lab-chip:active{transform:scale(.96)}
+.labhint{font-size:11.5px;color:var(--paper-faint);text-align:center;margin:4px 0 14px}
+.labout{opacity:0;transform:translateY(12px);transition:all .45s var(--ease)}
+.labout.show{opacity:1;transform:none}
+.lab-title{font-family:var(--font-display);font-size:24px;line-height:1.15;margin:10px 0 6px}
+.lab-avatars{display:flex}
+.lab-avatars .avatar{margin-right:-7px;border:2px solid var(--ink-1)}
+.lab-tag{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--paper-dim);line-height:1.55;margin-bottom:10px}
+.lab-official{font-size:12px;border:1px solid rgba(228,183,91,.4);background:var(--gold-soft);border-radius:10px;padding:9px 13px;color:var(--paper-dim);margin-bottom:8px}
+.lab-official b{color:var(--gold)}
+.lab-sub{font-size:11px;color:var(--paper-faint);margin-bottom:14px;line-height:1.5}
+.lab-mini-bars{display:flex;justify-content:space-between;gap:8px;margin-bottom:16px}
+.lab-mini{text-align:center;flex:1}
+.lab-mini .bar{height:56px;border-radius:8px;background:var(--ink-3);position:relative;overflow:hidden;margin-bottom:5px}
+.lab-mini .bar i{position:absolute;bottom:0;left:0;right:0;background:var(--bc);border-radius:8px 8px 0 0;transition:height .7s var(--ease)}
+.lab-mini span{font-size:10px;color:var(--paper-faint);display:block}
+.lab-mini b{font-size:12px}
+.lab-cover{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.lc-lab{width:100%;font-size:10.5px;color:var(--paper-faint)}
+.lc-chip{font-size:11px;font-weight:600;padding:6px 11px;border-radius:999px;border:1px solid color-mix(in srgb,var(--cc) 55%,transparent)}
+.lc-chip.ok{color:var(--cc);background:color-mix(in srgb,var(--cc) 12%,transparent)}
+.lc-chip.no{color:var(--paper-faint);border-style:dashed}
+.lab-missing{font-size:12px;color:var(--paper-dim);border:1px dashed var(--line-strong);border-radius:10px;padding:10px 13px;margin-bottom:14px;line-height:1.6}
+.acc{border:1px solid var(--line);border-left:3px solid var(--lb,var(--gold));border-radius:var(--r-sm);background:linear-gradient(180deg,var(--ink-2),var(--ink-1));margin-bottom:10px;overflow:hidden}
+.acc>button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;font-size:13.5px;font-weight:600;text-align:left;min-height:50px}
+.acc>button::after{content:"+";font-family:var(--font-display);font-size:20px;color:var(--lb,var(--gold));transition:transform .3s var(--ease)}
+.acc.open>button::after{transform:rotate(45deg)}
+.acc .body{display:none;padding:0 16px 14px}
+.acc.open .body{display:block;animation:viewIn .3s var(--ease)}
+.acc .body ul li{position:relative;padding:7px 0 7px 18px;font-size:13px;color:var(--paper-dim);line-height:1.6;border-bottom:1px solid var(--line)}
+.acc .body ul li:last-child{border-bottom:0}
+.acc .body ul li::before{content:"·";position:absolute;left:3px;color:var(--lb,var(--gold));font-weight:700}
+.acc .body b{color:var(--paper)}
+
+/* ══════════ INSIGHTS ══════════ */
+.pills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 20px 18px;position:sticky;top:calc(var(--top-h) + var(--sat) + 8px);z-index:20}
+.pills button{min-height:44px;border-radius:12px;border:1px solid var(--line);background:rgba(17,24,48,.92);backdrop-filter:blur(10px);font-size:13px;font-weight:600;color:var(--paper-dim)}
+.pills button.on{border-color:var(--gold);color:var(--gold);background:linear-gradient(180deg,rgba(228,183,91,.16),rgba(17,24,48,.95))}
+.subview{display:none}
+.subview.on{display:block;animation:viewIn .3s var(--ease)}
+
+.conf{border-left:3px solid var(--cc)}
+.conf .t{font-size:14px;display:block;margin-bottom:6px}
+.conf .who{margin-top:9px;font-size:12px;color:var(--paper-faint);border-top:1px dashed var(--line);padding-top:8px}
+.axmini-wrap{width:min(72vw,300px);margin:4px auto 16px}
+
+.dial-card{text-align:center;border-top:3px solid var(--dc);min-height:100%}
+.dial-card svg{width:76%;margin:0 auto}
+.gauge-track{fill:none;stroke:var(--ink-3)}
+.gauge-band{fill:none;stroke:var(--dc);opacity:.35}
+.needle-g{transform-origin:75px 80px;transform:rotate(var(--deg))}
+.gauge-needle{stroke:var(--paper);stroke-width:2.5;stroke-linecap:round}
+.gauge-avg{font-size:19px;font-weight:700;fill:var(--dc);font-family:var(--font-display)}
+.gauge-cap{font-size:8.5px;letter-spacing:1px;fill:var(--paper-faint)}
+.dial-card h4{font-family:var(--font-display);font-size:17px;margin-top:2px}
+.dial-card .range{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--paper-faint);margin:2px 0 10px}
+.dial-card p{font-size:12.5px;text-align:left}
+.dial-card .needs{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--paper-dim)}
+.dial-card .needs b{color:var(--dc)}
+
+.cl-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 20px 12px;scrollbar-width:none}
+.cl-tabs::-webkit-scrollbar{display:none}
+.cl-tab{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-height:52px;padding:8px 15px;border-radius:13px;border:1px solid var(--line);background:var(--wash)}
+.cl-tab .l{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--tc)}
+.cl-tab .w{font-size:10px;color:var(--paper-faint);white-space:nowrap}
+.cl-tab.active{border-color:var(--tc);background:color-mix(in srgb,var(--tc) 11%,transparent)}
+.cl-tab.diag{border-style:dashed}
+.cl-tab.diag .l{background:linear-gradient(100deg,var(--tc1),var(--tc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.clash{padding:0 20px}
+.cl-gaphead{margin-bottom:8px}
+.cl-gaphead b{font-family:var(--font-display);font-size:20px;display:block}
+.cl-gaphead span{font-size:12px;color:var(--paper-faint)}
+.gap-ruler{width:100%;margin:6px 0}
+.gr-track{stroke:var(--ink-3);stroke-width:3}
+.gr-tick{stroke:var(--line-strong)}
+.gr-cap{font-size:11px;fill:var(--paper-faint)}
+.gr-init{font-size:9.5px;font-weight:800;fill:var(--btn-ink)}
+.gr-score{font-size:11.5px;font-weight:700}
+.gr-gapline{stroke-width:2;stroke-dasharray:5 4}
+.gr-gap{font-size:13.5px;font-weight:700}
+.gap-meter{margin:10px 0 12px}
+.gm-scalewrap{position:relative;padding-top:26px}
+.gm-scale{display:flex;height:8px;border-radius:99px;overflow:hidden}
+.gm-scale .z1{flex:15;background:color-mix(in srgb,var(--green) 45%,var(--ink-3))}
+.gm-scale .z2{flex:10;background:color-mix(in srgb,var(--gold) 45%,var(--ink-3))}
+.gm-scale .z3{flex:25;background:color-mix(in srgb,var(--dim-D) 45%,var(--ink-3))}
+.gm-marker{position:absolute;top:0;transform:translateX(-50%);text-align:center}
+.gm-marker b{font-size:11px;white-space:nowrap}
+.gm-marker s{display:block;width:2px;height:10px;background:var(--paper);margin:2px auto 0}
+.gm-zones{display:flex;justify-content:space-between;font-size:9.5px;color:var(--paper-faint);margin-top:5px}
+.gm-read{border-left:3px solid var(--gm-col);background:var(--wash);border-radius:0 10px 10px 0;padding:10px 13px;font-size:12.5px;color:var(--paper-dim);line-height:1.6;margin-top:10px}
+.cl-plain{font-size:13.5px;color:var(--paper-dim);line-height:1.65;margin:10px 0 14px}
+.cl-plain b{color:var(--paper)}
+.cl-step{border:1px solid var(--line);border-left:3px solid var(--stc);border-radius:var(--r-sm);background:linear-gradient(180deg,var(--ink-2),var(--ink-1));padding:14px 16px;margin-bottom:10px}
+.cl-step .n{display:inline-flex;width:22px;height:22px;border-radius:50%;border:1px solid var(--stc);color:var(--stc);font-size:11px;font-weight:700;align-items:center;justify-content:center;margin-right:8px}
+.cl-step .h{font-size:13.5px}
+.cl-step p{font-size:13px;color:var(--paper-dim);line-height:1.65;margin-top:8px}
+.cl-step .duo{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.cl-step .duo>div{font-size:12.5px;color:var(--paper-dim);border:1px dashed var(--line);border-radius:10px;padding:9px 12px;line-height:1.55}
+.cl-step .duo b{display:block;margin-bottom:2px}
+.dg-map{width:min(60vw,240px);margin:2px auto 10px}
+.dg-bar{display:grid;grid-template-columns:20px 1fr 60px;align-items:center;gap:9px;margin-bottom:24px}
+.dg-bar .fk{font-family:var(--font-display);font-weight:700;color:var(--fc)}
+.dg-track{position:relative;height:5px;border-radius:99px;background:var(--ink-3)}
+.dg-track .gp{position:absolute;top:0;height:100%;background:color-mix(in srgb,var(--fc) 45%,transparent);border-radius:99px}
+.dg-track .pd{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:var(--pc);transform:translate(-50%,-50%)}
+.dg-track .pl{position:absolute;top:10px;transform:translateX(-50%);font-size:9.5px;font-weight:700;color:var(--pc);white-space:nowrap}
+.dg-bar .pts{font-size:10.5px;color:var(--paper-faint);text-align:right}
+.dg-compound{border:1px dashed var(--line-strong);border-radius:10px;padding:11px 13px;font-size:12.5px;color:var(--paper-dim);line-height:1.6;margin-bottom:10px}
+.dg-lpi{display:block;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--paper-faint);margin-bottom:10px}
+
+.comp-row{display:grid;grid-template-columns:76px 1fr 30px;align-items:center;gap:10px;margin-bottom:13px}
+.comp-row>span:first-child{font-size:11.5px;color:var(--paper-dim)}
+.comp-track{position:relative;height:14px}
+.comp-track::before{content:"";position:absolute;top:6px;left:0;right:0;height:2px;background:var(--ink-3);border-radius:99px}
+.comp-range{position:absolute;top:4px;height:6px;border-radius:99px;background:color-mix(in srgb,var(--dc) 30%,transparent)}
+.comp-dot{position:absolute;top:3px;width:8px;height:8px;border-radius:50%}
+.comp-avg{position:absolute;top:0;width:3px;height:14px;border-radius:2px;background:var(--dc);box-shadow:0 0 8px var(--dc)}
+.comp-row b{font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+.comp-legend{display:flex;flex-wrap:wrap;gap:5px 14px;font-size:11px;color:var(--paper-dim);margin-top:10px}
+.comp-legend .k{display:inline-flex;align-items:center;gap:6px}
+.comp-legend .k i{width:8px;height:8px;border-radius:50%}
+.verdict{border-left:3px solid var(--vc)}
+.verdict>b{font-size:14.5px;display:block;margin-bottom:6px;font-family:var(--font-display)}
+
+.exec-card{position:relative;border-top:3px solid var(--xc)}
+.exec-chip{position:absolute;top:14px;right:14px;font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.exec-chip.win{color:var(--green);background:color-mix(in srgb,var(--green) 14%,transparent)}
+.exec-chip.watch{color:var(--gold);background:var(--gold-soft)}
+.exec-chip.risk{color:var(--dim-D);background:color-mix(in srgb,var(--dim-D) 14%,transparent)}
+.exec-card .num{font-family:var(--font-display);font-size:36px;color:var(--xc);line-height:1}
+.exec-card .lbl{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--paper-dim);margin:3px 0 9px}
+.exec-card .plain{margin-top:8px;border-top:1px dashed var(--line);padding-top:8px;font-size:12.5px;color:var(--paper-faint)}
+
+.anchor-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;border:1px solid var(--line);border-left:3px solid var(--dc);border-radius:12px;background:var(--wash);padding:11px 14px;margin-bottom:8px}
+.anchor-row .dimname{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--paper-faint)}
+.anchor-row .holder{display:flex;align-items:center;gap:8px;font-size:12.5px;grid-row:2;grid-column:1}
+.anchor-row .holder .avatar{width:26px;height:26px;font-size:9px}
+.anchor-row .score{grid-row:1/3;grid-column:2;font-family:var(--font-display);font-size:24px;color:var(--dc)}
+.lt-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 12px}
+.lt-btn{min-height:44px;border:1px solid var(--line);border-radius:11px;background:var(--wash);font-size:12px;font-weight:600;color:var(--paper-dim)}
+.lt-btn.active{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+.lt-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
+.lt-slot{border:1px solid var(--line);border-radius:10px;background:var(--wash);padding:8px 4px;text-align:center}
+.lt-slot .f{font-family:var(--font-display);font-weight:700;color:var(--fc);font-size:15px;display:block}
+.lt-slot .who{display:block;font-size:9px;color:var(--paper-dim);margin:3px 0 1px}
+.lt-slot .who i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mc);margin-right:3px}
+.lt-slot .sc{font-size:9.5px;color:var(--paper-faint)}
+.lt-slot .st{display:block;font-size:8px;letter-spacing:.5px;text-transform:uppercase;margin-top:3px;font-weight:700}
+.lt-slot.reanchored{border-color:rgba(228,183,91,.5)}
+.lt-slot.reanchored .st{color:var(--gold)}
+.lt-slot.unheld{border-color:rgba(232,99,92,.55);border-style:dashed}
+.lt-slot.unheld .st{color:var(--dim-D)}
+.lt-verdict{font-size:12.5px;color:var(--paper-dim);line-height:1.65;border:1px dashed var(--line-strong);border-radius:12px;padding:12px 14px}
+.lt-verdict b{color:var(--paper)}
+
+.dir-card{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;background:var(--wash);padding:12px 15px;margin-bottom:8px}
+.dir-card .need{flex:1}
+.dir-card .need b{display:block;font-size:13px}
+.dir-card .need span{font-size:11px;color:var(--paper-faint)}
+.dir-card .who{display:flex}
+.dir-card .who .avatar{width:30px;height:30px;font-size:9.5px;margin-left:-6px;border:2px solid var(--ink-1)}
+
+.impact{display:flex;gap:8px;overflow-x:auto;padding:2px 20px 12px;scrollbar-width:none}
+.impact::-webkit-scrollbar{display:none}
+.imp{flex:none;border:1px solid var(--line);border-radius:12px;background:var(--wash);padding:11px 16px;text-align:center;min-width:86px}
+.imp b{font-family:var(--font-display);font-size:25px;color:var(--paper)}
+.imp span{display:block;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--paper-faint)}
+.imp.gold{border-color:rgba(228,183,91,.5)}
+.imp.gold b{color:var(--gold)}
+.movecard .mc-head{display:flex;align-items:center;gap:11px}
+.movecard .mc-num{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.movecard .mc-icon{font-size:18px}
+.movecard h3{font-size:17px;flex:1}
+.movecard .tag{font-size:9.5px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:4px 10px;color:var(--paper-dim);flex:none}
+.mc-flow{display:none;margin-top:14px}
+.movecard.open .mc-flow{display:block;animation:viewIn .3s var(--ease)}
+.mc-cell{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--wash)}
+.mc-cell b{display:block;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:5px}
+.mc-cell.before b{color:var(--dim-D)}
+.mc-cell.move{border-color:rgba(228,183,91,.45);background:var(--gold-soft)}
+.mc-cell.move b{color:var(--gold)}
+.mc-cell.after b{color:var(--green)}
+.mc-cell p{font-size:13px}
+.mc-varr{display:flex;justify-content:center;padding:5px 0;color:var(--gold)}
+.mc-varr svg{width:16px;height:16px;transform:rotate(90deg);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.evidence{display:block;margin-top:12px;font-size:11.5px;color:var(--paper-faint);border-top:1px dashed var(--line);padding-top:9px}
+.evidence b{color:var(--gold)}
+.mc-open{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:11.5px;font-weight:600;color:var(--gold)}
+.mc-open::after{content:"▾";transition:transform .3s}
+.movecard.open .mc-open::after{transform:rotate(180deg)}
+.jr-node{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.jr-node:last-child{border-bottom:0}
+.jr-node i{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font-style:normal;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.jr-node b{display:block;font-size:13.5px}
+.jr-node span{font-size:12.5px;color:var(--paper-dim);line-height:1.55}
+
+/* ══════════ BEGIN ══════════ */
+.kicker{display:inline-block;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.hook{font-family:var(--font-display);font-style:italic;font-size:15.5px;color:var(--paper);margin-bottom:12px}
+.ptile{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.ptile:last-of-type{border-bottom:0}
+.ptile .pi{font-size:18px;flex:none;padding-top:1px}
+.ptile b{font-size:13.5px;display:block}
+.ptile span{font-size:12.5px;color:var(--paper-dim);line-height:1.55}
+.pfoot{font-size:12px;color:var(--paper-faint);border-top:1px dashed var(--line);padding-top:10px;margin-top:8px;font-style:italic}
+.mission{text-align:center;padding:34px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:20px 0;background:linear-gradient(180deg,transparent,rgba(155,126,222,.06),transparent)}
+.mission .tg{font-family:var(--font-display);font-size:30px}
+.mission .tg em{color:var(--gold)}
+.mission p{font-size:13.5px;color:var(--paper-dim);line-height:1.7;max-width:340px;margin:10px auto 14px}
+.mission p b{color:var(--paper)}
+.spectrum.wide{max-width:280px;margin:0 auto}
+.proof{display:flex;gap:8px;overflow-x:auto;padding:2px 20px 14px;scrollbar-width:none;align-items:center}
+.proof::-webkit-scrollbar{display:none}
+.proof .tag{flex:none;font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.proof .co{flex:none;font-family:var(--font-display);font-size:13px;color:var(--paper-dim);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.offer{position:relative;padding-top:26px}
+.offer .flag{position:absolute;top:-12px;left:18px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;padding:6px 14px;border-radius:999px;background:var(--ink-3);color:var(--paper-dim);border:1px solid var(--line-strong)}
+.offer.featured{border-color:rgba(228,183,91,.55);box-shadow:0 18px 50px -20px rgba(228,183,91,.35)}
+.offer.featured .flag{background:linear-gradient(135deg,#F0CE84,var(--gold));color:var(--btn-ink);border:0}
+.offer h3{font-size:21px}
+.offer ul{margin:12px 0}
+.offer ul li{position:relative;padding:7px 0 7px 22px;font-size:13.5px;color:var(--paper-dim);line-height:1.6;border-bottom:1px solid var(--line)}
+.offer ul li:last-child{border-bottom:0}
+.offer ul li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:700}
+.offer ul li b{color:var(--gold)}
+.demo-strip{border:1px dashed var(--line-strong);border-radius:12px;padding:11px 13px;margin-top:12px}
+.ds-cap{display:block;font-size:11px;color:var(--paper-faint);margin-bottom:8px}
+.demo-chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--paper-dim);border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin:0 6px 6px 0}
+.demo-chip i{font-style:normal;color:var(--green)}
+.tiers{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:6px 0 12px}
+.tier{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;font-size:13px;color:var(--paper-dim);border-bottom:1px solid var(--line)}
+.tier:last-child{border-bottom:0}
+.tier b{font-family:var(--font-display);font-size:15px;color:var(--paper)}
+.tier.hot{background:var(--gold-soft);color:var(--paper)}
+.tier.hot b{color:var(--gold)}
+.value-math{border:1px solid rgba(228,183,91,.4);background:var(--gold-soft);border-radius:12px;padding:13px 15px;font-size:12.5px;color:var(--paper-dim);line-height:1.65;margin-bottom:12px}
+.value-math b{color:var(--paper)}
+.price-line{margin:6px 0 14px}
+.price-line .now{font-family:var(--font-display);font-size:34px;color:var(--gold)}
+.price-line .per{font-size:13px;color:var(--paper-dim)}
+.price-line .urgency{display:block;font-size:11.5px;color:var(--paper-faint);margin-top:5px;line-height:1.55}
+.walkout{border-top:1px dashed var(--line);padding-top:11px;margin:4px 0 14px;font-size:12.5px;color:var(--paper-dim);line-height:1.65}
+.walkout b{color:var(--paper)}
+.vpunch{text-align:center;padding:10px 0 6px}
+.vpunch .vk{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.vpunch .l1{font-family:var(--font-display);font-size:21px;margin-top:8px}
+.vpunch .l2{font-family:var(--font-display);font-size:21px;color:var(--gold);margin-bottom:14px}
+.vp-stat{display:block;font-size:12.5px;color:var(--paper-dim);padding:8px 0;border-top:1px solid var(--line)}
+.vp-stat b{font-family:var(--font-display);color:var(--gold);font-size:16px;margin-right:6px}
+.fac .fac-photo{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,var(--ink-3),var(--ink-2));border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:17px;color:var(--gold);flex:none}
+.fac .ftop{display:flex;gap:13px;align-items:center;margin-bottom:10px}
+.fac .frole{font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.final{text-align:center;padding:30px 0 10px}
+.final h2{font-family:var(--font-display);font-size:29px;line-height:1.15;margin-bottom:10px}
+.final p{font-size:14px;color:var(--paper-dim);max-width:320px;margin:0 auto 18px;line-height:1.65}
+footer{margin-top:26px;padding:22px 20px 8px;border-top:1px solid var(--line)}
+footer p{font-size:10.5px;color:var(--paper-faint);line-height:1.6;margin-bottom:10px}
+
+/* CTA banner between sections */
+.next{display:flex;align-items:center;gap:14px;border:1px solid rgba(228,183,91,.4);background:linear-gradient(135deg,rgba(228,183,91,.14),transparent 70%);border-radius:var(--r);padding:17px 18px;margin:20px 20px 6px}
+.next b{font-family:var(--font-display);font-size:16px;display:block}
+.next span{font-size:12px;color:var(--paper-dim)}
+.next .go{margin-left:auto;flex:none;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F0CE84,var(--gold));color:var(--btn-ink);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700}
+.next:active{transform:scale(.985)}
+.next{text-align:left}
+.next span span,.jteaser span span{display:block}
+
+.divider{height:1px;background:var(--line);margin:24px 20px}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i></div>
+
+<!-- ══════════ TOP BAR ══════════ -->
+<header class="topbar">
+  <a class="brand" href="#" onclick="return false" aria-label="Aurelion — LPI Temperament Atlas">
+    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" stroke="#E4B75B" stroke-width="1.6"/>
+      <path d="M20 6 L23.2 16.8 L34 20 L23.2 23.2 L20 34 L16.8 23.2 L6 20 L16.8 16.8 Z" fill="#E4B75B"/>
+    </svg>
+    <span>Aurelion<small>Evolve Beyond</small></span>
+  </a>
+  <button class="compass" id="compassBtn" aria-label="Open your Atlas Journey progress">
+    <span class="pct" id="compassPct">0%</span>
+    <svg viewBox="0 0 36 36" aria-hidden="true">
+      <circle class="ring-bg" cx="18" cy="18" r="15.5" stroke-width="2.5"/>
+      <circle class="ring-fg" id="ringFg" cx="18" cy="18" r="15.5" stroke-width="2.5" stroke-dasharray="97.4" stroke-dashoffset="97.4"/>
+      <path class="star" d="M18 10 L19.8 16.2 L26 18 L19.8 19.8 L18 26 L16.2 19.8 L10 18 L16.2 16.2 Z"/>
+    </svg>
+  </button>
+</header>
+
+<!-- ══════════ VIEW · STORY ══════════ -->
+<main class="view" id="v-story">
+  <section class="hero pad">
+    <span class="eyebrow">Leonard Personality Inventory · Certified Practice</span>
+    <h1 class="mega">Adaptive Capacity <span style="font-weight:500">with</span> <b>LPI</b></h1>
+    <p class="tagline">Your team's chemistry, <em>made visible.</em></p>
+    <p class="lead">Every team runs on invisible wiring — who thinks first, who acts first, who holds the people, who holds the task. The ONARD Team Map puts all of it on one page. Then we show you exactly which moves matter first.</p>
+    <div class="hero-map">
+      <svg id="heroQuad" class="qmap" viewBox="0 0 640 640" role="img" aria-label="Preview of the ONARD team quadrant map"></svg>
+      <div class="cap">Six real professionals, one map — explore them in the Team Map tab</div>
+    </div>
+    <div class="cta-row">
+      <button class="btn btn-gold btn-block" data-goto="map">Explore the Live Team Map</button>
+      <button class="btn btn-ghost btn-block" data-goto="begin">See Engagements</button>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b>26</b><span>Personality styles</span></div>
+      <div class="stat"><b>5</b><span>Behavioural dimensions</span></div>
+      <div class="stat"><b>11</b><span>Report languages</span></div>
+      <div class="stat"><b>2001</b><span>Validated since</span></div>
+    </div>
+    <button class="jteaser rv" id="jteaser" aria-label="Open your Atlas Journey">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="#E4B75B" stroke-width="1.4"/>
+        <path d="M20 8 L22.6 17.4 L32 20 L22.6 22.6 L20 32 L17.4 22.6 L8 20 L17.4 17.4 Z" fill="#E4B75B"/>
+      </svg>
+      <span style="text-align:left"><b>The Atlas Journey</b><span id="jteaserSub">7 discoveries hide in this Atlas. Find them all.</span></span>
+      <span class="go">›</span>
+    </button>
+  </section>
+
+  <section class="boardrooms">
+    <div class="pad rv">
+      <span class="eyebrow">The Track Record</span>
+      <h2 class="st">The instrument has already been in these boardrooms.</h2>
+      <p class="sub">Organisations where the LPI's creator, Prof Dr Leonard Yong, personally consulted and trained leaders across 25 years:</p>
+    </div>
+    <div class="chips rv" id="boardChips"></div>
+    <p class="gemline rv">…and deployed via <b>Gem Consultancy</b>, our certifying body, for <b>Shell</b> and the <b>Government of Sarawak</b>. The same instrument. The same lineage. Now scoped for your team.
+      <span class="src">Sources: Yong, L.M.S., Emotional Excellence in the Workplace; Gem Consultancy engagement record, gem.com.my.</span>
+    </p>
+  </section>
+
+  <section class="pad">
+    <div class="rv">
+      <span class="eyebrow">01 · The Science</span>
+      <h2 class="st">A decade of research. A quarter-century in boardrooms.</h2>
+      <p class="sub">The LPI wasn't written for a magazine quiz. It was built by a psychometrician, tested against a published norms &amp; technical manual, and refined across 25 years of live deployment with leaders across Asia and the Gulf.</p>
+    </div>
+    <div class="card creator rv">
+      <div class="ctop">
+        <div class="fac-photo">LY</div>
+        <div><h3>Prof Dr Leonard Yong</h3><div class="role">Psychometrician · Creator of the LPI</div></div>
+      </div>
+      <p>Designed the LPI at <b>Universiti Malaya after a decade of research</b>, then spent <b>25 years deploying it across Asia and the Gulf</b> — refining the instrument leader by leader, boardroom by boardroom. Author of <em>Emotional Excellence in the Workplace</em> and of the LPI's published Norms &amp; Technical Manual.</p>
+      <p>Face-validity studies in the Norms Manual report <b>85% agreement among supervisors</b> (n=25) and over 80% among electronics-corporation managers (n=20) — the profile matches how people who actually work with you see you.</p>
+    </div>
+    <div class="card lineage rv">
+      <h3 style="margin-bottom:6px">The lineage — 2,400 years, one missing force</h3>
+      <div class="line-item"><span class="era">~400 BC</span><p><b>Hippocrates</b> observes that people come in four temperaments — the oldest personality framework on record.</p></div>
+      <div class="line-item"><span class="era">~200 AD</span><p><b>Galen</b> names them: sanguine, choleric, melancholic, phlegmatic. The four-corner map is born.</p></div>
+      <div class="line-item"><span class="era">1900s</span><p>Modern Western instruments (the DISC family and kin) put the four temperaments to work — but stop at describing behaviour.</p></div>
+      <div class="line-item"><span class="era">2001</span><p><b>The LPI</b> adds the missing fifth force — <b style="color:var(--dim-O)">Openness</b> — grounds it in a holistic model of the whole person, and norms it in Asia. Five forces, 26 named styles, 11 report languages.</p></div>
+    </div>
+  </section>
+
+  <div class="rv">
+    <div class="pad">
+      <h2 class="st" style="font-size:21px">Five forces live in every person — each one quietly demanding something.</h2>
+      <p class="microsub">Everyone has all five. Your top two run the show — and the starved ones run the drama.</p>
+    </div>
+    <div class="swipehint">Swipe the forces</div>
+    <div class="carousel" id="forcesCar"></div>
+    <div class="cdots" id="forcesDots"></div>
+  </div>
+
+  <section class="pad">
+    <button class="card o-spot rv" id="oSpot" style="width:100%;text-align:left">
+      <span class="O">O</span>
+      <p><b>The fifth force is the differentiator.</b> Most instruments stop at four corners. The LPI's Openness isn't a corner at all — it sits in the middle of the map as a <b>creative amplifier</b>: high O makes whatever else you have more inventive, and licenses you to roam the map when the team needs it. In an era where AI compresses every technical moat, O is the adaptability force — which is exactly why Aurelion built its practice on the one instrument that measures it.</p>
+      <span class="unlockline" id="oSpotLine">✦ Tap to mark this as read</span>
+    </button>
+  </section>
+
+  <section class="pad">
+    <div class="rv">
+      <span class="eyebrow">02 · The Deeper Frame</span>
+      <h2 class="st">Most tools stop at behaviour. This one reaches underneath.</h2>
+      <p class="sub">Yong's Holistic Model reads a person on three levels — and names the two needs every human brings to work. This is what separates the LPI from a label-maker: it explains <em>why</em> people do what they do, not just what they do.</p>
+    </div>
+    <div class="card soma rv" style="--sc:var(--dim-R)"><span class="greek">Soma</span><h3>Body</h3><p>The physical engine: sleep, food, movement, energy, the nervous system carrying every workday. When the body runs empty, every dial reads worse. It's why our Life-Stage Pulse Check asks about your bio-habits before we ever open your report.</p></div>
+    <div class="card soma rv" style="--sc:var(--dim-A)"><span class="greek">Psycho</span><h3>Psyche</h3><p>The mind: thoughts, emotions and will — the patterns the LPI maps across five forces and 26 styles. This is where behaviour is wired, where stress signatures live, and where self-awareness pays its dividends.</p></div>
+    <div class="card soma rv" style="--sc:var(--dim-O)"><span class="greek">Pneuma</span><h3>Spirit</h3><p>Meaning, values and purpose — the thermostat of the inner life. When the spirit is well, emotions spike but don't stay spiked, and intuition stays sharp. When it isn't, regulation slips and judgement dulls. Deep transformation starts here.</p></div>
+    <div class="card rv" style="border-left:3px solid var(--dim-N)">
+      <span class="kicker" style="color:var(--dim-N)">Need № 1 · Social-Emotional Security</span>
+      <p class="needq">"Do I belong here? Am I accepted?"</p>
+      <p>The need to feel you truly belong to the relationships you're in. <b>Guarded hardest by the N and A forces.</b> When it's starving: defensiveness, silence, over-compromise — and the quiet exits that blindside managements.</p>
+    </div>
+    <div class="card rv" style="border-left:3px solid var(--dim-D)">
+      <span class="kicker" style="color:var(--dim-D)">Need № 2 · Inner Significance</span>
+      <p class="needq">"Do I matter here? Do I add value?"</p>
+      <p>The need to feel important to others and to add real value. <b>Chased hardest by the R and D forces.</b> When it's starving: showboating, credit wars, steamrolling — and burnout heroics that end in collapse.</p>
+    </div>
+    <div class="punch rv">"Pay cheques rent behaviour. These two needs buy loyalty."
+      <small>Every Aurelion training course uses the LPI to calibrate which need is starving in which person — so development speaks to deeper motivation, and the transformation actually holds.</small>
+      <span class="src">Source: Yong, L.M.S., LPI Holistic Model — two basic human needs. LPI Certification Programme, Day 2.</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="pad rv">
+      <span class="eyebrow">For the Skeptic in the Room</span>
+      <h2 class="st">The soft stuff shows up in the hard numbers.</h2>
+    </div>
+    <div class="pad">
+      <div class="card skep rv"><div class="big">95% <small>vs 10–15%</small></div><p>Roughly 95% of professionals rate themselves self-aware. Rigorous testing finds only 10–15% actually are. The gap between those numbers is where teams bleed.</p><span class="src">Source: Eurich, T. (2018), "What Self-Awareness Really Is," Harvard Business Review — 10 investigations, ≈5,000 participants.</span></div>
+      <div class="card skep rv"><div class="big">US$8.9<small> trillion / yr</small></div><p>What quietly disengaged employees cost the global economy annually — about 9% of global GDP, more than double Japan's entire output. Your slice of that leak is on payroll right now.</p><span class="src">Source: Gallup (2024), State of the Global Workplace; IMF World Economic Outlook (Oct 2024).</span></div>
+      <div class="card skep rv"><div class="big">+20%<small> more blind spots</small></div><p>Korn Ferry analysed 6,977 executive self-assessments across 486 listed companies: staff at the poorly performing firms carried 20% more blind spots. Self-awareness literally shows up in the share price.</p><span class="src">Source: Korn Ferry Institute analysis of 6,977 self-assessments, 486 publicly traded companies.</span></div>
+    </div>
+  </section>
+
+  <button class="next rv" data-goto="map"><span><b>Next · The ONARD Team Map</b><span>Six real professionals. One page. Tap any of them.</span></span><span class="go">→</span></button>
+</main>
+
+<!-- ══════════ VIEW · MAP ══════════ -->
+<main class="view" id="v-map">
+  <section class="pad" style="padding-top:16px">
+    <span class="eyebrow">03 · The ONARD Team Map</span>
+    <h2 class="st">Six real professionals. One page.</h2>
+    <p class="sub">A live demo cohort of six real, anonymised LPI profiles — mapped as one working team. <strong>Left is people, right is task. Top thinks first, bottom acts first.</strong> The dotted halo is each person's <strong style="color:var(--dim-O)">Openness altitude</strong> — the reach that lets them roam. <strong style="color:var(--gold)">Tap any dot to open the full dossier.</strong></p>
+    <div class="ftoggle" id="ftoggle" role="tablist" aria-label="Formation view">
+      <span class="thumb" aria-hidden="true"></span>
+      <button id="btnCurrent" class="active">Current Formation</button>
+      <button id="btnOptimized">Optimized Formation</button>
+    </div>
+  </section>
+  <div class="chips" id="legend"></div>
+  <div class="mapwrap">
+    <svg id="quadrant" class="qmap" viewBox="0 0 640 640" role="img" aria-label="Interactive ONARD quadrant map of six LPI profiles"></svg>
+  </div>
+  <div class="maphint">Tap a dot or a chip to open a dossier</div>
+  <section class="pad">
+    <div class="mapkeys rv">
+      <span><i></i>dotted halo = <b>Openness altitude</b> (the wild-card reach)</span>
+      <span><i class="band"></i>soft cross-band = the <b>balanced zone</b> — dots here ride the line, they don't "belong" to a quadrant</span>
+    </div>
+    <div class="fnote" id="formationNote"><b style="color:var(--gold)">What just moved, and why it matters:</b> in the LPI framework, anyone with two or more strong dimensions can consciously <em>flex</em> toward the corner the team needs — and high-Openness people are the wild cards licensed to roam furthest. Same six people. Zero hires. Every corner covered. The cards below explain each move.</div>
+
+    <div class="orail rv" id="oRail">
+      <h4>The third axis · Openness altitude</h4>
+      <p class="osub">In the LPI, Openness doesn't live on the flat map — it's the <b>height</b> axis: the higher the O score, the further that person can roam from their home quadrant to borrow any other style.</p>
+      <div class="ortrack" id="orTrack"></div>
+      <p class="osub" id="orNote" style="margin-top:6px"></p>
+    </div>
+
+    <div class="ptabs" id="ptabs">
+      <button class="active" data-view="people">The Six</button>
+      <button data-view="insight">Weak Spots</button>
+    </div>
+    <div class="ptitle" id="pstackTitle"></div>
+    <div class="psub" id="pstackSub"></div>
+    <div id="pstackList"></div>
+  </section>
+  <button class="next rv" data-goto="lab"><span><b>Next · The Chemistry Lab</b><span>Six people hide 57 combinations. Mix any of them.</span></span><span class="go">→</span></button>
+</main>
+
+<!-- ══════════ VIEW · LAB ══════════ -->
+<main class="view" id="v-lab">
+  <section class="pad" style="padding-top:16px">
+    <span class="eyebrow">04 · The Chemistry Lab</span>
+    <h2 class="st">Mix any two. Or three. Or the whole team.</h2>
+    <p class="sub">Individual profiles are half the map. The real leverage is in combinations — every mix gets its own name, its collective LPI style (from Dr Yong's 26 official patterns), its synergy, its friction — and a playbook.</p>
+    <div class="labcount rv">
+      <div class="lc-box"><b>57</b><span>combinations hidden in six people</span></div>
+      <div class="lc-box"><b id="mixCount">0</b><span>mixes you've explored</span></div>
+    </div>
+    <div class="picker" id="labPicker"></div>
+    <div class="labhint">Tap to add or remove people — pairs, trios, or all six</div>
+    <div class="labout" id="labOut"></div>
+  </section>
+  <button class="next rv" data-goto="insights"><span><b>Next · Insights</b><span>The predictable arguments, the analytics, the five moves.</span></span><span class="go">→</span></button>
+</main>
+
+<!-- ══════════ VIEW · INSIGHTS ══════════ -->
+<main class="view" id="v-insights">
+  <div class="pills" id="insPills">
+    <button class="on" data-sv="conflicts">Conflicts</button>
+    <button data-sv="analytics">Analytics</button>
+    <button data-sv="moves">The Moves</button>
+  </div>
+
+  <!-- Conflicts -->
+  <div class="subview on" id="sv-conflicts">
+    <section class="pad" style="padding-top:6px">
+      <span class="eyebrow">05 · Two Conflicts, Five Dials</span>
+      <h2 class="st">Almost every "personality clash" is one of two gaps.</h2>
+      <p class="sub">The map has two axes — so there are exactly two ways people miss each other. Learn these two, and most office drama suddenly has subtitles.</p>
+      <div class="axmini-wrap rv">
+        <svg id="axmini" viewBox="0 0 250 250" aria-hidden="true">
+          <rect x="15" y="15" width="220" height="220" rx="16" fill="none" stroke="rgba(255,255,255,.14)"/>
+          <line x1="125" y1="15" x2="125" y2="235" stroke="rgba(255,255,255,.16)"/>
+          <line x1="15" y1="125" x2="235" y2="125" stroke="rgba(255,255,255,.16)"/>
+          <text x="125" y="9" text-anchor="middle" font-size="9" fill="#8C94B1" letter-spacing="1">THINKS FIRST · DATA</text>
+          <text x="125" y="247" text-anchor="middle" font-size="9" fill="#8C94B1" letter-spacing="1">ACTS FIRST · ACTION</text>
+          <text x="7" y="125" text-anchor="middle" font-size="9" fill="#8C94B1" letter-spacing="1" transform="rotate(-90 7 125)">PEOPLE · FEELINGS</text>
+          <text x="244" y="125" text-anchor="middle" font-size="9" fill="#8C94B1" letter-spacing="1" transform="rotate(90 244 125)">TASK · OUTCOMES</text>
+          <text x="68" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#E06CA8" font-family="Fraunces,serif">N</text>
+          <text x="182" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#5B8DEF" font-family="Fraunces,serif">A</text>
+          <text x="68" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#43C88F" font-family="Fraunces,serif">R</text>
+          <text x="182" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#E8635C" font-family="Fraunces,serif">D</text>
+          <circle cx="125" cy="125" r="26" fill="none" stroke="#9B7EDE" stroke-dasharray="3 4"/>
+          <text x="125" y="132" text-anchor="middle" font-size="18" font-weight="700" fill="#9B7EDE" font-family="Fraunces,serif">O</text>
+        </svg>
+      </div>
+      <div class="card conf rv" style="--cc:var(--dim-A)">
+        <b class="t">Gap 1 · The Pacing Conflict — top vs bottom</b>
+        <p>The top half is <b>introvert · thinks first · data-orientated</b>: they process quietly, then move. The bottom half is <b>extrovert · acts first · action-orientated</b>: they move, then adjust. Put them in one meeting and it feels like one side is dragging and the other is reckless. Neither is true — they're just on different clocks.</p>
+        <p class="who">In this cohort: JG &amp; SM (think first) vs LCH &amp; ED (act first)</p>
+      </div>
+      <div class="card conf rv" style="--cc:var(--dim-R)">
+        <b class="t">Gap 2 · The Priorities Conflict — left vs right</b>
+        <p>The left half scans the room's <b>feelings</b> first: is everyone okay, is everyone heard? The right half scans the <b>outcome</b> first: what's the deadline, what's the number? One side protects the person, the other protects the result — and each thinks the other has its priorities backwards.</p>
+        <p class="who">In this cohort: ED, FM &amp; ZW (people first) vs LCH, JG &amp; SM (task first)</p>
+      </div>
+      <p class="sub rv" style="margin-top:14px"><b>Now zoom in one level.</b> Underneath the two axes, every person carries five volume knobs — one per force. Nobody's setting is wrong. But when two people's knobs sit far apart on the same force, that exact gap predicts a specific, recurring argument.</p>
+    </section>
+    <div class="swipehint">Swipe the dial board</div>
+    <div class="carousel tight" id="dialCar"></div>
+    <div class="cdots" id="dialDots"></div>
+    <section class="pad" style="padding-bottom:0">
+      <h2 class="st rv" style="font-size:21px">The seven predictable arguments — with names on them</h2>
+      <p class="microsub rv">Pick a dial: <b style="color:var(--gold)">see the gap</b>, <b style="color:var(--dim-D)">hear how it sounds</b>, <b style="color:var(--dim-R)">read the protocol</b> that ends it. The two <b>dashed tabs</b> are the diagonals — the LPI's <em>dual-opposite</em> pairs, where two dials gap at once.</p>
+    </section>
+    <div class="cl-tabs" id="clashTabs" role="tablist"></div>
+    <div class="clash" id="clashPanel"></div>
+  </div>
+
+  <!-- Analytics -->
+  <div class="subview" id="sv-analytics">
+    <section class="pad" style="padding-top:6px">
+      <span class="eyebrow">06 · Team Analytics</span>
+      <h2 class="st">One team, one temperament — and the numbers underneath.</h2>
+      <p class="sub">Average the six and a collective personality emerges. Then we go deeper: the readouts a CEO cares about, and the ones every teammate can act on tomorrow morning.</p>
+      <div class="card rv">
+        <h3 style="font-size:15px;margin-bottom:14px">Team composite · each dot is one member, the bright marker is the team average</h3>
+        <div id="compChart"></div>
+      </div>
+      <div class="card verdict rv" style="--vc:var(--dim-O)"><b>The verdict: an idea factory with its own inspection line…</b><p>In plain terms: <b style="color:var(--dim-O)">Openness</b> is the "new ideas" force and <b style="color:var(--dim-A)">Analytical</b> is the "check it properly" force — and they tie as this team's highest, at 82 each. Four of six people score 80+ on Openness, so options are never scarce; and with SM at A96 and JG at A86, every option can be stress-tested in-house. Most companies have to hire one half of that equation. This team was born with both.</p></div>
+      <div class="card verdict rv" style="--vc:var(--dim-D)"><b>…but the "pull the trigger" force runs low…</b><p><b style="color:var(--dim-D)">Decisive</b> is the force that ends debates: "yes, we're doing this, by Friday, and I own it." Team average: 72 — the lowest dial on the board — and only one of six clears 80. Brilliant options pile up beautifully while the final call arrives late or not at all. It doesn't feel like a problem, because the meetings stay pleasant. But three of these six LPI reports literally prescribe, in writing, "learn to make decisions a little faster." That's the map pointing at where the money leaks.</p></div>
+      <div class="card verdict rv" style="--vc:var(--dim-R)"><b>…and the warmth is carried by too few shoulders.</b><p><b style="color:var(--dim-R)">Relational</b> is the people-energy force — warming clients, lighting up rooms, making people want to stay. The team average of 75 looks healthy, until you see the spread: 92 down to 50, the widest gap on the board. Two people carry nearly all the external charm (a burnout risk wearing a smile), while the quietest strong performer may never complain about anything… right up until the resignation letter. The map flags that person months before the letter arrives.</p></div>
+
+      <h2 class="st rv" style="font-size:21px;margin-top:22px">The scorecard · six numbers a CEO asks about</h2>
+      <p class="microsub rv">Read it like a traffic light: <b style="color:#43C88F">green — use it harder</b> · <b style="color:var(--gold)">amber — watch it</b> · <b style="color:var(--dim-D)">red — the leak, fix it first</b>. Every number is computed live from the six profiles.</p>
+      <div id="execGrid"></div>
+
+      <h2 class="st rv" style="font-size:21px;margin-top:22px">The anchor board · who holds each force</h2>
+      <p class="microsub rv">An <b>anchor</b> is the strongest pair of hands on each force — the person the team leans on when that force is needed most. Healthy teams spread five anchors across many people.</p>
+      <div id="anchorBoard"></div>
+      <div class="card rv">
+        <h3 style="font-size:16px">Stress-test the anchors</h3>
+        <p style="margin-top:4px">Five forces, effectively <b>three pairs of hands</b> — LCH holds two anchors, ED holds two, SM holds one. Tap a button to simulate a resignation: the person <b>ghosts on the map</b>, and each of their corners either <b style="color:var(--gold)">re-anchors</b> (someone else carries it at 80+) or goes <b style="color:var(--dim-D)">unheld</b>.</p>
+        <div class="lt-btns" id="ltBtns"></div>
+        <div class="mapwrap" style="margin-bottom:10px"><svg id="anchorQuad" class="qmap" viewBox="0 0 640 640" role="img" aria-label="ONARD map showing who anchors each force"></svg></div>
+        <div class="lt-slots" id="ltSlots"></div>
+        <p class="lt-verdict" id="ltVerdict"></p>
+      </div>
+
+      <h2 class="st rv" style="font-size:21px;margin-top:22px">The teammate lens · who to go to, for what</h2>
+      <p class="microsub rv">Analytics aren't just for the corner office. This directory turns the map into a daily habit — the fastest route to the right brain for the job.</p>
+      <div id="directory"></div>
+    </section>
+  </div>
+
+  <!-- Moves -->
+  <div class="subview" id="sv-moves">
+    <section class="pad" style="padding-top:6px;padding-bottom:0">
+      <span class="eyebrow">07 · From Map to Moves</span>
+      <h2 class="st">The map isn't the point. The moves are.</h2>
+      <p class="sub">A map you admire changes nothing. So every Team Mapping Lab ends in five plain-language moves — each one prescribed by the live data in this Atlas, each with a before, an after, and a name on it. No jargon, no trust falls.</p>
+    </section>
+    <div class="impact rv">
+      <div class="imp"><b>6</b><span>same people</span></div>
+      <div class="imp"><b>0</b><span>new hires</span></div>
+      <div class="imp"><b>5</b><span>moves</span></div>
+      <div class="imp"><b>90</b><span>days</span></div>
+      <div class="imp gold"><b>1</b><span>shared language</span></div>
+    </div>
+    <section class="pad" style="padding-top:10px">
+      <div id="movesList"></div>
+      <div class="card rv">
+        <h3 style="font-size:16px;margin-bottom:4px">How an engagement runs</h3>
+        <div class="jr-node"><i>1</i><span><b>Week 0</b><span>Everyone assessed privately — full LPI report each, plus the Team Pulse Check</span></span></div>
+        <div class="jr-node"><i>2</i><span><b>Lab Day</b><span>The whole team, one room — your map, your chemistry, your protocols, agreed together</span></span></div>
+        <div class="jr-node"><i>3</i><span><b>Weeks 2–12</b><span>The five moves get installed and coached — owners, dates, and the new shared language</span></span></div>
+        <div class="jr-node"><i>4</i><span><b>Day 90</b><span>Review against the map — the language sticks, the friction doesn't</span></span></div>
+      </div>
+      <div class="punch rv">"You're not buying a report. You're buying Monday morning behaving differently."
+        <small>Every move above was prescribed by the live demo data in this Atlas. Your Lab produces the same five — carrying your team's names.</small>
+      </div>
+      <button class="btn btn-gold btn-block rv" data-goto="begin">See the Team Mapping Lab</button>
+    </section>
+  </div>
+</main>
+
+<!-- ══════════ VIEW · BEGIN ══════════ -->
+<main class="view" id="v-begin">
+  <section class="pad" style="padding-top:16px">
+    <span class="eyebrow">08 · The Pulse Checks</span>
+    <h2 class="st">We don't debrief a report. We debrief <em>you</em>.</h2>
+    <p class="sub">Everything you've explored runs on the LPI alone. Every Aurelion engagement layers one more instrument on top — a short Pulse Check that grounds the science in your real life and real operating reality. That's what makes the debrief land on <em>your</em> bottlenecks, not generic ones.</p>
+    <div class="card rv">
+      <span class="kicker">Included with every Personal Assessment</span>
+      <h3>The Life-Stage Pulse Check</h3>
+      <p class="hook">"Same profile, different decade, different playbook."</p>
+      <div class="ptile"><div class="pi">🧭</div><div><b>Where you are</b><span>Your life stage and current context — the terrain the profile is operating on</span></div></div>
+      <div class="ptile"><div class="pi">⚖️</div><div><b>What's weighing heaviest</b><span>Your biggest pain points, pressures and stress right now</span></div></div>
+      <div class="ptile"><div class="pi">🎯</div><div><b>What you're chasing</b><span>Your goals and aspirations for this year</span></div></div>
+      <div class="ptile"><div class="pi">🔋</div><div><b>Your daily engine</b><span>Sleep, diet, movement — and the people you spend the most hours with</span></div></div>
+      <div class="ptile"><div class="pi">🔍</div><div><b>Your 90 minutes</b><span>You choose the one area your debrief &amp; coaching goes deep on</span></div></div>
+      <p class="pfoot">Completed privately before your session — so from minute one, we're coaching your life, not reading you a document.</p>
+    </div>
+    <div class="card rv">
+      <span class="kicker">Included with every Team Mapping Lab</span>
+      <h3>The Team Pulse Check</h3>
+      <p class="hook">"Personality tells us the wiring. The Pulse Check tells us the load on it."</p>
+      <div class="ptile"><div class="pi">🏢</div><div><b>Your seat</b><span>Department, position, role and real responsibilities</span></div></div>
+      <div class="ptile"><div class="pi">🚧</div><div><b>Your bottlenecks</b><span>Where work actually jams — approvals, handoffs, decisions, information</span></div></div>
+      <div class="ptile"><div class="pi">🔥</div><div><b>Your frictions</b><span>The recurring tensions nobody has named out loud yet</span></div></div>
+      <div class="ptile"><div class="pi">💪</div><div><b>Your firepower</b><span>Team strengths, dependencies, and who you can't function without</span></div></div>
+      <div class="ptile"><div class="pi">🔄</div><div><b>Your one change</b><span>If you could change one thing about how this team works — what?</span></div></div>
+      <p class="pfoot">Collected before the Lab, cross-referenced against the map on the day — so every mandate lands on a named bottleneck, not a theory.</p>
+    </div>
+  </section>
+
+  <div class="mission rv">
+    <div class="tg">Evolve <em>Beyond.</em></div>
+    <p>AI is compressing every technical moat. What compounds now is the human layer — self-awareness, chemistry, adaptive teams. <b>Aurelion's mission: accelerating human adaptive capacity in the AI era.</b> The map is where that acceleration begins.</p>
+    <div class="spectrum wide" aria-hidden="true"><i class="sO" style="flex:82"></i><i class="sN" style="flex:79"></i><i class="sA" style="flex:82"></i><i class="sR" style="flex:75"></i><i class="sD" style="flex:72"></i></div>
+  </div>
+
+  <section style="padding-top:6px">
+    <div class="pad rv">
+      <span class="eyebrow">09 · Engagements</span>
+      <h2 class="st">Two doors in.</h2>
+      <p class="sub">Both delivered by Aurelion's certified LPI consultants, trained under the official cLPI programme. The assessment is the science. The debrief is the strategy. You're investing in both.</p>
+    </div>
+    <div class="proof rv"><span class="tag">In good company</span><span class="co">Petronas</span><span class="co">British Petroleum</span><span class="co">Cathay Pacific</span><span class="co">Saudi Aramco</span><span class="co">Microsoft Thailand</span><span class="co">Shell</span></div>
+    <div class="pad">
+      <div class="card offer rv" style="margin-top:14px">
+        <span class="flag">Begin Here</span>
+        <span class="kicker">For every individual — leaders &amp; teammates alike</span>
+        <h3>Personal LPI Assessment &amp; Executive Debrief</h3>
+        <p class="hook">"Ninety minutes on the one thing you actually want to move."</p>
+        <ul>
+          <li>The full LPI assessment — validated, normed in Asia, 50 questions on any device</li>
+          <li>Your 12-page personalised report: one of 26 classical styles across all five forces</li>
+          <li><b>The Life-Stage Pulse Check</b> — your life stage, pressures, goals, and daily bio-habits, mapped before we meet</li>
+          <li>A 90-minute one-to-one debrief <em>and</em> coaching session — aimed squarely at the focus area you choose</li>
+          <li>Your personal stress-signature and conflict playbook, drawn from your profile</li>
+          <li>A 90-day growth focus: the two moves your report and your season of life both point to</li>
+        </ul>
+        <div class="price-line"><span class="now">RM 888</span> <span class="per">/ person</span><span class="urgency">Founding rate — steps up as Aurelion's coaching calendar fills. Lock yours in.</span></div>
+        <div class="walkout"><b>What changes after your 90 minutes:</b> you can name your top two forces and what each one secretly needs · you know your stress alarm, your conflict reflex, and the recovery moves that actually work for you · and you leave with a 90-day focus you chose — coached, not lectured.</div>
+        <a class="btn btn-ghost btn-block" href="mailto:andy.tan@aurelion-earth.com?subject=Personal%20LPI%20Assessment%20%26%20Executive%20Debrief%20—%20Enquiry">Reserve My Assessment</a>
+      </div>
+
+      <div class="card offer featured rv" style="margin-top:22px">
+        <span class="flag">Most Impact</span>
+        <span class="kicker">For teams of 3–10 — leaders &amp; teammates</span>
+        <h3>Team Mapping Lab &amp; Facilitated Debrief</h3>
+        <p class="hook">"No away-day. No trust falls. One day — and a language your team uses in every meeting after."</p>
+        <div class="demo-strip">
+          <span class="ds-cap">You've already experienced it — everything in this Atlas was the live demo</span>
+          <button class="demo-chip" data-goto="map"><i>✓</i>ONARD Team Map</button>
+          <button class="demo-chip" data-goto="lab"><i>✓</i>Chemistry Lab · 57 mixes</button>
+          <button class="demo-chip" data-goto="insights" data-sv="conflicts"><i>✓</i>7 predictable arguments</button>
+          <button class="demo-chip" data-goto="insights" data-sv="analytics"><i>✓</i>Scorecard + stress-test</button>
+          <button class="demo-chip" data-goto="insights" data-sv="moves"><i>✓</i>The Five Moves</button>
+        </div>
+        <ul>
+          <li>Every member assessed privately before the day — full 12-page LPI report each, theirs to keep</li>
+          <li><b>The Team Pulse Check</b> — roles, bottlenecks and frictions collected before the Lab</li>
+          <li>Your ONARD Team Map — the live map you just explored, built from your real profiles</li>
+          <li>Chemistry analysis for every pair and trio that matters — synergy, friction, protocol, playbook</li>
+          <li>Team composite, dial board, anchor board and gap readout — the risks no individual report can show</li>
+          <li>A one-day facilitated Lab with your whole team, plus the Optimized Formation proposal</li>
+          <li>A written priority read: the three moves that matter first — with names and dates</li>
+        </ul>
+        <div class="tiers">
+          <div class="tier"><span>3 leaders / teammates</span><b>RM 7,700</b></div>
+          <div class="tier"><span>5 leaders / teammates</span><b>RM 8,500</b></div>
+          <div class="tier"><span>8 leaders / teammates</span><b>RM 9,700</b></div>
+          <div class="tier hot"><span>10 leaders / teammates — best value</span><b>RM 10,500</b></div>
+        </div>
+        <div class="value-math"><b>Do the math with us:</b> ten personal assessments &amp; debriefs alone would be 10 × RM 888 = <b>RM 8,880</b>. At RM 10,500, the entire team layer — the map, the chemistry, the Lab day, the rebalancing plan, the written priority read — effectively costs RM 1,620. That may be the most leveraged line item on your P&amp;L this year.</div>
+        <div class="price-line"><span class="now">RM 10,500</span> <span class="per">/ team of up to 10</span><span class="urgency">RM 6,500 + RM 400 per person — leaders &amp; teammates · limited Lab slots per quarter · beyond 10, the Lab graduates into two one-day programs</span></div>
+        <a class="btn btn-gold btn-block" href="mailto:andy.tan@aurelion-earth.com?subject=Team%20Mapping%20Lab%20—%20Enquiry">Book the Team Mapping Lab</a>
+      </div>
+
+      <div class="vpunch rv">
+        <span class="vk">On value — said in one breath</span>
+        <div class="l1">You're not buying a day.</div>
+        <div class="l2">You're buying the language your team thinks in — from that day on.</div>
+        <span class="vp-stat"><b>1</b> stalled decision unstuck — it's paid for itself</span>
+        <span class="vp-stat"><b>1</b> quiet resignation caught early — it's paid twice over</span>
+        <span class="vp-stat"><b>1</b> friction turned protocol — it compounds forever</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="rv">
+      <span class="eyebrow">10 · Faculty &amp; Lineage</span>
+      <h2 class="st">Certified, not self-appointed.</h2>
+      <p class="sub">The LPI is a licensed instrument with a formal certification chain. Here is ours.</p>
+    </div>
+    <div class="card fac rv">
+      <div class="ftop"><div class="fac-photo">LY</div><div><h3>Prof Dr Leonard Yong</h3><div class="frole">Creator of the LPI</div></div></div>
+      <p>Designed the LPI at Universiti Malaya after a decade of research, then deployed it across Asia and the Gulf for 25 years. Author of <em>Emotional Excellence in the Workplace</em>. With his passing in 2025, certification now flows through a single authorised door — the lineage Aurelion is certified in. <a href="https://www.leonard.com.my" style="color:var(--gold)">leonard.com.my</a></p>
+    </div>
+    <div class="card fac rv">
+      <div class="ftop"><div class="fac-photo">DL</div><div><h3>David Lau</h3><div class="frole">Gem Consultancy · Master Trainer</div></div></div>
+      <p>Certified LPI (cLPI) course instructor and Train-the-Trainer (TTT) instructor. Personally trained and certified Aurelion's directors in the cLPI programme — the certification chain behind every engagement in this Atlas.</p>
+    </div>
+    <div class="card fac rv">
+      <div class="ftop"><div class="fac-photo">AT</div><div><h3>Aurelion Sdn Bhd</h3><div class="frole">Your Certified LPI Consultants</div></div></div>
+      <p>Led by Senior Director <b>Andy Tan</b>, LPI Consultant &amp; HRD Corp Accredited Trainer, with a bench of director-level cLPI-certified consultants. We don't just administer the instrument — we run our own company on it.</p>
+    </div>
+  </section>
+
+  <section class="final pad rv">
+    <span class="eyebrow" style="justify-content:center;display:inline-flex">11 · Begin</span>
+    <h2>You've seen our map.<br>Now let's draw yours.</h2>
+    <p>One short call. We'll scope your team, answer everything, and hold a Lab slot while you decide. No pressure — the map speaks for itself.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold btn-block" href="https://wa.me/60166308569?text=Hi%20Andy%2C%20I%27d%20like%20to%20talk%20about%20the%20Team%20Mapping%20Lab" target="_blank" rel="noopener">WhatsApp Andy Tan</a>
+      <a class="btn btn-ghost btn-block" href="mailto:andy.tan@aurelion-earth.com?subject=Team%20Mapping%20Lab%20—%20Enquiry">andy.tan@aurelion-earth.com</a>
+      <a class="btn btn-ghost btn-block" href="tel:+60166308569">Call +60 16-630 8569</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Aurelion Sdn Bhd — accelerating human adaptive capacity in the AI era. The Leonard Personality Inventory (LPI) is © 2001–2026 Dr Leonard Yong, www.leonard.com.my. Aurelion's consultants are certified under the official cLPI programme (instructor: David Lau, Gem Consultancy). Profiles shown are real LPI results, anonymised with consent. The LPI describes preferences — it never limits potential.</p>
+    <p>The ONARD Team Map plots each person by task-vs-people orientation and thinks-first-vs-acts-first pace, with Openness as the wild-card reach. Gaps, collisions and lone-force risks — visible at a glance, on one page.</p>
+  </footer>
+</main>
+
+<!-- ══════════ BOTTOM NAV ══════════ -->
+<nav class="bnav" aria-label="Main">
+  <button data-tab="story" class="on"><i class="done"></i><svg viewBox="0 0 24 24"><path d="M12 3l2 6.2L20.5 12 14 14.8 12 21l-2-6.2L3.5 12 10 9.2z"/></svg><span>Story</span></button>
+  <button data-tab="map"><i class="done"></i><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M12 3.5v17M3.5 12h17"/><circle cx="8" cy="8" r="1.6"/><circle cx="16.5" cy="15.5" r="1.6"/></svg><span>Map</span></button>
+  <button data-tab="lab"><i class="done"></i><svg viewBox="0 0 24 24"><path d="M9.5 3h5M10.5 3v5.2L5.6 17a3 3 0 002.7 4.4h7.4A3 3 0 0018.4 17l-4.9-8.8V3"/><path d="M8 14h8"/></svg><span>Lab</span></button>
+  <button data-tab="insights"><i class="done"></i><svg viewBox="0 0 24 24"><path d="M4 19V11M9.5 19V5M15 19v-6M20 19V8"/></svg><span>Insights</span></button>
+  <button data-tab="begin"><i class="done"></i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6.5L18.5 12 13 17.5"/></svg><span>Begin</span></button>
+</nav>
+
+<!-- ══════════ SHEETS ══════════ -->
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="dossierSheet" role="dialog" aria-modal="true" aria-label="Team member dossier">
+  <div class="grab"><i></i></div>
+  <div class="sc" id="dossierBody"></div>
+</div>
+<div class="sheet" id="journeySheet" role="dialog" aria-modal="true" aria-label="Your Atlas Journey">
+  <div class="grab"><i></i></div>
+  <div class="sc" id="journeyBody"></div>
+</div>
+
+<div class="toast" id="toast"><span class="tk">✦</span><span id="toastMsg"></span></div>
+
+<script>/* helpers */
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const NS="http://www.w3.org/2000/svg";
+const svgEl=(t,at)=>{const e=document.createElementNS(NS,t);for(const k in at)if(at[k]!=null)e.setAttribute(k,at[k]);return e};
+const memColor=m=>`var(${m.colorVar})`;
+const byId=id=>TEAM.find(t=>t.id===id);
+const avgOf=(arr,k)=>Math.round(arr.reduce((a,m)=>a+m.scores[k],0)/arr.length);
+
+/* ================================================================
+   COHORT DATA — six real LPI profiles, anonymised.
+   Standardized schema; content upgraded through the LPI lens.
+   pos = current map position (score units: x task+, y acts-first+)
+   opt = optimized-formation position
+   ================================================================ */
+const DIMS=[
+  {k:"O",name:"Openness",  css:"--dim-O"},
+  {k:"N",name:"Neutral",   css:"--dim-N"},
+  {k:"A",name:"Analytical",css:"--dim-A"},
+  {k:"R",name:"Relational",css:"--dim-R"},
+  {k:"D",name:"Decisive",  css:"--dim-D"},
+];
+const dimColor=k=>`var(--dim-${k})`;
+
+const TEAM=[
+{
+  id:"zw",initials:"ZW",name:"ZW",role:"Entrepreneur",
+  archetype:"The Creative Encourager",code:"ONR",colorVar:"--m-zw",
+  scores:{O:86,N:80,A:70,R:80,D:66},
+  pos:{x:-24,y:-4},opt:{x:-4,y:-2},
+  optMove:"Toward the O-centre — the bridge",
+  optWhy:"With O86 and a warm N/R duo, ZW is built to translate between the thinkers (top) and the actors (bottom). <b>Unlocks:</b> ideas stop dying in transit between quadrants — and the crowded people-side decongests.",
+  essence:"An idea-rich harmoniser. Creativity flows most freely in warmth — and ZW builds that warmth for everyone else too. The team's morale engine, and its natural translator.",
+  strengths:[
+    "Warm, friendly personality — people open up fast",
+    "Accepts others' suggestions and ideas readily",
+    "Shares feelings easily; keeps the emotional channel open",
+    "Genuinely tries to think well of others and protect harmony",
+    "Strong artistic streak; endlessly generative in relaxed settings"
+  ],
+  blindspots:[
+    "Easily bored — attention drifts once novelty fades",
+    "Soft with people: compromises to avoid conflict, even when right",
+    "Too trusting at times — can be taken advantage of",
+    "Absorbs other people's problems as their own",
+    "Slow to decide or take charge; waits to be invited"
+  ],
+  stress:{
+    triggers:["Restrictions on self-expression","Discord and disharmony around them","Being misunderstood","Too much routine; no fun or optimism in the room","Perceived personal attacks"],
+    reactions:["Becomes discouraged and quietly withdraws goodwill","Feels disliked or disapproved of, even without evidence","Boredom sets in and engagement visibly drops"],
+    recovery:["Pause and name the root cause before reacting","Release the need to be seen as 'the nice one'","Deploy natural humour — it genuinely resets them"]
+  },
+  conflict:{
+    tends:["Compromises their real position to keep the peace","Gives in too easily, then feels hurt in silence","Can become defensive and emotional — though they do try to see the other side"],
+    better:["Dare to disagree when you're right — the team needs it","Analyse before concluding; don't absorb blame reflexively","State views assertively, boldly and clearly"]
+  },
+  support:[
+    "Bridges the thinkers (SM, JG) and the actors (LCH, ED) — translates ideas both directions",
+    "Keeps morale and goodwill high when pressure spikes",
+    "Feeds the idea pipeline with fresh, humane angles"
+  ],
+  supportedBy:[
+    "LCH converts ZW's ideas into decisions and dates",
+    "SM and JG add the rigour ZW's A70 doesn't enjoy supplying",
+    "FM shares the emotional-labour load so ZW doesn't absorb everyone's problems alone",
+    "Everyone: appreciate out loud — it's genuine fuel, not vanity"
+  ],
+  blindspotHelp:[
+    "Slow to decide (D66) → LCH sets the date; ZW keeps the veto",
+    "Too trusting → run new offers past SM's verification instinct",
+    "Bored by routine → rotate maintenance work toward FM and JG"
+  ],
+  contribution:[
+    "Counsels and lifts struggling teammates",
+    "Creates a cheerful working environment others want to stay in",
+    "Stays pleasant and steady in the middle of a storm",
+    "Inspires through encouragement, humour and fresh perspective"
+  ]
+},
+{
+  id:"lch",initials:"LCH",name:"LCH",role:"Director",
+  archetype:"The Innovator",code:"OAD",colorVar:"--m-lch",
+  scores:{O:96,N:68,A:82,R:76,D:80},
+  pos:{x:18,y:6},opt:{x:24,y:16},
+  optMove:"Anchor the D corner — and rotate through centre",
+  optWhy:"O96 makes LCH the true wild card, but the team's scarcest force is Decisive. Primary station: the D corner, pulling triggers. <b>Unlocks:</b> a firmly held decision corner — with licence to rotate to centre when invention is the mission.",
+  essence:"A pioneering force. Openness at 96 with real Decisive drive behind it — LCH doesn't just imagine the unconventional, they build it, and no storm feels too big to face.",
+  strengths:[
+    "Formidable problem-solver; reads difficult situations with insight",
+    "Thrives in crisis — calm, firm, confident when others wobble",
+    "A mind of their own; goes against the crowd when the crowd is wrong",
+    "Thorough and particular about details despite the bold style",
+    "Inventiveness that becomes an organisational asset — fresh ideas on demand"
+  ],
+  blindspots:[
+    "Easily bored and restless once a problem is 'solved in principle'",
+    "Impatient with teamwork; tempted to just do it alone",
+    "A tendency not to listen once their mind is made up",
+    "Pride can creep in; may be seen as a loner",
+    "Some confrontations they start are simply unnecessary"
+  ],
+  stress:{
+    triggers:["Restrictions and inhibitions of any form","Not being allowed to do things the way they know is right","Authority or autonomy threatened; micro-management","Being blocked from a goal","Dealing with forgetful or passive people"],
+    reactions:["Vents frustration with visible impatience","Reads others as passive obstacles","Can turn aggressive quickly when boxed in"],
+    recovery:["Speak more softly; calm down before walking into the room","Accept the present situation's real limitations and work within them","Stop proving yourself through constant achievement — the record already speaks"]
+  },
+  conflict:{
+    tends:["Goes stubborn and inflexible on the issue","Fights to win — wants a win-lose scoreboard","May say things they'll regret; can escalate fast"],
+    better:["Use that creativity on the conflict itself — invent the third option","Winning a friend for life beats winning a temporary fight","Listen to the other party's feelings; de-escalate deliberately"]
+  },
+  support:[
+    "Owns the D corner: the call, the crisis, the deadline — the team's trigger-puller",
+    "Challenges stale assumptions before the market does",
+    "Guides juniors independently; enforces standards without flinching"
+  ],
+  supportedBy:[
+    "SM and JG stress-test the plan so bold moves survive contact",
+    "ED and FM warm the room after candour lands hard",
+    "ZW reframes LCH's raw ideas so others can catch up",
+    "Everyone: bring evidence, be direct, and give autonomy — micro-management is the one tax LCH won't pay"
+  ],
+  blindspotHelp:[
+    "Tendency not to listen (N68) → SM sends written counter-cases; harder to skim past than speech",
+    "Impatient with teams → FM flags when the room has stopped following",
+    "Seen as a loner → ED pulls LCH into the social fabric before distance hardens"
+  ],
+  contribution:[
+    "Trouble-shoots to root causes, not symptoms",
+    "Enforces quality and high standards without flinching",
+    "Healthy scepticism on outside ventures — the team's due-diligence instinct",
+    "Produces results on time; delivers in crisis"
+  ]
+},
+{
+  id:"fm",initials:"FM",name:"FM",role:"Regulatory & Compliance Manager",
+  archetype:"The Helpful Encourager",code:"NR",colorVar:"--m-fm",
+  scores:{O:76,N:82,A:78,R:80,D:76},
+  pos:{x:-8,y:-4},opt:{x:-18,y:-14},arcDy:38,
+  optMove:"Anchor the N corner — the stabiliser",
+  optWhy:"The most balanced pentagon on the map (everything 76–82) — a rare multi-duo profile that can hold any corner. The team's need: a clearly held Neutral anchor. <b>Unlocks:</b> harmony and process stewardship with a named owner — and the crowded middle clears.",
+  essence:"The team's steady heart. A remarkably balanced pentagon anchored in harmony (N82) and warmth (R80) — people under FM's care feel genuinely cared for, and loyalty runs deep both ways.",
+  strengths:[
+    "Genuine care that people under their supervision truly feel",
+    "Strong loyalty to the people and causes they commit to",
+    "Approachable and warm; values being part of a team",
+    "Accepts others and their views — beneficial in the long run",
+    "Full of energy and enthusiasm; quietly inspiring"
+  ],
+  blindspots:[
+    "Lets small troubles grow into crises before taking firm action",
+    "Compromises to avoid conflict; needs acceptance from others",
+    "Can be too emotional under pressure",
+    "Absorbs other people's problems as their own",
+    "Not a natural goal-setter; time management can drift"
+  ],
+  stress:{
+    triggers:["Troubles, problems and difficult moments piling up","Lack of fun, hope and optimism around them","Perceived personal attacks; being made to look bad publicly","Situations that feel too stiff and formal","Believing they've hurt someone emotionally"],
+    reactions:["Seeks approval harder; confidence dips","Feels security threatened; emotionally rejected","Runs on empty — emotionally exhausted before saying so"],
+    recovery:["Let the mind rule the feelings — root-cause the stress","Release the need to be seen as the nice one; security can't come from others' approval","Find the lighter side — humour genuinely restores them"]
+  },
+  conflict:{
+    tends:["Pleases the other party; lets them win to keep the peace","Gives in too easily; feels hurt but hides it","Avoids the other party; can turn defensive and emotional"],
+    better:["Don't feel victimised — become more assertive","Listen for the cause, then state your view boldly and clearly","Don't give in so easily; share feelings in an appropriate way"]
+  },
+  support:[
+    "The team's peace-maker: brokers tensions before they harden",
+    "Nurtures newer members and anyone struggling — quietly, reliably",
+    "Keeps the atmosphere human: social glue, cheer, belonging"
+  ],
+  supportedBy:[
+    "LCH handles the hard calls FM would rather not make",
+    "JG and SM supply the detail-accuracy FM's style skips",
+    "ZW and ED share the people-care load — three encouragers beat one exhausted one",
+    "Everyone: give open appreciation, and never park conflict on FM's desk 'to keep things nice'"
+  ],
+  blindspotHelp:[
+    "Lets small troubles grow → LCH's early-escalation instinct is the counterweight",
+    "Not a natural goal-setter → JG turns intentions into checklists and dates",
+    "Absorbs others' problems → the team's stress-alarm protocol protects its protector"
+  ],
+  contribution:[
+    "Nurtures younger and newer staff",
+    "Identifies with staff facing problems; puts people at ease",
+    "Peace-maker between conflicting parties",
+    "Organises the social fabric; offers encouraging words"
+  ]
+},
+{
+  id:"ed",initials:"ED",name:"ED",role:"Trainer",
+  archetype:"The Creative Encourager",code:"ONR",colorVar:"--m-ed",
+  scores:{O:92,N:88,A:78,R:92,D:70},
+  pos:{x:-32,y:-4},opt:{x:-26,y:20},arcDy:38,
+  optMove:"Into the R corner — own the room",
+  optWhy:"R92 with O92 behind it is front-of-room firepower this team currently leaves parked near the axis. Station ED squarely in Relational. <b>Unlocks:</b> a held R corner — client warmth, training force, morale engine — while FM covers the N ground ED vacates.",
+  essence:"A people-magnet with an inventor's mind. O92 imagination delivered with R92 warmth and N88 grace — people are ED's gold, and rooms light up when they take the front of one.",
+  strengths:[
+    "Unconventional by instinct — dislikes traditional ways of doing things",
+    "Tenacity, versatility and adaptability — keeps swimming where others drown",
+    "Energy and enthusiasm colleagues genuinely appreciate",
+    "People are their gold — regards others with real interest and affection",
+    "Known for fresh ideas; harmony-maker wherever they land"
+  ],
+  blindspots:[
+    "Easily bored; may daydream past the follow-through",
+    "Needs acceptance; compromises to avoid conflict",
+    "Can be too emotional and sentimental under strain",
+    "Absorbs other people's problems as their own",
+    "Kind tolerance can let deadlines slip — drive-to-win runs low"
+  ],
+  stress:{
+    triggers:["Restrictions on expression of any kind","Being misunderstood; discord and disharmony","Disapproval from others for unknown reasons","Lack of fun, hope and optimism","Situations that feel stiff and formal"],
+    reactions:["Discouraged; reads hostility where there may be none","Boredom hits fast; energy visibly drains","Confidence dips when new insights dry up"],
+    recovery:["Root-cause the stress calmly; then act","Release the need to be seen as the nice person — security can't come from applause","Use natural humour — it's a genuine reset button"]
+  },
+  conflict:{
+    tends:["Feels misunderstood; compromises their position","Pleases the other party; hides the hurt behind the smile","Can turn defensive and overly emotional, then avoids"],
+    better:["Accept disagreement as normal; dare to disagree when right","Use creativity to invent the third option","Analyse before concluding; don't give in so easily — face it and close it"]
+  },
+  support:[
+    "Front-of-room force: training, storytelling, client rapport — R92 warmth with O92 imagination",
+    "Peace-maker and morale engine; organises the social fabric",
+    "Enriches everything with novelty, humour and fresh insight"
+  ],
+  supportedBy:[
+    "SM and JG finish and fact-check what ED starts and sells",
+    "LCH converts ED's enthusiasm into commitments with dates",
+    "FM co-carries the people-care so ED's empathy doesn't burn out",
+    "Everyone: sincere appreciation is the engine — and when ED goes quiet, ask; hurt hides behind the smile"
+  ],
+  blindspotHelp:[
+    "Easily bored, may not finish (D70) → pair every ED launch with a JG or SM closer",
+    "Over-tolerant on deadlines → LCH holds the timeline so ED can hold the relationship",
+    "Ideas may read as wild → ZW translates; SM pressure-tests before the big reveal"
+  ],
+  contribution:[
+    "Identifies with staff facing problems; peace-maker between parties",
+    "Organises social events; keeps the workplace cheerful",
+    "Stays pleasant and steady in the middle of a storm",
+    "Inspires through thought, action, novelty and art"
+  ]
+},
+{
+  id:"jg",initials:"JG",name:"JG",role:"Student · Monash",
+  archetype:"The Analytical Thinker",code:"A",colorVar:"--m-jg",
+  scores:{O:60,N:76,A:86,R:50,D:74},
+  pos:{x:34,y:-38},opt:{x:30,y:-26},
+  optMove:"Hold deep A — lean toward D",
+  optWhy:"A86 with a quiet D74 engine most people miss. Keep the deep-focus station, but every analysis now ends in a verdict, not just a report. <b>Unlocks:</b> the Analytical corner starts producing decision-ready output — feeding the D corner instead of orbiting it.",
+  essence:"The deep-focus specialist. A86 rigour with a quiet D74 finisher's engine and a private R50. Duty, procedure, precision — when it absolutely must be right, it goes to JG",
+  strengths:[
+    "Precision that makes their work the reliable record",
+    "Professional standards so high few can match them; thorough in everything",
+    "Proven methods — tasks carried out are not likely to fail",
+    "Strong sense of duty; perseveres through to completion",
+    "Verifies before believing; likes it in black and white"
+  ],
+  blindspots:[
+    "Indecisive under open-ended ambiguity; worries too much",
+    "Feels anxious and troubled quite easily",
+    "Prefers to be a loner; doesn't talk even when it's necessary",
+    "Unwilling to share feelings with others",
+    "Easily hurt by criticism — and quietly keeps the record of it"
+  ],
+  stress:{
+    triggers:["Imperfection — in self and in others","People forgetting what they said; inaccurate information","Standards violated; expectations unmet","Worry over the situation; a negative view of the future","Being required to confront someone"],
+    reactions:["Withdraws to work alone; needs more thinking time","Upset that others aren't serious about assigned tasks","Self-expectations spike; anxiety follows"],
+    recovery:["Accept imperfections and allow for failures in others","Handle stressful situations in a deliberately more relaxed manner","Build confrontation tolerance gradually; movement and exercise genuinely help"]
+  },
+  conflict:{
+    tends:["Withdraws; keeps a record of hurts","Stubborn on issues; strategises to respond at another time","Avoids the other party — while staying objective about the facts"],
+    better:["Don't take it personally; face the other party right away","Accept conflict as part of growth; compromise where required","Share feelings calmly — explain the why behind your actions"]
+  },
+  support:[
+    "Deep-focus specialist: procedures, documentation, QA — when it must be right, it goes here",
+    "Instils discipline, accountability and step-by-step quality",
+    "Healthy scepticism: the team's guard against shiny-object deals"
+  ],
+  supportedBy:[
+    "ED and ZW build the social bridge — invitation without pressure",
+    "LCH gives clear standards to work against and respects the craft",
+    "SM is the kindred rigorous mind — peer review without judgement",
+    "Everyone: put it in writing, remember what you said, critique gently and in private"
+  ],
+  blindspotHelp:[
+    "Doesn't speak even when necessary (R50) → the chair asks JG directly for the written view before any decision closes",
+    "Easily hurt by criticism → feedback goes evidence-first, person-never, in private",
+    "Worry spirals → FM's calm plus a clear plan beat reassurance-by-committee"
+  ],
+  contribution:[
+    "Root-cause trouble-shooting; sound judgment on complicated problems",
+    "Quality and high standards; step-by-step procedure → reliable results",
+    "Balances speed and risk with carefully-paced, calculated evaluation",
+    "Instils discipline, responsibility and accountability"
+  ]
+},
+{
+  id:"sm",initials:"SM",name:"SM",role:"Professional · profile anonymised",
+  archetype:"The Creative Thinker",code:"OA",colorVar:"--m-sm",
+  scores:{O:80,N:78,A:96,R:74,D:64},
+  pos:{x:8,y:-36},opt:{x:16,y:-18},
+  optMove:"From pure A toward the A/D bridge",
+  optWhy:"A96 fused with O80 is rare — original ideas held to uncompromising standards. The flex: analysis that ends in a shipped decision. <b>Unlocks:</b> a second engine near the Decisive corner, de-risking LCH's lone-force load without hiring anyone.",
+  essence:"A precision imagineer. Analytical 96 fused with high Openness — unconventional ideas held to uncompromising standards. The team's quality conscience, and its deepest thinker.",
+  strengths:[
+    "Conscientious to the core — work you can rely on as the record",
+    "A keen sense for precision; wants things done correctly, then does them correctly",
+    "Versatile and inquisitive; checks new offers carefully before committing",
+    "Genuinely original — frequently does things differently from everyone else",
+    "Tenacity to keep swimming where others would drown; adapts and endures"
+  ],
+  blindspots:[
+    "Indecisive — options are weighed long after the window starts closing",
+    "Worries and grows anxious easily; troubles find them fast",
+    "Can be perceived as distant or 'too individualistic'",
+    "May find others' ideas shallow — and let it show",
+    "Prone to low moods when standards (their own included) aren't met"
+  ],
+  stress:{
+    triggers:["Rejection of their views and ideas","Being misunderstood","Plans disrupted mid-flight","Imperfection — in themselves and in others","Delegated work done poorly; people forgetting what they said"],
+    reactions:["Disillusioned and discouraged; retreats to work alone","Upset that others don't meet expected standards","Needs more time to think — pressure makes it worse"],
+    recovery:["Accept some limitations and imperfections as part of life","Discuss ideas with trusted people; sharing genuinely de-stresses them","Get more assertive — bottling it is the real hazard"]
+  },
+  conflict:{
+    tends:["Feels others simply don't understand","Agrees to things they don't actually prefer, then strategises to respond later","Avoids the other party; feels hurt privately — while examining the facts objectively"],
+    better:["Accept that disagreement is normal, not a verdict on you","Communicate the proposed solution in terms others can follow","Share feelings with warmth — feelings are data in conflicts too"]
+  },
+  support:[
+    "Runs the quality gate: nothing broken ships past A96",
+    "Generates genuinely original approaches others wouldn't find",
+    "Gives objective, unemotionally-biased second opinions when stakes are high"
+  ],
+  supportedBy:[
+    "LCH supplies deadlines and 'good enough' lines so analysis lands",
+    "ZW and FM create the safety in which SM actually shares ideas",
+    "JG is the natural deep-work ally — two rigorous minds, half the loneliness",
+    "Everyone: put requests in writing and keep your word — reliability is SM's love language"
+  ],
+  blindspotHelp:[
+    "Indecisive (D64) → LCH sets the decision date; SM sets the quality bar",
+    "Worries easily → FM's steady reassurance is the antidote, not more data",
+    "Perceived as distant → ED builds the social bridge; the team reads quiet as depth, not disdain"
+  ],
+  contribution:[
+    "Generates breakthrough ideas and outside-the-box approaches",
+    "Comprehensive advice; objective, unemotionally-biased opinions",
+    "Enhances quality and upholds high standards for everyone",
+    "Reliable precision — if it must be right, route it here"
+  ]
+}];
+
+
+const LPI_STYLES={
+  "A":"Analytical Thinker","D":"Decisive Decision Maker","N":"Neutral Expert","O":"Creative Imaginator","R":"Relational Interactor",
+  "A+D":"Implementer","A+N":"Error Buster","A+O":"Creative Thinker","A+R":"Assessor","D+N":"Accomplisher",
+  "D+O":"Creative Decision Maker","D+R":"Exhorter","N+O":"Creative Expert","N+R":"Helpful Encourager","O+R":"Creative Relater",
+  "A+D+N":"Resourceful Strategist","A+D+O":"Innovator","A+D+R":"Energetic Strategist","A+N+O":"Creative Error Buster",
+  "A+N+R":"Amiable Adaptor","A+O+R":"Creative Assessor","D+N+O":"Creative Accomplisher","D+N+R":"Persuasive Decision Maker",
+  "D+O+R":"Creative Exhorter","N+O+R":"Creative Encourager","A+D+N+R":"Versatile"
+};
+
+/* ── Hand-curated chemistry for every pair (15), every trio (20),
+   every five-some (6) and the full six — 42 bespoke reads.
+   Squads of four are named live from the LPI style taxonomy. ── */
+const CHEM_NAMES={
+/* ——— all 15 pairs ——— */
+"ed+fm":{t:"The Hearth",d:"Two harmony-keepers who make everyone feel at home — collectively a textbook Creative Encourager pattern, the warmest duo on the map, and the least likely to say the hard thing out loud."},
+"ed+jg":{t:"The Magnet & The Vault",d:"The loudest warmth on the team (R92) paired with its quietest depth (R50). Brilliant when ED opens doors and JG checks what walks through — brittle the moment volume gets mistaken for truth."},
+"ed+lch":{t:"The Moonshot Roadshow",d:"Two O-90s in one room: LCH invents the future, ED sells the room on it. Nothing this pair pitches sounds impossible — finishing it, however, is another department entirely."},
+"ed+sm":{t:"The Show & The Substance",d:"ED brings the stage, SM brings the proof — persuasion with receipts. The built-in catch: one thinks out loud, the other needs a quiet night to think at all."},
+"ed+zw":{t:"The Sunshine Engine",d:"Two Creative Encouragers side by side — double the ideas, double the warmth… and double the exact same blind spot: neither one enjoys pulling the trigger (D70 & D66)."},
+"fm+jg":{t:"The Error Busters",d:"Careful process plus deep precision — the LPI literally names this N+A pattern the Error Buster. Nothing broken gets past these two. Nothing gets rushed past them either."},
+"fm+lch":{t:"The Engine & The Keel",d:"LCH supplies the thrust, FM keeps the boat steady and the crew on board — the classic driver-plus-stabiliser pairing that survives storms other duos capsize in."},
+"fm+sm":{t:"The Quiet Quality Line",d:"SM sets the standard, FM keeps the process humane — an Error-Buster-grade duo where accuracy never comes at the cost of the people delivering it."},
+"fm+zw":{t:"The Care Department",d:"Warmth squared. Morale, loyalty and belonging are completely safe in these four hands — deadlines and hard calls should probably live somewhere else."},
+"jg+lch":{t:"The Build-and-Check Crew",d:"LCH builds fast, JG checks hard — the LPI's A+D Implementer pattern: things get done, correctly. Mind the O-gap though: 96 vs 60, the widest novelty gap on the whole team."},
+"jg+sm":{t:"The Deep Audit",d:"A91 between them — the most rigorous two square metres in the company. Route anything expensive or irreversible here. Just never ask them to decide it by lunch (D74 & D64)."},
+"jg+zw":{t:"The Bridge & The Blueprint",d:"ZW translates feelings into words, JG translates work into precision — a quiet, complementary pair, provided ZW resists the urge to fill every one of JG's silences."},
+"lch+sm":{t:"The Prototype Lab",d:"LCH invents at speed, SM perfects at depth — the LPI's O+A Creative Thinker pattern at full power. The friction comes pre-installed: ship it at 80% vs polish it to 99%."},
+"lch+zw":{t:"The Dream Foundry",d:"ZW dreams in warm colours, LCH casts it in metal — ideas actually leave the whiteboard here. Watch one seam: LCH's candour (N68) will occasionally bruise ZW's harmony (N80). Name it early."},
+"sm+zw":{t:"The Atelier",d:"Art meets craft: ZW's warm imagination through SM's uncompromising finish. Beautiful output, guaranteed — so long as somebody else supplies the deadline (D66 & D64)."},
+/* ——— all 20 trios ——— */
+"ed+fm+jg":{t:"The Safekeepers",d:"Harmony, care and precision in one cell — the team's safety net. Nothing gets hurt and nothing gets missed here. Nothing gets pushed, either: not a trigger finger among them."},
+"ed+fm+lch":{t:"The Front of House",d:"The faces of the company: ED's warmth, FM's steadiness, LCH's authority. Collectively a Creative Relater pattern — send them anywhere a room needs winning."},
+"ed+fm+sm":{t:"The Balanced Bench",d:"Warmth, calm and rigour in near-equal measure — this trio covers almost every base quietly and well. Low drama by design; low speed by the same design."},
+"ed+fm+zw":{t:"The Harmony Huddle",d:"The exact cluster the Team Map flags: three encouragers, maximum warmth, minimum trigger-pulling. A beautiful culture — inside which issues submerge instead of resolving."},
+"ed+jg+lch":{t:"The Proof-of-Concept Unit",d:"Invent it, build it, verify it, demo it: LCH creates, JG stress-tests, ED sells. A complete zero-to-one cell — with exactly one person (LCH) willing to call it done."},
+"ed+jg+sm":{t:"The Fine-Print Trio",d:"ED reads the room while JG and SM read everything else. Warm on the outside, forensic underneath — ideal for sensitive work where the details are the deal."},
+"ed+jg+zw":{t:"The Translator Desk",d:"ZW and ED turn JG's precision into words people can feel; JG keeps their warmth factually honest. The team's built-in interpreter between hearts and spreadsheets."},
+"ed+lch+sm":{t:"The Skunkworks",d:"A breakthrough R&D cell: ED imagines out loud, LCH builds at speed, SM holds the standard. World-class invention — that needs an external deadline bolted on."},
+"ed+lch+zw":{t:"The Imagination Engine",d:"The three biggest Openness scores on the team (96 · 92 · 86) in one room. Nothing is impossible here — including, occasionally, staying on topic."},
+"ed+sm+zw":{t:"The Gentle Radicals",d:"Genuinely wild ideas delivered so warmly that nobody notices how radical they are. The blend of Creative Encourager hearts and a Creative Thinker mind — disarming by design."},
+"fm+jg+lch":{t:"The Delivery Spine",d:"Plan, build, check, ship — the LPI's A+D Implementer pattern with FM keeping the crew intact while it happens. This is the trio that turns commitments into deliveries."},
+"fm+jg+sm":{t:"The Zero-Defect Cell",d:"Compliance-grade scrutiny with a humane process wrapped around it. Route contracts, audits and anything irreversible here — it will come back correct, and slightly late."},
+"fm+jg+zw":{t:"The Steady Hands",d:"Calm, careful and kind — the team's shock absorber. This trio starts almost nothing and saves almost everything. Pair it with a driver when speed matters."},
+"fm+lch+sm":{t:"The Standards Committee",d:"LCH sets the bar, SM measures it to the millimetre, FM makes sure the people survive it. Quality with authority and a heartbeat."},
+"fm+lch+zw":{t:"The Culture Builders",d:"Vision, warmth and a steady keel — the trio you send to open a new office or rebuild a bruised team. They'll ship the culture before they ship the product."},
+"fm+sm+zw":{t:"The Craft Guild",d:"Quality with a human face: slow, sure, kind, and quietly excellent. Their work needs no rework — it just needs a calendar with teeth."},
+"jg+lch+sm":{t:"The Think Tank",d:"A88 collectively — the deepest analytical bench in the building, with LCH as the only trigger finger in the room. Give them the hardest problem you own, and a date."},
+"jg+lch+zw":{t:"The Blueprint Crew",d:"Idea → structure → verification, with ZW softening the edges between two task-siders. A quietly complete pipeline from sketch to signed-off plan."},
+"jg+sm+zw":{t:"The Quality Quiet",d:"Three careful minds, one hushed room. Brilliance in draft form, forever — unless a decision date walks in and closes the door behind it."},
+"lch+sm+zw":{t:"The Invention Line",d:"ZW sparks it, LCH builds it, SM perfects it — a complete idea assembly line missing exactly one part: a bell that rings when it's time to say 'done'."},
+/* ——— all 6 five-somes: the team minus one ——— */
+"ed+fm+jg+lch+sm":{t:"Five Without the Bridge",d:"Everything still runs — but ideas travel slower between the thinkers and the doers. ZW is the translation layer nobody notices until it's out of the room."},
+"ed+fm+jg+lch+zw":{t:"Five Without the Standard",d:"The A96 conscience is away, so JG holds quality alone. Fine for a sprint. Risky for a contract — double the eyes on anything irreversible this week."},
+"ed+fm+jg+sm+zw":{t:"Five Without the Trigger",d:"With LCH out, the room gets kinder and slower at once: collective Decisive hits its floor. Meetings will be pleasant. Decisions will be pending. Set dates before he leaves."},
+"ed+fm+lch+sm+zw":{t:"Five Without the Ledger",d:"Precision now rests on SM alone — the quality gate still works, but through one pair of eyes instead of two. Slow the irreversible stuff down accordingly."},
+"ed+jg+lch+sm+zw":{t:"Five Without the Keel",d:"The steadiest pentagon on the map is out of the room. Watch for small troubles growing quietly — the person who normally absorbs them is away."},
+"fm+jg+lch+sm+zw":{t:"Five Without the Sun",d:"The strongest warmth engine (R92) is out — client charm and room energy fall to ZW alone. Cover the front of house deliberately, or the room will feel it."},
+/* ——— the full six ——— */
+"ed+fm+jg+lch+sm+zw":{t:"The Full Formation",d:"All five forces in one room: an idea factory with its own inspection line, a warm and loyal heart — and exactly one trigger finger. This is the team the whole Atlas maps, and the reason the five moves below exist."}
+};
+const CHEM_KEY=ids=>[...ids].sort().join("+");
+
+const topDim=m=>DIMS.reduce((a,d)=>m.scores[d.k]>m.scores[a.k]?d:a,DIMS[0]);
+const commTip=m=>{
+  const t=topDim(m).k;
+  return {O:`<b>${m.initials}</b> (O${m.scores.O}) — open with the possibility, not the constraint; never kill the idea in its first minute`,
+    N:`<b>${m.initials}</b> (N${m.scores.N}) — gentle and private; ask twice, because the first yes may be peacekeeping`,
+    A:`<b>${m.initials}</b> (A${m.scores.A}) — put it in writing with evidence; give thinking time before demanding a verdict`,
+    R:`<b>${m.initials}</b> (R${m.scores.R}) — face-to-face, energy up; appreciate openly and often`,
+    D:`<b>${m.initials}</b> (D${m.scores.D}) — bottom line first, then options with a recommendation; be direct`}[t];
+};
+
+/* The group's dominant force pattern, mapped to the official 26-style taxonomy */
+function collectiveStyle(stat){
+  const sorted=[...DIMS].sort((a,b)=>stat[b.k].avg-stat[a.k].avg);
+  const top=stat[sorted[0].k].avg;
+  let dom=sorted.filter(d=>top-stat[d.k].avg<=6).slice(0,4);
+  if(dom.length<2)dom=sorted.slice(0,2);
+  const tryKey=arr=>{const key=arr.map(d=>d.k).sort().join("+");return LPI_STYLES[key]?{name:LPI_STYLES[key],key}:null};
+  return tryKey(dom)||tryKey(dom.slice(0,3))||tryKey(dom.slice(0,2))||{name:"Versatile",key:"A+D+N+R"};
+}
+
+function chemAnalyze(sel){
+  const g=sel.map(byId);
+  const stat={};
+  DIMS.forEach(d=>{
+    const vals=g.map(m=>({m,v:m.scores[d.k]})).sort((a,b)=>b.v-a.v);
+    stat[d.k]={avg:avgOf(g,d.k),max:vals[0],min:vals[vals.length-1],vals};
+  });
+  const ranked=[...DIMS].sort((a,b)=>stat[b.k].avg-stat[a.k].avg);
+  const style=collectiveStyle(stat);
+
+  /* name: curated for pairs, trios, five-somes & the six; taxonomy-derived for squads of four */
+  const curated=CHEM_NAMES[CHEM_KEY(sel)];
+  const title=curated?curated.t:`The ${style.name} Cell`;
+  const tagline=curated?curated.d
+    :`Four people, one force pattern — collectively this squad runs like a ${style.name} (${style.key}), with ${ranked[0].name.toLowerCase()} leading the blend and ${ranked[1].name.toLowerCase()} close behind.`;
+
+  /* corner coverage: is each force held by someone at 80+? */
+  const cover=DIMS.map(d=>({d,ok:stat[d.k].max.v>=80,who:stat[d.k].max.m,v:stat[d.k].max.v}));
+
+  /* who's not in the room, and what leaves with them */
+  const missing=TEAM.filter(m=>!sel.includes(m.id));
+
+  const syn=[],fri=[],pro=[],watch=[];
+  const hi=(k,t)=>stat[k].max.v>=t?stat[k].max.m:null;
+  // synergies
+  const oA=hi("O",84),aA=hi("A",84);
+  if(oA&&aA&&oA!==aA) syn.push(`<b>${oA.initials}</b>'s imagination (O${oA.scores.O}) feeds <b>${aA.initials}</b>'s rigour (A${aA.scores.A}) — breakthroughs that survive scrutiny. That O+A handshake is the LPI's Creative Thinker pattern, split across two heads`);
+  const rA=hi("R",80);
+  if(rA&&aA&&rA!==aA) syn.push(`<b>${rA.initials}</b> warms the room while <b>${aA.initials}</b> brings the proof — persuasion with receipts`);
+  const dA=hi("D",74);
+  if(dA) syn.push(`A trigger-puller in the mix: <b>${dA.initials}</b> (D${dA.scores.D}) turns this group's output into commitments with dates`);
+  if(stat.N.avg>=78) syn.push(`High collective Neutral (${stat.N.avg}) — real psychological safety; ideas and worries both get aired`);
+  if(!syn.length) syn.push(`Complementary peaks across ${ranked[0].name} and ${ranked[1].name} — this mix covers more ground together than anyone in it covers alone`);
+  // frictions — each one is really two ONARD needs colliding
+  if(stat.D.max.v-stat.D.min.v>=12) fri.push(`<b>Two clocks:</b> ${stat.D.max.m.initials} (D${stat.D.max.v}) wants it decided today; ${stat.D.min.m.initials} (D${stat.D.min.v}) wants it decided right. Underneath: a need for <b>achievement</b> vs a need for <b>certainty</b>`);
+  if(stat.A.max.v>=86&&stat.D.max.v>=74&&stat.A.max.m!==stat.D.max.m) fri.push(`<b>Ship vs verify:</b> ${stat.D.max.m.initials} ships at 80%; ${stat.A.max.m.initials} (A${stat.A.max.v}) wants 99% and the audit trail. Underneath: <b>achievement</b> vs <b>accuracy</b>`);
+  if(stat.N.max.v>=82&&stat.N.min.v<=70) fri.push(`<b>Candour vs harmony:</b> ${stat.N.min.m.initials}'s bluntness lands hard on ${stat.N.max.m.initials}'s peacekeeping — hurt goes quiet, not away. Underneath: honesty vs the need for <b>security</b>`);
+  if(stat.R.max.v-stat.R.min.v>=26) fri.push(`<b>Energy mismatch:</b> ${stat.R.max.m.initials} (R${stat.R.max.v}) recharges in the crowd; ${stat.R.min.m.initials} (R${stat.R.min.v}) recharges away from it — don't read quiet as disengaged`);
+  if(stat.O.avg>=84) fri.push(`<b>Shiny-object gravity:</b> collective Openness of ${stat.O.avg} means the next idea always glitters brighter than the unfinished one`);
+  if(!fri.length) fri.push(`Low structural friction — the main risk is comfort: similar settings mean the same blind spot is <b>shared</b>, not covered. Borrow an outside voice before big calls`);
+  // protocols
+  if(stat.D.max.v-stat.D.min.v>=12) pro.push(`Every open question gets an owner and a date — decided in the room, out loud`);
+  if(stat.A.max.v>=86) pro.push(`Define "good enough" criteria <b>before</b> work starts; grant ${stat.A.max.m.initials} a 24-hour thinking window on big calls`);
+  if(stat.N.max.v>=82) pro.push(`Hard messages get a private heads-up before the meeting — candour with a seatbelt`);
+  if(stat.R.min.v<=60) pro.push(`Collect ${stat.R.min.m.initials}'s written view before any decision closes — silence is not absence of opinion`);
+  if(stat.O.avg>=80) pro.push(`One idea funnel: new ideas are welcome, but each one enters behind the ones still unfinished`);
+  if(pro.length<2) pro.push(`Disagree out loud, then commit together — and close every topic explicitly`);
+  // decision dynamic
+  const dyn=[
+    `<b>${stat.O.max.m.initials}</b> frames the possibilities (top O in this mix)`,
+    `<b>${stat.A.max.m.initials}</b> stress-tests them (top A)`,
+    `<b>${stat.R.max.m.initials}</b> and <b>${stat.N.max.m.initials}</b> read the room and hold the people`,
+    `<b>${stat.D.max.m.initials}</b> makes the call and sets the date (top D)`
+  ];
+  const names=[stat.O.max.m,stat.A.max.m,stat.D.max.m].map(x=>x.id);
+  if(new Set(names).size<names.length) dyn.push(`⚠ The same name holds more than one seat — that's a <b>lone-force risk</b>. If they're out, the seat is empty.`);
+  // missions
+  const missions=[];
+  if(stat.O.max.v>=84&&stat.A.max.v>=84) missions.push("Zero-to-one problems that must also survive due diligence");
+  if(stat.R.max.v>=80) missions.push("Client-facing work, pitches, and anything that needs a warmed room");
+  if(stat.A.max.v>=86) missions.push("Quality gates, audits, research and documentation");
+  if(stat.D.max.v>=74) missions.push("Crises, turnarounds and deadline-critical delivery");
+  if(stat.N.max.v>=82) missions.push("Sensitive negotiations and keeping long relationships healthy");
+  if(!missions.length) missions.push("Steady collaborative delivery — with an external forcing function for deadlines");
+
+  return {g,stat,ranked,style,title,tagline,cover,missing,syn,fri,pro,dyn,missions};
+}
+
+const DIAL_INFO={
+  O:{needs:"CREATIVITY",high:"New angles, experiments, reinvention",low:"Proven methods, stability, focus",
+     hiId:"lch",loId:"jg",
+     plain:`This one is never really about the project. It's a hunger for the <b>NEW</b> colliding with a duty to the <b>PROVEN</b> — creativity vs stability.`,
+     arg:`<b>LCH (O96)</b> walks in with a brand-new approach — again. <b>JG (O60)</b> has just finished stabilising the last one. To LCH, JG sounds like the brakes on progress; to JG, LCH sounds like chaos with confidence. Both are protecting the company — one from stagnation, one from whiplash — but in the room it just sounds like an argument about "vision."`,
+     fix:`Give novelty a fenced lane. New ideas run as small pilots with a named owner and a review date, while the proven method keeps running underneath. The pilot has to earn its way into the standard procedure with results. The inventor gets a real runway; the stabiliser keeps the floor solid; nobody has to lose for the company to win.`},
+  N:{needs:"SECURITY",high:"Harmony, patience, absorbing tension",low:"Candour, urgency, low tolerance for drift",
+     hiId:"ed",loId:"lch",
+     plain:`This one is never really about tone. It's the need to <b>SAY IT NOW</b> colliding with the need to <b>KEEP THE PEACE</b> — candour vs security.`,
+     arg:`<b>LCH (N68)</b> says the quiet part out loud, mid-meeting. <b>ED (N88)</b> and <b>FM (N82)</b> absorb the hit, smile, keep the peace — and carry the sting home. Nothing got resolved; it went underground. Three weeks later the same issue resurfaces wearing a different costume, and everyone wonders why "communication is bad."`,
+     fix:`Candour gets a seatbelt. Any hard message is trailed privately before the meeting — "heads-up, I'm going to push on X today." The harmony-keepers get time to process instead of being ambushed; the candid one still gets to be fully direct. Then the issue is named in the room, settled once, and explicitly closed — not replayed for a month.`},
+  A:{needs:"ACCURACY",high:"Evidence, precision, audit trails",low:"Intuition, speed, gut-checks",
+     hiId:"sm",loId:"zw",
+     plain:`This one is never really about the data. It's <b>TRUST MY GUT</b> colliding with <b>SHOW ME PROOF</b> — speed vs accuracy.`,
+     arg:`<b>ZW (A70)</b> can feel the right answer and wants to move on it. <b>SM (A96)</b> and <b>JG (A86)</b> want the data pack, the source, and a night to verify. ZW hears "we don't trust your judgement"; the analysts hear "we're gambling the company on a vibe." The decision stalls in the gap between a hunch and a proof.`,
+     fix:`Instinct proposes, evidence disposes. Big calls come with a one-page pre-read 24 hours ahead, so the deep thinkers arrive ready instead of resistant. Small, reversible calls are allowed to move at gut speed — no data pack required. Anything expensive or irreversible runs through the quality gate. Both sides get what they were actually asking for: speed where it's safe, proof where it counts.`},
+  R:{needs:"RECOGNITION",high:"Energy from people, out-loud thinking",low:"Energy from quiet, think-then-speak",
+     hiId:"ed",loId:"jg",
+     plain:`This one is never really about attitude. It's <b>THINKING OUT LOUD</b> colliding with <b>THINKING IN QUIET</b> — volume vs depth.`,
+     arg:`<b>ED (R92)</b> thinks by talking and fills the room with energy. <b>JG (R50)</b> thinks in silence and might speak twice a meeting. ED reads the silence as disengagement or disapproval; JG experiences the volume as pressure. So the loudest view wins by default — which is not remotely the same thing as the best view winning.`,
+     fix:`Treat silence as unread mail, not an empty inbox. Before any decision closes, the chair collects JG's view — in writing, in advance, every time. The talkers adopt a two-minute summary discipline so airtime doesn't equal influence. The introvert's best thinking finally enters the record; the extrovert still gets the room they genuinely energise.`},
+  D:{needs:"ACHIEVEMENT",high:"Decide today, own the risk",low:"Decide right, weigh the risk",
+     hiId:"lch",loId:"sm",
+     plain:`This one is never really about urgency. It's <b>DECIDE TODAY</b> colliding with <b>DECIDE RIGHT</b> — achievement vs certainty.`,
+     arg:`<b>LCH (D80)</b> wants it decided today — momentum is oxygen. <b>SM (D64)</b> and <b>ZW (D66)</b> want it decided right — mistakes are expensive. So the meeting ends with "let's think about it some more," which the driver hears as "no" and the deliberators hear as "not yet." Third meeting, same agenda item, and everyone privately blames everyone else.`,
+     fix:`Two clocks, one deadline. Before the work starts, agree together what "good enough to decide" actually looks like — then put a date on it. When the date arrives, the call gets made with whatever is known, and it sticks. The driver gets a guaranteed decision day; the deliberators get a guaranteed thinking window. Nobody ambushes anybody, and the agenda finally moves.`}
+};
+
+const DIAG={
+  ND:{f1:"N",f2:"D",p1:"ed",p2:"lch",name:"N × D",word:"the opposite-corners clash",
+    plain:`This isn't one dial disagreeing — it's the <b>harmony keeper</b> and the <b>trigger-puller</b> standing on opposite corners of the map. The social axis and the pace axis flip at the same time.`,
+    sound:`<b>LCH</b> announces the decision in the meeting where <b>ED</b> is still reading the room. ED hears recklessness wearing confidence; LCH hears delay wearing diplomacy. Neither is wrong — they're diagonal: no axis in common, no home ground to retreat to.`,
+    fix:`<b>Two-beat decisions.</b> Beat one: LCH names the call and the deadline, out loud. Beat two: ED gets a guaranteed harmony pass — private objections invited and genuinely heard before it's final. The call keeps its date; the peace keeps its voice.`,
+    compound:(g1,g2)=>`Alone, a <b>${g1}-point Neutral gap</b> is working friction and a <b>${g2}-point Decisive gap</b> is barely a hum. Stacked on the <b>same relationship</b> they compound into a ${g1+g2}-point diagonal — and because both axes flip at once, there's no shared temperament to fall back on. The LPI calls these <b>dual opposites</b>: the pairs that argue least often, and hardest.`},
+  RA:{f1:"R",f2:"A",p1:"ed",p2:"sm",name:"R × A",word:"the opposite-corners clash",
+    plain:`Warmth that <b>thinks out loud</b> meets precision that <b>thinks in silence</b> — corner to opposite corner. A hunger for recognition colliding with a hunger for accuracy, with no native dialect in common.`,
+    sound:`<b>ED</b> floats the idea to the whole room while it's still warm; <b>SM</b> hears claims without evidence. SM returns a red-pen list; ED hears the applause being audited. It reads as personal. It's positional — they occupy opposite corners of the map.`,
+    fix:`<b>Warm first, verify second — in writing.</b> ED's idea gets its moment in the room, untouched. Then it goes to SM as a one-pager with a 24-hour quality pass. Praise in public, test in private — and both forces end up fully spent on the same idea.`,
+    compound:(g1,g2)=>`Two tidy gaps — <b>${g1} points on Relational</b>, <b>${g2} on Analytical</b> — each mere friction on its own. But they sit on the same two people, diagonally: a ${g1+g2}-point spread where the warmth reads the rigour as coldness, and the rigour reads the warmth as noise. Dual opposites, by the book.`}
+};
+
+function gapZone(gap){
+  if(gap<15)return{z:"z1",name:"Background hum",col:"#43C88F",
+    read:`A gap under <b>15 points</b> is normal texture — two people who differ, but close enough to flex toward each other without noticing. It self-resolves. No protocol needed; just awareness.`};
+  if(gap<25)return{z:"z2",name:"Working friction",col:"var(--gold)",
+    read:`A gap of <b>15–24 points</b> is audible. It surfaces as recurring "style" complaints — slow vs sloppy, blunt vs vague — a few times a quarter. A light protocol (one agreed rule) keeps it productive instead of personal.`};
+  return{z:"z3",name:"Fault line",col:"var(--dim-D)",
+    read:`A gap of <b>25+ points</b> is a fault line: this argument <b>will</b> recur, on a schedule, dressed as whatever project is nearest. Neither person can flex far enough to close it alone — which is exactly why the protocol on the right is non-negotiable, and why it works.`};
+}
+
+const CURRENT_READ={
+  zw:{st:"People-side middle · the harmony cluster",tx:"Clustered with FM and ED where warmth is abundant — but decision weight isn't. Ideas are born here, then wait for someone else to date-stamp them."},
+  lch:{st:"Decisive corner · alone",tx:"The only dot in the D corner. Every final call routes through this one person — brilliant until the day they're travelling, saturated, or simply human."},
+  fm:{st:"People-side middle · crowded",tx:"The most balanced pentagon on the map, parked mid-people beside two other encouragers. Steady gold — spent on ground already covered twice."},
+  ed:{st:"Near the axis · superpower parked",tx:"The strongest people-force on the map (R92) idling near the centre line instead of owning the Relational corner. Warmth as a trait, not yet a deployment."},
+  jg:{st:"Deep think-tank · doubled up",tx:"Far top-right with SM — two elite checkers inspecting the same work. World-class scrutiny, spent twice on one corner."},
+  sm:{st:"Deep think-tank · doubled up",tx:"Sharing JG's Analytical zone. An A96 quality instinct queued behind another quality instinct — while the shipping corner runs on one pair of hands."}
+};
+const WEAK=[
+ {t:"One hand on the trigger",tag:"Lone-force Decisive corner",members:["lch"],
+  p:"Only <b>LCH</b> stands in the Decisive corner — every final call routes through one person. <b>The cost:</b> decisions queue, the third meeting happens on the same topic, and three reports in this cohort literally prescribe \"decide faster.\""},
+ {t:"The harmony huddle",tag:"Crowded people-middle",members:["zw","fm","ed"],
+  p:"<b>ZW, FM and ED</b> cluster in the people-side middle. Warm culture, zero drama. <b>The cost:</b> issues submerge instead of resolving, and small troubles quietly grow into crises — FM's own report warns of exactly this."},
+ {t:"Double vision in the think-tank",tag:"Duplicated Analytical zone",members:["jg","sm"],
+  p:"<b>JG and SM</b> both occupy the deep-thinking, task-side zone — two quality guards inspecting the same work. <b>The cost:</b> duplicated scrutiny, slower verdicts, and empty corners elsewhere."},
+ {t:"The parked superpower",tag:"Unowned Relational corner",members:["ed"],
+  p:"<b>ED</b> — the strongest people-force on the map (R92) — idles near the axis instead of owning the Relational corner, and the O-centre has no translator. <b>The cost:</b> warmth under-deployed, ideas dying between the thinkers and the doers."}
+];
+const PAYOFF=[
+ {b4:"1",af:"3",label:"forces sharing the decision trigger",
+  cap:"LCH still anchors the final call — but SM & JG now feed him decision-ready verdicts instead of open questions.",
+  plain:"In plain terms: today, every final decision waits in a queue behind one busy person. After the shift, three people can push a call over the line — so when LCH is travelling, saturated, or simply human, the company doesn't hold its breath.",
+  members:["lch","sm","jg"]},
+ {b4:"2",af:"5",label:"zones of the map with a named owner",
+  cap:"All four corners plus the O-centre get a name on the door — nobody's job is \"somewhere in the middle\".",
+  plain:"In plain terms: think of the map as five stations in a workshop — ideas, harmony, quality, people, decisions. Right now only two stations are clearly staffed. After the shift, every station has an owner, so nothing important is ever \"somebody else's job\".",
+  members:["lch","ed","fm","jg","zw","sm"]},
+ {b4:"2",af:"6",label:"shoulders carrying the anchor load",
+  cap:"Keyman risk dissolves — no single resignation can gut four of the team's five forces.",
+  plain:"In plain terms: today, two people (LCH and ED) personally hold four of the team's five superpowers. If either one resigns, most of what makes this team work walks out the door with them. After: the load sits on all six shoulders — no single goodbye can break the team.",
+  members:["zw","lch","fm","ed","jg","sm"]},
+ {b4:"Parked",af:"Deployed",label:"the team's warmth engine — ED, R92",
+  cap:"Client rooms, pitches and training days finally get the strongest people-force, full-time.",
+  plain:"In plain terms: ED is the best people-person on the map — but has been used like a spare battery, idling near the middle. After the shift, that warmth works full-time where it earns the most: winning clients, lighting up training rooms, holding morale.",
+  members:["ed"]},
+ {b4:"Buried",af:"Closed",label:"how disagreements end",
+  cap:"Said early, kindly, once — settled in the room, not replayed in heads for a month.",
+  plain:"In plain terms: today, disagreements get smiled over in the meeting and carried home, where they quietly grow. After: the hard thing gets named while everyone is still in the room, settled once, and actually finished. No replays, no scorekeeping.",
+  members:["lch","ed","fm"]}
+];
+
+
+const spread=Math.round(DIMS.reduce((a,d)=>{const v=TEAM.map(m=>m.scores[d.k]);return a+(Math.max(...v)-Math.min(...v))},0)/5);
+const EXEC=[
+  {n:"72",l:"Decision velocity",c:"var(--dim-D)",st:"risk",stl:"Fix first",
+   p:"The lowest force on the board — only <b>1 of 6</b> clears 80. What it costs: options pile up, calls stall, momentum leaks. First move: <b>owners and dates on every open question.</b>",
+   plain:"In plain terms: too many \u201clet's discuss it again\u201d meetings. This is where the money leaks."},
+  {n:"82",l:"Innovation capacity",c:"var(--dim-O)",st:"win",stl:"Strength",
+   p:"<b>4 of 6</b> members carry Openness of 80+. Ideas are never the constraint — <b>finishing them is.</b> Pair every launch with a closer, or watch brilliance evaporate.",
+   plain:"In plain terms: the idea well never runs dry — the pipe out of it needs a valve."},
+  {n:"82",l:"Quality depth",c:"var(--dim-A)",st:"win",stl:"Strength",
+   p:"SM at A96 and JG at A86 give this team <b>audit-grade scrutiny in-house</b>. Route anything irreversible through them — it's free insurance you already employ.",
+   plain:"In plain terms: built-in proofreaders for anything expensive. Use them before signing, not after."},
+  {n:"75",l:"Relational reach",c:"var(--dim-R)",st:"watch",stl:"Watch",
+   p:"The widest spread on the map (50–92). External warmth is <b>concentrated in two people</b> — a growth ceiling and a burnout risk wearing the same face.",
+   plain:"In plain terms: two people carry all the charm. Protect them — or risk losing it all at once."},
+  {n:"79",l:"Cohesion & retention",c:"var(--dim-N)",st:"watch",stl:"Watch",
+   p:"Harmony-rich — and that's the trap: issues submerge instead of resolving, and the <b>quietest strong performer resigns without ever complaining.</b> The map flags them first.",
+   plain:"In plain terms: a team this nice hides its problems politely. Ask the quiet ones directly."},
+  {n:spread,l:"Temperament diversity",c:"var(--gold)",st:"win",stl:"Strength",
+   p:`An average spread of <b>${spread} points</b> per force — genuinely high diversity. With protocols, it's a superpower. Without them, it's five different clocks in one meeting.`,
+   plain:"In plain terms: five different clocks in one room — pure gold, once everyone learns to read them."}
+];
+
+
+const DIRECTORY=[
+  {need:"A bold new angle",sub:"reframes, inventions, ways out of dead ends",who:["lch","ed"]},
+  {need:"It checked, airtight, correct",sub:"quality gates, contracts, anything irreversible",who:["sm","jg"]},
+  {need:"The honest hard call",sub:"someone to decide today and own it",who:["lch"]},
+  {need:"A safe ear & steady counsel",sub:"when it's personal before it's professional",who:["fm","zw"]},
+  {need:"The room energised",sub:"pitches, training, client warmth",who:["ed","zw"]},
+  {need:"Peace brokered",sub:"two parties, one mediator, zero casualties",who:["fm"]},
+  {need:"A plan turned into deadlines",sub:"structure, sequence, accountability",who:["lch","jg"]},
+  {need:"Ideas translated for the doers",sub:"the bridge between vision and execution",who:["zw"]}
+];
+</script>
+<script>"use strict";
+const dimColorHex={O:"#9B7EDE",N:"#E06CA8",A:"#5B8DEF",R:"#43C88F",D:"#E8635C"};
+let BOOTED=false;
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ════════════════ Atlas Journey — progress & badges ════════════════ */
+const BADGES=[
+ {id:"cartographer",icon:"🗺️",name:"Cartographer",desc:"Visited all five sections of the Atlas"},
+ {id:"six",icon:"👥",name:"Met the Six",desc:"Opened every one of the six dossiers"},
+ {id:"formation",icon:"♟️",name:"Formation Shift",desc:"Viewed the Optimized Formation"},
+ {id:"chemist",icon:"⚗️",name:"Chemist",desc:"Computed five different chemistry mixes"},
+ {id:"subtitler",icon:"🎬",name:"Subtitler",desc:"Read three of the predictable arguments"},
+ {id:"stress",icon:"🧯",name:"Stress-Tester",desc:"Ran a resignation simulation"},
+ {id:"fifth",icon:"✦",name:"The Fifth Force",desc:"Read why Openness changes everything"}
+];
+const store={get(){try{return JSON.parse(localStorage.getItem("lpi_atlas_v1"))||null}catch(e){return null}},
+ set(g){try{localStorage.setItem("lpi_atlas_v1",JSON.stringify(g))}catch(e){}}};
+let G=store.get()||{tabs:{},dossiers:{},mixes:{},clashes:{},formation:0,stress:0,fifth:0,badges:{},lastTab:"story",returned:0};
+
+function journeyPts(){
+  const n=o=>Object.keys(o).length;
+  return Math.min(n(G.tabs),5)+Math.min(n(G.dossiers),6)+(G.formation?1:0)
+   +Math.min(n(G.mixes),5)+Math.min(n(G.clashes),3)+(G.stress?1:0)+(G.fifth?1:0);
+}
+const JTOTAL=22;
+function badgeEarned(id){
+  const n=o=>Object.keys(o).length;
+  switch(id){
+    case "cartographer":return n(G.tabs)>=5;
+    case "six":return n(G.dossiers)>=6;
+    case "formation":return !!G.formation;
+    case "chemist":return n(G.mixes)>=5;
+    case "subtitler":return n(G.clashes)>=3;
+    case "stress":return !!G.stress;
+    case "fifth":return !!G.fifth;
+  }
+}
+let toastTimer=null;
+function toast(msg,sub){
+  const t=$("#toast");
+  $("#toastMsg").innerHTML=sub?`${msg}<small>${sub}</small>`:msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove("show"),3400);
+}
+function refreshJourney(announce=true){
+  BADGES.forEach(b=>{
+    if(badgeEarned(b.id)&&!G.badges[b.id]){
+      G.badges[b.id]=1;
+      if(announce){toast(`Discovery · ${b.name}`,b.desc);try{navigator.vibrate&&navigator.vibrate(8)}catch(e){}}
+    }
+  });
+  const pts=journeyPts(),pct=Math.round(pts/JTOTAL*100);
+  $("#compassPct").textContent=pct+"%";
+  $("#ringFg").style.strokeDashoffset=(97.4*(1-pts/JTOTAL)).toFixed(1);
+  const got=Object.keys(G.badges).length;
+  $("#jteaserSub").textContent=got>=7?"All 7 discoveries found. Cartographer of the full Atlas.":`${got} of 7 discoveries found. ${7-got} still hidden.`;
+  store.set(G);
+}
+function openJourney(){
+  const got=Object.keys(G.badges).length,pct=Math.round(journeyPts()/JTOTAL*100);
+  $("#journeyBody").innerHTML=`
+    <div class="jhead"><h3>Your Atlas Journey</h3>
+      <p>${got} of 7 discoveries · ${pct}% explored${got>=7?" — the full map is yours":""}</p>
+      <div class="jbar"><i style="width:${pct}%"></i></div></div>
+    <div class="badges">${BADGES.map(b=>`
+      <div class="badge ${G.badges[b.id]?"got":""}"><span class="bi">${b.icon}</span><b>${b.name}</b><span>${b.desc}</span></div>`).join("")}</div>
+    <p class="jfoot">Your progress is saved on this device — pick up exactly where you left off.<br>Your team's own Atlas is drawn in the Team Mapping Lab.</p>`;
+  openSheet("journeySheet");
+}
+
+/* ════════════════ Sheets ════════════════ */
+const scrim=$("#scrim");let openSheetId=null;
+function openSheet(id){
+  openSheetId=id;
+  scrim.classList.add("show");
+  document.getElementById(id).classList.add("show");
+  document.body.style.overflow="hidden";
+}
+function closeSheet(){
+  if(!openSheetId)return;
+  document.getElementById(openSheetId).classList.remove("show");
+  scrim.classList.remove("show");
+  document.body.style.overflow="";
+  openSheetId=null;
+}
+scrim.addEventListener("click",closeSheet);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+$$(".sheet .grab").forEach(g=>{
+  let y0=null;
+  g.addEventListener("touchstart",e=>{y0=e.touches[0].clientY},{passive:true});
+  g.addEventListener("touchmove",e=>{if(y0!=null&&e.touches[0].clientY-y0>46){y0=null;closeSheet()}},{passive:true});
+  g.addEventListener("click",closeSheet);
+});
+
+/* ════════════════ Tab navigation ════════════════ */
+const TABS=["story","map","lab","insights","begin"];
+const scrollPos={};
+let curTab=null;
+function goTab(tab,opts={}){
+  if(!TABS.includes(tab))return;
+  if(curTab)scrollPos[curTab]=window.scrollY;
+  curTab=tab;
+  $$(".view").forEach(v=>v.classList.remove("on"));
+  $("#v-"+tab).classList.add("on");
+  $$(".bnav button").forEach(b=>{
+    b.classList.toggle("on",b.dataset.tab===tab);
+    if(G.tabs[b.dataset.tab])b.classList.add("visited");
+  });
+  window.scrollTo({top:opts.keep?(scrollPos[tab]||0):0,behavior:"auto"});
+  G.tabs[tab]=1;G.lastTab=tab;
+  refreshJourney();
+  observeRv();
+  if(opts.sv&&tab==="insights")goSub(opts.sv);
+}
+$$(".bnav button").forEach(b=>b.addEventListener("click",()=>goTab(b.dataset.tab,{keep:true})));
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-goto]");
+  if(!g)return;
+  goTab(g.dataset.goto,{sv:g.dataset.sv});
+});
+$("#compassBtn").addEventListener("click",openJourney);
+$("#jteaser").addEventListener("click",openJourney);
+
+/* reveal-on-scroll */
+const rvIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add("in");rvIO.unobserve(e.target)}
+}),{threshold:.1});
+function observeRv(){$$(".rv:not(.in)").forEach(el=>rvIO.observe(el))}
+
+/* ════════════════ ONARD quadrant map ════════════════ */
+const Q={c:320,scale:5.0};
+const qx=v=>Q.c+v*Q.scale,qy=v=>Q.c+v*Q.scale;
+function buildQuadrant(svg,opts={}){
+  svg.innerHTML="";
+  const c=Q.c,ext=215;
+  svg.appendChild(svgEl("rect",{x:c-ext,y:c-ext,width:ext*2,height:ext*2,rx:22,class:"q-frame"}));
+  [-ext/2,ext/2].forEach(o=>{
+    svg.appendChild(svgEl("line",{x1:c-ext,y1:c+o,x2:c+ext,y2:c+o,class:"q-grid"}));
+    svg.appendChild(svgEl("line",{x1:c+o,y1:c-ext,x2:c+o,y2:c+ext,class:"q-grid"}));
+  });
+  const B=6*Q.scale;
+  svg.appendChild(svgEl("rect",{x:c-ext,y:c-B,width:ext*2,height:B*2,class:"q-band"}));
+  svg.appendChild(svgEl("rect",{x:c-B,y:c-ext,width:B*2,height:ext*2,class:"q-band"}));
+  svg.appendChild(svgEl("line",{x1:c-ext,y1:c,x2:c+ext,y2:c,class:"q-axis"}));
+  svg.appendChild(svgEl("line",{x1:c,y1:c-ext,x2:c,y2:c+ext,class:"q-axis"}));
+  const cap=(x,y,txt,rot)=>{const t=svgEl("text",{x,y,"text-anchor":"middle",class:"q-axis-label",transform:rot?`rotate(${rot} ${x} ${y})`:null});t.textContent=txt;svg.appendChild(t)};
+  cap(c,c-ext-16,"INTROVERT · THINKS FIRST");
+  cap(c,c+ext+30,"EXTROVERT · ACTS FIRST");
+  cap(c-ext-14,c,"PEOPLE · FEELINGS",-90);
+  cap(c+ext+14,c,"TASK · OUTCOMES",90);
+  const corner=(x,y,k,label)=>{
+    const t=svgEl("text",{x,y,"text-anchor":"middle",class:"q-corner",fill:dimColorHex[k]});t.textContent=k;svg.appendChild(t);
+    const s=svgEl("text",{x,y:y+18,"text-anchor":"middle",class:"q-corner-sub"});s.textContent=label;svg.appendChild(s);
+  };
+  corner(c-ext+56,c-ext+52,"N","NEUTRAL");
+  corner(c+ext-56,c-ext+52,"A","ANALYTICAL");
+  corner(c-ext+56,c+ext-62,"R","RELATIONAL");
+  corner(c+ext-56,c+ext-62,"D","DECISIVE");
+  svg.appendChild(svgEl("circle",{cx:c,cy:c,r:46,class:"q-o-ring"}));
+  const ot=svgEl("text",{x:c,y:c-2,"text-anchor":"middle",class:"q-o-label"});ot.textContent="O";svg.appendChild(ot);
+  const os=svgEl("text",{x:c,y:c+16,"text-anchor":"middle",class:"q-corner-sub"});os.textContent="WILD CARD";svg.appendChild(os);
+  TEAM.forEach(m=>{
+    const col=memColor(m);
+    const g=svgEl("g",{class:"member","data-id":m.id,transform:`translate(${qx(m.pos.x)} ${qy(m.pos.y)})`});
+    g.appendChild(svgEl("circle",{class:"halo",r:(m.scores.O*0.48).toFixed(1),stroke:col}));
+    g.appendChild(svgEl("circle",{class:"core",r:12,fill:col,color:col}));
+    const lt=svgEl("text",{y:-22,"text-anchor":"middle",class:"tag-txt",fill:col});lt.textContent=m.initials;g.appendChild(lt);
+    const arc=svgEl("text",{y:(m.arcDy||30),"text-anchor":"middle",class:"tag-arc"});
+    m.code.split("").forEach(L=>{const ts=svgEl("tspan",{fill:dimColorHex[L]});ts.textContent=L;arc.appendChild(ts)});
+    g.appendChild(arc);
+    if(opts.interactive){
+      g.appendChild(svgEl("circle",{class:"tap",r:42}));
+      g.setAttribute("role","button");g.setAttribute("tabindex","0");
+      g.setAttribute("aria-label",`${m.initials} — ${m.archetype}`);
+      g.addEventListener("click",()=>openDossier(m.id));
+      g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openDossier(m.id)}});
+    }
+    svg.appendChild(g);
+  });
+}
+buildQuadrant($("#heroQuad"),{interactive:false});
+buildQuadrant($("#quadrant"),{interactive:true});
+buildQuadrant($("#anchorQuad"),{interactive:false});
+
+/* boardroom chips */
+["British Petroleum","Cathay Pacific","Petronas","Saudi Aramco","Microsoft Thailand","Reuters","Kuwait Petroleum","Oman Petroleum","Reader's Digest","B. Braun","Thai Securities Exchange Commission","Young Presidents' Organisation"]
+ .forEach(n=>{const d=document.createElement("div");d.className="b-chip";d.textContent=n;$("#boardChips").appendChild(d)});
+
+/* five forces carousel */
+const FORCE_CARDS=[
+ {k:"O",n:"Openness · the idea machine",li:["Curious, inventive, imaginative","Loves trying new things","Allergic to routine"],cr:"Craves <b>CREATIVITY</b> · starved: bored, impulsive, drifts off"},
+ {k:"N",n:"Neutral · the peacekeeper",li:["Calm, loyal, a real listener","Keeps the room together","Lives in harmony"],cr:"Craves <b>SECURITY</b> · starved: avoids conflict, over-gives, gets hurt"},
+ {k:"A",n:"Analytical · the quality guard",li:["Precise, careful, systematic","Values accuracy above speed","Hates sloppy work"],cr:"Craves <b>ACCURACY</b> · starved: overthinks, risk-averse, slow to move"},
+ {k:"R",n:"Relational · the energiser",li:["Warm, persuasive, magnetic","Lights people up","Exciting company"],cr:"Craves <b>RECOGNITION</b> · starved: over-talks, scattered, needs the stage"},
+ {k:"D",n:"Decisive · the driver",li:["Fast, bold, result-oriented","Displays initiative","Allergic to waiting"],cr:"Craves <b>ACHIEVEMENT</b> · starved: impatient, steamrolls, stubborn"}
+];
+FORCE_CARDS.forEach(f=>{
+  const d=document.createElement("div");
+  d.className="card dim-card";d.style.setProperty("--dc",dimColorHex[f.k]);
+  d.innerHTML=`<div class="dl">${f.k}</div><div class="dn">${f.n}</div>
+   <ul>${f.li.map(x=>`<li>${x}</li>`).join("")}</ul><div class="craves">${f.cr}</div>`;
+  $("#forcesCar").appendChild(d);
+});
+function wireDots(carSel,dotSel){
+  const car=$(carSel),dots=$(dotSel),kids=[...car.children];
+  kids.forEach((_,i)=>{const d=document.createElement("i");if(i===0)d.className="on";dots.appendChild(d)});
+  car.addEventListener("scroll",()=>{
+    const i=Math.round(car.scrollLeft/(car.scrollWidth-car.clientWidth)*(kids.length-1))||0;
+    [...dots.children].forEach((d,j)=>d.classList.toggle("on",j===i));
+  },{passive:true});
+}
+wireDots("#forcesCar","#forcesDots");
+
+/* O-spotlight discovery */
+$("#oSpot").addEventListener("click",()=>{
+  if(!G.fifth){G.fifth=1;$("#oSpotLine").textContent="✦ Read — discovery logged";refreshJourney()}
+});
+if(G.fifth)$("#oSpotLine").textContent="✦ Read — discovery logged";
+
+/* ════════════════ MAP view: formation, legend, o-rail, panel ════════════════ */
+let formation="current";
+function setFormation(mode){
+  formation=mode;
+  $("#ftoggle").classList.toggle("opt",mode==="opt");
+  $("#btnCurrent").classList.toggle("active",mode==="current");
+  $("#btnOptimized").classList.toggle("active",mode==="opt");
+  $$("#quadrant .member").forEach(g=>{
+    const m=byId(g.dataset.id),p=(mode==="opt")?m.opt:m.pos;
+    g.setAttribute("transform",`translate(${qx(p.x)} ${qy(p.y)})`);
+  });
+  $("#formationNote").classList.toggle("show",mode==="opt");
+  if(mode==="opt"&&!G.formation){G.formation=1;refreshJourney()}
+  buildStack(mode);
+}
+$("#btnCurrent").addEventListener("click",()=>setFormation("current"));
+$("#btnOptimized").addEventListener("click",()=>setFormation("opt"));
+
+TEAM.forEach(m=>{
+  const b=document.createElement("button");
+  b.className="chip";b.style.setProperty("--mc",memColor(m));
+  b.innerHTML=`<span class="dot"></span>${m.initials} · ${m.archetype.replace("The ","")}`;
+  b.addEventListener("click",()=>openDossier(m.id));
+  $("#legend").appendChild(b);
+});
+
+(function(){
+  const track=$("#orTrack");
+  const lo=50,hi=100,pct=v=>((v-lo)/(hi-lo)*100).toFixed(1)+"%";
+  track.innerHTML=`<div class="or-bar"></div>
+    <span class="or-cap" style="left:0">O 50 · stays in lane</span>
+    <span class="or-cap" style="right:0;text-align:right">O 100 · roams anywhere</span>`;
+  const sorted=[...TEAM].sort((a,b)=>a.scores.O-b.scores.O);
+  sorted.forEach((m,i)=>{
+    const d=document.createElement("div");
+    d.className="or-dot";d.style.left=pct(m.scores.O);
+    d.style.setProperty("--mc",memColor(m));
+    const lift=(i%2===0)?0:-26;
+    d.innerHTML=`<b style="top:${-34+lift}px">${m.initials}</b><em style="top:${-21+lift}px">O${m.scores.O}</em><i></i>`;
+    track.appendChild(d);
+  });
+  $("#orNote").innerHTML=`On this team the altitude story is stark: <b style="color:${memColor(byId("lch"))}">LCH at O96</b> can land in any quadrant the mission needs, while <b style="color:${memColor(byId("jg"))}">JG at O60</b> does his best work staying deep in his home corner — both are assets, if you deploy them that way.`;
+})();
+
+const PANEL_COPY={
+  "current.people":{t:"The six, right now",s:"Where each person stands — tap any card for the full dossier"},
+  "current.insight":{t:"Where this formation is exposed",s:"A healthy map has every corner held. This one doesn't."},
+  "opt.people":{t:"The six, repositioned",s:"Each person's move — tap any card for the full dossier"},
+  "opt.insight":{t:"Same six people. Different team.",s:"What the shift buys you"}
+};
+let panelView="people";
+function buildStack(mode){
+  const copy=PANEL_COPY[mode+"."+panelView];
+  $("#pstackTitle").textContent=copy.t;$("#pstackSub").textContent=copy.s;
+  const tabs=$$("#ptabs button");
+  tabs[0].textContent=(mode==="opt")?"The Moves":"The Six";
+  tabs[1].textContent=(mode==="opt")?"The Payoff":"Weak Spots";
+  tabs.forEach(t=>t.classList.toggle("active",t.dataset.view===panelView));
+  const list=$("#pstackList");list.innerHTML="";
+  if(panelView==="people"){
+    TEAM.forEach(m=>{
+      const c=document.createElement("button");
+      c.type="button";c.className="pcard";c.style.setProperty("--mc",memColor(m));
+      const body=(mode==="opt")
+        ?`<span class="pc-st">${m.optMove}</span><p>${m.optWhy}</p>`
+        :`<span class="pc-st">${CURRENT_READ[m.id].st}</span><p>${CURRENT_READ[m.id].tx}</p>`;
+      c.innerHTML=`<div class="pc-top"><span class="avatar">${m.initials}</span>
+        <span class="pc-name">${m.initials} <em>${m.archetype.replace("The ","")} | ${m.code}</em></span>
+        <svg class="pc-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>${body}`;
+      c.addEventListener("click",()=>openDossier(m.id));
+      list.appendChild(c);
+    });
+  }else if(mode==="current"){
+    WEAK.forEach(w=>{
+      const c=document.createElement("div");
+      c.className="pcard";c.style.setProperty("--mc","var(--dim-D)");
+      c.innerHTML=`<span class="pc-st">${w.tag}</span><b style="display:block;font-family:var(--font-display);font-size:16px;margin-bottom:5px">${w.t}</b><p>${w.p}</p>
+        <div class="pc-avs">${w.members.map(id=>{const m=byId(id);return `<span class="avatar" style="--mc:${memColor(m)}">${m.initials}</span>`}).join("")}</div>`;
+      list.appendChild(c);
+    });
+  }else{
+    PAYOFF.forEach(d=>{
+      const c=document.createElement("div");
+      c.className="pcard";c.style.setProperty("--mc","var(--gold)");
+      c.innerHTML=`<div class="pd-nums"><span class="b4">${d.b4}</span>
+        <svg class="d-arr" viewBox="0 0 44 14"><path d="M2 7h32m0 0l-7-5.5M34 7l-7 5.5"/></svg>
+        <span class="af">${d.af}</span></div>
+        <b class="pd-l">${d.label}</b><p>${d.cap}</p><p class="plain">${d.plain}</p>
+        <div class="pc-avs">${d.members.slice(0,6).map(id=>{const m=byId(id);return `<span class="avatar" style="--mc:${memColor(m)}">${m.initials}</span>`}).join("")}</div>`;
+      list.appendChild(c);
+    });
+  }
+}
+$$("#ptabs button").forEach(t=>t.addEventListener("click",()=>{panelView=t.dataset.view;buildStack(formation)}));
+buildStack("current");
+
+/* ════════════════ Dossier bottom sheet ════════════════ */
+const spectrumHTML=s=>`<div class="spectrum" aria-hidden="true">${DIMS.map(d=>`<i class="s${d.k}" style="flex:${s[d.k]}"></i>`).join("")}</div>`;
+const listHTML=(items,cls="")=>`<ul class="dlist ${cls}">${items.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+function openDossier(id){
+  const m=byId(id),c=memColor(m);
+  const idx=TEAM.findIndex(t=>t.id===id);
+  const prev=TEAM[(idx+TEAM.length-1)%TEAM.length],next=TEAM[(idx+1)%TEAM.length];
+  const body=$("#dossierBody");
+  body.style.setProperty("--mc",c);
+  body.innerHTML=`
+    <div class="dossier-head">
+      <div class="avatar" style="--mc:${c}">${m.initials}</div>
+      <div><span class="arch">${m.archetype} · ${m.code}</span>
+        <h3>${m.name}</h3><div class="role">${m.role} · Certified LPI profile</div></div>
+    </div>
+    ${spectrumHTML(m.scores)}
+    <p class="essence">${m.essence}</p>
+    ${DIMS.map(d=>`<div class="score-row"><span class="lbl">${d.name}</span>
+      <div class="score-track"><div class="score-fill" data-w="${m.scores[d.k]}" style="background:${dimColorHex[d.k]}"></div></div>
+      <b>${m.scores[d.k]}</b></div>`).join("")}
+    <div class="dtabs" role="tablist">
+      ${["Profile","Strengths","Blindspots","Under Stress","In Conflict","Team Chemistry"].map((t,i)=>
+        `<button class="dtab ${i===0?"active":""}" role="tab" data-pane="p${i}">${t}</button>`).join("")}
+    </div>
+    <div class="dpane active" id="p0"><h4>How they help the organisation</h4>${listHTML(m.contribution)}
+      <p class="dnote">Drawn from ${m.initials}'s official LPI report — one of 26 classical styles.</p></div>
+    <div class="dpane" id="p1"><h4>Signature strengths</h4>${listHTML(m.strengths,"calm")}</div>
+    <div class="dpane" id="p2"><h4>Watch-outs</h4>${listHTML(m.blindspots,"warn")}
+      <h4>How the team covers each one</h4>${listHTML(m.blindspotHelp,"calm")}
+      <p class="dnote">Blindspots are the shadow of strengths — the same wiring, over-used. Cover beats cure.</p></div>
+    <div class="dpane" id="p3"><h4>What triggers stress</h4>${listHTML(m.stress.triggers,"warn")}
+      <h4>How it shows</h4>${listHTML(m.stress.reactions)}
+      <h4>What actually helps</h4>${listHTML(m.stress.recovery,"calm")}</div>
+    <div class="dpane" id="p4"><h4>Default pattern</h4>${listHTML(m.conflict.tends,"warn")}
+      <h4>The upgrade</h4>${listHTML(m.conflict.better,"calm")}</div>
+    <div class="dpane" id="p5"><h4>How ${m.initials} best supports this team</h4>${listHTML(m.support,"calm")}
+      <h4>How the team brings out ${m.initials}'s best</h4>${listHTML(m.supportedBy)}</div>
+    <div class="dnav">
+      <button data-go="${prev.id}" style="--mc2:${memColor(prev)}">‹ <span class="nm">${prev.initials}</span></button>
+      <button data-go="${next.id}" style="--mc2:${memColor(next)}"><span class="nm">${next.initials}</span> ›</button>
+    </div>`;
+  body.querySelectorAll(".dtab").forEach(tb=>tb.addEventListener("click",()=>{
+    body.querySelectorAll(".dtab").forEach(x=>x.classList.remove("active"));
+    body.querySelectorAll(".dpane").forEach(x=>x.classList.remove("active"));
+    tb.classList.add("active");body.querySelector("#"+tb.dataset.pane).classList.add("active");
+  }));
+  body.querySelectorAll(".dnav button").forEach(b=>b.addEventListener("click",()=>openDossier(b.dataset.go)));
+  if(!openSheetId)openSheet("dossierSheet");
+  body.scrollTop=0;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    body.querySelectorAll(".score-fill").forEach(f=>f.style.width=f.dataset.w+"%");
+  }));
+  if(!G.dossiers[id]){G.dossiers[id]=1;refreshJourney()}
+}
+
+/* ════════════════ LAB ════════════════ */
+const topDimOf=m=>DIMS.reduce((a,d)=>m.scores[d.k]>m.scores[a.k]?d:a,DIMS[0]);
+function renderLab(){
+  const sel=$$("#labPicker .lab-chip.on").map(c=>c.dataset.id);
+  const out=$("#labOut");
+  if(sel.length<2){out.classList.remove("show");out.innerHTML="";return}
+  const r=chemAnalyze(sel);
+  const key=CHEM_KEY(sel);
+  if(BOOTED&&!G.mixes[key]){G.mixes[key]=1;refreshJourney()}
+  $("#mixCount").textContent=Object.keys(G.mixes).length;
+  const coverHTML=r.cover.map(c=>c.ok
+    ?`<span class="lc-chip ok" style="--cc:${dimColorHex[c.d.k]}"><b>${c.d.k}</b> held — ${c.who.initials} ${c.v}</span>`
+    :`<span class="lc-chip no" style="--cc:${dimColorHex[c.d.k]}"><b>${c.d.k}</b> exposed — best is ${c.who.initials} ${c.v}</span>`).join("");
+  const missHTML=(r.missing.length&&r.missing.length<TEAM.length-1)
+    ?`<div class="lab-missing"><b style="color:var(--gold)">Not in this mix:</b> ${r.missing.map(m=>`<b style="color:${memColor(m)}">${m.initials}</b> (top force: ${topDimOf(m).name.toLowerCase()} ${m.scores[topDimOf(m).k]})`).join(" · ")} — if the task needs what they carry, borrow them for an hour.</div>`:"";
+  const blocks=[
+    {t:"Synergy",c:"var(--dim-R)",items:r.syn,open:true},
+    {t:"Friction",c:"var(--dim-D)",items:r.fri,open:true},
+    {t:"Working protocol",c:"var(--dim-A)",items:r.pro},
+    {t:"How to talk to each one",c:"var(--dim-O)",items:r.g.map(commTip)},
+    {t:"Decision dynamic — who does what",c:"var(--dim-N)",items:r.dyn},
+    {t:"Send this mix on",c:"var(--gold)",items:r.missions}
+  ];
+  out.innerHTML=`
+    <div class="lab-avatars">${r.g.map(m=>`<span class="avatar" style="--mc:${memColor(m)}">${m.initials}</span>`).join("")}</div>
+    <div class="lab-title">${r.title}</div>
+    <p class="lab-tag">"${r.tagline}"</p>
+    <div class="lab-official">Collectively runs like one <b>${r.style.name}</b> <i>(${r.style.key})</i> — one of the LPI's 26 official styles</div>
+    <div class="lab-sub">${r.g.map(m=>`${m.initials} (${m.code})`).join(" × ")} · dominant forces: ${r.ranked[0].name} ${r.stat[r.ranked[0].k].avg} &amp; ${r.ranked[1].name} ${r.stat[r.ranked[1].k].avg}</div>
+    <div class="lab-mini-bars">${DIMS.map(d=>`<div class="lab-mini" style="--bc:${dimColorHex[d.k]}">
+      <div class="bar"><i style="height:${r.stat[d.k].avg}%"></i></div><span>${d.k}</span><b>${r.stat[d.k].avg}</b></div>`).join("")}</div>
+    <div class="lab-cover"><span class="lc-lab">Corner check · a force is "held" when someone in the mix carries it at 80+</span>${coverHTML}</div>
+    ${missHTML}
+    ${blocks.map(b=>`<div class="acc ${b.open?"open":""}" style="--lb:${b.c}">
+      <button type="button">${b.t}</button>
+      <div class="body"><ul>${b.items.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`).join("")}`;
+  out.querySelectorAll(".acc>button").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
+  out.classList.remove("show");void out.offsetWidth;out.classList.add("show");
+}
+TEAM.forEach((m,i)=>{
+  const b=document.createElement("button");
+  b.className="lab-chip"+(i<2?" on":"");
+  b.dataset.id=m.id;b.style.setProperty("--mc",memColor(m));
+  b.innerHTML=`<span class="dot"></span><span><b>${m.initials}</b><small>${m.archetype.replace("The ","")} | ${m.code}</small></span>`;
+  b.addEventListener("click",()=>{b.classList.toggle("on");renderLab()});
+  $("#labPicker").appendChild(b);
+});
+$("#mixCount").textContent=Object.keys(G.mixes).length;
+renderLab();
+
+/* ════════════════ INSIGHTS: sub-nav ════════════════ */
+function goSub(sv){
+  $$("#insPills button").forEach(b=>b.classList.toggle("on",b.dataset.sv===sv));
+  $$(".subview").forEach(v=>v.classList.toggle("on",v.id==="sv-"+sv));
+  observeRv();
+}
+$$("#insPills button").forEach(b=>b.addEventListener("click",()=>{goSub(b.dataset.sv);window.scrollTo({top:0,behavior:"auto"})}));
+
+/* dial board carousel */
+function gaugePoint(v,r){const a=Math.PI*v/100;return [75-r*Math.cos(a),80-r*Math.sin(a)]}
+DIMS.forEach(d=>{
+  const vals=TEAM.map(m=>m.scores[d.k]);
+  const avg=avgOf(TEAM,d.k),min=Math.min(...vals),max=Math.max(...vals);
+  const [b1x,b1y]=gaugePoint(min,58),[b2x,b2y]=gaugePoint(max,58);
+  const [t1x,t1y]=gaugePoint(0,58),[t2x,t2y]=gaugePoint(100,58);
+  const card=document.createElement("div");
+  card.className="card dial-card";card.style.setProperty("--dc",dimColorHex[d.k]);
+  card.innerHTML=`
+    <svg viewBox="0 0 150 96" aria-label="${d.name} dial: team average ${avg}, range ${min} to ${max}">
+      <path class="gauge-track" stroke-width="7" d="M ${t1x} ${t1y} A 58 58 0 0 1 ${t2x} ${t2y}"/>
+      <path class="gauge-band" stroke-width="7" d="M ${b1x} ${b1y} A 58 58 0 0 1 ${b2x} ${b2y}"/>
+      <g class="needle-g" style="--deg:${(avg*1.8).toFixed(1)}deg"><line class="gauge-needle" x1="75" y1="80" x2="31" y2="80"/></g>
+      <circle cx="75" cy="80" r="4" fill="${dimColorHex[d.k]}"/>
+      <text class="gauge-avg" x="75" y="72" text-anchor="middle">${avg}</text>
+      <text class="gauge-cap" x="14" y="94">LOW</text><text class="gauge-cap" x="118" y="94">HIGH</text>
+    </svg>
+    <h4>${d.name}</h4><div class="range">team range ${min}–${max}</div>
+    <p><b>Knob high:</b> ${DIAL_INFO[d.k].high}<br><b>Knob low:</b> ${DIAL_INFO[d.k].low}</p>
+    <div class="needs">Secretly needs <b>${DIAL_INFO[d.k].needs}</b> — starve it, and the shadow side shows</div>`;
+  $("#dialCar").appendChild(card);
+});
+wireDots("#dialCar","#dialDots");
+
+/* clash lab */
+const clashTabs=$("#clashTabs"),clashPanel=$("#clashPanel");
+function gapRuler(d){
+  const X=v=>40+v*4.8;
+  const info=DIAL_INFO[d.k],hi=byId(info.hiId),lo=byId(info.loId);
+  const hv=hi.scores[d.k],lv=lo.scores[d.k],col=dimColorHex[d.k];
+  const others=TEAM.filter(m=>m!==hi&&m!==lo);
+  const mark=(m,v)=>`<g><circle cx="${X(v)}" cy="78" r="11" fill="${memColor(m)}"/><text x="${X(v)}" y="81.5" text-anchor="middle" class="gr-init">${m.initials}</text><text x="${X(v)}" y="124" text-anchor="middle" class="gr-score" fill="${memColor(m)}">${m.initials} · ${d.k}${v}</text></g>`;
+  return `<svg class="gap-ruler" viewBox="0 0 560 134" role="img" aria-label="${d.name} dial: ${hi.initials} at ${hv} versus ${lo.initials} at ${lv} — a ${hv-lv} point gap">
+    <line x1="40" y1="78" x2="520" y2="78" class="gr-track"/>
+    ${[0,25,50,75,100].map(t=>`<line x1="${X(t)}" y1="72" x2="${X(t)}" y2="84" class="gr-tick"/><text x="${X(t)}" y="99" text-anchor="middle" class="gr-cap">${t}</text>`).join("")}
+    <rect x="${X(lv)}" y="72" width="${(X(hv)-X(lv)).toFixed(1)}" height="12" rx="6" fill="${col}" opacity=".2"/>
+    <line x1="${X(lv)}" y1="56" x2="${X(hv)}" y2="56" class="gr-gapline" stroke="${col}"/>
+    <text x="${((X(lv)+X(hv))/2).toFixed(1)}" y="46" text-anchor="middle" class="gr-gap" fill="${col}">${hv-lv}-point gap</text>
+    ${others.map(m=>`<circle cx="${X(m.scores[d.k])}" cy="78" r="4" fill="${memColor(m)}" opacity=".35"></circle>`).join("")}
+    ${mark(lo,lv)}${mark(hi,hv)}
+  </svg>`;
+}
+function gapMeter(gap){
+  const z=gapZone(gap);
+  const pos=Math.min(gap,50)/50*100;
+  return `<div class="gap-meter">
+    <div class="gm-scalewrap">
+      <div class="gm-scale"><i class="z1"></i><i class="z2"></i><i class="z3"></i></div>
+      <div class="gm-marker" style="left:${pos.toFixed(1)}%"><b style="color:${z.col}">${gap} pts · ${z.name}</b><s></s></div>
+    </div>
+    <div class="gm-zones"><span>0–14 · hum</span><span>15–24 · friction</span><span>25+ · fault line</span></div>
+    <div class="gm-read" style="--gm-col:${z.col}">${z.read}</div>
+  </div>`;
+}
+function diagMiniMap(dg,p1,p2){
+  const P={N:[42,46],A:[128,46],R:[42,124],D:[128,124]};
+  const [x1,y1]=P[dg.f1],[x2,y2]=P[dg.f2];
+  const other=["N","A","R","D"].filter(k=>k!==dg.f1&&k!==dg.f2);
+  const [ox1,oy1]=P[other[0]],[ox2,oy2]=P[other[1]];
+  const gid="dgG"+dg.f1+dg.f2;
+  return `<svg viewBox="0 0 170 170" role="img" aria-label="Diagonal clash between ${dg.f1} and ${dg.f2} corners">
+    <defs><linearGradient id="${gid}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="${dimColorHex[dg.f1]}"/><stop offset="1" stop-color="${dimColorHex[dg.f2]}"/></linearGradient></defs>
+    <rect x="10" y="12" width="150" height="146" rx="14" fill="none" stroke="rgba(255,255,255,.12)"/>
+    <line x1="85" y1="12" x2="85" y2="158" stroke="rgba(255,255,255,.1)"/>
+    <line x1="10" y1="85" x2="160" y2="85" stroke="rgba(255,255,255,.1)"/>
+    <line x1="${ox1}" y1="${oy1}" x2="${ox2}" y2="${oy2}" stroke="rgba(255,255,255,.12)" stroke-dasharray="3 5"/>
+    <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="url(#${gid})" stroke-width="3" stroke-linecap="round"/>
+    ${other.map(k=>{const[cx,cy]=P[k];return `<text x="${cx}" y="${cy+5}" text-anchor="middle" fill="${dimColorHex[k]}" opacity=".3" font-size="17" font-weight="700" font-family="Fraunces,serif">${k}</text>`}).join("")}
+    <circle cx="${x1}" cy="${y1}" r="13" fill="${memColor(p1)}"/><text x="${x1}" y="${y1+3.5}" text-anchor="middle" font-size="9" font-weight="800" fill="#0B1020">${p1.initials}</text>
+    <circle cx="${x2}" cy="${y2}" r="13" fill="${memColor(p2)}"/><text x="${x2}" y="${y2+3.5}" text-anchor="middle" font-size="9" font-weight="800" fill="#0B1020">${p2.initials}</text>
+    <text x="${x1}" y="${y1<85?y1-19:y1+26}" text-anchor="middle" fill="${dimColorHex[dg.f1]}" font-size="12" font-weight="700">${dg.f1}${p1.scores[dg.f1]}</text>
+    <text x="${x2}" y="${y2<85?y2-19:y2+26}" text-anchor="middle" fill="${dimColorHex[dg.f2]}" font-size="12" font-weight="700">${dg.f2}${p2.scores[dg.f2]}</text>
+    <text x="85" y="90" text-anchor="middle" fill="#8C94B1" font-size="8.5" letter-spacing="1">O</text>
+  </svg>`;
+}
+function diagBar(k,p1,p2){
+  const v1=p1.scores[k],v2=p2.scores[k];
+  const lo=Math.min(v1,v2),hi=Math.max(v1,v2);
+  return `<div class="dg-bar" style="--fc:${dimColorHex[k]}">
+    <span class="fk">${k}</span>
+    <div class="dg-track">
+      <span class="gp" style="left:${lo}%;width:${hi-lo}%"></span>
+      <span class="pd" style="left:${v1}%;--pc:${memColor(p1)}"></span><span class="pl" style="left:${v1}%;--pc:${memColor(p1)}">${p1.initials} ${v1}</span>
+      <span class="pd" style="left:${v2}%;--pc:${memColor(p2)}"></span><span class="pl" style="left:${v2}%;--pc:${memColor(p2)};${Math.abs(v1-v2)<=14?"top:22px":""}">${p2.initials} ${v2}</span>
+    </div>
+    <span class="pts">${hi-lo}-pt gap</span>
+  </div>`;
+}
+function stepsHTML(col,step1,sound,fix){
+  return `
+    <div class="cl-step" style="--stc:${col}"><span class="n">1</span><b class="h">The gap — two settings, one relationship</b>${step1}</div>
+    <div class="cl-step" style="--stc:var(--dim-D)"><span class="n">2</span><b class="h">How it sounds in the room</b><p>${sound}</p></div>
+    <div class="cl-step" style="--stc:var(--dim-R)"><span class="n">3</span><b class="h">The protocol that ends it</b><p>${fix}</p></div>`;
+}
+function renderClash(k){
+  if(BOOTED&&!G.clashes[k]){G.clashes[k]=1;refreshJourney()}
+  clashTabs.querySelectorAll(".cl-tab").forEach(t=>t.classList.toggle("active",t.dataset.k===k));
+  if(DIAG[k]){
+    const dg=DIAG[k],p1=byId(dg.p1),p2=byId(dg.p2);
+    const c1=dimColorHex[dg.f1],c2=dimColorHex[dg.f2];
+    const g1=Math.abs(p1.scores[dg.f1]-p2.scores[dg.f1]);
+    const g2=Math.abs(p1.scores[dg.f2]-p2.scores[dg.f2]);
+    clashPanel.innerHTML=`
+      <div class="cl-gaphead"><b style="background:linear-gradient(100deg,${c1},${c2});-webkit-background-clip:text;background-clip:text;color:transparent">${dg.name} diagonal</b><span>${dg.word}</span></div>
+      <div class="dg-map">${diagMiniMap(dg,p1,p2)}</div>
+      ${diagBar(dg.f1,p1,p2)}${diagBar(dg.f2,p1,p2)}
+      <div class="dg-compound">${dg.compound(g1,g2)}</div>
+      <span class="dg-lpi">LPI source · N+D and R+A are the map's dual-opposite pairs — every axis flips</span>
+      <p class="cl-plain">${dg.plain}</p>
+      ${stepsHTML(c1,`<div class="duo">
+        <div><b style="color:${memColor(p1)}">${p1.initials} · ${dg.f1}${p1.scores[dg.f1]} / ${dg.f2}${p1.scores[dg.f2]}</b>High ${dg.f1}, low ${dg.f2} — one corner of the diagonal</div>
+        <div><b style="color:${memColor(p2)}">${p2.initials} · ${dg.f1}${p2.scores[dg.f1]} / ${dg.f2}${p2.scores[dg.f2]}</b>High ${dg.f2}, low ${dg.f1} — the opposite corner</div></div>`,dg.sound,dg.fix)}`;
+    return;
+  }
+  const d=DIMS.find(x=>x.k===k),info=DIAL_INFO[k];
+  const hi=byId(info.hiId),lo=byId(info.loId),col=dimColorHex[k];
+  clashPanel.innerHTML=`
+    <div class="cl-gaphead"><b style="color:${col}">${d.name} dial</b><span>the "${info.needs.toLowerCase()}" argument · faint dots = the other four teammates</span></div>
+    ${gapRuler(d)}
+    ${gapMeter(hi.scores[k]-lo.scores[k])}
+    <p class="cl-plain">${info.plain}</p>
+    ${stepsHTML(col,`<div class="duo">
+      <div><b style="color:${memColor(hi)}">${hi.initials} runs it high (${d.k}${hi.scores[k]})</b>${info.high}</div>
+      <div><b style="color:${memColor(lo)}">${lo.initials} runs it low (${d.k}${lo.scores[k]})</b>${info.low}</div></div>`,info.arg,info.fix)}`;
+}
+DIMS.forEach(d=>{
+  const b=document.createElement("button");
+  b.className="cl-tab";b.dataset.k=d.k;
+  b.style.setProperty("--tc",dimColorHex[d.k]);
+  b.innerHTML=`<span class="l">${d.k}</span><span class="w">the ${DIAL_INFO[d.k].needs.toLowerCase()} argument</span>`;
+  b.addEventListener("click",()=>renderClash(d.k));
+  clashTabs.appendChild(b);
+});
+Object.keys(DIAG).forEach(key=>{
+  const dg=DIAG[key];
+  const b=document.createElement("button");
+  b.className="cl-tab diag";b.dataset.k=key;
+  b.style.setProperty("--tc1",dimColorHex[dg.f1]);
+  b.style.setProperty("--tc2",dimColorHex[dg.f2]);
+  b.innerHTML=`<span class="l">${dg.f1}×${dg.f2}</span><span class="w">${dg.word}</span>`;
+  b.addEventListener("click",()=>renderClash(key));
+  clashTabs.appendChild(b);
+});
+renderClash("O");
+
+/* ════════════════ Analytics ════════════════ */
+const comp=$("#compChart");
+DIMS.forEach(d=>{
+  const vals=TEAM.map(m=>m.scores[d.k]);
+  const avg=avgOf(TEAM,d.k),min=Math.min(...vals),max=Math.max(...vals);
+  const row=document.createElement("div");
+  row.className="comp-row";row.style.setProperty("--dc",dimColorHex[d.k]);
+  row.innerHTML=`<span>${d.name}</span>
+    <div class="comp-track">
+      <span class="comp-range" style="left:${min}%;width:${max-min}%"></span>
+      ${TEAM.map(m=>`<span class="comp-dot" style="left:calc(${m.scores[d.k]}% - 4px);background:${memColor(m)}"></span>`).join("")}
+      <span class="comp-avg" style="left:calc(${avg}% - 1.5px)"></span>
+    </div><b style="color:${dimColorHex[d.k]}">${avg}</b>`;
+  comp.appendChild(row);
+});
+const lg=document.createElement("div");
+lg.className="comp-legend";
+lg.innerHTML=TEAM.map(m=>`<span class="k"><i style="background:${memColor(m)}"></i>${m.initials}</span>`).join("")+`<span style="color:var(--paper-faint)">bright marker = team average</span>`;
+comp.appendChild(lg);
+
+EXEC.forEach(x=>{
+  const c=document.createElement("div");
+  c.className="card exec-card rv";c.style.setProperty("--xc",x.c);
+  c.innerHTML=`<span class="exec-chip ${x.st}">${x.stl}</span><div class="num">${x.n}</div><div class="lbl">${x.l}</div><p>${x.p}</p><p class="plain">${x.plain}</p>`;
+  $("#execGrid").appendChild(c);
+});
+
+const ANCHOR_IDS={};
+DIMS.forEach(d=>{
+  const best=TEAM.reduce((a,m)=>m.scores[d.k]>a.scores[d.k]?m:a,TEAM[0]);
+  ANCHOR_IDS[d.k]=best.id;
+  const row=document.createElement("div");
+  row.className="anchor-row rv";row.style.setProperty("--dc",dimColorHex[d.k]);
+  row.innerHTML=`<span class="dimname">${d.name}</span>
+    <span class="holder"><span class="avatar" style="--mc:${memColor(best)}">${best.initials}</span>${best.initials} · ${best.archetype.replace("The ","")} | ${best.code}</span>
+    <span class="score">${best.scores[d.k]}</span>`;
+  $("#anchorBoard").appendChild(row);
+});
+function ltRender(removeId){
+  const slots=$("#ltSlots"),verdict=$("#ltVerdict");
+  slots.innerHTML="";
+  const notes=[];
+  DIMS.forEach(d=>{
+    const origId=ANCHOR_IDS[d.k],orig=byId(origId);
+    let holder=orig,state="",tag="";
+    if(removeId&&origId===removeId){
+      const rest=TEAM.filter(m=>m.id!==removeId);
+      const next=rest.reduce((a,m)=>m.scores[d.k]>a.scores[d.k]?m:a,rest[0]);
+      if(next.scores[d.k]>=80){holder=next;state="reanchored";tag=next.scores[d.k]===80?"barely held":"re-anchors";
+        notes.push(`<b style="color:${dimColorHex[d.k]}">${d.name}</b> passes to <b>${next.initials}</b> (${d.k}${next.scores[d.k]}${next.scores[d.k]===80?" — right on the 80 line, zero margin":""})`);
+      }else{holder=next;state="unheld";tag="unheld";
+        notes.push(`<b style="color:${dimColorHex[d.k]}">${d.name}</b> goes dark — best remaining is ${next.initials} at ${d.k}${next.scores[d.k]}, <b>below the 80 line</b>`);
+      }
+    }
+    const slot=document.createElement("div");
+    slot.className="lt-slot"+(state?" "+state:"");
+    slot.style.setProperty("--fc",dimColorHex[d.k]);
+    slot.style.setProperty("--mc",memColor(holder));
+    slot.innerHTML=`<span class="f">${d.k}</span>
+      <span class="who"><i></i>${holder.initials}</span>
+      <span class="sc">${d.k}${holder.scores[d.k]}</span>
+      ${state?`<span class="st">${tag}</span>`:""}`;
+    slots.appendChild(slot);
+  });
+  $$("#anchorQuad .member").forEach(g=>g.classList.toggle("ghost",g.dataset.id===removeId));
+  if(!removeId){
+    verdict.innerHTML=`Full formation: five anchors, three people. Strong — and concentrated. Now try removing one.`;
+  }else{
+    const who=byId(removeId);
+    verdict.innerHTML=`<b>If ${who.initials} walks:</b> ${notes.join(" · ")}. ${
+      removeId==="lch"?`One resignation and the team's <b>only 80+ Decisive hands</b> leave the building — every "who decides?" now has no answer. <b style="color:var(--gold)">Re-hire verdict: yes.</b> Openness is covered twice over (ED 92, ZW 86) — Decisive is the one corner with no bench. For optimal running, add or grow <b>one 80+ Decisive</b> — an Implementer (A+D) or Exhorter (R+D). Until then: JG (D74) plus SM's evidence line run decisions on a committee protocol.`:
+      removeId==="ed"?`The corners survive — but only just: Relational lands on a knife-edge 80. <b style="color:var(--gold)">Re-hire verdict: not required.</b> This is a development play, not a recruitment one — grow ZW's front-of-room load, let FM own the Neutral ground fully, and hire only if client-facing volume outgrows two warm voices.`:
+      `The shortest hand-off on the board — JG is already sitting in the Analytical corner at 86. <b style="color:var(--gold)">Re-hire verdict: no.</b> This is the one corner with true bench depth, and the resilience standard the Five Moves aim to build on every corner.`}`;
+    if(!G.stress){G.stress=1;refreshJourney()}
+  }
+}
+const ltBtns=$("#ltBtns");
+[["","Full team"],["lch","If LCH resigns"],["ed","If ED resigns"],["sm","If SM resigns"]].forEach(([id,label],i)=>{
+  const b=document.createElement("button");
+  b.className="lt-btn"+(i===0?" active":"");
+  b.textContent=label;
+  b.addEventListener("click",()=>{
+    ltBtns.querySelectorAll(".lt-btn").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");ltRender(id||null);
+  });
+  ltBtns.appendChild(b);
+});
+ltRender(null);
+
+DIRECTORY.forEach(x=>{
+  const c=document.createElement("div");
+  c.className="dir-card rv";
+  c.innerHTML=`<div class="need"><b>Need ${x.need.toLowerCase()}?</b><span>${x.sub}</span></div>
+    <div class="who">${x.who.map(id=>{const m=byId(id);return `<span class="avatar" style="--mc:${memColor(m)}">${m.initials}</span>`}).join("")}</div>`;
+  $("#directory").appendChild(c);
+});
+
+/* ════════════════ Moves ════════════════ */
+const MOVES=[
+ {n:"01",icon:"⚡",t:"Make decisions faster",tag:"Coaching",
+  before:"Great meeting, no decision. Same agenda item, third week running. Either <b>LCH</b> decides alone — or nobody decides at all.",
+  move:"Every open question gets <b>one owner and one date</b>, agreed out loud, in the room. Disagree openly first, then commit together. SM &amp; JG hand over decision-ready analysis, not open questions.",
+  after:"Decisions ship weekly. The idea pile turns into finished work — and nobody ever sits through the same meeting three times again.",
+  why:"Decisive is the lowest dial on the board (72) — and only one of six clears 80"},
+ {n:"02",icon:"◈",t:"Finish what you start",tag:"Consultancy",
+  before:"Four idea machines, no finish line. Projects get quietly abandoned the moment a shinier one walks in — brilliance evaporates half-built.",
+  move:"One <b>idea funnel</b>: every new idea enters <em>behind</em> the unfinished ones. SM &amp; JG run the quality gate in the middle; LCH drives finished work out the far end.",
+  after:"Fewer shiny objects, more shipped ones. The restlessness that used to kill projects now fuels the next sprint instead.",
+  why:"Four of six score 80+ on Openness — and four reports flag boredom or restlessness in writing"},
+ {n:"03",icon:"☍",t:"Disagree without drama",tag:"Training",
+  before:"One fights to win, three smile and give in, two go quiet and keep score. Issues never resolve — they submerge, then resurface wearing a different costume.",
+  move:"One shared protocol: hard messages get a <b>private heads-up</b> first, get said <b>early, kindly, once</b> in the room — and get explicitly closed before the meeting ends.",
+  after:"Conflict stops costing weeks. What used to be a month of quiet tension becomes a ten-minute conversation — finished, both sides intact.",
+  why:"Three incompatible conflict styles documented across the six dossiers"},
+ {n:"04",icon:"◉",t:"Know each person's stress alarm",tag:"Coaching",
+  before:"Pressure builds invisibly. The first signal anyone notices is a blow-up in a meeting — or a resignation letter from the quietest strong performer.",
+  move:"Each profile already maps that person's <b>triggers, tells and recovery moves</b>. We turn those pages into a shared early-warning system the whole team can read.",
+  after:"Stress gets caught at amber, not at red. The quiet ones get the right help before they ever have to ask for it.",
+  why:"Every dossier's \u201cUnder Stress\u201d tab — triggers, tells and recovery already mapped, per person"},
+ {n:"05",icon:"⬡",t:"Put people where they're strongest",tag:"Consultancy",
+  before:"Talent parked in the wrong lanes: the best people-person idling near the middle, two elite checkers stacked on one corner, one person holding every final call.",
+  move:"The <b>Optimized Formation</b>: ED fronts the room, FM anchors stability, SM &amp; JG split quality and verdicts, LCH owns the call, ZW bridges thinkers and doers.",
+  after:"Same six names, radically less friction. Every corner of the map owned, keyman risk dissolved — without hiring a single person.",
+  why:"Five distinct peak forces across six people — the coverage was already in the room"}
+];
+const arrow=`<div class="mc-varr"><svg viewBox="0 0 24 24"><path d="M5 12h13m0 0l-5-4.5M18 12l-5 4.5"/></svg></div>`;
+MOVES.forEach((mv,i)=>{
+  const c=document.createElement("article");
+  c.className="card movecard rv"+(i===0?" open":"");
+  c.innerHTML=`
+    <div class="mc-head"><span class="mc-num">Move ${mv.n}</span><div class="mc-icon">${mv.icon}</div><h3>${mv.t}</h3><span class="tag">${mv.tag}</span></div>
+    <span class="mc-open">${i===0?"Hide":"See"} the before → after</span>
+    <div class="mc-flow">
+      <div class="mc-cell before"><b>Today</b><p>${mv.before}</p></div>${arrow}
+      <div class="mc-cell move"><b>The move</b><p>${mv.move}</p></div>${arrow}
+      <div class="mc-cell after"><b>Day 90</b><p>${mv.after}</p></div>
+      <span class="evidence"><b>Why this team:</b> ${mv.why}</span>
+    </div>`;
+  c.addEventListener("click",e=>{
+    if(e.target.closest("a"))return;
+    c.classList.toggle("open");
+    c.querySelector(".mc-open").firstChild.textContent=c.classList.contains("open")?"Hide the before → after":"See the before → after";
+  });
+  $("#movesList").appendChild(c);
+});
+
+/* ════════════════ Boot ════════════════ */
+(function(){
+  BOOTED=true;
+  const returning=journeyPts()>0;
+  goTab(TABS.includes(G.lastTab)?G.lastTab:"story");
+  refreshJourney(false);
+  observeRv();
+  if(returning&&!G._welcomed){
+    setTimeout(()=>toast("Welcome back","Your Atlas Journey picked up where you left off"),700);
+  }
+  G._welcomed=1;store.set(G);
+})();
+</script>
+</body>
+</html>

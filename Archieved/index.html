@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aurelion — Accelerating Human Adaptive Capacity in the AI Era</title>
+<meta name="description" content="Aurelion Sdn. Bhd. — HRD Corp-accredited corporate training, leadership development, coaching and consultancy. In the age of AI, your edge is still human." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --void:#0A0A0F;
+  --ink:#101019;
+  --ink-2:#15151F;
+  --midnight:#0E1430;
+  --gold:#D4A843;
+  --gold-bright:#F0CB6E;
+  --gold-deep:#A57E2A;
+  --aurora:#3AA0A0;
+  --aurora-2:#2BD4B4;
+  --indigo:#1c2c66;
+  --snow:#F7F5EF;
+  --mist:#A6A8B8;
+  --mist-dim:#6E7080;
+  --line:rgba(247,245,239,.10);
+  --line-gold:rgba(212,168,67,.30);
+
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"Space Grotesk",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --maxw:1200px;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --sect:clamp(4.5rem,10vw,9rem);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  background:var(--void);
+  color:var(--snow);
+  line-height:1.7;
+  overflow-x:hidden;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:var(--void)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:2px}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.74rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:500;
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+}
+.eyebrow::before{
+  content:"";width:26px;height:1px;background:var(--gold);opacity:.7;
+}
+.eyebrow.center::before{display:none}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.6vw,3.5rem);margin-bottom:1.2rem}
+h3{font-size:clamp(1.2rem,2vw,1.5rem);letter-spacing:-.01em}
+p{color:var(--mist)}
+.lead{font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--snow);font-weight:300;line-height:1.6}
+strong,b{color:var(--snow);font-weight:600}
+.gold-text{color:var(--gold)}
+
+.container{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{position:relative}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--sans);font-weight:600;font-size:.95rem;
+  padding:1rem 1.8rem;border-radius:100px;cursor:pointer;border:1px solid transparent;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;
+  letter-spacing:.01em;white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));
+  color:#1a1303;box-shadow:0 8px 30px -10px rgba(212,168,67,.5);
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 40px -10px rgba(212,168,67,.7)}
+.btn-ghost{background:transparent;color:var(--snow);border-color:rgba(247,245,239,.28)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn .arr{transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* reveal-on-scroll */
+.reveal{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.pending{opacity:0;transform:translateY(34px)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+
+/* HRD strip */
+.hrd{padding:clamp(3rem,6vw,4.5rem) 0;background:#08080d;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hrd-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hrd h3{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:1rem}
+.hrd p{font-size:1.05rem}
+.hrd .pill-stat{
+  background:linear-gradient(135deg,rgba(212,168,67,.12),rgba(16,16,25,.5));
+  border:1px solid var(--line-gold);border-radius:16px;padding:2rem;text-align:center;
+}
+.hrd .pill-stat .big{font-family:var(--mono);font-size:clamp(2.6rem,6vw,4rem);color:var(--gold);font-weight:600;line-height:1}
+.hrd .pill-stat .cap{color:var(--mist);font-size:.92rem;margin-top:.8rem;line-height:1.5}
+
+/* RATANA */
+.ratana{padding:var(--sect) 0;background:#07070c}
+.ratana-inner{
+  border:1px solid var(--line-gold);border-radius:22px;overflow:hidden;
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(58,160,160,.16), transparent 55%),
+    radial-gradient(100% 100% at 0% 100%, rgba(212,168,67,.1), transparent 55%),
+    var(--ink);
+  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center;
+  padding:clamp(2rem,5vw,4rem);
+}
+.ratana .eyebrow{margin-bottom:1.2rem}
+.ratana h2{margin-bottom:1.2rem}
+.ratana p{font-size:1.05rem;margin-bottom:1.4rem}
+.ratana .feat{display:flex;flex-direction:column;gap:.7rem;margin:1.6rem 0}
+.ratana .feat li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;color:var(--mist);font-size:.95rem}
+.ratana .feat svg{flex:none;width:18px;height:18px;color:var(--gold);margin-top:.2rem}
+.ratana-visual{
+  aspect-ratio:1/1;border-radius:18px;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0c1024,#07070c);display:grid;place-items:center;
+}
+.orbit{position:absolute;border:1px solid var(--line);border-radius:50%}
+.orbit.o1{width:55%;height:55%}
+.orbit.o2{width:78%;height:78%}
+.orbit.o3{width:96%;height:96%}
+.orbit .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);top:-5px;left:calc(50% - 4px);box-shadow:0 0 12px var(--gold)}
+.orbit.o2 .dot{background:var(--aurora-2);box-shadow:0 0 12px var(--aurora-2)}
+.orbit.o3 .dot{background:var(--snow)}
+.orbit.o1{animation:spin 14s linear infinite}
+.orbit.o2{animation:spin 22s linear infinite reverse}
+.orbit.o3{animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ratana-core{width:34%;height:34%;border-radius:50%;background:radial-gradient(circle,var(--gold-bright),var(--gold-deep));display:grid;place-items:center;box-shadow:0 0 50px rgba(212,168,67,.5);z-index:2}
+.ratana-core span{font-family:var(--serif);font-weight:600;color:#1a1303;font-size:1.1rem;letter-spacing:.04em}
+
+/* CONTACT */
+.contact{padding:var(--sect) 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.contact-info h2{margin-top:1.2rem;margin-bottom:1.8rem}
+.cinfo-item{display:flex;gap:1.1rem;margin-bottom:1.8rem;align-items:flex-start}
+.cinfo-item .ic{flex:none;width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(212,168,67,.16),rgba(58,160,160,.1));color:var(--gold)}
+.cinfo-item .ic svg{width:20px;height:20px}
+.cinfo-item .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:.3rem}
+.cinfo-item .v{color:var(--snow);font-size:1.02rem;line-height:1.5}
+.cinfo-item .v a:hover{color:var(--gold)}
+.socials{display:flex;gap:.8rem;margin-top:.6rem;flex-wrap:wrap}
+.soc{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--mist);transition:.3s}
+.soc:hover{color:var(--gold);border-color:var(--line-gold);transform:translateY(-3px)}
+.soc svg{width:20px;height:20px}
+.soc.red{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.02em;color:var(--mist)}
+.soc.red:hover{color:var(--gold)}
+.map-wrap{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:420px;position:relative;background:var(--ink)}
+.map-wrap iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3) invert(.92) hue-rotate(180deg) contrast(.9)}
+.map-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:2rem;color:var(--mist);pointer-events:none}
+
+/* FOOTER */
+.footer{padding:clamp(2.5rem,5vw,4rem) 0 2rem;background:#06060a;border-top:1px solid var(--line)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.foot-bottom p{font-size:.82rem;color:var(--mist-dim)}
+.foot-bottom .creds-mini{display:flex;gap:1.2rem;flex-wrap:wrap}
+.foot-bottom .creds-mini span{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--mist-dim);text-transform:uppercase}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .ratana-inner,.hrd-inner,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .ratana-visual{max-width:380px;margin:0 auto}
+}
+@media(max-width:620px){
+  .ratana-visual{max-width:300px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ HRD STRIP ============================ -->
+<section class="hrd">
+  <div class="container hrd-inner">
+    <div class="reveal">
+      <div class="eyebrow">Already paid for</div>
+      <h3>Your training budget may already be sitting in an account.</h3>
+      <p>As an <strong>HRD Corp-accredited provider</strong>, our programs are claimable under your company's existing HRD levy — the 1% of payroll that registered Malaysian employers already contribute every month. In 2025, more than half of eligible companies left those funds unclaimed. Put yours to work, and let your levy fund the growth your team needs. <span class="gold-text">Ask us how to claim.</span></p>
+    </div>
+    <div class="pill-stat reveal d1">
+      <div class="big">53%</div>
+      <div class="cap">of HRD Corp-registered employers left their training funds <strong style="color:var(--snow)">unclaimed</strong> in 2025 — money already paid, simply unused.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RATANA ============================ -->
+<section class="ratana" id="ratana">
+  <div class="container">
+    <div class="ratana-inner reveal">
+      <div>
+        <div class="eyebrow">We practice what we teach</div>
+        <h2>Meet Ratana — our human-insight engine.</h2>
+        <p>In the AI era, we don't just talk about adaptation. We build with it. Ratana is our proprietary AI platform that turns personality assessments into deep, actionable understanding — so our coaching and team work start from evidence, not guesswork.</p>
+        <ul class="feat">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Reads LPI, MBTI & DISC reports and translates them into clear, practical insight</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Maps team dynamics, clash points and strengths at a glance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Built on a living knowledge base of leadership science</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">See it in a session <span class="arr">→</span></a>
+      </div>
+      <div class="ratana-visual" aria-hidden="true">
+        <div class="orbit o1"><span class="dot"></span></div>
+        <div class="orbit o2"><span class="dot"></span></div>
+        <div class="orbit o3"><span class="dot"></span></div>
+        <div class="ratana-core"><span>Ratana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <div class="eyebrow">Contact us</div>
+      <h2>Come find us.</h2>
+
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div><div class="l">Office</div><div class="v">Aurelion Sdn. Bhd.<br>Unit 773, Level 6 & 7, Residensi Tribeca,<br>No. 215, Jalan Imbi, 55100 Kuala Lumpur, Malaysia</div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+        <div><div class="l">Email</div><div class="v"><a href="mailto:the.aurelion.space@gmail.com">the.aurelion.space@gmail.com</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
+        <div><div class="l">Phone</div><div class="v"><a href="tel:+601115219100">+60 111-521-9100</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></div>
+        <div><div class="l">Follow the journey</div>
+          <div class="socials">
+            <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+            <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4 0 2 2 0 014 0zM3.4 8.6h3.1V21H3.4zM9 8.6h3v1.7h.05c.42-.8 1.45-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21h-3.1v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+            <a class="soc red" href="#" aria-label="RED · Xiaohongshu">RED<br>小红书</a>
+            <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 4 4 4.3v3c-1.5 0-2.9-.4-4-1.2v6.4A6.5 6.5 0 119.5 9v3.1a3.4 3.4 0 103.4 3.4V3z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-wrap reveal d1">
+      <div class="map-fallback">Loading map…<br><a class="gold-text" href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener" style="pointer-events:auto">Open in Google Maps →</a></div>
+      <iframe title="Aurelion office map" loading="lazy" src="https://www.google.com/maps?q=Residensi+Tribeca,+215+Jalan+Imbi,+55100+Kuala+Lumpur,+Malaysia&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-bottom">
+      <p>© <span id="year"></span> Aurelion Sdn. Bhd. All rights reserved.</p>
+      <div class="creds-mini">
+        <span>HRD Corp Accredited</span>
+        <span>LPI Certified</span>
+        <span>Est. 2026 · Kuala Lumpur</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
