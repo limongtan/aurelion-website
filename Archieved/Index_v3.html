@@ -277,155 +277,39 @@ section{position:relative;scroll-margin-top:5.5rem}
 .card .tag{display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aurora-2);border:1px solid rgba(43,212,180,.25);padding:.32rem .7rem;border-radius:100px}
 
 /* ============================================================
-   LPI EXPERIENCE — chapters, sub-nav, forces, holistic, track
+   LPI LINEAGE  (new)
    ============================================================ */
-:root{
-  --dO:#9B7EDE; --dN:#E06CA8; --dA:#5B8DEF; --dR:#43C88F; --dD:#E8635C;
-}
-.lpi{padding:var(--sect) 0 calc(var(--sect) * .8);background:#07070c;overflow:visible}
-.lpi .halo{position:absolute;width:80vw;height:50vh;left:50%;top:-8%;transform:translateX(-50%);background:radial-gradient(circle,rgba(212,168,67,.12),transparent 65%);filter:blur(70px);pointer-events:none}
-.lpi-head{max-width:860px;margin:0 auto 2.4rem;text-align:center;position:relative;z-index:1}
+.lpi{padding:var(--sect) 0;background:#07070c;overflow:hidden}
+.lpi .halo{position:absolute;width:80vw;height:50vh;left:50%;top:-10%;transform:translateX(-50%);background:radial-gradient(circle,rgba(212,168,67,.12),transparent 65%);filter:blur(70px);pointer-events:none}
+.lpi-head{max-width:820px;margin:0 auto 3.2rem;text-align:center;position:relative;z-index:1}
 .lpi-head .eyebrow{margin-bottom:1.2rem}
+.lpi-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:start;position:relative;z-index:1;margin-bottom:3rem}
+.drcard{background:var(--ink);border:1px solid var(--line-gold);border-radius:20px;padding:clamp(1.8rem,4vw,2.8rem);position:relative;overflow:hidden}
+.drcard::after{content:"";position:absolute;right:-15%;top:-25%;width:60%;height:150%;background:radial-gradient(circle,rgba(212,168,67,.1),transparent 60%);pointer-events:none}
+.drcard .r{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.drcard h3{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.1rem}
+.drcard p{margin-bottom:1rem;font-size:1rem}
+.dr-creds{display:flex;flex-direction:column;gap:.65rem;margin:1.4rem 0}
+.dr-creds li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;color:var(--mist);font-size:.95rem;line-height:1.55}
+.dr-creds svg{flex:none;width:17px;height:17px;color:var(--gold);margin-top:.3rem}
+.onard{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem}
+.onard span{font-family:var(--mono);font-weight:600;font-size:.8rem;letter-spacing:.04em;border:1px solid var(--line-gold);color:var(--gold-bright);border-radius:10px;padding:.45rem .7rem;background:rgba(212,168,67,.06);transition:.3s var(--spring)}
+.onard span:hover{transform:translateY(-3px);background:rgba(212,168,67,.14)}
+.onard b{display:block;font-size:1.1rem;color:var(--gold-bright)}
 
-/* sticky chapter sub-nav */
-.lpi-subnav-wrap{position:sticky;top:64px;z-index:80;margin:0 auto 3rem;display:flex;justify-content:center;padding:0 var(--pad)}
-.lpi-subnav{
-  display:flex;gap:.35rem;padding:.4rem;border-radius:100px;
-  background:rgba(12,12,20,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid var(--line-gold);box-shadow:0 14px 40px -18px rgba(0,0,0,.9);
-  overflow-x:auto;scrollbar-width:none;max-width:100%;
+.deploy{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem)}
+.deploy h3{margin-bottom:.5rem}
+.deploy .sub{font-size:.95rem;color:var(--mist);margin-bottom:1.6rem}
+.logo-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.logo-wall span{
+  display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:.95rem;color:var(--mist);
+  border:1px solid var(--line);border-radius:12px;padding:.9rem .5rem;background:rgba(10,10,15,.5);
+  transition:.35s var(--ease);line-height:1.25;
 }
-.lpi-subnav::-webkit-scrollbar{display:none}
-.lpi-subnav a{
-  flex:none;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--mist);padding:.6rem 1.05rem;border-radius:100px;transition:.3s var(--ease);white-space:nowrap;
-}
-.lpi-subnav a:hover{color:var(--snow);background:rgba(247,245,239,.06)}
-.lpi-subnav a.active{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1303;font-weight:600}
-
-/* chapter blocks */
-.lpi-ch{position:relative;z-index:1;scroll-margin-top:9.5rem;padding:2.4rem 0}
-.chap{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.6rem}
-.chap .cnum{font-family:var(--mono);font-size:.8rem;color:var(--gold);letter-spacing:.2em}
-.chap h3{font-size:clamp(1.5rem,2.8vw,2.1rem)}
-.chap-sub{max-width:760px;color:var(--mist);font-size:1.05rem;margin:-0.6rem 0 1.8rem}
-
-/* chapter 01 — what it is */
-.what-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:stretch}
-.big-claim{
-  background:linear-gradient(150deg,rgba(212,168,67,.1),var(--ink));border:1px solid var(--line-gold);
-  border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);display:flex;flex-direction:column;justify-content:center;
-}
-.big-claim p{font-family:var(--serif);font-size:clamp(1.2rem,2.1vw,1.55rem);color:var(--snow);line-height:1.5}
-.big-claim p em{color:var(--gold);font-style:normal}
-.big-claim .follow{font-family:var(--sans);font-size:1rem;color:var(--mist);margin-top:1.2rem;line-height:1.7}
-.timeline-card{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:clamp(1.6rem,3.5vw,2.2rem)}
-.timeline-card h4{font-family:var(--serif);font-size:1.2rem;color:var(--snow);margin-bottom:1.2rem;font-weight:500}
-.tl-item{display:flex;gap:1rem;padding:.85rem 0;border-bottom:1px dashed var(--line);align-items:flex-start}
-.tl-item:last-child{border-bottom:none}
-.tl-item .era{flex:none;font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.06em;min-width:5.4ch;padding-top:.25rem}
-.tl-item p{font-size:.93rem;line-height:1.55}
-.tl-item.hot p b{color:var(--gold-bright)}
-.skeptic-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem}
-.skeptic{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:clamp(1.6rem,3.5vw,2.2rem);transition:border-color .4s,transform .45s var(--spring)}
-.skeptic:hover{border-color:var(--line-gold);transform:translateY(-4px)}
-.skeptic .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--aurora-2);margin-bottom:.8rem}
-.skeptic h4{font-family:var(--serif);font-size:1.25rem;color:var(--snow);margin-bottom:.8rem;font-weight:500}
-.skeptic p{font-size:.96rem;line-height:1.6;margin-bottom:.7rem}
-.skeptic p:last-child{margin-bottom:0}
-.vnum{display:flex;gap:1.6rem;flex-wrap:wrap;margin:.9rem 0 .3rem}
-.vnum div{text-align:left}
-.vnum .n{font-family:var(--mono);font-size:2rem;color:var(--gold);font-weight:600;line-height:1}
-.vnum .c{font-size:.78rem;color:var(--mist-dim);margin-top:.35rem;line-height:1.4}
-
-/* chapter 02 — five forces */
-.force-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
-.force-card{
-  --fc:var(--gold);
-  background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:1.5rem 1.3rem;
-  transition:transform .5s var(--spring),border-color .4s,box-shadow .5s;position:relative;overflow:hidden;
-}
-.force-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--fc);opacity:0;transition:opacity .4s}
-.force-card:hover{transform:translateY(-8px);border-color:var(--fc);box-shadow:0 22px 46px -24px rgba(0,0,0,.85)}
-.force-card:hover::before{opacity:1}
-.force-card .fl{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--fc);line-height:1;margin-bottom:.5rem;transition:text-shadow .4s}
-.force-card:hover .fl{text-shadow:0 0 22px var(--fc)}
-.force-card .fn{font-weight:600;color:var(--snow);font-size:.98rem;margin-bottom:.15rem}
-.force-card .fe{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fc);margin-bottom:.9rem}
-.force-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
-.force-card li{font-size:.85rem;color:var(--mist);line-height:1.45;padding-left:1rem;position:relative}
-.force-card li::before{content:"·";position:absolute;left:0;color:var(--fc);font-weight:700}
-.force-card .craves{border-top:1px dashed var(--line);padding-top:.8rem;font-size:.8rem;color:var(--mist-dim);line-height:1.5}
-.force-card .craves b{color:var(--fc)}
-.o-callout{
-  margin-top:1.4rem;border:1px solid rgba(155,126,222,.4);border-radius:20px;
-  background:radial-gradient(120% 150% at 10% 0%,rgba(155,126,222,.14),transparent 60%),var(--ink);
-  padding:clamp(1.6rem,4vw,2.4rem);display:flex;gap:1.6rem;align-items:flex-start;
-}
-.o-callout .O{font-family:var(--serif);font-size:4rem;font-weight:700;color:var(--dO);line-height:1;flex:none;text-shadow:0 0 30px rgba(155,126,222,.5)}
-.o-callout p{font-size:1.02rem;line-height:1.7}
-.o-callout b{color:var(--snow)}
-
-/* chapter 03 — holistic model */
-.hol-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:center}
-.hol-viz{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:1.4rem}
-.hol-viz svg{width:100%;height:auto;display:block}
-.hvt1{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:2px}
-.hvt2{font-family:var(--sans);font-size:9.5px;fill:#7E8090}
-.hvneeds text{font-family:var(--sans);font-size:10.5px;fill:#B4B6C4}
-.hvdials text{font-family:var(--mono);font-size:10.5px;font-weight:600}
-.hvspan{font-family:var(--mono);font-size:9.5px;letter-spacing:1px}
-.hol-txt p{font-size:1rem;line-height:1.7;margin-bottom:1rem}
-.needrow{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.2rem}
-.needrow span{--nc:var(--gold);display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line);border-radius:100px;padding:.4rem .8rem;font-size:.8rem;color:var(--mist);transition:.3s var(--spring)}
-.needrow span:hover{transform:translateY(-2px);border-color:var(--nc)}
-.needrow b{color:var(--nc);font-family:var(--mono);font-size:.95rem}
-.need2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2rem}
-.need-card{background:var(--ink);border:1px solid var(--line);border-left:3px solid var(--nc,--gold);border-radius:16px;padding:1.7rem;transition:transform .45s var(--spring),border-color .4s}
-.need-card:hover{transform:translateY(-4px)}
-.need-card .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.7rem}
-.need-card .q{font-family:var(--serif);font-size:1.3rem;color:var(--snow);font-style:italic;margin-bottom:.7rem}
-.need-card p{font-size:.94rem;line-height:1.6}
-.punchline{
-  margin-top:2rem;text-align:center;padding:2.2rem clamp(1.2rem,4vw,3rem);border-radius:20px;
-  border:1px solid var(--line-gold);
-  background:radial-gradient(140% 200% at 50% 0%,rgba(212,168,67,.12),transparent 55%),var(--ink);
-}
-.punchline p{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);color:var(--gold-bright);font-style:italic;line-height:1.4}
-.punchline small{display:block;margin-top:.9rem;font-size:.88rem;color:var(--mist);font-style:normal}
-
-/* chapter 04 — track record */
-.board-wall{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
-.board-tile{
-  display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:.98rem;color:var(--mist);
-  border:1px solid var(--line);border-radius:14px;padding:1.15rem .6rem;background:rgba(16,16,25,.55);
-  transition:.35s var(--spring);line-height:1.3;min-height:74px;
-}
-.board-tile:hover{color:var(--gold-bright);border-color:var(--line-gold);transform:translateY(-4px) scale(1.02);background:rgba(212,168,67,.05)}
-.track-awards{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem}
-.award-card{display:flex;gap:1rem;align-items:flex-start;border:1px solid var(--line-gold);border-radius:16px;padding:1.4rem 1.5rem;background:rgba(212,168,67,.06);transition:transform .45s var(--spring)}
-.award-card:hover{transform:translateY(-4px)}
-.award-card svg{flex:none;width:22px;height:22px;color:var(--gold);margin-top:.15rem}
-.award-card p{font-size:.95rem;line-height:1.6}
-
-/* chapter 05 — lineage (chain styles already exist) */
-.lpi-cta{margin-top:2.6rem;text-align:center}
-.lpi-cta .btn{font-size:1.05rem}
-
-@media(max-width:1024px){
-  .what-grid,.hol-grid,.skeptic-row,.need2,.track-awards{grid-template-columns:1fr}
-  .force-grid{grid-template-columns:repeat(3,1fr)}
-  .board-wall{grid-template-columns:repeat(3,1fr)}
-  .lpi-subnav-wrap{top:56px}
-}
-@media(max-width:620px){
-  .force-grid{grid-template-columns:1fr 1fr}
-  .board-wall{grid-template-columns:1fr 1fr}
-  .o-callout{flex-direction:column;gap:.8rem}
-  .lpi-subnav a{font-size:.68rem;padding:.55rem .8rem}
-  .lpi-ch{scroll-margin-top:8.5rem}
-}
-
+.logo-wall span:hover{color:var(--gold-bright);border-color:var(--line-gold);transform:translateY(-3px)}
+.deploy .award{margin-top:1.2rem;display:flex;gap:.8rem;align-items:flex-start;border:1px solid var(--line-gold);border-radius:12px;padding:1rem 1.1rem;background:rgba(212,168,67,.06)}
+.deploy .award svg{flex:none;width:20px;height:20px;color:var(--gold);margin-top:.15rem}
+.deploy .award p{font-size:.92rem;color:var(--mist)}
 
 /* lineage chain */
 .lineage{position:relative;z-index:1;margin-top:1rem}
@@ -444,8 +328,6 @@ section{position:relative;scroll-margin-top:5.5rem}
 .chain-node.in-view+.chain-link svg path{animation-play-state:running}
 @keyframes draw{to{stroke-dashoffset:0}}
 .lineage-note{max-width:760px;margin:2.2rem auto 0;text-align:center;font-size:1rem;color:var(--mist)}
-
-
 
 /* ============================================================
    APPROACH
@@ -665,7 +547,8 @@ section{position:relative;scroll-margin-top:5.5rem}
   .submit-row{flex-direction:column;align-items:stretch}
   .submit-row .btn{justify-content:center;width:100%}
   .nav-cta{display:none}
-    #toTop{right:1rem;bottom:1.2rem;width:50px;height:50px}
+  .logo-wall{grid-template-columns:repeat(2,1fr)}
+  #toTop{right:1rem;bottom:1.2rem;width:50px;height:50px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -873,261 +756,90 @@ section{position:relative;scroll-margin-top:5.5rem}
   </div>
 </section>
 
-<!-- ============================ THE LPI EXPERIENCE ============================ -->
+<!-- ============================ LPI LINEAGE ============================ -->
 <section class="lpi" id="lpi">
   <div class="halo" aria-hidden="true"></div>
   <div class="container">
     <div class="lpi-head reveal">
-      <div class="eyebrow center">Our instrument</div>
-      <h2>Meet the LPI — the science of how your people are wired.</h2>
-      <p class="lead">Personality tools are everywhere, and most of them stop at putting people in four boxes. The LEONARD Personality Inventory goes further: a decade of university research, validated against how colleagues actually see you, normed in Asia, and built inside a whole-person model. Five minutes here and you'll understand your team differently.</p>
-    </div>
-  </div>
-
-  <!-- sticky chapter navigation -->
-  <div class="lpi-subnav-wrap">
-    <nav class="lpi-subnav" id="lpiSubnav" aria-label="LPI chapters">
-      <a href="#lpi-what" class="active">What it is</a>
-      <a href="#lpi-forces">The Five Forces</a>
-      <a href="#lpi-holistic">The Holistic Model</a>
-      <a href="#lpi-track">Track Record</a>
-      <a href="#lpi-lineage">Our Lineage</a>
-    </nav>
-  </div>
-
-  <div class="container">
-
-    <!-- ─────────── 01 · WHAT IT IS ─────────── -->
-    <div class="lpi-ch" id="lpi-what">
-      <div class="chap reveal"><span class="cnum">01</span><h3>What is the LPI?</h3></div>
-      <p class="chap-sub reveal">2,400 years of personality science — with the missing piece finally added.</p>
-
-      <div class="what-grid">
-        <div class="big-claim reveal">
-          <p>The LPI maps every person across <em>five forces</em> — Openness, Neutral, Analytical, Relational, Decisive — revealing not just <em>what</em> people do, but the deeper need <em>driving why</em> they do it.<a class="ref" href="#ref-7">7</a></p>
-          <p class="follow">It yields 26 named personality styles, reads in 13 languages, and has profiled thousands of professionals across Asia, Europe, Australia and New Zealand.<a class="ref" href="#ref-7">7</a> Where most tools hand you a label, the LPI hands you a working map — of yourself, and of your whole team on one page.</p>
-        </div>
-        <div class="timeline-card reveal d1">
-          <h4>The lineage — 2,400 years, one missing force</h4>
-          <div class="tl-item"><span class="era">~400 BC</span><p><b>Hippocrates</b> observes that people come in four temperaments — the oldest personality framework on record.</p></div>
-          <div class="tl-item"><span class="era">~200 AD</span><p><b>Galen</b> names them: sanguine, choleric, melancholic, phlegmatic. The four-corner map is born.</p></div>
-          <div class="tl-item"><span class="era">1900s</span><p>Modern Western instruments (the DISC family and kin) put the four temperaments to work — but stop at describing behaviour.</p></div>
-          <div class="tl-item hot"><span class="era">2001</span><p><b>The LPI</b> adds the missing fifth force — <b style="color:var(--dO)">Openness</b> — grounds it in a holistic model of the whole person, and norms it in Asia.<a class="ref" href="#ref-7">7</a></p></div>
-        </div>
-      </div>
-
-      <div class="skeptic-row">
-        <div class="skeptic reveal">
-          <div class="k">For the skeptics</div>
-          <h4>Does it hold up? The numbers say yes.</h4>
-          <p>The LPI is anchored in classical Types & Traits theory and formulated on the Five-Factor Model of personality — the framework modern psychology considers the gold standard.<a class="ref" href="#ref-7">7</a></p>
-          <div class="vnum">
-            <div><div class="n">85%</div><div class="c">agreement among supervisors (n=25) that the profile matches the person — face-validity study, LPI Norms & Technical Manual<a class="ref" href="#ref-11">11</a></div></div>
-            <div><div class="n">80%+</div><div class="c">agreement among electronics-corporation managers (n=20)<a class="ref" href="#ref-11">11</a></div></div>
-          </div>
-          <p>In plain terms: the profile matches how the people who actually work with you see you.</p>
-        </div>
-        <div class="skeptic reveal d1">
-          <div class="k">The origin</div>
-          <h4>Built by a scholar, not a marketing team.</h4>
-          <p>The LPI was designed by <strong>Professor Dr. Leonard Yong</strong> at Universiti Malaya after a decade of research, then refined over 25 years of deployment across Asia and the Gulf — leader by leader, boardroom by boardroom.<a class="ref" href="#ref-5">5</a></p>
-          <p>Dr. Yong is a Fulbright Visiting Scholar (1993–94, Portland State University),<a class="ref" href="#ref-6">6</a> Japan Foundation Research Fellow, EU Senior Research Fellow, and author of <em>Emotional Excellence in the Workplace</em> and the LPI's published Norms & Technical Manual.<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-12">12</a></p>
-        </div>
-      </div>
+      <div class="eyebrow center">Our instrument · Our lineage</div>
+      <h2>Built on the LEONARD Personality Inventory.</h2>
+      <p class="lead">Every Aurelion engagement is grounded in the LPI — a psychometric instrument developed through decades of university research, and proven inside some of the world's most demanding organizations.</p>
     </div>
 
-    <!-- ─────────── 02 · THE FIVE FORCES ─────────── -->
-    <div class="lpi-ch" id="lpi-forces">
-      <div class="chap reveal"><span class="cnum">02</span><h3>Five forces live in every person.</h3></div>
-      <p class="chap-sub reveal">Everyone has all five — your top two run the show, and the starved ones run the drama. Each force quietly demands something. Feed it, and you get the strengths column. Starve it, and you get the stress face.</p>
+    <div class="lpi-grid">
+      <!-- Dr. Leonard -->
+      <div class="drcard reveal">
+        <div class="r">The origin</div>
+        <h3>Professor Dr. Leonard Yong</h3>
+        <p>The LPI was created by Dr. Leonard Yong, Educational & Industrial Psychologist and Professor at Universiti Malaya's Department of Educational Psychology & Counseling, where he researched and taught for more than 20 years.<a class="ref" href="#ref-5">5</a></p>
+        <ul class="dr-creds">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Fulbright Visiting Scholar (1993–94), University of Malaya → Portland State University, researching American creativity<a class="ref" href="#ref-6">6</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Japan Foundation Research Fellowship — research on Japanese creativity<a class="ref" href="#ref-5">5</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>EU Senior Research Fellowship — personality research in Italy, Germany & Scotland<a class="ref" href="#ref-5">5</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Pioneering Director, Universiti Malaya Centre for Continuing Education; Visiting Professor, Mahidol University's Siriraj Faculty of Medicine<a class="ref" href="#ref-5">5</a></li>
+        </ul>
 
-      <div class="force-grid">
-        <div class="force-card reveal" style="--fc:var(--dO)">
-          <div class="fl">O</div>
-          <div class="fn">Openness</div>
-          <div class="fe">The idea machine</div>
-          <ul><li>Curious, inventive, imaginative</li><li>Loves trying new things</li><li>Allergic to routine</li></ul>
-          <div class="craves">Craves <b>CREATIVITY</b> · starved: bored, impulsive, drifts off</div>
+        <div class="expander">
+          <button class="expand-btn" aria-expanded="false">
+            <span>What exactly is the LPI? — a 30-second explainer</span>
+            <span class="hintword">Read more <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span></span>
+          </button>
+          <div class="expand-body"><div class="expand-inner">
+            <p>LPI stands for <strong>"Let's Explore our personality"</strong> across five behavioral dimensions — <strong>Openness, Neutral, Analytical, Relational and Decisive</strong> (ONARD). It is anchored in classical Types & Traits theory and modelled on the Five-Factor Model of personality together with the four Greek temperaments.<a class="ref" href="#ref-7">7</a></p>
+            <p>It maps each person's emotional and behavioral orientation, yielding 26 classical personality types — from the Creative Imaginator to the Decision-Maker — and has been administered to thousands of individuals across Asia, Europe, Australia and New Zealand, in 13 languages.<a class="ref" href="#ref-7">7</a></p>
+            <p>In team settings, LPI profiles are plotted together to reveal collaboration patterns, friction points and complementary strengths — the starting map for our coaching and team interventions.</p>
+          </div></div>
         </div>
-        <div class="force-card reveal d1" style="--fc:var(--dN)">
-          <div class="fl">N</div>
-          <div class="fn">Neutral</div>
-          <div class="fe">The peacekeeper</div>
-          <ul><li>Calm, loyal, a real listener</li><li>Keeps the room together</li><li>Lives in harmony</li></ul>
-          <div class="craves">Craves <b>SECURITY</b> · starved: avoids conflict, over-gives, gets hurt</div>
-        </div>
-        <div class="force-card reveal d2" style="--fc:var(--dA)">
-          <div class="fl">A</div>
-          <div class="fn">Analytical</div>
-          <div class="fe">The quality guard</div>
-          <ul><li>Precise, careful, systematic</li><li>Values accuracy above speed</li><li>Hates sloppy work</li></ul>
-          <div class="craves">Craves <b>ACCURACY</b> · starved: overthinks, risk-averse, slow to move</div>
-        </div>
-        <div class="force-card reveal d3" style="--fc:var(--dR)">
-          <div class="fl">R</div>
-          <div class="fn">Relational</div>
-          <div class="fe">The energiser</div>
-          <ul><li>Warm, persuasive, magnetic</li><li>Lights people up</li><li>Exciting company</li></ul>
-          <div class="craves">Craves <b>RECOGNITION</b> · starved: over-talks, scattered, needs the stage</div>
-        </div>
-        <div class="force-card reveal d4" style="--fc:var(--dD)">
-          <div class="fl">D</div>
-          <div class="fn">Decisive</div>
-          <div class="fe">The driver</div>
-          <ul><li>Fast, bold, result-oriented</li><li>Displays initiative</li><li>Allergic to waiting</li></ul>
-          <div class="craves">Craves <b>ACHIEVEMENT</b> · starved: impatient, steamrolls, stubborn</div>
+
+        <div class="onard" aria-label="The five ONARD dimensions">
+          <span><b>O</b>penness</span><span><b>N</b>eutral</span><span><b>A</b>nalytical</span><span><b>R</b>elational</span><span><b>D</b>ecisive</span>
         </div>
       </div>
 
-      <div class="o-callout reveal">
-        <span class="O" aria-hidden="true">O</span>
-        <p><b>The fifth force is the differentiator.</b> Most instruments stop at four corners. The LPI's Openness isn't a corner at all — it sits in the middle of the map as a <b>creative amplifier</b>: high O makes whatever else you have more inventive, and licenses you to roam the map when the team needs it. In an era where AI compresses every technical moat, <b>O is the adaptability force</b> — which is exactly why Aurelion built its practice on the one instrument that measures it.</p>
-      </div>
-    </div>
-
-    <!-- ─────────── 03 · THE HOLISTIC MODEL ─────────── -->
-    <div class="lpi-ch" id="lpi-holistic">
-      <div class="chap reveal"><span class="cnum">03</span><h3>Most tools stop at behaviour. This one reaches underneath.</h3></div>
-      <p class="chap-sub reveal">The LPI was never a standalone quiz. It is the measurement layer of Dr. Yong's Holistic Model of the individual — which is what separates it from a label-maker: it explains <em>why</em> people do what they do, not just what they do.<a class="ref" href="#ref-12">12</a></p>
-
-      <div class="hol-grid">
-        <div class="hol-viz reveal" aria-label="Diagram of the Holistic Model: Spirit, Mind and Body layers with the five needs driving the five ONARD behaviours">
-          <svg viewBox="0 0 460 300" role="img">
-            <defs>
-              <linearGradient id="holfill" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0" stop-color="#D4A843" stop-opacity=".14"/>
-                <stop offset=".5" stop-color="#3AA0A0" stop-opacity=".12"/>
-                <stop offset="1" stop-color="#2BD4B4" stop-opacity=".16"/>
-              </linearGradient>
-            </defs>
-            <polygon points="18,252 442,252 442,34" fill="url(#holfill)" stroke="rgba(247,245,239,.25)" stroke-width="1.4"/>
-            <line x1="160" y1="252" x2="160" y2="120" stroke="rgba(247,245,239,.25)" stroke-width="1.2" stroke-dasharray="4 4"/>
-            <line x1="300" y1="252" x2="300" y2="66" stroke="rgba(247,245,239,.25)" stroke-width="1.2" stroke-dasharray="4 4"/>
-            <text x="89" y="272" text-anchor="middle" class="hvt1" fill="#F0CB6E">SPIRIT</text>
-            <text x="89" y="286" text-anchor="middle" class="hvt2">pneuma · wellness</text>
-            <text x="230" y="272" text-anchor="middle" class="hvt1" fill="#3AA0A0">MIND</text>
-            <text x="230" y="286" text-anchor="middle" class="hvt2">psycho · the five needs</text>
-            <text x="371" y="272" text-anchor="middle" class="hvt1" fill="#2BD4B4">BODY</text>
-            <text x="371" y="286" text-anchor="middle" class="hvt2">soma · visible ONARD behaviour</text>
-            <g class="hvneeds" text-anchor="end">
-              <text x="292" y="128">Creativity</text><text x="292" y="154">Stability / security</text>
-              <text x="292" y="180">Accuracy</text><text x="292" y="206">Recognition</text><text x="292" y="232">Achievement</text>
-            </g>
-            <g class="hvdials" text-anchor="start">
-              <text x="310" y="128" fill="#9B7EDE">O · Openness</text><text x="310" y="154" fill="#E06CA8">N · Neutral</text>
-              <text x="310" y="180" fill="#5B8DEF">A · Analytical</text><text x="310" y="206" fill="#43C88F">R · Relational</text>
-              <text x="310" y="232" fill="#E8635C">D · Decisive</text>
-            </g>
-            <g stroke="rgba(247,245,239,.4)" stroke-width="1" opacity=".55">
-              <line x1="296" y1="124" x2="307" y2="124"/><line x1="296" y1="150" x2="307" y2="150"/>
-              <line x1="296" y1="176" x2="307" y2="176"/><line x1="296" y1="202" x2="307" y2="202"/>
-              <line x1="296" y1="228" x2="307" y2="228"/>
-            </g>
-            <line x1="30" y1="52" x2="436" y2="52" stroke="#E8635C" stroke-width="2.4" opacity=".85"/>
-            <text x="233" y="45" text-anchor="middle" class="hvspan" fill="#E8635C">EE · Emotional Excellence — all three layers</text>
-            <line x1="168" y1="96" x2="436" y2="96" stroke="#E8635C" stroke-width="1.7" opacity=".6"/>
-            <text x="302" y="89" text-anchor="middle" class="hvspan" fill="#E8635C" opacity=".8">EQ — mind &amp; body only</text>
-          </svg>
+      <!-- Deployments -->
+      <div class="deploy reveal d1">
+        <h3>Where the LPI has been deployed</h3>
+        <p class="sub">Dr. Yong and LPI-based programs have served leaders at organizations including:<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-8">8</a></p>
+        <div class="logo-wall">
+          <span>British Petroleum</span><span>Microsoft Thailand</span><span>Cathay Pacific</span>
+          <span>Intel</span><span>Motorola</span><span>Nokia</span>
+          <span>Saudi Aramco</span><span>Kuwait Petroleum</span><span>Reuters</span>
+          <span>Reader's Digest</span><span>Thai Securities Exchange Commission</span><span>B. Braun Medical</span>
         </div>
-        <div class="hol-txt reveal d1">
-          <p>Read it right to left, the way you meet a person: the <b>ONARD behaviour you can see lives in the Body</b> — it's the surface. Driving each visible dial is a <b>core emotional need in the Mind</b>:</p>
-          <div class="needrow">
-            <span style="--nc:var(--dO)"><b>O</b> needs Creativity</span>
-            <span style="--nc:var(--dN)"><b>N</b> needs Stability &amp; security</span>
-            <span style="--nc:var(--dA)"><b>A</b> needs Accuracy</span>
-            <span style="--nc:var(--dR)"><b>R</b> needs Recognition</span>
-            <span style="--nc:var(--dD)"><b>D</b> needs Achievement</span>
-          </div>
-          <p>When a need is <b>fed</b>, the Body shows the strengths column — ideas, calm, precision, warmth, drive. When it's <b>starved</b>, the same dial shows its stress face. Underneath both sits the <b>Spirit</b> layer: meaning, values, wellness — the thermostat of the inner life.</p>
-          <p><b>Emotional Excellence (EE)</b> spans all three layers; ordinary EQ only reaches Mind and Body — which is why the LPI is one of the few instruments designed inside a whole-person development model rather than as a labelling exercise.<a class="ref" href="#ref-12">12</a></p>
-        </div>
-      </div>
-
-      <div class="need2">
-        <div class="need-card reveal" style="--nc:var(--dN);border-left-color:var(--dN)">
-          <div class="k" style="color:var(--dN)">Need № 1 · Social-Emotional Security</div>
-          <div class="q">"Do I belong here? Am I accepted?"</div>
-          <p>The need to feel you truly belong to the relationships you're in — guarded hardest by the N and A forces. When it's starving: defensiveness, silence, over-compromise, and the quiet exits that blindside managements.<a class="ref" href="#ref-12">12</a></p>
-        </div>
-        <div class="need-card reveal d1" style="--nc:var(--dD);border-left-color:var(--dD)">
-          <div class="k" style="color:var(--dD)">Need № 2 · Inner Significance</div>
-          <div class="q">"Do I matter here? Do I add value?"</div>
-          <p>The need to feel important to others and to add real value — chased hardest by the R and D forces. When it's starving: showboating, credit wars, steamrolling, and burnout heroics that end in collapse.<a class="ref" href="#ref-12">12</a></p>
-        </div>
-      </div>
-
-      <div class="punchline reveal">
-        <p>"Pay cheques rent behaviour. These two needs buy loyalty."</p>
-        <small>Every Aurelion engagement uses the LPI to read which need is starving in which person — so development speaks to deeper motivation, and the transformation actually holds.<a class="ref" href="#ref-12">12</a></small>
-      </div>
-    </div>
-
-    <!-- ─────────── 04 · TRACK RECORD ─────────── -->
-    <div class="lpi-ch" id="lpi-track">
-      <div class="chap reveal"><span class="cnum">04</span><h3>Where the LPI has earned its keep.</h3></div>
-      <p class="chap-sub reveal">Dr. Yong's LPI-based programs and emotional-intelligence consultancy have served leaders across boardrooms, plants and public institutions worldwide:<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-8">8</a><a class="ref" href="#ref-11">11</a></p>
-
-      <div class="board-wall reveal">
-        <span class="board-tile">British Petroleum</span>
-        <span class="board-tile">Petronas</span>
-        <span class="board-tile">Saudi Aramco</span>
-        <span class="board-tile">Microsoft Thailand</span>
-        <span class="board-tile">Cathay Pacific</span>
-        <span class="board-tile">Intel</span>
-        <span class="board-tile">Motorola</span>
-        <span class="board-tile">Nokia</span>
-        <span class="board-tile">Kuwait Petroleum</span>
-        <span class="board-tile">Oman Petroleum</span>
-        <span class="board-tile">Reuters</span>
-        <span class="board-tile">Reader's Digest</span>
-        <span class="board-tile">Thai Securities Exchange Commission</span>
-        <span class="board-tile">B. Braun Medical</span>
-        <span class="board-tile">Young Presidents' Organisation</span>
-      </div>
-
-      <div class="track-awards">
-        <div class="award-card reveal">
+        <div class="award">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5"/></svg>
-          <p>LPI-related training was rated <strong>"Top Rated" Learning Collaborator 2003/04 by Petronas Malaysia</strong> — recognition from one of Asia's most demanding corporate universities.<a class="ref" href="#ref-8">8</a></p>
-        </div>
-        <div class="award-card reveal d1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5c2.5.5 5 2.5 5 5.5"/></svg>
-          <p>LPI profiling supported <strong>Nestlé Malaysia's nationwide youth screening & mentoring program</strong> — proof the instrument scales from boardrooms to whole communities.<a class="ref" href="#ref-8">8</a></p>
+          <p>LPI-related training was rated <strong>"Top Rated" Learning Collaborator 2003/04 by Petronas Malaysia</strong>, and LPI profiling supported Nestlé Malaysia's nationwide youth mentoring program.<a class="ref" href="#ref-8">8</a></p>
         </div>
       </div>
     </div>
 
-    <!-- ─────────── 05 · OUR LINEAGE ─────────── -->
-    <div class="lpi-ch" id="lpi-lineage">
-      <div class="chap reveal"><span class="cnum">05</span><h3>From the inventor's desk to your boardroom.</h3></div>
-      <p class="chap-sub reveal">Certification matters. Here is the unbroken line that puts the LPI in Aurelion's hands.</p>
-
+    <!-- lineage chain -->
+    <div class="lineage reveal">
+      <div class="lineage-title">
+        <div class="eyebrow center" style="margin-bottom:.8rem">An unbroken line</div>
+        <h3>From the inventor's desk to your boardroom.</h3>
+      </div>
       <div class="chain">
-        <div class="chain-node reveal">
+        <div class="chain-node">
           <div class="step-label">The source</div>
           <div class="who">Dr. Leonard Yong</div>
           <div class="what">Inventor of the LPI · Professor, Universiti Malaya · Fulbright Scholar<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-6">6</a></div>
         </div>
         <div class="chain-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="chain-node reveal d1">
+        <div class="chain-node">
           <div class="step-label">The certifier</div>
           <div class="who">GEM Consultancy · David Lau</div>
-          <div class="what">Runs the official Certified LPI Consultant program. David Lau is an HRD Corp Lead Trainer & Assessor who has trained ≈1,500 trainers across Malaysia.<a class="ref" href="#ref-9">9</a><a class="ref" href="#ref-10">10</a></div>
+          <div class="what">Runs the Certified LPI Consultant program. David Lau is an HRD Corp Lead Trainer & Assessor who has trained ≈1,500 trainers across Malaysia.<a class="ref" href="#ref-9">9</a><a class="ref" href="#ref-10">10</a></div>
         </div>
         <div class="chain-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="chain-node gold reveal d2">
+        <div class="chain-node gold">
           <div class="step-label">The practice</div>
           <div class="who">Aurelion</div>
           <div class="what">All three founders are Certified LPI Consultants — trained in this direct lineage and deploying it with AI-powered depth.</div>
         </div>
       </div>
       <p class="lineage-note">When you work with Aurelion, you're not getting a borrowed framework. You're getting the LPI through its <strong>direct certification lineage</strong> — from Dr. Leonard Yong's research, through GEM Consultancy's master-trainer certification under David Lau, into our practice.</p>
-
-      <div class="lpi-cta reveal">
-        <a href="#book" class="btn btn-gold">Map your team with the LPI <span class="arr">→</span></a>
-      </div>
     </div>
-
   </div>
 </section>
 
@@ -1501,8 +1213,6 @@ section{position:relative;scroll-margin-top:5.5rem}
       <div class="ref-item" id="ref-8">ASL Training & Consultancy. <em>LEONARD Personality Inventory.</em> LPI-related training awarded "Top Rated" Learning Collaborators 2003/04 by Petronas Malaysia; LPI profiling used in Nestlé Malaysia's nationwide youth screening & mentoring program; clients who have used the LPI include Intel, Motorola, Nokia, B. Braun Medical Industries, Kuwait Petroleum Company and Saudi Aramco. <a href="https://www.asl-solutions.com/leonard-personality-inventory/" target="_blank" rel="noopener">asl-solutions.com/leonard-personality-inventory</a></div>
       <div class="ref-item" id="ref-9">GEM Consultancy Sdn. Bhd. <em>Certified LPI Consultant program</em> — the professional certification pathway through which practitioners are trained and certified to administer and interpret the LEONARD Personality Inventory. <a href="https://gem.com.my/certified-lpi-consultant/" target="_blank" rel="noopener">gem.com.my/certified-lpi-consultant</a></div>
       <div class="ref-item" id="ref-10">David Lau Lee Hian — Group Managing Director, GEM Consultancy Sdn. Bhd. HRD Corp approved certified trainer (cert. no. TTT/4548); appointed certified trainer for HRD Corp's Train-the-Trainer program throughout Malaysia; appointed HRD Corp Lead Trainer and Assessor; has trained and certified approximately 1,500 trainers across Malaysia. <a href="https://www.linkedin.com/in/david-lau-lee-hian-3918721b8/" target="_blank" rel="noopener">linkedin.com/in/david-lau-lee-hian</a></div>
-      <div class="ref-item" id="ref-11">Yong, L.M.S. <em>LPI Norms & Technical Manual</em> — face-validity studies reporting 85% agreement among supervisors (n=25) and over 80% agreement among electronics-corporation managers (n=20) that LPI profiles match observed behaviour; deployment records including Oman Petroleum and the Young Presidents' Organisation. As documented in the official Certified LPI Consultant programme materials (GEM Consultancy).</div>
-      <div class="ref-item" id="ref-12">Yong, Leonard M.S. <em>Emotional Excellence in the Workplace</em>; and Yong, L.M.S., <em>The LPI Holistic Model</em> — Spirit (pneuma) / Mind (psycho) / Body (soma); the five dimension-needs (Creativity, Security, Accuracy, Recognition, Achievement); and the two core human needs (Social-Emotional Security and Inner Significance). LPI Certification Programme, Day 2, GEM Consultancy.</div>
     </div>
   </div>
 </section>
@@ -1640,23 +1350,6 @@ document.querySelectorAll('a.ref').forEach(a=>{
     if(t){t.classList.remove('flash');void t.offsetWidth;t.classList.add('flash');}
   });
 });
-
-/* ---------- LPI chapter sub-nav spy ---------- */
-const lpiLinks=[...document.querySelectorAll('#lpiSubnav a')];
-if(lpiLinks.length){
-  const chs=[...document.querySelectorAll('.lpi-ch')];
-  const lio=new IntersectionObserver((es)=>{
-    es.forEach(e=>{
-      if(e.isIntersecting){
-        lpiLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
-      }
-    });
-  },{rootMargin:'-30% 0px -60% 0px'});
-  chs.forEach(c=>lio.observe(c));
-  lpiLinks.forEach(l=>l.addEventListener('click',()=>{
-    lpiLinks.forEach(x=>x.classList.remove('active'));l.classList.add('active');
-  }));
-}
 
 /* ---------- starfield ---------- */
 (function(){
