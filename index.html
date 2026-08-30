@@ -108,13 +108,14 @@ section{position:relative;scroll-margin-top:5.5rem}
 .brand:hover .mark{transform:rotate(8deg) scale(1.08)}
 .brand b{font-weight:600;letter-spacing:.16em;font-family:var(--mono);font-size:1.05rem;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:1.15rem}
-.nav-links a{font-size:.94rem;color:var(--mist);font-weight:500;transition:color .25s;position:relative;padding:.3rem 0}
+.nav-links a{font-size:.94rem;color:var(--mist);font-weight:500;transition:color .25s;position:relative;padding:.3rem 0;white-space:nowrap;flex:none}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;border-radius:2px;background:var(--gold);transition:width .35s var(--ease)}
 .nav-links a:hover{color:var(--snow)}
 .nav-links a:hover::after{width:100%}
 .nav-links a.active{color:var(--gold-bright)}
 .nav-links a.active::after{width:100%}
 .nav-cta{margin-left:.4rem;padding:.7rem 1.35rem;font-size:.9rem;flex:none}
+.nav-links .nav-cta{color:#1a1303}
 .nav-links .nav-app{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 .nav-links .nav-app:hover{color:var(--gold-bright)}
 @media(max-width:1279px){.nav-links .nav-app{display:none}}
