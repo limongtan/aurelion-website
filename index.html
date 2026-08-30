@@ -622,11 +622,18 @@ section{position:relative;scroll-margin-top:5.5rem}
 .refs .sect-head{margin-bottom:2rem}
 .ref-list{counter-reset:refc;max-width:940px}
 .ref-item{
-  counter-increment:refc;display:flex;gap:1.1rem;padding:1.05rem 0;border-bottom:1px solid var(--line);
+  /* was display:flex, which promoted every inline piece of a citation -- the
+     text runs, the italic title, the link -- into its own flex column, so each
+     entry rendered as a row of narrow shreds. The flex was only ever meant to
+     hang the [n] marker beside the text, which absolute positioning does
+     without touching the citation's own inline flow. */
+  counter-increment:refc;padding:1.05rem 0 1.05rem 3.4ch;position:relative;
+  border-bottom:1px solid var(--line);
   font-size:.92rem;color:var(--mist);line-height:1.6;scroll-margin-top:7rem;
 }
 .ref-item::before{
-  content:"["counter(refc)"]";font-family:var(--mono);color:var(--gold);font-weight:600;flex:none;min-width:2.6ch;
+  content:"["counter(refc)"]";font-family:var(--mono);color:var(--gold);font-weight:600;
+  position:absolute;left:0;top:1.05rem;
 }
 .ref-item a{color:var(--aurora-2);word-break:break-all}
 .ref-item a:hover{text-decoration:underline}
@@ -1503,7 +1510,13 @@ section{position:relative;scroll-margin-top:5.5rem}
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">References</h2>
       <p>Every data point on this page, with its full source. Tap any small gold number to jump here.</p>
     </div>
-    <div class="ref-list reveal">
+    <div class="expander reveal" id="refExpander">
+      <button class="expand-btn" aria-expanded="false">
+        <span>All 12 sources</span>
+        <span class="hintword">Read more <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span></span>
+      </button>
+      <div class="expand-body"><div class="expand-inner">
+    <div class="ref-list">
       <div class="ref-item" id="ref-1">World Economic Forum (January 2025). <em>The Future of Jobs Report 2025.</em> Survey of 1,000+ employers representing 14+ million workers across 55 economies. Key findings cited: 39% of workers' core skills transformed or obsolete by 2030; 59 of 100 workers needing reskilling/upskilling by 2030 (11 unlikely to receive it); 63% of employers citing skills gaps as the top barrier to transformation; fastest-growing core skills including analytical thinking, resilience, flexibility & agility, and leadership & social influence. <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener">weforum.org/publications/the-future-of-jobs-report-2025</a></div>
       <div class="ref-item" id="ref-2">Gallup (2025 & 2026 editions). <em>State of the Global Workplace Report.</em> Key findings cited: global employee engagement at 20–21% and declining for two consecutive years; disengagement costing the world economy approximately US$10 trillion in lost productivity (~9% of global GDP); managers accounting for 70% of the variance in team engagement; only 44% of managers having ever received formal management training; trained managers improving their own engagement by up to 22% and team engagement by up to 18%. <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener">gallup.com/workplace — State of the Global Workplace</a></div>
       <div class="ref-item" id="ref-3">HRD Corp — Human Resource Development Corporation, Ministry of Human Resources Malaysia. Under the PSMB Act 2001, registered employers (10+ Malaysian employees) contribute a mandatory monthly levy of 1% of wages (0.5% voluntary category), claimable for approved training conducted by HRD Corp registered training providers. <a href="https://hrdcorp.gov.my/faq" target="_blank" rel="noopener">hrdcorp.gov.my</a></div>
@@ -1516,6 +1529,8 @@ section{position:relative;scroll-margin-top:5.5rem}
       <div class="ref-item" id="ref-10">David Lau Lee Hian — Group Managing Director, GEM Consultancy Sdn. Bhd. HRD Corp approved certified trainer (cert. no. TTT/4548); appointed certified trainer for HRD Corp's Train-the-Trainer program throughout Malaysia; appointed HRD Corp Lead Trainer and Assessor; has trained and certified approximately 1,500 trainers across Malaysia. <a href="https://www.linkedin.com/in/david-lau-lee-hian-3918721b8/" target="_blank" rel="noopener">linkedin.com/in/david-lau-lee-hian</a></div>
       <div class="ref-item" id="ref-11">Yong, L.M.S. <em>LPI Norms & Technical Manual</em> — face-validity studies reporting 85% agreement among supervisors (n=25) and over 80% agreement among electronics-corporation managers (n=20) that LPI profiles match observed behaviour; deployment records including Oman Petroleum and the Young Presidents' Organisation. As documented in the official Certified LPI Consultant programme materials (GEM Consultancy).</div>
       <div class="ref-item" id="ref-12">Yong, Leonard M.S. <em>Emotional Excellence in the Workplace</em>; and Yong, L.M.S., <em>The LPI Holistic Model</em> — Spirit (pneuma) / Mind (psycho) / Body (soma); the five dimension-needs (Creativity, Security, Accuracy, Recognition, Achievement); and the two core human needs (Social-Emotional Security and Inner Significance). LPI Certification Programme, Day 2, GEM Consultancy.</div>
+    </div>
+      </div></div>
     </div>
   </div>
 </section>
@@ -1650,8 +1665,17 @@ window.addEventListener('resize',()=>{
 /* ---------- reference jump flash ---------- */
 document.querySelectorAll('a.ref').forEach(a=>{
   a.addEventListener('click',()=>{
+    // The list is collapsed by default now, so a jump has to open it first or
+    // the reader lands on a closed panel -- which would quietly kill the whole
+    // point of the superscript links.
+    const exp=document.getElementById('refExpander');
+    if(exp&&!exp.classList.contains('open'))exp.querySelector('.expand-btn').click();
     const t=document.querySelector(a.getAttribute('href'));
-    if(t){t.classList.remove('flash');void t.offsetWidth;t.classList.add('flash');}
+    if(t){
+      t.classList.remove('flash');void t.offsetWidth;t.classList.add('flash');
+      // the panel is mid-transition, so scroll after it has its height
+      requestAnimationFrame(()=>setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}),260));
+    }
   });
 });
 
