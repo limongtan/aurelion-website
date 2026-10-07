@@ -47,9 +47,11 @@ p{margin:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
 /* Nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
-.nav .wrap{display:flex;align-items:center;gap:28px;height:56px}
-.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:1.125rem;letter-spacing:-.02em}
-.brand img{width:30px;height:auto}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
+.brand img{height:34px;width:auto}
+.nav .brand{font-size:1.5rem}
+.nav .brand img{height:40px}
 .nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-size:.875rem}
 .nav ul a{text-decoration:none;color:var(--muted)}.nav ul a:hover{color:var(--fg)}
 .nav ul a[aria-current]{color:var(--fg);font-weight:600}
@@ -57,7 +59,7 @@ p{margin:0}
 .menu{display:none;margin-left:auto}
 .menu summary{list-style:none;cursor:pointer;padding:8px;font-size:.875rem;font-weight:500}
 .menu summary::-webkit-details-marker{display:none}
-.menu[open] nav{position:absolute;left:0;right:0;top:56px;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(20px,4vw) 20px;display:grid}
+.menu[open] nav{position:absolute;left:0;right:0;top:72px;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(20px,4vw) 20px;display:grid}
 .menu nav a{padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:1.25rem;font-weight:600}
 @media (max-width:760px){.nav ul{display:none}.menu{display:block}.nav .wrap{gap:12px}}
 section{padding-block:clamp(66px,10vw,120px)}
@@ -71,15 +73,28 @@ section{padding-block:clamp(66px,10vw,120px)}
 /* Home hero */
 .hero{padding-block:clamp(56px,9vw,96px) 0;text-align:center}
 .hero .stack{gap:22px;justify-items:center}.hero .lede{max-width:38ch}
-.hero-img{margin-top:clamp(44px,7vw,72px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/10;max-width:100%}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+.hero-img{position:relative;margin-top:clamp(44px,7vw,72px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/10;max-width:100%;background:var(--bg-alt)}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;opacity:0;animation:xfade 24s infinite cubic-bezier(.4,0,.2,1)}
+.hero-img img:first-child{opacity:1}
+.hero-img img:nth-child(2){animation-delay:-6s}
+.hero-img img:nth-child(3){animation-delay:-12s}
+.hero-img img:nth-child(4){animation-delay:-18s}
+@keyframes xfade{0%{opacity:1}21%{opacity:1}25%{opacity:0}96%{opacity:0}100%{opacity:1}}
 @media (max-width:640px){.hero-img{aspect-ratio:4/5}}
+@media (prefers-reduced-motion:reduce){.hero-img img{animation:none}.hero-img img:not(:first-child){opacity:0}}
 /* Photo strip */
 .strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.strip figure{margin:0;display:grid;gap:0}
-.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-md)}
-@media (max-width:560px){.strip{grid-template-columns:1fr 1fr}.strip figure:last-child{display:none}}
+.strip figure{margin:0;position:relative;padding-top:125%;overflow:hidden;border-radius:var(--r-md);background:var(--bg-alt)}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cap{margin-top:16px;text-align:center;color:var(--muted);font-size:.8125rem}
+/* Video + gallery */
+.videowrap{margin-top:48px;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:var(--bg-alt);max-width:100%}
+.videowrap video{width:100%;height:100%;object-fit:cover;display:block}
+.gallery{margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.gallery figure{margin:0;position:relative;padding-top:66.666%;overflow:hidden;border-radius:var(--r-md);background:var(--bg-alt)}
+.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.gallery{grid-template-columns:1fr}}
 /* Trust */
 .trust{padding-block:40px;border-bottom:1px solid var(--line)}
 .trust ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 44px;align-items:center;font-size:.9375rem;color:var(--muted)}
@@ -213,13 +228,13 @@ a.card{transition:transform .3s cubic-bezier(.2,.8,.2,1)}a.card:hover{transform:
 .cinfo a{color:var(--fg);text-decoration:none}.cinfo a:hover{color:var(--gold-ink)}
 @media (max-width:720px){.people{grid-template-columns:1fr}.cinfo{grid-template-columns:1fr}}
 /* Closing band */
-.cta{position:relative;margin-inline:max(12px,2vw);border-radius:var(--r-lg);overflow:hidden;color:var(--on-dark);text-align:center;padding-block:clamp(84px,12vw,140px)}
-.cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
-.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.66))}
-.cta .wrap{position:relative;display:grid;gap:20px;justify-items:center}
-.cta .lede{color:rgba(245,245,247,.85)}
-.cta .btn-soft{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.25)}
-.cta .btn-soft:hover{background:rgba(255,255,255,.24)}
+.cta{position:relative;margin-inline:max(12px,2vw);border-radius:var(--r-lg);overflow:hidden;color:var(--on-dark);text-align:center;padding-block:clamp(84px,12vw,140px);background:#0b1020}
+.cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:0}
+.cta::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(255,255,255,.30)}
+.cta .wrap{position:relative;z-index:2;display:grid;gap:20px;justify-items:center;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.cta .lede{color:rgba(245,245,247,.9)}
+.cta .btn-soft{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.cta .btn-soft:hover{background:rgba(255,255,255,.26)}
 /* Footer */
 footer{padding-block:48px 56px;font-size:.8125rem;color:var(--muted)}
 footer .wrap{display:grid;gap:22px}
@@ -246,13 +261,18 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <p class="pillars"><span>Holistic Integration</span><span>Personal Transformation</span><span>Team Cohesion</span><span>Business Development</span></p>
 <div class="btns"><a class="btn btn-wa" href="https://wa.me/60166308569?text=Hi%20Aurelion%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20programmes.">Chat with us on WhatsApp</a><a class="link" href="programs.html">See programmes</a></div>
 </div>
-<div class="hero-img"><img src="assets/hero.jpg" alt="A lone climber on a mountain ridge at night, lighting a beam into the sky" width="2200" height="1467" fetchpriority="high"></div>
+<div class="hero-img">
+<img src="assets/hero1.jpg" alt="The Aurelion team with clients at a Team Build X session" width="2000" height="952" fetchpriority="high">
+<img src="assets/hero2.jpg" alt="" width="2000" height="952" loading="lazy">
+<img src="assets/hero3.jpg" alt="" width="2000" height="952" loading="lazy">
+<img src="assets/hero4.jpg" alt="" width="2000" height="952" loading="lazy">
+</div>
 </div></section>
 
 <div class="trust"><div class="wrap"><ul>
 <li><img src="assets/hrd-registered.png" alt="" width="52" height="52"><span><b>HRD Corp</b> Registered Training Provider</span></li>
 <li><span><b>Certified</b> LPI Consultants</span></li>
-<li><span><b>Trusted by</b> Walihin Petroleum Sdn. Bhd.</span></li>
+<li><span><b>Trusted by</b> growing Malaysian teams</span></li>
 </ul></div></div>
 
 <section><div class="wrap"><div class="stats">
@@ -293,15 +313,18 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 </div></section>
 <section><div class="wrap">
 <div class="stack center sec-head"><p class="eyebrow">In the room</p><h2 class="h2">What a session feels like.</h2>
-<p class="lede">Real teams, real laughter — ice-breakers, hands-on challenges and the moment it all clicks.</p></div>
-<div class="strip" style="margin-top:48px">
-<figure><img src="assets/m1.jpg" alt="A team working together at a workshop" width="720" height="900" loading="lazy"></figure>
-<figure><img src="assets/m2.jpg" alt="Participants building a hands-on challenge together" width="720" height="900" loading="lazy"></figure>
-<figure><img src="assets/m3.jpg" alt="A full room engaged in a session" width="720" height="900" loading="lazy"></figure>
+<p class="lede">Real teams, real laughter — ice-breakers, beach challenges, hands-on builds and the moment it all clicks.</p></div>
+<div class="gallery" style="margin-top:48px">
+<figure><img src="assets/g1.jpg" alt="A team in an ice-breaker circle" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g2.jpg" alt="A team doing a beach activity together" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g3.jpg" alt="Participants in an outdoor group challenge on the beach" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g4.jpg" alt="A workshop in full swing around the tables" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g5.jpg" alt="A lively workshop activity in full swing" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g6.jpg" alt="Participants building a hands-on team challenge" width="1000" height="667" loading="lazy"></figure>
 </div>
 <p class="cap">Team Build X &amp; workshops · Walihin Petroleum, Big Supermarket &amp; more · 2026</p>
 </div></section>
-<section style="padding-bottom:0"><div class="cta"><img src="assets/cta.jpg" alt="" width="2000" height="1125">
+<section style="padding-bottom:0"><div class="cta"><img src="assets/launch.jpg" alt="" width="2000" height="1333">
 <div class="wrap"><p class="eyebrow" style="color:var(--gold)">Let's talk</p>
 <h2 class="display" style="font-size:clamp(2.4rem,6.5vw,4.2rem)">Grow your people.</h2>
 <p class="lede">A short conversation to see where we can help most, and whether to start with a company or team needs analysis.</p>
