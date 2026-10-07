@@ -67,8 +67,14 @@ section{padding-block:clamp(66px,10vw,120px)}
 /* Page hero (inner pages) */
 .phero{padding-block:clamp(52px,8vw,88px) 0;text-align:center}
 .phero .stack{gap:18px;justify-items:center}
-.band{margin-top:clamp(40px,6vw,64px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/9;max-width:100%}
+.band{position:relative;margin-top:clamp(40px,6vw,64px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/9;max-width:100%;background:var(--bg-alt)}
 .band img{width:100%;height:100%;object-fit:cover}
+.band.slideshow img{position:absolute;inset:0;opacity:0;animation:xfade3 18s infinite cubic-bezier(.4,0,.2,1)}
+.band.slideshow img:first-child{opacity:1}
+.band.slideshow img:nth-child(2){animation-delay:-6s}
+.band.slideshow img:nth-child(3){animation-delay:-12s}
+@keyframes xfade3{0%{opacity:1}28%{opacity:1}33%{opacity:0}95%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.band.slideshow img{animation:none}.band.slideshow img:not(:first-child){opacity:0}}
 @media (max-width:640px){.band{aspect-ratio:3/2}}
 /* Home hero */
 .hero{padding-block:clamp(56px,9vw,96px) 0;text-align:center}
@@ -259,7 +265,11 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <h1 class="display" style="font-size:clamp(2.4rem,6.5vw,4.4rem)">Read your people.<br>Stop guessing.</h1>
 <p class="lede">The Leonard Personality Inventory is a proven psychometric tool, used for over 25 years by top organisations. Every Aurelion programme starts here.</p>
 </div>
-<div class="band"><img src="assets/lpi.jpg" alt="Mountains under a starlit sky" width="2000" height="1199"></div>
+<div class="band slideshow">
+<img src="assets/lpi.jpg" alt="A team in an ice-breaker circle during an LPI session" width="2000" height="857" fetchpriority="high">
+<img src="assets/lpi2.jpg" alt="" width="2000" height="857" loading="lazy">
+<img src="assets/lpi3.jpg" alt="" width="2000" height="857" loading="lazy">
+</div>
 </div></section>
 
 <section><div class="wrap narrow center">
