@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aurelion — Accelerating Human Adaptive Capacity in the AI Era</title>
+<meta name="description" content="Aurelion Sdn. Bhd. — Official HRD Corp Registered Training Provider. LPI Certified corporate training, leadership development, coaching and consultancy in Kuala Lumpur." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   AURELION v2 — "The Ascent"
+   Larger type, clearer wayfinding, richer motion.
+   ============================================================ */
+:root{
+  --void:#0A0A0F; --ink:#101019; --ink-2:#15151F; --midnight:#0E1430;
+  --gold:#D4A843; --gold-bright:#F0CB6E; --gold-deep:#A57E2A;
+  --aurora:#3AA0A0; --aurora-2:#2BD4B4; --indigo:#1c2c66;
+  --snow:#F7F5EF; --mist:#B4B6C4; --mist-dim:#7E8090;
+  --line:rgba(247,245,239,.12); --line-gold:rgba(212,168,67,.32);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"Space Grotesk",ui-monospace,"SF Mono",Menlo,monospace;
+  --maxw:1200px;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --sect:clamp(4.5rem,9vw,8.5rem);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:17px}
+@media(min-width:1400px){html{font-size:18px}}
+body{
+  font-family:var(--sans);background:var(--void);color:var(--snow);
+  line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:var(--void)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:4px}
+
+.eyebrow{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:.7rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
+.eyebrow.center::before{display:none}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.4vw,3.4rem);margin-bottom:1.2rem}
+h3{font-size:clamp(1.25rem,2vw,1.55rem)}
+p{color:var(--mist)}
+.lead{font-size:clamp(1.1rem,1.7vw,1.35rem);color:var(--snow);font-weight:300;line-height:1.65}
+strong,b{color:var(--snow);font-weight:600}
+.gold-text{color:var(--gold)}
+.ref{font-size:.62em;color:var(--gold);vertical-align:super;font-family:var(--mono);text-decoration:none;font-weight:600;padding:0 .1em}
+.ref:hover{color:var(--gold-bright);text-decoration:underline}
+
+.container{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{position:relative;scroll-margin-top:5.5rem}
+
+/* ---------- buttons: sheen sweep + spring ---------- */
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--sans);font-weight:600;font-size:1rem;
+  padding:1.05rem 1.9rem;border-radius:100px;cursor:pointer;border:1px solid transparent;
+  transition:transform .4s var(--spring),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;
+  letter-spacing:.01em;white-space:nowrap;
+}
+.btn::after{ /* sheen */
+  content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);transition:left .6s var(--ease);pointer-events:none;
+}
+.btn:hover::after{left:130%}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));
+  color:#1a1303;box-shadow:0 8px 30px -10px rgba(212,168,67,.5);
+}
+.btn-gold:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 44px -10px rgba(212,168,67,.75)}
+.btn-gold:active{transform:translateY(-1px) scale(.99)}
+.btn-ghost{background:transparent;color:var(--snow);border-color:rgba(247,245,239,.3)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn .arr{transition:transform .35s var(--spring)}
+.btn:hover .arr{transform:translateX(5px)}
+
+/* ============================================================
+   WAYFINDING SYSTEM
+   ============================================================ */
+/* reading progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
+  background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-bright));
+  box-shadow:0 0 12px rgba(212,168,67,.6);transition:width .1s linear}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;
+  transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;
+  border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(10,10,15,.82);backdrop-filter:blur(18px) saturate(1.2);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom:1px solid var(--line);padding:.65rem 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--serif);font-size:1.4rem;color:var(--snow)}
+.brand .mark{width:32px;height:32px;flex:none;transition:transform .5s var(--spring)}
+.brand:hover .mark{transform:rotate(8deg) scale(1.08)}
+.brand b{font-weight:600;letter-spacing:.16em;font-family:var(--mono);font-size:1.05rem;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:1.15rem}
+.nav-links a{font-size:.94rem;color:var(--mist);font-weight:500;transition:color .25s;position:relative;padding:.3rem 0;white-space:nowrap;flex:none}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;border-radius:2px;background:var(--gold);transition:width .35s var(--ease)}
+.nav-links a:hover{color:var(--snow)}
+.nav-links a:hover::after{width:100%}
+.nav-links a.active{color:var(--gold-bright)}
+.nav-links a.active::after{width:100%}
+.nav-cta{margin-left:.4rem;padding:.7rem 1.35rem;font-size:.9rem;flex:none}
+.nav-links .nav-cta{color:#1a1303}
+.nav-links .nav-app{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.nav-links .nav-app:hover{color:var(--gold-bright)}
+@media(max-width:1279px){.nav-links .nav-app{display:none}}
+.ratana-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.ratana-signin{border-color:var(--line-gold);color:var(--gold)}
+.ratana-note{font-size:.84rem;color:var(--mist-dim);margin-top:.9rem}
+.burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;position:relative;z-index:102}
+.burger span{position:absolute;left:5px;width:34px;height:2.5px;background:var(--snow);border-radius:2px;transition:.35s var(--spring)}
+.burger span:nth-child(1){top:9px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:31px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(8,8,12,.97);backdrop-filter:blur(14px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
+  opacity:0;pointer-events:none;transition:opacity .4s}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--serif);font-size:1.6rem;color:var(--snow);opacity:0;transform:translateY(14px);transition:.45s var(--ease)}
+.mobile-menu.open a{opacity:1;transform:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold)}
+.mobile-menu a:nth-child(1){transition-delay:.05s}.mobile-menu a:nth-child(2){transition-delay:.1s}
+.mobile-menu a:nth-child(3){transition-delay:.15s}.mobile-menu a:nth-child(4){transition-delay:.2s}
+.mobile-menu a:nth-child(5){transition-delay:.25s}.mobile-menu a:nth-child(6){transition-delay:.3s}
+.mobile-menu a:nth-child(7){transition-delay:.35s}.mobile-menu a:nth-child(8){transition-delay:.4s}
+
+/* side dot navigation (desktop) */
+.dots{position:fixed;right:1.4rem;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:1rem}
+.dots a{position:relative;width:12px;height:12px;border-radius:50%;border:2px solid var(--mist-dim);transition:.3s var(--ease);display:block}
+.dots a:hover{border-color:var(--gold);transform:scale(1.25)}
+.dots a.active{background:var(--gold);border-color:var(--gold);box-shadow:0 0 12px rgba(212,168,67,.7)}
+.dots a .tip{
+  position:absolute;right:24px;top:50%;transform:translateY(-50%) translateX(6px);
+  background:rgba(16,16,25,.95);border:1px solid var(--line-gold);color:var(--snow);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.35rem .7rem;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:.3s var(--ease);
+}
+.dots a:hover .tip,.dots a.active .tip{opacity:1;transform:translateY(-50%) translateX(0)}
+@media(max-width:1100px){.dots{display:none}}
+
+/* back to top */
+#toTop{
+  position:fixed;right:1.4rem;bottom:1.6rem;z-index:95;width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));border:none;cursor:pointer;
+  display:grid;place-items:center;color:#1a1303;box-shadow:0 10px 30px -8px rgba(212,168,67,.6);
+  opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:.4s var(--spring);
+}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#toTop:hover{transform:translateY(-4px) scale(1.06)}
+#toTop svg{width:22px;height:22px}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+  padding-top:6.5rem;padding-bottom:5rem;
+  background:radial-gradient(120% 80% at 50% -10%, #15183a 0%, #0b0c1c 38%, var(--void) 72%)}
+#starfield{position:absolute;inset:0;z-index:0;display:block}
+.aurora-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.aurora{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;mix-blend-mode:screen;will-change:transform}
+.aurora.a1{width:70vw;height:55vh;left:-10vw;top:-5vh;background:radial-gradient(circle,rgba(212,168,67,.55),transparent 65%);animation:drift1 22s var(--ease) infinite alternate}
+.aurora.a2{width:65vw;height:60vh;right:-12vw;top:6vh;background:radial-gradient(circle,rgba(58,160,160,.5),transparent 65%);animation:drift2 28s var(--ease) infinite alternate}
+.aurora.a3{width:80vw;height:45vh;left:5vw;top:32vh;background:radial-gradient(circle,rgba(28,44,102,.7),transparent 70%);animation:drift3 26s var(--ease) infinite alternate}
+@keyframes drift1{to{transform:translate(8vw,5vh) scale(1.15)}}
+@keyframes drift2{from{transform:scale(1.05)}to{transform:translate(-6vw,8vh) scale(.92)}}
+@keyframes drift3{from{transform:translateX(-4vw)}to{transform:translate(6vw,-4vh) scale(1.1)}}
+.peaks{position:absolute;left:0;right:0;bottom:-1px;z-index:1;width:100%;height:auto;pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);width:100%}
+.hero-content{max-width:1100px}
+.hero h1{font-size:clamp(2.7rem,7vw,5.8rem);font-weight:600;line-height:1.02;margin:1.6rem 0 1.5rem;letter-spacing:-.03em}
+.hero h1 .shimmer{background:linear-gradient(100deg,var(--gold) 10%,var(--gold-bright) 40%,#fff 50%,var(--gold-bright) 60%,var(--gold) 90%);
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero .lead{max-width:640px;margin-bottom:2.4rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.badges{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.badge{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold-bright);border:1px solid var(--line-gold);
+  padding:.5rem .95rem;border-radius:100px;background:rgba(212,168,67,.07);transition:.3s var(--ease)}
+.badge:hover{background:rgba(212,168,67,.14);transform:translateY(-2px)}
+.badge svg{width:14px;height:14px;flex:none}
+.hero-note{font-size:.95rem;color:var(--mist);max-width:560px;border-top:1px solid var(--line);padding-top:1.4rem}
+.scroll-cue{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--mist-dim);font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase}
+.scroll-cue .mouse{width:20px;height:32px;border:1.5px solid var(--mist-dim);border-radius:12px;position:relative}
+.scroll-cue .mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:6px;background:var(--gold);border-radius:2px;transform:translateX(-50%);animation:wheel 1.8s var(--ease) infinite}
+@keyframes wheel{0%{opacity:0;top:6px}40%{opacity:1}80%{opacity:0;top:14px}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+
+/* ============================================================
+   EXPANDERS — big, obvious, elder-friendly
+   ============================================================ */
+.expander{border:1px solid var(--line);border-radius:14px;background:rgba(16,16,25,.55);overflow:hidden;transition:border-color .3s}
+.expander.open{border-color:var(--line-gold)}
+.expand-btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:none;border:none;cursor:pointer;color:var(--snow);
+  font-family:var(--sans);font-weight:600;font-size:1.02rem;text-align:left;
+  padding:1.15rem 1.3rem;transition:background .3s;
+}
+.expand-btn:hover{background:rgba(212,168,67,.06)}
+.expand-btn .hintword{font-size:.8rem;color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:var(--mono);display:flex;align-items:center;gap:.5rem;flex:none}
+.expand-btn .chev{width:26px;height:26px;flex:none;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;transition:transform .45s var(--spring),background .3s}
+.expand-btn .chev svg{width:13px;height:13px;color:var(--gold);transition:color .3s}
+.expander.open .expand-btn .chev{transform:rotate(180deg);background:var(--gold)}
+.expander.open .expand-btn .chev svg{color:#1a1303}
+.expand-body{max-height:0;overflow:hidden;transition:max-height .6s var(--ease)}
+.expand-inner{padding:0 1.3rem 1.4rem;color:var(--mist);font-size:.98rem}
+.expand-inner p{margin-bottom:.9rem}
+.expand-inner p:last-child{margin-bottom:0}
+
+/* ============================================================
+   WHY NOW
+   ============================================================ */
+.why{padding:var(--sect) 0;background:linear-gradient(180deg,var(--void),#08080d)}
+.why-head{max-width:800px;margin-bottom:3.4rem}
+.why-head h2{margin-top:1.2rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.stat{background:var(--ink);padding:2.4rem 2rem;position:relative;transition:background .4s,transform .4s var(--ease)}
+.stat::after{content:"";position:absolute;inset:0;background:radial-gradient(300px 200px at var(--mx,50%) var(--my,50%),rgba(212,168,67,.08),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.stat:hover{background:var(--ink-2)}
+.stat:hover::after{opacity:1}
+.stat .node{width:9px;height:9px;border-radius:50%;background:var(--gold);margin-bottom:1.3rem;box-shadow:0 0 0 4px rgba(212,168,67,.14);animation:pulse 3s var(--ease) infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(212,168,67,.14)}50%{box-shadow:0 0 0 7px rgba(212,168,67,.05)}}
+.stat .num{font-family:var(--mono);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;color:var(--snow);line-height:1;letter-spacing:-.02em}
+.stat .num .unit{color:var(--gold);font-size:.5em;margin-left:.1em}
+.stat .desc{margin-top:1rem;color:var(--mist);font-size:1rem;line-height:1.6}
+.stat .src{margin-top:1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--mist-dim);text-transform:uppercase}
+.flip{margin-top:2.6rem;padding:2.6rem clamp(1.5rem,4vw,3rem);border-radius:18px;
+  background:radial-gradient(120% 160% at 85% 0%, rgba(58,160,160,.14), transparent 55%),linear-gradient(135deg, rgba(212,168,67,.10), rgba(16,16,25,.4));
+  border:1px solid var(--line-gold)}
+.flip .eyebrow{margin-bottom:1rem}
+.flip p{font-size:clamp(1.15rem,2vw,1.5rem);color:var(--snow);font-family:var(--serif);line-height:1.45;max-width:940px}
+.flip p em{color:var(--gold);font-style:normal}
+
+/* ============================================================
+   HRD STRIP
+   ============================================================ */
+.hrd{padding:clamp(3rem,6vw,4.5rem) 0;background:#08080d;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hrd-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hrd h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:1rem}
+.hrd p{font-size:1.05rem}
+.pill-stat{background:linear-gradient(135deg,rgba(212,168,67,.12),rgba(16,16,25,.5));border:1px solid var(--line-gold);border-radius:18px;padding:2.2rem;text-align:center;transition:transform .45s var(--spring),box-shadow .4s}
+.pill-stat:hover{transform:translateY(-5px);box-shadow:0 20px 50px -20px rgba(212,168,67,.35)}
+.pill-stat .big{font-family:var(--mono);font-size:clamp(2.6rem,6vw,4rem);color:var(--gold);font-weight:600;line-height:1}
+.pill-stat .cap{color:var(--mist);font-size:.95rem;margin-top:.8rem;line-height:1.55}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{padding:var(--sect) 0}
+.sect-head{max-width:740px;margin-bottom:3.2rem}
+.sect-head h2{margin-top:1.2rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:2.2rem 2rem;position:relative;overflow:hidden;
+  transition:transform .5s var(--spring),border-color .4s,background .4s,box-shadow .5s}
+.card::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--aurora));transition:width .55s var(--ease)}
+.card:hover{transform:translateY(-8px);border-color:var(--line-gold);background:var(--ink-2);box-shadow:0 24px 50px -26px rgba(0,0,0,.8)}
+.card:hover::before{width:100%}
+.card .ic{width:48px;height:48px;margin-bottom:1.3rem;color:var(--gold);transition:transform .5s var(--spring)}
+.card:hover .ic{transform:translateY(-3px) scale(1.08)}
+.card h3{margin-bottom:.7rem}
+.card p{font-size:.98rem;line-height:1.65}
+.card .tag{display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aurora-2);border:1px solid rgba(43,212,180,.25);padding:.32rem .7rem;border-radius:100px}
+
+/* ============================================================
+   LPI EXPERIENCE — chapters, sub-nav, forces, holistic, track
+   ============================================================ */
+:root{
+  --dO:#9B7EDE; --dN:#E06CA8; --dA:#5B8DEF; --dR:#43C88F; --dD:#E8635C;
+}
+.lpi{padding:var(--sect) 0 calc(var(--sect) * .8);background:#07070c;overflow:visible}
+.lpi .halo{position:absolute;width:80vw;height:50vh;left:50%;top:-8%;transform:translateX(-50%);background:radial-gradient(circle,rgba(212,168,67,.12),transparent 65%);filter:blur(70px);pointer-events:none}
+.lpi-head{max-width:860px;margin:0 auto 2.4rem;text-align:center;position:relative;z-index:1}
+.lpi-head .eyebrow{margin-bottom:1.2rem}
+
+/* sticky chapter sub-nav */
+.lpi-subnav-wrap{position:sticky;top:64px;z-index:80;margin:0 auto 3rem;display:flex;justify-content:center;padding:0 var(--pad)}
+.lpi-subnav{
+  display:flex;gap:.35rem;padding:.4rem;border-radius:100px;
+  background:rgba(12,12,20,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line-gold);box-shadow:0 14px 40px -18px rgba(0,0,0,.9);
+  overflow-x:auto;scrollbar-width:none;max-width:100%;
+}
+.lpi-subnav::-webkit-scrollbar{display:none}
+.lpi-subnav a{
+  flex:none;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--mist);padding:.6rem 1.05rem;border-radius:100px;transition:.3s var(--ease);white-space:nowrap;
+}
+.lpi-subnav a:hover{color:var(--snow);background:rgba(247,245,239,.06)}
+.lpi-subnav a.active{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1303;font-weight:600}
+
+/* chapter blocks */
+.lpi-ch{position:relative;z-index:1;scroll-margin-top:9.5rem;padding:2.4rem 0}
+.chap{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.6rem}
+.chap .cnum{font-family:var(--mono);font-size:.8rem;color:var(--gold);letter-spacing:.2em}
+.chap h3{font-size:clamp(1.5rem,2.8vw,2.1rem)}
+.chap-sub{max-width:760px;color:var(--mist);font-size:1.05rem;margin:-0.6rem 0 1.8rem}
+
+/* chapter 01 — what it is */
+.what-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:stretch}
+.big-claim{
+  background:linear-gradient(150deg,rgba(212,168,67,.1),var(--ink));border:1px solid var(--line-gold);
+  border-radius:20px;padding:clamp(1.8rem,4vw,2.6rem);display:flex;flex-direction:column;justify-content:center;
+}
+.big-claim p{font-family:var(--serif);font-size:clamp(1.2rem,2.1vw,1.55rem);color:var(--snow);line-height:1.5}
+.big-claim p em{color:var(--gold);font-style:normal}
+.big-claim .follow{font-family:var(--sans);font-size:1rem;color:var(--mist);margin-top:1.2rem;line-height:1.7}
+.timeline-card{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:clamp(1.6rem,3.5vw,2.2rem)}
+.timeline-card h4{font-family:var(--serif);font-size:1.2rem;color:var(--snow);margin-bottom:1.2rem;font-weight:500}
+.tl-item{display:flex;gap:1rem;padding:.85rem 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.tl-item:last-child{border-bottom:none}
+.tl-item .era{flex:none;font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.06em;min-width:5.4ch;padding-top:.25rem}
+.tl-item p{font-size:.93rem;line-height:1.55}
+.tl-item.hot p b{color:var(--gold-bright)}
+.skeptic-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem}
+.skeptic{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:clamp(1.6rem,3.5vw,2.2rem);transition:border-color .4s,transform .45s var(--spring)}
+.skeptic:hover{border-color:var(--line-gold);transform:translateY(-4px)}
+.skeptic .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--aurora-2);margin-bottom:.8rem}
+.skeptic h4{font-family:var(--serif);font-size:1.25rem;color:var(--snow);margin-bottom:.8rem;font-weight:500}
+.skeptic p{font-size:.96rem;line-height:1.6;margin-bottom:.7rem}
+.skeptic p:last-child{margin-bottom:0}
+.vnum{display:flex;gap:1.6rem;flex-wrap:wrap;margin:.9rem 0 .3rem}
+.vnum div{text-align:left}
+.vnum .n{font-family:var(--mono);font-size:2rem;color:var(--gold);font-weight:600;line-height:1}
+.vnum .c{font-size:.78rem;color:var(--mist-dim);margin-top:.35rem;line-height:1.4}
+
+/* chapter 02 — five forces */
+.force-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.force-card{
+  --fc:var(--gold);
+  background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:1.5rem 1.3rem;
+  transition:transform .5s var(--spring),border-color .4s,box-shadow .5s;position:relative;overflow:hidden;
+}
+.force-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--fc);opacity:0;transition:opacity .4s}
+.force-card:hover{transform:translateY(-8px);border-color:var(--fc);box-shadow:0 22px 46px -24px rgba(0,0,0,.85)}
+.force-card:hover::before{opacity:1}
+.force-card .fl{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--fc);line-height:1;margin-bottom:.5rem;transition:text-shadow .4s}
+.force-card:hover .fl{text-shadow:0 0 22px var(--fc)}
+.force-card .fn{font-weight:600;color:var(--snow);font-size:.98rem;margin-bottom:.15rem}
+.force-card .fe{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fc);margin-bottom:.9rem}
+.force-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.force-card li{font-size:.85rem;color:var(--mist);line-height:1.45;padding-left:1rem;position:relative}
+.force-card li::before{content:"·";position:absolute;left:0;color:var(--fc);font-weight:700}
+.force-card .craves{border-top:1px dashed var(--line);padding-top:.8rem;font-size:.8rem;color:var(--mist-dim);line-height:1.5}
+.force-card .craves b{color:var(--fc)}
+.o-callout{
+  margin-top:1.4rem;border:1px solid rgba(155,126,222,.4);border-radius:20px;
+  background:radial-gradient(120% 150% at 10% 0%,rgba(155,126,222,.14),transparent 60%),var(--ink);
+  padding:clamp(1.6rem,4vw,2.4rem);display:flex;gap:1.6rem;align-items:flex-start;
+}
+.o-callout .O{font-family:var(--serif);font-size:4rem;font-weight:700;color:var(--dO);line-height:1;flex:none;text-shadow:0 0 30px rgba(155,126,222,.5)}
+.o-callout p{font-size:1.02rem;line-height:1.7}
+.o-callout b{color:var(--snow)}
+
+/* chapter 03 — holistic model */
+.hol-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:center}
+.hol-viz{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:1.4rem}
+.hol-viz svg{width:100%;height:auto;display:block}
+.hvt1{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:2px}
+.hvt2{font-family:var(--sans);font-size:9.5px;fill:#7E8090}
+.hvneeds text{font-family:var(--sans);font-size:10.5px;fill:#B4B6C4}
+.hvdials text{font-family:var(--mono);font-size:10.5px;font-weight:600}
+.hvspan{font-family:var(--mono);font-size:9.5px;letter-spacing:1px}
+.hol-txt p{font-size:1rem;line-height:1.7;margin-bottom:1rem}
+.needrow{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.2rem}
+.needrow span{--nc:var(--gold);display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line);border-radius:100px;padding:.4rem .8rem;font-size:.8rem;color:var(--mist);transition:.3s var(--spring)}
+.needrow span:hover{transform:translateY(-2px);border-color:var(--nc)}
+.needrow b{color:var(--nc);font-family:var(--mono);font-size:.95rem}
+.need2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2rem}
+.need-card{background:var(--ink);border:1px solid var(--line);border-left:3px solid var(--nc,--gold);border-radius:16px;padding:1.7rem;transition:transform .45s var(--spring),border-color .4s}
+.need-card:hover{transform:translateY(-4px)}
+.need-card .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.7rem}
+.need-card .q{font-family:var(--serif);font-size:1.3rem;color:var(--snow);font-style:italic;margin-bottom:.7rem}
+.need-card p{font-size:.94rem;line-height:1.6}
+.punchline{
+  margin-top:2rem;text-align:center;padding:2.2rem clamp(1.2rem,4vw,3rem);border-radius:20px;
+  border:1px solid var(--line-gold);
+  background:radial-gradient(140% 200% at 50% 0%,rgba(212,168,67,.12),transparent 55%),var(--ink);
+}
+.punchline p{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);color:var(--gold-bright);font-style:italic;line-height:1.4}
+.punchline small{display:block;margin-top:.9rem;font-size:.88rem;color:var(--mist);font-style:normal}
+
+/* chapter 04 — track record */
+.board-wall{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
+.board-tile{
+  display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:.98rem;color:var(--mist);
+  border:1px solid var(--line);border-radius:14px;padding:1.15rem .6rem;background:rgba(16,16,25,.55);
+  transition:.35s var(--spring);line-height:1.3;min-height:74px;
+}
+.board-tile:hover{color:var(--gold-bright);border-color:var(--line-gold);transform:translateY(-4px) scale(1.02);background:rgba(212,168,67,.05)}
+.track-awards{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem}
+.award-card{display:flex;gap:1rem;align-items:flex-start;border:1px solid var(--line-gold);border-radius:16px;padding:1.4rem 1.5rem;background:rgba(212,168,67,.06);transition:transform .45s var(--spring)}
+.award-card:hover{transform:translateY(-4px)}
+.award-card svg{flex:none;width:22px;height:22px;color:var(--gold);margin-top:.15rem}
+.award-card p{font-size:.95rem;line-height:1.6}
+
+/* chapter 05 — lineage (chain styles already exist) */
+.lpi-cta{margin-top:2.6rem;text-align:center}
+.lpi-cta .btn{font-size:1.05rem}
+
+@media(max-width:1024px){
+  .what-grid,.hol-grid,.skeptic-row,.need2,.track-awards{grid-template-columns:1fr}
+  .force-grid{grid-template-columns:repeat(3,1fr)}
+  .board-wall{grid-template-columns:repeat(3,1fr)}
+  .lpi-subnav-wrap{top:56px}
+}
+@media(max-width:620px){
+  .eyebrow{display:block}
+  .eyebrow::before{display:none}
+  .force-grid{grid-template-columns:1fr 1fr}
+  .board-wall{grid-template-columns:1fr 1fr}
+  .o-callout{flex-direction:column;gap:.8rem}
+  .lpi-subnav a{font-size:.68rem;padding:.55rem .8rem}
+  .lpi-ch{scroll-margin-top:8.5rem}
+}
+
+
+/* lineage chain */
+.lineage{position:relative;z-index:1;margin-top:1rem}
+.lineage-title{text-align:center;margin-bottom:2.2rem}
+.lineage-title h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
+.chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;max-width:1000px;margin:0 auto}
+.chain-node{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:1.8rem 1.5rem;text-align:center;transition:transform .5s var(--spring),border-color .4s;position:relative}
+.chain-node:hover{transform:translateY(-6px);border-color:var(--line-gold)}
+.chain-node .step-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:.8rem}
+.chain-node .who{font-family:var(--serif);font-size:1.25rem;color:var(--snow);margin-bottom:.4rem;font-weight:500}
+.chain-node .what{font-size:.88rem;color:var(--mist);line-height:1.5}
+.chain-node.gold{border-color:var(--line-gold);background:linear-gradient(160deg,rgba(212,168,67,.1),var(--ink))}
+.chain-link{display:flex;align-items:center;padding:0 .6rem}
+.chain-link svg{width:34px;height:34px;color:var(--gold)}
+.chain-link svg path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw 1.2s var(--ease) forwards}
+.chain-node.in-view+.chain-link svg path{animation-play-state:running}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lineage-note{max-width:760px;margin:2.2rem auto 0;text-align:center;font-size:1rem;color:var(--mist)}
+
+
+
+/* ============================================================
+   APPROACH
+   ============================================================ */
+.approach{padding:var(--sect) 0;position:relative;overflow:hidden}
+.approach .aurora-bg{position:absolute;width:90vw;height:60vh;right:-20vw;top:10%;background:radial-gradient(circle,rgba(58,160,160,.14),transparent 65%);filter:blur(70px);pointer-events:none}
+.approach .aurora-bg.two{left:-25vw;right:auto;top:50%;background:radial-gradient(circle,rgba(212,168,67,.12),transparent 65%)}
+.approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:center;position:relative;z-index:1}
+.approach h2{margin-top:1.2rem;margin-bottom:1.6rem}
+.pillars{display:flex;flex-direction:column;gap:1.3rem}
+.pillar{display:flex;gap:1.2rem;padding:1.5rem;border:1px solid var(--line);border-radius:16px;background:rgba(16,16,25,.55);transition:border-color .4s,transform .45s var(--spring)}
+.pillar:hover{border-color:var(--line-gold);transform:translateX(6px)}
+.pillar .pic{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(212,168,67,.18),rgba(58,160,160,.12));color:var(--gold)}
+.pillar .pic svg{width:23px;height:23px}
+.pillar h3{font-size:1.15rem;margin-bottom:.35rem}
+.pillar p{font-size:.95rem;line-height:1.6}
+.quote-block{margin-top:2.2rem;padding-left:1.6rem;border-left:2px solid var(--gold)}
+.quote-block p{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--snow);line-height:1.45;font-style:italic}
+.frameworks{margin-top:2.6rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.fw{font-size:.88rem;color:var(--mist);border:1px solid var(--line);padding:.55rem 1.05rem;border-radius:100px;background:rgba(16,16,25,.6);transition:.3s var(--spring)}
+.fw:hover{color:var(--gold);border-color:var(--line-gold);transform:translateY(-3px)}
+
+/* ============================================================
+   FOUNDERS
+   ============================================================ */
+.founders{padding:var(--sect) 0;background:#08080d}
+.founder-lead{background:var(--ink);border:1px solid var(--line);border-radius:22px;padding:clamp(2rem,5vw,3.5rem);margin-bottom:1.4rem;position:relative;overflow:hidden}
+.founder-lead::after{content:"";position:absolute;right:-10%;top:-20%;width:50%;height:140%;background:radial-gradient(circle,rgba(212,168,67,.1),transparent 60%);pointer-events:none}
+.fl-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,3.5rem);align-items:center;position:relative;z-index:1}
+.fl-portrait{aspect-ratio:4/5;border-radius:18px;border:1px solid var(--line-gold);overflow:hidden;position:relative;
+  background:radial-gradient(80% 60% at 50% 20%, rgba(212,168,67,.25), transparent 60%),linear-gradient(160deg,var(--midnight),var(--void));
+  display:grid;place-items:center;text-align:center}
+.fl-portrait .ph{color:var(--mist-dim);font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;padding:1rem;line-height:1.8}
+.fl-portrait .lion{width:46%;opacity:.9;margin-bottom:.8rem}
+.fl-role{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+.fl-grid h3{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1.2rem}
+.fl-grid>div>p{margin-bottom:1rem;font-size:1.03rem}
+.journey{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:1.5rem}
+.journey .step{font-family:var(--mono);font-size:.72rem;color:var(--mist);display:flex;align-items:center;gap:.5rem}
+.journey .step b{color:var(--gold)}
+.journey .sep{color:var(--mist-dim)}
+.creds{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
+.founders-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.fcard{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:border-color .4s,transform .5s var(--spring)}
+.fcard:hover{border-color:var(--line-gold);transform:translateY(-6px)}
+.fcard .av{flex:none;width:86px;height:86px;border-radius:16px;overflow:hidden;border:1px solid var(--line-gold);
+  background:radial-gradient(70% 60% at 50% 25%, rgba(58,160,160,.3), transparent 60%),linear-gradient(160deg,var(--midnight),var(--void));
+  display:grid;place-items:center}
+.fcard .av svg{width:44%;opacity:.85}
+.fcard h3{font-size:1.3rem;margin-bottom:.2rem}
+.fcard .r{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+.fcard p{font-size:.95rem;line-height:1.6}
+
+/* ============================================================
+   RATANA
+   ============================================================ */
+.ratana{padding:var(--sect) 0}
+.ratana-inner{border:1px solid var(--line-gold);border-radius:24px;overflow:hidden;
+  background:radial-gradient(120% 120% at 100% 0%, rgba(58,160,160,.16), transparent 55%),radial-gradient(100% 100% at 0% 100%, rgba(212,168,67,.1), transparent 55%),var(--ink);
+  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:center;padding:clamp(2rem,5vw,4rem)}
+.ratana .eyebrow{margin-bottom:1.2rem}
+.ratana p{font-size:1.05rem;margin-bottom:1.2rem}
+.ratana .feat{display:flex;flex-direction:column;gap:.75rem;margin:1.4rem 0 1.8rem}
+.ratana .feat li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;color:var(--mist);font-size:.98rem}
+.ratana .feat svg{flex:none;width:19px;height:19px;color:var(--gold);margin-top:.25rem}
+.ratana-visual{aspect-ratio:1/1;border-radius:20px;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0c1024,#07070c);display:grid;place-items:center}
+.orbit{position:absolute;border:1px solid var(--line);border-radius:50%}
+.orbit.o1{width:55%;height:55%;animation:spin 14s linear infinite}
+.orbit.o2{width:78%;height:78%;animation:spin 22s linear infinite reverse}
+.orbit.o3{width:96%;height:96%;animation:spin 30s linear infinite}
+.orbit .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);top:-5px;left:calc(50% - 4px);box-shadow:0 0 12px var(--gold)}
+.orbit.o2 .dot{background:var(--aurora-2);box-shadow:0 0 12px var(--aurora-2)}
+.orbit.o3 .dot{background:var(--snow)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ratana-core{width:34%;height:34%;border-radius:50%;background:radial-gradient(circle,var(--gold-bright),var(--gold-deep));display:grid;place-items:center;box-shadow:0 0 50px rgba(212,168,67,.5);z-index:2;animation:breathe 5s var(--ease) infinite}
+@keyframes breathe{0%,100%{box-shadow:0 0 50px rgba(212,168,67,.5)}50%{box-shadow:0 0 80px rgba(212,168,67,.75)}}
+.ratana-core span{font-family:var(--serif);font-weight:600;color:#1a1303;font-size:1.1rem;letter-spacing:.04em}
+
+/* ============================================================
+   PROGRAMS
+   ============================================================ */
+.programs{padding:var(--sect) 0;background:#08080d}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.prog{background:var(--ink);padding:2rem;transition:background .4s}
+.prog:hover{background:var(--ink-2)}
+.prog .n{font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.prog h3{font-size:1.18rem;margin:.8rem 0 .5rem}
+.prog p{font-size:.93rem}
+
+/* ============================================================
+   BOOKING FORM
+   ============================================================ */
+.book{padding:var(--sect) 0;background:linear-gradient(180deg,#08080d,var(--void))}
+.book-head{max-width:780px;margin:0 auto 3rem;text-align:center}
+.book-head .eyebrow{margin-bottom:1.2rem}
+.book-head p{font-size:1.1rem}
+.form-wrap{max-width:840px;margin:0 auto;background:var(--ink);border:1px solid var(--line);border-radius:24px;padding:clamp(1.6rem,4vw,3rem)}
+.form-progress{display:flex;align-items:center;gap:1rem;margin-bottom:2.2rem}
+.form-progress .bar{flex:1;height:6px;background:rgba(247,245,239,.08);border-radius:6px;overflow:hidden}
+.form-progress .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));border-radius:6px;transition:width .5s var(--ease)}
+.form-progress .pct{font-family:var(--mono);font-size:.8rem;color:var(--gold);min-width:8ch;text-align:right}
+.fgroup{margin-bottom:2.3rem}
+.fgroup .qlabel{display:block;font-weight:600;color:var(--snow);font-size:1.08rem;margin-bottom:.4rem}
+.fgroup .qhint{color:var(--mist-dim);font-size:.88rem;margin-bottom:1rem}
+.qnum{font-family:var(--mono);color:var(--gold);font-size:.8rem;margin-right:.5rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field label{display:block;font-size:.86rem;color:var(--mist);margin-bottom:.4rem;font-weight:500}
+.field input,.field textarea,.field select{width:100%;background:var(--void);border:1px solid var(--line);border-radius:12px;
+  padding:.95rem 1.05rem;color:var(--snow);font-family:var(--sans);font-size:1rem;transition:border-color .3s,background .3s,box-shadow .3s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);background:#0c0c14;box-shadow:0 0 0 4px rgba(212,168,67,.12)}
+.field textarea{resize:vertical;min-height:96px}
+.field input::placeholder,.field textarea::placeholder{color:var(--mist-dim)}
+.opts{display:flex;flex-wrap:wrap;gap:.65rem}
+.opt{position:relative;cursor:pointer}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt span{display:inline-block;padding:.75rem 1.2rem;border:1px solid var(--line);border-radius:100px;
+  font-size:.95rem;color:var(--mist);transition:.28s var(--spring);background:rgba(16,16,25,.5);user-select:none}
+.opt:hover span{border-color:var(--line-gold);color:var(--snow);transform:translateY(-2px)}
+.opt input:checked+span{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1303;border-color:var(--gold);font-weight:600;transform:scale(1.03)}
+.opt input:focus-visible+span{outline:3px solid var(--gold-bright);outline-offset:2px}
+.scale-row{display:flex;align-items:center;gap:1.2rem}
+.scale-row input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--aurora));outline:none}
+.scale-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--snow);border:4px solid var(--gold);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5);transition:transform .2s var(--spring)}
+.scale-row input[type=range]:active::-webkit-slider-thumb{transform:scale(1.2)}
+.scale-row input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--snow);border:4px solid var(--gold);cursor:pointer}
+.scale-val{font-family:var(--mono);font-size:1.5rem;color:var(--gold);min-width:2.4ch;text-align:center;font-weight:600}
+.scale-ends{display:flex;justify-content:space-between;font-size:.76rem;color:var(--mist-dim);margin-top:.45rem;font-family:var(--mono)}
+.toggle-line{display:flex;align-items:center;gap:.8rem;margin-bottom:1.7rem;cursor:pointer;color:var(--mist);font-size:.96rem}
+.toggle-line input{accent-color:var(--gold);width:20px;height:20px;flex:none}
+.submit-row{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:.5rem}
+.form-note{font-size:.84rem;color:var(--mist-dim);flex:1;min-width:220px}
+.success{display:none;text-align:center;padding:2rem 1rem}
+.success.show{display:block;animation:fadeUp .6s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
+.success .check{width:70px;height:70px;margin:0 auto 1.4rem;border-radius:50%;background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));display:grid;place-items:center;animation:pop .6s var(--spring)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.success .check svg{width:34px;height:34px;color:#1a1303}
+.success h3{font-size:1.8rem;margin-bottom:.8rem}
+.success p{max-width:500px;margin:0 auto 1.6rem}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{padding:var(--sect) 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.contact-info h2{margin-top:1.2rem;margin-bottom:1.8rem}
+.cinfo-item{display:flex;gap:1.1rem;margin-bottom:1.8rem;align-items:flex-start}
+.cinfo-item .ic{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(212,168,67,.16),rgba(58,160,160,.1));color:var(--gold)}
+.cinfo-item .ic svg{width:21px;height:21px}
+.cinfo-item .l{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:.3rem}
+.cinfo-item .v{color:var(--snow);font-size:1.04rem;line-height:1.55}
+.cinfo-item .v a:hover{color:var(--gold)}
+.socials{display:flex;gap:.8rem;margin-top:.6rem;flex-wrap:wrap}
+.soc{width:50px;height:50px;border-radius:13px;border:1px solid var(--line);display:grid;place-items:center;color:var(--mist);transition:.35s var(--spring)}
+.soc:hover{color:var(--gold);border-color:var(--line-gold);transform:translateY(-4px) rotate(-3deg)}
+.soc svg{width:21px;height:21px}
+.soc.red{font-family:var(--mono);font-size:.6rem;font-weight:700;line-height:1.2;text-align:center}
+.map-wrap{border-radius:20px;overflow:hidden;border:1px solid var(--line);min-height:440px;position:relative;background:var(--ink)}
+.map-wrap iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(.3) invert(.92) hue-rotate(180deg) contrast(.9)}
+.map-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:2rem;color:var(--mist);pointer-events:none}
+
+/* ============================================================
+   REFERENCES
+   ============================================================ */
+.refs{padding:calc(var(--sect) * .7) 0;background:#07070c;border-top:1px solid var(--line)}
+.refs .sect-head{margin-bottom:2rem}
+.ref-list{counter-reset:refc;max-width:940px}
+.ref-item{
+  /* was display:flex, which promoted every inline piece of a citation -- the
+     text runs, the italic title, the link -- into its own flex column, so each
+     entry rendered as a row of narrow shreds. The flex was only ever meant to
+     hang the [n] marker beside the text, which absolute positioning does
+     without touching the citation's own inline flow. */
+  counter-increment:refc;padding:1.05rem 0 1.05rem 3.4ch;position:relative;
+  border-bottom:1px solid var(--line);
+  font-size:.92rem;color:var(--mist);line-height:1.6;scroll-margin-top:7rem;
+}
+.ref-item::before{
+  content:"["counter(refc)"]";font-family:var(--mono);color:var(--gold);font-weight:600;
+  position:absolute;left:0;top:1.05rem;
+}
+.ref-item a{color:var(--aurora-2);word-break:break-all}
+.ref-item a:hover{text-decoration:underline}
+.ref-item.flash{animation:refFlash 1.6s var(--ease)}
+@keyframes refFlash{0%{background:rgba(212,168,67,.18)}100%{background:transparent}}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{padding:clamp(3.5rem,7vw,5.5rem) 0 2.5rem;background:#06060a;border-top:1px solid var(--line)}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+.foot-brand .brand{margin-bottom:1.2rem}
+.foot-brand p{font-size:.98rem;max-width:340px;font-family:var(--serif);font-style:italic}
+.foot-col h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.foot-col a{display:block;color:var(--mist);font-size:.95rem;margin-bottom:.75rem;transition:color .25s,transform .25s;transform-origin:left}
+.foot-col a:hover{color:var(--snow);transform:translateX(4px)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--line)}
+.foot-bottom p{font-size:.84rem;color:var(--mist-dim)}
+.creds-mini{display:flex;gap:1.2rem;flex-wrap:wrap}
+.creds-mini span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--mist-dim);text-transform:uppercase}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .burger{display:block}
+  .stats,.cards,.prog-grid{grid-template-columns:repeat(2,1fr)}
+  .approach-grid,.hrd-inner,.ratana-inner,.fl-grid,.contact-grid,.lpi-grid{grid-template-columns:1fr;gap:2.4rem}
+  .founders-row{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .fl-portrait{max-width:340px}
+  .ratana-visual{max-width:380px;margin:0 auto}
+  .chain{grid-template-columns:1fr;max-width:460px}
+  .chain-link{justify-content:center;padding:.5rem 0}
+  .chain-link svg{transform:rotate(90deg)}
+}
+@media(max-width:620px){
+  .stats,.cards,.prog-grid,.grid2,.founders-row{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas .btn{justify-content:center}
+  .submit-row{flex-direction:column;align-items:stretch}
+  .submit-row .btn{justify-content:center;width:100%}
+  .nav-cta{display:none}
+    #toTop{right:1rem;bottom:1.2rem;width:50px;height:50px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .expand-body{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#home" class="brand" aria-label="Aurelion home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 5 L33 30 H26 L20 17 L14 30 H7 Z" fill="url(#gm)"/>
+        <path d="M20 1.5 L21.4 5.4 L25.3 4 L23.9 7.9 L27.8 9.3 L23.9 10.7 L25.3 14.6 L21.4 13.2 L20 17.1 L18.6 13.2 L14.7 14.6 L16.1 10.7 L12.2 9.3 L16.1 7.9 L14.7 4 L18.6 5.4 Z" fill="#F0CB6E" opacity="0.95"/>
+        <defs><linearGradient id="gm" x1="7" y1="5" x2="33" y2="30"><stop stop-color="#F0CB6E"/><stop offset="1" stop-color="#A57E2A"/></linearGradient></defs>
+      </svg>
+      <span><b>Aurelion</b></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#why" data-spy>Why Now</a>
+      <a href="#services" data-spy>What We Do</a>
+      <a href="#lpi" data-spy>The LPI</a>
+      <a href="#approach" data-spy>Why Aurelion</a>
+      <a href="#founders" data-spy>Founders</a>
+      <a href="#programs" data-spy>Programs</a>
+      <a href="#contact" data-spy>Contact</a>
+      <a href="https://ratana.aurelion-earth.com" class="nav-app">Ratana</a>
+      <a href="#book" class="btn btn-gold nav-cta">Book a conversation</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#why" data-spy>Why Now</a>
+  <a href="#services" data-spy>What We Do</a>
+  <a href="#lpi" data-spy>The LPI</a>
+  <a href="#approach" data-spy>Why Aurelion</a>
+  <a href="#founders" data-spy>Founders</a>
+  <a href="#programs" data-spy>Programs</a>
+  <a href="#contact" data-spy>Contact</a>
+  <a href="https://ratana.aurelion-earth.com">Ratana</a>
+  <a href="#book" class="btn btn-gold">Book a conversation</a>
+</div>
+
+<!-- side dot wayfinder -->
+<nav class="dots" id="dots" aria-label="Section navigation">
+  <a href="#home" data-spy><span class="tip">Top</span></a>
+  <a href="#why" data-spy><span class="tip">Why Now</span></a>
+  <a href="#services" data-spy><span class="tip">What We Do</span></a>
+  <a href="#lpi" data-spy><span class="tip">The LPI</span></a>
+  <a href="#approach" data-spy><span class="tip">Why Aurelion</span></a>
+  <a href="#founders" data-spy><span class="tip">Founders</span></a>
+  <a href="#book" data-spy><span class="tip">Book</span></a>
+  <a href="#contact" data-spy><span class="tip">Contact</span></a>
+</nav>
+
+<button id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="home">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="aurora-wrap" aria-hidden="true">
+    <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+  </div>
+  <svg class="peaks" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="ridge1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1430"/><stop offset="1" stop-color="#07070c"/></linearGradient>
+      <linearGradient id="ridge2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0a18"/><stop offset="1" stop-color="#0a0a0f"/></linearGradient>
+      <linearGradient id="dawn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D4A843" stop-opacity="0"/><stop offset=".5" stop-color="#F0CB6E" stop-opacity=".8"/><stop offset="1" stop-color="#D4A843" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="M0,210 L240,120 L420,190 L640,90 L820,180 L1040,110 L1240,200 L1440,140 L1440,320 L0,320 Z" fill="url(#ridge1)"/>
+    <path d="M0,210 L240,120 L420,190 L640,90 L820,180 L1040,110 L1240,200 L1440,140" fill="none" stroke="url(#dawn)" stroke-width="1.5"/>
+    <path d="M0,260 L180,200 L380,255 L560,180 L760,250 L980,190 L1200,260 L1440,210 L1440,320 L0,320 Z" fill="url(#ridge2)"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="badges reveal in">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Official HRD Corp Registered Training Provider</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>LPI Certified Consultants</span>
+      </div>
+      <div class="eyebrow reveal in d1">Leadership · Training · Coaching · Consultancy — Kuala Lumpur</div>
+      <h1 class="reveal in d2">In the age of AI,<br>your edge is still <span class="shimmer">human.</span></h1>
+      <p class="lead reveal in d3">Aurelion accelerates human adaptive capacity in the AI era — building the leadership, resilience and clarity that machines can't replicate, and your competitors can't copy.</p>
+      <div class="hero-ctas reveal in d4">
+        <a href="#book" class="btn btn-gold">Book a conversation <span class="arr">→</span></a>
+        <a href="#why" class="btn btn-ghost">See why it's urgent</a>
+      </div>
+      <p class="hero-note reveal in d5">As an <strong>official HRD Corp Registered Training Provider</strong>, our programs can be claimable under your company's existing HRD Corp levy.<a class="ref" href="#ref-3">3</a></p>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span>Scroll</div>
+</header>
+
+<!-- ============================ WHY NOW ============================ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-head reveal">
+      <div class="eyebrow">Why now</div>
+      <h2>The ground is shifting faster than your last org chart.</h2>
+      <p class="lead">AI is rewriting how work works. The organizations that win the next decade won't be the ones with the best tools — they'll be the ones whose people can adapt, lead, and stay human while everything changes. The numbers below are from the world's largest workplace studies.</p>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="node"></div>
+        <div class="num" data-count="39" data-suffix="%">0<span class="unit">%</span></div>
+        <div class="desc">of workers' core skills will be transformed or made obsolete by 2030.<a class="ref" href="#ref-1">1</a></div>
+        <div class="src">World Economic Forum · 2025</div></div>
+      <div class="stat"><div class="node"></div>
+        <div class="num">59<span class="unit"> in 100</span></div>
+        <div class="desc">workers will need reskilling or upskilling by 2030 — and 11 of them are unlikely to get it.<a class="ref" href="#ref-1">1</a></div>
+        <div class="src">World Economic Forum · 2025</div></div>
+      <div class="stat"><div class="node"></div>
+        <div class="num">1<span class="unit"> in 5</span></div>
+        <div class="desc">employees worldwide is actually engaged at work — and engagement has declined two years in a row.<a class="ref" href="#ref-2">2</a></div>
+        <div class="src">Gallup · 2026</div></div>
+      <div class="stat"><div class="node"></div>
+        <div class="num" data-count="10" data-prefix="$" data-suffix="T">$0<span class="unit">T</span></div>
+        <div class="desc">lost to low engagement in one year — roughly 9% of global GDP, walking out the door.<a class="ref" href="#ref-2">2</a></div>
+        <div class="src">Gallup · 2026</div></div>
+      <div class="stat"><div class="node"></div>
+        <div class="num" data-count="70" data-suffix="%">0<span class="unit">%</span></div>
+        <div class="desc">of the difference in team engagement traces to one person: the manager.<a class="ref" href="#ref-2">2</a></div>
+        <div class="src">Gallup</div></div>
+      <div class="stat"><div class="node"></div>
+        <div class="num" data-count="44" data-suffix="%">0<span class="unit">%</span></div>
+        <div class="desc">of managers have ever received formal management training. The rest are improvising.<a class="ref" href="#ref-2">2</a></div>
+        <div class="src">Gallup · 2025</div></div>
+    </div>
+
+    <div class="flip reveal">
+      <div class="eyebrow">The part most people miss</div>
+      <p>The skills the future rewards most aren't technical. The fastest-growing capabilities to 2030 are <em>analytical thinking, resilience, flexibility, leadership and influence</em> — deeply human skills AI can't replicate.<a class="ref" href="#ref-1" style="font-size:.5em">1</a> That is precisely what we build.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HRD STRIP ============================ -->
+<section class="hrd">
+  <div class="container hrd-inner">
+    <div class="reveal">
+      <div class="eyebrow">Already paid for</div>
+      <h3>Your training budget may already be sitting in an account.</h3>
+      <p>Aurelion is an <strong>official HRD Corp Registered Training Provider</strong>. That means our programs can be claimable under your company's existing HRD Corp levy — the 1% of monthly payroll that registered Malaysian employers already contribute.<a class="ref" href="#ref-3">3</a> Yet in 2025, more than half of eligible companies left those funds unclaimed.<a class="ref" href="#ref-4">4</a> Put yours to work. <span class="gold-text">Ask us how to claim.</span></p>
+    </div>
+    <div class="pill-stat reveal d1">
+      <div class="big">53%</div>
+      <div class="cap">of HRD Corp-registered employers left their training funds <strong>unclaimed</strong> in 2025 — money already paid, simply unused.<a class="ref" href="#ref-4">4</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICES ============================ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sect-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>One firm. Every lever for human performance.</h2>
+      <p class="lead">From the boardroom to the back office, from one executive to your entire organization — learning experiences designed to change behavior, not just fill a slide deck.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h20v14H2z"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 3 3-4 3 3 3-4"/></svg>
+        <h3>Corporate Training & Workshops</h3>
+        <p>High-impact, experiential sessions in emotional intelligence, resilience, adaptability and communication.</p>
+        <span class="tag">HRD Corp claimable</span>
+      </div>
+      <div class="card reveal d1">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .8-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.9L3 8.8 9 8z"/></svg>
+        <h3>Leadership Development</h3>
+        <p>Our adaptive "open-source" leadership model turns managers into multipliers — because 70% of team engagement comes down to them.<a class="ref" href="#ref-2">2</a></p>
+        <span class="tag">Manager capability</span>
+      </div>
+      <div class="card reveal d2">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5c2.5.5 5 2.5 5 5.5"/></svg>
+        <h3>Executive & Team Coaching</h3>
+        <p>LPI-informed coaching for individuals and intact teams — growth that is precise, personal and measurable.</p>
+        <span class="tag">1:1 & team</span>
+      </div>
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l18-7-7 18-2.5-7.5z"/><path d="M11.5 14.5L21 4"/></svg>
+        <h3>Keynotes & Conferences</h3>
+        <p>Talks that move a room of hundreds — on the future of work, human adaptability and the inner edge.</p>
+        <span class="tag">Events & summits</span>
+      </div>
+      <div class="card reveal d1">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20l6-12 4 7 3-5 5 10z"/><circle cx="17" cy="5" r="2"/></svg>
+        <h3>Team Retreats & Offsites</h3>
+        <p>Experiential away-days that rebuild trust, cohesion and shared purpose — engineered as transformation.</p>
+        <span class="tag">Cohesion & culture</span>
+      </div>
+      <div class="card reveal d2">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20V8M10 20V4M16 20v-8M22 20H2"/></svg>
+        <h3>Strategy & Culture Consulting</h3>
+        <p>We partner with leadership to embed cultures of trust, collaboration and sustainable performance.</p>
+        <span class="tag">Org transformation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THE LPI EXPERIENCE ============================ -->
+<section class="lpi" id="lpi">
+  <div class="halo" aria-hidden="true"></div>
+  <div class="container">
+    <div class="lpi-head reveal">
+      <div class="eyebrow center">Our instrument</div>
+      <h2>Meet the LPI — the science of how your people are wired.</h2>
+      <p class="lead">Personality tools are everywhere, and most of them stop at putting people in four boxes. The LEONARD Personality Inventory goes further: a decade of university research, validated against how colleagues actually see you, normed in Asia, and built inside a whole-person model. Five minutes here and you'll understand your team differently.</p>
+    </div>
+  </div>
+
+  <!-- sticky chapter navigation -->
+  <div class="lpi-subnav-wrap">
+    <nav class="lpi-subnav" id="lpiSubnav" aria-label="LPI chapters">
+      <a href="#lpi-what" class="active">What it is</a>
+      <a href="#lpi-forces">The Five Forces</a>
+      <a href="#lpi-holistic">The Holistic Model</a>
+      <a href="#lpi-track">Track Record</a>
+      <a href="#lpi-lineage">Our Lineage</a>
+    </nav>
+  </div>
+
+  <div class="container">
+
+    <!-- ─────────── 01 · WHAT IT IS ─────────── -->
+    <div class="lpi-ch" id="lpi-what">
+      <div class="chap reveal"><span class="cnum">01</span><h3>What is the LPI?</h3></div>
+      <p class="chap-sub reveal">2,400 years of personality science — with the missing piece finally added.</p>
+
+      <div class="what-grid">
+        <div class="big-claim reveal">
+          <p>The LPI maps every person across <em>five forces</em> — Openness, Neutral, Analytical, Relational, Decisive — revealing not just <em>what</em> people do, but the deeper need <em>driving why</em> they do it.<a class="ref" href="#ref-7">7</a></p>
+          <p class="follow">It yields 26 named personality styles, reads in 13 languages, and has profiled thousands of professionals across Asia, Europe, Australia and New Zealand.<a class="ref" href="#ref-7">7</a> Where most tools hand you a label, the LPI hands you a working map — of yourself, and of your whole team on one page.</p>
+        </div>
+        <div class="timeline-card reveal d1">
+          <h4>The lineage — 2,400 years, one missing force</h4>
+          <div class="tl-item"><span class="era">~400 BC</span><p><b>Hippocrates</b> observes that people come in four temperaments — the oldest personality framework on record.</p></div>
+          <div class="tl-item"><span class="era">~200 AD</span><p><b>Galen</b> names them: sanguine, choleric, melancholic, phlegmatic. The four-corner map is born.</p></div>
+          <div class="tl-item"><span class="era">1900s</span><p>Modern Western instruments (the DISC family and kin) put the four temperaments to work — but stop at describing behaviour.</p></div>
+          <div class="tl-item hot"><span class="era">2001</span><p><b>The LPI</b> adds the missing fifth force — <b style="color:var(--dO)">Openness</b> — grounds it in a holistic model of the whole person, and norms it in Asia.<a class="ref" href="#ref-7">7</a></p></div>
+        </div>
+      </div>
+
+      <div class="skeptic-row">
+        <div class="skeptic reveal">
+          <div class="k">For the skeptics</div>
+          <h4>Does it hold up? The numbers say yes.</h4>
+          <p>The LPI is anchored in classical Types & Traits theory and formulated on the Five-Factor Model of personality — the framework modern psychology considers the gold standard.<a class="ref" href="#ref-7">7</a></p>
+          <div class="vnum">
+            <div><div class="n">85%</div><div class="c">agreement among supervisors (n=25) that the profile matches the person — face-validity study, LPI Norms & Technical Manual<a class="ref" href="#ref-11">11</a></div></div>
+            <div><div class="n">80%+</div><div class="c">agreement among electronics-corporation managers (n=20)<a class="ref" href="#ref-11">11</a></div></div>
+          </div>
+          <p>In plain terms: the profile matches how the people who actually work with you see you.</p>
+        </div>
+        <div class="skeptic reveal d1">
+          <div class="k">The origin</div>
+          <h4>Built by a scholar, not a marketing team.</h4>
+          <p>The LPI was designed by <strong>Professor Dr. Leonard Yong</strong> at Universiti Malaya after a decade of research, then refined over 25 years of deployment across Asia and the Gulf — leader by leader, boardroom by boardroom.<a class="ref" href="#ref-5">5</a></p>
+          <p>Dr. Yong is a Fulbright Visiting Scholar (1993–94, Portland State University),<a class="ref" href="#ref-6">6</a> Japan Foundation Research Fellow, EU Senior Research Fellow, and author of <em>Emotional Excellence in the Workplace</em> and the LPI's published Norms & Technical Manual.<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-12">12</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 02 · THE FIVE FORCES ─────────── -->
+    <div class="lpi-ch" id="lpi-forces">
+      <div class="chap reveal"><span class="cnum">02</span><h3>Five forces live in every person.</h3></div>
+      <p class="chap-sub reveal">Everyone has all five — your top two run the show, and the starved ones run the drama. Each force quietly demands something. Feed it, and you get the strengths column. Starve it, and you get the stress face.</p>
+
+      <div class="force-grid">
+        <div class="force-card reveal" style="--fc:var(--dO)">
+          <div class="fl">O</div>
+          <div class="fn">Openness</div>
+          <div class="fe">The idea machine</div>
+          <ul><li>Curious, inventive, imaginative</li><li>Loves trying new things</li><li>Allergic to routine</li></ul>
+          <div class="craves">Craves <b>CREATIVITY</b> · starved: bored, impulsive, drifts off</div>
+        </div>
+        <div class="force-card reveal d1" style="--fc:var(--dN)">
+          <div class="fl">N</div>
+          <div class="fn">Neutral</div>
+          <div class="fe">The peacekeeper</div>
+          <ul><li>Calm, loyal, a real listener</li><li>Keeps the room together</li><li>Lives in harmony</li></ul>
+          <div class="craves">Craves <b>SECURITY</b> · starved: avoids conflict, over-gives, gets hurt</div>
+        </div>
+        <div class="force-card reveal d2" style="--fc:var(--dA)">
+          <div class="fl">A</div>
+          <div class="fn">Analytical</div>
+          <div class="fe">The quality guard</div>
+          <ul><li>Precise, careful, systematic</li><li>Values accuracy above speed</li><li>Hates sloppy work</li></ul>
+          <div class="craves">Craves <b>ACCURACY</b> · starved: overthinks, risk-averse, slow to move</div>
+        </div>
+        <div class="force-card reveal d3" style="--fc:var(--dR)">
+          <div class="fl">R</div>
+          <div class="fn">Relational</div>
+          <div class="fe">The energiser</div>
+          <ul><li>Warm, persuasive, magnetic</li><li>Lights people up</li><li>Exciting company</li></ul>
+          <div class="craves">Craves <b>RECOGNITION</b> · starved: over-talks, scattered, needs the stage</div>
+        </div>
+        <div class="force-card reveal d4" style="--fc:var(--dD)">
+          <div class="fl">D</div>
+          <div class="fn">Decisive</div>
+          <div class="fe">The driver</div>
+          <ul><li>Fast, bold, result-oriented</li><li>Displays initiative</li><li>Allergic to waiting</li></ul>
+          <div class="craves">Craves <b>ACHIEVEMENT</b> · starved: impatient, steamrolls, stubborn</div>
+        </div>
+      </div>
+
+      <div class="o-callout reveal">
+        <span class="O" aria-hidden="true">O</span>
+        <p><b>The fifth force is the differentiator.</b> Most instruments stop at four corners. The LPI's Openness isn't a corner at all — it sits in the middle of the map as a <b>creative amplifier</b>: high O makes whatever else you have more inventive, and licenses you to roam the map when the team needs it. In an era where AI compresses every technical moat, <b>O is the adaptability force</b> — which is exactly why Aurelion built its practice on the one instrument that measures it.</p>
+      </div>
+    </div>
+
+    <!-- ─────────── 03 · THE HOLISTIC MODEL ─────────── -->
+    <div class="lpi-ch" id="lpi-holistic">
+      <div class="chap reveal"><span class="cnum">03</span><h3>Most tools stop at behaviour. This one reaches underneath.</h3></div>
+      <p class="chap-sub reveal">The LPI was never a standalone quiz. It is the measurement layer of Dr. Yong's Holistic Model of the individual — which is what separates it from a label-maker: it explains <em>why</em> people do what they do, not just what they do.<a class="ref" href="#ref-12">12</a></p>
+
+      <div class="hol-grid">
+        <div class="hol-viz reveal" aria-label="Diagram of the Holistic Model: Spirit, Mind and Body layers with the five needs driving the five ONARD behaviours">
+          <svg viewBox="0 0 460 300" role="img">
+            <defs>
+              <linearGradient id="holfill" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#D4A843" stop-opacity=".14"/>
+                <stop offset=".5" stop-color="#3AA0A0" stop-opacity=".12"/>
+                <stop offset="1" stop-color="#2BD4B4" stop-opacity=".16"/>
+              </linearGradient>
+            </defs>
+            <polygon points="18,252 442,252 442,34" fill="url(#holfill)" stroke="rgba(247,245,239,.25)" stroke-width="1.4"/>
+            <line x1="160" y1="252" x2="160" y2="120" stroke="rgba(247,245,239,.25)" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <line x1="300" y1="252" x2="300" y2="66" stroke="rgba(247,245,239,.25)" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <text x="89" y="272" text-anchor="middle" class="hvt1" fill="#F0CB6E">SPIRIT</text>
+            <text x="89" y="286" text-anchor="middle" class="hvt2">pneuma · wellness</text>
+            <text x="230" y="272" text-anchor="middle" class="hvt1" fill="#3AA0A0">MIND</text>
+            <text x="230" y="286" text-anchor="middle" class="hvt2">psycho · the five needs</text>
+            <text x="371" y="272" text-anchor="middle" class="hvt1" fill="#2BD4B4">BODY</text>
+            <text x="371" y="286" text-anchor="middle" class="hvt2">soma · visible ONARD behaviour</text>
+            <g class="hvneeds" text-anchor="end">
+              <text x="292" y="128">Creativity</text><text x="292" y="154">Stability / security</text>
+              <text x="292" y="180">Accuracy</text><text x="292" y="206">Recognition</text><text x="292" y="232">Achievement</text>
+            </g>
+            <g class="hvdials" text-anchor="start">
+              <text x="310" y="128" fill="#9B7EDE">O · Openness</text><text x="310" y="154" fill="#E06CA8">N · Neutral</text>
+              <text x="310" y="180" fill="#5B8DEF">A · Analytical</text><text x="310" y="206" fill="#43C88F">R · Relational</text>
+              <text x="310" y="232" fill="#E8635C">D · Decisive</text>
+            </g>
+            <g stroke="rgba(247,245,239,.4)" stroke-width="1" opacity=".55">
+              <line x1="296" y1="124" x2="307" y2="124"/><line x1="296" y1="150" x2="307" y2="150"/>
+              <line x1="296" y1="176" x2="307" y2="176"/><line x1="296" y1="202" x2="307" y2="202"/>
+              <line x1="296" y1="228" x2="307" y2="228"/>
+            </g>
+            <line x1="30" y1="52" x2="436" y2="52" stroke="#E8635C" stroke-width="2.4" opacity=".85"/>
+            <text x="233" y="45" text-anchor="middle" class="hvspan" fill="#E8635C">EE · Emotional Excellence — all three layers</text>
+            <line x1="168" y1="96" x2="436" y2="96" stroke="#E8635C" stroke-width="1.7" opacity=".6"/>
+            <text x="302" y="89" text-anchor="middle" class="hvspan" fill="#E8635C" opacity=".8">EQ — mind &amp; body only</text>
+          </svg>
+        </div>
+        <div class="hol-txt reveal d1">
+          <p>Read it right to left, the way you meet a person: the <b>ONARD behaviour you can see lives in the Body</b> — it's the surface. Driving each visible dial is a <b>core emotional need in the Mind</b>:</p>
+          <div class="needrow">
+            <span style="--nc:var(--dO)"><b>O</b> needs Creativity</span>
+            <span style="--nc:var(--dN)"><b>N</b> needs Stability &amp; security</span>
+            <span style="--nc:var(--dA)"><b>A</b> needs Accuracy</span>
+            <span style="--nc:var(--dR)"><b>R</b> needs Recognition</span>
+            <span style="--nc:var(--dD)"><b>D</b> needs Achievement</span>
+          </div>
+          <p>When a need is <b>fed</b>, the Body shows the strengths column — ideas, calm, precision, warmth, drive. When it's <b>starved</b>, the same dial shows its stress face. Underneath both sits the <b>Spirit</b> layer: meaning, values, wellness — the thermostat of the inner life.</p>
+          <p><b>Emotional Excellence (EE)</b> spans all three layers; ordinary EQ only reaches Mind and Body — which is why the LPI is one of the few instruments designed inside a whole-person development model rather than as a labelling exercise.<a class="ref" href="#ref-12">12</a></p>
+        </div>
+      </div>
+
+      <div class="need2">
+        <div class="need-card reveal" style="--nc:var(--dN);border-left-color:var(--dN)">
+          <div class="k" style="color:var(--dN)">Need № 1 · Social-Emotional Security</div>
+          <div class="q">"Do I belong here? Am I accepted?"</div>
+          <p>The need to feel you truly belong to the relationships you're in — guarded hardest by the N and A forces. When it's starving: defensiveness, silence, over-compromise, and the quiet exits that blindside managements.<a class="ref" href="#ref-12">12</a></p>
+        </div>
+        <div class="need-card reveal d1" style="--nc:var(--dD);border-left-color:var(--dD)">
+          <div class="k" style="color:var(--dD)">Need № 2 · Inner Significance</div>
+          <div class="q">"Do I matter here? Do I add value?"</div>
+          <p>The need to feel important to others and to add real value — chased hardest by the R and D forces. When it's starving: showboating, credit wars, steamrolling, and burnout heroics that end in collapse.<a class="ref" href="#ref-12">12</a></p>
+        </div>
+      </div>
+
+      <div class="punchline reveal">
+        <p>"Pay cheques rent behaviour. These two needs buy loyalty."</p>
+        <small>Every Aurelion engagement uses the LPI to read which need is starving in which person — so development speaks to deeper motivation, and the transformation actually holds.<a class="ref" href="#ref-12">12</a></small>
+      </div>
+    </div>
+
+    <!-- ─────────── 04 · TRACK RECORD ─────────── -->
+    <div class="lpi-ch" id="lpi-track">
+      <div class="chap reveal"><span class="cnum">04</span><h3>Where the LPI has earned its keep.</h3></div>
+      <p class="chap-sub reveal">Dr. Yong's LPI-based programs and emotional-intelligence consultancy have served leaders across boardrooms, plants and public institutions worldwide:<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-8">8</a><a class="ref" href="#ref-11">11</a></p>
+
+      <div class="board-wall reveal">
+        <span class="board-tile">British Petroleum</span>
+        <span class="board-tile">Petronas</span>
+        <span class="board-tile">Saudi Aramco</span>
+        <span class="board-tile">Microsoft Thailand</span>
+        <span class="board-tile">Cathay Pacific</span>
+        <span class="board-tile">Intel</span>
+        <span class="board-tile">Motorola</span>
+        <span class="board-tile">Nokia</span>
+        <span class="board-tile">Kuwait Petroleum</span>
+        <span class="board-tile">Oman Petroleum</span>
+        <span class="board-tile">Reuters</span>
+        <span class="board-tile">Reader's Digest</span>
+        <span class="board-tile">Thai Securities Exchange Commission</span>
+        <span class="board-tile">B. Braun Medical</span>
+        <span class="board-tile">Young Presidents' Organisation</span>
+      </div>
+
+      <div class="track-awards">
+        <div class="award-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5"/></svg>
+          <p>LPI-related training was rated <strong>"Top Rated" Learning Collaborator 2003/04 by Petronas Malaysia</strong> — recognition from one of Asia's most demanding corporate universities.<a class="ref" href="#ref-8">8</a></p>
+        </div>
+        <div class="award-card reveal d1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5c2.5.5 5 2.5 5 5.5"/></svg>
+          <p>LPI profiling supported <strong>Nestlé Malaysia's nationwide youth screening & mentoring program</strong> — proof the instrument scales from boardrooms to whole communities.<a class="ref" href="#ref-8">8</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 05 · OUR LINEAGE ─────────── -->
+    <div class="lpi-ch" id="lpi-lineage">
+      <div class="chap reveal"><span class="cnum">05</span><h3>From the inventor's desk to your boardroom.</h3></div>
+      <p class="chap-sub reveal">Certification matters. Here is the unbroken line that puts the LPI in Aurelion's hands.</p>
+
+      <div class="chain">
+        <div class="chain-node reveal">
+          <div class="step-label">The source</div>
+          <div class="who">Dr. Leonard Yong</div>
+          <div class="what">Inventor of the LPI · Professor, Universiti Malaya · Fulbright Scholar<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-6">6</a></div>
+        </div>
+        <div class="chain-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="chain-node reveal d1">
+          <div class="step-label">The certifier</div>
+          <div class="who">GEM Consultancy · David Lau</div>
+          <div class="what">Runs the official Certified LPI Consultant program. David Lau is an HRD Corp Lead Trainer & Assessor who has trained ≈1,500 trainers across Malaysia.<a class="ref" href="#ref-9">9</a><a class="ref" href="#ref-10">10</a></div>
+        </div>
+        <div class="chain-link" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="chain-node gold reveal d2">
+          <div class="step-label">The practice</div>
+          <div class="who">Aurelion</div>
+          <div class="what">All three founders are Certified LPI Consultants — trained in this direct lineage and deploying it with AI-powered depth.</div>
+        </div>
+      </div>
+      <p class="lineage-note">When you work with Aurelion, you're not getting a borrowed framework. You're getting the LPI through its <strong>direct certification lineage</strong> — from Dr. Leonard Yong's research, through GEM Consultancy's master-trainer certification under David Lau, into our practice.</p>
+
+      <div class="lpi-cta reveal">
+        <a href="#book" class="btn btn-gold">Map your team with the LPI <span class="arr">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ WHY AURELION ============================ -->
+<section class="approach" id="approach">
+  <div class="aurora-bg" aria-hidden="true"></div>
+  <div class="aurora-bg two" aria-hidden="true"></div>
+  <div class="container approach-grid">
+    <div class="reveal">
+      <div class="eyebrow">Why Aurelion</div>
+      <h2>There is no other firm built quite like this one.</h2>
+      <p class="lead">Few people have journeyed from a Silicon-Valley-style startup to a Himalayan monastery and back into the boardroom. That rare vantage point is the difference between information and transformation.</p>
+      <div class="quote-block">
+        <p>"Most training teaches people what to do. We develop who they become when it counts — adaptable, grounded, and impossible to rattle."</p>
+      </div>
+      <div class="frameworks">
+        <span class="fw">Emotional Intelligence</span>
+        <span class="fw">Dynamic Mindfulness</span>
+        <span class="fw">Adversity Quotient</span>
+        <span class="fw">Intrinsic Motivation</span>
+        <span class="fw">Adaptive "Open-Source" Leadership</span>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div><h3>Boardroom-tested</h3><p>Founded by a Carlson School of Management graduate who scaled a US tech startup. We speak business, ROI and performance — fluently.</p></div>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3C7 7 7 13 12 21c5-8 5-14 0-18z"/><circle cx="12" cy="10" r="2"/></svg></div>
+        <div><h3>Forged in stillness</h3><p>17 years of monastic discipline across the Himalayas and Asia — the deepest possible training in focus, composure and clarity under pressure, translated into tools your people can use Monday morning.</p></div>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div><h3>Certified & accredited</h3><p>An official HRD Corp Registered Training Provider with LPI-certified consultants in the direct Dr. Leonard Yong lineage. Rigor — never guesswork.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOUNDERS ============================ -->
+<section class="founders" id="founders">
+  <div class="container">
+    <div class="sect-head reveal">
+      <div class="eyebrow">The founders</div>
+      <h2>The people behind the practice.</h2>
+    </div>
+
+    <div class="founder-lead reveal">
+      <div class="fl-grid">
+        <div class="fl-portrait">
+          <!-- Replace this placeholder with Zhi-Harn's photo -->
+          <svg class="lion" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" stroke="#D4A843" stroke-width="1.5" opacity=".5"/>
+            <path d="M50 22 L62 56 H54 L50 42 L46 56 H38 Z" fill="#D4A843"/>
+            <path d="M50 14 L52 22 L60 19 L57 27 L65 30 L57 33 L60 41 L52 38 L50 46 L48 38 L40 41 L43 33 L35 30 L43 27 L40 19 L48 22 Z" fill="#F0CB6E"/>
+          </svg>
+          <div class="ph">Photo:<br>Zhi-Harn Wang</div>
+        </div>
+        <div>
+          <div class="fl-role">Principal Founder & Director</div>
+          <h3>Zhi-Harn Wang</h3>
+          <p>A former edu-tech entrepreneur and Theravāda monk ordained under the renowned meditation master Pa-Auk Sayadaw, Zhi-Harn brings a synthesis almost no one in this field can match: entrepreneurial fire, contemplative depth, and rigorous leadership-development expertise.</p>
+          <p>As an Accredited HRD Corp Trainer and Certified LPI Consultant, he develops the distinctly human capacities that decide success in an AI-driven world — adaptability, resilience, self-awareness, sound judgment, and the ability to inspire collective excellence.</p>
+
+          <div class="expander" style="margin-top:1.2rem">
+            <button class="expand-btn" aria-expanded="false">
+              <span>The full journey — startup, monastery, boardroom</span>
+              <span class="hintword">Read more <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span></span>
+            </button>
+            <div class="expand-body"><div class="expand-inner">
+              <p><strong>United States.</strong> Bachelor of Science in Business (Finance) from the Carlson School of Management, University of Minnesota — ranked #53 globally for Economics & Business (U.S. News, 2026). Rugby captain, house president, Model UN. Then Vice President of Development at uTead Inc., where he innovated product, recruited the engineering team, and grew company share value.</p>
+              <p><strong>The monastery, 2008–2025.</strong> Ordained as a Theravāda bhikkhu by Ven. Pa-Auk Sayadaw, practicing under multiple meditation masters across the Himalayas, South and East Asia. He designed EQ and leadership workshops for young adults, led family camps, directed annual events for hundreds of participants, and organized Himalayan trekking and pilgrimage expeditions across India and Nepal.</p>
+              <p><strong>Aurelion, 2026.</strong> He returned to the boardroom to translate seventeen years of contemplative training into secular, high-performance development — bridging peak performance with profound human growth.</p>
+            </div></div>
+          </div>
+
+          <div class="journey">
+            <span class="step"><b>Minnesota</b> Carlson School</span><span class="sep">→</span>
+            <span class="step"><b>uTead Inc.</b> VP, Tech Startup</span><span class="sep">→</span>
+            <span class="step"><b>2008–2025</b> Monastery, Himalayas & Asia</span><span class="sep">→</span>
+            <span class="step"><b>2026</b> Aurelion</span>
+          </div>
+          <div class="creds">
+            <span class="badge">HRD Corp Accredited Trainer</span>
+            <span class="badge">Certified LPI Consultant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="founders-row">
+      <div class="fcard reveal">
+        <div class="av">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 24 L62 58 H54 L50 44 L46 58 H38 Z" fill="#3AA0A0"/><path d="M50 16 L52 24 L60 21 L57 29 L64 31 L57 33 L60 41 L52 38 L50 46 L48 38 L40 41 L43 33 L36 31 L43 29 L40 21 L48 24 Z" fill="#2BD4B4"/></svg>
+        </div>
+        <div>
+          <h3>Andy Tan</h3>
+          <div class="r">Chief Strategy Officer</div>
+          <p>Architect of Aurelion's strategy and financial-resilience programs. A Certified LPI Consultant who turns capability-building into measurable organizational results — connecting people development directly to business performance.</p>
+        </div>
+      </div>
+      <div class="fcard reveal d1">
+        <div class="av">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 24 L62 58 H54 L50 44 L46 58 H38 Z" fill="#D4A843"/><path d="M50 16 L52 24 L60 21 L57 29 L64 31 L57 33 L60 41 L52 38 L50 46 L48 38 L40 41 L43 33 L36 31 L43 29 L40 21 L48 24 Z" fill="#F0CB6E"/></svg>
+        </div>
+        <div>
+          <h3>Aurie · Zong Yuan</h3>
+          <div class="r">Chief Growth Officer</div>
+          <p>Drives Aurelion's growth, partnerships and client experience. A Certified LPI Consultant blending edu-tech entrepreneurship with deep facilitation craft — ensuring every engagement lands with impact from first conversation to final debrief.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RATANA ============================ -->
+<section class="ratana" id="ratana">
+  <div class="container">
+    <div class="ratana-inner reveal">
+      <div>
+        <div class="eyebrow">We practice what we teach</div>
+        <h2>Meet Ratana — our human-insight engine.</h2>
+        <p>In the AI era, we don't just talk about adaptation. We build with it. Ratana is our proprietary AI platform that turns personality assessments into deep, actionable understanding — so our coaching and team work start from evidence, not guesswork.</p>
+        <ul class="feat">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Reads LPI, MBTI & DISC reports and translates them into clear, practical insight</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Maps team dynamics, clash points and strengths at a glance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Built on a living knowledge base of leadership science</li>
+        </ul>
+        <div class="ratana-ctas">
+          <a href="#book" class="btn btn-ghost">See it in a session <span class="arr">→</span></a>
+          <a href="https://ratana.aurelion-earth.com" class="btn btn-ghost ratana-signin">Sign in <span class="arr">→</span></a>
+        </div>
+        <p class="ratana-note">Ratana is issued with an engagement &mdash; participants receive an access code on the day.</p>
+      </div>
+      <div class="ratana-visual" aria-hidden="true">
+        <div class="orbit o1"><span class="dot"></span></div>
+        <div class="orbit o2"><span class="dot"></span></div>
+        <div class="orbit o3"><span class="dot"></span></div>
+        <div class="ratana-core"><span>Ratana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROGRAMS ============================ -->
+<section class="programs" id="programs">
+  <div class="container">
+    <div class="sect-head reveal">
+      <div class="eyebrow">Ways to work with us</div>
+      <h2>Built for corporations — and for the curious.</h2>
+      <p class="lead">Whether you're an enterprise rolling out leadership at scale or an individual who wants to grow, there's a doorway in.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog reveal"><div class="n">Format</div><h3>Half & Full-Day Workshops</h3><p>Focused, experiential sessions for intact teams and departments.</p></div>
+      <div class="prog reveal d1"><div class="n">Format</div><h3>Multi-Day Intensives</h3><p>Deep-dive leadership and resilience programs that build lasting capability.</p></div>
+      <div class="prog reveal d2"><div class="n">Format</div><h3>Public Seminars</h3><p>Open-enrollment events for individuals and small teams — anyone can join.</p></div>
+      <div class="prog reveal"><div class="n">Format</div><h3>Conferences & Summits</h3><p>Keynotes and breakout experiences for large-scale gatherings.</p></div>
+      <div class="prog reveal d1"><div class="n">Format</div><h3>Corporate Retreats</h3><p>Immersive offsites that reset culture, trust and direction.</p></div>
+      <div class="prog reveal d2"><div class="n">Format</div><h3>Ongoing Coaching</h3><p>Continuous executive and team engagements for sustained growth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BOOKING ============================ -->
+<section class="book" id="book">
+  <div class="container">
+    <div class="book-head reveal">
+      <div class="eyebrow center">Book a conversation</div>
+      <h2>Let's pulse-check your situation.</h2>
+      <p>Ten quick questions, designed by our master trainers and organizational psychologists. They tell us exactly where you are — so when we talk, we're already solving, not surveying. Takes about three minutes.</p>
+    </div>
+
+    <div class="form-wrap reveal">
+      <form id="pulseForm" novalidate>
+        <div class="form-progress" aria-hidden="true">
+          <div class="bar"><i id="fpBar"></i></div>
+          <div class="pct" id="fpPct">0% done</div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel">First, who are we speaking with?</label>
+          <div class="qhint">So we can reply to the right person.</div>
+          <div class="grid2">
+            <div class="field"><label for="f-name">Full name *</label><input id="f-name" type="text" name="name" required placeholder="Your name" /></div>
+            <div class="field"><label for="f-role">Role / title</label><input id="f-role" type="text" name="role" placeholder="e.g. Head of L&D" /></div>
+            <div class="field"><label for="f-company">Company / organization *</label><input id="f-company" type="text" name="company" required placeholder="Company name" /></div>
+            <div class="field"><label for="f-email">Work email *</label><input id="f-email" type="email" name="email" required placeholder="you@company.com" /></div>
+            <div class="field"><label for="f-phone">Phone / WhatsApp</label><input id="f-phone" type="tel" name="phone" placeholder="+60 …" /></div>
+            <div class="field"><label for="f-size">Team / company size</label>
+              <select id="f-size" name="size">
+                <option value="">Select…</option>
+                <option>Just me / very small</option><option>10–50</option><option>51–200</option><option>201–1,000</option><option>1,000+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">01</span>What kind of engagement are you exploring?</label>
+          <div class="qhint">Tap all that apply.</div>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="q1" value="In-house training / workshop"><span>In-house training / workshop</span></label>
+            <label class="opt"><input type="checkbox" name="q1" value="Leadership development"><span>Leadership development</span></label>
+            <label class="opt"><input type="checkbox" name="q1" value="Executive / team coaching"><span>Executive / team coaching</span></label>
+            <label class="opt"><input type="checkbox" name="q1" value="Keynote / conference speaker"><span>Keynote / conference speaker</span></label>
+            <label class="opt"><input type="checkbox" name="q1" value="Team retreat / offsite"><span>Team retreat / offsite</span></label>
+            <label class="opt"><input type="checkbox" name="q1" value="Strategy & culture consulting"><span>Strategy & culture consulting</span></label>
+            <label class="opt"><input type="checkbox" name="q1" value="Not sure — help me scope it"><span>Not sure — help me scope it</span></label>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">02</span>Which best describes where your team is right now?</label>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q2" value="Scaling fast & feeling the strain"><span>Scaling fast & feeling the strain</span></label>
+            <label class="opt"><input type="radio" name="q2" value="Stable but plateaued"><span>Stable but plateaued</span></label>
+            <label class="opt"><input type="radio" name="q2" value="Going through change / restructure / AI adoption"><span>Going through change / restructure / AI adoption</span></label>
+            <label class="opt"><input type="radio" name="q2" value="High-performing & want to stay ahead"><span>High-performing & want to stay ahead</span></label>
+            <label class="opt"><input type="radio" name="q2" value="Struggling with morale / retention"><span>Struggling with morale / retention</span></label>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">03</span>What's the biggest people challenge you want us to move the needle on?</label>
+          <div class="qhint">Pick up to two.</div>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="q3" value="Leadership capability"><span>Leadership capability</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Engagement & motivation"><span>Engagement & motivation</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Adaptability & change-readiness"><span>Adaptability & change-readiness</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Team cohesion & communication"><span>Team cohesion & communication</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Resilience & burnout"><span>Resilience & burnout</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Navigating AI / automation"><span>Navigating AI / automation</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Talent retention"><span>Talent retention</span></label>
+            <label class="opt"><input type="checkbox" name="q3" value="Decision-making under pressure"><span>Decision-making under pressure</span></label>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel" for="f-q4"><span class="qnum">04</span>If this works, what does success look like 12 months from now?</label>
+          <div class="qhint">A sentence or two is perfect.</div>
+          <div class="field"><textarea id="f-q4" name="q4" placeholder="e.g. Our managers lead change without us holding their hand; turnover drops; the team feels energized again."></textarea></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">05</span>How would you rate your team's current adaptability to change?</label>
+          <div class="scale-row">
+            <input type="range" name="q5" min="1" max="10" value="5" aria-label="Adaptability score from 1 to 10" oninput="document.getElementById('v5').textContent=this.value">
+            <span class="scale-val" id="v5">5</span>
+          </div>
+          <div class="scale-ends"><span>1 · Resistant</span><span>10 · Thrives on change</span></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">06</span>How ready are your managers to lead through uncertainty?</label>
+          <div class="scale-row">
+            <input type="range" name="q6" min="1" max="10" value="5" aria-label="Manager readiness score from 1 to 10" oninput="document.getElementById('v6').textContent=this.value">
+            <span class="scale-val" id="v6">5</span>
+          </div>
+          <div class="scale-ends"><span>1 · Need a lot of support</span><span>10 · Fully equipped</span></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">07</span>What's prompting you to look into this <em>now</em>?</label>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q7" value="A specific upcoming event / launch"><span>A specific upcoming event / launch</span></label>
+            <label class="opt"><input type="radio" name="q7" value="Leadership / board mandate"><span>Leadership / board mandate</span></label>
+            <label class="opt"><input type="radio" name="q7" value="A problem that's become urgent"><span>A problem that's become urgent</span></label>
+            <label class="opt"><input type="radio" name="q7" value="Annual training plan / budget cycle"><span>Annual training plan / budget cycle</span></label>
+            <label class="opt"><input type="radio" name="q7" value="Just exploring options"><span>Just exploring options</span></label>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">08</span>Roughly how many people would take part?</label>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q8" value="1–15"><span>1–15</span></label>
+            <label class="opt"><input type="radio" name="q8" value="16–40"><span>16–40</span></label>
+            <label class="opt"><input type="radio" name="q8" value="41–100"><span>41–100</span></label>
+            <label class="opt"><input type="radio" name="q8" value="100+"><span>100+</span></label>
+            <label class="opt"><input type="radio" name="q8" value="Company-wide"><span>Company-wide</span></label>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel"><span class="qnum">09</span>Ideal timing?</label>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q9" value="Within a month"><span>Within a month</span></label>
+            <label class="opt"><input type="radio" name="q9" value="1–3 months"><span>1–3 months</span></label>
+            <label class="opt"><input type="radio" name="q9" value="3–6 months"><span>3–6 months</span></label>
+            <label class="opt"><input type="radio" name="q9" value="Flexible / planning ahead"><span>Flexible / planning ahead</span></label>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="qlabel" for="f-q10"><span class="qnum">10</span>Anything else we should know before we talk?</label>
+          <div class="qhint">Context, constraints, or what "great" looks like to you. Optional.</div>
+          <div class="field"><textarea id="f-q10" name="q10" placeholder="Tell us anything that helps us prepare…"></textarea></div>
+        </div>
+
+        <label class="toggle-line"><input type="checkbox" name="hrdf"> We're an HRD Corp-registered employer (interested in claimable training)</label>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-gold">Send my pulse-check <span class="arr">→</span></button>
+          <p class="form-note">We reply within 1 business day. Your details stay private and are used only to prepare for our conversation.</p>
+        </div>
+      </form>
+
+      <div class="success" id="successPanel">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Thank you — we've got your pulse-check.</h3>
+        <p>A founder will personally review your answers and reach out within one business day. You can also open a copy of your responses in your email app so nothing gets lost.</p>
+        <a href="#" id="mailtoBtn" class="btn btn-ghost">Open a copy in email <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <div class="eyebrow">Contact us</div>
+      <h2>Come find us.</h2>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div><div class="l">Office</div><div class="v">Aurelion Sdn. Bhd.<br>Unit 773, Level 6 & 7, Residensi Tribeca,<br>No. 215, Jalan Imbi, 55100 Kuala Lumpur, Malaysia</div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+        <div><div class="l">Email</div><div class="v"><a href="mailto:the.aurelion.space@gmail.com">the.aurelion.space@gmail.com</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></div>
+        <div><div class="l">Phone</div><div class="v"><a href="tel:+601110541499">+60 111-054-1499</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></div>
+        <div><div class="l">Follow the journey</div>
+          <div class="socials">
+            <!-- Replace href="#" with real profile links -->
+            <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+            <a class="soc" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4 0 2 2 0 014 0zM3.4 8.6h3.1V21H3.4zM9 8.6h3v1.7h.05c.42-.8 1.45-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21h-3.1v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+            <a class="soc red" href="#" aria-label="RED · Xiaohongshu">RED<br>小红书</a>
+            <a class="soc" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 4 4 4.3v3c-1.5 0-2.9-.4-4-1.2v6.4A6.5 6.5 0 119.5 9v3.1a3.4 3.4 0 103.4 3.4V3z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-wrap reveal d1">
+      <div class="map-fallback">Loading map…<br><a class="gold-text" href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener" style="pointer-events:auto">Open in Google Maps →</a></div>
+      <iframe title="Aurelion office map" loading="lazy" src="https://www.google.com/maps?q=Residensi+Tribeca,+215+Jalan+Imbi,+55100+Kuala+Lumpur,+Malaysia&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REFERENCES ============================ -->
+<section class="refs" id="references">
+  <div class="container">
+    <div class="sect-head reveal">
+      <div class="eyebrow">Sources</div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">References</h2>
+      <p>Every data point on this page, with its full source. Tap any small gold number to jump here.</p>
+    </div>
+    <div class="expander reveal" id="refExpander">
+      <button class="expand-btn" aria-expanded="false">
+        <span>All 12 sources</span>
+        <span class="hintword">Read more <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span></span>
+      </button>
+      <div class="expand-body"><div class="expand-inner">
+    <div class="ref-list">
+      <div class="ref-item" id="ref-1">World Economic Forum (January 2025). <em>The Future of Jobs Report 2025.</em> Survey of 1,000+ employers representing 14+ million workers across 55 economies. Key findings cited: 39% of workers' core skills transformed or obsolete by 2030; 59 of 100 workers needing reskilling/upskilling by 2030 (11 unlikely to receive it); 63% of employers citing skills gaps as the top barrier to transformation; fastest-growing core skills including analytical thinking, resilience, flexibility & agility, and leadership & social influence. <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener">weforum.org/publications/the-future-of-jobs-report-2025</a></div>
+      <div class="ref-item" id="ref-2">Gallup (2025 & 2026 editions). <em>State of the Global Workplace Report.</em> Key findings cited: global employee engagement at 20–21% and declining for two consecutive years; disengagement costing the world economy approximately US$10 trillion in lost productivity (~9% of global GDP); managers accounting for 70% of the variance in team engagement; only 44% of managers having ever received formal management training; trained managers improving their own engagement by up to 22% and team engagement by up to 18%. <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener">gallup.com/workplace — State of the Global Workplace</a></div>
+      <div class="ref-item" id="ref-3">HRD Corp — Human Resource Development Corporation, Ministry of Human Resources Malaysia. Under the PSMB Act 2001, registered employers (10+ Malaysian employees) contribute a mandatory monthly levy of 1% of wages (0.5% voluntary category), claimable for approved training conducted by HRD Corp registered training providers. <a href="https://hrdcorp.gov.my/faq" target="_blank" rel="noopener">hrdcorp.gov.my</a></div>
+      <div class="ref-item" id="ref-4">HRD Corp 2025 Annual Report data, as analyzed in "HRD Corp Levy: Who Pays and How to Claim Funds" (EzFlow, 2026): only 47% of registered employers made at least one training claim in 2025 — meaning 53% left their contributed training funds unclaimed. <a href="https://www.ezlease.my/blog/hrd-corp-levy-claim-training-funds" target="_blank" rel="noopener">ezlease.my/blog/hrd-corp-levy-claim-training-funds</a></div>
+      <div class="ref-item" id="ref-5">ITD World. <em>Dr. Leonard Yong — profile.</em> Professor, Universiti Malaya Department of Educational Psychology & Counseling (20+ years); pioneering Director, Universiti Malaya Centre for Continuing Education; inventor of the LEONARD Personality Inventory (LPI) and LPI Software; Fulbright-MACEE Award; Japan Foundation Research Fellowship; EU-UMESP Senior Research Fellowship (Italy, Germany, Scotland); Visiting Professor, Mahidol University Siriraj Faculty of Medicine (2006–07); Adjunct Professor, UTAR and University of South Australia (2000–2010). Consulted for organizations including British Petroleum, Microsoft Thailand, Cathay Pacific Airlines, Thai Securities Exchange Commission, Reader's Digest, and Reuters. <a href="https://itdworld.com/dr-leonard-yong/" target="_blank" rel="noopener">itdworld.com/dr-leonard-yong</a></div>
+      <div class="ref-item" id="ref-6">Fulbright Scholar Program directory. Leonard Yong — Fulbright Visiting Scholar 1993–94, Associate Professor, University of Malaya; host institution Portland State University; discipline: Education. <a href="https://fulbrightscholars.org/grantee/leonard-yong" target="_blank" rel="noopener">fulbrightscholars.org/grantee/leonard-yong</a></div>
+      <div class="ref-item" id="ref-7">LEONARD Personality Inventory — official site. The LPI ("Let's Explore our personality: Openness, Neutral, Analytical, Relational, Decisive") is anchored in Types & Traits theory, formulated on the Five-Factor Model combined with the four Greek temperaments; yields 26 classical personality types; administered to thousands of individuals across Asia, Europe, Australia and New Zealand; available in 13 languages. <a href="https://leonardpersonality.com/about" target="_blank" rel="noopener">leonardpersonality.com/about</a> · <a href="https://shop.leonard.com.my/" target="_blank" rel="noopener">shop.leonard.com.my</a></div>
+      <div class="ref-item" id="ref-8">ASL Training & Consultancy. <em>LEONARD Personality Inventory.</em> LPI-related training awarded "Top Rated" Learning Collaborators 2003/04 by Petronas Malaysia; LPI profiling used in Nestlé Malaysia's nationwide youth screening & mentoring program; clients who have used the LPI include Intel, Motorola, Nokia, B. Braun Medical Industries, Kuwait Petroleum Company and Saudi Aramco. <a href="https://www.asl-solutions.com/leonard-personality-inventory/" target="_blank" rel="noopener">asl-solutions.com/leonard-personality-inventory</a></div>
+      <div class="ref-item" id="ref-9">GEM Consultancy Sdn. Bhd. <em>Certified LPI Consultant program</em> — the professional certification pathway through which practitioners are trained and certified to administer and interpret the LEONARD Personality Inventory. <a href="https://gem.com.my/certified-lpi-consultant/" target="_blank" rel="noopener">gem.com.my/certified-lpi-consultant</a></div>
+      <div class="ref-item" id="ref-10">David Lau Lee Hian — Group Managing Director, GEM Consultancy Sdn. Bhd. HRD Corp approved certified trainer (cert. no. TTT/4548); appointed certified trainer for HRD Corp's Train-the-Trainer program throughout Malaysia; appointed HRD Corp Lead Trainer and Assessor; has trained and certified approximately 1,500 trainers across Malaysia. <a href="https://www.linkedin.com/in/david-lau-lee-hian-3918721b8/" target="_blank" rel="noopener">linkedin.com/in/david-lau-lee-hian</a></div>
+      <div class="ref-item" id="ref-11">Yong, L.M.S. <em>LPI Norms & Technical Manual</em> — face-validity studies reporting 85% agreement among supervisors (n=25) and over 80% agreement among electronics-corporation managers (n=20) that LPI profiles match observed behaviour; deployment records including Oman Petroleum and the Young Presidents' Organisation. As documented in the official Certified LPI Consultant programme materials (GEM Consultancy).</div>
+      <div class="ref-item" id="ref-12">Yong, Leonard M.S. <em>Emotional Excellence in the Workplace</em>; and Yong, L.M.S., <em>The LPI Holistic Model</em> — Spirit (pneuma) / Mind (psycho) / Body (soma); the five dimension-needs (Creativity, Security, Accuracy, Recognition, Achievement); and the two core human needs (Social-Emotional Security and Inner Significance). LPI Certification Programme, Day 2, GEM Consultancy.</div>
+    </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#home" class="brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 5 L33 30 H26 L20 17 L14 30 H7 Z" fill="url(#gm2)"/><path d="M20 1.5 L21.4 5.4 L25.3 4 L23.9 7.9 L27.8 9.3 L23.9 10.7 L25.3 14.6 L21.4 13.2 L20 17.1 L18.6 13.2 L14.7 14.6 L16.1 10.7 L12.2 9.3 L16.1 7.9 L14.7 4 L18.6 5.4 Z" fill="#F0CB6E"/><defs><linearGradient id="gm2" x1="7" y1="5" x2="33" y2="30"><stop stop-color="#F0CB6E"/><stop offset="1" stop-color="#A57E2A"/></linearGradient></defs></svg>
+          <span><b>Aurelion</b></span>
+        </a>
+        <p>To accelerate human adaptive capacity in the AI era.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#why">Why Now</a>
+        <a href="#services">What We Do</a>
+        <a href="#lpi">The LPI & Our Lineage</a>
+        <a href="#founders">Founders</a>
+        <a href="#references">References</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="#book">Book a conversation</a>
+        <a href="https://ratana.aurelion-earth.com">Sign in to Ratana</a>
+        <a href="mailto:the.aurelion.space@gmail.com">Email us</a>
+        <a href="tel:+601110541499">+60 111-054-1499</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Residensi+Tribeca+215+Jalan+Imbi+Kuala+Lumpur" target="_blank" rel="noopener">Kuala Lumpur, Malaysia</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year"></span> Aurelion Sdn. Bhd. All rights reserved.</p>
+      <div class="creds-mini">
+        <span>Official HRD Corp Registered Training Provider</span>
+        <span>LPI Certified</span>
+        <span>Est. 2026 · Kuala Lumpur</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- year ---------- */
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* ---------- reading progress ---------- */
+const progress=document.getElementById('progress');
+function updProgress(){
+  const h=document.documentElement;
+  const max=h.scrollHeight-h.clientHeight;
+  progress.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+}
+window.addEventListener('scroll',updProgress,{passive:true});updProgress();
+
+/* ---------- nav scroll state ---------- */
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+/* ---------- back to top ---------- */
+const toTop=document.getElementById('toTop');
+window.addEventListener('scroll',()=>toTop.classList.toggle('show',window.scrollY>700),{passive:true});
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------- mobile menu ---------- */
+const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
+const toggleMenu=open=>{burger.classList.toggle('open',open);menu.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''};
+burger.addEventListener('click',()=>toggleMenu(!menu.classList.contains('open')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+/* ---------- scroll spy: nav links + dots know where you are ---------- */
+const spyLinks=[...document.querySelectorAll('[data-spy]')];
+const spySections=[...document.querySelectorAll('section[id],header[id]')];
+const spyIO=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      spyLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-38% 0px -55% 0px'});
+spySections.forEach(s=>spyIO.observe(s));
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- count-up ---------- */
+const cio=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,target=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+    const dur=1400,start=performance.now();
+    const tick=now=>{
+      const p=Math.min((now-start)/dur,1),eased=1-Math.pow(1-p,3);
+      el.innerHTML=pre+Math.round(eased*target)+'<span class="unit">'+suf+'</span>';
+      if(p<1)requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);cio.unobserve(el);
+  });
+},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ---------- stat card cursor glow ---------- */
+document.querySelectorAll('.stat').forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    card.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+
+/* ---------- expanders (Read more / Show less) ---------- */
+document.querySelectorAll('.expander').forEach(exp=>{
+  const btn=exp.querySelector('.expand-btn'),body=exp.querySelector('.expand-body'),hint=btn.querySelector('.hintword');
+  const baseHint=hint.childNodes[0];
+  btn.addEventListener('click',()=>{
+    const open=exp.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    body.style.maxHeight=open?body.scrollHeight+'px':'0px';
+    baseHint.textContent=open?'Show less ':'Read more ';
+  });
+});
+window.addEventListener('resize',()=>{
+  document.querySelectorAll('.expander.open .expand-body').forEach(b=>b.style.maxHeight=b.scrollHeight+'px');
+});
+
+/* ---------- reference jump flash ---------- */
+document.querySelectorAll('a.ref').forEach(a=>{
+  a.addEventListener('click',()=>{
+    // The list is collapsed by default now, so a jump has to open it first or
+    // the reader lands on a closed panel -- which would quietly kill the whole
+    // point of the superscript links.
+    const exp=document.getElementById('refExpander');
+    if(exp&&!exp.classList.contains('open'))exp.querySelector('.expand-btn').click();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){
+      t.classList.remove('flash');void t.offsetWidth;t.classList.add('flash');
+      // the panel is mid-transition, so scroll after it has its height
+      requestAnimationFrame(()=>setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}),260));
+    }
+  });
+});
+
+/* ---------- LPI chapter sub-nav spy ---------- */
+const lpiLinks=[...document.querySelectorAll('#lpiSubnav a')];
+if(lpiLinks.length){
+  const chs=[...document.querySelectorAll('.lpi-ch')];
+  const lio=new IntersectionObserver((es)=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        lpiLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-30% 0px -60% 0px'});
+  chs.forEach(c=>lio.observe(c));
+  lpiLinks.forEach(l=>l.addEventListener('click',()=>{
+    lpiLinks.forEach(x=>x.classList.remove('active'));l.classList.add('active');
+  }));
+}
+
+/* ---------- starfield ---------- */
+(function(){
+  const canvas=document.getElementById('starfield');if(!canvas)return;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ctx=canvas.getContext('2d');let w,h,stars,raf;
+  const hero=canvas.parentElement;
+  function size(){
+    const r=hero.getBoundingClientRect();
+    w=canvas.width=r.width*devicePixelRatio;h=canvas.height=r.height*devicePixelRatio;
+    canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';
+    const count=Math.min(170,Math.floor(r.width*r.height/9000));
+    stars=Array.from({length:count},()=>({
+      x:Math.random()*w,y:Math.random()*h*0.92,
+      r:(Math.random()*1.4+0.3)*devicePixelRatio,
+      a:Math.random()*0.6+0.2,tw:Math.random()*0.02+0.005,gold:Math.random()>0.86
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(const s of stars){
+      if(!reduce){s.a+=s.tw;if(s.a>0.85||s.a<0.18)s.tw*=-1;}
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,7);
+      ctx.fillStyle=s.gold?`rgba(240,203,110,${s.a})`:`rgba(247,245,239,${s.a})`;
+      if(s.gold){ctx.shadowColor='rgba(240,203,110,.8)';ctx.shadowBlur=6*devicePixelRatio;}else{ctx.shadowBlur=0;}
+      ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    if(!reduce)raf=requestAnimationFrame(draw);
+  }
+  size();draw();
+  let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{cancelAnimationFrame(raf);size();draw();},200);});
+})();
+
+/* ---------- form progress meter ---------- */
+const form=document.getElementById('pulseForm');
+const fpBar=document.getElementById('fpBar'),fpPct=document.getElementById('fpPct');
+const groups=['name','company','email','q1','q2','q3','q4','q7','q8','q9'];
+function updFormProgress(){
+  const fd=new FormData(form);
+  let done=0;
+  groups.forEach(g=>{const v=fd.getAll(g).filter(x=>String(x).trim());if(v.length)done++;});
+  const pct=Math.round(done/groups.length*100);
+  fpBar.style.width=pct+'%';fpPct.textContent=pct+'% done';
+}
+form.addEventListener('input',updFormProgress);
+form.addEventListener('change',updFormProgress);
+updFormProgress();
+
+/* ---------- form submit ---------- */
+form.addEventListener('submit',function(ev){
+  ev.preventDefault();
+  let ok=true,firstBad=null;
+  ['name','company','email'].forEach(n=>{
+    const f=form.elements[n];
+    if(!f.value.trim()){ok=false;f.style.borderColor='#c0563f';if(!firstBad)firstBad=f;}
+    else f.style.borderColor='';
+  });
+  if(!ok){firstBad.focus();firstBad.scrollIntoView({behavior:'smooth',block:'center'});return;}
+
+  const fd=new FormData(form);
+  const get=n=>fd.getAll(n).filter(Boolean).join(', ')||'—';
+  const lines=[
+    'NEW AURELION ENQUIRY','====================',
+    'Name: '+get('name'),'Role: '+get('role'),'Company: '+get('company'),
+    'Email: '+get('email'),'Phone: '+get('phone'),'Size: '+get('size'),'',
+    '01 Engagement type: '+get('q1'),'02 Where the team is: '+get('q2'),
+    '03 Biggest challenge: '+get('q3'),'04 Success in 12 months: '+get('q4'),
+    '05 Adaptability (1-10): '+get('q5'),'06 Manager readiness (1-10): '+get('q6'),
+    '07 Why now: '+get('q7'),'08 Headcount: '+get('q8'),'09 Timing: '+get('q9'),
+    '10 Anything else: '+get('q10'),
+    'HRD Corp registered: '+(form.elements['hrdf'].checked?'Yes':'No')
+  ].join('\n');
+
+  const subject=encodeURIComponent('Pulse-check enquiry — '+get('company'));
+  document.getElementById('mailtoBtn').setAttribute('href','mailto:the.aurelion.space@gmail.com?subject='+subject+'&body='+encodeURIComponent(lines));
+  form.style.display='none';
+  const panel=document.getElementById('successPanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
