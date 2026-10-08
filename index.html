@@ -257,7 +257,39 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 .foot-bot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.tile,a.card{transition:none}}
 @media (prefers-reduced-transparency:reduce){.nav{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}}
+/* Ratana band: a dark section in Ratana's own colours, so it reads as the product */
+.rt{background:radial-gradient(60% 80% at 15% 10%,rgba(212,168,67,.16),transparent 70%),radial-gradient(50% 70% at 90% 30%,rgba(43,212,180,.10),transparent 70%),#0a0a0f;color:#f7f5ef}
+.rt .grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center}
+.rt .eyebrow{color:#d4a843}
+.rt .h2 em{font-style:italic;color:#d4a843;font-weight:600}
+.rt .lede{color:#b4b6c4;max-width:40ch}
+.rt ul{margin:28px 0 34px;padding:0;list-style:none;display:grid;gap:14px}
+.rt li{display:grid;grid-template-columns:20px 1fr;gap:12px;color:#b4b6c4}
+.rt li::before{content:"✓";color:#d4a843;font-weight:600}
+.rt .btns{justify-content:flex-start}
+.btn-gold{background:linear-gradient(135deg,#f0cb6e,#d4a843 55%,#a57e2a);color:#1a1405;font-weight:600}.btn-gold:hover{opacity:.9}
+.orbit{position:relative;aspect-ratio:1;width:100%;max-width:440px;justify-self:center;border:1px solid rgba(247,245,239,.12);border-radius:var(--r-lg);overflow:hidden;
+  background:radial-gradient(circle at 30% 20%,rgba(28,44,102,.5),transparent 60%),linear-gradient(180deg,#0d0f1c,#08080d)}
+.orbit .ring{position:absolute;top:50%;left:50%;border:1px solid rgba(247,245,239,.12);border-radius:50%;transform:translate(-50%,-50%)}
+.orbit .r1{width:56%;height:56%}.orbit .r2{width:78%;height:78%}.orbit .r3{width:92%;height:92%}
+.orbit .spin{position:absolute;inset:0;animation:spin linear infinite}
+.orbit .s1{animation-duration:26s}.orbit .s2{animation-duration:40s;animation-direction:reverse}.orbit .s3{animation-duration:58s}
+.orbit .dot{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
+.orbit .s1 .dot{left:78%;top:50%;width:11px;height:11px;background:#d4a843;box-shadow:0 0 14px #d4a843}
+.orbit .s2 .dot{left:22.4%;top:22.4%;width:12px;height:12px;background:#2bd4b4;box-shadow:0 0 16px #2bd4b4}
+.orbit .s3 .dot{left:50%;top:96%;width:10px;height:10px;background:#f7f5ef;box-shadow:0 0 12px #f7f5ef}
+.orbit .sun{position:absolute;top:50%;left:50%;width:36%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;
+  font:600 clamp(1.1rem,2.6vw,1.6rem)/1 Georgia,"Times New Roman",serif;color:#1a1405;letter-spacing:.02em;
+  background:radial-gradient(circle at 40% 35%,#f0cb6e,#d4a843 55%,#a57e2a);box-shadow:0 0 60px rgba(212,168,67,.45),0 0 140px rgba(212,168,67,.18);animation:glow 5s ease-in-out infinite alternate}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes glow{to{box-shadow:0 0 80px rgba(212,168,67,.6),0 0 180px rgba(212,168,67,.25)}}
+/* fades up as it scrolls into view; only when JS runs, so it never stays hidden */
+.js .rt .grid{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)}
+.js .rt.in .grid{opacity:1;transform:none}
+@media (max-width:860px){.rt .grid{grid-template-columns:1fr}.orbit{max-width:340px}}
+@media (prefers-reduced-motion:reduce){.orbit .spin,.orbit .sun{animation:none}.js .rt .grid{opacity:1;transform:none;transition:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="nav"><div class="wrap">
@@ -318,6 +350,26 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <p class="more"><a class="link" href="lpi.html">Explore the LPI</a></p>
 </div></section>
 
+<section class="rt" id="ratana"><div class="wrap"><div class="grid">
+<div>
+<p class="eyebrow">Meet Ratana · AI-powered Life Discovery Intelligence</p>
+<h2 class="h2" style="margin-top:18px">Ratana — <em>uncover your hidden potential.</em></h2>
+<p class="lede" style="margin-top:22px">Our own AI, built on the same science as our programmes. Ratana helps each person understand how they think, what drives them, how they handle money, and where their real strengths are hiding.</p>
+<ul>
+<li>Names the strengths you already use without noticing</li>
+<li>Shows how your personality shapes the way you earn, spend and save</li>
+<li>Explains your LPI, MBTI or DISC report in plain words</li>
+<li>A companion that remembers you and keeps the conversation going</li>
+</ul>
+<div class="btns"><a class="btn btn-gold" href="https://ratana.aurelion-earth.com">Discover Ratana</a></div>
+</div>
+<div class="orbit" aria-hidden="true">
+<div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+<div class="spin s1"><span class="dot"></span></div><div class="spin s2"><span class="dot"></span></div><div class="spin s3"><span class="dot"></span></div>
+<div class="sun">Ratana</div>
+</div>
+</div></div></section>
+
 <section class="alt"><div class="wrap narrow center">
 <span class="mark" style="font-size:2.6rem;color:var(--gold);font-weight:700;line-height:.5">“</span>
 <p class="h3" style="margin-top:18px">This training truly inspired our team and brought real improvement to how we think.</p>
@@ -353,5 +405,11 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <span>Residensi Tribeca, Jalan Imbi, 55100 Kuala Lumpur · aurelion-earth.com</span>
 <span>© 2026 Aurelion Sdn. Bhd. · HRD Corp Registered Training Provider · Certified LPI Consultants</span>
 </div></div></footer>
+<script>
+// Ratana band fades up when it scrolls into view; without IntersectionObserver it just shows.
+(function(){var s=document.querySelector('.rt');if(!s)return;
+if(!('IntersectionObserver' in window)){s.classList.add('in');return}
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect()}},{threshold:.15});io.observe(s)})();
+</script>
 </body>
 </html>
