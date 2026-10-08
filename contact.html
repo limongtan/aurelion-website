@@ -57,18 +57,30 @@ p{margin:0}
 .nav ul a[aria-current]{color:var(--fg);font-weight:600}
 .nav .btn{min-height:34px;padding:0 16px;font-size:.875rem}
 .menu{display:none;margin-left:auto}
-.menu summary{list-style:none;cursor:pointer;padding:8px;font-size:.875rem;font-weight:500}
+.menu summary{list-style:none;cursor:pointer;padding:10px 8px;display:grid;place-items:center}
 .menu summary::-webkit-details-marker{display:none}
+.burger{position:relative;display:block;width:22px;height:2px;border-radius:2px;background:var(--fg)}
+.burger::before,.burger::after{content:"";position:absolute;left:0;width:22px;height:2px;border-radius:2px;background:var(--fg);transition:transform .2s ease,top .2s ease}
+.burger::before{top:-6px}.burger::after{top:6px}
+.menu[open] .burger{background:transparent}
+.menu[open] .burger::before{top:0;transform:rotate(45deg)}
+.menu[open] .burger::after{top:0;transform:rotate(-45deg)}
 .menu[open] nav{position:absolute;left:0;right:0;top:72px;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(20px,4vw) 20px;display:grid}
 .menu nav a{padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:1.25rem;font-weight:600}
-@media (max-width:760px){.nav ul{display:none}.menu{display:block}.nav .wrap{gap:12px}}
+@media (max-width:760px){.nav ul{display:none}.menu{display:block;margin-left:0}.nav .wrap{gap:10px}.nav .brand{font-size:1.1875rem;margin-right:auto}.nav .brand img{height:30px}.brand{gap:8px;min-width:0}.menu summary{padding:8px 6px}.nav .btn{padding:0 14px}}
 section{padding-block:clamp(66px,10vw,120px)}
 .alt{background:var(--bg-alt)}
 /* Page hero (inner pages) */
 .phero{padding-block:clamp(52px,8vw,88px) 0;text-align:center}
 .phero .stack{gap:18px;justify-items:center}
-.band{margin-top:clamp(40px,6vw,64px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/9;max-width:100%}
+.band{position:relative;margin-top:clamp(40px,6vw,64px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/9;max-width:100%;background:var(--bg-alt)}
 .band img{width:100%;height:100%;object-fit:cover}
+.band.slideshow img{position:absolute;inset:0;opacity:0;animation:xfade3 18s infinite cubic-bezier(.4,0,.2,1)}
+.band.slideshow img:first-child{opacity:1}
+.band.slideshow img:nth-child(2){animation-delay:-6s}
+.band.slideshow img:nth-child(3){animation-delay:-12s}
+@keyframes xfade3{0%{opacity:1}28%{opacity:1}33%{opacity:0}95%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.band.slideshow img{animation:none}.band.slideshow img:not(:first-child){opacity:0}}
 @media (max-width:640px){.band{aspect-ratio:3/2}}
 /* Home hero */
 .hero{padding-block:clamp(56px,9vw,96px) 0;text-align:center}
@@ -250,7 +262,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <header class="nav"><div class="wrap">
 <a class="brand" href="index.html" aria-label="Aurelion home"><img src="assets/mark.png" alt="" width="30" height="10">Aurelion</a>
 <ul><li><a href="programs.html">Programmes</a></li><li><a href="lpi.html">The LPI</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul>
-<details class="menu"><summary>Menu</summary><nav aria-label="Mobile"><a href="programs.html">Programmes</a><a href="lpi.html">The LPI</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></details>
+<details class="menu"><summary aria-label="Menu"><span class="burger"></span></summary><nav aria-label="Mobile"><a href="programs.html">Programmes</a><a href="lpi.html">The LPI</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></details>
 <a class="btn btn-wa" href="https://wa.me/60166308569?text=Hi%20Aurelion%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20programmes.">WhatsApp</a>
 </div></header>
 <main>
