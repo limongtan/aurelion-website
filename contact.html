@@ -50,8 +50,8 @@ p{margin:0}
 .nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
 .brand img{height:34px;width:auto}
-.nav .brand{font-size:1.5rem}
-.nav .brand img{height:40px}
+.nav .brand{flex-direction:column;gap:3px;font-size:1rem;line-height:1;letter-spacing:.01em}
+.nav .brand img{height:32px}
 .nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-size:.875rem}
 .nav ul a{text-decoration:none;color:var(--muted)}.nav ul a:hover{color:var(--fg)}
 .nav ul a[aria-current]{color:var(--fg);font-weight:600}
@@ -67,7 +67,7 @@ p{margin:0}
 .menu[open] .burger::after{top:0;transform:rotate(-45deg)}
 .menu[open] nav{position:absolute;left:0;right:0;top:72px;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(20px,4vw) 20px;display:grid}
 .menu nav a{padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:1.25rem;font-weight:600}
-@media (max-width:760px){.nav ul{display:none}.menu{display:block;margin-left:0}.nav .wrap{gap:10px}.nav .brand{font-size:1.1875rem;margin-right:auto}.nav .brand img{height:30px}.brand{gap:8px;min-width:0}.menu summary{padding:8px 6px}.nav .btn{padding:0 14px}}
+@media (max-width:760px){.nav ul{display:none}.menu{display:block;margin-left:0}.nav .wrap{gap:10px}.nav .brand{font-size:.875rem;margin-right:auto}.nav .brand img{height:26px}.brand{gap:8px;min-width:0}.menu summary{padding:8px 6px}.nav .btn{padding:0 14px}}
 section{padding-block:clamp(66px,10vw,120px)}
 .alt{background:var(--bg-alt)}
 /* Page hero (inner pages) */
