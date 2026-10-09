@@ -611,8 +611,10 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 }
 .character-code{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:0 0 22px;background:var(--role-color);color:#fff;font-size:.7rem;font-weight:800;box-shadow:0 3px 7px color-mix(in srgb,var(--role-color) 24%,transparent)}
 .character-legend{display:flex;justify-content:center;align-items:center;gap:6px 12px;flex-wrap:wrap;padding:8px 5px 0;color:var(--muted);font-size:.68rem;line-height:1.2}
+.character-legend i{font-style:normal;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+.character-legend i span{margin-right:0}
 .character-legend span{display:inline-grid;place-items:center;width:18px;height:18px;margin-right:-8px;border-radius:50%;color:#fff;background:var(--tone);font-size:.63rem;font-weight:800}
-.character-legend span:nth-of-type(1){--tone:#d99013}.character-legend span:nth-of-type(2){--tone:#2878cf}.character-legend span:nth-of-type(3){--tone:#168447}.character-legend span:nth-of-type(4){--tone:#e32645}.character-legend span:nth-of-type(5){--tone:#7650c9}
+.character-legend i:nth-of-type(1) span{--tone:#d99013}.character-legend i:nth-of-type(2) span{--tone:#2878cf}.character-legend i:nth-of-type(3) span{--tone:#168447}.character-legend i:nth-of-type(4) span{--tone:#e32645}.character-legend i:nth-of-type(5) span{--tone:#7650c9}
 @keyframes character-bob{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-6px,0)}}
 @keyframes character-arrive{from{opacity:0;filter:blur(7px)}to{opacity:1;filter:drop-shadow(0 12px 13px rgba(26,35,50,.09))}}
 @keyframes stage-glow{from{opacity:.65;transform:translateZ(-60px) scale(.94)}to{opacity:1;transform:translateZ(-60px) scale(1.04)}}
@@ -684,6 +686,24 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
   .conversation-control{flex-wrap:wrap;gap:7px 9px;padding:3px 8px 9px;font-size:.72rem}
   .conversation-toggle{padding:6px 10px}
 }
+/* Phones (Andy, 2026-10-09): the swipe strip showed two and a half cards cut
+   off at the right edge and read as broken. All five now sit in one row, and
+   the speech bubble is centred over the row instead of over its card, so it
+   can never run off the screen. The card's ring, the bubble's coloured name
+   and "X is speaking" below still say who is talking. Transforms and filters
+   on the cards are switched off because either one would make the card, not
+   the stage, the box the bubble is placed in. */
+@media(max-width:760px){
+  .character-stage{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;overflow:visible!important;padding:84px 0 18px!important;position:relative;transform-style:flat}
+  .character-card-3d{position:static;transform:none!important;filter:none!important;transform-style:flat}
+  .character-card-shell{height:clamp(150px,44vw,210px);border-radius:14px;transform-style:flat}
+  .character-card-caption{flex-basis:30px;justify-content:center}
+  .character-card-caption span:not(.character-code){display:none}
+  .talk-bubble{top:6px;max-width:min(260px,86%);text-align:center}
+  .talk-bubble::after{display:none}
+  .talk-wave{justify-content:center}
+  .character-legend{gap:5px 7px;font-size:.62rem;padding-inline:0}
+}
 @media(prefers-reduced-motion:reduce){
   .character-card-3d.is-speaking img,.talk-wave i,.character-card-3d.is-speaking .talk-bubble{animation:none!important}
   .talk-bubble,.conversation-toggle,.character-card-shell{transition:none!important}
@@ -751,7 +771,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
       <span class="conversation-status"><b id="currentSpeaker">Openness</b> is speaking</span>
       <button type="button" class="conversation-toggle" id="conversationToggle" aria-pressed="false">Pause conversation</button>
     </div>
-    <figcaption class="character-legend"><span>O</span> Openness <span>N</span> Neutral <span>A</span> Analytical <span>R</span> Relational <span>D</span> Decisive</figcaption>
+    <figcaption class="character-legend"><i><span>O</span> Openness</i> <i><span>N</span> Neutral</i> <i><span>A</span> Analytical</i> <i><span>R</span> Relational</i> <i><span>D</span> Decisive</i></figcaption>
   </figure>
 </div></section>
 <section class="instinct-lab" id="meeting-instinct" aria-labelledby="instinct-title">
