@@ -258,6 +258,42 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 .foot-bot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.tile,a.card{transition:none}}
 @media (prefers-reduced-transparency:reduce){.nav{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}}
+/* Same meeting, five people: one card per force. Desktop is one row per force
+   (tile | portrait | quote | lists); narrower screens fold the lists under, and
+   phones put the tile on top as a header band. */
+.lpx-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center;margin-bottom:clamp(32px,5vw,48px)}
+.lpx-team{width:100%;height:auto;border-radius:var(--r-md)}
+.lpx-list{display:grid;gap:14px}
+.lpx-row{display:grid;grid-template-columns:150px 170px minmax(0,1fr) minmax(0,1.15fr);background:var(--t);border-radius:var(--r-md);overflow:hidden}
+.lpx-tile{background:var(--c);color:#fff;display:grid;align-content:center;justify-items:center;text-align:center;padding:18px 12px;gap:4px}
+.lpx-k{font-size:4.5rem;font-weight:800;line-height:.9;letter-spacing:-.04em}
+.lpx-tile b{font-size:1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.lpx-tile small{font-size:.875rem;line-height:1.3}
+.lpx-pic{width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center top}
+.lpx-say{padding:22px;display:grid;gap:16px;align-content:center}
+.lpx-q{position:relative;margin:0;background:#fff;border-radius:16px;padding:14px 18px;font-size:1.25rem;font-weight:700;line-height:1.25;letter-spacing:-.015em;box-shadow:0 8px 24px -14px rgba(0,0,0,.25)}
+.lpx-q::before{content:"";position:absolute;left:-9px;top:50%;margin-top:-9px;border:9px solid transparent;border-left:0;border-right-color:#fff}
+.lpx-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.lpx-chips li{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.75);border-radius:999px;padding:4px 10px}
+.lpx-lists{padding:22px 24px 22px 0;display:grid;gap:14px;align-content:center;font-size:.9375rem;line-height:1.4}
+.lpx-lists h3{margin:0 0 6px;font-size:.9375rem;font-weight:700;letter-spacing:0}
+.lpx-lists ul{margin:0;padding-left:18px;display:grid;gap:3px}
+.lpx-lists li::marker{color:var(--ink)}
+.lpx-press h3{display:inline-block;color:var(--ink);background:rgba(255,255,255,.75);padding:3px 12px;border-radius:999px}
+@media (max-width:980px){
+  .lpx-row{grid-template-columns:130px 160px minmax(0,1fr)}
+  .lpx-lists{grid-column:1/-1;grid-template-columns:1fr 1fr;gap:20px;padding:4px 24px 22px}
+}
+@media (max-width:640px){
+  .lpx-head{grid-template-columns:1fr}
+  .lpx-row{grid-template-columns:118px minmax(0,1fr)}
+  .lpx-tile{grid-column:1/-1;grid-template-columns:auto 1fr;justify-items:start;text-align:left;column-gap:14px;row-gap:0;padding:12px 16px}
+  .lpx-k{grid-row:span 2;font-size:3rem}
+  .lpx-pic{min-height:0}
+  .lpx-say{padding:14px 14px 14px 18px;gap:10px}
+  .lpx-q{font-size:1.05rem;padding:12px 14px}
+  .lpx-lists{grid-template-columns:1fr;gap:12px;padding:4px 16px 18px}
+}
 </style>
 </head>
 <body>
@@ -296,15 +332,44 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-<a href="assets/lpi-five-people.jpg" style="display:block;max-width:760px;margin-inline:auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 20px 60px -24px rgba(0,0,0,.25)">
-<img src="assets/lpi-five-people.jpg" width="1024" height="1536" loading="lazy" alt="What is the LPI? Same meeting. Five different people. None of them is wrong; each is driven by a different force. The LPI shows which force drives each person, and what they do under pressure.
-Openness, sees new possibilities: &quot;What if we did it completely differently?&quot; In a meeting they bring fresh ideas, see the big picture and challenge the status quo. Under pressure they may become unrealistic and lose focus on details.
-Neutral, maintains balance and harmony: &quot;Can we all agree before we move?&quot; In a meeting they listen to everyone's views, seek agreement and consider the impact on people. Under pressure they may avoid conflict or difficult decisions, and become indecisive or people-pleasing.
-Analytical, looks at the facts: &quot;We need more data first.&quot; In a meeting they look for data and facts, analyse options carefully and identify potential problems. Under pressure they may over-analyse or worry too much, lose confidence or delay action.
-Relational, builds people together: &quot;Let me get everyone on board.&quot; In a meeting they engage and motivate the team, build trust and collaboration, and make sure everyone feels included. Under pressure they may become overly sensitive, avoid confrontation or say yes when they mean no.
-Decisive, gets things done: &quot;Let's decide now.&quot; In a meeting they make quick decisions, are action-oriented and drive plans and implementation. Under pressure they may become too forceful or impatient and override others' views.">
-</a>
-<p class="cap" style="text-align:center;margin-top:14px">Tap or click the picture to see it full size.</p>
+<div class="lpx-head">
+<div class="stack"><p class="eyebrow">What is the LPI?</p>
+<h2 class="h2">Same meeting.<br>Five different people.</h2>
+<p class="lede">None of them is wrong. Each is driven by a different force. The LPI shows which force drives each person, and what they do under pressure.</p></div>
+<img class="lpx-team" src="assets/lpi-team.jpg" alt="Five colleagues around a laptop in a meeting, each reacting in their own way" width="484" height="232" loading="lazy">
+</div>
+<div class="lpx-list">
+<article class="lpx-row" style="--c:#b97c0a;--ink:#8a5a00;--t:#fdf4dc">
+<div class="lpx-tile"><span class="lpx-k" aria-hidden="true">O</span><b>Openness</b><small>Sees new possibilities</small></div>
+<img class="lpx-pic" src="assets/lpi-o.jpg" alt="" width="230" height="218" loading="lazy">
+<div class="lpx-say"><p class="lpx-q">“What if we did it completely differently?”</p><ul class="lpx-chips"><li>Big picture</li><li>New ideas</li><li>Innovation</li></ul></div>
+<div class="lpx-lists"><div><h3>In a meeting, they:</h3><ul><li>Bring fresh ideas and creative approaches</li><li>See the big picture and possibilities</li><li>Challenge the status quo</li></ul></div><div class="lpx-press"><h3>Under pressure, they may:</h3><ul><li>Become unrealistic</li><li>Lose focus on details</li></ul></div></div>
+</article>
+<article class="lpx-row" style="--c:#1d5fb4;--ink:#1d5fb4;--t:#e8f1fc">
+<div class="lpx-tile"><span class="lpx-k" aria-hidden="true">N</span><b>Neutral</b><small>Maintains balance and harmony</small></div>
+<img class="lpx-pic" src="assets/lpi-n.jpg" alt="" width="230" height="214" loading="lazy">
+<div class="lpx-say"><p class="lpx-q">“Can we all agree before we move?”</p><ul class="lpx-chips"><li>Builds consensus</li><li>Considers everyone</li><li>Keeps harmony</li></ul></div>
+<div class="lpx-lists"><div><h3>In a meeting, they:</h3><ul><li>Listen to everyone's views</li><li>Seek agreement and alignment</li><li>Consider the impact on people</li></ul></div><div class="lpx-press"><h3>Under pressure, they may:</h3><ul><li>Avoid conflict or difficult decisions</li><li>Become indecisive or people-pleasing</li></ul></div></div>
+</article>
+<article class="lpx-row" style="--c:#1e7f3c;--ink:#1e7f3c;--t:#e7f5ea">
+<div class="lpx-tile"><span class="lpx-k" aria-hidden="true">A</span><b>Analytical</b><small>Looks at the facts</small></div>
+<img class="lpx-pic" src="assets/lpi-a.jpg" alt="" width="230" height="213" loading="lazy">
+<div class="lpx-say"><p class="lpx-q">“We need more data first.”</p><ul class="lpx-chips"><li>Analyses facts</li><li>Identifies problems</li><li>Reduces risks</li></ul></div>
+<div class="lpx-lists"><div><h3>In a meeting, they:</h3><ul><li>Look for data and facts</li><li>Analyse options carefully</li><li>Identify potential problems</li></ul></div><div class="lpx-press"><h3>Under pressure, they may:</h3><ul><li>Over-analyse or worry too much</li><li>Lose confidence or delay action</li></ul></div></div>
+</article>
+<article class="lpx-row" style="--c:#cf2440;--ink:#b81d37;--t:#fdeaee">
+<div class="lpx-tile"><span class="lpx-k" aria-hidden="true">R</span><b>Relational</b><small>Builds people together</small></div>
+<img class="lpx-pic" src="assets/lpi-r.jpg" alt="" width="230" height="218" loading="lazy">
+<div class="lpx-say"><p class="lpx-q">“Let me get everyone on board.”</p><ul class="lpx-chips"><li>Brings people together</li><li>Builds relationships</li><li>Seeks alignment</li></ul></div>
+<div class="lpx-lists"><div><h3>In a meeting, they:</h3><ul><li>Engage and motivate the team</li><li>Build trust and collaboration</li><li>Ensure everyone feels included</li></ul></div><div class="lpx-press"><h3>Under pressure, they may:</h3><ul><li>Become overly sensitive</li><li>Avoid confrontation or say “yes” when they mean “no”</li></ul></div></div>
+</article>
+<article class="lpx-row" style="--c:#6f3bb0;--ink:#6f3bb0;--t:#f1eafb">
+<div class="lpx-tile"><span class="lpx-k" aria-hidden="true">D</span><b>Decisive</b><small>Gets things done</small></div>
+<img class="lpx-pic" src="assets/lpi-d.jpg" alt="" width="226" height="211" loading="lazy">
+<div class="lpx-say"><p class="lpx-q">“Let's decide now.”</p><ul class="lpx-chips"><li>Takes action</li><li>Drives results</li><li>Moves forward</li></ul></div>
+<div class="lpx-lists"><div><h3>In a meeting, they:</h3><ul><li>Make quick decisions</li><li>Are action-oriented</li><li>Drive plans and implementation</li></ul></div><div class="lpx-press"><h3>Under pressure, they may:</h3><ul><li>Become too forceful or impatient</li><li>Override others' views</li></ul></div></div>
+</article>
+</div>
 </div></section>
 
 <section class="alt"><div class="wrap">
