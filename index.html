@@ -103,35 +103,28 @@ section{padding-block:clamp(66px,10vw,120px)}
 /* Video + gallery */
 .videowrap{margin-top:48px;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:var(--bg-alt);max-width:100%}
 .videowrap video{width:100%;height:100%;object-fit:cover;display:block}
-/* Gallery: four pages of three -- one large photo, two beside it -- instead of
-   twelve small tiles at once. The track is a native scroll-snap row, so swipe
-   works with no script; the script only adds arrows, dots and autoplay. */
+/* Gallery: every photo the same 4:3 size, two to a page on a wide screen and
+   one on a phone. The track is a native scroll-snap row, so it swipes with no
+   script; the script adds arrows, dots and autoplay. */
 .gal{margin-top:48px}
 .gal-track{position:relative;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .gal-track::-webkit-scrollbar{display:none}
-.gal-page{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:16px;height:clamp(420px,50vw,620px)}
-.gal-page figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r-md);background:var(--bg-alt)}
-.gal-page .big{grid-row:1/3;border-radius:var(--r-lg)}
-.gal-page img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-/* Only hidden once the script is known to be running; it fades each page in,
-   staggered, with a slow settle from a slight zoom. */
-.js .gal-page img{opacity:0;transform:scale(1.08);transition:opacity .9s ease,transform 7s cubic-bezier(.2,.6,.2,1)}
-.js .gal-page.on img{opacity:1;transform:scale(1)}
-.js .gal-page.on figure:nth-child(2) img{transition-delay:.18s,.18s}
-.js .gal-page.on figure:nth-child(3) img{transition-delay:.36s,.36s}
+.gal-track figure{flex:0 0 calc((100% - 16px)/2);scroll-snap-align:start;margin:0;position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-lg);background:var(--bg-alt)}
+.gal-track img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Hidden only once the script is known to run: each photo fades in and
+   settles from a slight zoom as it comes into view. */
+.js .gal-track img{opacity:0;transform:scale(1.08);transition:opacity .9s ease,transform 7s cubic-bezier(.2,.6,.2,1)}
+.js .gal-track figure.on img{opacity:1;transform:scale(1)}
+.js .gal-track figure.on+figure.on img{transition-delay:.18s,.18s}
 .gal-nav{display:none;margin-top:22px;align-items:center;justify-content:center;gap:18px}
 .js .gal-nav{display:flex}
-.gal-nav button.arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--fg);font-size:1.3rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
+.gal-nav button.arrow{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--fg);font-size:1.3rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
 .gal-nav button.arrow:hover{border-color:var(--gold);color:var(--gold-ink)}
-.gal-dots{display:flex;gap:8px}
+.gal-dots{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .gal-dots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:var(--line);cursor:pointer;transition:width .35s,background .35s}
 .gal-dots button[aria-current="true"]{width:28px;background:var(--gold)}
-@media (max-width:760px){
-  .gal-page{height:auto;grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
-  .gal-page figure{aspect-ratio:1/1}
-  .gal-page .big{grid-row:auto;grid-column:1/-1;aspect-ratio:3/2}
-}
-@media (prefers-reduced-motion:reduce){.js .gal-page img{transition:none;opacity:1;transform:none}}
+@media (max-width:760px){.gal-track figure{flex-basis:100%;border-radius:var(--r-md)}}
+@media (prefers-reduced-motion:reduce){.js .gal-track img{transition:none;opacity:1;transform:none}}
 /* Trust */
 .trust{padding-block:40px;border-bottom:1px solid var(--line)}
 .trust ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 44px;align-items:center;font-size:.9375rem;color:var(--muted)}
@@ -410,26 +403,23 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <p class="lede">Real teams, real laughter — ice-breakers, beach challenges, hands-on builds and the moment it all clicks.</p></div>
 <div class="gal" aria-roledescription="carousel" aria-label="Session photos">
 <div class="gal-track">
-<div class="gal-page" role="group" aria-roledescription="slide" aria-label="1 of 4">
-<figure class="big"><img src="assets/g1.jpg" alt="A team in an ice-breaker circle" width="1000" height="667"></figure>
+<figure><img src="assets/g1.jpg" alt="A team in an ice-breaker circle" width="1000" height="667"></figure>
+<figure><img src="assets/g15.jpg" alt="A speaker with a microphone addressing the room" width="1200" height="900"></figure>
 <figure><img src="assets/g2.jpg" alt="A team doing a beach activity together" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g17.jpg" alt="Two participants in team bibs grinning on the beach" width="1200" height="900" loading="lazy"></figure>
+<figure><img src="assets/g13.jpg" alt="A blindfolded participant building a tower by touch" width="1200" height="900" loading="lazy"></figure>
+<figure><img src="assets/g14.jpg" alt="A participant steadying a spaghetti-and-marshmallow tower" width="1200" height="900" loading="lazy"></figure>
 <figure><img src="assets/g3.jpg" alt="Participants in an outdoor group challenge on the beach" width="1000" height="667" loading="lazy"></figure>
-</div>
-<div class="gal-page" role="group" aria-roledescription="slide" aria-label="2 of 4">
-<figure class="big"><img src="assets/g4.jpg" alt="A workshop in full swing around the tables" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g4.jpg" alt="A workshop in full swing around the tables" width="1000" height="667" loading="lazy"></figure>
 <figure><img src="assets/g5.jpg" alt="A lively workshop activity in full swing" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g16.jpg" alt="Participants standing in a circle during an activity" width="1200" height="900" loading="lazy"></figure>
 <figure><img src="assets/g6.jpg" alt="Participants building a hands-on team challenge" width="1000" height="667" loading="lazy"></figure>
-</div>
-<div class="gal-page" role="group" aria-roledescription="slide" aria-label="3 of 4">
-<figure class="big"><img src="assets/g7.jpg" alt="Participants sharing picture cards around a table" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="assets/g7.jpg" alt="Participants sharing picture cards around a table" width="1000" height="667" loading="lazy"></figure>
 <figure><img src="assets/g8.jpg" alt="A hands-on team challenge with chopsticks" width="1000" height="667" loading="lazy"></figure>
 <figure><img src="assets/g9.jpg" alt="A room of participants on their feet in an activity" width="1000" height="667" loading="lazy"></figure>
-</div>
-<div class="gal-page" role="group" aria-roledescription="slide" aria-label="4 of 4">
-<figure class="big"><img src="assets/g10.jpg" alt="A training-week group photo with thumbs up" width="1000" height="667" loading="lazy"></figure>
 <figure><img src="assets/g11.jpg" alt="Teams working through a card activity" width="1000" height="667" loading="lazy"></figure>
 <figure><img src="assets/g12.jpg" alt="A full workshop room during a session" width="1000" height="667" loading="lazy"></figure>
-</div>
+<figure><img src="assets/g10.jpg" alt="A training-week group photo with thumbs up" width="1000" height="667" loading="lazy"></figure>
 </div>
 <div class="gal-nav"><button type="button" class="arrow" data-step="-1" aria-label="Previous photos">‹</button><div class="gal-dots"></div><button type="button" class="arrow" data-step="1" aria-label="Next photos">›</button></div>
 </div>
@@ -458,24 +448,37 @@ if(!('IntersectionObserver' in window)){s.classList.add('in');return}
 var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect()}},{threshold:.15});io.observe(s)})();
 </script>
 <script>
-// Gallery: arrows, dots and a gentle autoplay over the scroll-snap track. The
-// track already swipes on its own; this keeps the dots in step with however
-// the page changed, and stops autoplay whenever someone is looking closely.
+// Gallery: arrows, dots and a gentle autoplay over the scroll-snap track. A
+// "page" is however many photos fit across (two wide, one on a phone), so the
+// dots are recounted whenever the width changes. Autoplay stops whenever
+// someone is looking closely.
 (function(){var g=document.querySelector('.gal');if(!g)return;
-var t=g.querySelector('.gal-track'),pages=[].slice.call(t.children),dots=g.querySelector('.gal-dots'),cur=-1,timer=null,seen=false,hover=false;
+var t=g.querySelector('.gal-track'),figs=[].slice.call(t.children),dots=g.querySelector('.gal-dots'),
+  cur=0,n=0,timer=null,seen=false,hover=false;
 var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-pages.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Photos '+(i+1)+' of '+pages.length);
-  b.addEventListener('click',function(){go(i);restart()});dots.appendChild(b)});
-function mark(i){if(i===cur)return;cur=i;pages.forEach(function(p,j){p.classList.toggle('on',j===i)});
-  [].forEach.call(dots.children,function(d,j){d.setAttribute('aria-current',j===i?'true':'false')})}
-function go(i){i=(i+pages.length)%pages.length;t.scrollTo({left:pages[i].offsetLeft,behavior:still?'auto':'smooth'});mark(i)}
+function per(){var w=figs[0].getBoundingClientRect().width;return Math.max(1,Math.round((t.clientWidth+16)/(w+16)))}
+function maxLeft(){return t.scrollWidth-t.clientWidth}
+// Page i starts at photo i*per; the last page is pinned to the end so it is
+// always full rather than showing a lone photo.
+function leftOf(i){return Math.min(figs[i*per()].offsetLeft,maxLeft())}
+function build(){var k=Math.ceil(figs.length/per());if(k===n)return;n=k;dots.innerHTML='';
+  for(var i=0;i<n;i++)(function(i){var b=document.createElement('button');b.type='button';
+    b.setAttribute('aria-label','Photos page '+(i+1)+' of '+n);
+    b.addEventListener('click',function(){go(i);restart()});dots.appendChild(b)})(i);
+  sync()}
+function sync(){var x=t.scrollLeft,i=x>=maxLeft()-4?n-1:Math.round(x/((t.clientWidth+16)));
+  cur=Math.max(0,Math.min(n-1,i));
+  [].forEach.call(dots.children,function(d,j){d.setAttribute('aria-current',j===cur?'true':'false')})}
+function go(i){i=(i+n)%n;t.scrollTo({left:leftOf(i),behavior:still?'auto':'smooth'})}
 [].forEach.call(g.querySelectorAll('.arrow'),function(b){b.addEventListener('click',function(){go(cur+Number(b.dataset.step));restart()})});
-// A swipe or trackpad scroll lands on a page without any click: follow it.
+var st;t.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(sync,60)},{passive:true});
+window.addEventListener('resize',function(){build();sync()});
 if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)mark(pages.indexOf(e.target))})},{root:t,threshold:.6});
-  pages.forEach(function(p){io.observe(p)});
+  // Each photo animates in as it comes into view, however it got there.
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting)})},{root:t,threshold:.55});
+  figs.forEach(function(f){io.observe(f)});
   new IntersectionObserver(function(es){seen=es[0].isIntersecting;restart()},{threshold:.35}).observe(g);
-}else{seen=true}
+}else{seen=true;figs.forEach(function(f){f.classList.add('on')})}
 function restart(){clearInterval(timer);timer=null;
   if(still||!seen||hover||document.hidden)return;
   timer=setInterval(function(){go(cur+1)},6000)}
@@ -484,7 +487,7 @@ g.addEventListener('mouseleave',function(){hover=false;restart()});
 g.addEventListener('focusin',function(){hover=true;restart()});
 g.addEventListener('focusout',function(){hover=false;restart()});
 document.addEventListener('visibilitychange',restart);
-mark(0);restart()})();
+build();restart()})();
 </script>
 </body>
 </html>
