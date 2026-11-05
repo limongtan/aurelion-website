@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Website or System · Vibe Coding Field Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="wrap">
+<div class="top"><a href="./">← Field guide</a><nav><a href="prompts.html">Prompts</a><a href="systems.html" aria-current="page">Website or system</a><a href="setup.html">Prepare &amp; allow</a><a href="golive.html">Go live</a><a href="example.html">Example</a></nav></div>
+
+<header class="hero">
+  <p class="eyebrow">Basics</p>
+  <h1>Website or system?</h1>
+  <p class="lead">A <b>website</b> shows things. A <b>system</b> remembers things and does work. The simple test: if it must keep something a person typed in (a booking, an order, an answer), it's a system.</p>
+</header>
+
+<section>
+  <h2>A website</h2>
+  <p>Pages, photos and a little script. Nothing is saved. Cheap, fast and hard to break.</p>
+  <div class="flow" role="list" aria-label="How a website is published">
+    <div class="node" role="listitem"><b>Your computer</b><span>The project folder. The AI works here.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>GitHub</b><span>Private online copy with full history.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node hot" role="listitem"><b>Host</b><span>Railway, Cloudflare … republishes on every save.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>Visitor</b><span>Opens your web address.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>A system</h2>
+  <p>Same start, plus three new parts: a <b>server</b> that does the work, a <b>database</b> that remembers, and <b>outside services</b> for payments, AI or messages. Each new part means one more account, one more secret key and one more monthly bill.</p>
+  <div class="flow" role="list" aria-label="How a system is built">
+    <div class="node" role="listitem"><b>Screens</b><span>What people see and fill in.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node hot" role="listitem"><b>Server</b><span>Checks logins, does the work, follows your rules.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>Database</b><span>Remembers users, bookings, orders.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>Outside services</b><span>Payments, AI, email, WhatsApp.</span></div>
+  </div>
+  <p class="muted">Real example: Aurelion Insights is a system. People answer a questionnaire, AI writes their report, they log in to read it and pay online. Screens, server, database, an AI service and a payment service all work together.</p>
+</section>
+
+<section>
+  <h2>The six common shapes</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>Shape</th><th>Examples</th><th>Needs</th><th>Effort</th></tr></thead>
+    <tbody>
+      <tr><td>Information website</td><td>Coach, company profile, portfolio, event page</td><td>Host only</td><td>Easy · one afternoon</td></tr>
+      <tr><td>Booking system</td><td>Clinic, salon, classes, rooms</td><td>Server, database, staff login, reminders</td><td>Medium</td></tr>
+      <tr><td>Online shop / payment</td><td>Products, tickets, paid reports</td><td>Server, database, payment account</td><td>Medium · test carefully</td></tr>
+      <tr><td>Staff tool / tracker</td><td>Customer list, tasks, stock, attendance</td><td>Server, database, login, backups</td><td>Medium</td></tr>
+      <tr><td>AI tool</td><td>Chatbot on your material, questionnaire → AI report</td><td>Server, AI account (pay per use)</td><td>Medium to advanced</td></tr>
+      <tr><td>Automation</td><td>Daily reports, birthday emails, follow-ups</td><td>A scheduled job, email/WhatsApp account</td><td>Easy to medium</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Start small, then grow</h2>
+  <ul class="checks">
+    <li><span><b>Version 1 can be a website.</b><small>Life Garden sells on WhatsApp first: no database, no payment system, live in one afternoon.</small></span></li>
+    <li><span><b>Add the system parts when people actually use it.</b><small>Online payment once orders come in. Logins once you have repeat customers.</small></span></li>
+    <li><span><b>Ask the AI for the plan first.</b><small>The <a href="prompts.html">starting prompt</a> makes it list the parts, accounts and monthly cost before building.</small></span></li>
+  </ul>
+</section>
+
+<div class="next"><a href="prompts.html">← Prompts</a><a href="setup.html">Prepare &amp; allow →</a></div>
+</div>
+</body></html>

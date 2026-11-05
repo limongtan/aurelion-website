@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prepare and Allow · Vibe Coding Field Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="wrap">
+<div class="top"><a href="./">← Field guide</a><nav><a href="prompts.html">Prompts</a><a href="systems.html">Website or system</a><a href="setup.html" aria-current="page">Prepare &amp; allow</a><a href="golive.html">Go live</a><a href="example.html">Example</a></nav></div>
+
+<header class="hero">
+  <p class="eyebrow">Before you start</p>
+  <h1>What to prepare, and what to allow</h1>
+  <p class="lead">The AI can only use what you give it, and only do what you let it.</p>
+</header>
+
+<section>
+  <h2>Prepare</h2>
+  <ul class="checks">
+    <li><span><b>Your content.</b><small>Texts, prices, phone numbers, photos, logo. The AI should never invent these.</small></span></li>
+    <li><span><b>A design, if you have one.</b><small>From an AI design tool, Canva, a screenshot of a site you like. If you don't have one, the AI can design it, but expect more rounds.</small></span></li>
+    <li><span><b>Every file the design uses.</b><small>Download the whole folder (photos, fonts, styles), not just the pages.</small></span></li>
+    <li><span><b>VS Code with Claude Code.</b><small>Claude Code needs a paid Claude plan. It installs other tools it needs and tells you.</small></span></li>
+    <li><span><b>A GitHub account.</b><small>Free. Your project's online backup and history.</small></span></li>
+    <li><span><b>A hosting account.</b><small>Railway, Cloudflare and others. Small websites cost little or nothing; systems with a database cost more.</small></span></li>
+    <li><span><b>For systems only:</b><small>a payment account (e.g. Stripe), an AI account (e.g. Google Gemini, Anthropic), an email sender. Each one gives you a secret key.</small></span></li>
+    <li><span><b>A domain, later.</b><small>Not needed to start. The host gives a free web address.</small></span></li>
+  </ul>
+</section>
+
+<section id="allow">
+  <h2>Allow</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>Permission</th><th>Why it's needed</th><th>How you give it</th><th>Stay safe</th></tr></thead>
+    <tbody>
+      <tr><td>Run commands, edit files</td><td>To build, test and save</td><td>Claude Code asks before each action; you can let it go ahead without asking every time</td><td>Keep each project in its own folder. Approve one by one until you trust it.</td></tr>
+      <tr><td>Read a folder</td><td>Your design and photos are there</td><td>Paste the folder path in the chat</td><td>Point it at the exact folder, not your whole drive.</td></tr>
+      <tr><td>Install a program</td><td>Tools like the GitHub tool</td><td>Windows may show an "Allow changes?" popup</td><td>Check the name. Official sources only.</td></tr>
+      <tr><td>GitHub account</td><td>Create a repo, upload versions</td><td>Type a one-time 8-letter code at github.com/login/device</td><td>Remove it any time: GitHub → Settings → Applications.</td></tr>
+      <tr><td>Hosting account</td><td>Create the project, publish</td><td>Sign in once, or save an access key in a private file on your computer</td><td>Delete the key when the project ends.</td></tr>
+      <tr><td>Host reading GitHub</td><td>So every save goes live by itself</td><td>Approve once on the host's website</td><td>Allow only the repos it needs.</td></tr>
+      <tr><td>Payment, AI, email keys</td><td>Systems only</td><td>Saved in the host's settings, never in the code</td><td>Use test mode first. Set spending limits.</td></tr>
+      <tr><td>Spending money</td><td>Hosting, domains, AI use</td><td>You say yes each time</td><td>Make "ask me before anything costs money" a rule in your first prompt.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Three safety rules</h2>
+  <ul class="checks">
+    <li><span><b>Never paste passwords or keys into the chat.</b><small>Save them in a private settings file or in the host's settings. The AI reads them from there.</small></span></li>
+    <li><span><b>Keep the GitHub repo private.</b><small>Make it public only if you really mean to share the code.</small></span></li>
+    <li><span><b>Real customers, real money, real messages: ask first.</b><small>Anything that charges, deletes or sends to customers waits for your yes.</small></span></li>
+  </ul>
+</section>
+
+<div class="next"><a href="systems.html">← Website or system</a><a href="example.html">Real example →</a></div>
+</div>
+</body></html>

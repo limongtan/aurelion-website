@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Go Live · Vibe Coding Field Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="wrap">
+<div class="top"><a href="./">← Field guide</a><nav><a href="prompts.html">Prompts</a><a href="systems.html">Website or system</a><a href="setup.html">Prepare &amp; allow</a><a href="golive.html" aria-current="page">Go live</a><a href="example.html">Example</a></nav></div>
+
+<header class="hero">
+  <p class="eyebrow">Go live</p>
+  <h1>Your domain and Google sign-in</h1>
+  <p class="lead">Pick what you need: <b>A</b> for your own website address, or <b>B</b> for Google sign-in. Tap one to open it, then tap each step.</p>
+</header>
+
+<section>
+  <div class="who">
+    <div><b>The AI does</b><span>The code, the host settings, the GoDaddy clicks (in the Claude desktop app), and checking everything works.</span></div>
+    <div><b>You do</b><span>Sign in when GoDaddy asks (the AI never types your password), and set up Google sign-in yourself.</span></div>
+  </div>
+</section>
+
+<section id="domain">
+  <details class="part" name="part">
+    <summary><span><b>A · Connect your domain</b><small>your own website address, like www.yourshop.com</small></span><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="part-body">
+  <p class="muted">Example: domain bought at GoDaddy, site on Railway. About 10 minutes, then up to a few hours of waiting.</p>
+  <ol class="track">
+    <li><details>
+      <summary><span class="n">0</span><span><b>Connect Railway to Claude first</b><small>Do this first, once per computer. Step 1 needs it</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p>Claude needs permission to change things in your Railway account (add the domain, read the records). Pick one way:</p>
+        <p class="cap">Way 1 · Sign in through the Railway plugin (easiest)</p>
+        <ol class="clicks">
+          <li>In Claude Code, type <code>/plugin</code> and install <b>railway</b> (once).</li>
+          <li>Type <code>/mcp</code> → choose <b>railway</b> → <b>Authenticate</b>.</li>
+          <li>Your browser opens Railway → sign in → <b>Allow</b>. Back in Claude Code it says connected.</li>
+        </ol>
+        <p class="cap">Way 2 · A Railway token in a private file</p>
+        <ol class="clicks">
+          <li><b>Create the token.</b> Open <a href="https://railway.com/account/tokens" target="_blank" rel="noopener">railway.com/account/tokens</a> (or click your name at the bottom-left → <b>Account Settings → Tokens</b>). Type a name like <code>claude-myproject</code>, pick your workspace, click <b>Create</b>.</li>
+        </ol>
+        <img class="shot" src="img/railway-new-token.png" width="900" height="649" loading="lazy" alt="Railway Tokens page with the New Token form: a Name box, a Workspace dropdown and a Create button.">
+        <ol class="clicks" start="2">
+          <li><b>Copy it.</b> Railway shows the new token once, in a box under New Token. Click the copy icon.</li>
+        </ol>
+        <img class="shot" src="img/railway-tokens.png" width="900" height="645" loading="lazy" alt="Railway Tokens page right after creating a token: the token appears once in a box under New Token (hidden here), with a Got it button.">
+        <ol class="clicks" start="3">
+          <li><b>Paste this prompt into Claude Code.</b> Claude makes a private file and opens it as a tab in your editor (named <code>.env</code>). Paste the token <b>into that file, not into the chat</b>, save with <b>Ctrl+S</b>, then type just the word <b>pasted</b> in the chat.</li>
+        </ol>
+        <div class="pcard"><div class="phead"><h3>Paste into Claude Code</h3><button class="copy" type="button">Copy</button></div>
+<pre>I want you to manage my Railway account for this project.
+Create a private settings file for a Railway token (kept out of GitHub),
+open it for me, and I'll paste the token in myself. Then check you can see my Railway projects.</pre></div>
+        <p class="lesson"><b>Done when</b> Claude lists your Railway projects. Then go to step 1.</p>
+        <p class="lesson"><b>Keep the token private.</b> Never paste it or screenshot it into a chat: anyone who sees it can control your projects. If that happens, or when the project is finished, delete it on the same Railway page with the bin icon.</p>
+      </div>
+    </details></li>
+  </ol>
+  <ol class="track" id="chrome" style="margin-top:10px">
+    <li><details>
+      <summary><span class="n">1</span><span><b>One prompt in the Claude desktop app does the rest</b><small>It adds the domain, opens GoDaddy, makes the changes and checks until it works</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li>Type your domain in the box below, click <b>Copy</b>, and paste it into the <b>Claude desktop app</b>.</li>
+          <li>Claude opens GoDaddy in its own browser. When GoDaddy asks you to sign in, <b>you</b> type your password and code. Claude carries on after that.</li>
+          <li>It shows you what it changed, then keeps checking until your website opens on the new address. That can take minutes to a few hours.</li>
+        </ol>
+        <div class="fillbox">
+          <div class="mfield"><label for="f-domain">Your domain — type it once, the prompt fills itself in</label><input id="f-domain" data-k="domain" placeholder="e.g. life-gardens.com" autocomplete="off" inputmode="url"></div>
+        </div>
+        <div class="pcard"><div class="phead"><h3>Paste into the Claude desktop app</h3><button class="copy" type="button">Copy</button></div>
+<pre>I bought <span class="fill blank" data-k="domain">yourdomain.com</span> at GoDaddy and want it to show my site on Railway.
+
+1. On Railway, add www.<span class="fill blank" data-k="domain">yourdomain.com</span> to my site (reuse it if it's already there)
+   and get the DNS records it needs.
+2. Open GoDaddy in your browser, on the DNS page for <span class="fill blank" data-k="domain">yourdomain.com</span>.
+   If it asks me to sign in, stop and let me sign in myself. Never type my password or a code.
+3. Make only these changes:
+   - set the www CNAME record to Railway's value,
+   - add Railway's TXT verification record, copied exactly,
+   - forward <span class="fill blank" data-k="domain">yourdomain.com</span> to https://www.<span class="fill blank" data-k="domain">yourdomain.com</span> (Permanent 301, forward only, no masking).
+   GoDaddy may replace the "Parked" record by itself when it saves the forwarding. That's expected.
+4. Change nothing else, don't change nameservers, buy nothing, accept no upsell.
+   If a screen looks different, stop and ask me.
+5. Show me exactly what you changed.
+6. Keep checking from outside (public DNS, not just this computer, which can remember the old
+   address for an hour) until Railway shows the domain verified and https://www.<span class="fill blank" data-k="domain">yourdomain.com</span>
+   opens my site. Tell me when it does, and whether <span class="fill blank" data-k="domain">yourdomain.com</span> without www forwards yet
+   (that part can take a few hours).
+7. Then list anything in my project that still uses the old address (payment return pages,
+   email links, sign-in settings) and ask me before changing any live setting.</pre></div>
+        <p class="lesson"><b>Type your domain in the box,</b> then <b>Copy</b>. Bought it somewhere other than GoDaddy, or hosting elsewhere than Railway? Change those words after pasting.</p>
+        <p class="lesson"><b>No desktop app?</b> Ask Claude Code to write steps 2–4 as a prompt for <b>Claude in Chrome</b>, sign in to GoDaddy in Chrome, and paste it into the Claude side panel.</p>
+        <p class="lesson"><b>Google accounts:</b> do part B by hand. Letting a browser AI into your Google account is a bigger risk than a DNS page.</p>
+      </div>
+    </details></li>
+  </ol>
+    </div>
+  </details>
+</section>
+
+<section id="google">
+  <details class="part" name="part">
+    <summary><span><b>B · Google sign-in with your own name</b><small>customers log in with their Gmail, no new password</small></span><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="part-body">
+  <p class="muted">The sign-in popup shows your Google app's name, so give each brand its own app. About 10 minutes at console.cloud.google.com.</p>
+  <ol class="track">
+
+    <li><details>
+      <summary><span class="n">1</span><span><b>Create a project</b><small>Project picker → New project</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li>Click the project picker at the top → <b>New project</b>.</li>
+          <li>Name it after your brand → <b>Create</b> → make sure it's selected.</li>
+        </ol>
+        <p class="cap">New project (illustration)</p>
+        <div class="mock"><div class="mock-bar"><i></i><i></i><i></i><span>console.cloud.google.com</span></div><div class="mock-body">
+          <div class="mock-h">New Project</div>
+          <div class="mfield"><label>Project name</label><div class="hl">My Brand</div></div>
+          <span class="mbtn">Create</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">2</span><span><b>Fill in the consent screen</b><small>App name, emails, External</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>APIs &amp; Services → OAuth consent screen</b> (may say "Google Auth Platform") → <b>Get started</b>.</li>
+          <li>App name = your brand. Support and contact email = yours. Audience = <b>External</b>.</li>
+          <li><b>Branding</b> → add your domain under <b>Authorised domains</b> → Save.</li>
+        </ol>
+        <p class="cap">Consent screen (illustration)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>App name</label><div class="hl">My Brand</div></div>
+          <div class="mfield"><label>Audience</label><div class="hl">External</div></div>
+          <div class="mfield"><label>Authorised domain</label><div>yourdomain.com</div></div>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">3</span><span><b>Publish the app</b><small>Otherwise only "test users" can sign in</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>Audience</b> → <b>Publish app</b> → confirm.</li>
+          <li>Status should read <b>In production</b>. Asking for name and email only needs no Google review.</li>
+        </ol>
+        <p class="cap">Audience (illustration)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>Publishing status</label><div><span class="mpill">In production</span></div></div>
+          <span class="mbtn hl">Publish app</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">4</span><span><b>Create the web client</b><small>Add every address your site lives at</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>Clients → Create client</b> → type <b>Web application</b>.</li>
+          <li><b>Authorised JavaScript origins → + Add URI</b> for each address. https, no slash at the end.</li>
+          <li>Leave "Authorised redirect URIs" empty → <b>Create</b>.</li>
+        </ol>
+        <p class="cap">Authorised JavaScript origins (illustration)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>URI 1</label><div class="hl">https://www.yourdomain.com</div></div>
+          <div class="mfield"><label>URI 2</label><div class="hl">https://yourdomain.com</div></div>
+          <div class="mfield"><label>URI 3</label><div>https://your-site.up.railway.app</div></div>
+          <div class="mfield"><label>URI 4</label><div>http://localhost:8765</div></div>
+          <span class="mbtn ghost">+ Add URI</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">5</span><span><b>Send the Client ID to the AI</b><small>Never the Client secret</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p class="cap">Your new client (illustration)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>Client ID — copy this</label><div class="hl">123456-abcdef.apps.googleusercontent.com</div></div>
+          <div class="mfield"><label>Client secret — keep private, not needed</label><div>••••••••••••••</div></div>
+        </div></div>
+        <div class="pcard"><div class="phead"><h3>Paste to the AI</h3><button class="copy" type="button">Copy</button></div>
+<pre>I created a Google sign-in app for [brand]. Client ID: [paste it].
+Make the site use it, check that sign-ins are only accepted for this app,
+and tell me which production setting you need to change before you change it.</pre></div>
+      </div>
+    </details></li>
+  </ol>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>If something goes wrong</h2>
+  <ol class="track">
+    <li><details>
+      <summary><span class="n">!</span><span><b>"Error 400: origin_mismatch"</b><small>Google blocks the sign-in popup</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p class="cap">The error (illustration)</p>
+        <div class="mock"><div class="mock-bar"><i></i><i></i><i></i><span>accounts.google.com</span></div><div class="mock-body">
+          <div class="mock-h">Access blocked: Authorization Error</div>
+          <span class="mnote">You can't sign in to this app because it doesn't comply with Google's OAuth 2.0 policy.</span>
+          <span class="hl">Error 400: origin_mismatch</span>
+        </div></div>
+        <p>The site's address is missing from step B4. Add it exactly, save, wait 5 minutes, try again.</p>
+        <div class="pcard"><div class="phead"><h3>Paste to the AI</h3><button class="copy" type="button">Copy</button></div>
+<pre>Google sign-in shows "Error 400: origin_mismatch" on [page address].
+Tell me exactly which address to add under Authorised JavaScript origins.</pre></div>
+      </div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>"Access blocked" for everyone except you</b><small>The app is still in Testing</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner"><p>Do step B3: publish the app so it reads <b>In production</b>.</p></div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>yourdomain.com shows a parking page</b><small>Forwarding not set, or the record went on the wrong name</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner"><p>Forwarding can take a few hours to start. If it still shows parking after that, ask Claude to check the forwarding and that the CNAME's Name is <code>www</code>, not <code>@</code>.</p></div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>Still "not verified" after hours</b><small>Usually a typo in the TXT record</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p>Usually a typo in the TXT record. Ask Claude to check it from outside (prompt below).</p>
+        <div class="pcard"><div class="phead"><h3>Paste to the AI</h3><button class="copy" type="button">Copy</button></div>
+<pre>My domain still isn't verified. Check my DNS records from outside and tell me
+exactly which record is wrong and what it should be.</pre></div>
+      </div>
+    </details></li>
+  </ol>
+</section>
+
+<div class="next"><a href="setup.html">← Prepare &amp; allow</a><a href="example.html">Real example →</a></div>
+</div>
+<script src="copy.js"></script>
+<script>
+// One part open at a time (fallback for browsers without <details name>).
+document.querySelectorAll('details.part').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (!d.open) return;
+    document.querySelectorAll('details.part').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
+<script>
+document.querySelectorAll('.fillbox input').forEach(function (inp) {
+  function fill() {
+    var v = inp.value.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '');
+    document.querySelectorAll('.fill[data-k="' + inp.dataset.k + '"]').forEach(function (sp) {
+      if (!sp.dataset.ph) sp.dataset.ph = sp.textContent;
+      sp.textContent = v || sp.dataset.ph;
+      sp.classList.toggle('blank', !v);
+    });
+  }
+  inp.addEventListener('input', fill);
+});
+</script>
+</body></html>

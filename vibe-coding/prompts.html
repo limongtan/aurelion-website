@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prompt Kit · Vibe Coding Field Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="wrap">
+<div class="top"><a href="./">← Field guide</a><nav><a href="prompts.html" aria-current="page">Prompts</a><a href="systems.html">Website or system</a><a href="setup.html">Prepare &amp; allow</a><a href="golive.html">Go live</a><a href="example.html">Example</a></nav></div>
+
+<header class="hero">
+  <p class="eyebrow">Prompt kit</p>
+  <h1>Prompts for any website or system</h1>
+  <p class="lead">Start with the general prompt. Then add the extra lines for the kind of thing you are building. Replace everything in [brackets].</p>
+</header>
+
+<section>
+  <h2>1 · The starting prompt</h2>
+  <p class="muted">Works for everything. The last line matters most: it makes the AI ask questions and show a plan before it writes any code.</p>
+  <div class="pcard"><div class="phead"><h3>General starting prompt</h3><button class="copy" type="button">Copy</button></div>
+<pre>I want to build [a website / a system] for [business or project name].
+
+Who will use it: [customers / my staff / only me].
+What they must be able to do:
+1. [first thing]
+2. [second thing]
+3. [third thing]
+What it needs to remember: [nothing / bookings / customers / orders / ...].
+Payments: [none / on WhatsApp / online by card or bank].
+Login: [none / customers log in / only staff log in].
+Must work on: [phone / laptop / both]. Languages: [English / 中文 / BM].
+Budget: about [amount] per month. I need it by [date].
+
+Rules: ask me before anything that costs money, deletes data or messages my customers.
+Never put passwords or keys in the code or on GitHub.
+
+Before writing any code: ask me what is unclear, then show me a simple plan
+(the pages or screens, where the data is kept, which accounts I need, the monthly cost).
+Wait for my OK.</pre></div>
+</section>
+
+<section>
+  <h2>2 · Add the lines for your kind of system</h2>
+  <p class="muted">Not sure which one you are? <a href="systems.html">Website or system</a> explains the difference.</p>
+  <div class="stack">
+
+    <div class="pcard"><div class="phead"><h3>Information website</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip">No login</span><span class="chip">No data</span><span class="chip">WhatsApp to buy</span></div>
+      <p class="muted">For a coach, shop front, company profile or portfolio. Example: Life Garden.</p>
+<pre>Pages I need: [Home, About, Services &amp; prices, Contact].
+Every "Book" or "Buy" button opens WhatsApp to [number] with a ready message.
+My design and photos are in [folder]. Keep my text and prices exactly as written.
+It must look right in light and dark mode on phones.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Booking or appointment system</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip yes">Saves bookings</span><span class="chip yes">Staff login</span><span class="chip">Reminders</span></div>
+      <p class="muted">For clinics, salons, coaches, classes, rooms.</p>
+<pre>Services: [name, how long, price] for each.
+Opening hours: [days and times]. Two people must never book the same slot.
+Customers book with [name, phone, email]. Bookings are [confirmed at once / confirmed by staff].
+Send a reminder [1 day] before by [email / WhatsApp].
+Staff log in to see today's bookings and can cancel or move one.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Online shop or payment</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip yes">Saves orders</span><span class="chip yes">Takes money</span><span class="chip">Receipts</span></div>
+      <p class="muted">For selling products, tickets, reports or classes online.</p>
+<pre>Products: [name, price, photo] for each. Payment by [card / FPX / DuitNow / e-wallet].
+After paying, the customer gets [an email receipt / a code / a download].
+I get notified by [email / WhatsApp] for every order.
+Set it up in TEST mode first, show me a test payment, and only switch to real money when I say so.
+Tell me the payment company's fee per sale.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Staff tool or tracker</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip yes">Saves records</span><span class="chip yes">Staff login</span><span class="chip">Export</span></div>
+      <p class="muted">Customer lists, task trackers, stock, attendance. Only your team uses it.</p>
+<pre>Each record has: [field 1, field 2, field 3 ...].
+Who can do what: [owner sees everything; staff can add and edit but not delete].
+I need to search, filter by [field], and export to Excel.
+Keep a log of who changed what, and back up the data every day.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>AI tool (chatbot, AI report)</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip yes">Uses AI</span><span class="chip yes">Cost per use</span><span class="chip">Personal data</span></div>
+      <p class="muted">A chatbot that answers from your material, or a questionnaire that writes a personal report.</p>
+<pre>The user gives: [answers to [N] questions / a question / an uploaded file].
+The AI gives back: [a report with these sections ... / an answer in [tone]].
+It must only use [my material in folder ...] and say "I don't know" when the answer is not there.
+Language: [English / 中文 / BM]. Tell me the cost per use and set a monthly limit of [amount].
+Don't keep personal data longer than needed.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Automation</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip">Runs on a schedule</span><span class="chip yes">Sends messages</span><span class="chip">No screens</span></div>
+      <p class="muted">Daily reports, birthday reminders, follow-up emails, copying data between apps.</p>
+<pre>Every [day at 8am / Monday / time a form is sent], do: [what].
+Take the data from [Google Sheet / my system / an email inbox].
+Send the result to [who] by [email / WhatsApp / Telegram].
+Test it by sending only to me first. If it fails, email me what went wrong.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>AI Office (3D staff dashboard)</h3><button class="copy" type="button">Copy</button></div>
+      <div class="meta"><span class="chip yes">Saves status</span><span class="chip">Runs on a schedule</span><span class="chip">Claude Code</span></div>
+      <p class="muted">Turns your Claude Code scheduled tasks into 3D staff who show what they are doing. Use this one on its own, after you have at least one scheduled task.</p>
+<pre>Build me an "AI Office": a live 3D dashboard where each of my Claude Code scheduled tasks appears as a staff member.
+
+Publish it as a claude.ai artifact, using Three.js from cdnjs and the artifact db to store staff status.
+
+LOOK
+- Isometric low-poly night scene: navy background, green island, pale paths, trees and glowing street lamps
+- One open-front room per team: cream walls, gold trim, coloured rug, a name sign and report boards on the wall
+- One desk per staff member, with a monitor, plant and cup
+- Cute chibi characters with big round heads, each with their own colours and hair
+- Drag to rotate, scroll to zoom
+
+STAFF
+- First list my scheduled tasks. Each task = one staff member with a short human name. Group them into rooms by type of work.
+- Store each one at staff/&lt;taskId&gt; with: name, job, room, taskId, schedule, nextRun, lastRun, status, say, report, updatedAt, history[{at,text,ok}]
+- Status is idle, working, error, waiting or off
+- Use real run results from the task history. Never invent any.
+
+ANIMATION BY STATUS
+- working: typing, monitor glowing blue, speech bubble
+- idle: gets up now and then and walks around the room
+- waiting: raises a hand, amber bubble
+- error: head down, red pulsing ring on the floor
+- off: head down, monitor off
+- If nextRun has passed and status is still idle, flag it as overdue
+
+SCREEN
+- Top bar with counts: On duty, Working, Error, Needs you
+- Name tag above each character
+- Clicking one opens a dark staff card: job, task, shift, next shift, last shift, report, last update, recent shifts, and a button that copies a "run this task now" order
+
+CLOCK-IN
+- Show me the change first, then add a step to each task's prompt: write status "working" when it starts, and the result, report and next run when it finishes, using db_write
+- Only report success if the job really happened, not just because the run ended
+
+Show me the staff list before publishing. Don't change any task without asking.</pre></div>
+
+  </div>
+</section>
+
+<section id="after">
+  <h2>3 · Prompts while you build</h2>
+  <div class="stack">
+    <div class="pcard"><div class="phead"><h3>Check before calling it done</h3><button class="copy" type="button">Copy</button></div>
+<pre>Before you say it's finished: test every page and button, in every language,
+on phone and laptop size. Show me what you checked, what you found and what you fixed.</pre></div>
+    <div class="pcard"><div class="phead"><h3>Publish</h3><button class="copy" type="button">Copy</button></div>
+<pre>Save it to a private GitHub repo and publish it so it updates every time we save.
+Tell me the monthly cost first and wait for my OK.</pre></div>
+    <div class="pcard"><div class="phead"><h3>Report a problem</h3><button class="copy" type="button">Copy</button></div>
+<pre>On my [phone / laptop], [page or screen] shows [what I see], but I expected [what I wanted].
+Find the cause, fix it, and tell me in one sentence what it was.</pre></div>
+    <div class="pcard"><div class="phead"><h3>Explain it simply</h3><button class="copy" type="button">Copy</button></div>
+<pre>Explain what you just did in simple words, as if I have never coded.
+What changed for my customers, and is there anything I need to do?</pre></div>
+    <div class="pcard"><div class="phead"><h3>Connect a domain</h3><button class="copy" type="button">Copy</button></div>
+<pre>I bought [domain.com] at [provider]. Connect it to my site
+and tell me step by step what to change at [provider].</pre></div>
+  </div>
+</section>
+
+<div class="next"><a href="./">← Field guide</a><a href="systems.html">Website or system →</a></div>
+</div>
+<script src="copy.js"></script>
+</body></html>
