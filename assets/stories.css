@@ -67,6 +67,7 @@ footer .wrap{display:grid;gap:22px}
 .foot-top .brand{flex-direction:column;align-items:flex-start;gap:10px}
 .foot-top nav{display:flex;flex-wrap:wrap;gap:10px 24px}
 footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var(--fg)}
+.social{display:flex;gap:10px 24px;flex-wrap:wrap}.social a{color:var(--fg);font-weight:500}
 .foot-bot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.tile,a.card{transition:none}}
 @media (prefers-reduced-transparency:reduce){.nav{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}}
