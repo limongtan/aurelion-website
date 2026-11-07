@@ -74,30 +74,23 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 .sb-hero{padding:88px 0 56px}
 .sb-hero .lede{margin-top:16px}
 .shelf{background:var(--bg-alt);padding:64px 0 80px}
-.books{display:flex;gap:48px;flex-wrap:wrap;align-items:flex-end;justify-content:center}
-.shelf .studio{text-align:center}
-.book{width:min(260px,70vw);text-decoration:none}
+.books{display:grid;grid-template-columns:repeat(5,1fr);gap:56px 28px}
+.book{text-decoration:none}
 .cover{position:relative;aspect-ratio:2/3;border-radius:4px 14px 14px 4px;overflow:hidden;
   box-shadow:0 1px 2px rgba(0,0,0,.12),0 18px 40px -12px rgba(0,0,0,.35);transition:transform .25s ease-out}
 .cover img{width:100%;height:100%;object-fit:cover}
 .cover::before{content:"";position:absolute;inset:0 auto 0 0;width:14px;z-index:1;
   background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(255,255,255,.18) 45%,rgba(0,0,0,.08))}
-.cover b{position:absolute;left:22px;right:16px;bottom:18px;z-index:1;color:#fff;font-size:1.75rem;line-height:1.05;letter-spacing:-.02em;text-shadow:0 1px 12px rgba(0,0,0,.45)}
 .book:hover .cover{transform:translateY(-6px)}
 .ledge{height:10px;margin-top:-1px;border-radius:2px;background:linear-gradient(#e2e2e7,#c9c9cf)}
-.book h2{margin-top:22px;font-size:1.375rem;letter-spacing:-.02em}
-.book p{color:var(--muted)}
-.fables{display:grid;grid-template-columns:repeat(5,1fr);gap:40px 28px;padding:56px 0 24px}
-.fable{text-decoration:none}
-.fable img{aspect-ratio:2/3;width:100%;height:auto;object-fit:cover;border-radius:var(--r-md);background:var(--bg-alt);transition:transform .25s ease-out}
-.fable:hover img{transform:scale(1.02)}
-.fable h2{margin-top:16px;font-size:1.1875rem;letter-spacing:-.018em}
-.fable p{margin-top:4px;color:var(--muted);font-size:.9375rem;line-height:1.4}
+.book h2{margin-top:18px;font-size:1.125rem;line-height:1.25;letter-spacing:-.018em}
+.book p{margin-top:4px;color:var(--muted);font-size:.9375rem;line-height:1.4}
+.shelf .studio{text-align:center;padding:56px 0 0}
 .studio{padding:24px 0 96px;color:var(--muted)}
 .crumb{display:inline-block;margin-bottom:20px;font-size:.9375rem}
 .crumb::before{content:"\2039  "}.crumb::after{content:none}
 .read{max-width:640px;margin-inline:auto;padding:72px max(20px,4vw) 40px}
-.read h1{font-size:clamp(2.4rem,7vw,3.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:32px}
+.read h1{font-size:clamp(2.4rem,7vw,3.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:48px}
 .page{margin:0 0 56px}
 .page p{margin:0 0 .9em;font:400 1.3125rem/1.6 ui-serif,"New York",Georgia,serif;letter-spacing:0;text-wrap:pretty}
 .page img{width:100%;height:auto;margin-top:28px;border-radius:var(--r-md)}
@@ -107,6 +100,6 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 .next .btn{background:var(--gold);color:#1d1d1f}
 .note{margin:28px 0 0;font-size:.875rem;color:var(--muted);text-align:center}
 .after{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
-@media (max-width:900px){.fables{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:560px){.fables{grid-template-columns:repeat(2,1fr);gap:28px 16px}}
-@media (prefers-reduced-motion:reduce){.cover,.fable img{transition:none}.book:hover .cover,.fable:hover img{transform:none}}
+@media (max-width:900px){.books{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.books{grid-template-columns:repeat(2,1fr);gap:40px 16px}}
+@media (prefers-reduced-motion:reduce){.cover{transition:none}.book:hover .cover{transform:none}}
