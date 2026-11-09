@@ -329,21 +329,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 @media (max-width:760px){.lab{grid-template-columns:1fr}}
 .sticky-cta{display:none}
 @media (max-width:720px){.sticky-cta{display:flex;justify-content:center;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;box-shadow:0 6px 20px rgba(0,0,0,.18)}body{padding-bottom:76px}}
-/* AI course page: a typed request and what the AI does with it */
-.chat{max-width:640px;margin:clamp(36px,6vw,56px) auto 0;display:grid;gap:14px;text-align:left}
-.bubble{border-radius:20px;padding:18px 22px;font-size:1rem;line-height:1.5}
-.bubble small{display:block;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px;opacity:.7}
-.bubble.you{background:#1d1d1f;color:#f5f5f7;margin-left:clamp(0px,8vw,80px);border-bottom-right-radius:6px}
-.bubble.ai{background:var(--bg-alt);margin-right:clamp(0px,8vw,80px);border-bottom-left-radius:6px}
-.bubble.ai ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px}
 /* AI page flow: 1) see it happen in 3 s, 2) see yourself in it, 3) one open question per section + tiny next step */
-.notif{max-width:420px;margin:0 auto;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.notif i{width:40px;height:40px;border-radius:11px;background:linear-gradient(180deg,var(--gold),var(--gold-ink));display:grid;place-items:center;color:#fff;font-style:normal;font-weight:700}
-.notif b{display:block;font-size:.9375rem}.notif span{font-size:.8125rem;color:var(--muted)}
-.demo-on .bubble.ai,.demo-on .bubble.ai li,.demo-on .notif{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
-.demo-on .show{opacity:1!important;transform:none!important}
-.caret::after{content:"";display:inline-block;width:2px;height:1em;margin-left:2px;vertical-align:-2px;background:currentColor;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
 .stats.mini .stat{padding:26px 24px}
 @media (max-width:820px){.stats.mini .stat{grid-template-columns:auto 1fr;text-align:left;align-items:center;gap:16px;padding:18px 20px}.stats.mini .n{font-size:2.4rem}.stats.mini p{font-size:.9375rem}}
 .bridge{margin:40px auto 0;max-width:46ch;text-align:center;font-size:1.1875rem;font-weight:500}
@@ -363,6 +349,13 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 .faq details p{margin:12px 0 0;color:var(--muted)}
 .rv-on main>section:not(.lp-hero) .wrap{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
 .rv-on main>section.in .wrap{opacity:1;transform:none}
+.demo-vid{margin:clamp(32px,5vw,48px) auto 0;max-width:560px}
+.demo-vid video{width:100%;height:auto;display:block;border-radius:24px;background:#f5f5f7;box-shadow:0 18px 50px rgba(0,0,0,.10)}
+.demo-vid figcaption{margin-top:10px;text-align:center;font-size:.8125rem;color:var(--muted)}
+.dept{margin:clamp(28px,4vw,40px) auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.dept button{font:inherit;font-size:.9375rem;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--fg);cursor:pointer}
+.dept button[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:#fff}
+.dept+.demo-vid{margin-top:16px}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -377,12 +370,14 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <h1 class="display" style="font-size:clamp(2.3rem,6.4vw,4.6rem)">Can't hire more staff? Let AI do the work nobody wants to do.</h1>
 <p class="lede">In 2 days, your own staff learn to hand boring work to AI. No coding needed.</p>
 </div>
-<div class="chat" id="demo" aria-label="Example: a request in normal words and what the AI does">
-<div class="bubble you"><small>Your staff type</small><span id="demo-text">Every night at 9pm, take today's sales from our Google Sheet and send the boss a short summary.</span></div>
-<div class="bubble ai"><small>The AI</small>Asks what is unclear, shows a simple plan, then builds it:
-<ul><li>reads today's rows from the sheet</li><li>adds up sales by outlet and product</li><li>sends the summary at 9pm, every night</li></ul></div>
-<div class="notif" aria-label="Example notification"><i>9</i><div><b>Daily sales summary</b><span>9:00 PM · sent automatically, nobody typed it</span></div></div>
+<div class="dept" role="group" aria-label="Pick a department">
+<button type="button" aria-pressed="true" data-v="ai-demo" data-l="Screen video: a staff member types a request, AI builds a daily sales summary tool in four steps, and the summary is sent at 9pm automatically.">Sales report</button>
+<button type="button" aria-pressed="false" data-v="ai-demo-hr" data-l="Screen video: HR types a request, AI builds a leave tracker that checks balances, asks the manager and updates the calendar.">HR</button>
+<button type="button" aria-pressed="false" data-v="ai-demo-accounts" data-l="Screen video: accounts types a request, AI builds a tool that matches invoices with the bank statement and lists what is unpaid.">Accounts</button>
+<button type="button" aria-pressed="false" data-v="ai-demo-service" data-l="Screen video: staff type a request, AI builds a tool that answers customer questions from the price list and passes the rest to staff.">Customer service</button>
 </div>
+<figure class="demo-vid"><video id="demo-vid" src="assets/ai-demo.mp4" poster="assets/ai-demo-poster.jpg" width="720" height="720" autoplay muted loop playsinline preload="auto" aria-label="Screen video: a staff member types a request, AI builds a daily sales summary tool in four steps, and the summary is sent at 9pm automatically."></video>
+<figcaption>A real tool built with AI, sped up. Sample data.</figcaption></figure>
 <div class="stack" style="margin-top:32px"><div class="btns"><a class="btn btn-primary" href="https://formhug.ai/f/zx1z9C" data-form target="_blank" rel="noopener">Ask about the AI course</a><a class="btn btn-wa" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I%27d%20like%20to%20ask%20about%20the%20AI%20Vibe%20Coding%20course%20for%20my%20company.">WhatsApp us</a></div></div>
 </div></section>
 
@@ -459,20 +454,15 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 </div></div></footer>
 <a class="sticky-cta btn btn-primary" href="https://formhug.ai/f/zx1z9C" data-form target="_blank" rel="noopener">Ask about the AI course</a>
 <script>
-// Hero demo types itself once; sections fade up on scroll. Skipped for reduced motion, so content never stays hidden.
+// Sections fade up on scroll. Reduced motion: no fade, and the hero video waits for a tap.
 (function(){
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  var root=document.documentElement,demo=document.getElementById("demo"),t=document.getElementById("demo-text");
-  if(demo&&t){
-    root.classList.add("demo-on");
-    var full=t.textContent,i=0,steps=[].slice.call(demo.querySelectorAll(".bubble.ai,.bubble.ai li,.notif"));
-    t.textContent="";t.classList.add("caret");
-    (function type(){
-      if(i<=full.length){t.textContent=full.slice(0,i++);setTimeout(type,26);return;}
-      t.classList.remove("caret");
-      steps.forEach(function(el,n){setTimeout(function(){el.classList.add("show")},400+n*550)});
-    })();
-  }
+  var root=document.documentElement,v=document.getElementById("demo-vid");
+  document.querySelectorAll(".dept button").forEach(function(b){b.addEventListener("click",function(){
+    document.querySelectorAll(".dept button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    v.poster="assets/"+b.dataset.v+"-poster.jpg";v.src="assets/"+b.dataset.v+".mp4";v.setAttribute("aria-label",b.dataset.l);
+    if(v.hasAttribute("autoplay"))v.play().catch(function(){});
+  })});
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){if(v){v.removeAttribute("autoplay");v.pause();v.controls=true}return;}
   if(!("IntersectionObserver" in window))return;
   root.classList.add("rv-on");
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -10% 0px"});
