@@ -352,6 +352,10 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 .demo-vid{margin:clamp(32px,5vw,48px) auto 0;max-width:560px}
 .demo-vid video{width:100%;height:auto;display:block;border-radius:24px;background:#f5f5f7;box-shadow:0 18px 50px rgba(0,0,0,.10)}
 .demo-vid figcaption{margin-top:10px;text-align:center;font-size:.8125rem;color:var(--muted)}
+.dept{margin:clamp(28px,4vw,40px) auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.dept button{font:inherit;font-size:.9375rem;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--fg);cursor:pointer}
+.dept button[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:#fff}
+.dept+.demo-vid{margin-top:16px}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -365,6 +369,12 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 <p class="eyebrow">AI Series · Vibe Coding for Beginners · HRD Corp claimable</p>
 <h1 class="display" style="font-size:clamp(2.3rem,6.4vw,4.6rem)">Can't hire more staff? Let AI do the work nobody wants to do.</h1>
 <p class="lede">In 2 days, your own staff learn to hand boring work to AI. No coding needed.</p>
+</div>
+<div class="dept" role="group" aria-label="Pick a department">
+<button type="button" aria-pressed="true" data-v="ai-demo" data-l="Screen video: a staff member types a request, AI builds a daily sales summary tool in four steps, and the summary is sent at 9pm automatically.">Sales report</button>
+<button type="button" aria-pressed="false" data-v="ai-demo-hr" data-l="Screen video: HR types a request, AI builds a leave tracker that checks balances, asks the manager and updates the calendar.">HR</button>
+<button type="button" aria-pressed="false" data-v="ai-demo-accounts" data-l="Screen video: accounts types a request, AI builds a tool that matches invoices with the bank statement and lists what is unpaid.">Accounts</button>
+<button type="button" aria-pressed="false" data-v="ai-demo-service" data-l="Screen video: staff type a request, AI builds a tool that answers customer questions from the price list and passes the rest to staff.">Customer service</button>
 </div>
 <figure class="demo-vid"><video id="demo-vid" src="assets/ai-demo.mp4" poster="assets/ai-demo-poster.jpg" width="720" height="720" autoplay muted loop playsinline preload="auto" aria-label="Screen video: a staff member types a request, AI builds a daily sales summary tool in four steps, and the summary is sent at 9pm automatically."></video>
 <figcaption>A real tool built with AI, sped up. Sample data.</figcaption></figure>
@@ -447,6 +457,11 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 // Sections fade up on scroll. Reduced motion: no fade, and the hero video waits for a tap.
 (function(){
   var root=document.documentElement,v=document.getElementById("demo-vid");
+  document.querySelectorAll(".dept button").forEach(function(b){b.addEventListener("click",function(){
+    document.querySelectorAll(".dept button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    v.poster="assets/"+b.dataset.v+"-poster.jpg";v.src="assets/"+b.dataset.v+".mp4";v.setAttribute("aria-label",b.dataset.l);
+    if(v.hasAttribute("autoplay"))v.play().catch(function(){});
+  })});
   if(matchMedia("(prefers-reduced-motion: reduce)").matches){if(v){v.removeAttribute("autoplay");v.pause();v.controls=true}return;}
   if(!("IntersectionObserver" in window))return;
   root.classList.add("rv-on");
