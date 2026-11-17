@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>用 AI 做视频特效 · Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/effects.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/effects.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/effects.html">
+<link rel="stylesheet" href="../style.css?v=9">
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="指南"><a class="t-web" href="systems.html">做网站</a><a class="t-vid" href="videos.html">做 Reels</a><a class="t-fx" href="effects.html" aria-current="true">视频特效</a></nav>
+  <nav class="langs" aria-label="语言"><a href="../effects.html" lang="en" hreflang="en">EN</a><a href="../zh/effects.html" aria-current="true" lang="zh" hreflang="zh">中文</a><a href="../ms/effects.html" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+
+<section class="intro">
+  <video class="fxv" src="../video/spin.mp4" poster="../video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="10 张视频卡片组成的 3D 转盘在旋转，数字跳到 10，最后盖上“全部由 AI 制作”的印章"></video>
+  <h1>特效，交给 AI 来做</h1>
+  <p class="lead">会转的转盘、飞进来的卡片、砸下来的数字、震动的画面。AI 会把特效写成一个小网页，再把它变成视频。你只要用平常的话说出来，它就会自己做、自己检查、自己修好。</p>
+  <p class="lesson"><b>适合：</b>宣传片、清单、“我们做了 10 种”、价格、计数、前后对比。<b>不适合：</b>讲故事。故事需要真实的场景和感情，不是一个转盘。</p>
+  <p class="muted">这一页的每一个视频，都是 AI 用下面的提示词这样做出来的。</p>
+</section>
+
+<nav class="stepbar fx sticky" aria-label="一步一步做视频特效"><a href="#e1"><b>1</b>设置</a><a href="#e2"><b>2</b>旋转</a><a href="#e3"><b>3</b>动起来</a><a href="#e4"><b>4</b>宣传片</a><a href="#e5"><b>5</b>检查</a></nav>
+
+<section id="e1">
+  <div class="vhead"><span class="n">1</span><div><p class="eyebrow">只做一次</p><h2>让 AI 装好它的视频工具</h2></div></div>
+  <p>特效其实是一个带动画的网页，用一个叫 HyperFrames 的免费工具转成 MP4。AI 会自己安装，再做一个 3 秒的测试视频，证明它能用。</p>
+  <div class="pcard"><div class="phead"><h3>设置</h3><button class="copy" type="button">复制</button></div>
+<pre>请把你自己设置好，可以用代码做视频特效。每一步都由你自己完成：
+安装 Node.js、ffmpeg 和 HyperFrames（一个把 HTML 变成视频的工具，npx hyperframes），
+建一个文件夹 [Documents/video-effects]，再渲染一个 3 秒的测试视频，证明一切正常。
+每个特效都做成一个用 GSAP 做动画的 HTML 网页，渲染成 1080x1920 的 MP4，30 fps。
+只有在需要我批准的时候才停下来。</pre></div>
+</section>
+
+<section id="e2">
+  <div class="vhead"><span class="n">2</span><div><p class="eyebrow">特效</p><h2>旋转转盘</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="../video/spin.mp4" poster="../video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="旋转转盘示范视频"></video>
+    <ul class="fxnotes">
+      <li><b>0-1 秒：</b>卡片从中间爆开，排成一个 3D 转盘</li>
+      <li><b>1-4 秒：</b>慢、快、慢地转，同时数字从 01 跳到 10</li>
+      <li><b>4-5 秒：</b>转盘停下，10 砸下来，印章落下，画面一震</li>
+      <li>呼呼声、咔哒声和轰的一声，也是 AI 做的</li>
+    </ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>旋转转盘</h3><button class="copy" type="button">复制</button></div>
+<pre>帮我做一个 5 秒的竖屏视频，里面是一个旋转的 3D 卡片转盘。
+- 卡片：[10] 张，每张代表一种 [视频类型 / 产品 / 服务]：[列出名字]。
+  图片：用我在 [文件夹] 里的文件。如果我没有，就请图片 AI 为每张卡片做一张图，
+  图里不要有文字。
+- 0-1 秒：卡片从中间爆开，排成转盘，配一声呼呼声。
+- 1-4 秒：转盘先慢、再快、再慢地转。一个大数字从 [01 跳到 10]，
+  每跳一下咔哒一声，旁边是我的标题“[我们做了 10 种 AI 视频]”。
+- 4-5 秒：停在第 1 张卡片，轻轻弹一下，数字砸下来，一个印章
+  “[全部由 AI 制作]”轰的一声落下，画面轻轻震一下。
+- 我的颜色：[米色 #F7EFE2、咖啡色 #3A2A1E、金色 #B8761A]。字体：[Poppins]。
+- 呼呼声、咔哒声和轰的一声，都由你自己做。
+给我看之前，每 0.5 秒看一帧，有东西挡住标题或跑出画面，
+就先修好。</pre></div>
+  <div class="ex">
+    <p class="cap">一句话就能改</p>
+    <p class="said">转慢一点，卡片大一点。</p>
+    <div class="reply">好了：现在是慢慢转一圈，不是快快转两圈，卡片大了 30%。字幕因此压在卡片上，所以我在前 2 秒把字幕藏起来；标题已经说了一样的话。</div>
+  </div>
+</section>
+
+<section id="e3">
+  <div class="vhead"><span class="n">3</span><div><p class="eyebrow">任何 Reels</p><h2>让它真正动起来</h2></div></div>
+  <p>只会淡入的文字，看起来像幻灯片。真正的动感是东西会飞、会掉、会砸、会震，而且跟着声音的节奏。左边：之前。右边：之后。</p>
+  <video class="fxv wide" src="../video/motion.mp4" poster="../video/motion.jpg" autoplay muted loop playsinline width="720" height="640" aria-label="同一个 Reels 左右对比：之前只有淡入，之后真正动起来"></video>
+  <div class="pcard"><div class="phead"><h3>真正的动感</h3><button class="copy" type="button">复制</button></div>
+<pre>让这个 Reels 的每一个场景都真正动起来，不只是文字出现：
+- 每样东西进场都要有动作：卡片掉下来再弹一下，文字跳出来，
+  答案砸进来，镜头轻轻一震，错的东西会抖，
+  清单一条条叠起来，手机信息一个个弹出来。
+- 动作要落在说出那个字的时候（用配音的逐字时间）。
+- 每个场景先滑走，下一个再飞进来。
+- 除了字幕，画面不能有超过 1.5 秒是静止的。
+然后量一下：数一数字幕区外有多少个大动作，
+再把之前和之后左右并排给我看。</pre></div>
+  <p class="muted">光靠动感，Reels 不会变得不一样。图片、有表情的主持人和声音更重要。要给特效一些东西去动。</p>
+</section>
+
+<section id="e4">
+  <div class="vhead"><span class="n">4</span><div><p class="eyebrow">组合起来</p><h2>用在宣传片里</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="../video/offer-wheel.mp4" poster="../video/offer-wheel.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="25 张风格图片组成的转盘在价格卡后面旋转，价格卡砸了进来"></video>
+    <ul class="fxnotes">
+      <li>转盘在优惠后面转，画面一直不会停</li>
+      <li>说到“每个月”时价格卡掉下来，说到“RM499”时价格砸下来</li>
+      <li>用你自己作品的真实图片，不用图库图</li>
+    </ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>宣传 Reels</h3><button class="copy" type="button">复制</button></div>
+<pre>帮 [生意名字] 做一个 20 秒的宣传 Reels，用上旋转转盘。
+资料：只用 [我的网页 / 这份清单] 上有的：[优惠、价格、数字]。
+不要编数字，除非是真的，不然不要说“全部”或“每一个”。
+1. 开头：第一帧就全屏放 [我最好的完成作品]，
+   配一句话：“[...]”。
+2. 转盘：[10] 个我真实的 [Reels / 产品] 转起来，然后停下。
+3. 证明：[数字] 一个接一个砸进来。
+4. 优惠：[价格 / 客人得到什么]，后面是 [风格 / 选项] 的转盘。
+5. 结尾：“[行动呼吁]” + [链接 / 账号]，停 2 秒。
+声音：[配音] 读我的稿子，逐字字幕，轻快的节拍，
+每个动作都配呼呼声 / 滴答声 / 撞击声。
+最后渲染之前，先给我看每个场景的画面。</pre></div>
+</section>
+
+<section id="e5">
+  <div class="vhead"><span class="n">5</span><div><p class="eyebrow">发布之前</p><h2>请 AI 老实检查</h2></div></div>
+  <p>特效再好看，也可能在第一秒就流失观众。请 AI 根据你自己以前的 Reels 做预测，再请另一个 AI 给第二意见。</p>
+  <div class="pcard"><div class="phead"><h3>发布前检查</h3><button class="copy" type="button">复制</button></div>
+<pre>发布之前，请老实检查这个 Reels：
+1. 一帧一帧看。修好被移动的东西挡住的文字、
+   跑出画面的东西，还有静止太久的地方。
+2. 为我的账号做预测：3 秒跳出率、平均观看时间和 24 小时分享数，
+   根据我自己以前的 Reels。然后请 ChatGPT 也做预测，
+   不要给它看你的答案。
+3. 如果预测达不到跳出率低于 30%，或观看时间至少一半长度，
+   就不要说可以发了：告诉我最可能解决问题的那一个改动。</pre></div>
+  <div class="ex">
+    <p class="cap">例子：我们自己的宣传片</p>
+    <p class="said">过关了吗？</p>
+    <div class="reply">还没有。我的预测：跳出率 55-70%，20 秒里看 4.5-7.5 秒。ChatGPT：跳出率 60-75%，达标机会 2%。我们之前三个“AI 制作”的 Reels，3 秒内流失了 63-77% 的观众。改法：开头全屏放我们最好的 Reels，转盘放在后面当证明。</div>
+  </div>
+  <p class="muted">吃过亏才知道：第一帧就放一堆小小的旋转卡片，观众还没得到什么就要先费力看。转盘最好当证明用，放在一个有力的开头画面之后。</p>
+</section>
+
+<div class="next"><a href="videos.html">← 做 Reels 指南</a><a href="./">所有指南 →</a></div>
+</div>
+<script src="../copy.js?v=2"></script>
+<script>
+var steps = [].slice.call(document.querySelectorAll('.stepbar.sticky a'));
+function mark() {
+  var cur = steps[0];
+  steps.forEach(function (a) { if (document.querySelector(a.hash).getBoundingClientRect().top < 160) cur = a; });
+  steps.forEach(function (a) { a.classList.toggle('hot', a === cur); if (a === cur) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
+}
+addEventListener('scroll', mark, { passive: true }); mark();
+</script>
+</body></html>
