@@ -192,3 +192,14 @@ a.node:hover{border-color:var(--accent)}
 .ex .said{margin-right:28px}
 .reply{margin-left:28px;background:var(--card);border:1px solid var(--line);border-radius:12px 4px 12px 12px;padding:10px 14px;font-size:.95rem;line-height:1.6}
 .reply::before{content:"AI replies";display:block;font:600 .68rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+/* Video tab: step bar sticks to the top while reading */
+.flow.stepnav{position:sticky;top:0;z-index:5;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line)}
+.stepnav .node{padding:8px 10px}
+section[id^="v"]{scroll-margin-top:110px}
+@media (max-width:620px){
+  .flow.stepnav{flex-direction:row;flex-wrap:nowrap;gap:4px;padding:8px 0}
+  .stepnav .arrow,.stepnav .node span{display:none}
+  .stepnav .node{flex:1 1 0;padding:9px 2px;text-align:center}
+  .stepnav .node b{font-size:.8rem}
+  section[id^="v"]{scroll-margin-top:70px}
+}

@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prompt Kit · Vibe Coding Field Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head><body>
 <div class="wrap">
 <div class="top"><a href="./">← Field guide</a><nav><a href="prompts.html" aria-current="page">Prompts</a><a href="systems.html">Website or system</a><a href="setup.html">Prepare &amp; allow</a><a href="golive.html">Go live</a><a href="example.html">Example</a></nav></div>
@@ -170,16 +170,17 @@ and tell me step by step what to change at [provider].</pre></div>
   <img class="art" src="img/video/hero.webp" alt="A bakery owner relaxes with tea while her laptop puts a reel together by itself" width="1200" height="800">
   <h2>Let the AI make your reels</h2>
   <p class="lead">You don't need to know editing. Tell the AI about your account once. After that it finds the idea, makes the reel, checks it, posts it when you say OK, and learns from the results.</p>
-  <div class="flow" aria-label="The 5 steps">
-    <a class="node hot" href="#v1"><b>1 · Tell</b><span>About your account, once</span></a><span class="arrow">→</span>
-    <a class="node" href="#v2"><b>2 · Ideas</b><span>AI studies what works</span></a><span class="arrow">→</span>
-    <a class="node" href="#v3"><b>3 · Make</b><span>AI edits the reel</span></a><span class="arrow">→</span>
-    <a class="node" href="#v4"><b>4 · Post</b><span>AI checks, you say OK</span></a><span class="arrow">→</span>
-    <a class="node" href="#v5"><b>5 · Learn</b><span>Every morning, by itself</span></a>
-  </div>
   <p class="lesson"><b>What you need:</b> an AI that can work on your computer, like Claude Code in the Claude desktop app. One prompt per step. The only things you do yourself: sign in to your accounts when it asks, and say OK before it posts.</p>
   <p class="muted">The examples follow one small business, a home bakery, from the first message to the morning report.</p>
 </section>
+
+<nav class="flow stepnav" aria-label="The 5 steps">
+  <a class="node" href="#v1"><b>1 · Tell</b><span>About your account, once</span></a><span class="arrow">→</span>
+  <a class="node" href="#v2"><b>2 · Ideas</b><span>AI studies what works</span></a><span class="arrow">→</span>
+  <a class="node" href="#v3"><b>3 · Make</b><span>AI edits the reel</span></a><span class="arrow">→</span>
+  <a class="node" href="#v4"><b>4 · Post</b><span>AI checks, you say OK</span></a><span class="arrow">→</span>
+  <a class="node" href="#v5"><b>5 · Learn</b><span>Every morning, by itself</span></a>
+</nav>
 
 <section id="v1">
   <div class="vhead"><span class="n">1</span><div><p class="eyebrow">Once only</p><h2>Tell the AI about your account</h2></div></div>
@@ -310,5 +311,13 @@ if (panel) {
   show(panel.id);
   addEventListener('load', function () { (target === panel ? document.querySelector('.tabbar') : target).scrollIntoView(); });
 }
+// Video tab: the step bar stays on screen; light up the step being read.
+var steps = [].slice.call(document.querySelectorAll('.stepnav a'));
+function mark() {
+  var cur = steps[0];
+  steps.forEach(function (a) { if (document.querySelector(a.hash).getBoundingClientRect().top < 160) cur = a; });
+  steps.forEach(function (a) { a.classList.toggle('hot', a === cur); if (a === cur) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
+}
+addEventListener('scroll', mark, { passive: true }); mark();
 </script>
 </body></html>
