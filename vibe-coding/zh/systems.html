@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>网站还是系统 · Vibe Coding 实用指南</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/systems.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/systems.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/systems.html">
+<link rel="stylesheet" href="../style.css?v=8">
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="指南"><a class="t-web" href="systems.html" aria-current="true">做网站</a><a class="t-vid" href="videos.html">做 Reels</a></nav>
+  <nav class="langs" aria-label="语言"><a href="../systems.html" lang="en" hreflang="en">EN</a><a href="../zh/systems.html" aria-current="true" lang="zh" hreflang="zh">中文</a><a href="../ms/systems.html" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="做网站，一步一步来"><a href="systems.html" aria-current="step"><b>1</b>选择</a><a href="prompts.html"><b>2</b>描述</a><a href="setup.html"><b>3</b>准备</a><a href="example.html"><b>4</b>动手做</a><a href="golive.html"><b>5</b>上线</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">第 1 步（共 5 步）</p>
+  <h1>网站还是系统？</h1>
+  <p class="lead"><b>网站</b>是用来展示的。<b>系统</b>会记住东西，还会帮你做事。简单判断：如果它要保存别人填进去的东西（预约、订单、答案），那就是系统。</p>
+</header>
+
+<section>
+  <h2>网站</h2>
+  <p>几个页面、一些照片，加一点小程序。什么都不保存。便宜、快，而且不容易坏。</p>
+  <div class="flow" role="list" aria-label="网站是怎样发布的">
+    <div class="node" role="listitem"><b>你的电脑</b><span>项目文件夹。AI 在这里干活。</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>GitHub</b><span>私人的网上备份，保留所有修改记录。</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node hot" role="listitem"><b>主机</b><span>Railway、Cloudflare……每次保存都会重新发布。</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>访客</b><span>打开你的网址。</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>系统</h2>
+  <p>开头一样，再多三个部分：一个干活的<b>服务器</b>，一个负责记住的<b>数据库</b>，还有处理付款、AI 或消息的<b>外部服务</b>。每多一个部分，就多一个账号、多一把密钥、多一笔月费。</p>
+  <div class="flow" role="list" aria-label="系统是怎样搭起来的">
+    <div class="node" role="listitem"><b>页面</b><span>别人看到和填写的地方。</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node hot" role="listitem"><b>服务器</b><span>检查登录、做事、照你的规则来。</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>数据库</b><span>记住用户、预约、订单。</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>外部服务</b><span>付款、AI、电邮、WhatsApp。</span></div>
+  </div>
+  <p class="muted">真实例子：Aurelion Insights 就是一个系统。客人填问卷，AI 写报告，他们登录来看报告，再在网上付款。页面、服务器、数据库、AI 服务和付款服务一起配合。</p>
+</section>
+
+<section>
+  <h2>六种常见类型</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>类型</th><th>例子</th><th>需要什么</th><th>难度</th></tr></thead>
+    <tbody>
+      <tr><td>资讯网站</td><td>教练、公司简介、作品集、活动页面</td><td>只要主机</td><td>简单 · 一个下午</td></tr>
+      <tr><td>预约系统</td><td>诊所、美发店、课程、房间</td><td>服务器、数据库、员工登录、提醒</td><td>中等</td></tr>
+      <tr><td>网店 / 付款</td><td>产品、门票、付费报告</td><td>服务器、数据库、付款账号</td><td>中等 · 要仔细测试</td></tr>
+      <tr><td>员工工具 / 记录表</td><td>客户名单、任务、库存、出勤</td><td>服务器、数据库、登录、备份</td><td>中等</td></tr>
+      <tr><td>AI 工具</td><td>用你的资料回答的聊天机器人、问卷 → AI 报告</td><td>服务器、AI 账号（用多少付多少）</td><td>中等到进阶</td></tr>
+      <tr><td>自动化</td><td>每日报告、生日电邮、跟进客人</td><td>定时任务、电邮/WhatsApp 账号</td><td>简单到中等</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>先做小，再慢慢做大</h2>
+  <ul class="checks">
+    <li><span><b>第一版可以只是网站。</b><small>Life Garden 先在 WhatsApp 上卖：没有数据库，没有付款系统，一个下午就上线。</small></span></li>
+    <li><span><b>等真的有人在用，再加系统的部分。</b><small>有订单进来了，才加网上付款。有回头客了，才加登录。</small></span></li>
+    <li><span><b>先叫 AI 给你计划。</b><small><a href="prompts.html">开头的提示词</a>会让它在动手之前，先列出要哪些部分、哪些账号，每个月要花多少钱。</small></span></li>
+  </ul>
+</section>
+
+<div class="next"><a href="./">← 所有指南</a><a href="prompts.html">2. 描述 →</a></div>
+</div>
+</body></html>

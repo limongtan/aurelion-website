@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Life Garden 例子 · Vibe Coding 实用指南</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/example.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/example.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/example.html">
+<link rel="stylesheet" href="../style.css?v=8">
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="指南"><a class="t-web" href="systems.html" aria-current="true">做网站</a><a class="t-vid" href="videos.html">做 Reels</a></nav>
+  <nav class="langs" aria-label="语言"><a href="../example.html" lang="en" hreflang="en">EN</a><a href="../zh/example.html" aria-current="true" lang="zh" hreflang="zh">中文</a><a href="../ms/example.html" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="做网站，一步一步来"><a href="systems.html"><b>1</b>选择</a><a href="prompts.html"><b>2</b>描述</a><a href="setup.html"><b>3</b>准备</a><a href="example.html" aria-current="step"><b>4</b>动手做</a><a href="golive.html"><b>5</b>上线</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">第 4 步（共 5 步）</p>
+  <h1>Life Garden：从一个设计文件，到一门上线的生意</h1>
+  <p class="lead">一家教练生意的老板，手提电脑里已经有做好的设计。下面是老板真实发的消息（照原本随意的语气翻译），还有 AI 每次收到后做了什么。成果：<a href="https://lifegarden-production.up.railway.app" target="_blank" rel="noopener">lifegarden-production.up.railway.app</a></p>
+</header>
+
+<section>
+  <ol class="steps">
+    <li class="step"><span class="num">01</span><div class="body">
+      <h3>说出你想要什么</h3>
+      <p class="said">我现在想做个新网站，跟 aurelion 没关系的。是另一个新产品。但是要用跟 aurelion insight 一模一样的。</p>
+      <ul class="did"><li>“一模一样”可以是同样的外观、整个系统都一样，或者同样的排版换新颜色。工作量差很远，所以 AI 先问清楚是哪一种。</li></ul>
+      <p class="lesson"><b>心得：</b>讲清楚哪些要照抄，哪些要改。</p>
+    </div></li>
+    <li class="step"><span class="num">02</span><div class="body">
+      <h3>把设计交给它</h3>
+      <p class="said">我已经设计好了，用这个。C:\Users\you\Downloads\lifegarden-final.html</p>
+      <ul class="did"><li>打开文件，列出每个部分，还找到了设计师标记好、以后要接上产品的那个按钮。</li></ul>
+      <p class="lesson"><b>心得：</b>贴上文件路径，就是让 AI 看到你电脑里东西的方法。</p>
+    </div></li>
+    <li class="step"><span class="num">03</span><div class="body">
+      <h3>问新手的问题</h3>
+      <p class="said">前端改一点点就好 … 域名我还没弄。迟点才买域名。我要先开 workspace 还是 github 吗</p>
+      <ul class="did"><li>暂时不需要域名。用一个独立的文件夹和一个私人的 GitHub repo。先在 WhatsApp 上卖。</li></ul>
+      <p class="lesson"><b>心得：</b>问“我需要先弄 X 吗？”，AI 就能帮你排好先后顺序。</p>
+    </div></li>
+    <li class="step"><span class="num">04</span><div class="body">
+      <h3>建立 GitHub repo</h3>
+      <p class="said">请帮我在 github 开一个 repo</p>
+      <ul class="did"><li>安装程序需要 Windows 管理员权限，弹出的窗口被取消了，所以 AI 改用一个不需要管理员权限的版本。</li></ul>
+    </div></li>
+    <li class="step"><span class="num">05</span><div class="body">
+      <h3>登录 GitHub</h3>
+      <p class="said">ABCD-1234 不行。code 是什么</p>
+      <ul class="did"><li>“ABCD-1234”只是例子。AI 自己开始登录流程，然后把真正的一次性代码给老板。</li></ul>
+      <p class="lesson"><b>心得：</b>看不懂？马上说，附上截图。</p>
+    </div></li>
+    <li class="step"><span class="num">06</span><div class="body">
+      <h3>第一次存到网上</h3>
+      <p class="said">ok 好了</p>
+      <ul class="did"><li>建立了私人 repo，把设计上传成第 1 版。</li></ul>
+    </div></li>
+    <li class="step"><span class="num">07</span><div class="body">
+      <h3>给它完整的网站和目标</h3>
+      <p class="said">…\LifeGarden\Reference — 你可以参考这个文件夹来做网站吗？然后 push 到 railway</p>
+      <ul class="did"><li>找到 6 个页面，但照片和样式的文件夹不见了。它把缺了什么一样一样列出来，而不是发布一个坏掉的网站。</li></ul>
+      <p class="lesson"><b>心得：</b>把整个文件夹给它。</p>
+    </div></li>
+    <li class="step"><span class="num">08</span><div class="body">
+      <h3>做、测试、发布</h3>
+      <p class="said">请再检查一次</p>
+      <ul class="did">
+        <li>检查了全部 37 张照片、字体和程序，用手提电脑和手机，把每个页面的英文版和中文版都看过一遍。</li>
+        <li>修好一个 bug：切换浏览器分页时，动画会越叠越多（切换 5 次后有 6 个在跑；现在永远只有 1 个）。</li>
+        <li>存到 GitHub，连接 Railway。大约一分钟就上线。</li>
+      </ul>
+    </div></li>
+    <li class="step"><span class="num">09</span><div class="body">
+      <h3>用客人的眼光看一看</h3>
+      <p class="said">我以为是奶白色的，lifegarden-final.html。为什么是绿色的？</p>
+      <ul class="did"><li>原因：在开了深色模式的手机上，页面会换成深色版本。把奶白色设成默认。大约 40 秒后重新上线。</li></ul>
+      <p class="lesson"><b>心得：</b>用你自己的手机打开上线的网站。“看起来跟我想的不一样”就是一份很好的问题报告。</p>
+    </div></li>
+    <li class="step"><span class="num">10</span><div class="body">
+      <h3>加上产品和付款</h3>
+      <p class="said">现在帮我把 aurelion insight 和付款接到 life garden</p>
+      <ul class="did">
+        <li>先问了几个问题：用谁的银行户口、报告放在哪里、用哪种登录。然后写了一份计划，再让第二个 AI 检查。</li>
+        <li>分成 11 个小步骤来做，每一步都有检查。最后一次检查在上线前抓到一个严重的 bug：付了钱的报告打不开。</li>
+      </ul>
+      <p class="lesson"><b>心得：</b>凡是跟钱有关的，先让 AI 问问题、给你看计划，才开始做。</p>
+    </div></li>
+    <li class="step"><span class="num">11</span><div class="body">
+      <h3>买域名</h3>
+      <p class="said">我已经买了 life-gardens.com。请帮我进行下一步</p>
+      <ul class="did"><li>把 www.life-gardens.com 加到主机，然后列出要在 GoDaddy 改的 3 样东西：一个 CNAME、一个 TXT、一个转址。</li></ul>
+    </div></li>
+    <li class="step"><span class="num">12</span><div class="body">
+      <h3>太难？把点击的工作交给 Claude in Chrome</h3>
+      <p class="said">对我来说太难了，你可以给我一个提示词，我放去 claude chrome 吗</p>
+      <ul class="did"><li>写了一个提示词，里面有准确的数值和安全规则（别的什么都不改、什么都不买、遇到登录代码就停）。老板把它贴进 Claude in Chrome，由它在 GoDaddy 里帮忙点击。</li></ul>
+      <p class="lesson"><b>心得：</b>写代码的 AI 不能登录你的账号，但它可以帮能登录的浏览器 AI 写好指示。模板请看<a href="golive.html#chrome">上线</a>。</p>
+    </div></li>
+  </ol>
+</section>
+
+<section>
+  <h2>一路上遇到的小状况</h2>
+  <div class="oops">
+    <div><span class="tag">缺文件</span><b>页面没有照片</b><span>有两个文件夹还在 Google Drive 里。要全部下载下来。</span></div>
+    <div><span class="tag">弹出窗口</span><b>安装被取消了</b><span>AI 在做事时如果跳出 Windows 窗口，就是在等你。</span></div>
+    <div><span class="tag">例子文字</span><b>“ABCD-1234”不是代码</b><span>“例子”的意思是“把这个换掉”。问它：“我到底要打什么？”</span></div>
+    <div><span class="tag">深色模式</span><b>网站变绿色了</b><span>决定你要哪一种外观，然后讲出来。</span></div>
+    <div><span class="tag">Google</span><b>“Error 400: origin_mismatch”</b><span>网站的网址还没加进 Google 登录 app 里。请看<a href="golive.html#google">上线</a>。</span></div>
+  </div>
+</section>
+
+<div class="next"><a href="setup.html">← 3. 准备</a><a href="golive.html">5. 上线 →</a></div>
+</div>
+</body></html>

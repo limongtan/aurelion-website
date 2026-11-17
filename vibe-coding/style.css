@@ -187,7 +187,7 @@ a.node:hover{border-color:var(--accent)}
 .eyebrow{font:700 .95rem/1.2 var(--body);letter-spacing:0;text-transform:none}
 .wrap.wide{max-width:1040px}
 
-.gnav{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"brand tracks out";align-items:center;gap:10px 18px;padding:4px 0 12px}
+.gnav{display:grid;grid-template-columns:auto 1fr auto auto;grid-template-areas:"brand tracks langs out";align-items:center;gap:10px 18px;padding:4px 0 12px}
 .brand{grid-area:brand;font:800 1.25rem/1 var(--display);color:var(--ink);text-decoration:none}
 .tracks{grid-area:tracks;display:flex;gap:8px;justify-content:center}
 .tracks a{padding:10px 18px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font:700 .95rem/1 var(--body);white-space:nowrap}
@@ -196,7 +196,7 @@ a.node:hover{border-color:var(--accent)}
 .tracks .t-web[aria-current]{background:var(--sun);color:#2B2306}
 .tracks .t-vid[aria-current]{background:var(--mint);color:#07130E}
 .out{grid-area:out;font-weight:700;font-size:.92rem;text-decoration:none}
-@media (max-width:620px){.gnav{grid-template-columns:1fr auto;grid-template-areas:"brand out" "tracks tracks"}.tracks a{flex:1;text-align:center;padding:11px 8px}}
+@media (max-width:620px){.gnav{grid-template-columns:1fr auto auto;grid-template-areas:"brand langs out" "tracks tracks tracks"}.tracks a{flex:1;text-align:center;padding:11px 8px}}
 
 .stepbar{display:flex;gap:6px;padding:8px 0;margin-bottom:8px}
 .stepbar a{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:700;font-size:.92rem}
@@ -236,3 +236,11 @@ section[id^="v"]{scroll-margin-top:80px}
 .quick ul{margin:8px 0 0;padding-left:20px;display:grid;gap:4px}
 @media (max-width:760px){.home-hero,.guides{grid-template-columns:1fr}.quick{grid-template-columns:110px 1fr}}
 .home-hero{border-top:0}
+/* Language switch: EN / 中文 / BM */
+.langs{grid-area:langs;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.langs a{padding:6px 10px;font:700 .82rem/1 var(--body);color:var(--muted);text-decoration:none}
+.langs a:hover{color:var(--ink)}
+.langs a[aria-current]{background:var(--ink);color:var(--paper)}
+@media (max-width:620px){.langs a{padding:6px 8px}.out{font-size:.85rem}}
+:lang(zh) .said::before{content:"你输入"} :lang(zh) .reply::before{content:"AI 回复"}
+:lang(ms) .said::before{content:"Anda taip"} :lang(ms) .reply::before{content:"AI balas"}

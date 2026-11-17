@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>提示词合集 · Vibe Coding 实用指南</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/prompts.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/prompts.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/prompts.html">
+<link rel="stylesheet" href="../style.css?v=8">
+<script>if (/^#(video|v[1-5])$/.test(location.hash)) location.replace('videos.html' + (location.hash === '#video' ? '' : location.hash));</script>
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="指南"><a class="t-web" href="systems.html" aria-current="true">做网站</a><a class="t-vid" href="videos.html">做 Reels</a></nav>
+  <nav class="langs" aria-label="语言"><a href="../prompts.html" lang="en" hreflang="en">EN</a><a href="../zh/prompts.html" aria-current="true" lang="zh" hreflang="zh">中文</a><a href="../ms/prompts.html" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="做网站，一步一步来"><a href="systems.html"><b>1</b>选择</a><a href="prompts.html" aria-current="step"><b>2</b>描述</a><a href="setup.html"><b>3</b>准备</a><a href="example.html"><b>4</b>动手做</a><a href="golive.html"><b>5</b>上线</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">第 2 步（共 5 步）</p>
+  <h1>说说你想做什么</h1>
+  <p class="lead">先用通用的提示词。再按你要做的类型，加上额外的几行。把所有 [括号] 里的内容换成你自己的。</p>
+</header>
+
+<section>
+  <h2>1 · 开头的提示词</h2>
+  <p class="muted">什么都适用。最后一行最重要：它让 AI 先问问题、先给你看计划，才开始写代码。</p>
+  <div class="pcard"><div class="phead"><h3>通用开头提示词</h3><button class="copy" type="button">复制</button></div>
+<pre>我想为 [生意或项目名字] 做 [一个网站 / 一个系统]。
+
+谁会用：[客人 / 我的员工 / 只有我]。
+他们一定要能做到：
+1. [第一件事]
+2. [第二件事]
+3. [第三件事]
+它需要记住什么：[不用 / 预约 / 客户 / 订单 / ...]。
+付款：[不用 / 在 WhatsApp 上 / 网上刷卡或银行转账]。
+登录：[不用 / 客人要登录 / 只有员工登录]。
+要能在这里用：[手机 / 手提电脑 / 两个都要]。语言：[English / 中文 / BM]。
+预算：每个月大约 [金额]。我需要在 [日期] 之前完成。
+
+规则：任何要花钱、删除资料或发消息给我客人的事，先问我。
+绝对不要把密码或密钥放进代码里或 GitHub 上。
+
+写任何代码之前：先问我哪里不清楚，然后给我看一个简单的计划
+（有哪些页面或画面、资料存在哪里、我需要哪些账号、每个月多少钱）。
+等我说 OK 才开始。</pre></div>
+</section>
+
+<section>
+  <h2>2 · 加上适合你类型的几行</h2>
+  <p class="muted">不确定自己是哪一种？<a href="systems.html">网站还是系统</a>有讲清楚两者的分别。</p>
+  <div class="stack">
+
+    <div class="pcard"><div class="phead"><h3>资讯网站</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip">不用登录</span><span class="chip">不存资料</span><span class="chip">WhatsApp 下单</span></div>
+      <p class="muted">适合教练、店面、公司简介或作品集。例子：Life Garden。</p>
+<pre>我需要的页面：[首页、关于我们、服务 &amp; 价格、联络我们]。
+每个“预约”或“购买”按钮都会打开 WhatsApp 到 [号码]，并带一段写好的消息。
+我的设计和照片在 [文件夹]。我的文字和价格要一字不改。
+在手机上，浅色和深色模式都要好看。</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>预约系统</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip yes">保存预约</span><span class="chip yes">员工登录</span><span class="chip">提醒</span></div>
+      <p class="muted">适合诊所、美发店、教练、课程、房间。</p>
+<pre>服务：每项写 [名字、多长时间、价格]。
+营业时间：[哪几天、几点到几点]。同一个时段绝对不能有两个人订到。
+客人预约时填 [名字、电话、电邮]。预约 [马上确认 / 由员工确认]。
+提前 [1 天] 用 [电邮 / WhatsApp] 发提醒。
+员工登录后可以看到今天的预约，也可以取消或改时间。</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>网店或付款</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip yes">保存订单</span><span class="chip yes">收钱</span><span class="chip">收据</span></div>
+      <p class="muted">适合在网上卖产品、门票、报告或课程。</p>
+<pre>产品：每样写 [名字、价格、照片]。付款方式 [刷卡 / FPX / DuitNow / 电子钱包]。
+付款后，客人会收到 [电邮收据 / 一个代码 / 一个下载]。
+每张订单都用 [电邮 / WhatsApp] 通知我。
+先用测试模式（TEST mode）设置好，给我看一次测试付款，等我说可以才换成真钱。
+告诉我付款公司每笔交易收多少手续费。</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>员工工具或记录表</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip yes">保存记录</span><span class="chip yes">员工登录</span><span class="chip">导出</span></div>
+      <p class="muted">客户名单、任务记录、库存、出勤。只有你的团队用。</p>
+<pre>每条记录有：[栏位 1、栏位 2、栏位 3 ...]。
+谁能做什么：[老板什么都看得到；员工可以新增和修改，但不能删除]。
+我需要能搜索、按 [栏位] 筛选，还能导出成 Excel。
+记录谁改了什么，每天备份资料。</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>AI 工具（聊天机器人、AI 报告）</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip yes">用 AI</span><span class="chip yes">按次收费</span><span class="chip">个人资料</span></div>
+      <p class="muted">一个用你的资料来回答的聊天机器人，或一份会写个人报告的问卷。</p>
+<pre>用户提供：[[N] 个问题的答案 / 一个问题 / 一个上传的文件]。
+AI 回复：[一份有这些部分的报告 ... / 用 [语气] 写的回答]。
+它只能用 [我放在文件夹 ... 里的资料]，找不到答案时要说“我不知道”。
+语言：[English / 中文 / BM]。告诉我每次使用的费用，并设每月上限 [金额]。
+个人资料不要保留超过需要的时间。</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>自动化</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip">定时运行</span><span class="chip yes">发消息</span><span class="chip">没有画面</span></div>
+      <p class="muted">每日报告、生日提醒、跟进电邮、在不同 app 之间搬资料。</p>
+<pre>每 [天早上 8 点 / 星期一 / 有人提交表格时]，做：[什么事]。
+资料从 [Google Sheet / 我的系统 / 一个电邮收件箱] 拿。
+把结果用 [电邮 / WhatsApp / Telegram] 发给 [谁]。
+先只发给我来测试。如果失败了，发电邮告诉我哪里出错。</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>AI 办公室（3D 员工看板）</h3><button class="copy" type="button">复制</button></div>
+      <div class="meta"><span class="chip yes">保存状态</span><span class="chip">定时运行</span><span class="chip">Claude Code</span></div>
+      <p class="muted">把你的 Claude Code 定时任务变成 3D 小员工，让你看到他们在做什么。等你至少有一个定时任务之后，单独用这个提示词。</p>
+<pre>帮我做一个“AI 办公室”：一个实时的 3D 看板，我的每个 Claude Code 定时任务都显示成一位员工。
+
+把它发布成 claude.ai artifact，用 cdnjs 上的 Three.js，用 artifact db 来保存员工状态。
+
+外观
+- 等距视角的低多边形夜景：深蓝背景、绿色小岛、浅色小路、树和发光的路灯
+- 每个团队一间前面开放的房间：米色墙、金色边、彩色地毯、一块名牌，墙上挂着报告板
+- 每位员工一张桌子，有显示器、盆栽和杯子
+- 可爱的 Q 版人物，圆圆的大头，每个人有自己的颜色和发型
+- 拖动可以旋转，滚动可以缩放
+
+员工
+- 先列出我的定时任务。每个任务 = 一位员工，取一个简短的人名。按工作类型分到不同房间。
+- 每位员工存在 staff/&lt;taskId&gt;，内容有：name, job, room, taskId, schedule, nextRun, lastRun, status, say, report, updatedAt, history[{at,text,ok}]
+- status 是 idle、working、error、waiting 或 off
+- 用任务记录里真实的运行结果。绝对不要编造。
+
+按状态的动画
+- working：在打字，显示器发蓝光，有对话泡泡
+- idle：偶尔站起来在房间里走走
+- waiting：举手，琥珀色泡泡
+- error：低着头，地上有闪动的红圈
+- off：低着头，显示器关掉
+- 如果 nextRun 已经过了但 status 还是 idle，标记为逾期
+
+画面
+- 顶部一条栏显示数字：上班中、工作中、出错、需要你
+- 每个人物头上有名牌
+- 点一下会打开一张深色员工卡：职位、任务、班次、下一班、上一班、报告、最后更新、最近几班，还有一个按钮可以复制“马上运行这个任务”的指令
+
+打卡
+- 先给我看要改什么，然后在每个任务的提示词里加一步：开始时用 db_write 写入 status "working"，完成时写入结果、报告和下一次运行时间
+- 只有工作真的完成了才报告成功，不是运行结束就算
+
+发布前先给我看员工名单。没问过我，不要改任何任务。</pre></div>
+
+  </div>
+</section>
+
+<section id="after">
+  <h2>3 · 边做边用的提示词</h2>
+  <div class="stack">
+    <div class="pcard"><div class="phead"><h3>说完成之前先检查</h3><button class="copy" type="button">复制</button></div>
+<pre>在你说做好了之前：用手机和手提电脑的尺寸，测试每个页面和按钮，每种语言都要。
+告诉我你检查了什么、发现了什么、修好了什么。</pre></div>
+    <div class="pcard"><div class="phead"><h3>发布</h3><button class="copy" type="button">复制</button></div>
+<pre>把它存到一个私人的 GitHub repo，然后发布，让它每次保存都会自动更新。
+先告诉我每个月多少钱，等我说 OK。</pre></div>
+    <div class="pcard"><div class="phead"><h3>报告问题</h3><button class="copy" type="button">复制</button></div>
+<pre>在我的 [手机 / 手提电脑] 上，[页面或画面] 显示 [我看到的]，但我想要的是 [我想要的]。
+找出原因，修好它，用一句话告诉我是什么问题。</pre></div>
+    <div class="pcard"><div class="phead"><h3>简单解释一下</h3><button class="copy" type="button">复制</button></div>
+<pre>用简单的话解释你刚才做了什么，当我从来没写过代码。
+对我的客人来说有什么改变？我需要做什么吗？</pre></div>
+    <div class="pcard"><div class="phead"><h3>连接域名</h3><button class="copy" type="button">复制</button></div>
+<pre>我在 [供应商] 买了 [domain.com]。帮我把它连接到我的网站，
+一步一步告诉我在 [供应商] 那边要改什么。</pre></div>
+  </div>
+</section>
+
+<div class="next"><a href="systems.html">← 1. 选择</a><a href="setup.html">3. 准备 →</a></div>
+</div>
+<script src="../copy.js?v=2"></script>
+</body></html>
