@@ -244,3 +244,26 @@ section[id^="v"]{scroll-margin-top:80px}
 @media (max-width:620px){.langs a{padding:6px 8px}.out{font-size:.85rem}}
 :lang(zh) .said::before{content:"你输入"} :lang(zh) .reply::before{content:"AI 回复"}
 :lang(ms) .said::before{content:"Anda taip"} :lang(ms) .reply::before{content:"AI balas"}
+/* Video effects guide (third tab, sky blue) */
+:root{--sky:#9CC3F2;--sky-soft:#E3EEFC}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--sky:#5E9BE6;--sky-soft:#14243A}}
+:root[data-theme="dark"]{--sky:#5E9BE6;--sky-soft:#14243A}
+.tracks .t-fx:hover,.tracks .t-fx[aria-current]{border-color:var(--sky)}
+.tracks .t-fx[aria-current]{background:var(--sky);color:#0B1B30}
+.stepbar.fx a[aria-current]{background:var(--sky-soft);border-color:var(--sky)}
+.stepbar.fx a[aria-current] b{background:var(--sky);color:#0B1B30}
+section[id^="e"]{scroll-margin-top:80px}
+.fxv{display:block;width:100%;max-width:300px;height:auto;aspect-ratio:9/16;margin:0 auto;border-radius:22px;border:1px solid var(--line);background:#111;object-fit:cover}
+.fxv.wide{max-width:560px;aspect-ratio:9/8}
+section.intro .fxv{max-width:270px;margin-bottom:20px}
+.fxrow{display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:center}
+.fxrow .fxv{max-width:260px}
+.fxnotes{margin:0;padding-left:20px;display:grid;gap:10px}
+.guide.fx{grid-column:1/-1;background:var(--sky-soft);grid-template-columns:300px 1fr;grid-template-rows:auto}
+.guide.fx>video{width:100%;height:100%;min-height:100%;object-fit:cover;display:block;background:#111}
+.guide.fx .gsteps b{background:var(--sky);color:#0B1B30}
+@media (max-width:760px){.guide.fx{grid-template-columns:1fr}.guide.fx>video{aspect-ratio:9/12;height:auto}}
+@media (max-width:620px){.fxrow{grid-template-columns:1fr}.tracks{gap:6px}.tracks a{font-size:.8rem;padding:10px 4px}}
+/* guide pages (narrow): three tabs get their own row so the language switch and back link never squeeze */
+.wrap:not(.wide) .gnav{grid-template-columns:1fr auto auto;grid-template-areas:"brand langs out" "tracks tracks tracks"}
+.wrap:not(.wide) .tracks{justify-content:flex-start}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Video effects with AI · Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/effects.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/effects.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/effects.html">
+<link rel="stylesheet" href="style.css?v=9">
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Guides"><a class="t-web" href="systems.html">Build a website</a><a class="t-vid" href="videos.html">Make reels</a><a class="t-fx" href="effects.html" aria-current="true">Video effects</a></nav>
+  <nav class="langs" aria-label="Language"><a href="effects.html" aria-current="true" lang="en" hreflang="en">EN</a><a href="zh/effects.html" lang="zh" hreflang="zh">中文</a><a href="ms/effects.html" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+
+<section class="intro">
+  <video class="fxv" src="video/spin.mp4" poster="video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="A 3D wheel of 10 video cards spins, a counter ticks to 10 and an 'All made with AI' stamp lands"></video>
+  <h1>Special effects, made by the AI</h1>
+  <p class="lead">Spinning wheels, cards that fly in, numbers that slam, a screen that shakes. The AI writes the effect as a small web page and turns it into a video. You describe it in plain words, and it builds, checks and fixes it.</p>
+  <p class="lesson"><b>Good for:</b> promos, lists, "we've made 10 kinds", prices, counters, before and after. <b>Not for:</b> stories. A story needs real scenes and feelings, not a wheel.</p>
+  <p class="muted">Every video on this page was made this way, by AI, from the prompts below.</p>
+</section>
+
+<nav class="stepbar fx sticky" aria-label="Make a video effect, step by step"><a href="#e1"><b>1</b>Set up</a><a href="#e2"><b>2</b>Spin</a><a href="#e3"><b>3</b>Motion</a><a href="#e4"><b>4</b>Promo</a><a href="#e5"><b>5</b>Check</a></nav>
+
+<section id="e1">
+  <div class="vhead"><span class="n">1</span><div><p class="eyebrow">Once only</p><h2>Let the AI set up its video tools</h2></div></div>
+  <p>The effect is a web page with animation, rendered to an MP4 by a free tool called HyperFrames. The AI installs it and proves it works with a 3-second test.</p>
+  <div class="pcard"><div class="phead"><h3>Set up</h3><button class="copy" type="button">Copy</button></div>
+<pre>Set yourself up to make video effects with code. Do every step yourself:
+install Node.js, ffmpeg and HyperFrames (an HTML-to-video tool, npx hyperframes),
+make a folder [Documents/video-effects], and render a 3-second test video to prove it works.
+Build every effect as an HTML page animated with GSAP, rendered to 1080x1920 MP4 at 30 fps.
+Only stop when I must approve something.</pre></div>
+</section>
+
+<section id="e2">
+  <div class="vhead"><span class="n">2</span><div><p class="eyebrow">The effect</p><h2>The spinning wheel</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/spin.mp4" poster="video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="Spinning wheel reference video"></video>
+    <ul class="fxnotes">
+      <li><b>0-1 s:</b> cards burst out of the middle into a 3D wheel</li>
+      <li><b>1-4 s:</b> slow, fast, slow, while a counter ticks 01 to 10</li>
+      <li><b>4-5 s:</b> it lands, the 10 slams, a stamp drops, the screen shakes</li>
+      <li>Whoosh, click and boom sounds, made by the AI too</li>
+    </ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Spinning wheel</h3><button class="copy" type="button">Copy</button></div>
+<pre>Make a 5-second vertical video with a spinning 3D wheel of cards.
+- Cards: [10] cards, one per [kind of video / product / service]: [list the names].
+  Pictures: use my files in [folder]. If I have none, ask an image AI for one picture
+  per card, with no text in the pictures.
+- 0-1 s: the cards burst out of the middle into a wheel, with a whoosh.
+- 1-4 s: the wheel spins slow, fast, then slow. A big counter ticks [01 to 10]
+  with a click on each number, next to my headline "[We've made 10 kinds of AI video]".
+- 4-5 s: it lands on card 1 with a small bounce, the number slams, a stamp
+  "[All made with AI]" drops in with a boom and the screen shakes a little.
+- My colours: [cream #F7EFE2, brown #3A2A1E, gold #B8761A]. Font: [Poppins].
+- Make the whoosh, click and boom sounds yourself.
+Before showing me, look at frames every 0.5 s and fix anything that covers
+the headline or runs off the screen.</pre></div>
+  <div class="ex">
+    <p class="cap">Change it with one line</p>
+    <p class="said">Make the spinning slower and the cards bigger.</p>
+    <div class="reply">Done: one calm turn instead of two fast ones, cards 30% bigger. The captions now sat on the cards, so I hid them in the first 2 seconds; the headline already says the same words.</div>
+  </div>
+</section>
+
+<section id="e3">
+  <div class="vhead"><span class="n">3</span><div><p class="eyebrow">Any reel</p><h2>Make it move for real</h2></div></div>
+  <p>Words that only fade in look like slides. Real motion is things flying, dropping, slamming and shaking, timed to the voice. Left: before. Right: after.</p>
+  <video class="fxv wide" src="video/motion.mp4" poster="video/motion.jpg" autoplay muted loop playsinline width="720" height="640" aria-label="The same reel side by side: before with fades, after with real motion"></video>
+  <div class="pcard"><div class="phead"><h3>Real motion</h3><button class="copy" type="button">Copy</button></div>
+<pre>Make every scene of this reel move for real, not only words appearing:
+- Every item enters with a move: cards drop and bounce, words spring up,
+  the answer slams in with a small camera shake, wrong things shake,
+  lists pile up, phone messages pop.
+- Moves land on the spoken word (use the voice's word timings).
+- Each scene swipes out before the next one flies in.
+- No quiet stretch longer than 1.5 s outside the captions.
+Then measure it: count the big moves outside the caption area,
+and show me before and after side by side.</pre></div>
+  <p class="muted">Motion alone won't make a reel feel different. Pictures, a host with expressions and sound matter more. Give the effects something to move.</p>
+</section>
+
+<section id="e4">
+  <div class="vhead"><span class="n">4</span><div><p class="eyebrow">Put it together</p><h2>Use it in a promo</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/offer-wheel.mp4" poster="video/offer-wheel.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="A wheel of 25 style pictures spins behind a price card that slams in"></video>
+    <ul class="fxnotes">
+      <li>The wheel spins behind the offer, so the screen never sits still</li>
+      <li>The price card drops on "a month", the price slams on "RM499"</li>
+      <li>Real pictures from your own work, not stock</li>
+    </ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Promo reel</h3><button class="copy" type="button">Copy</button></div>
+<pre>Make a 20-second promo reel for [business] that uses the spinning wheel.
+Facts: use only what is on [my page / this list]: [offer, price, numbers].
+Never invent numbers, and never say "all" or "every" unless it is true.
+1. Hook: [my strongest finished piece] full screen from the first frame,
+   with one line: "[...]".
+2. The wheel: [10] of my real [reels / products] spin, then land.
+3. Proof: [numbers] slam in one by one.
+4. Offer: [price / what they get], with a wheel of [styles / options] behind it.
+5. End: "[call to action]" + [link / handle], held for 2 seconds.
+Voice: [voice] reading my script, word-by-word captions, a light beat,
+and whoosh / tick / hit sounds on every move.
+Show me frames of every scene before the final render.</pre></div>
+</section>
+
+<section id="e5">
+  <div class="vhead"><span class="n">5</span><div><p class="eyebrow">Before you post</p><h2>Ask for an honest check</h2></div></div>
+  <p>A good-looking effect can still lose viewers in the first second. Ask for a forecast based on your own past reels, and a second opinion from another AI.</p>
+  <div class="pcard"><div class="phead"><h3>Check before posting</h3><button class="copy" type="button">Copy</button></div>
+<pre>Before I post, check this reel honestly:
+1. Watch it frame by frame. Fix text covered by moving things,
+   items running off the screen, and quiet stretches.
+2. Forecast for my account: 3-second skip %, average watch and shares at 24 h,
+   based on my own past reels. Then ask ChatGPT for its forecast
+   without showing it yours.
+3. If the forecast misses skip under 30% or watch at least half the length,
+   don't call it ready: tell me the one change most likely to fix it.</pre></div>
+  <div class="ex">
+    <p class="cap">Example: our own promo</p>
+    <p class="said">Pass the gate?</p>
+    <div class="reply">Not yet. My forecast: 55-70% skip, 4.5-7.5 s watched of 20 s. ChatGPT: 60-75% skip, 2% chance to hit the targets. Our three earlier "made by AI" reels lost 63-77% of viewers in 3 seconds. Fix: open on our best reel full screen, and use the wheel as proof after it.</div>
+  </div>
+  <p class="muted">Learned the hard way: tiny spinning cards on the first frame make people work before they get anything. The wheel works best as proof, after a strong first picture.</p>
+</section>
+
+<div class="next"><a href="videos.html">← Make reels guide</a><a href="./">All guides →</a></div>
+</div>
+<script src="copy.js?v=2"></script>
+<script>
+var steps = [].slice.call(document.querySelectorAll('.stepbar.sticky a'));
+function mark() {
+  var cur = steps[0];
+  steps.forEach(function (a) { if (document.querySelector(a.hash).getBoundingClientRect().top < 160) cur = a; });
+  steps.forEach(function (a) { a.classList.toggle('hot', a === cur); if (a === cur) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
+}
+addEventListener('scroll', mark, { passive: true }); mark();
+</script>
+</body></html>

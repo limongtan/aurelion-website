@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ms" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kesan video dengan AI · Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/effects.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/effects.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/effects.html">
+<link rel="stylesheet" href="../style.css?v=9">
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Panduan"><a class="t-web" href="systems.html">Bina laman web</a><a class="t-vid" href="videos.html">Buat reels</a><a class="t-fx" href="effects.html" aria-current="true">Kesan video</a></nav>
+  <nav class="langs" aria-label="Bahasa"><a href="../effects.html" lang="en" hreflang="en">EN</a><a href="../zh/effects.html" lang="zh" hreflang="zh">中文</a><a href="../ms/effects.html" aria-current="true" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+
+<section class="intro">
+  <video class="fxv" src="../video/spin.mp4" poster="../video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="Roda 3D berisi 10 kad video berputar, pembilang naik ke 10 dan cop 'Semua dibuat dengan AI' mendarat"></video>
+  <h1>Kesan khas, dibuat oleh AI</h1>
+  <p class="lead">Roda berputar, kad terbang masuk, nombor menghentak, skrin bergegar. AI tulis kesan itu sebagai laman web kecil, lalu tukar jadi video. Anda cuma terangkan dengan ayat biasa. AI yang bina, semak dan baiki.</p>
+  <p class="lesson"><b>Sesuai untuk:</b> promo, senarai, "kami dah buat 10 jenis", harga, pembilang, sebelum dan selepas. <b>Tak sesuai untuk:</b> cerita. Cerita perlukan babak dan perasaan sebenar, bukan roda.</p>
+  <p class="muted">Setiap video di halaman ini dibuat dengan cara ini, oleh AI, guna prompt di bawah.</p>
+</section>
+
+<nav class="stepbar fx sticky" aria-label="Buat kesan video, langkah demi langkah"><a href="#e1"><b>1</b>Sedia</a><a href="#e2"><b>2</b>Putar</a><a href="#e3"><b>3</b>Gerak</a><a href="#e4"><b>4</b>Promo</a><a href="#e5"><b>5</b>Semak</a></nav>
+
+<section id="e1">
+  <div class="vhead"><span class="n">1</span><div><p class="eyebrow">Sekali sahaja</p><h2>Biar AI sediakan alat videonya</h2></div></div>
+  <p>Kesan ini sebenarnya laman web beranimasi, yang dirender jadi MP4 oleh alat percuma bernama HyperFrames. AI akan pasang alat itu dan buktikan ia berfungsi dengan video ujian 3 saat.</p>
+  <div class="pcard"><div class="phead"><h3>Sediakan</h3><button class="copy" type="button">Salin</button></div>
+<pre>Sediakan diri anda untuk buat kesan video dengan kod. Buat setiap langkah sendiri:
+pasang Node.js, ffmpeg dan HyperFrames (alat HTML-ke-video, npx hyperframes),
+buat folder [Documents/video-effects], dan render video ujian 3 saat untuk buktikan ia berfungsi.
+Bina setiap kesan sebagai laman HTML yang dianimasikan dengan GSAP, dirender ke MP4 1080x1920 pada 30 fps.
+Berhenti hanya bila saya perlu luluskan sesuatu.</pre></div>
+</section>
+
+<section id="e2">
+  <div class="vhead"><span class="n">2</span><div><p class="eyebrow">Kesannya</p><h2>Roda berputar</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="../video/spin.mp4" poster="../video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="Video rujukan roda berputar"></video>
+    <ul class="fxnotes">
+      <li><b>0-1 s:</b> kad meletup keluar dari tengah, membentuk roda 3D</li>
+      <li><b>1-4 s:</b> perlahan, laju, perlahan, sambil pembilang naik dari 01 ke 10</li>
+      <li><b>4-5 s:</b> roda berhenti, angka 10 menghentak, cop jatuh, skrin bergegar</li>
+      <li>Bunyi whoosh, klik dan dentum pun dibuat oleh AI</li>
+    </ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Roda berputar</h3><button class="copy" type="button">Salin</button></div>
+<pre>Buat video menegak 5 saat dengan roda kad 3D yang berputar.
+- Kad: [10] kad, satu untuk setiap [jenis video / produk / servis]: [senaraikan nama-namanya].
+  Gambar: guna fail saya dalam [folder]. Kalau saya tiada gambar, minta AI gambar buat satu gambar
+  untuk setiap kad, tanpa teks dalam gambar.
+- 0-1 s: kad meletup keluar dari tengah membentuk roda, dengan bunyi whoosh.
+- 1-4 s: roda berputar perlahan, laju, kemudian perlahan. Pembilang besar naik [01 ke 10]
+  dengan bunyi klik pada setiap nombor, di sebelah tajuk saya "[Kami dah buat 10 jenis video AI]".
+- 4-5 s: roda berhenti pada kad 1 dengan lantunan kecil, nombor menghentak, cop
+  "[Semua dibuat dengan AI]" jatuh dengan bunyi dentum dan skrin bergegar sedikit.
+- Warna saya: [krim #F7EFE2, coklat #3A2A1E, emas #B8761A]. Fon: [Poppins].
+- Buat sendiri bunyi whoosh, klik dan dentum.
+Sebelum tunjuk pada saya, periksa frame setiap 0.5 s dan baiki apa-apa yang menutup
+tajuk atau terkeluar dari skrin.</pre></div>
+  <div class="ex">
+    <p class="cap">Ubah dengan satu ayat</p>
+    <p class="said">Perlahankan putaran dan besarkan kad.</p>
+    <div class="reply">Siap: satu pusingan yang tenang, bukan dua pusingan laju, dan kad 30% lebih besar. Kapsyen jadi bertindih dengan kad, jadi saya sorok kapsyen dalam 2 saat pertama; tajuk pun dah sebut perkataan yang sama.</div>
+  </div>
+</section>
+
+<section id="e3">
+  <div class="vhead"><span class="n">3</span><div><p class="eyebrow">Mana-mana reel</p><h2>Buat ia betul-betul bergerak</h2></div></div>
+  <p>Perkataan yang cuma muncul perlahan nampak macam slaid. Gerakan sebenar ialah benda terbang, jatuh, menghentak dan bergegar, ikut masa suara. Kiri: sebelum. Kanan: selepas.</p>
+  <video class="fxv wide" src="../video/motion.mp4" poster="../video/motion.jpg" autoplay muted loop playsinline width="720" height="640" aria-label="Reel yang sama, sebelah-menyebelah: sebelum dengan kesan pudar, selepas dengan gerakan sebenar"></video>
+  <div class="pcard"><div class="phead"><h3>Gerakan sebenar</h3><button class="copy" type="button">Salin</button></div>
+<pre>Buat setiap babak dalam reel ini betul-betul bergerak, bukan cuma perkataan yang muncul:
+- Setiap item masuk dengan gerakan: kad jatuh dan melantun, perkataan melompat naik,
+  jawapan menghentak masuk dengan sedikit gegaran kamera, benda yang salah bergegar,
+  senarai bertimbun, mesej telefon muncul.
+- Gerakan mesti tepat pada perkataan yang disebut (guna masa setiap perkataan dalam suara).
+- Setiap babak disapu keluar sebelum babak seterusnya terbang masuk.
+- Tiada bahagian senyap lebih 1.5 s di luar kapsyen.
+Kemudian ukur: kira gerakan besar di luar kawasan kapsyen,
+dan tunjukkan sebelum dan selepas, sebelah-menyebelah.</pre></div>
+  <p class="muted">Gerakan sahaja takkan buat reel terasa lain. Gambar, hos yang ada ekspresi, dan bunyi lebih penting. Beri kesan itu sesuatu untuk digerakkan.</p>
+</section>
+
+<section id="e4">
+  <div class="vhead"><span class="n">4</span><div><p class="eyebrow">Gabungkan semua</p><h2>Guna dalam promo</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="../video/offer-wheel.mp4" poster="../video/offer-wheel.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="Roda 25 gambar gaya berputar di belakang kad harga yang menghentak masuk"></video>
+    <ul class="fxnotes">
+      <li>Roda berputar di belakang tawaran, jadi skrin tak pernah kaku</li>
+      <li>Kad harga jatuh pada "sebulan", harga menghentak pada "RM499"</li>
+      <li>Gambar sebenar dari kerja anda sendiri, bukan gambar stok</li>
+    </ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Reel promo</h3><button class="copy" type="button">Salin</button></div>
+<pre>Buat reel promo 20 saat untuk [perniagaan] yang guna roda berputar.
+Fakta: guna hanya apa yang ada di [laman saya / senarai ini]: [tawaran, harga, angka].
+Jangan reka angka, dan jangan sebut "semua" atau "setiap" kecuali memang benar.
+1. Hook: [hasil siap saya yang paling kuat] skrin penuh dari frame pertama,
+   dengan satu ayat: "[...]".
+2. Roda: [10] [reels / produk] sebenar saya berputar, kemudian berhenti.
+3. Bukti: [angka] menghentak masuk satu demi satu.
+4. Tawaran: [harga / apa yang mereka dapat], dengan roda [gaya / pilihan] di belakangnya.
+5. Penutup: "[ajakan bertindak]" + [link / handle], kekal selama 2 saat.
+Suara: [suara] membaca skrip saya, kapsyen perkataan demi perkataan, rentak muzik ringan,
+dan bunyi whoosh / tik / hentak pada setiap gerakan.
+Tunjukkan frame setiap babak sebelum render akhir.</pre></div>
+</section>
+
+<section id="e5">
+  <div class="vhead"><span class="n">5</span><div><p class="eyebrow">Sebelum anda post</p><h2>Minta semakan yang jujur</h2></div></div>
+  <p>Kesan yang cantik masih boleh hilang penonton pada saat pertama. Minta ramalan berdasarkan reels lama anda sendiri, dan pendapat kedua daripada AI lain.</p>
+  <div class="pcard"><div class="phead"><h3>Semak sebelum post</h3><button class="copy" type="button">Salin</button></div>
+<pre>Sebelum saya post, semak reel ini dengan jujur:
+1. Tonton frame demi frame. Baiki teks yang ditutup benda bergerak,
+   item yang terkeluar dari skrin, dan bahagian senyap.
+2. Ramalan untuk akaun saya: kadar skip 3 saat (%), purata masa tontonan dan shares pada 24 jam,
+   berdasarkan reels lama saya sendiri. Kemudian minta ChatGPT buat ramalannya
+   tanpa tunjuk ramalan anda.
+3. Kalau ramalan tak capai skip bawah 30% atau tontonan sekurang-kurangnya separuh panjang video,
+   jangan kata ia sudah sedia: beritahu saya satu perubahan yang paling mungkin membaikinya.</pre></div>
+  <div class="ex">
+    <p class="cap">Contoh: promo kami sendiri</p>
+    <p class="said">Lulus tak?</p>
+    <div class="reply">Belum lagi. Ramalan saya: 55-70% skip, 4.5-7.5 s ditonton daripada 20 s. ChatGPT: 60-75% skip, 2% peluang capai sasaran. Tiga reels "dibuat oleh AI" kami sebelum ini hilang 63-77% penonton dalam 3 saat. Cara baiki: buka dengan reel terbaik kami dalam skrin penuh, dan guna roda sebagai bukti selepas itu.</div>
+  </div>
+  <p class="muted">Pengajaran yang kami dapat dengan susah payah: kad kecil yang berputar pada frame pertama buat orang kena berusaha sebelum dapat apa-apa. Roda paling berkesan sebagai bukti, selepas gambar pertama yang kuat.</p>
+</section>
+
+<div class="next"><a href="videos.html">← Panduan buat reels</a><a href="./">Semua panduan →</a></div>
+</div>
+<script src="../copy.js?v=2"></script>
+<script>
+var steps = [].slice.call(document.querySelectorAll('.stepbar.sticky a'));
+function mark() {
+  var cur = steps[0];
+  steps.forEach(function (a) { if (document.querySelector(a.hash).getBoundingClientRect().top < 160) cur = a; });
+  steps.forEach(function (a) { a.classList.toggle('hot', a === cur); if (a === cur) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
+}
+addEventListener('scroll', mark, { passive: true }); mark();
+</script>
+</body></html>
