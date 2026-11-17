@@ -203,3 +203,7 @@ section[id^="v"]{scroll-margin-top:110px}
   .stepnav .node b{font-size:.8rem}
   section[id^="v"]{scroll-margin-top:70px}
 }
+/* Home: three categories, one open at a time */
+.cats{gap:12px}
+.part>summary>span:first-child{min-width:0}
+.part-body .six li{background:var(--paper)}
