@@ -3,23 +3,23 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prompt Kit · Vibe Coding Field Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=6">
+<script>if (/^#(video|v[1-5])$/.test(location.hash)) location.replace('videos.html' + (location.hash === '#video' ? '' : location.hash));</script>
 </head><body>
 <div class="wrap">
-<div class="top"><a href="./">← Field guide</a><nav><a href="prompts.html" aria-current="page">Prompts</a><a href="systems.html">Website or system</a><a href="setup.html">Prepare &amp; allow</a><a href="golive.html">Go live</a><a href="example.html">Example</a></nav></div>
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Guides"><a class="t-web" href="systems.html" aria-current="true">Build a website</a><a class="t-vid" href="videos.html">Make reels</a></nav>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="Build a website, step by step"><a href="systems.html"><b>1</b>Choose</a><a href="prompts.html" aria-current="step"><b>2</b>Describe</a><a href="setup.html"><b>3</b>Prepare</a><a href="example.html"><b>4</b>Build</a><a href="golive.html"><b>5</b>Go live</a></nav>
 
 <header class="hero">
-  <p class="eyebrow">Prompt kit</p>
-  <h1>Prompts for websites, systems and videos</h1>
-  <p class="lead">Pick a tab. Start with the starting prompt, then add the extra lines for what you are making. Replace everything in [brackets].</p>
+  <p class="eyebrow">Step 2 of 5</p>
+  <h1>Describe what you want to build</h1>
+  <p class="lead">Start with the general prompt. Then add the extra lines for the kind of thing you are building. Replace everything in [brackets].</p>
 </header>
 
-<div class="tabbar" role="tablist" aria-label="What are you making?">
-  <button type="button" role="tab" id="t-web" aria-controls="web" aria-selected="true">Website &amp; system</button>
-  <button type="button" role="tab" id="t-video" aria-controls="video" aria-selected="false" tabindex="-1">Video &amp; reels</button>
-</div>
-
-<div id="web" role="tabpanel" aria-labelledby="t-web">
 <section>
   <h2>1 · The starting prompt</h2>
   <p class="muted">Works for everything. The last line matters most: it makes the AI ask questions and show a plan before it writes any code.</p>
@@ -163,161 +163,8 @@ What changed for my customers, and is there anything I need to do?</pre></div>
 and tell me step by step what to change at [provider].</pre></div>
   </div>
 </section>
-</div>
 
-<div id="video" role="tabpanel" aria-labelledby="t-video" hidden>
-<section>
-  <img class="art" src="img/video/hero.webp" alt="A bakery owner relaxes with tea while her laptop puts a reel together by itself" width="1200" height="800">
-  <h2>Let the AI make your reels</h2>
-  <p class="lead">You don't need to know editing. Tell the AI about your account once. After that it finds the idea, makes the reel, checks it, posts it when you say OK, and learns from the results.</p>
-  <p class="lesson"><b>What you need:</b> an AI that can work on your computer, like Claude Code in the Claude desktop app. One prompt per step. The only things you do yourself: sign in to your accounts when it asks, and say OK before it posts.</p>
-  <p class="muted">The examples follow one small business, a home bakery, from the first message to the morning report.</p>
-</section>
-
-<nav class="flow stepnav" aria-label="The 5 steps">
-  <a class="node" href="#v1"><b>1 · Tell</b><span>About your account, once</span></a><span class="arrow">→</span>
-  <a class="node" href="#v2"><b>2 · Ideas</b><span>AI studies what works</span></a><span class="arrow">→</span>
-  <a class="node" href="#v3"><b>3 · Make</b><span>AI edits the reel</span></a><span class="arrow">→</span>
-  <a class="node" href="#v4"><b>4 · Post</b><span>AI checks, you say OK</span></a><span class="arrow">→</span>
-  <a class="node" href="#v5"><b>5 · Learn</b><span>Every morning, by itself</span></a>
-</nav>
-
-<section id="v1">
-  <div class="vhead"><span class="n">1</span><div><p class="eyebrow">Once only</p><h2>Tell the AI about your account</h2></div></div>
-  <img class="art" src="img/video/step1.webp" alt="A woman chatting with her laptop like a friend, with photos of her bread around it" width="1200" height="800" loading="lazy">
-  <p>The AI installs what it needs, connects to your account and saves your answers as a brief. You never type this again.</p>
-  <div class="pcard"><div class="phead"><h3>Set up</h3><button class="copy" type="button">Copy</button></div>
-<pre>Set yourself up to make reels for my account. Do every step yourself:
-install the video tools or skills you need, connect to my [Instagram / TikTok]
-so you can read my stats and post, and only stop when I must sign in or approve something.
-
-My account: [name], about [what I post]. Who watches: [who]. Language: [English / 中文 / BM].
-What I want from reels: [follows / shares / sell [product] / bookings on WhatsApp].
-Targets: skip rate under 30%, average watch at least half,
-2+ follows and 5+ shares per 1,000 views.
-My photos and videos are in [folder / "none, make them with AI"].
-Rules: never invent facts, numbers or reviews. Never post or spend money without my OK.
-Save this as my account brief and use it for every reel.</pre></div>
-  <div class="ex">
-    <p class="cap">Example</p>
-    <p class="said">… My account: our home bakery, fresh bread and cakes in Petaling Jaya. Who watches: mums 25 to 45 nearby. Language: 中文 and English. What I want: orders on WhatsApp. My photos and videos are in Pictures/Bakery.</p>
-    <div class="reply">Done. I installed the video tools and saved your brief. Instagram needs you to sign in once, so I opened the login page for you. I found 48 photos and 12 videos in Pictures/Bakery that I can use.</div>
-  </div>
-</section>
-
-<section id="v2">
-  <div class="vhead"><span class="n">2</span><div><p class="eyebrow">Every reel</p><h2>Let the AI find the idea</h2></div></div>
-  <img class="art" src="img/video/step2.webp" alt="A magnifying glass over many small videos, three of them lifting out as the best ideas" width="1200" height="800" loading="lazy">
-  <p>The AI looks at the best and worst reels in your topic and your own results, then brings you 3 ideas. You only choose.</p>
-  <div class="pcard"><div class="phead"><h3>Find ideas</h3><button class="copy" type="button">Copy</button></div>
-<pre>Find my next reel idea. Do the research yourself: study the top and the worst reels
-in my topic (any language) and my own past results.
-Give me 3 ideas. For each: the hook line (said in under 3 seconds), what happens,
-who people will send it to, and why it should hit my targets. Mark the one you would pick.
-Save what you learned so the next idea starts smarter.</pre></div>
-  <div class="ex">
-    <p class="cap">Example</p>
-    <p class="said">Find my next reel idea.</p>
-    <div class="reply">I studied 60 home-baking reels. Winners answer in 2 seconds and give one small thing to try.<br>
-    <b>1 (my pick).</b> 「香蕉黑了别丢！」 Overripe bananas become banana bread in 30 seconds. People send it to the friend who always throws bananas away.<br>
-    <b>2.</b> 3 signs your bread came from a factory, not a bakery.<br>
-    <b>3.</b> Baking 200 pineapple tarts for one order, overnight.</div>
-  </div>
-</section>
-
-<section id="v3">
-  <div class="vhead"><span class="n">3</span><div><p class="eyebrow">Every reel</p><h2>Let the AI make it</h2></div></div>
-  <img class="art" src="img/video/step3.webp" alt="Clips, a microphone, music and captions flowing into a phone to become one video" width="1200" height="800" loading="lazy">
-  <p>Script, voice, music, captions, the edit and the cover: the AI does all of it, using your own photos and videos first.</p>
-  <div class="pcard"><div class="phead"><h3>Make the reel</h3><button class="copy" type="button">Copy</button></div>
-<pre>Make idea [1]. Do everything yourself: script, voice, music, captions, the edit and the cover.
-Use my own photos and videos first. If something is missing, make it with AI images.
-Show me the finished video before anything is posted.</pre></div>
-  <div class="ex">
-    <p class="cap">Example</p>
-    <p class="said">Make idea 1.</p>
-    <div class="reply">Your banana bread reel is ready: 24 seconds, Chinese voice with English captions, soft acoustic music. I used 6 of your clips and 2 AI pictures of the bananas. No filming needed. Here is the video.</div>
-  </div>
-</section>
-
-<section id="v4">
-  <div class="vhead"><span class="n">4</span><div><p class="eyebrow">Every reel</p><h2>The AI checks it, you say OK</h2></div></div>
-  <img class="art" src="img/video/step4.webp" alt="A phone showing a finished video with a big green check mark" width="1200" height="800" loading="lazy">
-  <p>The AI watches it like a viewer, fixes the weak parts by itself, writes the caption and picks the best time. Nothing goes out until you say OK.</p>
-  <div class="pcard"><div class="phead"><h3>Check and post</h3><button class="copy" type="button">Copy</button></div>
-<pre>Check the reel before posting: watch it like a viewer and score it against my targets.
-If it is weak, fix it yourself and check again.
-Then write the caption and hashtags, pick the best time, and post it after I say OK.</pre></div>
-  <div class="ex">
-    <p class="cap">Example</p>
-    <p class="said">Check it and post it.</p>
-    <div class="reply">The middle was slow for 4 seconds, so I cut it. Now the hook lands at 0:01 and it ends 2 seconds after the bread comes out.<br>
-    Caption: 「香蕉黑了别丢！30 分钟变香蕉面包 🍌 Send this to the friend who always throws bananas away.」<br>
-    Best time: tonight, 8 pm. Post it?</div>
-    <p class="said">OK.</p>
-  </div>
-  <p class="muted">Don't like something? Just say what and where, like "At 0:05 it's slow" or "the music is too sad". The AI fixes it.</p>
-</section>
-
-<section id="v5">
-  <div class="vhead"><span class="n">5</span><div><p class="eyebrow">Once, then it runs by itself</p><h2>Let the AI learn every morning</h2></div></div>
-  <img class="art" src="img/video/step5.webp" alt="Morning coffee next to a phone with a rising chart and a notebook with a sprout" width="1200" height="800" loading="lazy">
-  <p>Set this once. Every morning the AI reads your numbers, keeps the lessons and has the next idea waiting for you.</p>
-  <div class="pcard"><div class="phead"><h3>Daily review</h3><button class="copy" type="button">Copy</button></div>
-<pre>Every morning at [8am], do this by yourself: pull yesterday's stats,
-tell me in 3 lines what worked and what didn't (shares first), save the lessons,
-and give me today's reel idea. If my computer was off, do it when it is back on.
-Never post without my OK.</pre></div>
-  <div class="ex">
-    <p class="cap">Example: the next morning</p>
-    <div class="reply">Banana bread reel: 2,140 views, 24% skipped, watched 61% on average, 38 shares, 9 new followers.<br>
-    Worked: the hook at 0:01 and the "send this to" line. Didn't: the cover was dark, so few people tapped it from your profile.<br>
-    Lesson saved. Today's idea: 3 breads you can freeze for a week.</div>
-  </div>
-</section>
-
-<section>
-  <h2>After step 1: one line does it all</h2>
-  <p class="muted">Once the AI has your brief, this one prompt runs steps 2, 3 and 4 in a row.</p>
-  <div class="pcard"><div class="phead"><h3>Next reel, start to finish</h3><button class="copy" type="button">Copy</button></div>
-<pre>Make my next reel from start to finish: find the idea, make it, check it,
-and show me the finished video with the caption. Post it when I say OK.</pre></div>
-</section>
-</div>
-
-<div class="next"><a href="./">← Field guide</a><a href="systems.html">Website or system →</a></div>
+<div class="next"><a href="systems.html">← 1. Choose</a><a href="setup.html">3. Prepare →</a></div>
 </div>
 <script src="copy.js"></script>
-<script>
-// Tabs: click or arrow keys switch; the URL hash (#video, or an id inside a tab) opens that tab.
-var tabs = [].slice.call(document.querySelectorAll('[role=tab]'));
-function show(id) {
-  tabs.forEach(function (t) {
-    var on = t.getAttribute('aria-controls') === id;
-    t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
-    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-  });
-}
-tabs.forEach(function (t, i) {
-  t.addEventListener('click', function () { show(t.getAttribute('aria-controls')); history.replaceState(null, '', '#' + t.getAttribute('aria-controls')); });
-  t.addEventListener('keydown', function (e) {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); n.click();
-  });
-});
-var target = location.hash && document.getElementById(location.hash.slice(1));
-var panel = target && target.closest('[role=tabpanel]');
-if (panel) {
-  show(panel.id);
-  addEventListener('load', function () { (target === panel ? document.querySelector('.tabbar') : target).scrollIntoView(); });
-}
-// Video tab: the step bar stays on screen; light up the step being read.
-var steps = [].slice.call(document.querySelectorAll('.stepnav a'));
-function mark() {
-  var cur = steps[0];
-  steps.forEach(function (a) { if (document.querySelector(a.hash).getBoundingClientRect().top < 160) cur = a; });
-  steps.forEach(function (a) { a.classList.toggle('hot', a === cur); if (a === cur) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
-}
-addEventListener('scroll', mark, { passive: true }); mark();
-</script>
 </body></html>
