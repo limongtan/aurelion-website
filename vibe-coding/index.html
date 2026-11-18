@@ -1,15 +1,65 @@
 <!doctype html>
-<html lang="en" class="sub"><head>
+<html lang="en" class="sub" data-theme="light"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vibe Coding Field Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@700&display=swap">
 <link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/">
 <link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/">
 <link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/">
 <link rel="stylesheet" href="style.css?v=9">
-</head><body>
+<style>
+body.home .wrap.wide{max-width:1100px}
+body.home .nb-hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:center;border:0;padding:22px 0 32px}
+body.home .nb-copy{min-width:0}
+body.home .nb-hand{display:inline-block;color:var(--accent);font:700 clamp(1.2rem,3.2vw,1.55rem)/1 'Caveat',cursive;transform:rotate(-3deg)}
+body.home .nb-hero h1{max-width:11ch;margin:7px 0 12px;font-size:clamp(2.2rem,6vw,4rem);line-height:1.02}
+body.home .nb-reels{position:relative;width:300px;height:225px;justify-self:end}
+body.home .nb-reels video{position:absolute;width:116px;aspect-ratio:9/16;object-fit:cover;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--accent);background:var(--card)}
+body.home .nb-reels video:nth-child(1){left:0;top:30px;transform:rotate(-7deg)}
+body.home .nb-reels video:nth-child(2){left:91px;top:0;z-index:2}
+body.home .nb-reels video:nth-child(3){left:181px;top:34px;transform:rotate(6deg)}
+body.home .nb-guides{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px;align-items:stretch;border:0;padding:0}
+body.home .nb-guide{min-width:0;display:grid;grid-template-rows:auto 1fr;background:var(--card);border:2px solid var(--ink);border-radius:12px;overflow:hidden;transition:transform .16s ease,box-shadow .16s ease}
+body.home .nb-guide.reels{background:var(--slip)}
+body.home .nb-guide:hover{transform:translate(-4px,-4px);box-shadow:4px 4px 0 var(--ink)}
+body.home .nb-guide:focus-within{box-shadow:4px 4px 0 var(--ink)}
+body.home .nb-guide>img{display:block;width:100%;height:220px;object-fit:cover;border-bottom:2px solid var(--ink)}
+body.home .nb-guide-body{display:grid;gap:13px;align-content:start;padding:20px}
+body.home .nb-guide h2{font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.08}
+body.home .nb-guide .nb-btn{order:4;display:grid;place-items:center;justify-self:stretch;min-height:48px;padding:10px 16px;border-radius:8px;background:var(--ink);color:var(--paper);font-weight:700;text-align:center;text-decoration:none}
+body.home .nb-guide .nb-btn:hover{background:var(--accent);color:var(--accent-ink)}
+body.home .nb-steps{order:3;display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:0;padding:0}
+body.home .nb-steps a{display:inline-flex;gap:7px;align-items:center;min-height:44px;padding:7px 9px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font-weight:700;line-height:1.15;text-decoration:none}
+body.home .nb-steps a:hover{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:-2px}
+body.home .nb-steps b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--paper);font:700 .8rem/1 var(--mono)}
+body.home .reels .nb-steps b{background:#F9D755;color:var(--slip-ink)}
+body.home .quick{margin-top:36px;display:block}
+@media (max-width:900px){
+  body.home .nb-guides{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  body.home .nb-hero{grid-template-columns:1fr;gap:8px;padding-top:14px}
+  body.home .nb-reels{width:236px;height:174px;justify-self:center;margin-top:4px}
+  body.home .nb-reels video{width:87px}
+  body.home .nb-reels video:nth-child(1){top:24px}
+  body.home .nb-reels video:nth-child(2){left:73px}
+  body.home .nb-reels video:nth-child(3){left:146px;top:27px}
+}
+@media (max-width:560px){
+  body.home .nb-guide-body{padding:18px}
+  body.home .nb-guide>img{height:180px}
+}
+@media (max-width:420px){
+  body.home .gnav{grid-template-columns:1fr auto;grid-template-areas:"brand langs" "out out" "tracks tracks"}
+}
+@media (prefers-reduced-motion: reduce){
+  body.home .nb-guide{transition:none}
+  body.home .nb-guide:hover{transform:none;box-shadow:none}
+}
+</style>
+</head><body class="home">
 <div class="wrap wide">
 <header class="gnav">
   <a class="brand" href="./" aria-current="page">Vibe Coding</a>
@@ -18,76 +68,84 @@
   <a class="out" href="../">← Aurelion Earth</a>
 </header>
 
-<section class="home-hero">
-  <div>
-    <h1>Make it with AI. You just say what you want.</h1>
-    <p class="lead">Three short guides for small businesses. Pick the one you need. Each walks you through it step by step, with prompts you copy and paste.</p>
+<section class="nb-hero" aria-labelledby="page-title">
+  <div class="nb-copy">
+    <span class="nb-hand">all made by AI, from prompts →</span>
+    <h1 id="page-title">Make it with AI. You just say what you want.</h1>
   </div>
-  <img class="art" src="img/home.webp" alt="Three friends high-fiving around a laptop as confetti bursts from the screen" width="1200" height="800">
+  <div class="nb-reels" aria-label="Three examples of reels made with AI">
+    <video src="video/recipe/folder.mp4" poster="video/recipe/folder.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    <video src="video/recipe/full.mp4" poster="video/recipe/full.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    <video src="video/spin.mp4" poster="video/spin.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  </div>
 </section>
 
-<section class="guides" aria-label="Pick a guide">
-  <article class="guide web">
-    <img src="img/cat-web.webp" alt="A proud shop owner next to a big phone and laptop showing her new website" width="1200" height="800">
-    <div class="gbody">
-      <h2>Build a website or system</h2>
-      <p>A shop front, bookings, an online shop, a staff tool or an AI tool.</p>
-      <ol class="gsteps">
-      <li><a href="systems.html"><b>1</b><span>Choose<small>Website or system? Find what fits you.</small></span></a></li>
-      <li><a href="prompts.html"><b>2</b><span>Describe<small>Copy the starting prompt.</small></span></a></li>
-      <li><a href="setup.html"><b>3</b><span>Prepare<small>Your materials, and what to allow.</small></span></a></li>
-      <li><a href="example.html"><b>4</b><span>Build<small>Watch a real build, start to finish.</small></span></a></li>
-      <li><a href="golive.html"><b>5</b><span>Go live<small>Your own domain and Google sign-in.</small></span></a></li>
-      </ol>
-      <a class="btn" href="systems.html">Start building</a>
-    </div>
-  </article>
-  <article class="guide vid">
+<section class="nb-guides" aria-label="Pick a guide">
+  <article class="nb-guide reels">
     <img src="img/video/hero.webp" alt="A bakery owner relaxes with tea while her laptop makes a reel by itself" width="1200" height="800">
-    <div class="gbody">
-      <h2>Make reels with AI</h2>
-      <p>The AI finds the idea, edits the reel, posts after your OK and learns every day.</p>
-      <ol class="gsteps">
-      <li><a href="videos.html#v1"><b>1</b><span>Tell<small>About your account, once.</small></span></a></li>
-      <li><a href="videos.html#v2"><b>2</b><span>Ideas<small>The AI studies what works.</small></span></a></li>
-      <li><a href="videos.html#v3"><b>3</b><span>Make<small>The AI edits the reel.</small></span></a></li>
-      <li><a href="videos.html#v4"><b>4</b><span>Post<small>It checks, you say OK.</small></span></a></li>
-      <li><a href="videos.html#v5"><b>5</b><span>Learn<small>It reviews every morning.</small></span></a></li>
+    <div class="nb-guide-body">
+      <h2>Make reels</h2>
+      <ol class="nb-steps">
+        <li><a href="videos.html#v1"><b>1</b><span>Tell</span></a></li>
+        <li><a href="videos.html#v2"><b>2</b><span>Ideas</span></a></li>
+        <li><a href="videos.html#v3"><b>3</b><span>Make</span></a></li>
+        <li><a href="videos.html#v4"><b>4</b><span>Post</span></a></li>
+        <li><a href="videos.html#v5"><b>5</b><span>Learn</span></a></li>
       </ol>
-      <a class="btn" href="videos.html">Start making reels</a>
+      <a class="nb-btn" href="videos.html">Start making reels</a>
     </div>
   </article>
-  <article class="guide fx">
-    <video src="video/spin.mp4" poster="video/spin.jpg" autoplay muted loop playsinline width="540" height="960" aria-label="A 3D wheel of video cards spinning"></video>
-    <div class="gbody">
-      <h2>Make video effects</h2>
-      <p>Spinning wheels, flying cards, slamming numbers. For promos and lists.</p>
-      <ol class="gsteps">
-      <li><a href="effects.html#e1"><b>1</b><span>Set up<small>The AI installs its video tools.</small></span></a></li>
-      <li><a href="effects.html#e2"><b>2</b><span>Spin<small>The spinning wheel effect.</small></span></a></li>
-      <li><a href="effects.html#e3"><b>3</b><span>Motion<small>Make every scene really move.</small></span></a></li>
-      <li><a href="effects.html#e4"><b>4</b><span>Promo<small>Use it in a promo reel.</small></span></a></li>
-      <li><a href="effects.html#e5"><b>5</b><span>Check<small>An honest check before you post.</small></span></a></li>
-      <li><a href="reel-prompt.html"><b>6</b><span>Recipe<small>Copy a full reel, effect by effect.</small></span></a></li>
+  <article class="nb-guide website">
+    <img src="img/cat-web.webp" alt="A proud shop owner next to a big phone and laptop showing her new website" width="1200" height="800">
+    <div class="nb-guide-body">
+      <h2>Build a website</h2>
+      <ol class="nb-steps">
+        <li><a href="systems.html"><b>1</b><span>Choose</span></a></li>
+        <li><a href="prompts.html"><b>2</b><span>Describe</span></a></li>
+        <li><a href="setup.html"><b>3</b><span>Prepare</span></a></li>
+        <li><a href="example.html"><b>4</b><span>Build</span></a></li>
+        <li><a href="golive.html"><b>5</b><span>Live</span></a></li>
       </ol>
-      <a class="btn" href="effects.html">Start making effects</a>
+      <a class="nb-btn" href="systems.html">Start building</a>
+    </div>
+  </article>
+  <article class="nb-guide effects">
+    <img src="video/spin.jpg" alt="A 3D wheel of video cards spinning" width="540" height="960">
+    <div class="nb-guide-body">
+      <h2>Video effects</h2>
+      <ol class="nb-steps">
+        <li><a href="effects.html#e1"><b>1</b><span>Set up</span></a></li>
+        <li><a href="effects.html#e2"><b>2</b><span>Spin</span></a></li>
+        <li><a href="effects.html#e3"><b>3</b><span>Motion</span></a></li>
+        <li><a href="effects.html#e4"><b>4</b><span>Promo</span></a></li>
+        <li><a href="effects.html#e5"><b>5</b><span>Check</span></a></li>
+        <li><a href="reel-prompt.html"><b>6</b><span>Recipe</span></a></li>
+      </ol>
+      <a class="nb-btn" href="effects.html">Start making effects</a>
     </div>
   </article>
 </section>
 
 <section class="quick">
-  <img src="img/cat-prompt.webp" alt="" width="1200" height="800" loading="lazy">
   <div>
     <h2>Just need a prompt?</h2>
     <ul>
-      <li><a href="prompts.html">Prompts to build a website or system</a></li>
-      <li><a href="videos.html">Prompts to make reels</a></li>
-      <li><a href="prompts.html#after">Prompts for feedback while you build</a></li>
-      <li><a href="graphify.html">Help Claude find things faster (graphify)</a></li>
+      <li><a href="prompts.html">Website prompts</a></li>
+      <li><a href="videos.html">Reel prompts</a></li>
+      <li><a href="prompts.html#after">Feedback prompts</a></li>
+      <li><a href="graphify.html">graphify</a></li>
     </ul>
   </div>
 </section>
 
 <footer>Made with Claude Code in VS Code, October 2026.</footer>
 </div>
+<script>
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.nb-reels video').forEach(function (video) {
+    video.pause();
+    video.removeAttribute('autoplay');
+  });
+}
+</script>
 </body></html>
