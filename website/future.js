@@ -1,10 +1,13 @@
-/* Aurelion: three original, real-time worlds. No rendering framework required. */
+/* Aurelion: six original, real-time worlds. No rendering framework required. */
 (() => {
   'use strict';
   const worlds = {
     space: {number:0, title:'Event Horizon', eyebrow:'01 / THE NEXT DIMENSION', headline:'BEYOND<br>THE <em>SCREEN.</em>', description:'The next version of your business deserves a world of its own. We design and build websites worth stepping into.', cta:'Build my next world', object:'OBJECT / EVENT HORIZON', meta:'DIGITAL SPACE · NO LIMITS', label:'A NEW WORLD IS WITHIN REACH'},
     city: {number:1, title:'Neo District', eyebrow:'02 / WELCOME TO YOUR TOMORROW', headline:'THE FUTURE<br>IS <em>BUILT.</em>', description:'Bold ideas need somewhere to live. Give your business a digital address in a world that moves forward.', cta:'Make your next move', object:'LOCATION / NEO DISTRICT', meta:'BEYOND THE FAMILIAR', label:'SOMEWHERE BETWEEN NOW AND NEXT'},
-    interface: {number:2, title:'Human Interface', eyebrow:'03 / HUMAN IMAGINATION. DIGITAL FORM.', headline:'IDEAS,<br><em>UPGRADED.</em>', description:'Your imagination is the interface. We turn it into responsive websites, living identities and experiences that feel one step ahead.', cta:'Bring my idea online', object:'SYSTEM / HUMAN INTERFACE', meta:'IMAGINATION CONNECTED', label:'DESIGNED AROUND YOU'}
+    interface: {number:2, title:'Human Interface', eyebrow:'03 / HUMAN IMAGINATION. DIGITAL FORM.', headline:'IDEAS,<br><em>UPGRADED.</em>', description:'Your imagination is the interface. We turn it into responsive websites, living identities and experiences that feel one step ahead.', cta:'Bring my idea online', object:'SYSTEM / HUMAN INTERFACE', meta:'IMAGINATION CONNECTED', label:'DESIGNED AROUND YOU'},
+    lab: {number:3, title:'Tomorrow Lab', eyebrow:'04 / THE BEAUTY OF WHAT COMES NEXT', headline:'Future,<br><em>in focus.</em>', description:'Clear thinking. Unexpected form. A considered digital presence for businesses looking further ahead.', cta:'Create something exceptional', object:'STUDY / TOMORROW LAB', meta:'CLARITY IN EVERY DIMENSION', label:'AN IDEA, TAKING SHAPE'},
+    warp: {number:4, title:'Warp Drive', eyebrow:'05 / A DIFFERENT KIND OF FORWARD', headline:'LEAVE<br><em>ORDINARY.</em>', description:'Some ideas were never meant to stand still. Launch a website that takes your business somewhere new.', cta:'Take the leap', object:'DESTINATION / WHAT COMES NEXT', meta:'IMAGINATION IN MOTION', label:'YOUR NEXT CHAPTER IS AHEAD'},
+    liquid: {number:5, title:'New Matter', eyebrow:'06 / NOTHING IS SET IN STONE', headline:'BREAK<br>THE <em>MOULD.</em>', description:'A new identity. An unexpected interaction. A website shaped around who you are becoming.', cta:'Shape my next chapter', object:'MATERIAL / POSSIBILITY', meta:'ALWAYS TAKING NEW FORM', label:'BUILT TO EVOLVE WITH YOU'}
   };
   const $ = s => document.querySelector(s);
   let mode = 'space', time = 0, lastTime = 0, visible = true, frame = 0;
@@ -15,6 +18,7 @@
     if (!Object.hasOwn(worlds,key)) key='space';
     mode=key; const w=worlds[key];
     document.documentElement.dataset.world=key;
+    document.querySelector('meta[name="theme-color"]').content=key==='lab'?'#e9edf2':key==='liquid'?'#110e0c':'#05080e';
     $('#headline').innerHTML=w.headline;
     $('#eyebrow').textContent=w.eyebrow;
     $('#description').textContent=w.description;
@@ -51,10 +55,10 @@
     const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='aurelion-project-brief.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#announcement').textContent='Your project brief has been downloaded.';
   });
   function motionLabel(){const b=$('#motion');b.setAttribute('aria-pressed',String(paused));b.setAttribute('aria-label',paused?'Resume animation':'Pause animation');b.querySelector('.pause-icon').textContent=paused?'▷':'Ⅱ';b.querySelector('.motion-label').textContent=paused?'Resume':'Pause';}
-  $('#motion').addEventListener('click',()=>{paused=!paused;motionLabel();lastTime=0;if(!paused)requestAnimationFrame(loop);});
-  reduced.addEventListener('change',e=>{paused=e.matches;motionLabel();lastTime=0;if(!paused)requestAnimationFrame(loop);});
+  $('#motion').addEventListener('click',()=>{paused=!paused;cancelAnimationFrame(frame);motionLabel();lastTime=0;if(!paused)frame=requestAnimationFrame(loop);});
+  reduced.addEventListener('change',e=>{paused=e.matches;cancelAnimationFrame(frame);motionLabel();lastTime=0;if(!paused)frame=requestAnimationFrame(loop);});
   addEventListener('pointermove',e=>{pointer.tx=e.clientX/innerWidth*2-1;pointer.ty=e.clientY/innerHeight*2-1;},{passive:true});
-  document.addEventListener('visibilitychange',()=>{visible=!document.hidden;lastTime=0;if(visible&&!paused)requestAnimationFrame(loop);});
+  document.addEventListener('visibilitychange',()=>{visible=!document.hidden;cancelAnimationFrame(frame);lastTime=0;if(visible&&!paused)frame=requestAnimationFrame(loop);});
 
   const canvas=$('#universe');
   const gl=canvas.getContext('webgl',{alpha:false,antialias:false,powerPreference:'low-power'});
@@ -152,7 +156,46 @@ vec3 spatial(vec2 uv){
  col+=vec3(.6,.9,.75)*stars(uv,50.)*.25;
  return col;
 }
-void main(){vec2 uv=(2.*gl_FragCoord.xy-resolution)/resolution.y;vec3 c;if(world<.5)c=space(uv);else if(world<1.5)c=city(uv);else c=spatial(uv);float vignette=1.-.2*length(uv*.6);c*=vignette;c+=hash(gl_FragCoord.xy+fract(time))*.008;gl_FragColor=vec4(pow(max(c,0.),vec3(.88)),1.);}`;
+float crystalMap(vec3 p){p.xz=rot(time*.12+.3)*p.xz;p.yz=rot(.28+sin(time*.16)*.12)*p.yz;return (abs(p.x)+abs(p.y)*.78+abs(p.z)-1.08)*.57735;}
+vec3 studio(vec3 r){float band=pow(max(0.,sin(r.y*7.+r.x*2.)),16.);vec3 c=mix(vec3(.14,.2,.33),vec3(.87,.93,1.),smoothstep(-.3,.6,r.y));c+=vec3(.65,.55,.87)*pow(max(0.,r.z),8.);c+=vec3(1.)*band*.55;return c;}
+vec3 lab(vec2 uv){
+ vec2 q=uv-vec2(mix(.74,0.,compact),mix(.05,.67,compact));q+=mouse*vec2(.03,-.025);q*=mix(1.,1.75,compact);
+ vec3 bg=mix(vec3(.78,.82,.88),vec3(.96,.97,.99),smoothstep(-1.,1.,uv.y));
+ bg-=.08*exp(-pow(q.x*1.3,2.)-pow((q.y+1.1)*9.,2.));
+ vec2 g=abs(fract(uv*9.)-.5);bg-=.018*(1.-smoothstep(.009,.02,min(g.x,g.y)));
+ vec3 ro=vec3(0.,0.,4.);vec3 rd=normalize(vec3(q,-2.8));float t=0.;vec3 p=ro;
+ for(int i=0;i<70;i++){p=ro+rd*t;float d=crystalMap(p);if(d<.001||t>7.)break;t+=d*.85;}
+ if(t<7.){vec2 e=vec2(.003,0.);vec3 n=normalize(vec3(crystalMap(p+e.xyy)-crystalMap(p-e.xyy),crystalMap(p+e.yxy)-crystalMap(p-e.yxy),crystalMap(p+e.yyx)-crystalMap(p-e.yyx)));vec3 rr=reflect(rd,n);vec3 c=studio(rr);float fres=pow(1.-max(dot(-rd,n),0.),3.);float diffuse=.7+.3*max(dot(n,normalize(vec3(-2.,3.,4.))),0.);c*=diffuse;c=mix(c,vec3(.93,.96,1.),fres*.55);c+=vec3(.13,.08,.22)*pow(max(dot(rr,normalize(vec3(-1.,2.,3.))),0.),32.);bg=c;}
+ vec2 orbit=rot(-.25)*q;orbit.y*=3.8;float ring=abs(length(orbit)-1.34);bg-=vec3(.13,.11,.08)*(1.-smoothstep(.003,.012,ring));
+ return bg;
+}
+vec3 warp(vec2 uv){
+ vec2 q=uv-vec2(0.,mix(.12,.55,compact));q+=mouse*vec2(.05,-.04);float r=length(q)+.002;float a=atan(q.y,q.x);
+ vec3 c=vec3(.012,.008,.045);float tunnel=log(r)*3.-time*.7;
+ float rails=pow(max(0.,cos(a*12.)),100.);float rings=pow(max(0.,sin(tunnel*6.+sin(a*4.)*.25)),34.);
+ float depth=smoothstep(.02,.45,r)*(1.-smoothstep(1.3,2.8,r));
+ c+=mix(vec3(.17,.04,.55),vec3(.07,.38,.75),.5+.5*sin(a*3.))*(rails*.6+rings*.3)*depth;
+ for(int i=0;i<42;i++){
+   float fi=float(i);float z=fract(hash(vec2(fi,2.))+time*.105);z=.12+z*3.;float an=hash(vec2(fi,5.))*6.283;float radial=.3+hash(vec2(fi,8.))*.9;
+   vec2 pos=vec2(cos(an),sin(an))*radial/z;vec2 delta=q-pos;vec2 dir=normalize(pos);float across=abs(delta.x*dir.y-delta.y*dir.x);float along=abs(dot(delta,dir));
+   float streak=exp(-across*1100.)*exp(-along*(12.+z*25.));c+=mix(vec3(.34,.23,1.),vec3(.35,.8,1.),hash(vec2(fi,3.)))*streak*1.7;
+ }
+ c+=vec3(.3,.28,.75)*exp(-r*6.);c+=vec3(.3,.58,.95)*.00045/(r*r+.0018);
+ float crossLight=exp(-abs(q.y)*140.)*exp(-abs(q.x)*2.);c+=vec3(.27,.23,.7)*crossLight*.3;
+ return c;
+}
+float smin(float a,float b,float k){float h=clamp(.5+.5*(b-a)/k,0.,1.);return mix(b,a,h)-k*h*(1.-h);}
+float matterMap(vec3 p){p.xz=rot(time*.16)*p.xz;p.yz=rot(.2)*p.yz;float d=length(p-vec3(.24*sin(time*.4),.15,0.))-.7;d=smin(d,length(p-vec3(.52,-.43,sin(time*.3)*.28))-.48,.35);d=smin(d,length(p-vec3(-.48,.44,cos(time*.4)*.27))-.44,.32);d+=sin(p.x*7.+time*.25)*sin(p.y*6.)*sin(p.z*5.)*.045;return d;}
+vec3 metalEnvironment(vec3 r){float strip=pow(max(0.,sin(r.y*9.+r.x*1.4)),24.);float light=pow(max(0.,dot(r,normalize(vec3(-1.,2.,2.)))),35.);vec3 c=mix(vec3(.025,.032,.045),vec3(.75,.82,.88),smoothstep(-.25,.6,r.y));c+=vec3(.85,.9,1.)*strip*.8;c+=vec3(1.,.28,.055)*pow(max(0.,r.x),4.)*1.1;c+=vec3(1.,.8,.5)*light;return c;}
+vec3 liquid(vec2 uv){
+ vec2 q=uv-vec2(mix(.7,0.,compact),mix(.02,.64,compact));q+=mouse*vec2(.04,-.025);q*=mix(1.,1.75,compact);
+ vec3 c=vec3(.032,.028,.025)+vec3(.12,.047,.018)*exp(-dot(q,q)*.6);c-=vec3(.02)*exp(-pow(q.x*1.2,2.)-pow((q.y+1.15)*8.,2.));
+ vec3 ro=vec3(0.,0.,3.5);vec3 rd=normalize(vec3(q,-2.6));float t=0.;vec3 p=ro;
+ for(int i=0;i<72;i++){p=ro+rd*t;float d=matterMap(p);if(d<.002||t>6.)break;t+=d*.8;}
+ if(t<6.){vec2 e=vec2(.003,0.);vec3 n=normalize(vec3(matterMap(p+e.xyy)-matterMap(p-e.xyy),matterMap(p+e.yxy)-matterMap(p-e.yxy),matterMap(p+e.yyx)-matterMap(p-e.yyx)));vec3 rr=reflect(rd,n);float fres=pow(1.-max(dot(-rd,n),0.),4.);c=metalEnvironment(rr);c=mix(c,vec3(.95,.58,.24),fres*.3);float ao=.7+.3*smoothstep(-1.,.8,p.y);c*=ao;}
+ return c;
+}
+void main(){vec2 uv=(2.*gl_FragCoord.xy-resolution)/resolution.y;vec3 c;if(world<.5)c=space(uv);else if(world<1.5)c=city(uv);else if(world<2.5)c=spatial(uv);else if(world<3.5)c=lab(uv);else if(world<4.5)c=warp(uv);else c=liquid(uv);float vignette=1.-(world>2.5&&world<3.5?.025:.2)*length(uv*.6);c*=vignette;c+=hash(gl_FragCoord.xy+fract(time))*.008;gl_FragColor=vec4(pow(max(c,0.),vec3(.88)),1.);}`;
   function compile(type, source){const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){console.error(gl.getShaderInfoLog(s));throw new Error('Scene shader could not compile');}return s;}
   if(gl){
     try{

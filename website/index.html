@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syncopate:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="future.css?v=1">
-  <script src="future.js?v=1" defer></script>
+  <link rel="stylesheet" href="future.css?v=2">
+  <script src="future.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -35,11 +35,14 @@
     <div class="scene-controls"><span class="mono" id="interaction-hint">MOVE TO EXPLORE</span><button id="motion" aria-pressed="false" aria-label="Pause animation"><span class="pause-icon">Ⅱ</span><span class="motion-label">Pause</span></button></div>
   </main>
   <footer class="world-dock">
-    <div class="dock-caption mono"><span>CHOOSE YOUR REALITY</span><small>THREE DESIGN DIRECTIONS</small></div>
+    <div class="dock-caption mono"><span>CHOOSE YOUR REALITY</span><small>SIX DESIGN DIRECTIONS</small></div>
     <nav class="worlds" aria-label="Choose a design world">
       <a href="?world=space" data-mode="space" aria-current="page"><span class="mini mini-space" aria-hidden="true"></span><span><small>01 / CINEMATIC</small><b>Event Horizon</b></span><span class="world-arrow">↗</span></a>
       <a href="?world=city" data-mode="city"><span class="mini mini-city" aria-hidden="true"></span><span><small>02 / CYBER FUTURE</small><b>Neo District</b></span><span class="world-arrow">↗</span></a>
       <a href="?world=interface" data-mode="interface"><span class="mini mini-interface" aria-hidden="true"></span><span><small>03 / SPATIAL WEB</small><b>Human Interface</b></span><span class="world-arrow">↗</span></a>
+      <a href="?world=lab" data-mode="lab"><span class="mini mini-lab" aria-hidden="true"></span><span><small>04 / LIGHT FUTURE</small><b>Tomorrow Lab</b></span><span class="world-arrow">↗</span></a>
+      <a href="?world=warp" data-mode="warp"><span class="mini mini-warp" aria-hidden="true"></span><span><small>05 / HYPERSPACE</small><b>Warp Drive</b></span><span class="world-arrow">↗</span></a>
+      <a href="?world=liquid" data-mode="liquid"><span class="mini mini-liquid" aria-hidden="true"></span><span><small>06 / LIQUID FUTURE</small><b>New Matter</b></span><span class="world-arrow">↗</span></a>
     </nav>
     <button class="dock-more" data-open="services" aria-label="Explore our services"><span>WHAT WE BUILD</span><b>+</b></button>
   </footer>
@@ -59,7 +62,7 @@
     <div class="dialog-head"><span class="mono">AURELION / NEXT CHAPTER</span><button class="close" aria-label="Close project brief">×</button></div>
     <p class="eyebrow mono">YOUR FUTURE STARTS WITH AN IDEA</p><h2 id="project-title">What world<br>will <em>you build?</em></h2>
     <p class="project-intro">Choose a direction. Add a few details. Take your idea to Aurelion.</p>
-    <form id="brief-form"><label>Design direction<select name="direction" id="direction"><option>Event Horizon — cinematic space</option><option>Neo District — cyber future</option><option>Human Interface — spatial web</option></select></label><label>Your name<input name="name" autocomplete="name" required placeholder="How should we call you?"></label><label>Business or project<input name="business" required placeholder="The idea you're bringing to life"></label><label>What are you imagining?<textarea name="idea" rows="3" required placeholder="A new website, a redesign, or something no one has seen yet…"></textarea></label><button class="primary" type="submit">Download my project brief <span>↓</span></button><p class="form-note">Saved as a text file on your device. Nothing is sent automatically.</p></form>
+    <form id="brief-form"><label>Design direction<select name="direction" id="direction"><option>Event Horizon — cinematic space</option><option>Neo District — cyber future</option><option>Human Interface — spatial web</option><option>Tomorrow Lab — light future</option><option>Warp Drive — hyperspace</option><option>New Matter — liquid future</option></select></label><label>Your name<input name="name" autocomplete="name" required placeholder="How should we call you?"></label><label>Business or project<input name="business" required placeholder="The idea you're bringing to life"></label><label>What are you imagining?<textarea name="idea" rows="3" required placeholder="A new website, a redesign, or something no one has seen yet…"></textarea></label><button class="primary" type="submit">Download my project brief <span>↓</span></button><p class="form-note">Saved as a text file on your device. Nothing is sent automatically.</p></form>
     <a class="contact-link" href="/contact.html">Talk to Aurelion <span>↗</span></a>
   </dialog>
   <noscript><p class="noscript">Enable JavaScript for the interactive worlds. <a href="/contact.html">Contact Aurelion about your website.</a></p></noscript>

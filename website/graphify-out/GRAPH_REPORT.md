@@ -1,7 +1,7 @@
 # Graph Report - website  (2026-11-18)
 
 ## Corpus Check
-- 1 files · ~1,100 words
+- 1 files · ~1,399 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 1 file(s) not represented in the graph (top: .css 1)
 
