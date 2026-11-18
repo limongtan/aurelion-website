@@ -1,6 +1,8 @@
 (() => {
   'use strict';
   const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+  const language=['zh','ms'].includes(document.documentElement.lang)?document.documentElement.lang:'en';
+  const labels={en:{pause:'Pause animation',resume:'Resume animation',pauseMotion:'Pause motion',resumeMotion:'Resume motion',guide:'GUIDE TO GET YOU GOING',guides:'GUIDES TO GET YOU GOING',shown:n=>n+' guide'+(n===1?'':'s')+' shown',copied:'Copied. Paste it into your AI chat and start making.',manual:'Select and copy the prompt above (Ctrl+C / Command+C).'},zh:{pause:'暂停动画',resume:'继续动画',pauseMotion:'暂停动态',resumeMotion:'继续动态',guide:'份指南，开始动手',guides:'份指南，开始动手',shown:n=>'显示 '+n+' 份指南',copied:'已复制。粘贴到 AI 对话中，就可以开始。',manual:'请选中上方提示词并复制（Ctrl+C / Command+C）。'},ms:{pause:'Jeda animasi',resume:'Sambung animasi',pauseMotion:'Jeda gerakan',resumeMotion:'Sambung gerakan',guide:'PANDUAN UNTUK BERMULA',guides:'PANDUAN UNTUK BERMULA',shown:n=>n+' panduan dipaparkan',copied:'Disalin. Tampal dalam sembang AI anda untuk bermula.',manual:'Pilih dan salin prompt di atas (Ctrl+C / Command+C).'}}[language];
   const videos=[...document.querySelectorAll('.reel-shell video')];
   const allVideos=[...document.querySelectorAll('video')];
   const canvas=document.querySelector('#ribbon');
@@ -8,7 +10,7 @@
   let paused=reduce.matches,raf=0,last=0,time=0,visible=true;
   let px=0,py=0,targetX=0,targetY=0;
   const status=document.querySelector('#announcement');
-  function updateMotion(){const b=document.querySelector('#motion');b.setAttribute('aria-pressed',String(paused));b.setAttribute('aria-label',paused?'Resume animation':'Pause animation');document.querySelector('#motion-icon').textContent=paused?'▷':'Ⅱ';document.querySelector('#motion-label').textContent=paused?'Resume motion':'Pause motion';videos.forEach(v=>{if(paused||!visible)v.pause();else v.play().catch(()=>{});});}
+  function updateMotion(){const b=document.querySelector('#motion');b.setAttribute('aria-pressed',String(paused));b.setAttribute('aria-label',paused?labels.resume:labels.pause);document.querySelector('#motion-icon').textContent=paused?'▷':'Ⅱ';document.querySelector('#motion-label').textContent=paused?labels.resumeMotion:labels.pauseMotion;videos.forEach(v=>{if(paused||!visible)v.pause();else v.play().catch(()=>{});});}
   function setPaused(value){paused=value;cancelAnimationFrame(raf);last=0;updateMotion();if(paused){allVideos.forEach(v=>v.pause());draw();}else if(visible)raf=requestAnimationFrame(loop);}
   document.querySelector('#motion').addEventListener('click',()=>setPaused(!paused));
   reduce.addEventListener('change',e=>setPaused(e.matches));
@@ -17,12 +19,12 @@
     document.querySelectorAll('[data-filter]').forEach(x=>{const on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-pressed',String(on));});
     document.querySelector('.projects').classList.toggle('filtered',filter!=='all');
     document.querySelectorAll('[data-category]').forEach(p=>{p.hidden=filter!=='all'&&p.dataset.category!==filter;if(!p.hidden){count++;p.classList.remove('filtering');void p.offsetWidth;p.classList.add('filtering');}else p.querySelectorAll('video').forEach(v=>v.pause());});
-    document.querySelector('#result-count').textContent=String(count).padStart(2,'0')+' GUIDE'+(count===1?'':'S')+' TO GET YOU GOING';status.textContent=count+' guide'+(count===1?'':'s')+' shown';
+    document.querySelector('#result-count').textContent=String(count).padStart(2,'0')+' '+(count===1?labels.guide:labels.guides);status.textContent=labels.shown(count);
   }));
   document.querySelector('#copy').addEventListener('click',async()=>{
     const text=document.querySelector('#starter').textContent;
-    try{await navigator.clipboard.writeText(text);document.querySelector('#copy-status').textContent='Copied. Paste it into your AI chat and start making.';}
-    catch{const range=document.createRange();range.selectNodeContents(document.querySelector('#starter'));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);document.querySelector('#copy-status').textContent='Select and copy the prompt above (Ctrl+C / Command+C).';}
+    try{await navigator.clipboard.writeText(text);document.querySelector('#copy-status').textContent=labels.copied;}
+    catch{const range=document.createRange();range.selectNodeContents(document.querySelector('#starter'));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);document.querySelector('#copy-status').textContent=labels.manual;}
   });
   const cursor=document.querySelector('.cursor-label');
   const fine=matchMedia('(pointer:fine)');

@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en" class="sub"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Go Live · Vibe Coding Field Guide</title>
+<title>Connect your domain and Google sign-in | Vibe Coding Field Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/golive.html">
 <link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/golive.html">
 <link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/golive.html">
 <link rel="stylesheet" href="style.css?v=9">
-</head><body>
+<link rel="stylesheet" href="guide.css?v=1">
+<script src="guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-group="web" data-guide-page="golive">
 <div class="wrap">
 <header class="gnav">
   <a class="brand" href="./">Vibe Coding</a>
@@ -21,9 +23,11 @@
   <p class="eyebrow">Step 5 of 5</p>
   <h1>Your domain and Google sign-in</h1>
   <p class="lead">Pick what you need: <b>A</b> for your own website address, or <b>B</b> for Google sign-in. Tap one to open it, then tap each step.</p>
+<div class="guide-summary"><p><strong>You will:</strong> Connect a custom address or configure branded Google sign-in, then troubleshoot common errors.</p><p><strong>Before you start:</strong> Have a working hosted site. For part A, have your domain account ready; use part B only if your site needs Google sign-in.</p></div>
 </header>
 
 <section>
+  <h2>Who does what</h2>
   <div class="who">
     <div><b>The AI does</b><span>The code, the host settings, the GoDaddy clicks (in the Claude desktop app), and checking everything works.</span></div>
     <div><b>You do</b><span>Sign in when GoDaddy asks (the AI never types your password), and set up Google sign-in yourself.</span></div>
@@ -31,6 +35,7 @@
 </section>
 
 <section id="domain">
+  <h2>A. Connect your domain</h2>
   <details class="part" name="part">
     <summary><span><b>A · Connect your domain</b><small>your own website address, like www.yourshop.com</small></span><span class="chev" aria-hidden="true">›</span></summary>
     <div class="part-body">
@@ -111,6 +116,7 @@ open it for me, and I'll paste the token in myself. Then check you can see my Ra
 </section>
 
 <section id="google">
+  <h2>B. Set up Google sign-in</h2>
   <details class="part" name="part">
     <summary><span><b>B · Google sign-in with your own name</b><small>customers log in with their Gmail, no new password</small></span><span class="chev" aria-hidden="true">›</span></summary>
     <div class="part-body">
@@ -267,3 +273,4 @@ document.querySelectorAll('.fillbox input').forEach(function (inp) {
 });
 </script>
 </body></html>
+

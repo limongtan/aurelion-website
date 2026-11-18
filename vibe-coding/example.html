@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en" class="sub"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Life Garden Example · Vibe Coding Field Guide</title>
+<title>Life Garden: a real website build | Vibe Coding Field Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/example.html">
 <link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/example.html">
 <link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/example.html">
 <link rel="stylesheet" href="style.css?v=9">
-</head><body>
+<link rel="stylesheet" href="guide.css?v=1">
+<script src="guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-group="web" data-guide-page="example">
 <div class="wrap">
 <header class="gnav">
   <a class="brand" href="./">Vibe Coding</a>
@@ -21,9 +23,11 @@
   <p class="eyebrow">Step 4 of 5</p>
   <h1>Life Garden: from a design file to a live business</h1>
   <p class="lead">A coaching business had a finished design on a laptop. These are the owner's real messages, typos included, and what the AI did after each one. Result: <a href="https://lifegarden-production.up.railway.app" target="_blank" rel="noopener">lifegarden-production.up.railway.app</a></p>
+<div class="guide-summary"><p><strong>You will:</strong> Follow a real build from the first brief through testing, payments and a domain.</p><p><strong>Before you start:</strong> Use the lessons beside each message to guide your own project.</p></div>
 </header>
 
 <section>
+  <h2>1. Define the project and share the design</h2>
   <ol class="steps">
     <li class="step"><span class="num">01</span><div class="body">
       <h3>Say what you want</h3>
@@ -43,6 +47,11 @@
       <ul class="did"><li>No domain needed yet. Use a separate folder and a private GitHub repo. Sell on WhatsApp first.</li></ul>
       <p class="lesson"><b>Lesson:</b> "do I need X first?" lets the AI plan the order.</p>
     </div></li>
+    </ol>
+</section>
+<section>
+  <h2>2. Save, build and test the website</h2>
+  <ol class="steps" start="4">
     <li class="step"><span class="num">04</span><div class="body">
       <h3>Create the GitHub repo</h3>
       <p class="said">please help me create a repo in github</p>
@@ -80,6 +89,11 @@
       <ul class="did"><li>Cause: the pages switched to a dark version on dark-mode phones. Made the milky look the default. Live again in about 40 seconds.</li></ul>
       <p class="lesson"><b>Lesson:</b> open the live site on your own phone. "It looks different from what I expected" is a perfect bug report.</p>
     </div></li>
+    </ol>
+</section>
+<section>
+  <h2>3. Add payments and connect a domain</h2>
+  <ol class="steps" start="10">
     <li class="step"><span class="num">10</span><div class="body">
       <h3>Add the product and payment</h3>
       <p class="said">now help me plugin the aurelion insight and payment to life garden</p>
@@ -117,3 +131,4 @@
 <div class="next"><a href="setup.html">← 3. Prepare</a><a href="golive.html">5. Go live →</a></div>
 </div>
 </body></html>
+

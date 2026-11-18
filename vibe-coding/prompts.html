@@ -1,14 +1,16 @@
 <!doctype html>
 <html lang="en" class="sub"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prompt Kit · Vibe Coding Field Guide</title>
+<title>Prompt kit: describe your project | Vibe Coding Field Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/prompts.html">
 <link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/prompts.html">
 <link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/prompts.html">
 <link rel="stylesheet" href="style.css?v=9">
 <script>if (/^#(video|v[1-5])$/.test(location.hash)) location.replace('videos.html' + (location.hash === '#video' ? '' : location.hash));</script>
-</head><body>
+<link rel="stylesheet" href="guide.css?v=1">
+<script src="guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-group="toolkit" data-guide-page="prompts">
 <div class="wrap">
 <header class="gnav">
   <a class="brand" href="./">Vibe Coding</a>
@@ -22,10 +24,11 @@
   <p class="eyebrow">Step 2 of 5</p>
   <h1>Describe what you want to build</h1>
   <p class="lead">Start with the general prompt. Then add the extra lines for the kind of thing you are building. Replace everything in [brackets].</p>
+<div class="guide-summary"><p><strong>You will:</strong> Turn your idea into a brief the AI can plan before it builds.</p><p><strong>Before you start:</strong> Choose a website or system, then replace the bracketed details in each prompt.</p></div>
 </header>
 
 <section>
-  <h2>1 · The starting prompt</h2>
+  <h2>1. Start with your project brief</h2>
   <p class="muted">Works for everything. The last line matters most: it makes the AI ask questions and show a plan before it writes any code.</p>
   <div class="pcard"><div class="phead"><h3>General starting prompt</h3><button class="copy" type="button">Copy</button></div>
 <pre>I want to build [a website / a system] for [business or project name].
@@ -50,7 +53,7 @@ Wait for my OK.</pre></div>
 </section>
 
 <section>
-  <h2>2 · Add the lines for your kind of system</h2>
+  <h2>2. Add a prompt for your project type</h2>
   <p class="muted">Not sure which one you are? <a href="systems.html">Website or system</a> explains the difference.</p>
   <div class="stack">
 
@@ -148,7 +151,7 @@ Show me the staff list before publishing. Don't change any task without asking.<
 </section>
 
 <section id="after">
-  <h2>3 · Prompts while you build</h2>
+  <h2>3. Test, publish and improve</h2>
   <div class="stack">
     <div class="pcard"><div class="phead"><h3>Check before calling it done</h3><button class="copy" type="button">Copy</button></div>
 <pre>Before you say it's finished: test every page and button, in every language,
@@ -172,3 +175,4 @@ and tell me step by step what to change at [provider].</pre></div>
 </div>
 <script src="copy.js?v=2"></script>
 </body></html>
+

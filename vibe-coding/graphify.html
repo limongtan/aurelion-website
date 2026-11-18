@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="sub"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>graphify: help Claude find things faster · Vibe Coding</title>
+<title>Graphify: map your project | Vibe Coding Field Guide</title>
 <meta name="description" content="A free add-on for Claude Code that draws a map of your project, so Claude finds things faster and uses less of your limit. Copy one prompt to set it up.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="style.css?v=9">
@@ -32,7 +32,9 @@ video.shotmap{max-width:420px;margin:0 auto;background:#000}
 .two .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font:700 1rem/1 var(--body)}
 .two b{font-size:1.05rem}
 </style>
-</head><body>
+<link rel="stylesheet" href="guide.css?v=1">
+<script src="guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-group="toolkit" data-guide-page="graphify">
 <div class="wrap">
 <header class="gnav">
   <a class="brand" href="./">Vibe Coding</a>
@@ -44,9 +46,11 @@ video.shotmap{max-width:420px;margin:0 auto;background:#000}
   <p class="eyebrow">Free add-on for Claude Code</p>
   <h1>graphify: help Claude find things faster</h1>
   <p class="lead">It gives Claude a map of your project.</p>
+<div class="guide-summary"><p><strong>You will:</strong> Create a project map so Claude can find related code before opening files.</p><p><strong>Before you start:</strong> Open an existing project folder in Claude Code.</p></div>
 </header>
 
 <section class="intro">
+  <h2>Why use a project map?</h2>
   <div class="duo">
     <figure class="pic">
       <svg viewBox="0 0 300 170" role="img" aria-label="Without graphify, Claude reads all twelve files">
@@ -99,7 +103,7 @@ video.shotmap{max-width:420px;margin:0 auto;background:#000}
 </section>
 
 <section>
-  <h2>Your map looks like this</h2>
+  <h2>Read and refresh your map</h2>
   <video class="shotmap" src="img/graphify/map.mp4" poster="img/graphify/map-poster.jpg" width="720" height="1280" autoplay muted loop playsinline aria-label="A graphify map: glowing dots for each part of a project, joined by lines that show how they connect"></video>
   <p class="muted">Each dot is a part of your project. The lines show what connects to what. Then just ask Claude as normal.</p>
   <div class="pcard"><div class="phead"><h3>Changed a lot? Refresh the map</h3><button class="copy" type="button">Copy</button></div>
@@ -115,3 +119,4 @@ video.shotmap{max-width:420px;margin:0 auto;background:#000}
 </div>
 <script src="copy.js?v=2"></script>
 </body></html>
+
