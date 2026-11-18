@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>graphify: help Claude find things faster · Vibe Coding</title>
+<meta name="description" content="A free add-on for Claude Code that draws a map of your project, so Claude finds things faster and uses less of your limit. Copy one prompt to set it up.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css?v=9">
+<style>
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.pic{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:8px}
+.pic svg{width:100%;height:auto;display:block}
+.pic figcaption{font-weight:700;text-align:center}
+.pic figcaption small{display:block;font-weight:400;color:var(--muted);font-size:.9rem}
+.pic.good{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.f{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.f.hit{fill:var(--sun-soft);stroke:var(--accent);stroke-width:3}
+.f.dim{opacity:.35}
+.ln{stroke:var(--warn);stroke-width:1.5;opacity:.55}
+.ln.ok{stroke:var(--accent);stroke-width:3;opacity:1}
+.ai{fill:var(--ink)} .ait{fill:var(--paper);font:700 13px var(--body)}
+.mp{fill:var(--mint-soft);stroke:var(--accent);stroke-width:2}
+.dot{fill:var(--accent)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 10px;display:grid;gap:4px;justify-items:center;text-align:center}
+.tile .ico{font-size:2rem;line-height:1}
+.tile b{font:800 clamp(1.3rem,5vw,1.8rem)/1.1 var(--display)}
+.tile span{color:var(--muted);font-size:.85rem;line-height:1.3}
+.tile.win{background:var(--sun-soft);border-color:var(--sun)}
+.shotmap{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line)}
+video.shotmap{max-width:420px;margin:0 auto;background:#000}
+.two{display:grid;grid-template-columns:auto 1fr;gap:10px 12px;align-items:center;margin:0;padding:0;list-style:none}
+.two .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font:700 1rem/1 var(--body)}
+.two b{font-size:1.05rem}
+</style>
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Guides"><a class="t-web" href="systems.html">Build a website</a><a class="t-vid" href="videos.html">Make reels</a><a class="t-fx" href="effects.html">Video effects</a></nav>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+
+<header class="hero">
+  <p class="eyebrow">Free add-on for Claude Code</p>
+  <h1>graphify: help Claude find things faster</h1>
+  <p class="lead">It gives Claude a map of your project.</p>
+</header>
+
+<section class="intro">
+  <div class="duo">
+    <figure class="pic">
+      <svg viewBox="0 0 300 170" role="img" aria-label="Without graphify, Claude reads all twelve files">
+        <g>
+          <line class="ln" x1="62" y1="85" x2="130" y2="31"/><line class="ln" x1="62" y1="85" x2="170" y2="31"/><line class="ln" x1="62" y1="85" x2="210" y2="31"/><line class="ln" x1="62" y1="85" x2="250" y2="31"/>
+          <line class="ln" x1="62" y1="85" x2="130" y2="85"/><line class="ln" x1="62" y1="85" x2="170" y2="85"/><line class="ln" x1="62" y1="85" x2="210" y2="85"/><line class="ln" x1="62" y1="85" x2="250" y2="85"/>
+          <line class="ln" x1="62" y1="85" x2="130" y2="139"/><line class="ln" x1="62" y1="85" x2="170" y2="139"/><line class="ln" x1="62" y1="85" x2="210" y2="139"/><line class="ln" x1="62" y1="85" x2="250" y2="139"/>
+        </g>
+        <g>
+          <rect class="f" x="130" y="15" width="26" height="32" rx="4"/><rect class="f" x="170" y="15" width="26" height="32" rx="4"/><rect class="f" x="210" y="15" width="26" height="32" rx="4"/><rect class="f" x="250" y="15" width="26" height="32" rx="4"/>
+          <rect class="f" x="130" y="69" width="26" height="32" rx="4"/><rect class="f" x="170" y="69" width="26" height="32" rx="4"/><rect class="f" x="210" y="69" width="26" height="32" rx="4"/><rect class="f" x="250" y="69" width="26" height="32" rx="4"/>
+          <rect class="f" x="130" y="123" width="26" height="32" rx="4"/><rect class="f" x="170" y="123" width="26" height="32" rx="4"/><rect class="f" x="210" y="123" width="26" height="32" rx="4"/><rect class="f" x="250" y="123" width="26" height="32" rx="4"/>
+        </g>
+        <circle class="ai" cx="38" cy="85" r="26"/><text class="ait" x="38" y="90" text-anchor="middle">AI</text>
+      </svg>
+      <figcaption>Without graphify<small>Claude reads every file</small></figcaption>
+    </figure>
+    <figure class="pic good">
+      <svg viewBox="0 0 300 170" role="img" aria-label="With graphify, Claude checks the map, then opens one file">
+        <rect class="f dim" x="250" y="15" width="26" height="32" rx="4"/><rect class="f dim" x="250" y="123" width="26" height="32" rx="4"/><rect class="f dim" x="214" y="40" width="26" height="32" rx="4"/><rect class="f dim" x="214" y="98" width="26" height="32" rx="4"/>
+        <line class="ln ok" x1="64" y1="85" x2="104" y2="85"/><line class="ln ok" x1="176" y1="85" x2="250" y2="85"/>
+        <polygon class="mp" points="104,58 128,50 152,58 176,50 176,112 152,120 128,112 104,120"/>
+        <line x1="128" y1="50" x2="128" y2="112" stroke="var(--accent)" stroke-width="1" opacity=".5"/><line x1="152" y1="58" x2="152" y2="120" stroke="var(--accent)" stroke-width="1" opacity=".5"/>
+        <path d="M118 72 L140 92 L162 76 M140 92 L134 106" stroke="var(--accent)" stroke-width="2" fill="none"/>
+        <circle class="dot" cx="118" cy="72" r="4"/><circle class="dot" cx="140" cy="92" r="5"/><circle class="dot" cx="162" cy="76" r="4"/><circle class="dot" cx="134" cy="106" r="3.5"/>
+        <rect class="f hit" x="250" y="69" width="26" height="32" rx="4"/>
+        <circle class="ai" cx="38" cy="85" r="26"/><text class="ait" x="38" y="90" text-anchor="middle">AI</text>
+      </svg>
+      <figcaption>With graphify<small>Claude checks the map, opens 1 file</small></figcaption>
+    </figure>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><span class="ico" aria-hidden="true">⚡</span><b>Faster</b><span>answers</span></div>
+    <div class="tile win"><span class="ico" aria-hidden="true">🔋</span><b>266x</b><span>less of your Claude limit*</span></div>
+    <div class="tile"><span class="ico" aria-hidden="true">🎁</span><b>Free</b><span>to use</span></div>
+  </div>
+  <p class="muted" style="font-size:.85rem">*Per question, on our big project. On a small project, about 10x.</p>
+</section>
+
+<section id="prompt">
+  <h2>Set it up in 2 steps</h2>
+  <div class="two">
+    <span class="n">1</span><b>Open Claude Code in your project folder</b>
+    <span class="n">2</span><b>Paste this, press Enter</b>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The prompt</h3><button class="copy" type="button">Copy</button></div>
+<pre>Install graphify from https://github.com/Graphify-Labs/graphify (pip install graphifyy, then graphify install). Run /graphify . on this project, open graphify-out/graph.html, then run graphify claude install so you always check the graph first.</pre></div>
+  <p class="muted">If Claude asks for permission, say yes.</p>
+</section>
+
+<section>
+  <h2>Your map looks like this</h2>
+  <video class="shotmap" src="img/graphify/map.mp4" poster="img/graphify/map-poster.jpg" width="720" height="1280" autoplay muted loop playsinline aria-label="A graphify map: glowing dots for each part of a project, joined by lines that show how they connect"></video>
+  <p class="muted">Each dot is a part of your project. The lines show what connects to what. Then just ask Claude as normal.</p>
+  <div class="pcard"><div class="phead"><h3>Changed a lot? Refresh the map</h3><button class="copy" type="button">Copy</button></div>
+<pre>/graphify . --update</pre></div>
+</section>
+
+<section>
+  <h2>New to building with AI?</h2>
+  <p><a class="btn" href="./">Open the Vibe Coding guide</a></p>
+</section>
+
+<footer>graphify is a free, open-source project, not made by Aurelion. <a href="https://github.com/Graphify-Labs/graphify" rel="noopener">github.com/Graphify-Labs/graphify</a></footer>
+</div>
+<script src="copy.js?v=2"></script>
+</body></html>
