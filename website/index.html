@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-world="space">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#05080e">
+  <meta name="description" content="Explore three future-facing website worlds. Custom websites, immersive experiences and website revamps by Aurelion.">
+  <title>Aurelion — Beyond the screen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syncopate:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="future.css?v=1">
+  <script src="future.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="navigation">
+    <a class="brand" href="/" aria-label="Aurelion home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 32 20 5l15 27h-9l-6-11-6 11z"/><path d="m15 34 5-9 5 9z"/></svg><span>AURELION<small>DIGITAL EXPERIENCES</small></span></a>
+    <nav aria-label="Main navigation"><button data-open="services">Capabilities <span>↗</span></button><a href="/vibe-coding/">Vibe Coding <span>↗</span></a></nav>
+    <button class="nav-cta" data-open="project">Let's build <span>↗</span></button>
+  </header>
+  <main id="main">
+    <div class="coordinate mono" aria-hidden="true"><span class="signal"></span> HUMAN IDEAS. UNCHARTED POSSIBILITIES.</div>
+    <section class="hero" aria-labelledby="headline">
+      <p class="eyebrow mono" id="eyebrow">01 / THE NEXT DIMENSION</p>
+      <h1 id="headline">BEYOND<br>THE <em>SCREEN.</em></h1>
+      <div class="hero-bottom"><p id="description">The next version of your business deserves a world of its own. We design and build websites worth stepping into.</p><button class="primary" data-open="project"><span id="cta-text">Build my next world</span><span class="arrow">↗</span></button></div>
+    </section>
+    <aside class="telemetry mono" aria-hidden="true"><span id="object-label">OBJECT / EVENT HORIZON</span><i></i><span id="object-meta">DIGITAL SPACE · NO LIMITS</span><span class="live"><b></b> REAL-TIME ENVIRONMENT</span></aside>
+    <div class="orbital-label mono" aria-hidden="true"><span>+</span> <span id="scene-label">A NEW WORLD IS WITHIN REACH</span></div>
+    <div class="console-hud" aria-hidden="true"><span class="mono">AURELION / SPATIAL INTERFACE</span><div class="hud-line"></div><div class="hud-target">◌<small>YOUR NEXT IDEA</small></div><div class="hud-data mono"><span>IDENTITY<br><b>HUMAN</b></span><span>POSSIBILITIES<br><b>UNLIMITED</b></span><span>STATUS<br><b>READY</b></span></div></div>
+    <div class="scene-controls"><span class="mono" id="interaction-hint">MOVE TO EXPLORE</span><button id="motion" aria-pressed="false" aria-label="Pause animation"><span class="pause-icon">Ⅱ</span><span class="motion-label">Pause</span></button></div>
+  </main>
+  <footer class="world-dock">
+    <div class="dock-caption mono"><span>CHOOSE YOUR REALITY</span><small>THREE DESIGN DIRECTIONS</small></div>
+    <nav class="worlds" aria-label="Choose a design world">
+      <a href="?world=space" data-mode="space" aria-current="page"><span class="mini mini-space" aria-hidden="true"></span><span><small>01 / CINEMATIC</small><b>Event Horizon</b></span><span class="world-arrow">↗</span></a>
+      <a href="?world=city" data-mode="city"><span class="mini mini-city" aria-hidden="true"></span><span><small>02 / CYBER FUTURE</small><b>Neo District</b></span><span class="world-arrow">↗</span></a>
+      <a href="?world=interface" data-mode="interface"><span class="mini mini-interface" aria-hidden="true"></span><span><small>03 / SPATIAL WEB</small><b>Human Interface</b></span><span class="world-arrow">↗</span></a>
+    </nav>
+    <button class="dock-more" data-open="services" aria-label="Explore our services"><span>WHAT WE BUILD</span><b>+</b></button>
+  </footer>
+  <div class="transition" aria-hidden="true"></div>
+  <p class="sr-only" role="status" id="announcement"></p>
+  <dialog id="services" aria-labelledby="services-title">
+    <div class="dialog-head"><span class="mono">AURELION / CAPABILITIES</span><button class="close" aria-label="Close capabilities">×</button></div>
+    <p class="eyebrow mono">BUILT AROUND YOUR BUSINESS</p><h2 id="services-title">A different world.<br><em>A real purpose.</em></h2>
+    <div class="service-list">
+      <article><span class="mono">01</span><div><h3>Websites with an identity.</h3><p>Brand and business websites that tell your story clearly, feel like you, and give visitors a reason to stay.</p></div><b>↗</b></article>
+      <article><span class="mono">02</span><div><h3>Experiences that move.</h3><p>Interactive landing pages, cinematic motion and immersive scenes, shaped around your audience and your goals.</p></div><b>↗</b></article>
+      <article><span class="mono">03</span><div><h3>A new life for your website.</h3><p>A considered redesign of your existing site, from structure and visual direction to the mobile experience.</p></div><b>↗</b></article>
+      <article><span class="mono">04</span><div><h3>From vibe-coded to ready.</h3><p>Turn your AI-built first draft into a polished website. We review the code and agree what needs refining before the build.</p></div><b>↗</b></article>
+    </div><button class="primary" data-open="project">Tell us what you're imagining <span>↗</span></button>
+  </dialog>
+  <dialog id="project" aria-labelledby="project-title">
+    <div class="dialog-head"><span class="mono">AURELION / NEXT CHAPTER</span><button class="close" aria-label="Close project brief">×</button></div>
+    <p class="eyebrow mono">YOUR FUTURE STARTS WITH AN IDEA</p><h2 id="project-title">What world<br>will <em>you build?</em></h2>
+    <p class="project-intro">Choose a direction. Add a few details. Take your idea to Aurelion.</p>
+    <form id="brief-form"><label>Design direction<select name="direction" id="direction"><option>Event Horizon — cinematic space</option><option>Neo District — cyber future</option><option>Human Interface — spatial web</option></select></label><label>Your name<input name="name" autocomplete="name" required placeholder="How should we call you?"></label><label>Business or project<input name="business" required placeholder="The idea you're bringing to life"></label><label>What are you imagining?<textarea name="idea" rows="3" required placeholder="A new website, a redesign, or something no one has seen yet…"></textarea></label><button class="primary" type="submit">Download my project brief <span>↓</span></button><p class="form-note">Saved as a text file on your device. Nothing is sent automatically.</p></form>
+    <a class="contact-link" href="/contact.html">Talk to Aurelion <span>↗</span></a>
+  </dialog>
+  <noscript><p class="noscript">Enable JavaScript for the interactive worlds. <a href="/contact.html">Contact Aurelion about your website.</a></p></noscript>
+</body>
+</html>
