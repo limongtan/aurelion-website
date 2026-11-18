@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>上线 · Vibe Coding 实用指南</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/golive.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/golive.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/golive.html">
+<link rel="stylesheet" href="../style.css?v=9">
+<link rel="stylesheet" href="../guide.css?v=2">
+<script src="../guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-page="golive" data-guide-group="web">
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="指南"><a class="t-web" href="systems.html" aria-current="true">做网站</a><a class="t-vid" href="videos.html">做 Reels</a><a class="t-fx" href="effects.html">视频特效</a></nav>
+  <nav class="langs" aria-label="语言"><a href="../golive.html" lang="en" hreflang="en">EN</a><a href="../zh/golive.html" aria-current="true" lang="zh" hreflang="zh">中文</a><a href="../ms/golive.html" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="做网站，一步一步来"><a href="systems.html"><b>1</b>选择</a><a href="prompts.html"><b>2</b>描述</a><a href="setup.html"><b>3</b>准备</a><a href="example.html"><b>4</b>动手做</a><a href="golive.html" aria-current="step"><b>5</b>上线</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">第 5 步（共 5 步）</p>
+  <h1>你的域名和 Google 登录</h1>
+  <p class="guide-summary">按需要连接自有域名或设置 Google 登录，并逐步验证结果。</p>
+  <p class="lead">选你需要的：<b>A</b> 是用你自己的网址，<b>B</b> 是 Google 登录。点一下打开，再一步一步点开来看。</p>
+</header>
+
+<section>
+  <div class="who">
+    <div><b>AI 负责</b><span>代码、主机设置、在 GoDaddy 里点击（用 Claude 桌面 app），还有检查一切都正常。</span></div>
+    <div><b>你负责</b><span>GoDaddy 要你登录时自己登录（AI 绝不会帮你打密码），还有自己设置 Google 登录。</span></div>
+  </div>
+</section>
+
+<section id="domain">
+  <details class="part" name="part">
+    <summary><span><b>A · 连接你的域名</b><small>你自己的网址，例如 www.yourshop.com</small></span><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="part-body">
+  <p class="muted">例子：域名在 GoDaddy 买，网站放在 Railway。大约 10 分钟，之后可能要等几个小时。</p>
+  <ol class="track">
+    <li><details>
+      <summary><span class="n">0</span><span><b>先把 Railway 连接到 Claude</b><small>先做这个，每台电脑做一次就好。第 1 步需要它</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p>Claude 需要权限，才能改你 Railway 账号里的东西（加域名、读取记录）。选一种方法：</p>
+        <p class="cap">方法 1 · 通过 Railway 插件登录（最简单）</p>
+        <ol class="clicks">
+          <li>在 Claude Code 里输入 <code>/plugin</code>，安装 <b>railway</b>（一次就好）。</li>
+          <li>输入 <code>/mcp</code> → 选 <b>railway</b> → <b>Authenticate</b>。</li>
+          <li>浏览器会打开 Railway → 登录 → <b>Allow</b>。回到 Claude Code，它会显示已连接。</li>
+        </ol>
+        <p class="cap">方法 2 · 把 Railway token 放在私人文件里</p>
+        <ol class="clicks">
+          <li><b>建立 token。</b>打开 <a href="https://railway.com/account/tokens" target="_blank" rel="noopener">railway.com/account/tokens</a>（或点左下角你的名字 → <b>Account Settings → Tokens</b>）。输入一个名字，例如 <code>claude-myproject</code>，选你的 workspace，点 <b>Create</b>。</li>
+        </ol>
+        <img class="shot" src="../img/railway-new-token.png" width="900" height="649" loading="lazy" alt="Railway 的 Tokens 页面，有 New Token 表格：一个 Name 输入框、一个 Workspace 下拉选单和一个 Create 按钮。">
+        <ol class="clicks" start="2">
+          <li><b>复制它。</b>Railway 只会显示新 token 一次，就在 New Token 下面的框里。点复制图标。</li>
+        </ol>
+        <img class="shot" src="../img/railway-tokens.png" width="900" height="645" loading="lazy" alt="刚建立 token 后的 Railway Tokens 页面：token 只出现一次，在 New Token 下面的框里（这里已遮住），旁边有一个 Got it 按钮。">
+        <ol class="clicks" start="3">
+          <li><b>把这个提示词贴进 Claude Code。</b>Claude 会建立一个私人文件，在你的编辑器里开成一个分页（名叫 <code>.env</code>）。把 token <b>贴进那个文件，不要贴进聊天里</b>，按 <b>Ctrl+S</b> 保存，然后在聊天里只打 <b>pasted</b> 这个词。</li>
+        </ol>
+        <div class="pcard"><div class="phead"><h3>贴进 Claude Code</h3><button class="copy" type="button">复制</button></div>
+<pre>我想让你帮我管理这个项目的 Railway 账号。
+建立一个私人设置文件来放 Railway token（不要上传到 GitHub），
+帮我打开它，我会自己把 token 贴进去。然后检查你看不看得到我的 Railway 项目。</pre></div>
+        <p class="lesson"><b>完成的标志：</b>Claude 列出你的 Railway 项目。然后去第 1 步。</p>
+        <p class="lesson"><b>token 要保密。</b>绝对不要把它贴进聊天或截图发出去：任何人看到它都能控制你的项目。万一发生了，或项目结束了，就在同一个 Railway 页面用垃圾桶图标删掉它。</p>
+      </div>
+    </details></li>
+  </ol>
+  <ol class="track" id="chrome" style="margin-top:10px">
+    <li><details>
+      <summary><span class="n">1</span><span><b>在 Claude 桌面 app 里用一个提示词搞定其余的</b><small>它会加域名、打开 GoDaddy、做好修改，然后一直检查到成功为止</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li>在下面的框里输入你的域名，点 <b>复制</b>，然后贴进 <b>Claude 桌面 app</b>。</li>
+          <li>Claude 会在它自己的浏览器里打开 GoDaddy。GoDaddy 要你登录时，由<b>你</b>自己输入密码和代码。之后 Claude 会继续做。</li>
+          <li>它会给你看改了什么，然后一直检查，直到你的网站能用新网址打开。这可能要几分钟到几个小时。</li>
+        </ol>
+        <div class="fillbox">
+          <div class="mfield"><label for="f-domain">你的域名 — 输入一次，提示词就会自动填好</label><input id="f-domain" data-k="domain" placeholder="例如 life-gardens.com" autocomplete="off" inputmode="url"></div>
+        </div>
+        <div class="pcard"><div class="phead"><h3>贴进 Claude 桌面 app</h3><button class="copy" type="button">复制</button></div>
+<pre>我在 GoDaddy 买了 <span class="fill blank" data-k="domain">yourdomain.com</span>，想让它显示我放在 Railway 上的网站。
+
+1. 在 Railway 上，把 www.<span class="fill blank" data-k="domain">yourdomain.com</span> 加到我的网站（如果已经有了就直接用）
+   并拿到它需要的 DNS 记录。
+2. 在你的浏览器里打开 GoDaddy，去 <span class="fill blank" data-k="domain">yourdomain.com</span> 的 DNS 页面。
+   如果要我登录，就停下来让我自己登录。绝对不要帮我打密码或代码。
+3. 只做这几个修改：
+   - 把 www 的 CNAME 记录设成 Railway 给的值，
+   - 加上 Railway 的 TXT 验证记录，一字不差地照抄，
+   - 把 <span class="fill blank" data-k="domain">yourdomain.com</span> 转址到 https://www.<span class="fill blank" data-k="domain">yourdomain.com</span>（Permanent 301，只转址，不要 masking）。
+   保存转址时，GoDaddy 可能会自己换掉 "Parked" 记录。这是正常的。
+4. 别的什么都不要改，不要改 nameservers，什么都不要买，不要接受任何加购推销。
+   如果画面跟预期不一样，停下来问我。
+5. 准确告诉我你改了什么。
+6. 从外部一直检查（用公共 DNS，不要只看这台电脑，因为它可能会记住旧的
+   地址一个小时），直到 Railway 显示域名已验证，而且 https://www.<span class="fill blank" data-k="domain">yourdomain.com</span>
+   能打开我的网站。成功了就告诉我，也告诉我不加 www 的 <span class="fill blank" data-k="domain">yourdomain.com</span> 转址了没有
+   （这部分可能要几个小时）。
+7. 然后列出我项目里还在用旧网址的地方（付款完成后的返回页面、
+   电邮里的链接、登录设置），改任何上线中的设置之前先问我。</pre></div>
+        <p class="lesson"><b>在框里输入你的域名，</b>然后点 <b>复制</b>。不是在 GoDaddy 买的，或网站不是放在 Railway？贴上后把那些字改掉就好。</p>
+        <p class="lesson"><b>没有桌面 app？</b>叫 Claude Code 把第 2–4 步写成给 <b>Claude in Chrome</b> 用的提示词，在 Chrome 登录 GoDaddy，再贴进 Claude 侧边栏。</p>
+        <p class="lesson"><b>Google 账号：</b>B 部分请自己动手做。让浏览器 AI 进你的 Google 账号，风险比进 DNS 页面大得多。</p>
+      </div>
+    </details></li>
+  </ol>
+    </div>
+  </details>
+</section>
+
+<section id="google">
+  <details class="part" name="part">
+    <summary><span><b>B · 用你自己名字的 Google 登录</b><small>客人用他们的 Gmail 登录，不用新密码</small></span><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="part-body">
+  <p class="muted">登录窗口会显示你 Google app 的名字，所以每个品牌都要有自己的 app。在 console.cloud.google.com 大约 10 分钟。</p>
+  <ol class="track">
+
+    <li><details>
+      <summary><span class="n">1</span><span><b>建立项目</b><small>项目选择器 → New project</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li>点顶部的项目选择器 → <b>New project</b>。</li>
+          <li>用你的品牌名字命名 → <b>Create</b> → 确定已经选中它。</li>
+        </ol>
+        <p class="cap">New project（示意图）</p>
+        <div class="mock"><div class="mock-bar"><i></i><i></i><i></i><span>console.cloud.google.com</span></div><div class="mock-body">
+          <div class="mock-h">New Project</div>
+          <div class="mfield"><label>Project name</label><div class="hl">My Brand</div></div>
+          <span class="mbtn">Create</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">2</span><span><b>填写同意画面</b><small>App 名字、电邮、External</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>APIs &amp; Services → OAuth consent screen</b>（可能写着 "Google Auth Platform"）→ <b>Get started</b>。</li>
+          <li>App name = 你的品牌。支援和联络电邮 = 你的电邮。Audience = <b>External</b>。</li>
+          <li><b>Branding</b> → 在 <b>Authorised domains</b> 下加上你的域名 → Save。</li>
+        </ol>
+        <p class="cap">同意画面（示意图）</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>App name</label><div class="hl">My Brand</div></div>
+          <div class="mfield"><label>Audience</label><div class="hl">External</div></div>
+          <div class="mfield"><label>Authorised domain</label><div>yourdomain.com</div></div>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">3</span><span><b>发布 app</b><small>不然只有“测试用户”能登录</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>Audience</b> → <b>Publish app</b> → 确认。</li>
+          <li>状态应该显示 <b>In production</b>。只要求名字和电邮的话，不需要 Google 审核。</li>
+        </ol>
+        <p class="cap">Audience（示意图）</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>Publishing status</label><div><span class="mpill">In production</span></div></div>
+          <span class="mbtn hl">Publish app</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">4</span><span><b>建立网页客户端</b><small>把你网站用到的每个网址都加进去</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>Clients → Create client</b> → 类型选 <b>Web application</b>。</li>
+          <li><b>Authorised JavaScript origins → + Add URI</b>，每个网址加一次。要用 https，结尾不要斜线。</li>
+          <li>"Authorised redirect URIs" 留空 → <b>Create</b>。</li>
+        </ol>
+        <p class="cap">Authorised JavaScript origins（示意图）</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>URI 1</label><div class="hl">https://www.yourdomain.com</div></div>
+          <div class="mfield"><label>URI 2</label><div class="hl">https://yourdomain.com</div></div>
+          <div class="mfield"><label>URI 3</label><div>https://your-site.up.railway.app</div></div>
+          <div class="mfield"><label>URI 4</label><div>http://localhost:8765</div></div>
+          <span class="mbtn ghost">+ Add URI</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">5</span><span><b>把 Client ID 发给 AI</b><small>绝对不要发 Client secret</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p class="cap">你的新客户端（示意图）</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>Client ID — 复制这个</label><div class="hl">123456-abcdef.apps.googleusercontent.com</div></div>
+          <div class="mfield"><label>Client secret — 要保密，用不到</label><div>••••••••••••••</div></div>
+        </div></div>
+        <div class="pcard"><div class="phead"><h3>贴给 AI</h3><button class="copy" type="button">复制</button></div>
+<pre>我为 [品牌] 建立了一个 Google 登录 app。Client ID：[贴在这里]。
+让网站用它，检查登录只接受这个 app 的，
+改任何正式上线的设置之前，先告诉我要改哪一个。</pre></div>
+      </div>
+    </details></li>
+  </ol>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>如果出了问题</h2>
+  <ol class="track">
+    <li><details>
+      <summary><span class="n">!</span><span><b>“Error 400: origin_mismatch”</b><small>Google 挡住了登录窗口</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p class="cap">错误画面（示意图）</p>
+        <div class="mock"><div class="mock-bar"><i></i><i></i><i></i><span>accounts.google.com</span></div><div class="mock-body">
+          <div class="mock-h">Access blocked: Authorization Error</div>
+          <span class="mnote">You can't sign in to this app because it doesn't comply with Google's OAuth 2.0 policy.</span>
+          <span class="hl">Error 400: origin_mismatch</span>
+        </div></div>
+        <p>第 B4 步里少了网站的网址。准确地加进去，保存，等 5 分钟，再试一次。</p>
+        <div class="pcard"><div class="phead"><h3>贴给 AI</h3><button class="copy" type="button">复制</button></div>
+<pre>Google 登录在 [页面网址] 显示 "Error 400: origin_mismatch"。
+准确告诉我要在 Authorised JavaScript origins 下面加哪个网址。</pre></div>
+      </div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>除了你，其他人都显示 “Access blocked”</b><small>app 还在 Testing 状态</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner"><p>做第 B3 步：发布 app，让状态显示 <b>In production</b>。</p></div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>yourdomain.com 显示停放页面</b><small>转址还没设好，或记录放错了名字</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner"><p>转址可能要几个小时才会生效。如果过后还是显示停放页面，就叫 Claude 检查转址，还有 CNAME 的 Name 是 <code>www</code>，不是 <code>@</code>。</p></div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>过了几个小时还是 “not verified”</b><small>通常是 TXT 记录打错字</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p>通常是 TXT 记录打错字。叫 Claude 从外部检查（提示词在下面）。</p>
+        <div class="pcard"><div class="phead"><h3>贴给 AI</h3><button class="copy" type="button">复制</button></div>
+<pre>我的域名还是没有验证成功。从外部检查我的 DNS 记录，准确告诉我
+哪一条记录错了，应该改成什么。</pre></div>
+      </div>
+    </details></li>
+  </ol>
+</section>
+
+<div class="next"><a href="example.html">← 4. 动手做</a><a href="videos.html">下一份指南：做 Reels →</a></div>
+</div>
+<script src="../copy.js?v=2"></script>
+<script>
+// One part open at a time (fallback for browsers without <details name>).
+document.querySelectorAll('details.part').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (!d.open) return;
+    document.querySelectorAll('details.part').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
+<script>
+document.querySelectorAll('.fillbox input').forEach(function (inp) {
+  function fill() {
+    var v = inp.value.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '');
+    document.querySelectorAll('.fill[data-k="' + inp.dataset.k + '"]').forEach(function (sp) {
+      if (!sp.dataset.ph) sp.dataset.ph = sp.textContent;
+      sp.textContent = v || sp.dataset.ph;
+      sp.classList.toggle('blank', !v);
+    });
+  }
+  inp.addEventListener('input', fill);
+});
+</script>
+</body></html>
+

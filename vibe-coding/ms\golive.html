@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ms" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lancar · Panduan Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/golive.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/golive.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/golive.html">
+<link rel="stylesheet" href="../style.css?v=9">
+<link rel="stylesheet" href="../guide.css?v=2">
+<script src="../guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-page="golive" data-guide-group="web">
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Panduan"><a class="t-web" href="systems.html" aria-current="true">Bina laman web</a><a class="t-vid" href="videos.html">Buat reels</a><a class="t-fx" href="effects.html">Kesan video</a></nav>
+  <nav class="langs" aria-label="Bahasa"><a href="../golive.html" lang="en" hreflang="en">EN</a><a href="../zh/golive.html" lang="zh" hreflang="zh">中文</a><a href="../ms/golive.html" aria-current="true" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="Bina laman web, langkah demi langkah"><a href="systems.html"><b>1</b>Pilih</a><a href="prompts.html"><b>2</b>Terangkan</a><a href="setup.html"><b>3</b>Sedia</a><a href="example.html"><b>4</b>Bina</a><a href="golive.html" aria-current="step"><b>5</b>Lancar</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">Langkah 5 daripada 5</p>
+  <h1>Domain anda dan login Google</h1>
+  <p class="guide-summary">Sambungkan domain sendiri atau sediakan login Google, kemudian semak hasilnya langkah demi langkah.</p>
+  <p class="lead">Pilih apa yang anda perlukan: <b>A</b> untuk alamat laman web anda sendiri, atau <b>B</b> untuk login Google. Tekan satu untuk buka, kemudian tekan setiap langkah.</p>
+</header>
+
+<section>
+  <div class="who">
+    <div><b>AI buat</b><span>Kod, tetapan hos, kerja klik di GoDaddy (dalam aplikasi desktop Claude), dan semak semuanya berfungsi.</span></div>
+    <div><b>Anda buat</b><span>Login bila GoDaddy minta (AI tidak sekali-kali taip kata laluan anda), dan sediakan login Google sendiri.</span></div>
+  </div>
+</section>
+
+<section id="domain">
+  <details class="part" name="part">
+    <summary><span><b>A · Sambungkan domain anda</b><small>alamat laman web anda sendiri, seperti www.kedaianda.com</small></span><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="part-body">
+  <p class="muted">Contoh: domain dibeli di GoDaddy, laman di Railway. Lebih kurang 10 minit, kemudian tunggu sehingga beberapa jam.</p>
+  <ol class="track">
+    <li><details>
+      <summary><span class="n">0</span><span><b>Sambungkan Railway ke Claude dulu</b><small>Buat ini dulu, sekali untuk setiap komputer. Langkah 1 perlukannya</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p>Claude perlukan kebenaran untuk ubah benda dalam akaun Railway anda (tambah domain, baca rekod). Pilih satu cara:</p>
+        <p class="cap">Cara 1 · Login melalui plugin Railway (paling mudah)</p>
+        <ol class="clicks">
+          <li>Dalam Claude Code, taip <code>/plugin</code> dan pasang <b>railway</b> (sekali sahaja).</li>
+          <li>Taip <code>/mcp</code> → pilih <b>railway</b> → <b>Authenticate</b>.</li>
+          <li>Browser anda buka Railway → login → <b>Allow</b>. Balik ke Claude Code, ia akan kata sudah bersambung.</li>
+        </ol>
+        <p class="cap">Cara 2 · Token Railway dalam fail peribadi</p>
+        <ol class="clicks">
+          <li><b>Cipta token.</b> Buka <a href="https://railway.com/account/tokens" target="_blank" rel="noopener">railway.com/account/tokens</a> (atau klik nama anda di bawah sebelah kiri → <b>Account Settings → Tokens</b>). Taip nama seperti <code>claude-myproject</code>, pilih workspace anda, klik <b>Create</b>.</li>
+        </ol>
+        <img class="shot" src="../img/railway-new-token.png" width="900" height="649" loading="lazy" alt="Halaman Tokens Railway dengan borang New Token: kotak Name, menu Workspace dan butang Create.">
+        <ol class="clicks" start="2">
+          <li><b>Salin token.</b> Railway tunjuk token baru sekali sahaja, dalam kotak di bawah New Token. Klik ikon salin.</li>
+        </ol>
+        <img class="shot" src="../img/railway-tokens.png" width="900" height="645" loading="lazy" alt="Halaman Tokens Railway sejurus selepas cipta token: token muncul sekali dalam kotak di bawah New Token (disembunyikan di sini), dengan butang Got it.">
+        <ol class="clicks" start="3">
+          <li><b>Tampal prompt ini ke dalam Claude Code.</b> Claude akan buat fail peribadi dan buka sebagai tab dalam editor anda (bernama <code>.env</code>). Tampal token <b>ke dalam fail itu, bukan dalam chat</b>, simpan dengan <b>Ctrl+S</b>, kemudian taip perkataan <b>sudah</b> sahaja dalam chat.</li>
+        </ol>
+        <div class="pcard"><div class="phead"><h3>Tampal ke dalam Claude Code</h3><button class="copy" type="button">Salin</button></div>
+<pre>Saya mahu anda uruskan akaun Railway saya untuk projek ini.
+Buat fail tetapan peribadi untuk token Railway (jangan masukkan ke GitHub),
+buka untuk saya, dan saya akan tampal token itu sendiri. Kemudian semak yang anda boleh nampak projek Railway saya.</pre></div>
+        <p class="lesson"><b>Siap bila</b> Claude senaraikan projek Railway anda. Kemudian pergi ke langkah 1.</p>
+        <p class="lesson"><b>Simpan token secara peribadi.</b> Jangan sekali-kali tampal atau screenshot token dalam chat: sesiapa yang nampak boleh kawal projek anda. Kalau itu berlaku, atau bila projek sudah selesai, padam token di halaman Railway yang sama dengan ikon tong sampah.</p>
+      </div>
+    </details></li>
+  </ol>
+  <ol class="track" id="chrome" style="margin-top:10px">
+    <li><details>
+      <summary><span class="n">1</span><span><b>Satu prompt dalam aplikasi desktop Claude buat selebihnya</b><small>Ia tambah domain, buka GoDaddy, buat perubahan dan terus semak sehingga berjaya</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li>Taip domain anda dalam kotak di bawah, klik <b>Salin</b>, dan tampal ke dalam <b>aplikasi desktop Claude</b>.</li>
+          <li>Claude buka GoDaddy dalam browsernya sendiri. Bila GoDaddy minta anda login, <b>anda</b> yang taip kata laluan dan kod. Claude akan teruskan selepas itu.</li>
+          <li>Ia tunjuk apa yang ia ubah, kemudian terus semak sehingga laman web anda boleh dibuka di alamat baru. Ini boleh ambil masa beberapa minit hingga beberapa jam.</li>
+        </ol>
+        <div class="fillbox">
+          <div class="mfield"><label for="f-domain">Domain anda — taip sekali, prompt akan diisi sendiri</label><input id="f-domain" data-k="domain" placeholder="cth. life-gardens.com" autocomplete="off" inputmode="url"></div>
+        </div>
+        <div class="pcard"><div class="phead"><h3>Tampal ke dalam aplikasi desktop Claude</h3><button class="copy" type="button">Salin</button></div>
+<pre>Saya beli <span class="fill blank" data-k="domain">domainanda.com</span> di GoDaddy dan mahu ia tunjuk laman saya di Railway.
+
+1. Di Railway, tambah www.<span class="fill blank" data-k="domain">domainanda.com</span> ke laman saya (guna semula kalau sudah ada)
+   dan dapatkan rekod DNS yang diperlukan.
+2. Buka GoDaddy dalam browser anda, di halaman DNS untuk <span class="fill blank" data-k="domain">domainanda.com</span>.
+   Kalau ia minta saya login, berhenti dan biar saya login sendiri. Jangan sekali-kali taip kata laluan atau kod saya.
+3. Buat perubahan ini sahaja:
+   - tetapkan rekod CNAME www kepada nilai Railway,
+   - tambah rekod pengesahan TXT Railway, disalin dengan tepat,
+   - forward <span class="fill blank" data-k="domain">domainanda.com</span> ke https://www.<span class="fill blank" data-k="domain">domainanda.com</span> (Permanent 301, forward sahaja, tanpa masking).
+   GoDaddy mungkin ganti rekod "Parked" sendiri bila ia simpan forwarding. Itu memang dijangka.
+4. Jangan ubah benda lain, jangan ubah nameserver, jangan beli apa-apa, jangan terima sebarang tawaran tambahan.
+   Kalau skrin nampak lain, berhenti dan tanya saya.
+5. Tunjuk saya dengan tepat apa yang anda ubah.
+6. Terus semak dari luar (DNS awam, bukan komputer ini sahaja, kerana ia boleh ingat alamat lama
+   selama sejam) sehingga Railway tunjuk domain sudah disahkan dan https://www.<span class="fill blank" data-k="domain">domainanda.com</span>
+   buka laman saya. Beritahu saya bila ia berjaya, dan sama ada <span class="fill blank" data-k="domain">domainanda.com</span> tanpa www sudah forward
+   (bahagian itu boleh ambil masa beberapa jam).
+7. Kemudian senaraikan apa-apa dalam projek saya yang masih guna alamat lama (halaman balik selepas bayaran,
+   pautan emel, tetapan login) dan tanya saya dulu sebelum ubah sebarang tetapan yang live.</pre></div>
+        <p class="lesson"><b>Taip domain anda dalam kotak,</b> kemudian <b>Salin</b>. Beli di tempat lain selain GoDaddy, atau hosting di tempat lain selain Railway? Tukar perkataan itu selepas tampal.</p>
+        <p class="lesson"><b>Tiada aplikasi desktop?</b> Minta Claude Code tulis langkah 2–4 sebagai prompt untuk <b>Claude in Chrome</b>, login ke GoDaddy dalam Chrome, dan tampal ke dalam panel sisi Claude.</p>
+        <p class="lesson"><b>Akaun Google:</b> buat bahagian B sendiri. Biar AI browser masuk ke akaun Google anda lebih berisiko daripada halaman DNS.</p>
+      </div>
+    </details></li>
+  </ol>
+    </div>
+  </details>
+</section>
+
+<section id="google">
+  <details class="part" name="part">
+    <summary><span><b>B · Login Google dengan nama anda sendiri</b><small>pelanggan login dengan Gmail mereka, tiada kata laluan baru</small></span><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="part-body">
+  <p class="muted">Popup login tunjuk nama aplikasi Google anda, jadi beri setiap jenama aplikasinya sendiri. Lebih kurang 10 minit di console.cloud.google.com.</p>
+  <ol class="track">
+
+    <li><details>
+      <summary><span class="n">1</span><span><b>Cipta projek</b><small>Pemilih projek → New project</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li>Klik pemilih projek di bahagian atas → <b>New project</b>.</li>
+          <li>Namakan ikut jenama anda → <b>Create</b> → pastikan ia dipilih.</li>
+        </ol>
+        <p class="cap">New project (ilustrasi)</p>
+        <div class="mock"><div class="mock-bar"><i></i><i></i><i></i><span>console.cloud.google.com</span></div><div class="mock-body">
+          <div class="mock-h">New Project</div>
+          <div class="mfield"><label>Project name</label><div class="hl">Jenama Saya</div></div>
+          <span class="mbtn">Create</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">2</span><span><b>Isi skrin persetujuan (consent screen)</b><small>Nama aplikasi, emel, External</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>APIs &amp; Services → OAuth consent screen</b> (mungkin tertulis "Google Auth Platform") → <b>Get started</b>.</li>
+          <li>App name = jenama anda. Emel sokongan dan emel hubungan = emel anda. Audience = <b>External</b>.</li>
+          <li><b>Branding</b> → tambah domain anda di bawah <b>Authorised domains</b> → Save.</li>
+        </ol>
+        <p class="cap">Skrin persetujuan (ilustrasi)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>App name</label><div class="hl">Jenama Saya</div></div>
+          <div class="mfield"><label>Audience</label><div class="hl">External</div></div>
+          <div class="mfield"><label>Authorised domain</label><div>domainanda.com</div></div>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">3</span><span><b>Terbitkan aplikasi</b><small>Kalau tidak, hanya "test users" boleh login</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>Audience</b> → <b>Publish app</b> → sahkan.</li>
+          <li>Status patut tertulis <b>In production</b>. Kalau minta nama dan emel sahaja, tak perlu semakan Google.</li>
+        </ol>
+        <p class="cap">Audience (ilustrasi)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>Publishing status</label><div><span class="mpill">In production</span></div></div>
+          <span class="mbtn hl">Publish app</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">4</span><span><b>Cipta web client</b><small>Tambah setiap alamat laman anda</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <ol class="clicks">
+          <li><b>Clients → Create client</b> → jenis <b>Web application</b>.</li>
+          <li><b>Authorised JavaScript origins → + Add URI</b> untuk setiap alamat. https, tiada garis miring (/) di hujung.</li>
+          <li>Biarkan "Authorised redirect URIs" kosong → <b>Create</b>.</li>
+        </ol>
+        <p class="cap">Authorised JavaScript origins (ilustrasi)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>URI 1</label><div class="hl">https://www.domainanda.com</div></div>
+          <div class="mfield"><label>URI 2</label><div class="hl">https://domainanda.com</div></div>
+          <div class="mfield"><label>URI 3</label><div>https://laman-anda.up.railway.app</div></div>
+          <div class="mfield"><label>URI 4</label><div>http://localhost:8765</div></div>
+          <span class="mbtn ghost">+ Add URI</span>
+        </div></div>
+      </div>
+    </details></li>
+
+    <li><details>
+      <summary><span class="n">5</span><span><b>Hantar Client ID kepada AI</b><small>Jangan sekali-kali Client secret</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p class="cap">Client baru anda (ilustrasi)</p>
+        <div class="mock"><div class="mock-body">
+          <div class="mfield"><label>Client ID — salin ini</label><div class="hl">123456-abcdef.apps.googleusercontent.com</div></div>
+          <div class="mfield"><label>Client secret — rahsiakan, tidak diperlukan</label><div>••••••••••••••</div></div>
+        </div></div>
+        <div class="pcard"><div class="phead"><h3>Tampal kepada AI</h3><button class="copy" type="button">Salin</button></div>
+<pre>Saya sudah cipta aplikasi login Google untuk [jenama]. Client ID: [tampal di sini].
+Buat laman guna Client ID ini, semak yang login hanya diterima untuk aplikasi ini,
+dan beritahu saya tetapan production mana yang perlu diubah sebelum anda ubah.</pre></div>
+      </div>
+    </details></li>
+  </ol>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Kalau ada masalah</h2>
+  <ol class="track">
+    <li><details>
+      <summary><span class="n">!</span><span><b>"Error 400: origin_mismatch"</b><small>Google sekat popup login</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p class="cap">Ralat itu (ilustrasi)</p>
+        <div class="mock"><div class="mock-bar"><i></i><i></i><i></i><span>accounts.google.com</span></div><div class="mock-body">
+          <div class="mock-h">Access blocked: Authorization Error</div>
+          <span class="mnote">You can't sign in to this app because it doesn't comply with Google's OAuth 2.0 policy.</span>
+          <span class="hl">Error 400: origin_mismatch</span>
+        </div></div>
+        <p>Alamat laman tiada dalam langkah B4. Tambah dengan tepat, simpan, tunggu 5 minit, cuba lagi.</p>
+        <div class="pcard"><div class="phead"><h3>Tampal kepada AI</h3><button class="copy" type="button">Salin</button></div>
+<pre>Login Google tunjuk "Error 400: origin_mismatch" di [alamat halaman].
+Beritahu saya dengan tepat alamat mana yang perlu ditambah di bawah Authorised JavaScript origins.</pre></div>
+      </div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>"Access blocked" untuk semua orang kecuali anda</b><small>Aplikasi masih dalam Testing</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner"><p>Buat langkah B3: terbitkan aplikasi supaya ia tertulis <b>In production</b>.</p></div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>domainanda.com tunjuk halaman parking</b><small>Forwarding belum ditetapkan, atau rekod diletak pada nama yang salah</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner"><p>Forwarding boleh ambil masa beberapa jam untuk mula. Kalau masih tunjuk parking selepas itu, minta Claude semak forwarding dan pastikan Name untuk CNAME ialah <code>www</code>, bukan <code>@</code>.</p></div>
+    </details></li>
+    <li><details>
+      <summary><span class="n">!</span><span><b>Masih "not verified" selepas berjam-jam</b><small>Biasanya salah taip dalam rekod TXT</small></span><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="inner">
+        <p>Biasanya salah taip dalam rekod TXT. Minta Claude semak dari luar (prompt di bawah).</p>
+        <div class="pcard"><div class="phead"><h3>Tampal kepada AI</h3><button class="copy" type="button">Salin</button></div>
+<pre>Domain saya masih belum disahkan. Semak rekod DNS saya dari luar dan beritahu saya
+dengan tepat rekod mana yang salah dan apa yang sepatutnya.</pre></div>
+      </div>
+    </details></li>
+  </ol>
+</section>
+
+<div class="next"><a href="example.html">← 4. Bina</a><a href="videos.html">Panduan seterusnya: buat reels →</a></div>
+</div>
+<script src="../copy.js?v=2"></script>
+<script>
+// One part open at a time (fallback for browsers without <details name>).
+document.querySelectorAll('details.part').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (!d.open) return;
+    document.querySelectorAll('details.part').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
+<script>
+document.querySelectorAll('.fillbox input').forEach(function (inp) {
+  function fill() {
+    var v = inp.value.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '').replace(/^www\./, '');
+    document.querySelectorAll('.fill[data-k="' + inp.dataset.k + '"]').forEach(function (sp) {
+      if (!sp.dataset.ph) sp.dataset.ph = sp.textContent;
+      sp.textContent = v || sp.dataset.ph;
+      sp.classList.toggle('blank', !v);
+    });
+  }
+  inp.addEventListener('input', fill);
+});
+</script>
+</body></html>
+

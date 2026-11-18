@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ms" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sedia dan Benarkan · Panduan Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/setup.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/setup.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/setup.html">
+<link rel="stylesheet" href="../style.css?v=9">
+<link rel="stylesheet" href="../guide.css?v=2">
+<script src="../guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-page="setup" data-guide-group="toolkit">
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Panduan"><a class="t-web" href="systems.html" aria-current="true">Bina laman web</a><a class="t-vid" href="videos.html">Buat reels</a><a class="t-fx" href="effects.html">Kesan video</a></nav>
+  <nav class="langs" aria-label="Bahasa"><a href="../setup.html" lang="en" hreflang="en">EN</a><a href="../zh/setup.html" lang="zh" hreflang="zh">中文</a><a href="../ms/setup.html" aria-current="true" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="Bina laman web, langkah demi langkah"><a href="systems.html"><b>1</b>Pilih</a><a href="prompts.html"><b>2</b>Terangkan</a><a href="setup.html" aria-current="step"><b>3</b>Sedia</a><a href="example.html"><b>4</b>Bina</a><a href="golive.html"><b>5</b>Lancar</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">Langkah 3 daripada 5</p>
+  <h1>Apa yang perlu disediakan, dan apa yang perlu dibenarkan</h1>
+  <p class="guide-summary">Sediakan bahan, akaun dan kebenaran supaya AI boleh mula bekerja dengan lancar.</p>
+  <p class="lead">AI hanya boleh guna apa yang anda beri, dan hanya buat apa yang anda benarkan.</p>
+</header>
+
+<section>
+  <h2>Sedia</h2>
+  <ul class="checks">
+    <li><span><b>Kandungan anda.</b><small>Teks, harga, nombor telefon, gambar, logo. AI tidak patut reka semua ini sendiri.</small></span></li>
+    <li><span><b>Reka bentuk, kalau ada.</b><small>Dari alat reka bentuk AI, Canva, atau screenshot laman yang anda suka. Kalau tiada, AI boleh reka, tapi jangkakan lebih banyak pusingan.</small></span></li>
+    <li><span><b>Semua fail yang reka bentuk itu guna.</b><small>Muat turun seluruh folder (gambar, fon, gaya), bukan halaman sahaja.</small></span></li>
+    <li><span><b>VS Code dengan Claude Code.</b><small>Claude Code perlukan pelan Claude berbayar. Ia akan pasang alat lain yang diperlukan dan beritahu anda.</small></span></li>
+    <li><span><b>Akaun GitHub.</b><small>Percuma. Backup online dan sejarah projek anda.</small></span></li>
+    <li><span><b>Akaun hosting.</b><small>Railway, Cloudflare dan lain-lain. Laman web kecil murah atau percuma; sistem dengan pangkalan data lebih mahal.</small></span></li>
+    <li><span><b>Untuk sistem sahaja:</b><small>akaun bayaran (cth. Stripe), akaun AI (cth. Google Gemini, Anthropic), penghantar emel. Setiap satu beri anda kunci rahsia.</small></span></li>
+    <li><span><b>Domain, nanti dulu.</b><small>Tak perlu untuk mula. Hos beri alamat web percuma.</small></span></li>
+  </ul>
+</section>
+
+<section id="allow">
+  <h2>Benarkan</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>Kebenaran</th><th>Kenapa perlu</th><th>Cara anda beri</th><th>Kekal selamat</th></tr></thead>
+    <tbody>
+      <tr><td>Jalankan arahan, ubah fail</td><td>Untuk bina, uji dan simpan</td><td>Claude Code tanya sebelum setiap tindakan; anda boleh biar ia teruskan tanpa tanya setiap kali</td><td>Simpan setiap projek dalam folder sendiri. Luluskan satu demi satu sampai anda percaya.</td></tr>
+      <tr><td>Baca folder</td><td>Reka bentuk dan gambar anda ada di situ</td><td>Tampal laluan folder dalam chat</td><td>Tunjuk folder yang tepat, bukan seluruh drive anda.</td></tr>
+      <tr><td>Pasang program</td><td>Alat seperti alat GitHub</td><td>Windows mungkin keluarkan popup "Allow changes?"</td><td>Semak namanya. Sumber rasmi sahaja.</td></tr>
+      <tr><td>Akaun GitHub</td><td>Cipta repo, muat naik versi</td><td>Taip kod sekali guna 8 huruf di github.com/login/device</td><td>Buang bila-bila masa: GitHub → Settings → Applications.</td></tr>
+      <tr><td>Akaun hosting</td><td>Cipta projek, terbitkan</td><td>Login sekali, atau simpan kunci akses dalam fail peribadi di komputer anda</td><td>Padam kunci itu bila projek tamat.</td></tr>
+      <tr><td>Hos baca GitHub</td><td>Supaya setiap simpanan terus live sendiri</td><td>Luluskan sekali di laman web hos</td><td>Benarkan repo yang perlu sahaja.</td></tr>
+      <tr><td>Kunci bayaran, AI, emel</td><td>Sistem sahaja</td><td>Disimpan dalam tetapan hos, jangan dalam kod</td><td>Guna mod ujian dulu. Tetapkan had perbelanjaan.</td></tr>
+      <tr><td>Belanja duit</td><td>Hosting, domain, penggunaan AI</td><td>Anda kata ya setiap kali</td><td>Jadikan "tanya saya dulu sebelum apa-apa yang kena bayar" satu peraturan dalam prompt pertama anda.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Tiga peraturan keselamatan</h2>
+  <ul class="checks">
+    <li><span><b>Jangan sekali-kali tampal kata laluan atau kunci dalam chat.</b><small>Simpan dalam fail tetapan peribadi atau dalam tetapan hos. AI akan baca dari situ.</small></span></li>
+    <li><span><b>Pastikan repo GitHub kekal peribadi.</b><small>Jadikan awam hanya kalau anda betul-betul mahu kongsi kod itu.</small></span></li>
+    <li><span><b>Pelanggan sebenar, duit sebenar, mesej sebenar: tanya dulu.</b><small>Apa-apa yang caj, padam atau hantar kepada pelanggan mesti tunggu anda kata ya.</small></span></li>
+  </ul>
+</section>
+
+<div class="next"><a href="prompts.html">← 2. Terangkan</a><a href="example.html">4. Bina →</a></div>
+</div>
+</body></html>
+

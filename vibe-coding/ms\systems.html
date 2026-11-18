@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ms" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laman Web atau Sistem · Panduan Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/systems.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/systems.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/systems.html">
+<link rel="stylesheet" href="../style.css?v=9">
+<link rel="stylesheet" href="../guide.css?v=2">
+<script src="../guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-page="systems" data-guide-group="web">
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Panduan"><a class="t-web" href="systems.html" aria-current="true">Bina laman web</a><a class="t-vid" href="videos.html">Buat reels</a><a class="t-fx" href="effects.html">Kesan video</a></nav>
+  <nav class="langs" aria-label="Bahasa"><a href="../systems.html" lang="en" hreflang="en">EN</a><a href="../zh/systems.html" lang="zh" hreflang="zh">中文</a><a href="../ms/systems.html" aria-current="true" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="Bina laman web, langkah demi langkah"><a href="systems.html" aria-current="step"><b>1</b>Pilih</a><a href="prompts.html"><b>2</b>Terangkan</a><a href="setup.html"><b>3</b>Sedia</a><a href="example.html"><b>4</b>Bina</a><a href="golive.html"><b>5</b>Lancar</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">Langkah 1 daripada 5</p>
+  <h1>Laman web atau sistem?</h1>
+  <p class="guide-summary">Pilih jenis laman web dahulu, kemudian tentukan alat dan perkhidmatan yang diperlukan.</p>
+  <p class="lead"><b>Laman web</b> menunjukkan sesuatu. <b>Sistem</b> mengingati sesuatu dan membuat kerja. Cara mudah untuk tahu: kalau ia perlu simpan apa yang orang taip (tempahan, pesanan, jawapan), itu sistem.</p>
+</header>
+
+<section>
+  <h2>Laman web</h2>
+  <p>Halaman, gambar dan sedikit skrip. Tiada apa yang disimpan. Murah, cepat dan susah rosak.</p>
+  <div class="flow" role="list" aria-label="Cara laman web diterbitkan">
+    <div class="node" role="listitem"><b>Komputer anda</b><span>Folder projek. AI bekerja di sini.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>GitHub</b><span>Salinan online peribadi dengan sejarah penuh.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node hot" role="listitem"><b>Hos</b><span>Railway, Cloudflare … terbitkan semula setiap kali anda simpan.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>Pelawat</b><span>Buka alamat web anda.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Sistem</h2>
+  <p>Permulaan yang sama, tambah tiga bahagian baru: <b>server</b> yang buat kerja, <b>pangkalan data</b> yang mengingati, dan <b>servis luar</b> untuk bayaran, AI atau mesej. Setiap bahagian baru bermakna satu lagi akaun, satu lagi kunci rahsia dan satu lagi bil bulanan.</p>
+  <div class="flow" role="list" aria-label="Cara sistem dibina">
+    <div class="node" role="listitem"><b>Skrin</b><span>Apa yang orang nampak dan isi.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node hot" role="listitem"><b>Server</b><span>Semak login, buat kerja, ikut peraturan anda.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>Pangkalan data</b><span>Ingat pengguna, tempahan, pesanan.</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="node" role="listitem"><b>Servis luar</b><span>Bayaran, AI, emel, WhatsApp.</span></div>
+  </div>
+  <p class="muted">Contoh sebenar: Aurelion Insights ialah sebuah sistem. Orang jawab soal selidik, AI tulis laporan mereka, mereka login untuk baca dan bayar secara online. Skrin, server, pangkalan data, servis AI dan servis bayaran semuanya bekerja bersama.</p>
+</section>
+
+<section>
+  <h2>Enam bentuk yang biasa</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>Bentuk</th><th>Contoh</th><th>Perlu</th><th>Usaha</th></tr></thead>
+    <tbody>
+      <tr><td>Laman web maklumat</td><td>Jurulatih, profil syarikat, portfolio, halaman acara</td><td>Hos sahaja</td><td>Mudah · satu petang</td></tr>
+      <tr><td>Sistem tempahan</td><td>Klinik, salun, kelas, bilik</td><td>Server, pangkalan data, login staf, peringatan</td><td>Sederhana</td></tr>
+      <tr><td>Kedai online / bayaran</td><td>Produk, tiket, laporan berbayar</td><td>Server, pangkalan data, akaun bayaran</td><td>Sederhana · uji dengan teliti</td></tr>
+      <tr><td>Alat staf / penjejak</td><td>Senarai pelanggan, tugasan, stok, kehadiran</td><td>Server, pangkalan data, login, backup</td><td>Sederhana</td></tr>
+      <tr><td>Alat AI</td><td>Chatbot berdasarkan bahan anda, soal selidik → laporan AI</td><td>Server, akaun AI (bayar ikut guna)</td><td>Sederhana hingga mahir</td></tr>
+      <tr><td>Automasi</td><td>Laporan harian, emel hari jadi, susulan</td><td>Tugas berjadual, akaun emel/WhatsApp</td><td>Mudah hingga sederhana</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Mula kecil, kemudian berkembang</h2>
+  <ul class="checks">
+    <li><span><b>Versi 1 boleh jadi laman web sahaja.</b><small>Life Garden jual melalui WhatsApp dulu: tiada pangkalan data, tiada sistem bayaran, siap dalam satu petang.</small></span></li>
+    <li><span><b>Tambah bahagian sistem bila orang betul-betul guna.</b><small>Bayaran online bila pesanan mula masuk. Login bila anda ada pelanggan tetap.</small></span></li>
+    <li><span><b>Minta AI tunjuk pelan dulu.</b><small><a href="prompts.html">Prompt permulaan</a> buat AI senaraikan bahagian, akaun dan kos bulanan sebelum mula membina.</small></span></li>
+  </ul>
+</section>
+
+<div class="next"><a href="./">← Semua panduan</a><a href="prompts.html">2. Terangkan →</a></div>
+</div>
+</body></html>
+

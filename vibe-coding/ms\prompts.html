@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ms" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kit Prompt · Panduan Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/prompts.html">
+<link rel="alternate" hreflang="zh" href="https://www.aurelion-earth.com/vibe-coding/zh/prompts.html">
+<link rel="alternate" hreflang="ms" href="https://www.aurelion-earth.com/vibe-coding/ms/prompts.html">
+<link rel="stylesheet" href="../style.css?v=9">
+<script>if (/^#(video|v[1-5])$/.test(location.hash)) location.replace('videos.html' + (location.hash === '#video' ? '' : location.hash));</script>
+<link rel="stylesheet" href="../guide.css?v=2">
+<script src="../guide.js?v=1" defer></script>
+</head><body class="guide-page" data-guide-page="prompts" data-guide-group="toolkit">
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Panduan"><a class="t-web" href="systems.html" aria-current="true">Bina laman web</a><a class="t-vid" href="videos.html">Buat reels</a><a class="t-fx" href="effects.html">Kesan video</a></nav>
+  <nav class="langs" aria-label="Bahasa"><a href="../prompts.html" lang="en" hreflang="en">EN</a><a href="../zh/prompts.html" lang="zh" hreflang="zh">中文</a><a href="../ms/prompts.html" aria-current="true" lang="ms" hreflang="ms">BM</a></nav>
+  <a class="out" href="../../">← Aurelion Earth</a>
+</header>
+<nav class="stepbar web" aria-label="Bina laman web, langkah demi langkah"><a href="systems.html"><b>1</b>Pilih</a><a href="prompts.html" aria-current="step"><b>2</b>Terangkan</a><a href="setup.html"><b>3</b>Sedia</a><a href="example.html"><b>4</b>Bina</a><a href="golive.html"><b>5</b>Lancar</a></nav>
+
+<header class="hero">
+  <p class="eyebrow">Langkah 2 daripada 5</p>
+  <h1>Terangkan apa yang anda mahu bina</h1>
+  <p class="guide-summary">Jelaskan matlamat, halaman dan batasan anda, kemudian salin prompt yang sesuai untuk AI.</p>
+  <p class="lead">Mula dengan prompt umum. Kemudian tambah baris tambahan untuk jenis benda yang anda bina. Tukar semua yang ada dalam [kurungan].</p>
+</header>
+
+<section>
+  <h2>1 · Prompt permulaan</h2>
+  <p class="muted">Sesuai untuk semua. Baris terakhir paling penting: ia buat AI tanya soalan dan tunjuk pelan sebelum menulis sebarang kod.</p>
+  <div class="pcard"><div class="phead"><h3>Prompt permulaan umum</h3><button class="copy" type="button">Salin</button></div>
+<pre>Saya mahu bina [laman web / sistem] untuk [nama perniagaan atau projek].
+
+Siapa yang akan guna: [pelanggan / staf saya / saya sahaja].
+Apa yang mereka mesti boleh buat:
+1. [perkara pertama]
+2. [perkara kedua]
+3. [perkara ketiga]
+Apa yang perlu diingati: [tiada / tempahan / pelanggan / pesanan / ...].
+Bayaran: [tiada / melalui WhatsApp / online dengan kad atau bank].
+Login: [tiada / pelanggan login / staf sahaja login].
+Mesti berfungsi di: [telefon / laptop / kedua-duanya]. Bahasa: [English / 中文 / BM].
+Bajet: lebih kurang [jumlah] sebulan. Saya perlukan sebelum [tarikh].
+
+Peraturan: tanya saya dulu sebelum apa-apa yang kena bayar, padam data atau hantar mesej kepada pelanggan saya.
+Jangan sekali-kali letak kata laluan atau kunci dalam kod atau di GitHub.
+
+Sebelum tulis sebarang kod: tanya saya apa yang tidak jelas, kemudian tunjuk saya pelan ringkas
+(halaman atau skrin, di mana data disimpan, akaun apa yang saya perlukan, kos bulanan).
+Tunggu saya kata OK.</pre></div>
+</section>
+
+<section>
+  <h2>2 · Tambah baris untuk jenis sistem anda</h2>
+  <p class="muted">Tak pasti jenis yang mana? <a href="systems.html">Laman web atau sistem</a> terangkan bezanya.</p>
+  <div class="stack">
+
+    <div class="pcard"><div class="phead"><h3>Laman web maklumat</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip">Tiada login</span><span class="chip">Tiada data</span><span class="chip">Beli melalui WhatsApp</span></div>
+      <p class="muted">Untuk jurulatih, laman kedai, profil syarikat atau portfolio. Contoh: Life Garden.</p>
+<pre>Halaman yang saya perlukan: [Utama, Tentang Kami, Servis &amp; harga, Hubungi].
+Setiap butang "Tempah" atau "Beli" buka WhatsApp ke [nombor] dengan mesej yang sudah siap.
+Reka bentuk dan gambar saya ada dalam [folder]. Kekalkan teks dan harga saya tepat seperti yang ditulis.
+Ia mesti nampak betul dalam mod terang dan gelap di telefon.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Sistem tempahan atau temu janji</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip yes">Simpan tempahan</span><span class="chip yes">Login staf</span><span class="chip">Peringatan</span></div>
+      <p class="muted">Untuk klinik, salun, jurulatih, kelas, bilik.</p>
+<pre>Servis: [nama, berapa lama, harga] untuk setiap satu.
+Waktu operasi: [hari dan masa]. Dua orang tidak boleh tempah slot yang sama.
+Pelanggan tempah dengan [nama, telefon, emel]. Tempahan [disahkan terus / disahkan oleh staf].
+Hantar peringatan [1 hari] sebelum melalui [emel / WhatsApp].
+Staf login untuk tengok tempahan hari ini dan boleh batal atau ubah satu tempahan.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Kedai online atau bayaran</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip yes">Simpan pesanan</span><span class="chip yes">Terima duit</span><span class="chip">Resit</span></div>
+      <p class="muted">Untuk jual produk, tiket, laporan atau kelas secara online.</p>
+<pre>Produk: [nama, harga, gambar] untuk setiap satu. Bayaran melalui [kad / FPX / DuitNow / e-wallet].
+Selepas bayar, pelanggan dapat [resit melalui emel / kod / muat turun].
+Saya dapat notifikasi melalui [emel / WhatsApp] untuk setiap pesanan.
+Sediakan dalam mod UJIAN dulu, tunjuk saya satu bayaran ujian, dan hanya tukar ke duit sebenar bila saya kata.
+Beritahu saya caj syarikat bayaran untuk setiap jualan.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Alat staf atau penjejak</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip yes">Simpan rekod</span><span class="chip yes">Login staf</span><span class="chip">Eksport</span></div>
+      <p class="muted">Senarai pelanggan, penjejak tugasan, stok, kehadiran. Hanya pasukan anda yang guna.</p>
+<pre>Setiap rekod ada: [medan 1, medan 2, medan 3 ...].
+Siapa boleh buat apa: [pemilik nampak semua; staf boleh tambah dan ubah tapi tidak boleh padam].
+Saya perlu cari, tapis ikut [medan], dan eksport ke Excel.
+Simpan log siapa ubah apa, dan backup data setiap hari.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Alat AI (chatbot, laporan AI)</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip yes">Guna AI</span><span class="chip yes">Kos setiap guna</span><span class="chip">Data peribadi</span></div>
+      <p class="muted">Chatbot yang jawab berdasarkan bahan anda, atau soal selidik yang tulis laporan peribadi.</p>
+<pre>Pengguna beri: [jawapan kepada [N] soalan / satu soalan / fail yang dimuat naik].
+AI beri balik: [laporan dengan bahagian ini ... / jawapan dalam nada [nada]].
+Ia mesti guna [bahan saya dalam folder ...] sahaja dan kata "Saya tidak tahu" bila jawapannya tiada di situ.
+Bahasa: [English / 中文 / BM]. Beritahu saya kos setiap guna dan tetapkan had bulanan [jumlah].
+Jangan simpan data peribadi lebih lama daripada yang perlu.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Automasi</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip">Berjalan ikut jadual</span><span class="chip yes">Hantar mesej</span><span class="chip">Tiada skrin</span></div>
+      <p class="muted">Laporan harian, peringatan hari jadi, emel susulan, salin data antara aplikasi.</p>
+<pre>Setiap [hari pukul 8 pagi / Isnin / kali borang dihantar], buat: [apa].
+Ambil data dari [Google Sheet / sistem saya / peti masuk emel].
+Hantar hasilnya kepada [siapa] melalui [emel / WhatsApp / Telegram].
+Uji dengan hantar kepada saya sahaja dulu. Kalau gagal, emel saya apa yang tak kena.</pre></div>
+
+    <div class="pcard"><div class="phead"><h3>Pejabat AI (papan pemuka staf 3D)</h3><button class="copy" type="button">Salin</button></div>
+      <div class="meta"><span class="chip yes">Simpan status</span><span class="chip">Berjalan ikut jadual</span><span class="chip">Claude Code</span></div>
+      <p class="muted">Tukar tugas berjadual Claude Code anda menjadi staf 3D yang tunjuk apa yang mereka sedang buat. Guna prompt ini secara berasingan, selepas anda ada sekurang-kurangnya satu tugas berjadual.</p>
+<pre>Bina saya sebuah "Pejabat AI": papan pemuka 3D secara langsung di mana setiap tugas berjadual Claude Code saya muncul sebagai seorang staf.
+
+Terbitkan sebagai artifact claude.ai, guna Three.js dari cdnjs dan db artifact untuk simpan status staf.
+
+RUPA
+- Pemandangan malam isometrik low-poly: latar biru tua, pulau hijau, laluan pucat, pokok dan lampu jalan yang bercahaya
+- Satu bilik terbuka di depan untuk setiap pasukan: dinding krim, bingkai emas, permaidani berwarna, papan nama dan papan laporan di dinding
+- Satu meja untuk setiap staf, dengan monitor, pokok kecil dan cawan
+- Watak chibi comel dengan kepala bulat besar, setiap satu dengan warna dan rambut sendiri
+- Seret untuk putar, skrol untuk zum
+
+STAF
+- Mula-mula senaraikan tugas berjadual saya. Setiap tugas = seorang staf dengan nama manusia yang pendek. Kumpulkan mereka dalam bilik ikut jenis kerja.
+- Simpan setiap satu di staff/&lt;taskId&gt; dengan: name, job, room, taskId, schedule, nextRun, lastRun, status, say, report, updatedAt, history[{at,text,ok}]
+- Status ialah idle, working, error, waiting atau off
+- Guna hasil larian sebenar dari sejarah tugas. Jangan sekali-kali reka.
+
+ANIMASI IKUT STATUS
+- working: menaip, monitor bercahaya biru, belon kata
+- idle: sekali-sekala bangun dan berjalan di dalam bilik
+- waiting: angkat tangan, belon kata kuning jingga
+- error: tunduk kepala, gelang merah berdenyut di lantai
+- off: tunduk kepala, monitor tutup
+- Kalau nextRun sudah lepas dan status masih idle, tandakan sebagai lewat
+
+SKRIN
+- Bar atas dengan kiraan: Bertugas, Sedang bekerja, Ralat, Perlukan anda
+- Tag nama di atas setiap watak
+- Klik satu watak untuk buka kad staf gelap: kerja, tugas, syif, syif seterusnya, syif terakhir, laporan, kemas kini terakhir, syif terkini, dan butang yang salin arahan "jalankan tugas ini sekarang"
+
+DAFTAR MASUK
+- Tunjuk saya perubahan dulu, kemudian tambah satu langkah dalam prompt setiap tugas: tulis status "working" bila ia mula, dan hasil, laporan dan larian seterusnya bila ia siap, guna db_write
+- Hanya laporkan berjaya kalau kerja itu betul-betul berlaku, bukan sekadar sebab larian sudah tamat
+
+Tunjuk saya senarai staf sebelum terbitkan. Jangan ubah mana-mana tugas tanpa tanya.</pre></div>
+
+  </div>
+</section>
+
+<section id="after">
+  <h2>3 · Prompt semasa anda membina</h2>
+  <div class="stack">
+    <div class="pcard"><div class="phead"><h3>Semak sebelum kata siap</h3><button class="copy" type="button">Salin</button></div>
+<pre>Sebelum anda kata ia sudah siap: uji setiap halaman dan butang, dalam setiap bahasa,
+pada saiz telefon dan laptop. Tunjuk saya apa yang anda semak, apa yang anda jumpa dan apa yang anda betulkan.</pre></div>
+    <div class="pcard"><div class="phead"><h3>Terbitkan</h3><button class="copy" type="button">Salin</button></div>
+<pre>Simpan ke repo GitHub peribadi dan terbitkan supaya ia dikemas kini setiap kali kita simpan.
+Beritahu saya kos bulanan dulu dan tunggu saya kata OK.</pre></div>
+    <div class="pcard"><div class="phead"><h3>Laporkan masalah</h3><button class="copy" type="button">Salin</button></div>
+<pre>Di [telefon / laptop] saya, [halaman atau skrin] tunjuk [apa yang saya nampak], tapi saya jangka [apa yang saya mahu].
+Cari puncanya, betulkan, dan beritahu saya dalam satu ayat apa puncanya.</pre></div>
+    <div class="pcard"><div class="phead"><h3>Terangkan dengan mudah</h3><button class="copy" type="button">Salin</button></div>
+<pre>Terangkan apa yang anda baru buat dengan bahasa mudah, macam saya tak pernah coding.
+Apa yang berubah untuk pelanggan saya, dan ada apa-apa yang saya perlu buat?</pre></div>
+    <div class="pcard"><div class="phead"><h3>Sambungkan domain</h3><button class="copy" type="button">Salin</button></div>
+<pre>Saya sudah beli [domain.com] di [syarikat]. Sambungkan ke laman saya
+dan beritahu saya langkah demi langkah apa yang perlu diubah di [syarikat].</pre></div>
+  </div>
+</section>
+
+<div class="next"><a href="systems.html">← 1. Pilih</a><a href="setup.html">3. Sedia →</a></div>
+</div>
+<script src="../copy.js?v=2"></script>
+</body></html>
+
