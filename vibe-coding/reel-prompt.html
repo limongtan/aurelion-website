@@ -1,90 +1,306 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Folder-style reel prompt (general)</title>
+<html lang="en" class="sub"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The folder-style reel, effect by effect · Vibe Coding</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@700&display=swap">
+<link rel="stylesheet" href="style.css?v=9">
 <style>
-body{font:16px/1.55 system-ui,sans-serif;background:#EFE9DF;color:#1a1a1a;max-width:1000px;margin:0 auto;padding:32px}
-h1{font-size:34px;margin:0 0 4px}h2{border-top:3px solid #E8541C;padding-top:14px;margin-top:36px}
-.sub{color:#666}.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.refs figure{margin:0}.refs img{width:100%;border-radius:10px;border:2px solid #1a1a1a}
-figcaption{font-size:13px;color:#555}
-pre{background:#161616;color:#f3eee6;padding:16px;border-radius:10px;white-space:pre-wrap;position:relative}
-button{position:absolute;top:8px;right:8px;background:#E8541C;color:#fff;border:0;border-radius:6px;padding:4px 10px;cursor:pointer}
-code{background:#fff;padding:1px 5px;border-radius:4px}.tip{background:#fff;border-left:4px solid #E2A020;padding:10px 14px}
-</style></head><body>
-<h1>Folder-style reel: general prompt</h1>
-<p class="sub">A reusable prompt for the myth-busting / folder pop-out / host / halftone look. Fill in the <code>{{...}}</code> fields, then paste the blocks in order. Each category is a separate block, so you can change one without touching the rest.</p>
+.wrap{max-width:980px}
+.intro{padding-block:40px 28px;text-align:center;justify-items:center}
+.intro h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;font-weight:800;max-width:14ch}
+.intro h1 mark{background:var(--accent);color:var(--accent-ink);padding:0 .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.intro .lead{margin-top:18px;font-size:1.2rem;max-width:52ch}
+.hand{font:700 1.25rem/1 'Caveat',cursive;color:var(--accent);transform:rotate(-3deg);display:inline-block}
+#all{text-align:center;justify-items:center}
+.fxgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px;margin-top:12px;width:100%;text-align:left}
+.fxtile{display:grid;gap:14px;text-decoration:none;color:inherit;border-radius:20px}
+.fxtile video{width:100%;aspect-ratio:9/8;object-fit:cover;display:block;background:#161616;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);transition:transform .18s,box-shadow .18s}
+.fxtile:hover video{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+.fxtile span{display:flex;gap:10px;align-items:center;font:700 .98rem/1.25 var(--display)}
+.fxtile span b{display:inline-grid;place-items:center;min-width:1.9em;height:1.9em;border:2px solid var(--ink);border-radius:999px;font:600 .8rem var(--mono)}
+.fxtile[aria-current] video{box-shadow:4px 4px 0 var(--accent)}
+.fxtile[aria-current] span b{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.fxtile:focus-visible{outline:3px solid var(--accent);outline-offset:8px}
+@media (max-width:860px){.fxgrid{grid-template-columns:repeat(2,1fr)}}@media (max-width:520px){.fxgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.fxtile video{transition:none}}
+.fxdetail .fxrow{display:block}
+.fxdetail .fxv{width:100%;max-width:none;height:auto;margin:0;background:#161616;border:3px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink)}
+.fxdetail .fxnotes{margin-top:22px}
+.wrap>section:not(.intro):not(#all){max-width:480px;margin-inline:auto;width:100%;font-size:.85rem}
+.wrap>section h2{font-size:1.05rem}
+.vhead{grid-template-columns:28px 1fr;gap:10px}.vhead .n{width:28px;height:28px;font-size:.75rem}
+#result .fxv{max-width:170px}
+.pcard pre{font-size:.72rem}.pcard h3{font-size:.9rem}
+#lazy .pcard{border:3px solid var(--ink);box-shadow:5px 5px 0 var(--accent);padding:12px 14px}
+#lazy .pcard pre{max-height:4.8em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 30%,transparent);mask-image:linear-gradient(#000 30%,transparent)}
+.hero2{display:grid;grid-template-columns:1fr 260px;gap:48px;align-items:center;text-align:left;justify-items:start;max-width:860px;margin-inline:auto;width:100%}
+.hero2 h1{max-width:12ch}
+.hero2 .lead{margin-top:16px;font-size:1.1rem}
+.phone{width:100%;aspect-ratio:9/16;object-fit:cover;border:4px solid var(--ink);border-radius:30px;box-shadow:8px 8px 0 var(--accent);background:#161616;transform:rotate(3deg)}
+.hero2 .btn{margin-top:22px;display:inline-block}
+@media (max-width:760px){.hero2{grid-template-columns:1fr;justify-items:center;text-align:center}.phone{max-width:220px}}
 
-<h2>Reference pictures</h2>
-<div class="refs">
-<figure><img src="img/reel-prompt/ref_sheet.jpg"><figcaption>Reference reel: 30 frames, left to right</figcaption></figure>
-<figure><img src="img/reel-prompt/sheet1.jpg"><figcaption>Our version, part 1</figcaption></figure>
-<figure><img src="img/reel-prompt/sheet2.jpg"><figcaption>Our version, part 2</figcaption></figure>
+</style>
+</head><body>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">Vibe Coding</a>
+  <nav class="tracks" aria-label="Guides"><a class="t-web" href="systems.html">Build a website</a><a class="t-vid" href="videos.html">Make reels</a><a class="t-fx" href="effects.html" aria-current="true">Video effects</a></nav>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+
+<section class="intro">
+  <div class="hero2">
+    <div>
+      <span class="hand">copy one effect at a time</span>
+      <h1>The folder-style reel, <mark>effect by effect</mark></h1>
+      <p class="lead">10 effects from one of our reels, made only with prompts. Tap an effect to see its prompt, or copy all of it in one go.</p>
+      <a class="btn" href="#all">See the 10 effects</a>
+    </div>
+    <video class="phone" src="video/recipe/full.mp4" poster="video/recipe/full.jpg" autoplay muted loop playsinline aria-label="Our finished folder-style reel"></video>
+  </div>
+</section>
+
+<section id="lazy">
+  <span class="hand">too lazy to choose? copy this one ↓</span>
+  <h2>Use all 10 effects at once</h2>
+  <p class="muted">Setup, all 10 scenes and the final check. Fill in the [brackets] and send.</p>
+  <div class="pcard"><div class="phead"><h3>The whole reel in one prompt</h3><button class="copy" type="button">Copy</button></div>
+<pre>Make a [30-45] second vertical reel (1080x1920) about [topic] for [business].
+Build it as an animated web page and render it to video.
+Script: hook in the first 3 seconds, 3 myths ("First / Second / Third, you might think..."),
+one proof line each, then the offer and ONE call to action. Real numbers only.
+On every scene: a thin code-style header at the top ("// 01 — [section]", "MYTHS 1/3"),
+captions word by word at the top left, a cartoon host at the bottom right that reacts
+on beats, and a small folder icon at the bottom left.
+Look: light scenes warm paper #EFE9DF, dark scenes #161616, end red-orange.
+Accent #E8541C, second accent #E2A020. Heavy, tight headlines. Cards with thick outlines.
+Motion: something changes every 0.6 s, a real move (pop, fly, drop, slam) every 1.5 s,
+no plain fades, every beat timed to the spoken word.
+Build these scenes in this order:
+
+1. Scene: the folder pop. A big folder labelled "[brand] [things]" sits in the centre.
+My real pictures pop out of it one by one: they rise from inside, overshoot a little
+and tilt. Then they fan into an arc over the folder. A terminal bar under it types
+"~/[folder name]". Headline: "[2 words]" with an orange underline.
+Time each picture to a spoken word in "[hook line]".
+
+2. Scene: the myth card. Dark background #161616 with a faint dot grid.
+A white speech-bubble card drops in and bounces: "MYTH 01 · you might think / [doubt]?"
+Behind it, a dim grid of my pictures slowly drifts.
+The card lands on the word "[first word of the doubt]".
+
+3. Scene: proof phone. My best picture ([file]) flies out inside a phone frame.
+A badge counts up to [number] exactly when the voice says it.
+The next pictures pop in beside it with their own badges ([numbers]).
+On "[total word]", all pictures stack into a pile and a big badge "[total]" slams down
+with a small screen shake. Only real numbers from [source].
+
+4. Transition: a halftone dot wipe. On "[word]", round dots in a grid grow from nothing
+until they cover the whole screen, then shrink away to show the next scene.
+Takes about 1 second.
+
+5. Scene: terminal and checklist. On "[type]", a terminal with a keyboard types
+"[one-line request]".
+Then a panel "AI is building" ticks one step on each spoken verb:
+[step 1] on "[verb 1]", [step 2] on "[verb 2]", [step 3] on "[verb 3]".
+A phone beside it fills up with [picture] as the steps finish.
+
+6. Scene: the code panel. A small code-editor window slides in from the side
+with a few lines of code. On "[key word]", a label pops onto it: "[claim]".
+
+7. Scene: card flip. Dark background. 4 face-down cards with "?" sit in a 2x2 grid.
+Each one flips on its word and shows a picture with a label:
+"[label 1]" on "[word 1]", "[label 2]" on "[word 2]", "[label 3]" on "[word 3]", "[label 4]" on "[word 4]".
+
+8. Scene: gallery count. On "[number word]", a window titled "[name] — [number] made"
+fills fast with a grid of my pictures, each one popping in.
+On "[total word]", a badge "[total]" slams onto the corner.
+
+9. Scene: price slam. Light paper background. A price card "[offer]" drops in
+and squashes when it lands. The price "[price]" slams on the word "[price word]".
+
+10. Scene: red end screen. The background turns red-orange #E8541C on "[word]".
+A huge white headline "[headline]" slams in. Under it, a comment-style card:
+"[call to action] → [link]". Hold it for 2 seconds.
+
+Put all the scenes together. Show me a sheet of frames from every scene.
+Score the hook, the pacing and the captions out of 10, fix anything under 8,
+and render again (up to 3 times). Then show me the video with the score.</pre></div>
+</section>
+
+<section id="all">
+  <h2>All 10 effects at a glance</h2>
+  <span class="hand">tap one to see its prompt ↓</span>
+  <div class="fxgrid"><a class="fxtile" href="#s1"><video src="video/recipe/folder.mp4" poster="video/recipe/folder.jpg" autoplay muted loop playsinline></video><span><b>1</b> Pictures pop out of a folder</span></a><a class="fxtile" href="#s2"><video src="video/recipe/myth.mp4" poster="video/recipe/myth.jpg" autoplay muted loop playsinline></video><span><b>2</b> The myth card drops in</span></a><a class="fxtile" href="#s3"><video src="video/recipe/proof.mp4" poster="video/recipe/proof.jpg" autoplay muted loop playsinline></video><span><b>3</b> The phone and the counting badge</span></a><a class="fxtile" href="#s4"><video src="video/recipe/errors.mp4" poster="video/recipe/errors.jpg" autoplay muted loop playsinline></video><span><b>4</b> The halftone wipe</span></a><a class="fxtile" href="#s5"><video src="video/recipe/terminal.mp4" poster="video/recipe/terminal.jpg" autoplay muted loop playsinline></video><span><b>5</b> Type one line, watch it build</span></a><a class="fxtile" href="#s6"><video src="video/recipe/code.mp4" poster="video/recipe/code.jpg" autoplay muted loop playsinline></video><span><b>6</b> The code panel</span></a><a class="fxtile" href="#s7"><video src="video/recipe/flip.mp4" poster="video/recipe/flip.jpg" autoplay muted loop playsinline></video><span><b>7</b> Four cards flip</span></a><a class="fxtile" href="#s8"><video src="video/recipe/gallery.mp4" poster="video/recipe/gallery.jpg" autoplay muted loop playsinline></video><span><b>8</b> The gallery fills up</span></a><a class="fxtile" href="#s9"><video src="video/recipe/price.mp4" poster="video/recipe/price.jpg" autoplay muted loop playsinline></video><span><b>9</b> The price slams in</span></a><a class="fxtile" href="#s10"><video src="video/recipe/end.mp4" poster="video/recipe/end.jpg" autoplay muted loop playsinline></video><span><b>10</b> The red end screen</span></a></div>
+</section>
+
+
+<section id="s0">
+  <div class="vhead"><span class="n">0</span><div><p class="eyebrow">Send this first</p><h2>Set up the style</h2></div></div>
+  <p>This tells the AI the rules that stay the same in every scene. Then send the scene prompts below, one at a time.</p>
+  <div class="pcard"><div class="phead"><h3>Set up</h3><button class="copy" type="button">Copy</button></div>
+<pre>Make a [30-45] second vertical reel (1080x1920) about [topic] for [business].
+Build it as an animated web page and render it to video.
+Script: hook in the first 3 seconds, 3 myths ("First / Second / Third, you might think..."),
+one proof line each, then the offer and ONE call to action. Real numbers only.
+On every scene: a thin code-style header at the top ("// 01 — [section]", "MYTHS 1/3"),
+captions word by word at the top left, a cartoon host at the bottom right that reacts
+on beats, and a small folder icon at the bottom left.
+Look: light scenes warm paper #EFE9DF, dark scenes #161616, end red-orange.
+Accent #E8541C, second accent #E2A020. Heavy, tight headlines. Cards with thick outlines.
+Motion: something changes every 0.6 s, a real move (pop, fly, drop, slam) every 1.5 s,
+no plain fades, every beat timed to the spoken word.
+I'll send the scenes one by one. Build each one and show me frames before the next.</pre></div>
+</section>
+
+<section id="s1" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">1</span><div><p class="eyebrow">The hook</p><h2>Pictures pop out of a folder</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/folder.mp4" poster="video/recipe/folder.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="Pictures pop out of a folder" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>On screen from the very first frame</li><li>Each picture rises out of the folder with a little overshoot and tilt</li><li>A terminal bar under it types the folder name</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Pictures pop out of a folder</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: the folder pop. A big folder labelled "[brand] [things]" sits in the centre.
+My real pictures pop out of it one by one: they rise from inside, overshoot a little
+and tilt. Then they fan into an arc over the folder. A terminal bar under it types
+"~/[folder name]". Headline: "[2 words]" with an orange underline.
+Time each picture to a spoken word in "[hook line]".</pre></div>
+</section>
+<section id="s2" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">2</span><div><p class="eyebrow">Myth 1</p><h2>The myth card drops in</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/myth.mp4" poster="video/recipe/myth.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The myth card drops in" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>The scene turns dark, so the viewer feels the switch</li><li>A speech-bubble card drops in and bounces</li><li>A dim grid of pictures behind it keeps the screen busy</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The myth card drops in</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: the myth card. Dark background #161616 with a faint dot grid.
+A white speech-bubble card drops in and bounces: "MYTH 01 · you might think / [doubt]?"
+Behind it, a dim grid of my pictures slowly drifts.
+The card lands on the word "[first word of the doubt]".</pre></div>
+</section>
+<section id="s3" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">3</span><div><p class="eyebrow">Proof</p><h2>The phone and the counting badge</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/proof.mp4" poster="video/recipe/proof.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The phone and the counting badge" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>The best picture flies out inside a phone frame</li><li>The number counts up on the spoken number</li><li>On the total, everything stacks and a big badge slams</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The phone and the counting badge</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: proof phone. My best picture ([file]) flies out inside a phone frame.
+A badge counts up to [number] exactly when the voice says it.
+The next pictures pop in beside it with their own badges ([numbers]).
+On "[total word]", all pictures stack into a pile and a big badge "[total]" slams down
+with a small screen shake. Only real numbers from [source].</pre></div>
+</section>
+<section id="s4" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">4</span><div><p class="eyebrow">The switch</p><h2>The halftone wipe</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/errors.mp4" poster="video/recipe/errors.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The halftone wipe" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>Dots grow until they cover the whole screen</li><li>Then they shrink away to show the next scene</li><li>Marks the jump from one myth to the next</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The halftone wipe</h3><button class="copy" type="button">Copy</button></div>
+<pre>Transition: a halftone dot wipe. On "[word]", round dots in a grid grow from nothing
+until they cover the whole screen, then shrink away to show the next scene.
+Takes about 1 second.</pre></div>
+</section>
+<section id="s5" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">5</span><div><p class="eyebrow">Myth 2</p><h2>Type one line, watch it build</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/terminal.mp4" poster="video/recipe/terminal.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="Type one line, watch it build" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>A terminal types the request, key by key</li><li>A checklist ticks one step on each spoken verb</li><li>A phone fills up beside it as the steps finish</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Type one line, watch it build</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: terminal and checklist. On "[type]", a terminal with a keyboard types
+"[one-line request]".
+Then a panel "AI is building" ticks one step on each spoken verb:
+[step 1] on "[verb 1]", [step 2] on "[verb 2]", [step 3] on "[verb 3]".
+A phone beside it fills up with [picture] as the steps finish.</pre></div>
+</section>
+<section id="s6" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">6</span><div><p class="eyebrow">The claim</p><h2>The code panel</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/code.mp4" poster="video/recipe/code.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The code panel" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>A code window slides in from the side</li><li>A small label pops on the key word</li><li>Keeps the screen moving while the voice explains</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The code panel</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: the code panel. A small code-editor window slides in from the side
+with a few lines of code. On "[key word]", a label pops onto it: "[claim]".</pre></div>
+</section>
+<section id="s7" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">7</span><div><p class="eyebrow">Myth 3</p><h2>Four cards flip</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/flip.mp4" poster="video/recipe/flip.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="Four cards flip" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>Dark again: myths take turns between light and dark</li><li>Four face-down cards with a question mark</li><li>Each card flips on its own spoken word</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>Four cards flip</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: card flip. Dark background. 4 face-down cards with "?" sit in a 2x2 grid.
+Each one flips on its word and shows a picture with a label:
+"[label 1]" on "[word 1]", "[label 2]" on "[word 2]", "[label 3]" on "[word 3]", "[label 4]" on "[word 4]".</pre></div>
+</section>
+<section id="s8" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">8</span><div><p class="eyebrow">The volume</p><h2>The gallery fills up</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/gallery.mp4" poster="video/recipe/gallery.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The gallery fills up" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>A window fills fast with a grid of pictures</li><li>The count matches what the voice says</li><li>A total badge slams at the end</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The gallery fills up</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: gallery count. On "[number word]", a window titled "[name] — [number] made"
+fills fast with a grid of my pictures, each one popping in.
+On "[total word]", a badge "[total]" slams onto the corner.</pre></div>
+</section>
+<section id="s9" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">9</span><div><p class="eyebrow">The offer</p><h2>The price slams in</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/price.mp4" poster="video/recipe/price.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The price slams in" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>Back to light paper</li><li>The price card drops, then squashes on impact</li><li>The price itself lands on the spoken price</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The price slams in</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: price slam. Light paper background. A price card "[offer]" drops in
+and squashes when it lands. The price "[price]" slams on the word "[price word]".</pre></div>
+</section>
+<section id="s10" class="fxdetail" hidden>
+  <div class="vhead"><span class="n">10</span><div><p class="eyebrow">The end</p><h2>The red end screen</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/end.mp4" poster="video/recipe/end.jpg" autoplay muted loop playsinline width="540" height="480" aria-label="The red end screen" style="aspect-ratio:9/8;height:auto"></video>
+    <ul class="fxnotes"><li>The whole screen turns red-orange</li><li>One huge line, nothing else to read</li><li>A comment-style card with the call to action, held for 2 seconds</li></ul>
+  </div>
+  <div class="pcard"><div class="phead"><h3>The red end screen</h3><button class="copy" type="button">Copy</button></div>
+<pre>Scene: red end screen. The background turns red-orange #E8541C on "[word]".
+A huge white headline "[headline]" slams in. Under it, a comment-style card:
+"[call to action] → [link]". Hold it for 2 seconds.</pre></div>
+</section>
+
+<section id="result">
+  <div class="vhead"><span class="n">★</span><div><p class="eyebrow">The result</p><h2>All of it in one reel</h2></div></div>
+  <div class="fxrow">
+    <video class="fxv" src="video/recipe/full.mp4" poster="video/recipe/full.jpg" controls playsinline width="540" height="960" aria-label="Our full folder-style reel"></video>
+    <ul class="fxnotes"><li>40 seconds, made with prompts, no editing app</li><li>3 myths, a host, captions at the top left</li><li>Light and dark scenes take turns, red at the end</li></ul>
+  </div>
+</section>
+
+<section id="s11">
+  <div class="vhead"><span class="n">✓</span><div><p class="eyebrow">Before you post</p><h2>Put it together and check</h2></div></div>
+  <div class="pcard"><div class="phead"><h3>Check</h3><button class="copy" type="button">Copy</button></div>
+<pre>Put all the scenes together. Show me a sheet of frames from every scene.
+Score the hook, the pacing and the captions out of 10, fix anything under 8,
+and render again (up to 3 times). Then show me the video with the score.</pre></div>
+  <p class="muted">Learned the hard way: copy the effects, not another creator's words or claims. Every number in our reel is our own.</p>
+</section>
+
+<div class="next"><a href="effects.html">← Video effects guide</a><a href="./">All guides →</a></div>
 </div>
-<p class="tip">Attach the reference sheet with the prompt (<code>-i ref_sheet.jpg</code> for Codex, or drag it into Claude) so it copies the effects, not just the words.</p>
-
-<h2>0. One-line command</h2>
-<pre><button onclick="cp(this)">Copy</button>/reel {{TOPIC}} print. Use the folder style: 3 myths, a host, top-left kinetic captions, light and dark scenes alternating, a red CTA end screen. Follow the blocks below.</pre>
-
-<h2>1. Script</h2>
-<pre><button onclick="cp(this)">Copy</button>SCRIPT
-- Length {{30-45}} s, about 2.5 words per second. Show the word count.
-- Hook (0-3 s): "This one {{THING}} {{BIG PROMISE}}." It must be on screen at frame 0.
-- 3 myths, each opened by "First / Second / Third, you might think {{OBJECTION}}." and then busted with ONE proof line each.
-- Proof uses only real numbers from {{SOURCE}}. Put anything unsure under "Facts check" as [UNSURE]. Never invent results, reviews or quotes.
-- Ending: the offer ({{OFFER}}) plus ONE call to action ("{{CTA}}").
-- Mark the key word in each line with *asterisks* (accent colour).</pre>
-
-<h2>2. Persistent chrome (every scene)</h2>
-<pre><button onclick="cp(this)">Copy</button>CHROME (on every scene)
-- Thin mono header at y~70: left "// 0N — {{section name}}", right "MYTHS n/3", updated per section.
-- Kinetic captions TOP-LEFT (x 120, y 300-420, 64px), word by word from words.json, max 5 words, one accent word.
-- Cartoon host (brand/host.svg) bottom-right: hops, tilts and points on beats, and flaps its mouth (host-mouth-open/closed) on spoken words.
-- Small brand folder icon bottom-left.</pre>
-
-<h2>3. Scene library (centre stage, y 560-1350)</h2>
-<pre><button onclick="cp(this)">Copy</button>SCENES (pick and order these; each one is timed to a spoken word)
-1. FOLDER POP: a big folder labelled "{{BRAND}} {{THING}}". {{ASSETS}} pop out of it one by one (rise, back.out overshoot, slight rotation). A terminal bar types "~/{{slug}}".
-2. FAN OUT: the same pictures fan into an arc over the folder. Headline "{{2 WORDS}}".
-3. MYTH CARD (dark scene): a speech-bubble card "MYTH 0N · you might think / {{objection}}?" drops in over a dim thumbnail grid.
-4. PROOF PHONE: the best picture flies out inside a phone frame, and a view/number badge counts up on the spoken number. The next ones pop in beside it. On the total, everything stacks and a big badge slams.
-5. ERROR STACK: fake error dialogs pop in, shake, and get swept away (shows "hard / painful" before the fix).
-6. TERMINAL + CHECKLIST: a terminal types a one-line request. An "AI is building" checklist ticks a step on each verb, with a phone filling up beside it.
-7. CODE PANEL: a code-editor panel slides in with a chip ("{{claim}}").
-8. CARD FLIP (dark scene): 4 face-down "?" cards flip on 4 spoken words to reveal 4 labelled pictures.
-9. GALLERY COUNT: a window "{{brand}}/{{thing}} N made" fills fast with a grid of pictures. A total badge slams.
-10. PRICE SLAM: the price card "{{OFFER}}" slams in with a squash.
-11. RED END SCREEN: the background turns red/orange, a huge "{{CTA HEADLINE}}", and a comment-style card "{{CTA}} → {{URL}}".</pre>
-
-<h2>4. Style tokens</h2>
-<pre><button onclick="cp(this)">Copy</button>STYLE
-- Light scenes: paper #EFE9DF with a faint grid. Dark scenes: #161616 with a faint dot grid. Alternate them per myth (hook light, myth 1 dark, myth 2 light, myth 3 dark, CTA red).
-- Accent #E8541C (orange-red), second accent #E2A020 (mustard). Text #1a1a1a on light, #F3EEE6 on dark.
-- Headlines: heavy grotesk (Archivo Black, then a system fallback), tight letter-spacing. Chrome and terminal: monospace.
-- Cards: thick dark outline, rounded corners, hard offset shadow.
-- Transitions: a HALFTONE dot wipe (dots grow to cover the frame, then shrink) between light and dark scenes.</pre>
-
-<h2>5. Motion rules</h2>
-<pre><button onclick="cp(this)">Copy</button>MOTION
-- Something changes at least every 0.6 s. A real move (pop, fly, drop, slam, shake, hop) happens at least every 1.5 s.
-- At most 3 full-frame changes in any 5 s (single-object pops don't count).
-- Default easing back.out (overshoot). Use counts, stacks and flips, never plain fades.
-- Time every beat to a spoken word with W(word, after) on words.json, always looking forward so repeated words stay in order.
-- Deterministic: no unseeded random.</pre>
-
-<h2>6. Layout + render contract</h2>
-<pre><button onclick="cp(this)">Copy</button>LAYOUT / RENDER
-- 1080x1920, 30 fps, HyperFrames (HTML + GSAP). One paused timeline in window.__timelines["main"].
-- All text inside x 120-960. Below y 1248 only decoration, the host and the folder icon.
-- Media use class="clip" with data-start / data-duration / data-track-index. Voice on track 90.
-- Follow brand/brand.json rules. Never show any personal IG handle.</pre>
-
-<h2>7. Score loop</h2>
-<pre><button onclick="cp(this)">Copy</button>SCORE
-- Render, then run node scripts/score.mjs reels/{{slug}}.
-- Look at score/hook.png and score/sheet.png. Fix anything under 8 (hook clarity, pacing, captions covered, text out of the safe area) and re-render. Max 3 rounds.
-- Show final.mp4 with the score.</pre>
-
-<h2>Fill-in cheat sheet</h2>
-<p><code>{{TOPIC}}</code> what the reel is about · <code>{{THING}}</code> what the folder holds (reels, recipes, designs) · <code>{{OBJECTION}}</code> ×3 what viewers doubt · <code>{{SOURCE}}</code> where the real numbers come from · <code>{{ASSETS}}</code> pictures in assets/ · <code>{{OFFER}}</code> price line · <code>{{CTA}}</code> e.g. "Link in bio" · <code>{{URL}}</code></p>
-
-<script>function cp(b){navigator.clipboard.writeText(b.parentElement.innerText.replace(/^Copy\n?/,''));b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1200)}</script>
+<script src="copy.js?v=2"></script>
+<script>
+// Show only the effect that was tapped.
+var tiles=[].slice.call(document.querySelectorAll('.fxtile'));
+function show(){
+  var id=location.hash.slice(1), el=document.getElementById(id);
+  if(!el||!el.classList.contains('fxdetail')) return;
+  [].forEach.call(document.querySelectorAll('.fxdetail'),function(s){s.hidden=s!==el;});
+  tiles.forEach(function(a){if(a.hash==='#'+id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+addEventListener('hashchange',show); show();
+</script>
 </body></html>
+
