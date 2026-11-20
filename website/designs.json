@@ -82,10 +82,10 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#10182a",
-    "ink": "#eff2ff",
-    "accent": "#b9c9ff",
-    "title": "Great work. Less friction.",
+    "bg": "#08152b",
+    "ink": "#eef5ff",
+    "accent": "#a9c8ff",
+    "title": "Work, in another dimension.",
     "desc": "Give your projects, people and ideas a place to move forward together.",
     "cta": "Explore the workspace",
     "items": [
@@ -94,7 +94,9 @@
       "See what matters"
     ],
     "artwork": "kanban",
-    "composition": "wide"
+    "composition": "wide",
+    "tech": true,
+    "scene": "nova"
   },
   {
     "id": "bloom",
@@ -1332,10 +1334,10 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#efeafa",
-    "ink": "#302849",
-    "accent": "#8d65d3",
-    "title": "Give your ideas more room to move.",
+    "bg": "#120b24",
+    "ink": "#f3eaff",
+    "accent": "#c29bff",
+    "title": "Intelligence, with space to think.",
     "desc": "An illustrative AI workspace for turning scattered thoughts into a clearer starting point.",
     "cta": "Explore the workspace",
     "items": [
@@ -1346,7 +1348,9 @@
     "batch50": true,
     "variant": 2,
     "artwork": "chat",
-    "composition": "stacked"
+    "composition": "stacked",
+    "tech": true,
+    "scene": "orbit-ai"
   },
   {
     "id": "signal",
@@ -1355,10 +1359,10 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#102923",
-    "ink": "#e9f6ec",
-    "accent": "#b9e583",
-    "title": "Turn information into a clearer picture.",
+    "bg": "#061f21",
+    "ink": "#e0f8ef",
+    "accent": "#8af0b4",
+    "title": "Beyond the noise. Into the signal.",
     "desc": "An illustrative analytics experience designed around context, focus and understanding.",
     "cta": "Explore the platform",
     "items": [
@@ -1369,7 +1373,9 @@
     "batch50": true,
     "variant": 3,
     "artwork": "analytics",
-    "composition": "dashboard"
+    "composition": "dashboard",
+    "tech": true,
+    "scene": "signal"
   },
   {
     "id": "flow-finance",
@@ -1378,10 +1384,10 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#e6ece6",
-    "ink": "#233e37",
-    "accent": "#7d9e78",
-    "title": "A clearer view of your everyday.",
+    "bg": "#e8e7f0",
+    "ink": "#302d49",
+    "accent": "#8172ad",
+    "title": "A more fluid kind of everyday.",
     "desc": "A financial-interface concept that brings everyday activity into a considered, readable space.",
     "cta": "Explore the interface",
     "items": [
@@ -1392,7 +1398,9 @@
     "batch50": true,
     "variant": 4,
     "artwork": "finance",
-    "composition": "split"
+    "composition": "split",
+    "tech": true,
+    "scene": "flow-finance"
   },
   {
     "id": "sentinel",
@@ -1401,10 +1409,10 @@
     "category": "Technology",
     "layout": "sport",
     "photo": "city",
-    "bg": "#091e2b",
-    "ink": "#d6eef5",
-    "accent": "#73d1bf",
-    "title": "Confidence starts with clarity.",
+    "bg": "#0b1413",
+    "ink": "#eef6dc",
+    "accent": "#cef786",
+    "title": "Ahead of the unknown.",
     "desc": "A digital-security concept focused on understandable information and considered preparation.",
     "cta": "Explore the approach",
     "items": [
@@ -1415,7 +1423,9 @@
     "batch50": true,
     "variant": 0,
     "artwork": "security",
-    "composition": "dashboard"
+    "composition": "dashboard",
+    "tech": true,
+    "scene": "sentinel"
   },
   {
     "id": "stack",
@@ -1424,10 +1434,10 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#10141a",
-    "ink": "#f0f4ed",
-    "accent": "#c8e682",
-    "title": "Less setup. More making.",
+    "bg": "#122126",
+    "ink": "#e6f6f2",
+    "accent": "#8ceadf",
+    "title": "Build beyond the familiar.",
     "desc": "A developer-platform concept that brings projects, documentation and collaboration together.",
     "cta": "Explore the platform",
     "items": [
@@ -1438,7 +1448,9 @@
     "batch50": true,
     "variant": 1,
     "artwork": "terminal",
-    "composition": "rail"
+    "composition": "rail",
+    "tech": true,
+    "scene": "stack"
   },
   {
     "id": "daylight-app",
@@ -1447,10 +1459,10 @@
     "category": "Technology",
     "layout": "care",
     "photo": "desk",
-    "bg": "#fff5dd",
-    "ink": "#443c2a",
-    "accent": "#e6b75c",
-    "title": "A little more intention in your day.",
+    "bg": "#f1eee6",
+    "ink": "#5d5144",
+    "accent": "#b48b50",
+    "title": "A softer kind of future.",
     "desc": "A calm application concept for making room for the routines and moments that matter.",
     "cta": "Explore the app",
     "items": [
@@ -1461,7 +1473,9 @@
     "batch50": true,
     "variant": 2,
     "artwork": "planner",
-    "composition": "split"
+    "composition": "split",
+    "tech": true,
+    "scene": "daylight-app"
   },
   {
     "id": "motive",
@@ -1470,10 +1484,10 @@
     "category": "Technology",
     "layout": "portfolio",
     "photo": "art",
-    "bg": "#2845d8",
-    "ink": "#f4f1e9",
-    "accent": "#ddf777",
-    "title": "Good ideas deserve a bigger canvas.",
+    "bg": "#1729a8",
+    "ink": "#f1f3df",
+    "accent": "#e1fa77",
+    "title": "Ideas refuse to stand still.",
     "desc": "Strategy, design and digital experiences for brands ready to move forward.",
     "cta": "Explore selected work",
     "items": [
@@ -1484,7 +1498,9 @@
     "batch50": true,
     "variant": 3,
     "artwork": "webstudio",
-    "composition": "wide"
+    "composition": "wide",
+    "tech": true,
+    "scene": "motive"
   },
   {
     "id": "terra-tech",
@@ -1493,10 +1509,10 @@
     "category": "Technology",
     "layout": "eco",
     "photo": "nature",
-    "bg": "#d6e6cf",
-    "ink": "#244733",
-    "accent": "#7f9f70",
-    "title": "Build for the world ahead.",
+    "bg": "#072326",
+    "ink": "#e2f5e9",
+    "accent": "#8ee9c4",
+    "title": "Technology, rooted in tomorrow.",
     "desc": "A climate-technology concept bringing practical ideas and considered innovation into focus.",
     "cta": "Explore the thinking",
     "items": [
@@ -1507,7 +1523,9 @@
     "batch50": true,
     "variant": 4,
     "artwork": "climate",
-    "composition": "service"
+    "composition": "service",
+    "tech": true,
+    "scene": "terra-tech"
   },
   {
     "id": "space",
