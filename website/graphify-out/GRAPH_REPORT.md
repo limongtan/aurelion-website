@@ -1,13 +1,13 @@
-# Graph Report - website  (2026-11-18)
+# Graph Report - website  (2026-11-20)
 
 ## Corpus Check
-- 1 files · ~1,399 words
+- 4 files · ~10,225 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 1 file(s) not represented in the graph (top: .css 1)
+- Unclassified: 3 file(s) not represented in the graph (top: .css 3)
 
 ## Summary
-- 7 nodes · 9 edges · 2 communities (1 shown, 1 thin omitted)
-- Extraction: 78% EXTRACTED · 22% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
+- 10 nodes · 10 edges · 4 communities (1 shown, 3 thin omitted)
+- Extraction: 70% EXTRACTED · 30% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -27,17 +27,17 @@
 ## Import Cycles
 - None detected.
 
-## Communities (2 total, 1 thin omitted)
+## Communities (4 total, 3 thin omitted)
 
 ### Community 1 - "render"
 Cohesion: 0.67
 Nodes (3): loop(), render(), setWorld()
 
 ## Knowledge Gaps
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `render()` connect `render` to `future.js`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._

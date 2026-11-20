@@ -22,11 +22,11 @@
     $('#headline').innerHTML=w.headline;
     $('#eyebrow').textContent=w.eyebrow;
     $('#description').textContent=w.description;
-    $('#cta-text').textContent=w.cta;
+    $('#cta-text').textContent='Explore all designs';
     $('#object-label').textContent=w.object;
     $('#object-meta').textContent=w.meta;
     $('#scene-label').textContent=w.label;
-    $('#direction').selectedIndex=w.number;
+    
     document.title=w.title+' — Aurelion Website Experiences';
     document.querySelectorAll('[data-mode]').forEach(a => {if(a.dataset.mode===key)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
     if(updateURL){const url=new URL(location.href);url.searchParams.set('world',key);history.pushState({world:key},'',url);}
@@ -40,20 +40,6 @@
     setTimeout(()=>setWorld(a.dataset.mode),190);
   }));
   addEventListener('popstate',()=>setWorld(new URL(location.href).searchParams.get('world'),false));
-  let opener=null;
-  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('dialog[open]').forEach(d=>d.close());opener=b;$('#'+b.dataset.open).showModal();
-  }));
-  document.querySelectorAll('dialog').forEach(d=>{
-    d.querySelector('.close').addEventListener('click',()=>d.close());
-    d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}});
-    d.addEventListener('close',()=>opener?.focus());
-  });
-  $('#brief-form').addEventListener('submit',e=>{
-    e.preventDefault();const data=new FormData(e.currentTarget);
-    const text=['AURELION — WEBSITE PROJECT BRIEF','',...Array.from(data,([k,v])=>k.toUpperCase()+': '+v),'','Created at '+new Date().toISOString()].join('\n');
-    const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='aurelion-project-brief.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#announcement').textContent='Your project brief has been downloaded.';
-  });
   function motionLabel(){const b=$('#motion');b.setAttribute('aria-pressed',String(paused));b.setAttribute('aria-label',paused?'Resume animation':'Pause animation');b.querySelector('.pause-icon').textContent=paused?'▷':'Ⅱ';b.querySelector('.motion-label').textContent=paused?'Resume':'Pause';}
   $('#motion').addEventListener('click',()=>{paused=!paused;cancelAnimationFrame(frame);motionLabel();lastTime=0;if(!paused)frame=requestAnimationFrame(loop);});
   reduced.addEventListener('change',e=>{paused=e.matches;cancelAnimationFrame(frame);motionLabel();lastTime=0;if(!paused)frame=requestAnimationFrame(loop);});
@@ -217,3 +203,4 @@ void main(){vec2 uv=(2.*gl_FragCoord.xy-resolution)/resolution.y;vec3 c;if(world
   canvas.addEventListener('webglcontextrestored',()=>location.reload());
   setWorld(new URL(location.href).searchParams.get('world'),false);motionLabel();resize();render();if(!paused)requestAnimationFrame(loop);
 })();
+

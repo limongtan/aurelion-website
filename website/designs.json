@@ -1,0 +1,424 @@
+[
+  {
+    "id": "atelier",
+    "name": "Atelier Form",
+    "type": "Architecture",
+    "category": "Business",
+    "layout": "editorial",
+    "photo": "architecture",
+    "bg": "#f1f0ec",
+    "ink": "#252622",
+    "accent": "#a34b32",
+    "title": "Spaces that change how we live.",
+    "desc": "Architecture shaped by place, light and the way life unfolds.",
+    "cta": "Explore our spaces",
+    "items": [
+      "Private residences",
+      "Cultural spaces",
+      "Material studies"
+    ]
+  },
+  {
+    "id": "haven",
+    "name": "Haven House",
+    "type": "Boutique hotel",
+    "category": "Hospitality",
+    "layout": "immersive",
+    "photo": "hotel",
+    "bg": "#f4f1e9",
+    "ink": "#253e36",
+    "accent": "#b3cfae",
+    "title": "Stay somewhere that stays with you.",
+    "desc": "A quieter kind of escape. Thoughtful rooms, open skies and time to yourself.",
+    "cta": "Discover the stay",
+    "items": [
+      "Garden suite",
+      "Poolside living",
+      "Slow mornings"
+    ]
+  },
+  {
+    "id": "ember",
+    "name": "Ember & Salt",
+    "type": "Restaurant",
+    "category": "Hospitality",
+    "layout": "restaurant",
+    "photo": "food",
+    "bg": "#191c17",
+    "ink": "#f6ebd5",
+    "accent": "#e8ab72",
+    "title": "Fire. Season. A little magic.",
+    "desc": "An intimate table. Ingredients at their best. Food worth making an evening of.",
+    "cta": "Explore the menu",
+    "items": [
+      "From the garden",
+      "From the fire",
+      "Something sweet"
+    ]
+  },
+  {
+    "id": "forma",
+    "name": "Forma Objects",
+    "type": "Homeware store",
+    "category": "Retail",
+    "layout": "commerce",
+    "photo": "interior",
+    "bg": "#f5f2ed",
+    "ink": "#31332b",
+    "accent": "#52634a",
+    "title": "Good things, for everyday living.",
+    "desc": "Considered objects, honest materials and a home that feels like you.",
+    "cta": "Explore the collection",
+    "items": [
+      "The reading chair",
+      "Soft forms",
+      "Everyday objects"
+    ]
+  },
+  {
+    "id": "nova",
+    "name": "Nova Workspace",
+    "type": "SaaS product",
+    "category": "Technology",
+    "layout": "saas",
+    "photo": null,
+    "bg": "#0d1224",
+    "ink": "#f1f4ff",
+    "accent": "#9fa8ff",
+    "title": "Great work. Less friction.",
+    "desc": "Give your projects, people and ideas a place to move forward together.",
+    "cta": "Explore the workspace",
+    "items": [
+      "Plan with clarity",
+      "Bring work together",
+      "See what matters"
+    ]
+  },
+  {
+    "id": "bloom",
+    "name": "Bloom Studio",
+    "type": "Wellness studio",
+    "category": "Lifestyle",
+    "layout": "organic",
+    "photo": "wellness",
+    "bg": "#f0eee6",
+    "ink": "#34473d",
+    "accent": "#8c5c76",
+    "title": "Make room for a slower rhythm.",
+    "desc": "Movement, breath and a little more space for yourself.",
+    "cta": "Find your practice",
+    "items": [
+      "Mindful movement",
+      "Restorative flow",
+      "A space to reset"
+    ]
+  },
+  {
+    "id": "apex",
+    "name": "Apex Performance",
+    "type": "Fitness club",
+    "category": "Lifestyle",
+    "layout": "sport",
+    "photo": "fitness",
+    "bg": "#121614",
+    "ink": "#f5f6ee",
+    "accent": "#d4fa54",
+    "title": "Built for your next level.",
+    "desc": "Strength. Movement. Momentum. A training space that meets you where you are.",
+    "cta": "Explore training",
+    "items": [
+      "Strength sessions",
+      "Conditioning",
+      "Personal coaching"
+    ]
+  },
+  {
+    "id": "meridian",
+    "name": "Meridian Advisory",
+    "type": "Professional services",
+    "category": "Business",
+    "layout": "corporate",
+    "photo": "team",
+    "bg": "#f5f6f8",
+    "ink": "#122b45",
+    "accent": "#3364bf",
+    "title": "Clear thinking. Confident decisions.",
+    "desc": "Independent perspectives for businesses navigating their next chapter.",
+    "cta": "Explore our approach",
+    "items": [
+      "Business direction",
+      "People and culture",
+      "Change and growth"
+    ]
+  },
+  {
+    "id": "northline",
+    "name": "Northline Journal",
+    "type": "Editorial publication",
+    "category": "Culture",
+    "layout": "magazine",
+    "photo": "mountains",
+    "bg": "#eeeee9",
+    "ink": "#242724",
+    "accent": "#d5ef8b",
+    "title": "Stories from a wider world.",
+    "desc": "Field notes on places, people and the ideas connecting us.",
+    "cta": "Read the journal",
+    "items": [
+      "Beyond the trail",
+      "A different perspective",
+      "The quiet season"
+    ]
+  },
+  {
+    "id": "luma",
+    "name": "Luma Jewellery",
+    "type": "Luxury retail",
+    "category": "Retail",
+    "layout": "luxury",
+    "photo": "jewelry",
+    "bg": "#f4f0e9",
+    "ink": "#3f332c",
+    "accent": "#a0784a",
+    "title": "A small thing. A lasting feeling.",
+    "desc": "Sculptural pieces for the moments you choose to keep.",
+    "cta": "Discover the pieces",
+    "items": [
+      "Sculpted gold",
+      "Everyday treasures",
+      "The signature edit"
+    ]
+  },
+  {
+    "id": "cove",
+    "name": "Cove Residences",
+    "type": "Real estate",
+    "category": "Business",
+    "layout": "property",
+    "photo": "house",
+    "bg": "#ebede6",
+    "ink": "#223a32",
+    "accent": "#bbc9ad",
+    "title": "A new perspective on home.",
+    "desc": "Light-filled spaces, considered details and room for the life ahead.",
+    "cta": "Explore the residences",
+    "items": [
+      "The garden residence",
+      "The courtyard home",
+      "The open-plan retreat"
+    ]
+  },
+  {
+    "id": "roam",
+    "name": "Roam Atlas",
+    "type": "Travel experiences",
+    "category": "Hospitality",
+    "layout": "travel",
+    "photo": "mountains",
+    "bg": "#f6f3ea",
+    "ink": "#1e3531",
+    "accent": "#ec6b42",
+    "title": "Take the less ordinary way.",
+    "desc": "Small-group journeys. Local perspectives. Stories you bring home.",
+    "cta": "Find your journey",
+    "items": [
+      "Mountain paths",
+      "Coastal days",
+      "Into the green"
+    ]
+  },
+  {
+    "id": "kindred",
+    "name": "Kindred Learning",
+    "type": "Education",
+    "category": "Lifestyle",
+    "layout": "education",
+    "photo": "team",
+    "bg": "#f8f7f2",
+    "ink": "#243a63",
+    "accent": "#e7ad67",
+    "title": "Curiosity looks good on you.",
+    "desc": "Practical learning for the things you want to do next.",
+    "cta": "Explore learning paths",
+    "items": [
+      "Creative confidence",
+      "Better conversations",
+      "Your next project"
+    ]
+  },
+  {
+    "id": "pulse",
+    "name": "Pulse Assembly",
+    "type": "Conference & event",
+    "category": "Culture",
+    "layout": "event",
+    "photo": null,
+    "bg": "#14111c",
+    "ink": "#faf5f0",
+    "accent": "#ef91bf",
+    "title": "Ideas meet. Possibilities follow.",
+    "desc": "A meeting point for curious minds, creative practice and what comes next.",
+    "cta": "Explore the programme",
+    "items": [
+      "The opening session",
+      "Conversations that matter",
+      "An evening of ideas"
+    ]
+  },
+  {
+    "id": "moss",
+    "name": "Moss & Stem",
+    "type": "Florist",
+    "category": "Retail",
+    "layout": "botanical",
+    "photo": "flowers",
+    "bg": "#f0f1e7",
+    "ink": "#344534",
+    "accent": "#9e4e66",
+    "title": "A little wild. Entirely thoughtful.",
+    "desc": "Season-led flowers and arrangements for everyday gestures and extraordinary days.",
+    "cta": "Browse the flowers",
+    "items": [
+      "The seasonal bunch",
+      "A thoughtful gesture",
+      "For a special day"
+    ]
+  },
+  {
+    "id": "grain",
+    "name": "Grain & Co.",
+    "type": "Coffee & bakery",
+    "category": "Hospitality",
+    "layout": "cafe",
+    "photo": "coffee",
+    "bg": "#efe8d9",
+    "ink": "#382d22",
+    "accent": "#986a3b",
+    "title": "A good day starts here.",
+    "desc": "Freshly brewed. Slowly baked. A neighbourhood place to make your own.",
+    "cta": "See what is brewing",
+    "items": [
+      "The house coffee",
+      "Fresh from the oven",
+      "A seat by the window"
+    ]
+  },
+  {
+    "id": "studio-noir",
+    "name": "Studio Noir",
+    "type": "Creative portfolio",
+    "category": "Culture",
+    "layout": "portfolio",
+    "photo": "art",
+    "bg": "#171718",
+    "ink": "#faf8ef",
+    "accent": "#e7f174",
+    "title": "Make something impossible to ignore.",
+    "desc": "Independent ideas, identities and digital experiences with a point of view.",
+    "cta": "View selected work",
+    "items": [
+      "A new identity",
+      "A different interaction",
+      "An unexpected story"
+    ]
+  },
+  {
+    "id": "evergreen",
+    "name": "Evergreen Collective",
+    "type": "Sustainability",
+    "category": "Business",
+    "layout": "eco",
+    "photo": "nature",
+    "bg": "#ecf0e3",
+    "ink": "#25412d",
+    "accent": "#acd25d",
+    "title": "A better future takes root here.",
+    "desc": "Ideas, partnerships and practical action for a world worth passing on.",
+    "cta": "Explore the possibilities",
+    "items": [
+      "A circular approach",
+      "Connected communities",
+      "Nature in the city"
+    ]
+  },
+  {
+    "id": "solace",
+    "name": "Solace Care",
+    "type": "Healthcare",
+    "category": "Lifestyle",
+    "layout": "care",
+    "photo": "wellness",
+    "bg": "#f0f6f5",
+    "ink": "#234b53",
+    "accent": "#388a91",
+    "title": "Care that starts with listening.",
+    "desc": "A warm welcome, clear information and a little more time for your wellbeing.",
+    "cta": "Explore our care",
+    "items": [
+      "Everyday wellbeing",
+      "A considered approach",
+      "Your first visit"
+    ]
+  },
+  {
+    "id": "alex-river",
+    "name": "Alex River",
+    "type": "Personal brand",
+    "category": "Business",
+    "layout": "personal",
+    "photo": "portrait",
+    "bg": "#f6f0e7",
+    "ink": "#252f3c",
+    "accent": "#d37452",
+    "title": "Good questions open new doors.",
+    "desc": "Facilitation, ideas and thoughtful conversations for people moving forward.",
+    "cta": "Explore my work",
+    "items": [
+      "Workshops that connect",
+      "Ideas in practice",
+      "A fresh perspective"
+    ]
+  },
+  {
+    "id": "space",
+    "name": "Event Horizon",
+    "type": "Cinematic space",
+    "category": "Immersive",
+    "legacy": true
+  },
+  {
+    "id": "city",
+    "name": "Neo District",
+    "type": "Cyber future",
+    "category": "Immersive",
+    "legacy": true
+  },
+  {
+    "id": "interface",
+    "name": "Human Interface",
+    "type": "Spatial interface",
+    "category": "Immersive",
+    "legacy": true
+  },
+  {
+    "id": "lab",
+    "name": "Tomorrow Lab",
+    "type": "Light future",
+    "category": "Immersive",
+    "legacy": true
+  },
+  {
+    "id": "warp",
+    "name": "Warp Drive",
+    "type": "Hyperspace",
+    "category": "Immersive",
+    "legacy": true
+  },
+  {
+    "id": "liquid",
+    "name": "New Matter",
+    "type": "Liquid material",
+    "category": "Immersive",
+    "legacy": true
+  }
+]
