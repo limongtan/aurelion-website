@@ -82,9 +82,9 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#0d1224",
-    "ink": "#f1f4ff",
-    "accent": "#9fa8ff",
+    "bg": "#10182a",
+    "ink": "#eff2ff",
+    "accent": "#b9c9ff",
     "title": "Great work. Less friction.",
     "desc": "Give your projects, people and ideas a place to move forward together.",
     "cta": "Explore the workspace",
@@ -92,7 +92,9 @@
       "Plan with clarity",
       "Bring work together",
       "See what matters"
-    ]
+    ],
+    "artwork": "kanban",
+    "composition": "wide"
   },
   {
     "id": "bloom",
@@ -101,9 +103,9 @@
     "category": "Lifestyle",
     "layout": "organic",
     "photo": "wellness",
-    "bg": "#f0eee6",
-    "ink": "#34473d",
-    "accent": "#8c5c76",
+    "bg": "#e9dde5",
+    "ink": "#4c3248",
+    "accent": "#9a657f",
     "title": "Make room for a slower rhythm.",
     "desc": "Movement, breath and a little more space for yourself.",
     "cta": "Find your practice",
@@ -111,7 +113,9 @@
       "Mindful movement",
       "Restorative flow",
       "A space to reset"
-    ]
+    ],
+    "artwork": "sculpture",
+    "composition": "stacked"
   },
   {
     "id": "apex",
@@ -215,9 +219,9 @@
     "category": "Hospitality",
     "layout": "travel",
     "photo": "mountains",
-    "bg": "#f6f3ea",
-    "ink": "#1e3531",
-    "accent": "#ec6b42",
+    "bg": "#edf0db",
+    "ink": "#2f4234",
+    "accent": "#bcb16d",
     "title": "Take the less ordinary way.",
     "desc": "Small-group journeys. Local perspectives. Stories you bring home.",
     "cta": "Find your journey",
@@ -225,7 +229,9 @@
       "Mountain paths",
       "Coastal days",
       "Into the green"
-    ]
+    ],
+    "artwork": "passport",
+    "composition": "mosaic"
   },
   {
     "id": "kindred",
@@ -234,9 +240,9 @@
     "category": "Lifestyle",
     "layout": "education",
     "photo": "team",
-    "bg": "#f8f7f2",
-    "ink": "#243a63",
-    "accent": "#e7ad67",
+    "bg": "#f4df62",
+    "ink": "#263c50",
+    "accent": "#f6784e",
     "title": "Curiosity looks good on you.",
     "desc": "Practical learning for the things you want to do next.",
     "cta": "Explore learning paths",
@@ -244,7 +250,9 @@
       "Creative confidence",
       "Better conversations",
       "Your next project"
-    ]
+    ],
+    "artwork": "learning",
+    "composition": "mosaic"
   },
   {
     "id": "pulse",
@@ -348,9 +356,9 @@
     "category": "Lifestyle",
     "layout": "care",
     "photo": "wellness",
-    "bg": "#f0f6f5",
-    "ink": "#234b53",
-    "accent": "#388a91",
+    "bg": "#ecf4f7",
+    "ink": "#183f59",
+    "accent": "#5794b2",
     "title": "Care that starts with listening.",
     "desc": "A warm welcome, clear information and a little more time for your wellbeing.",
     "cta": "Explore our care",
@@ -358,7 +366,9 @@
       "Everyday wellbeing",
       "A considered approach",
       "Your first visit"
-    ]
+    ],
+    "artwork": "clinic",
+    "composition": "service"
   },
   {
     "id": "alex-river",
@@ -386,9 +396,9 @@
     "category": "Business",
     "layout": "corporate",
     "photo": "city",
-    "bg": "#f4f1ec",
-    "ink": "#273333",
-    "accent": "#ba694f",
+    "bg": "#263a42",
+    "ink": "#fbf7ec",
+    "accent": "#b69c69",
     "title": "Clear advice. A steady way forward.",
     "desc": "A considered legal practice built around careful listening and clear next steps.",
     "cta": "Meet the practice",
@@ -398,7 +408,9 @@
       "Planning ahead"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "legal",
+    "composition": "rail"
   },
   {
     "id": "ledger",
@@ -407,9 +419,9 @@
     "category": "Business",
     "layout": "editorial",
     "photo": "desk",
-    "bg": "#eff2f0",
-    "ink": "#233b48",
-    "accent": "#5387a5",
+    "bg": "#f4f0e7",
+    "ink": "#283d3b",
+    "accent": "#c8a669",
     "title": "Make sense of the numbers.",
     "desc": "Thoughtful accounting support that helps business owners see the whole picture.",
     "cta": "Explore our services",
@@ -419,7 +431,9 @@
       "A clearer picture"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "ledger",
+    "composition": "dashboard"
   },
   {
     "id": "vector",
@@ -428,9 +442,9 @@
     "category": "Business",
     "layout": "corporate",
     "photo": "architecture",
-    "bg": "#f5f1e8",
-    "ink": "#36342a",
-    "accent": "#929b62",
+    "bg": "#12305b",
+    "ink": "#eaf2ff",
+    "accent": "#94c0f4",
     "title": "Good ideas. Built to stand.",
     "desc": "Practical engineering, collaborative thinking and considered solutions for the built world.",
     "cta": "Explore our projects",
@@ -440,7 +454,9 @@
       "Technical collaboration"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "blueprint",
+    "composition": "canvas"
   },
   {
     "id": "waypoint",
@@ -449,9 +465,9 @@
     "category": "Business",
     "layout": "property",
     "photo": "city",
-    "bg": "#eceef3",
-    "ink": "#242d45",
-    "accent": "#8f9bce",
+    "bg": "#e7eff2",
+    "ink": "#18354c",
+    "accent": "#ea8248",
     "title": "Connecting what matters.",
     "desc": "A clear, connected approach to moving goods and keeping people informed.",
     "cta": "Explore the network",
@@ -461,7 +477,9 @@
       "Shipment visibility"
     ],
     "batch50": true,
-    "variant": 3
+    "variant": 3,
+    "artwork": "route",
+    "composition": "wide"
   },
   {
     "id": "people-first",
@@ -470,9 +488,9 @@
     "category": "Business",
     "layout": "education",
     "photo": "team",
-    "bg": "#f3eeee",
-    "ink": "#49363e",
-    "accent": "#b2859b",
+    "bg": "#f3e7e2",
+    "ink": "#453b3b",
+    "accent": "#bd7661",
     "title": "Find people. Build possibilities.",
     "desc": "Thoughtful introductions between businesses with ambition and people with something to offer.",
     "cta": "Explore opportunities",
@@ -482,7 +500,9 @@
       "Get to know us"
     ],
     "batch50": true,
-    "variant": 4
+    "variant": 4,
+    "artwork": "people",
+    "composition": "mosaic"
   },
   {
     "id": "common-ground",
@@ -491,9 +511,9 @@
     "category": "Business",
     "layout": "immersive",
     "photo": "desk",
-    "bg": "#eaf0eb",
-    "ink": "#263d33",
-    "accent": "#6f987c",
+    "bg": "#e6e950",
+    "ink": "#1c332c",
+    "accent": "#667b50",
     "title": "Your work. In good company.",
     "desc": "Flexible spaces, interesting people and room for your next idea to grow.",
     "cta": "Explore the spaces",
@@ -503,7 +523,9 @@
       "A space of your own"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "desks",
+    "composition": "poster"
   },
   {
     "id": "linen",
@@ -512,9 +534,9 @@
     "category": "Business",
     "layout": "organic",
     "photo": "interior",
-    "bg": "#f4f1ec",
-    "ink": "#273333",
-    "accent": "#ba694f",
+    "bg": "#f0e8df",
+    "ink": "#574337",
+    "accent": "#b18b77",
     "title": "Rooms that feel like you.",
     "desc": "Natural materials, thoughtful details and spaces made for everyday living.",
     "cta": "View our interiors",
@@ -524,7 +546,9 @@
       "A complete home"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "moodboard",
+    "composition": "mosaic"
   },
   {
     "id": "groundwork",
@@ -533,9 +557,9 @@
     "category": "Business",
     "layout": "sport",
     "photo": "architecture",
-    "bg": "#14221d",
-    "ink": "#f5f5ee",
-    "accent": "#edb87d",
+    "bg": "#f5b848",
+    "ink": "#242b32",
+    "accent": "#a84b2b",
     "title": "Built on a better beginning.",
     "desc": "A considered approach to making places, from the first conversation to the final detail.",
     "cta": "Explore our work",
@@ -545,7 +569,9 @@
       "Project coordination"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "construction",
+    "composition": "rail"
   },
   {
     "id": "shelter",
@@ -554,9 +580,9 @@
     "category": "Business",
     "layout": "care",
     "photo": "house",
-    "bg": "#f5f1e8",
-    "ink": "#36342a",
-    "accent": "#929b62",
+    "bg": "#edf2f7",
+    "ink": "#314964",
+    "accent": "#87a8bd",
     "title": "Plan for the life you want to live.",
     "desc": "Understand your options and begin a clearer conversation about what matters to you.",
     "cta": "Explore our approach",
@@ -566,7 +592,9 @@
       "A planning conversation"
     ],
     "batch50": true,
-    "variant": 3
+    "variant": 3,
+    "artwork": "shelter",
+    "composition": "service"
   },
   {
     "id": "clarity",
@@ -575,9 +603,9 @@
     "category": "Business",
     "layout": "portfolio",
     "photo": "art",
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#a5b9f5",
+    "bg": "#f46843",
+    "ink": "#291f24",
+    "accent": "#f3df67",
     "title": "Find your voice. Make it matter.",
     "desc": "Strategy, language and identity for businesses ready to say something meaningful.",
     "cta": "See our thinking",
@@ -587,7 +615,9 @@
       "Identity in practice"
     ],
     "batch50": true,
-    "variant": 4
+    "variant": 4,
+    "artwork": "identity",
+    "composition": "poster"
   },
   {
     "id": "sora",
@@ -701,9 +731,9 @@
     "category": "Hospitality",
     "layout": "luxury",
     "photo": "house",
-    "bg": "#eceef3",
-    "ink": "#242d45",
-    "accent": "#8f9bce",
+    "bg": "#ebe2ce",
+    "ink": "#4a4936",
+    "accent": "#96a48a",
     "title": "Some places feel like a pause.",
     "desc": "A private retreat with sunlit rooms, thoughtful spaces and time to spend together.",
     "cta": "Explore the villa",
@@ -713,7 +743,9 @@
       "A slower morning"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "courtyard",
+    "composition": "canvas"
   },
   {
     "id": "wildlight",
@@ -722,9 +754,9 @@
     "category": "Hospitality",
     "layout": "eco",
     "photo": "nature",
-    "bg": "#f3eeee",
-    "ink": "#49363e",
-    "accent": "#b2859b",
+    "bg": "#102f2f",
+    "ink": "#f1e5bb",
+    "accent": "#d9ad74",
     "title": "Less noise. More outside.",
     "desc": "A thoughtful outdoor escape for shared stories, fresh air and a quieter rhythm.",
     "cta": "Find your escape",
@@ -734,7 +766,9 @@
       "Out on the trail"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "camp",
+    "composition": "canvas"
   },
   {
     "id": "local-lens",
@@ -743,9 +777,9 @@
     "category": "Hospitality",
     "layout": "editorial",
     "photo": "city",
-    "bg": "#eaf0eb",
-    "ink": "#263d33",
-    "accent": "#6f987c",
+    "bg": "#f0e7ce",
+    "ink": "#383d35",
+    "accent": "#d76e47",
     "title": "A city is better with a local.",
     "desc": "Small discoveries, unexpected stories and a different way to get to know a place.",
     "cta": "Explore the experiences",
@@ -755,7 +789,9 @@
       "The hidden creative scene"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "citymap",
+    "composition": "dashboard"
   },
   {
     "id": "bare-form",
@@ -827,9 +863,9 @@
     "category": "Retail",
     "layout": "editorial",
     "photo": "interior",
-    "bg": "#eceef3",
-    "ink": "#242d45",
-    "accent": "#8f9bce",
+    "bg": "#d8c7b8",
+    "ink": "#47352e",
+    "accent": "#9c7360",
     "title": "Made by hand. Kept for years.",
     "desc": "Quiet forms, expressive surfaces and objects that turn everyday moments into rituals.",
     "cta": "Discover the pieces",
@@ -839,7 +875,9 @@
       "The sculptural edit"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "ceramics",
+    "composition": "poster"
   },
   {
     "id": "oakline",
@@ -848,9 +886,9 @@
     "category": "Retail",
     "layout": "property",
     "photo": "interior",
-    "bg": "#f3eeee",
-    "ink": "#49363e",
-    "accent": "#b2859b",
+    "bg": "#e7e2d4",
+    "ink": "#3c4836",
+    "accent": "#899b73",
     "title": "A home takes shape, one piece at a time.",
     "desc": "Considered furniture for gathering, resting and making room for everyday life.",
     "cta": "Explore the furniture",
@@ -860,7 +898,9 @@
       "Room to rest"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "chair",
+    "composition": "wide"
   },
   {
     "id": "chapter",
@@ -932,9 +972,9 @@
     "category": "Lifestyle",
     "layout": "care",
     "photo": "wellness",
-    "bg": "#f5f1e8",
-    "ink": "#36342a",
-    "accent": "#929b62",
+    "bg": "#e7dfd3",
+    "ink": "#362d28",
+    "accent": "#ac7857",
     "title": "Strength, with a little more ease.",
     "desc": "Mindful movement and a thoughtful space to build confidence at your own pace.",
     "cta": "Explore the practice",
@@ -944,7 +984,9 @@
       "Room to progress"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "reformer",
+    "composition": "poster"
   },
   {
     "id": "still",
@@ -974,9 +1016,9 @@
     "category": "Lifestyle",
     "layout": "care",
     "photo": "portrait",
-    "bg": "#f3eeee",
-    "ink": "#49363e",
-    "accent": "#b2859b",
+    "bg": "#eff6fc",
+    "ink": "#284b7c",
+    "accent": "#8cb6e6",
     "title": "A warmer welcome to dental care.",
     "desc": "Clear information, considered conversations and a calm place to begin.",
     "cta": "Explore the practice",
@@ -986,7 +1028,9 @@
       "Questions and guidance"
     ],
     "batch50": true,
-    "variant": 3
+    "variant": 3,
+    "artwork": "dental",
+    "composition": "service"
   },
   {
     "id": "paws",
@@ -1016,9 +1060,9 @@
     "category": "Lifestyle",
     "layout": "luxury",
     "photo": "wellness",
-    "bg": "#f4f1ec",
-    "ink": "#273333",
-    "accent": "#ba694f",
+    "bg": "#153d3d",
+    "ink": "#eff1dd",
+    "accent": "#abd2c7",
     "title": "Leave a little lighter.",
     "desc": "Water, warmth and quiet rituals that make space for a pause in your day.",
     "cta": "Explore the rituals",
@@ -1028,7 +1072,9 @@
       "Time to unwind"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "pools",
+    "composition": "canvas"
   },
   {
     "id": "nourish",
@@ -1037,9 +1083,9 @@
     "category": "Lifestyle",
     "layout": "botanical",
     "photo": "food",
-    "bg": "#eff2f0",
-    "ink": "#233b48",
-    "accent": "#5387a5",
+    "bg": "#f4edda",
+    "ink": "#3c4d38",
+    "accent": "#bf7e50",
     "title": "Small habits. A more thoughtful everyday.",
     "desc": "Practical conversations about food, routines and choices that fit your life.",
     "cta": "Explore the approach",
@@ -1049,7 +1095,9 @@
       "Building sustainable habits"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "nutrition",
+    "composition": "service"
   },
   {
     "id": "good-dog",
@@ -1058,9 +1106,9 @@
     "category": "Lifestyle",
     "layout": "cafe",
     "photo": "dog",
-    "bg": "#f5f1e8",
-    "ink": "#36342a",
-    "accent": "#929b62",
+    "bg": "#f3d7bc",
+    "ink": "#4a3a32",
+    "accent": "#cf8b6d",
     "title": "Good days for very good dogs.",
     "desc": "A friendly space for fresh coats, familiar faces and a little extra attention.",
     "cta": "Explore the club",
@@ -1070,7 +1118,9 @@
       "A little extra care"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "petbath",
+    "composition": "mosaic"
   },
   {
     "id": "open-road",
@@ -1079,9 +1129,9 @@
     "category": "Lifestyle",
     "layout": "sport",
     "photo": "mountains",
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#a5b9f5",
+    "bg": "#f2fa61",
+    "ink": "#1c2923",
+    "accent": "#6e9f75",
     "title": "Find your stride. Find your people.",
     "desc": "A meeting point for easy miles, new routes and the simple joy of getting outside.",
     "cta": "Explore the routes",
@@ -1091,7 +1141,9 @@
       "A place to begin"
     ],
     "batch50": true,
-    "variant": 3
+    "variant": 3,
+    "artwork": "run",
+    "composition": "wide"
   },
   {
     "id": "frame",
@@ -1121,9 +1173,9 @@
     "category": "Culture",
     "layout": "editorial",
     "photo": "art",
-    "bg": "#eaf0eb",
-    "ink": "#263d33",
-    "accent": "#6f987c",
+    "bg": "#ebece4",
+    "ink": "#292d32",
+    "accent": "#b8afa5",
     "title": "A place for a new perspective.",
     "desc": "Contemporary work, considered conversations and space to see things differently.",
     "cta": "Explore the exhibitions",
@@ -1133,7 +1185,9 @@
       "Inside the studio"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "gallery",
+    "composition": "poster"
   },
   {
     "id": "sundial",
@@ -1142,9 +1196,9 @@
     "category": "Culture",
     "layout": "event",
     "photo": "music",
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#bde589",
+    "bg": "#242025",
+    "ink": "#f6dcca",
+    "accent": "#d79e7f",
     "title": "Make room for a new sound.",
     "desc": "A collaborative space for recording, experimenting and finding your own voice.",
     "cta": "Explore the studio",
@@ -1154,7 +1208,9 @@
       "A sound in progress"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "audio",
+    "composition": "rail"
   },
   {
     "id": "good-question",
@@ -1163,9 +1219,9 @@
     "category": "Culture",
     "layout": "magazine",
     "photo": "portrait",
-    "bg": "#eff2f0",
-    "ink": "#233b48",
-    "accent": "#5387a5",
+    "bg": "#f5b7b5",
+    "ink": "#4b263b",
+    "accent": "#edcf67",
     "title": "Some conversations stay with you.",
     "desc": "Curious people, thoughtful questions and a little time to explore what matters.",
     "cta": "Explore the episodes",
@@ -1175,7 +1231,9 @@
       "What comes next"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "podcast",
+    "composition": "rail"
   },
   {
     "id": "wild-vow",
@@ -1205,9 +1263,9 @@
     "category": "Culture",
     "layout": "event",
     "photo": "music",
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#edb87d",
+    "bg": "#271452",
+    "ink": "#f5e7ff",
+    "accent": "#c0ef64",
     "title": "Stay for the unexpected.",
     "desc": "A gathering of sound, movement and ideas for curious people and open minds.",
     "cta": "Explore the programme",
@@ -1217,7 +1275,9 @@
       "After the sun sets"
     ],
     "batch50": true,
-    "variant": 4
+    "variant": 4,
+    "artwork": "concert",
+    "composition": "canvas"
   },
   {
     "id": "found",
@@ -1226,9 +1286,9 @@
     "category": "Culture",
     "layout": "corporate",
     "photo": "art",
-    "bg": "#f3eeee",
-    "ink": "#49363e",
-    "accent": "#b2859b",
+    "bg": "#ece7dd",
+    "ink": "#473f35",
+    "accent": "#ae9270",
     "title": "The past has something new to say.",
     "desc": "Objects, stories and fresh perspectives that connect what was with what comes next.",
     "cta": "Explore the museum",
@@ -1238,7 +1298,9 @@
       "A visit with a difference"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "museum",
+    "composition": "stacked"
   },
   {
     "id": "motion-house",
@@ -1247,9 +1309,9 @@
     "category": "Culture",
     "layout": "personal",
     "photo": "fitness",
-    "bg": "#eaf0eb",
-    "ink": "#263d33",
-    "accent": "#6f987c",
+    "bg": "#d0d3ea",
+    "ink": "#282c4c",
+    "accent": "#a780b0",
     "title": "Find a language beyond words.",
     "desc": "Movement, expression and an open space to discover your own creative rhythm.",
     "cta": "Explore the classes",
@@ -1259,7 +1321,9 @@
       "A shared performance"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "dance",
+    "composition": "poster"
   },
   {
     "id": "orbit-ai",
@@ -1268,9 +1332,9 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#e8acb9",
+    "bg": "#efeafa",
+    "ink": "#302849",
+    "accent": "#8d65d3",
     "title": "Give your ideas more room to move.",
     "desc": "An illustrative AI workspace for turning scattered thoughts into a clearer starting point.",
     "cta": "Explore the workspace",
@@ -1280,7 +1344,9 @@
       "Shape the next step"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "chat",
+    "composition": "stacked"
   },
   {
     "id": "signal",
@@ -1289,9 +1355,9 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#14221d",
-    "ink": "#f5f5ee",
-    "accent": "#edb87d",
+    "bg": "#102923",
+    "ink": "#e9f6ec",
+    "accent": "#b9e583",
     "title": "Turn information into a clearer picture.",
     "desc": "An illustrative analytics experience designed around context, focus and understanding.",
     "cta": "Explore the platform",
@@ -1301,7 +1367,9 @@
       "Share the picture"
     ],
     "batch50": true,
-    "variant": 3
+    "variant": 3,
+    "artwork": "analytics",
+    "composition": "dashboard"
   },
   {
     "id": "flow-finance",
@@ -1310,9 +1378,9 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#241b25",
-    "ink": "#f5f5ee",
-    "accent": "#bde589",
+    "bg": "#e6ece6",
+    "ink": "#233e37",
+    "accent": "#7d9e78",
     "title": "A clearer view of your everyday.",
     "desc": "A financial-interface concept that brings everyday activity into a considered, readable space.",
     "cta": "Explore the interface",
@@ -1322,7 +1390,9 @@
       "Plan the next step"
     ],
     "batch50": true,
-    "variant": 4
+    "variant": 4,
+    "artwork": "finance",
+    "composition": "split"
   },
   {
     "id": "sentinel",
@@ -1331,9 +1401,9 @@
     "category": "Technology",
     "layout": "sport",
     "photo": "city",
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#a5b9f5",
+    "bg": "#091e2b",
+    "ink": "#d6eef5",
+    "accent": "#73d1bf",
     "title": "Confidence starts with clarity.",
     "desc": "A digital-security concept focused on understandable information and considered preparation.",
     "cta": "Explore the approach",
@@ -1343,7 +1413,9 @@
       "Build the right habits"
     ],
     "batch50": true,
-    "variant": 0
+    "variant": 0,
+    "artwork": "security",
+    "composition": "dashboard"
   },
   {
     "id": "stack",
@@ -1352,9 +1424,9 @@
     "category": "Technology",
     "layout": "saas",
     "photo": null,
-    "bg": "#14221d",
-    "ink": "#f5f5ee",
-    "accent": "#e8acb9",
+    "bg": "#10141a",
+    "ink": "#f0f4ed",
+    "accent": "#c8e682",
     "title": "Less setup. More making.",
     "desc": "A developer-platform concept that brings projects, documentation and collaboration together.",
     "cta": "Explore the platform",
@@ -1364,7 +1436,9 @@
       "A shared workflow"
     ],
     "batch50": true,
-    "variant": 1
+    "variant": 1,
+    "artwork": "terminal",
+    "composition": "rail"
   },
   {
     "id": "daylight-app",
@@ -1373,9 +1447,9 @@
     "category": "Technology",
     "layout": "care",
     "photo": "desk",
-    "bg": "#eaf0eb",
-    "ink": "#263d33",
-    "accent": "#6f987c",
+    "bg": "#fff5dd",
+    "ink": "#443c2a",
+    "accent": "#e6b75c",
     "title": "A little more intention in your day.",
     "desc": "A calm application concept for making room for the routines and moments that matter.",
     "cta": "Explore the app",
@@ -1385,7 +1459,9 @@
       "A moment to reflect"
     ],
     "batch50": true,
-    "variant": 2
+    "variant": 2,
+    "artwork": "planner",
+    "composition": "split"
   },
   {
     "id": "motive",
@@ -1394,9 +1470,9 @@
     "category": "Technology",
     "layout": "portfolio",
     "photo": "art",
-    "bg": "#151a24",
-    "ink": "#f5f5ee",
-    "accent": "#bde589",
+    "bg": "#2845d8",
+    "ink": "#f4f1e9",
+    "accent": "#ddf777",
     "title": "Good ideas deserve a bigger canvas.",
     "desc": "Strategy, design and digital experiences for brands ready to move forward.",
     "cta": "Explore selected work",
@@ -1406,7 +1482,9 @@
       "A story with momentum"
     ],
     "batch50": true,
-    "variant": 3
+    "variant": 3,
+    "artwork": "webstudio",
+    "composition": "wide"
   },
   {
     "id": "terra-tech",
@@ -1415,9 +1493,9 @@
     "category": "Technology",
     "layout": "eco",
     "photo": "nature",
-    "bg": "#eff2f0",
-    "ink": "#233b48",
-    "accent": "#5387a5",
+    "bg": "#d6e6cf",
+    "ink": "#244733",
+    "accent": "#7f9f70",
     "title": "Build for the world ahead.",
     "desc": "A climate-technology concept bringing practical ideas and considered innovation into focus.",
     "cta": "Explore the thinking",
@@ -1427,7 +1505,9 @@
       "What we build next"
     ],
     "batch50": true,
-    "variant": 4
+    "variant": 4,
+    "artwork": "climate",
+    "composition": "service"
   },
   {
     "id": "space",
