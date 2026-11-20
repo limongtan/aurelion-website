@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="dark light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -364,13 +364,25 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline;color:var
 body{font-family:var(--font);letter-spacing:0}h1,h2,h3,.display,.h2,.h3{font-weight:800;letter-spacing:-.02em}.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.16em}.btn{border-radius:8px;font-weight:700}.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-2);opacity:1}.btn-soft{background:#fff;color:var(--navy);border:1px solid var(--navy)}.btn-soft:hover{background:var(--bg-alt)}.btn-wa{border-radius:8px}.nav ul a,.nav .drop button{color:var(--fg)}.nav ul a[aria-current]{border-bottom:2px solid var(--gold);padding-bottom:5px}.nav ul a:hover{color:var(--navy)}.phero,.rh,.sb-hero{background:var(--navy);color:#fff;padding-bottom:clamp(52px,8vw,88px)}.phero .eyebrow,.rh .eyebrow,.sb-hero .eyebrow{color:var(--gold)}.phero .lede,.rh .lede,.sb-hero .lede{color:color-mix(in srgb,var(--on-dark) 85%,transparent)}.xhero,.hero{background:var(--navy);color:#fff}.xhero .eyebrow,.hero .eyebrow{color:var(--gold)}.xhero .lede,.hero .lede,.xhero .book,.hero .hero-proof{color:color-mix(in srgb,var(--on-dark) 85%,transparent)}.hero-proof b{color:var(--on-dark)!important}.mark{background:linear-gradient(transparent 58%,var(--hl) 58%)}.hero .mark{background:none;color:var(--hl)}.pillars span,.tag,.chip{border:1px solid var(--gold);border-radius:999px;color:var(--gold-ink);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px}.pillars span::after{display:none}.pillars{color:var(--on-dark)}.alt{background:var(--bg-alt)}.card,.stat,.fd,.ln,.quote,.faq details,.person,.cinfo>div{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:none}.tile.dark,.next{background:var(--navy);color:var(--on-dark)}.shop-band,.trust{background:var(--navy);border:0;color:var(--on-dark)}.shop-band p,.trust ul,.trust b{color:var(--on-dark)}.trust li{background:rgba(255,255,255,.06);padding:8px 12px;border-radius:var(--r-md)}.trust img{background:#fff;border-radius:8px;padding:4px}footer{background:var(--navy);color:var(--on-dark)}footer .foot-top{border-color:rgba(243,239,229,.25)}footer a,.social a{color:var(--on-dark)}footer a:hover{color:var(--gold)}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .hero .btn-primary,.xhero .btn-primary,.phero .btn-primary,.rh .btn-primary,.sb-hero .btn-primary{background:var(--gold);color:var(--navy)}.hero .btn-primary:hover,.xhero .btn-primary:hover,.phero .btn-primary:hover,.rh .btn-primary:hover,.sb-hero .btn-primary:hover{background:var(--hl)}.hero .pillars span,.xhero .pillars span,.phero .pillars span,.rh .pillars span,.sb-hero .pillars span{color:var(--on-dark)}.hero .link,.xhero .link,.phero .link,.rh .link,.sb-hero .link{color:var(--gold)}
 </style>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { color-scheme: dark; --bg:#080e16; --surface:#0f1822; --raised:#15202b; --text:#f6f3eb; --muted:#b4bfc7; --gold:#d9b576; --line:#cad9e325; --line-strong:#cad9e34a; --header:#080e16ef; --display:Manrope,sans-serif; --body:"DM Sans",sans-serif; }
+:root[data-theme="light"] { color-scheme:light; --bg:#faf7f0; --surface:#f1ece2; --raised:#fffdf8; --text:#16283a; --muted:#4b5c68; --gold:#78561f; --line:#203b5526; --line-strong:#203b554a; --header:#faf7f0f2; }
+body { background:var(--bg); color:var(--text); font-family:var(--body); }
+body > main { padding-top:94px; } body > main > section { background:var(--bg); } body > main > section.alt { background:var(--surface); } h1,h2,h3,.display,.h2,.h3 { font-family:var(--display); color:var(--text); } .lede,.cap,.bridge,.card p,.faq p { color:var(--muted); } .card,.stat,.fd,.ln,.quote,.faq details,.person,.cinfo>div,.alt .card { background:var(--raised); border-color:var(--line); color:var(--text); } .btn-primary { background:#e6c287; color:#132231; } .btn-soft { background:var(--raised); color:var(--text); border-color:var(--line-strong); } .btn-wa { background:#1f9d55; } .eyebrow,.link { color:var(--gold); }
+.site-header { position:fixed; inset:0 0 auto; z-index:40; min-height:82px; display:flex; align-items:center; gap:clamp(14px,2vw,34px); padding:8px clamp(16px,3.3vw,58px); border-bottom:1px solid var(--line); background:var(--header); color:var(--text); backdrop-filter:blur(16px); } .site-header .brand { display:inline-flex; flex:none; } .brand-mark { width:130px; height:64px; object-fit:contain; } .primary-navigation { display:flex; align-items:center; gap:clamp(12px,1.8vw,28px); margin-left:auto; } .primary-navigation a { color:var(--text); font-size:.73rem; font-weight:650; text-decoration:none; white-space:nowrap; } .primary-navigation a:hover,.primary-navigation a[aria-current] { color:var(--gold); } .header-actions { display:flex; align-items:center; gap:12px; } .theme-toggle { width:35px; min-height:42px; border:0; background:transparent; color:inherit; font-size:1.4rem; cursor:pointer; } .button { display:inline-flex; align-items:center; justify-content:center; min-height:43px; padding:12px 16px; border:1px solid var(--line-strong); color:var(--text); text-decoration:none; font-size:.76rem; font-weight:700; } .button:hover { border-color:var(--gold); color:var(--gold); }
+.site-footer { background:var(--surface); color:var(--text); border-top:1px solid var(--line); } .shell { width:min(calc(100% - 2 * clamp(20px,6.2vw,104px)),1440px); margin-inline:auto; } .footer-main { display:grid; grid-template-columns:1fr 1.3fr 1.7fr; gap:36px; padding-block:58px 42px; } .footer-main p,.footer-connect address { color:var(--muted); font-style:normal; } .footer-main nav,.footer-connect > div { display:grid; gap:10px; align-content:start; } .site-footer a { color:var(--text); text-decoration:none; } .site-footer a:hover { color:var(--gold); } .footer-connect { display:grid; grid-template-columns:1fr 1fr; gap:36px; padding-block:30px; border-top:1px solid var(--line); } .footer-connect h2 { margin:0 0 8px; font-size:1rem; } .footer-bottom { display:flex; justify-content:space-between; gap:20px; padding-block:22px; border-top:1px solid var(--line); color:var(--muted); font-size:.74rem; }
+@media (max-width:900px) { .site-header { flex-wrap:wrap; justify-content:space-between; } .primary-navigation { order:3; width:100%; margin-left:0; overflow-x:auto; padding-bottom:6px; } body > main { padding-top:132px; } .footer-main { grid-template-columns:1fr; } } @media (max-width:620px) { .site-header { min-height:76px; } .brand-mark { width:105px; height:52px; } .header-actions .button { padding-inline:10px; } .footer-connect { grid-template-columns:1fr; } .footer-bottom { flex-direction:column; } }
+</style></head>
 <body>
-<a href="year-end-dinner.html" style="display:block;background:#10131f;color:#f5f5f7;text-align:center;font-size:.875rem;line-height:1.4;padding:10px 16px;text-decoration:none"><b style="color:#f0cb6e;font-weight:600">Now booking:</b> Year-End Appreciation Dinner, HRD Corp claimable <span style="color:#f0cb6e;white-space:nowrap">See it ›</span></a>
-<header class="nav"><div class="wrap">
-<a class="brand" href="index.html" aria-label="Aurelion home"><img src="assets/mark.png" alt="" width="30" height="10">Aurelion</a>
-<div class="acts"><a class="btn btn-primary" href="https://formhug.ai/f/zx1z9C" data-form target="_blank" rel="noopener">Enquire</a><a class="btn btn-wa" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I%27d%20like%20to%20ask%20about%20the%20AI%20Vibe%20Coding%20course%20for%20my%20company.">WhatsApp</a></div>
-</div></header>
+<a href="index.html#year-end" style="display:block;background:#10131f;color:#f5f5f7;text-align:center;font-size:.875rem;line-height:1.4;padding:10px 16px;text-decoration:none"><b style="color:#f0cb6e;font-weight:600">Now booking:</b> Year-End Appreciation Dinner, HRD Corp claimable <span style="color:#f0cb6e;white-space:nowrap">See it ›</span></a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Aurelion home"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"></a>
+  <nav class="primary-navigation" aria-label="Main navigation"><a href="hrd-courses.html">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="aurelion-insights.html">Aurelion Insights</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships &amp; CSR</a><a href="ai.html" aria-current="page">AI Course</a></nav>
+  <div class="header-actions"><button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false"><span class="theme-glyph" aria-hidden="true">☼</span></button><a class="button button-outline" href="index.html#inquiry">Contact us</a></div>
+</header>
 <main>
 <section class="lp-hero"><div class="wrap"><div class="stack">
 <p class="eyebrow">AI Series · Vibe Coding for Beginners · HRD Corp claimable</p>
@@ -453,12 +465,13 @@ body{font-family:var(--font);letter-spacing:0}h1,h2,h3,.display,.h2,.h3{font-wei
 <h2 class="display" style="font-size:clamp(2.2rem,6vw,4rem)">Let your team do more with AI.</h2>
 <p class="lede">Normally 2 days, can be customised. HRD Corp claimable. A director reads every message.</p>
 <div class="btns"><a class="btn btn-primary" href="https://formhug.ai/f/zx1z9C" data-form target="_blank" rel="noopener">Ask about the AI course</a><a class="btn btn-wa" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I%27d%20like%20to%20ask%20about%20the%20AI%20Vibe%20Coding%20course%20for%20my%20company.">WhatsApp us</a></div>
-<p style="font-size:.9375rem">Also for teams: <a href="teams.html" style="color:#fff">team building and leadership programmes</a></p></div></div></section>
+<p style="font-size:.9375rem">Also for teams: <a href="hrd-courses.html" style="color:#fff">team building and leadership programmes</a></p></div></div></section>
 </main>
-<footer><div class="wrap">
-<div class="foot-bot"><span>Residensi Tribeca, Jalan Imbi, 55100 Kuala Lumpur · <a href="index.html">aurelion-earth.com</a></span>
-<span>© 2026 Aurelion Sdn. Bhd. · HRD Corp Registered Training Provider</span>
-</div></div></footer>
+<footer class="site-footer">
+  <div class="shell footer-main"><a href="index.html" class="brand"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"></a><p>Accelerating human adaptive capacity in the AI era.</p><nav aria-label="Footer navigation"><a href="hrd-courses.html">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="aurelion-insights.html">Aurelion Insights</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships &amp; CSR</a><a href="index.html#inquiry">Contact us</a></nav></div>
+  <div class="shell footer-connect"><div><h2>Contact us</h2><address>Unit 773, Regus Tribeca<br>Residensi Tribeca, 215 Jalan Imbi<br>Bukit Bintang, 55100 Kuala Lumpur, Malaysia</address><a href="https://wa.me/601110541499" target="_blank" rel="noopener noreferrer">WhatsApp +60 11-1054 1499</a><a href="mailto:andy.tan@aurelion-earth.com">andy.tan@aurelion-earth.com</a></div><div><h2>Follow Aurelion</h2><a href="https://www.instagram.com/the.aurelion.earth/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.life-gardens.com/growth-report" target="_blank" rel="noopener noreferrer">Life Garden</a></div></div>
+  <div class="shell footer-bottom"><span>© 2026 AURELION SDN BHD</span><a href="index.html">Back to home</a></div>
+</footer>
 <a class="sticky-cta btn btn-primary" href="https://formhug.ai/f/zx1z9C" data-form target="_blank" rel="noopener">Ask about the AI course</a>
 <script>
 // Sections fade up on scroll. Reduced motion: no fade, and the hero video waits for a tap.
@@ -477,5 +490,7 @@ body{font-family:var(--font);letter-spacing:0}h1,h2,h3,.display,.h2,.h3{font-wei
 })();
 </script>
 <script src="assets/enquire.js"></script>
-</body>
+<script>
+(() => { const root = document.documentElement; const button = document.querySelector('#theme-toggle'); const setTheme = theme => { root.dataset.theme = theme; button.setAttribute('aria-pressed', String(theme === 'light')); button.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} theme`); button.querySelector('.theme-glyph').textContent = theme === 'light' ? '◐' : '☼'; document.querySelectorAll('[data-dark-src]').forEach(image => { image.src = image.dataset[theme === 'light' ? 'lightSrc' : 'darkSrc']; }); }; setTheme(localStorage.getItem('aurelion-theme') === 'light' ? 'light' : 'dark'); button.addEventListener('click', () => { const next = root.dataset.theme === 'light' ? 'dark' : 'light'; localStorage.setItem('aurelion-theme', next); setTheme(next); }); })();
+</script></body>
 </html>

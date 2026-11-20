@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a111a">
+  <meta name="description" content="Explore Aurelion HRD Courses in leadership, team performance, organizational collaboration and practical AI for work in Malaysia.">
+  <meta property="og:title" content="HRD Corp Claimable Courses | Aurelion">
+  <meta property="og:description" content="Explore Aurelion HRD Courses in leadership, team performance, organizational collaboration and practical AI for work in Malaysia.">
+  <meta property="og:image" content="assets/images/team-buildx-activity.jpeg">
+  <title>HRD Corp Claimable Courses | Aurelion</title>
+  <script>
+(() => {
+  const root = document.documentElement;
+  const search = new URLSearchParams(location.search);
+  let storedTheme;
+  try { storedTheme = localStorage.getItem("aurelion-theme"); } catch {}
+  const requested = search.get("theme");
+  root.dataset.theme = (["light", "dark"].includes(requested) ? requested : storedTheme) === "light" ? "light" : "dark";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const control = document.querySelector(".static-theme-toggle");
+    const logo = document.querySelector(".page-logo img");
+    const color = document.querySelector('meta[name="theme-color"]');
+    const pageLinks = [...document.querySelectorAll("a[href]")].filter(link =>
+      /^(?:[\w-]+\.html(?:[?#]|$))/.test(link.getAttribute("href")));
+
+    function setTheme(theme) {
+      const light = theme === "light";
+      root.dataset.theme = theme;
+      const label = light ? "Switch to dark theme" : "Switch to light theme";
+      control.setAttribute("aria-label", label);
+      control.setAttribute("aria-pressed", String(light));
+      control.title = label;
+      control.firstElementChild.textContent = light ? "◐" : "☼";
+      logo.src = light ? logo.dataset.lightSrc : logo.dataset.darkSrc;
+      color.content = light ? "#faf7f0" : "#0a111a";
+      try { localStorage.setItem("aurelion-theme", theme); } catch {}
+      for (const link of pageLinks) {
+        const relativePath = link.getAttribute("href").split(/[?#]/)[0];
+        const target = new URL(link.href);
+        target.searchParams.set("theme", theme);
+        link.setAttribute("href", relativePath + target.search + target.hash);
+      }
+    }
+    setTheme(root.dataset.theme);
+    control.addEventListener("click", () => setTheme(root.dataset.theme === "light" ? "dark" : "light"));
+    for (const link of document.querySelectorAll(".page-langs [data-language]")) {
+      link.addEventListener("click", () => {
+        try { localStorage.setItem("aurelion-language", link.dataset.language); } catch {}
+      });
+    }
+  });
+})();
+
+</script>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root { --ink:#f7f3e9; --muted:#c5d0d2; --gold:#e4be80; --bg:#0a111a; --edge:#ffffff2b; --gutter:clamp(22px,5.5vw,92px); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; color:var(--ink); background:var(--bg); font:400 17px/1.7 'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; }
+img { display:block; max-width:100%; }
+a { color:inherit; text-decoration:none; }
+a:focus-visible, summary:focus-visible { outline:2px solid var(--gold); outline-offset:5px; }
+::selection { background:var(--gold); color:#0a111a; }
+.shell { width:min(calc(100% - 2 * var(--gutter)),1360px); margin-inline:auto; }
+.skip { position:absolute; top:-100px; left:20px; z-index:99; background:var(--gold); color:#101821; padding:10px 16px; }
+.skip:focus { top:12px; }
+.page-header { position:relative; z-index:20; display:flex; align-items:center; gap:25px; min-height:91px; padding:0 var(--gutter); background:#081019f2; border-bottom:1px solid var(--edge); }
+.page-logo { flex:none; display:inline-flex; align-items:center; }
+.page-logo .brand-service { max-width: 13ch; font-size: .7rem; font-weight: 650; line-height: 1.3; margin-left: 9px; }
+@media(max-width:1190px) {
+  .page-logo { flex-direction: column; }
+  .page-logo .brand-service { margin: -3px 0 7px; font-size:.6rem; max-width:none; }
+  .page-header .page-logo img { width:100px; height:52px; }
+}
+.page-logo img { width:136px; height:76px; object-fit:contain; }
+.page-nav { display:flex; align-items:center; justify-content:center; flex:1; gap:clamp(13px,2.4vw,36px); }
+.page-nav a,.page-menu a { font-size:.72rem; font-weight:700; letter-spacing:.025em; white-space:nowrap; }
+.page-nav a:hover,.page-nav a[aria-current=page],.page-menu a:hover { color:var(--gold); }
+.page-langs { display:flex; align-items:center; gap:12px; flex:none; }
+.page-langs a { color:#a6b0b4; font-size:.68rem; font-weight:750; }
+.page-langs a:hover,.page-langs a[aria-current] { color:#f5efe1; border-bottom:1px solid var(--gold); }
+.header-contact { flex:none; font-size:.7rem; font-weight:800; letter-spacing:.04em; border:1px solid #e4be8080; padding:10px 15px; }
+.header-contact:hover { background:var(--gold); color:#111b24; }
+.page-menu { display:none; }
+.eyebrow { margin:0 0 16px; color:var(--gold); font-size:.66rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+h1,h2,h3 { font-family:'Manrope',sans-serif; text-wrap:balance; }
+h1 { margin:0; max-width:980px; font-size:clamp(3.5rem,7.5vw,8.8rem); line-height:.99; font-weight:600; letter-spacing:-.071em; }
+h2 { font-size:clamp(2.45rem,5vw,5.4rem); line-height:1.06; font-weight:600; letter-spacing:-.062em; margin:0; }
+h3 { font-size:clamp(1.4rem,2.1vw,2rem); line-height:1.25; font-weight:650; letter-spacing:-.035em; margin:0; }
+p { margin:0; }
+.hero { position:relative; min-height:min(720px,86vh); display:flex; align-items:end; isolation:isolate; background:#14202a; overflow:hidden; }
+.hero > img { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.hero::before { content:''; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,#07111af0 0%,#08121ac9 46%,#09121a24 100%),linear-gradient(0deg,#07111aed,transparent 68%); }
+.hero-inner { padding-top:100px; padding-bottom:clamp(62px,8vw,115px); }
+.breadcrumb { display:flex; gap:12px; align-items:center; margin-bottom:clamp(42px,6vw,85px); color:#e0d5be; font-size:.69rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+.breadcrumb a { border-bottom:1px solid #e0d5be65; }
+.hero .deck { max-width:680px; margin-top:23px; color:#edf0ee; font-size:clamp(1.1rem,1.6vw,1.45rem); line-height:1.55; }
+.hero-actions,.inline-actions { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-top:29px; }
+.btn { display:inline-flex; align-items:center; justify-content:space-between; gap:28px; min-height:52px; padding:13px 18px; font-size:.76rem; line-height:1.3; font-weight:800; border:1px solid var(--gold); }
+.btn-gold { background:var(--gold); color:#111b24; }
+.btn-gold:hover { background:#f7d7a4; border-color:#f7d7a4; }
+.btn-ghost:hover { background:#e4be8026; }
+.page-intro { padding:clamp(75px,9vw,145px) 0; background:radial-gradient(ellipse at 83% 6%,#aa814429,transparent 40%),repeating-linear-gradient(90deg,transparent 0 12%,#ffffff04 12.05% 12.1%),linear-gradient(125deg,#101c27,#0a121a); }
+.intro-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(40px,8vw,140px); align-items:start; }
+.intro-grid p { color:var(--muted); font-size:clamp(1.05rem,1.45vw,1.3rem); line-height:1.75; }
+.intro-grid p+p { margin-top:20px; }
+.chapter { padding:clamp(75px,9vw,140px) 0; background:radial-gradient(ellipse at 10% 95%,#49718324,transparent 48%),linear-gradient(135deg,#101a22,#19242a 55%,#101820); }
+.chapter.alt { background:radial-gradient(ellipse at 95% 85%,#bd8e4b20,transparent 45%),linear-gradient(145deg,#0b131d,#14222d); }
+.section-top { display:grid; grid-template-columns:1fr .8fr; gap:30px 70px; align-items:end; margin-bottom:clamp(35px,5vw,68px); }
+.section-top p:last-child { color:var(--muted); max-width:570px; font-size:1.1rem; }
+.numbered-list { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--edge); border:1px solid var(--edge); }
+.numbered-list article { background:#12212a; padding:clamp(24px,3.5vw,48px); min-height:280px; }
+.numbered-list .num { display:block; margin-bottom:65px; color:var(--gold); font-size:.7rem; letter-spacing:.14em; font-weight:700; }
+.numbered-list p { color:var(--muted); margin-top:16px; font-size:.94rem; }
+.catalogue { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--edge); }
+.course { display:grid; grid-template-columns:80px 1fr; gap:18px; padding:30px 35px 36px 0; border-bottom:1px solid var(--edge); }
+.course:nth-child(2n) { padding-left:35px; border-left:1px solid var(--edge); }
+.course .code { color:var(--gold); font-size:.7rem; font-weight:800; letter-spacing:.08em; }
+.hrd-credential { display:flex; gap:10px; align-items:center; margin-block:18px; }
+.hrd-credential img { flex:none; width:40px; height:40px; object-fit:contain; }
+.hrd-credential strong,.hrd-credential span { display:block; font-size:.78rem; line-height:1.45; }
+.hrd-credential span { color:var(--muted); }
+.course .audience { color:var(--gold); font-size:.72rem; font-weight:700; letter-spacing:.04em; margin-top:12px; text-transform:uppercase; }
+.course p { color:var(--muted); margin-top:13px; max-width:540px; }
+.course a { display:inline-block; color:#f3d19b; border-bottom:1px solid #f3d19b60; margin-top:20px; font-size:.8rem; font-weight:700; }
+.image-band { display:grid; grid-template-columns:1.35fr .65fr; gap:8px; height:clamp(360px,52vw,670px); background:#111a20; }
+.image-band img { width:100%; height:100%; object-fit:cover; }
+.image-band img:first-child { object-position:center 35%; }
+.quote { border-left:2px solid var(--gold); padding:5px 0 5px clamp(20px,3vw,40px); color:#eae9de; font:500 clamp(1.55rem,2.7vw,3rem)/1.45 'Manrope',sans-serif; letter-spacing:-.04em; max-width:1050px; }
+.proof-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.proof-grid figure { margin:0; }
+.proof-grid img { width:100%; aspect-ratio:1.18; object-fit:cover; }
+.proof-grid figcaption { padding:12px 0 0; color:var(--muted); font-size:.75rem; }
+.partner-list { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:35px; }
+.partner-list > div { border-top:1px solid #d6b6789b; padding:16px 10px 5px 0; }
+.partner-list span { color:var(--gold); font-size:.65rem; letter-spacing:.13em; font-weight:800; text-transform:uppercase; }
+.partner-list strong { display:block; margin-top:20px; font:600 clamp(1.35rem,2vw,2rem)/1.2 'Manrope',sans-serif; letter-spacing:-.04em; }
+.poster { display:grid; grid-template-columns:.7fr 1.3fr; align-items:center; gap:clamp(35px,6vw,90px); }
+.poster img { width:100%; border:1px solid #e4be8055; box-shadow:0 20px 65px #0007; }
+.poster p { color:var(--muted); margin-top:18px; }
+.page-footer { padding:75px 0 25px; background:#080e15; border-top:1px solid #e4be8050; }
+.footer-cta { display:flex; align-items:end; justify-content:space-between; gap:25px; padding-bottom:75px; }
+.footer-cta h2 { max-width:790px; }
+.footer-nav { display:flex; flex-wrap:wrap; gap:16px 28px; border-top:1px solid var(--edge); padding-top:25px; font-size:.76rem; color:#d1d8d6; }
+.footer-nav a:hover { color:var(--gold); }
+.footer-note { display:flex; justify-content:space-between; gap:15px; padding-top:38px; color:#a8b6b9; font-size:.69rem; letter-spacing:.08em; }
+@media(max-width:1050px) { .page-nav { gap:13px; } .page-nav a { font-size:.65rem; } }
+@media(max-width:850px) { .page-nav,.header-contact { display:none; } .page-menu { display:block; margin-left:auto; position:relative; } .page-menu summary { cursor:pointer; list-style:none; font-size:.72rem; font-weight:800; border:1px solid var(--edge); padding:10px 16px; } .page-menu summary::-webkit-details-marker { display:none; } .page-menu .menu-links { position:absolute; right:0; top:calc(100% + 12px); width:min(80vw,310px); padding:13px; display:grid; gap:3px; background:#101b25; border:1px solid #e4be8080; box-shadow:0 20px 40px #000a; } .page-menu a { display:block; padding:10px; } .intro-grid,.section-top,.poster { grid-template-columns:1fr; } .numbered-list { grid-template-columns:1fr; } .numbered-list article { min-height:0; } .numbered-list .num { margin-bottom:25px; } .partner-list { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px) { body { font-size:16px; } .page-header { min-height:72px; gap:12px; } .page-logo img { width:105px; height:62px; } .page-langs { margin-left:auto; gap:10px; } .page-menu { margin-left:0; } .hero { min-height:670px; } .hero::before { background:linear-gradient(0deg,#07111af5 0%,#08121ac9 55%,#09121a55 100%); } .hero-inner { padding-top:45px; padding-bottom:55px; } .breadcrumb { margin-bottom:55px; } h1 { font-size:clamp(3.2rem,13vw,5rem); } .catalogue { grid-template-columns:1fr; } .course,.course:nth-child(2n) { padding:26px 0; border-left:0; } .course { grid-template-columns:45px 1fr; } .image-band { grid-template-columns:1fr; height:auto; } .image-band img { height:290px; } .image-band img:nth-child(2) { display:none; } .proof-grid { grid-template-columns:1fr 1fr; } .proof-grid figure:first-child { grid-column:1/-1; } .proof-grid figure:first-child img { aspect-ratio:1.6; } .partner-list { gap:10px; } .footer-cta { display:block; } .footer-cta .btn { margin-top:30px; } .footer-note { display:block; } .footer-note span { display:block; margin-top:8px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+.static-theme-toggle {
+  display:inline-grid;
+  place-items:center;
+  flex:none;
+  width:44px;
+  height:44px;
+  padding:0;
+  color:inherit;
+  background:transparent;
+  border:1px solid var(--edge);
+  font:400 1.5rem/1 sans-serif;
+  cursor:pointer;
+}
+.static-theme-toggle:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+:root[data-theme="light"] {
+  color-scheme:light;
+  --ink:#192c37;
+  --muted:#435761;
+  --gold:#755013;
+  --bg:#faf7f0;
+  --edge:#293b4833;
+}
+:root[data-theme="light"] .page-header,
+:root[data-theme="light"] .page-menu .menu-links { background:#faf7f0; }
+:root[data-theme="light"] .page-langs a { color:var(--muted); }
+:root[data-theme="light"] .page-langs a[aria-current],
+:root[data-theme="light"] .page-langs a:hover { color:var(--gold); }
+:root[data-theme="light"] .header-contact:hover { color:#fff; }
+:root[data-theme="light"] .hero {
+  --ink:#fffaf2;
+  --gold:#e4be80;
+  color:var(--ink);
+}
+:root[data-theme="light"] .page-intro {
+  background:radial-gradient(ellipse at 83% 6%,#d3b98038,transparent 48%),linear-gradient(130deg,#faf8f2,#f0ece2);
+}
+:root[data-theme="light"] .chapter {
+  background:radial-gradient(ellipse at 10% 95%,#b0c8ca44,transparent 48%),linear-gradient(140deg,#f5f4ec,#e7efec);
+}
+:root[data-theme="light"] .chapter.alt {
+  background:radial-gradient(ellipse at 95% 80%,#cfb78645,transparent 45%),linear-gradient(145deg,#f8f4e9,#f1eadd);
+}
+:root[data-theme="light"] .numbered-list article { background:#fbf9f3; }
+:root[data-theme="light"] .course a { color:var(--gold); border-color:var(--gold); }
+:root[data-theme="light"] .btn-gold { background:#e6c287; color:#192832; border-color:#c19c5f; }
+:root[data-theme="light"] .page-footer { background:#eee9df; }
+:root[data-theme="light"] :is(.quote,.footer-nav,.footer-note) { color:var(--muted); }
+:root[data-theme="light"] .about-route-map { color:#846124; }
+@media (min-width:851px) and (max-width:1150px) {
+  .page-header { flex-wrap:wrap; column-gap:16px; padding-block:8px; }
+  .page-nav { order:2; flex:0 0 100%; justify-content:flex-start; gap:22px; }
+  .page-langs { margin-left:auto; }
+}
+@media(max-width:600px) {
+  .page-header { padding-inline:14px; gap:7px; }
+  .page-logo .brand-service { font-size:.56rem; }
+  .page-langs { gap:8px; }
+  .page-menu summary { padding:12px 9px; }
+}
+
+</style>
+  
+</head>
+<body class="hrd-courses-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="page-header">
+    <a class="page-logo" href="index.html" aria-label="Aurelion home"><img src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion" width="136" height="76"><span class="brand-service">Corporate Training &amp; Consulting</span></a>
+    <nav class="page-nav" aria-label="Main navigation"><a href="hrd-courses.html" aria-current="page">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="aurelion-insights.html">Aurelion Insights</a><a href="index.html#approach">Our Approach</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships & CSR</a></nav>
+    <nav class="page-langs" aria-label="Language">
+      <a href="hrd-courses.html?lang=en" data-language="en" aria-current="true">EN</a>
+      <a href="index.html?lang=zh-Hans#programmes" data-language="zh-Hans" lang="zh-Hans" title="简体中文">简</a>
+      <a href="index.html?lang=zh-Hant#programmes" data-language="zh-Hant" lang="zh-Hant" title="繁體中文">繁</a>
+    </nav>
+    <button class="static-theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme" title="Switch to light theme"><span aria-hidden="true">☼</span></button>
+    <a class="header-contact" href="index.html#inquiry">LET'S TALK ↗</a>
+    <details class="page-menu"><summary>MENU</summary><nav class="menu-links" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="hrd-courses.html" aria-current="page">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="aurelion-insights.html">Aurelion Insights</a><a href="index.html#approach">Our Approach</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships & CSR</a><a href="index.html#inquiry">Let's talk</a></nav></details>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title"><img src="assets/images/team-buildx-activity.jpeg" alt="Aurelion Team Build X participants collaborating in a practical challenge" width="2200" height="1467" fetchpriority="high"><div class="shell hero-inner"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Aurelion</a><span aria-hidden="true">/</span><span aria-current="page">HRD COURSES · MALAYSIA</span></nav><p class="eyebrow">HRD COURSES · MALAYSIA</p><h1 id="page-title">HRD Corp Claimable Courses</h1><p class="deck">Start with a real challenge. Build the human and AI capability your team needs to act on it together.</p><div class="hero-actions"><a class="btn btn-gold" href="index.html#inquiry"><span>Find the right program</span><span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="team-performance.html"><span>Explore Team Performance</span><span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="page-intro"><div class="shell intro-grid"><div><p class="eyebrow">WHAT WE WORK ON</p><h2>From individual awareness to shared action.</h2></div><div><p>Aurelion is an HRD Corp Registered Training Provider. Each of our HRD courses includes the Leonard Personality Inventory (LPI). Course activities connect the assessment to leadership, team dynamics, cross-department work, or practical AI. We design around what your people need to do differently after the room empties.</p><p>Tell us your audience, challenge and timing. We can provide the course information your HR team needs for its claim application.</p></div></div></section>
+    <section class="chapter" id="courses"><div class="shell"><div class="section-top"><div><p class="eyebrow">NINE WAYS TO BEGIN</p><h2>Find your point of entry.</h2></div><p>Choose the challenge closest to yours. We will help shape the scope, format and learning outcomes around your team.</p></div><div class="catalogue"><article class="course" id="space-summit"><span class="code">01</span><div><h3>S.P.A.C.E. Summit</h3><p class="audience">Organization leaders and cross-functional groups</p><p>Bring personal awareness, team connection and organizational direction into one facilitated process. Map strengths, identify cross-team opportunities and agree owners and first steps.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=space-summit#programmes">Explore the program ↗</a></div></article><article class="course" id="team-build-x"><span class="code">02</span><div><h3>Team Build X</h3><p class="audience">Department teams, supervisors and team leaders</p><p>Use LPI, shared challenges and reflection to strengthen trust and turn team insight into practical ways of working.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=team-build-x#programmes">Explore the program ↗</a></div></article><article class="course" id="space-bridge"><span class="code">03</span><div><h3>S.P.A.C.E. Bridge</h3><p class="audience">Department heads, branch leaders and middle managers</p><p>Make priorities, handoffs and service expectations clearer across departments or locations.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=space-bridge#programmes">Explore the program ↗</a></div></article><article class="course" id="leadership-heart"><span class="code">04</span><div><h3>The Leadership Heart</h3><p class="audience">Mid-level and senior managers</p><p>Practice listening and responding under pressure, then bring that steadiness to difficult conversations and recognition.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=leadership-heart#programmes">Explore the program ↗</a></div></article><article class="course" id="steady-under-fire"><span class="code">05</span><div><h3>Steady Under Fire · Decision Making</h3><p class="audience">Middle managers and supervisors</p><p>Notice your first reaction, weigh options and make decisions you can explain to your team.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=steady-under-fire#programmes">Explore the program ↗</a></div></article><article class="course" id="financial-resilience"><span class="code">06</span><div><h3>Financially Resilient Workforce</h3><p class="audience">HR teams and employees</p><p>Explore the human side of money decisions and build clearer thinking under financial pressure.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=financial-resilience#programmes">Explore the program ↗</a></div></article><article class="course" id="ai-admin"><span class="code">07</span><div><h3>Build with AI · For Admin Staff</h3><p class="audience">Administration, support and operations</p><p>Bring one repeated task and build a simple working tool with plain-language AI prompts.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=ai-admin#programmes">Explore the program ↗</a></div></article><article class="course" id="ai-managers"><span class="code">08</span><div><h3>Lead with AI · For Managers</h3><p class="audience">Managers, owners and department heads</p><p>Test AI on a real workflow, then decide what is worth building next.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=ai-managers#programmes">Explore the program ↗</a></div></article><article class="course" id="ai-media"><span class="code">09</span><div><h3>AI Media Content</h3><p class="audience">Marketing and communications teams</p><p>Take a real brief from concept to a draft your team can review, keeping editorial judgment in human hands.</p><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><a href="index.html?course=ai-media#programmes">Explore the program ↗</a></div></article></div></div></section>
+    <section class="chapter alt"><div class="shell"><div class="section-top"><div><p class="eyebrow">A PRACTICAL FIRST STEP</p><h2>Want to understand the team before choosing a course?</h2></div><p>The half-day Team Mapping Lab uses LPI and includes 10 individual reports. It makes working styles visible and gives the group a specific agreement to try next.</p></div><div class="hrd-credential"><img src="assets/images/hrdcorp-claimable.png" alt="" width="40" height="40" loading="lazy"><div><strong>HRD Corp Claimable</strong><span>LPI assessment included</span></div></div><div class="inline-actions"><a class="btn btn-gold" href="team-performance.html"><span>Explore LPI & Team Mapping Lab</span><span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="index.html#inquiry"><span>Ask about a program</span><span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+  <footer class="page-footer"><div class="shell"><div class="footer-cta"><div><p class="eyebrow">WHERE TO NEXT?</p><h2>Bring us the question you haven’t solved yet.</h2></div><a class="btn btn-gold" href="index.html#inquiry"><span>Let’s explore it together</span><span aria-hidden="true">↗</span></a></div><nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="hrd-courses.html" aria-current="page">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="aurelion-insights.html">Aurelion Insights</a><a href="index.html#approach">Our Approach</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships & CSR</a><a href="index.html#inquiry">Contact</a></nav><div class="footer-note"><span>© 2026 AURELION SDN BHD · KUALA LUMPUR, MALAYSIA</span><span><a href="mailto:andy.tan@aurelion-earth.com">andy.tan@aurelion-earth.com</a> · <a href="https://wa.me/601110541499">WhatsApp +60 11-1054 1499</a></span></div></div></footer>
+</body>
+</html>
