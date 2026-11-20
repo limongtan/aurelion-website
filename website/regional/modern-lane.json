@@ -1,0 +1,81 @@
+{
+  "updated": [
+    {
+      "id": "tw-lane-house",
+      "name": "巷弄日和",
+      "type": "老宅咖啡・街角散步",
+      "category": "Taiwan",
+      "region": "Taiwan",
+      "blueSpring": false,
+      "href": "regional/tw-lane-house.html",
+      "preview": "regional/art/tw-lane-house-preview.svg",
+      "layout": "regional-tw-lane-house",
+      "bg": "#f2e8da",
+      "ink": "#715341",
+      "accent": "#bd8366",
+      "title": "咖啡、選物，一次逛。",
+      "desc": "喝杯咖啡，看看新選物。找個舒服的位置，安排自己的下午。",
+      "items": [
+        "現場咖啡",
+        "本週選物",
+        "店內空間"
+      ],
+      "cta": "看看店裡有什麼",
+      "modernMix": true,
+      "kind": "storefront",
+      "en": "LANE HOUSE / EVERYDAY STORE"
+    }
+  ],
+  "added": [
+    {
+      "id": "mix-lane-coral",
+      "name": "日常選物",
+      "type": "摩登咖啡・生活選物",
+      "category": "Taiwan",
+      "region": "Taiwan",
+      "blueSpring": false,
+      "href": "regional/mix-lane-coral.html",
+      "preview": "regional/art/mix-lane-coral-preview.svg",
+      "layout": "regional-mix-lane-coral",
+      "bg": "#fff3e8",
+      "ink": "#51392e",
+      "accent": "#de835f",
+      "title": "咖啡、好物，都在這裡。",
+      "desc": "先喝一杯，再逛一圈。把喜歡的東西帶回生活裡。",
+      "items": [
+        "咖啡吧",
+        "生活好物",
+        "本週新品"
+      ],
+      "cta": "探索本週選物",
+      "modernMix": true,
+      "kind": "objects",
+      "en": "EVERYDAY SELECT / COFFEE & OBJECTS"
+    },
+    {
+      "id": "mix-lane-blue",
+      "name": "藍調日常",
+      "type": "清爽咖啡・城市小店",
+      "category": "Taiwan",
+      "region": "Taiwan",
+      "blueSpring": false,
+      "href": "regional/mix-lane-blue.html",
+      "preview": "regional/art/mix-lane-blue-preview.svg",
+      "layout": "regional-mix-lane-blue",
+      "bg": "#edf5f8",
+      "ink": "#294d64",
+      "accent": "#a7cbdc",
+      "title": "喝杯咖啡，順便逛逛。",
+      "desc": "一杯咖啡、一些新發現。輕鬆來，照自己的步調走。",
+      "items": [
+        "今日咖啡",
+        "輕鬆小食",
+        "店裡新物"
+      ],
+      "cta": "看看今日推薦",
+      "modernMix": true,
+      "kind": "blue",
+      "en": "BLUE DAYS / A PLACE TO DROP BY"
+    }
+  ]
+}

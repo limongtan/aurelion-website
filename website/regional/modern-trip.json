@@ -1,0 +1,72 @@
+{
+  "updated": [
+    {
+      "id": "tw-mountain-rail",
+      "name": "山線小旅",
+      "type": "鐵道旅行・山城散策",
+      "category": "Taiwan",
+      "region": "Taiwan",
+      "blueSpring": false,
+      "href": "regional/tw-mountain-rail.html",
+      "preview": "regional/art/tw-mountain-rail-preview.svg",
+      "layout": "regional-tw-mountain-rail",
+      "bg": "#e8eee4",
+      "ink": "#345949",
+      "accent": "#86a28d",
+      "title": "週末出發，輕鬆到站。",
+      "desc": "搭火車、吃午餐、逛小店。選一條喜歡的路線，一天就夠。",
+      "items": [
+        "山城半日線",
+        "河岸一日線",
+        "街區散步線"
+      ],
+      "modernMix": true
+    }
+  ],
+  "added": [
+    {
+      "id": "mix-trip-sky",
+      "name": "沿海週末",
+      "type": "摩登輕旅行・海岸藍",
+      "category": "Taiwan",
+      "region": "Taiwan",
+      "blueSpring": false,
+      "href": "regional/mix-trip-sky.html",
+      "preview": "regional/art/mix-trip-sky-preview.svg",
+      "layout": "regional-mix-trip-sky",
+      "bg": "#e9f2f7",
+      "ink": "#305469",
+      "accent": "#87bacd",
+      "title": "看海，吃好一點。",
+      "desc": "找一個靠海的地方，安排一頓喜歡的午餐。路線簡單，週末就輕鬆。",
+      "items": [
+        "海岸午餐線",
+        "港邊咖啡線",
+        "單車海景線"
+      ],
+      "modernMix": true
+    },
+    {
+      "id": "mix-trip-sage",
+      "name": "下一站出發",
+      "type": "都會輕旅行・灰綠藍",
+      "category": "Taiwan",
+      "region": "Taiwan",
+      "blueSpring": false,
+      "href": "regional/mix-trip-sage.html",
+      "preview": "regional/art/mix-trip-sage-preview.svg",
+      "layout": "regional-mix-trip-sage",
+      "bg": "#edf0e7",
+      "ink": "#365649",
+      "accent": "#98ada0",
+      "title": "選好路線，就出發。",
+      "desc": "不趕景點，也不用做很多功課。把交通、美食和休息時間一起安排好。",
+      "items": [
+        "一站小旅行",
+        "兩站吃喝線",
+        "城市放鬆線"
+      ],
+      "modernMix": true
+    }
+  ]
+}

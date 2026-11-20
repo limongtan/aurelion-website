@@ -21,7 +21,8 @@
       "深夜一杯",
       "街道聲音"
     ],
-    "artKind": "neon"
+    "artKind": "neon",
+    "regional": true
   },
   {
     "id": "hk-everyday-diner",
@@ -45,7 +46,8 @@
       "菠蘿油",
       "午間小碟"
     ],
-    "artKind": "diner"
+    "artKind": "diner",
+    "regional": true
   },
   {
     "id": "hk-midlevels-home",
@@ -69,7 +71,8 @@
       "材質手記",
       "光的方向"
     ],
-    "artKind": "home"
+    "artKind": "home",
+    "regional": true
   },
   {
     "id": "hk-tram-select",
@@ -93,7 +96,8 @@
       "隨身好物",
       "一份心意"
     ],
-    "artKind": "tram"
+    "artKind": "tram",
+    "regional": true
   },
   {
     "id": "hk-sheungwan-journal",
@@ -117,7 +121,8 @@
       "老店新章",
       "城市邊角"
     ],
-    "artKind": "journal"
+    "artKind": "journal",
+    "regional": true
   },
   {
     "id": "hk-harbour-weekend",
@@ -141,31 +146,35 @@
       "午後小島",
       "藍天手記"
     ],
-    "artKind": "harbour"
+    "artKind": "harbour",
+    "regional": true
   },
   {
     "id": "hk-night-market",
     "name": "夜市小聚",
     "english": "NIGHT MARKET CLUB",
-    "type": "街頭小食・夜間市集",
+    "type": "香港市集・現代生活",
     "category": "Hong Kong",
     "region": "Hong Kong",
     "blueSpring": false,
     "href": "regional/hk-night-market.html",
     "preview": "regional/art/hk-night-market-preview.svg",
-    "layout": "regional-hk-night-market",
-    "bg": "#3c202b",
-    "ink": "#f8e9c8",
-    "accent": "#dfaa62",
-    "title": "有味道的夜，\n一起行。",
-    "desc": "沿著熱氣和笑聲走，為今晚找一口喜歡的滋味。",
-    "cta": "走進小聚",
+    "layout": "modern-night-wide",
+    "bg": "#faf3e6",
+    "ink": "#39433f",
+    "accent": "#ca7054",
+    "title": "今晚，\n出來走走。",
+    "desc": "小吃、選物和朋友，一次約齊。喜歡的香港街頭氣氛，換成更明亮的日常。",
+    "cta": "看看今晚有甚麼",
     "items": [
-      "街角小食",
-      "手作攤檔",
-      "今晚的好物"
+      "街頭好味",
+      "獨立小店",
+      "週末小聚"
     ],
-    "artKind": "market"
+    "artKind": "market",
+    "regional": true,
+    "art": "night",
+    "modernMix": true
   },
   {
     "id": "hk-flower-days",
@@ -189,7 +198,8 @@
       "桌邊一枝",
       "花與器物"
     ],
-    "artKind": "flower"
+    "artKind": "flower",
+    "regional": true
   },
   {
     "id": "hk-blue-coffee",
@@ -213,30 +223,86 @@
       "今日甜點",
       "留白時光"
     ],
-    "artKind": "coffee"
+    "artKind": "coffee",
+    "regional": true
   },
   {
     "id": "hk-vinyl-corner",
     "name": "街角唱片",
     "english": "CORNER RECORDS",
-    "type": "唱片・聲音與生活",
+    "type": "唱片・音樂生活",
     "category": "Hong Kong",
     "region": "Hong Kong",
     "blueSpring": false,
     "href": "regional/hk-vinyl-corner.html",
     "preview": "regional/art/hk-vinyl-corner-preview.svg",
-    "layout": "regional-hk-vinyl-corner",
-    "bg": "#292c30",
-    "ink": "#eee9d8",
-    "accent": "#d99a64",
-    "title": "放一首歌，\n讓日子轉慢。",
-    "desc": "一張唱片、一個下午。聽見熟悉的旋律，也遇見沒聽過的自己。",
-    "cta": "翻翻唱片架",
+    "layout": "modern-record-split",
+    "bg": "#f3eee3",
+    "ink": "#353e3e",
+    "accent": "#c67c48",
+    "title": "選張唱片，\n放鬆一下。",
+    "desc": "新唱片、熟悉的聲音，還有舒服的位置。今天就按自己的節奏。",
+    "cta": "看看本週選曲",
     "items": [
-      "今日選曲",
-      "封套故事",
-      "聽歌小聚"
+      "本週選曲",
+      "唱片推薦",
+      "店內小聚"
     ],
-    "artKind": "record"
+    "artKind": "record",
+    "regional": true,
+    "art": "record",
+    "modernMix": true
+  },
+  {
+    "id": "mix-market-day",
+    "name": "海港市集",
+    "english": "HARBOUR DAY MARKET",
+    "type": "明亮市集・暖白珊瑚",
+    "bg": "#f8efd9",
+    "ink": "#34453d",
+    "accent": "#d37259",
+    "title": "吃點好味，\n逛點新意。",
+    "desc": "暖白、珊瑚橘和一點嫩綠。把市集的熱鬧，放進乾淨俐落的版面。",
+    "cta": "逛逛這個組合",
+    "items": [
+      "今天吃甚麼",
+      "帶走一點喜歡",
+      "約朋友來坐"
+    ],
+    "art": "day",
+    "layout": "modern-day-poster",
+    "category": "Hong Kong",
+    "region": "Hong Kong",
+    "modernMix": true,
+    "blueSpring": false,
+    "href": "regional/mix-market-day.html",
+    "preview": "regional/art/mix-market-day-preview.svg",
+    "regional": true
+  },
+  {
+    "id": "mix-market-blue",
+    "name": "海風小聚",
+    "english": "BLUE HOUR SOCIAL",
+    "type": "城市週末・淺藍橙綠",
+    "bg": "#e9f3f6",
+    "ink": "#315260",
+    "accent": "#c77d57",
+    "title": "這個週末，\n一起出去。",
+    "desc": "淺藍配橙色、鼠尾草綠。輕鬆一點，明亮一點，聚在一起就很好。",
+    "cta": "看看週末提案",
+    "items": [
+      "先喝杯咖啡",
+      "找間喜歡的小店",
+      "留點時間聊天"
+    ],
+    "art": "blue",
+    "layout": "modern-blue-cards",
+    "category": "Hong Kong",
+    "region": "Hong Kong",
+    "modernMix": true,
+    "blueSpring": false,
+    "href": "regional/mix-market-blue.html",
+    "preview": "regional/art/mix-market-blue-preview.svg",
+    "regional": true
   }
 ]

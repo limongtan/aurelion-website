@@ -1723,26 +1723,28 @@
     "id": "hk-night-market",
     "name": "夜市小聚",
     "english": "NIGHT MARKET CLUB",
-    "type": "街頭小食・夜間市集",
+    "type": "香港市集・現代生活",
     "category": "Hong Kong",
     "region": "Hong Kong",
     "blueSpring": false,
     "href": "regional/hk-night-market.html",
     "preview": "regional/art/hk-night-market-preview.svg",
-    "layout": "regional-hk-night-market",
-    "bg": "#3c202b",
-    "ink": "#f8e9c8",
-    "accent": "#dfaa62",
-    "title": "有味道的夜，\n一起行。",
-    "desc": "沿著熱氣和笑聲走，為今晚找一口喜歡的滋味。",
-    "cta": "走進小聚",
+    "layout": "modern-night-wide",
+    "bg": "#faf3e6",
+    "ink": "#39433f",
+    "accent": "#ca7054",
+    "title": "今晚，\n出來走走。",
+    "desc": "小吃、選物和朋友，一次約齊。喜歡的香港街頭氣氛，換成更明亮的日常。",
+    "cta": "看看今晚有甚麼",
     "items": [
-      "街角小食",
-      "手作攤檔",
-      "今晚的好物"
+      "街頭好味",
+      "獨立小店",
+      "週末小聚"
     ],
     "artKind": "market",
-    "regional": true
+    "regional": true,
+    "art": "night",
+    "modernMix": true
   },
   {
     "id": "hk-flower-days",
@@ -1798,26 +1800,28 @@
     "id": "hk-vinyl-corner",
     "name": "街角唱片",
     "english": "CORNER RECORDS",
-    "type": "唱片・聲音與生活",
+    "type": "唱片・音樂生活",
     "category": "Hong Kong",
     "region": "Hong Kong",
     "blueSpring": false,
     "href": "regional/hk-vinyl-corner.html",
     "preview": "regional/art/hk-vinyl-corner-preview.svg",
-    "layout": "regional-hk-vinyl-corner",
-    "bg": "#292c30",
-    "ink": "#eee9d8",
-    "accent": "#d99a64",
-    "title": "放一首歌，\n讓日子轉慢。",
-    "desc": "一張唱片、一個下午。聽見熟悉的旋律，也遇見沒聽過的自己。",
-    "cta": "翻翻唱片架",
+    "layout": "modern-record-split",
+    "bg": "#f3eee3",
+    "ink": "#353e3e",
+    "accent": "#c67c48",
+    "title": "選張唱片，\n放鬆一下。",
+    "desc": "新唱片、熟悉的聲音，還有舒服的位置。今天就按自己的節奏。",
+    "cta": "看看本週選曲",
     "items": [
-      "今日選曲",
-      "封套故事",
-      "聽歌小聚"
+      "本週選曲",
+      "唱片推薦",
+      "店內小聚"
     ],
     "artKind": "record",
-    "regional": true
+    "regional": true,
+    "art": "record",
+    "modernMix": true
   },
   {
     "id": "tw-mountain-tea",
@@ -1876,14 +1880,18 @@
     "bg": "#f2e8da",
     "ink": "#715341",
     "accent": "#bd8366",
-    "title": "把日子，留在巷子裡。",
-    "desc": "推開老門，咖啡正香。讓一個平常的下午，多一點值得記住的事。",
+    "title": "咖啡、選物，一次逛。",
+    "desc": "喝杯咖啡，看看新選物。找個舒服的位置，安排自己的下午。",
     "items": [
-      "窗邊咖啡",
-      "小小甜點",
-      "巷子的風景"
+      "現場咖啡",
+      "本週選物",
+      "店內空間"
     ],
-    "regional": true
+    "regional": true,
+    "cta": "看看店裡有什麼",
+    "modernMix": true,
+    "kind": "storefront",
+    "en": "LANE HOUSE / EVERYDAY STORE"
   },
   {
     "id": "tw-salt-stay",
@@ -1964,14 +1972,15 @@
     "bg": "#e8eee4",
     "ink": "#345949",
     "accent": "#86a28d",
-    "title": "下一站，不用太遠。",
-    "desc": "沿著山線，找一間小店、走一條老街。把週末交給窗外的風景。",
+    "title": "週末出發，輕鬆到站。",
+    "desc": "搭火車、吃午餐、逛小店。選一條喜歡的路線，一天就夠。",
     "items": [
-      "一段鐵道風景",
-      "山城的日常",
-      "路上的小發現"
+      "山城半日線",
+      "河岸一日線",
+      "街區散步線"
     ],
-    "regional": true
+    "regional": true,
+    "modernMix": true
   },
   {
     "id": "tw-wood-clay",
@@ -2037,6 +2046,156 @@
       "田野邊的餐桌",
       "把香氣帶回家"
     ],
+    "regional": true
+  },
+  {
+    "id": "mix-market-day",
+    "name": "海港市集",
+    "english": "HARBOUR DAY MARKET",
+    "type": "明亮市集・暖白珊瑚",
+    "bg": "#f8efd9",
+    "ink": "#34453d",
+    "accent": "#d37259",
+    "title": "吃點好味，\n逛點新意。",
+    "desc": "暖白、珊瑚橘和一點嫩綠。把市集的熱鬧，放進乾淨俐落的版面。",
+    "cta": "逛逛這個組合",
+    "items": [
+      "今天吃甚麼",
+      "帶走一點喜歡",
+      "約朋友來坐"
+    ],
+    "art": "day",
+    "layout": "modern-day-poster",
+    "category": "Hong Kong",
+    "region": "Hong Kong",
+    "modernMix": true,
+    "blueSpring": false,
+    "href": "regional/mix-market-day.html",
+    "preview": "regional/art/mix-market-day-preview.svg",
+    "regional": true
+  },
+  {
+    "id": "mix-market-blue",
+    "name": "海風小聚",
+    "english": "BLUE HOUR SOCIAL",
+    "type": "城市週末・淺藍橙綠",
+    "bg": "#e9f3f6",
+    "ink": "#315260",
+    "accent": "#c77d57",
+    "title": "這個週末，\n一起出去。",
+    "desc": "淺藍配橙色、鼠尾草綠。輕鬆一點，明亮一點，聚在一起就很好。",
+    "cta": "看看週末提案",
+    "items": [
+      "先喝杯咖啡",
+      "找間喜歡的小店",
+      "留點時間聊天"
+    ],
+    "art": "blue",
+    "layout": "modern-blue-cards",
+    "category": "Hong Kong",
+    "region": "Hong Kong",
+    "modernMix": true,
+    "blueSpring": false,
+    "href": "regional/mix-market-blue.html",
+    "preview": "regional/art/mix-market-blue-preview.svg",
+    "regional": true
+  },
+  {
+    "id": "mix-lane-coral",
+    "name": "日常選物",
+    "type": "摩登咖啡・生活選物",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/mix-lane-coral.html",
+    "preview": "regional/art/mix-lane-coral-preview.svg",
+    "layout": "regional-mix-lane-coral",
+    "bg": "#fff3e8",
+    "ink": "#51392e",
+    "accent": "#de835f",
+    "title": "咖啡、好物，都在這裡。",
+    "desc": "先喝一杯，再逛一圈。把喜歡的東西帶回生活裡。",
+    "items": [
+      "咖啡吧",
+      "生活好物",
+      "本週新品"
+    ],
+    "cta": "探索本週選物",
+    "modernMix": true,
+    "kind": "objects",
+    "en": "EVERYDAY SELECT / COFFEE & OBJECTS",
+    "regional": true
+  },
+  {
+    "id": "mix-lane-blue",
+    "name": "藍調日常",
+    "type": "清爽咖啡・城市小店",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/mix-lane-blue.html",
+    "preview": "regional/art/mix-lane-blue-preview.svg",
+    "layout": "regional-mix-lane-blue",
+    "bg": "#edf5f8",
+    "ink": "#294d64",
+    "accent": "#a7cbdc",
+    "title": "喝杯咖啡，順便逛逛。",
+    "desc": "一杯咖啡、一些新發現。輕鬆來，照自己的步調走。",
+    "items": [
+      "今日咖啡",
+      "輕鬆小食",
+      "店裡新物"
+    ],
+    "cta": "看看今日推薦",
+    "modernMix": true,
+    "kind": "blue",
+    "en": "BLUE DAYS / A PLACE TO DROP BY",
+    "regional": true
+  },
+  {
+    "id": "mix-trip-sky",
+    "name": "沿海週末",
+    "type": "摩登輕旅行・海岸藍",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/mix-trip-sky.html",
+    "preview": "regional/art/mix-trip-sky-preview.svg",
+    "layout": "regional-mix-trip-sky",
+    "bg": "#e9f2f7",
+    "ink": "#305469",
+    "accent": "#87bacd",
+    "title": "看海，吃好一點。",
+    "desc": "找一個靠海的地方，安排一頓喜歡的午餐。路線簡單，週末就輕鬆。",
+    "items": [
+      "海岸午餐線",
+      "港邊咖啡線",
+      "單車海景線"
+    ],
+    "modernMix": true,
+    "regional": true
+  },
+  {
+    "id": "mix-trip-sage",
+    "name": "下一站出發",
+    "type": "都會輕旅行・灰綠藍",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/mix-trip-sage.html",
+    "preview": "regional/art/mix-trip-sage-preview.svg",
+    "layout": "regional-mix-trip-sage",
+    "bg": "#edf0e7",
+    "ink": "#365649",
+    "accent": "#98ada0",
+    "title": "選好路線，就出發。",
+    "desc": "不趕景點，也不用做很多功課。把交通、美食和休息時間一起安排好。",
+    "items": [
+      "一站小旅行",
+      "兩站吃喝線",
+      "城市放鬆線"
+    ],
+    "modernMix": true,
     "regional": true
   }
 ]
