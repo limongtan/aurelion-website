@@ -1,0 +1,212 @@
+[
+  {
+    "id": "tw-mountain-tea",
+    "name": "山間茶事",
+    "type": "茶屋・山居日常",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/tw-mountain-tea.html",
+    "preview": "regional/art/tw-mountain-tea-preview.svg",
+    "layout": "regional-tw-mountain-tea",
+    "bg": "#edf0e5",
+    "ink": "#354c3e",
+    "accent": "#95a98b",
+    "title": "茶留一點，日子慢一點。",
+    "desc": "一盞茶、一面山，留一段不必趕路的時間。",
+    "items": [
+      "山裡的茶",
+      "器物與手感",
+      "坐下來的時間"
+    ]
+  },
+  {
+    "id": "tw-slow-books",
+    "name": "慢慢書屋",
+    "type": "獨立書店・藍色春日",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": true,
+    "href": "regional/tw-slow-books.html",
+    "preview": "regional/art/tw-slow-books-preview.svg",
+    "layout": "regional-tw-slow-books",
+    "bg": "#edf4f8",
+    "ink": "#365a70",
+    "accent": "#9ec4d7",
+    "title": "讀一頁，去遠一點。",
+    "desc": "不用安排整個下午。一本書、一杯茶，就能開始自己的小旅行。",
+    "items": [
+      "今天想讀的書",
+      "窗邊的閱讀時光",
+      "交換一個好故事"
+    ]
+  },
+  {
+    "id": "tw-lane-house",
+    "name": "巷弄日和",
+    "type": "老宅咖啡・街角散步",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/tw-lane-house.html",
+    "preview": "regional/art/tw-lane-house-preview.svg",
+    "layout": "regional-tw-lane-house",
+    "bg": "#f2e8da",
+    "ink": "#715341",
+    "accent": "#bd8366",
+    "title": "把日子，留在巷子裡。",
+    "desc": "推開老門，咖啡正香。讓一個平常的下午，多一點值得記住的事。",
+    "items": [
+      "窗邊咖啡",
+      "小小甜點",
+      "巷子的風景"
+    ]
+  },
+  {
+    "id": "tw-salt-stay",
+    "name": "花蓮慢居",
+    "type": "海邊旅宿・藍色春日",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": true,
+    "href": "regional/tw-salt-stay.html",
+    "preview": "regional/art/tw-salt-stay-preview.svg",
+    "layout": "regional-tw-salt-stay",
+    "bg": "#edf5f5",
+    "ink": "#315969",
+    "accent": "#9fc7d7",
+    "title": "把心情，放到海那邊。",
+    "desc": "把行程留白，跟著光線起床。海風替今天決定方向。",
+    "items": [
+      "向海的房間",
+      "沒有鬧鐘的早晨",
+      "沿著海岸散步"
+    ]
+  },
+  {
+    "id": "tw-island-table",
+    "name": "島嶼餐桌",
+    "type": "季節料理・在地食材",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/tw-island-table.html",
+    "preview": "regional/art/tw-island-table-preview.svg",
+    "layout": "regional-tw-island-table",
+    "bg": "#f4eccb",
+    "ink": "#5b643b",
+    "accent": "#c7aa59",
+    "title": "把一座島，端上餐桌。",
+    "desc": "從土地到廚房，讓食物說自己的故事。一起坐下，慢慢吃一頓飯。",
+    "items": [
+      "今天的食材",
+      "一桌家常的滋味",
+      "把故事帶回家"
+    ]
+  },
+  {
+    "id": "tw-good-things",
+    "name": "好好生活選物",
+    "type": "生活選物・日常設計",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/tw-good-things.html",
+    "preview": "regional/art/tw-good-things-preview.svg",
+    "layout": "regional-tw-good-things",
+    "bg": "#e8eae5",
+    "ink": "#3e5957",
+    "accent": "#99b6b2",
+    "title": "喜歡的東西，好好放進生活。",
+    "desc": "一只杯、一盞燈，讓每天碰到的小事，多一點自己的樣子。",
+    "items": [
+      "一杯水的器物",
+      "房間裡的小風景",
+      "值得慢慢使用"
+    ]
+  },
+  {
+    "id": "tw-mountain-rail",
+    "name": "山線小旅",
+    "type": "鐵道旅行・山城散策",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/tw-mountain-rail.html",
+    "preview": "regional/art/tw-mountain-rail-preview.svg",
+    "layout": "regional-tw-mountain-rail",
+    "bg": "#e8eee4",
+    "ink": "#345949",
+    "accent": "#86a28d",
+    "title": "下一站，不用太遠。",
+    "desc": "沿著山線，找一間小店、走一條老街。把週末交給窗外的風景。",
+    "items": [
+      "一段鐵道風景",
+      "山城的日常",
+      "路上的小發現"
+    ]
+  },
+  {
+    "id": "tw-wood-clay",
+    "name": "木禾手作",
+    "type": "陶作・器物工作室",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": false,
+    "href": "regional/tw-wood-clay.html",
+    "preview": "regional/art/tw-wood-clay-preview.svg",
+    "layout": "regional-tw-wood-clay",
+    "bg": "#e8ded1",
+    "ink": "#66533f",
+    "accent": "#b49676",
+    "title": "手裡的溫度，留下來。",
+    "desc": "揉土、修形、等一場窯火。讓不完美的線條，成為獨一無二的日常。",
+    "items": [
+      "一只自己的杯",
+      "泥土與釉色",
+      "手作的午後"
+    ]
+  },
+  {
+    "id": "tw-weekend-walk",
+    "name": "週末散步",
+    "type": "街區生活・藍色春日",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": true,
+    "href": "regional/tw-weekend-walk.html",
+    "preview": "regional/art/tw-weekend-walk-preview.svg",
+    "layout": "regional-tw-weekend-walk",
+    "bg": "#e8f3f9",
+    "ink": "#365e75",
+    "accent": "#b6d6e5",
+    "title": "沒有目的地，也很好。",
+    "desc": "轉過熟悉的街角，遇見一點新鮮。今天的任務，是把步伐放輕。",
+    "items": [
+      "巷口的新發現",
+      "散步的口袋名單",
+      "一個輕鬆的下午"
+    ]
+  },
+  {
+    "id": "tw-spring-bakery",
+    "name": "稻田邊",
+    "type": "田野烘焙・藍色春日",
+    "category": "Taiwan",
+    "region": "Taiwan",
+    "blueSpring": true,
+    "href": "regional/tw-spring-bakery.html",
+    "preview": "regional/art/tw-spring-bakery-preview.svg",
+    "layout": "regional-tw-spring-bakery",
+    "bg": "#e1eef2",
+    "ink": "#44636a",
+    "accent": "#a7c5cc",
+    "title": "把春天，烤進日常。",
+    "desc": "窗外有風，屋裡有麵包香。從一份簡單的早餐，開始喜歡今天。",
+    "items": [
+      "早晨的一顆麵包",
+      "田野邊的餐桌",
+      "把香氣帶回家"
+    ]
+  }
+]
