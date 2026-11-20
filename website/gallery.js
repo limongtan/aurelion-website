@@ -1,7 +1,7 @@
 (() => {
  'use strict';
  const world=new URL(location.href).searchParams.get('world');
- if(['space','city','interface','lab','warp','liquid'].includes(world)){location.replace('immersive.html?world='+encodeURIComponent(world));return;}
+ if(['space','city','interface','lab','warp','liquid'].includes(world)){location.replace('/website/immersive.html?world='+encodeURIComponent(world));return;}
  const buttons=[...document.querySelectorAll('[data-category].filter')],cards=[...document.querySelectorAll('.design-card')],search=document.querySelector('#design-search'),count=document.querySelector('#gallery-count'),empty=document.querySelector('.empty-state');
  let category='all';
  function filterDesigns(){const query=search.value.trim().toLowerCase();let shown=0;for(const card of cards){const show=(category==='all'||card.dataset.category===category)&&card.dataset.search.includes(query);card.hidden=!show;if(show)shown++;}count.textContent=shown+' '+(shown===1?'design':'designs')+' to explore';empty.hidden=shown>0;}
