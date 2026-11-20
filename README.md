@@ -2,4 +2,4 @@
 
 Static site for https://aurelion-earth.com/
 
-Deployed via Netlify (drag-and-drop or Git auto-deploy).
+Deployed on Railway (static Caddy server, auto-deploys from `main`). Old page URLs (about, programs, lpi, teams, contact, year-end-dinner) are small redirect pages.
