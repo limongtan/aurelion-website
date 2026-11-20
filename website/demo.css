@@ -25,3 +25,14 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 .hero-visual.image-unavailable,.card-image.image-unavailable{background:linear-gradient(140deg,var(--accent),var(--paper));position:relative;min-height:300px}.hero-visual.image-unavailable:before,.card-image.image-unavailable:before{content:"";position:absolute;inset:12%;border:1px solid currentColor;border-radius:45% 45% 0 0;opacity:.35}img[hidden]{display:none!important}
+
+/* Additional industry compositions; mobile keeps the shared readable flow. */
+@media(min-width:901px){
+.template-variant-0 .hero-visual{box-shadow:18px 18px 0 color-mix(in srgb,var(--accent) 35%,transparent)}.template-variant-0 .hero-content>.eyebrow{border-left:3px solid var(--accent);padding-left:13px}
+.template-variant-1 .hero-visual{border-radius:6px}.template-variant-1 .hero-content{border-top:1px solid var(--accent);padding-top:32px}.template-variant-1 .demo-button{border-radius:0}
+.template-variant-2 .hero-visual{border:12px solid color-mix(in srgb,var(--accent) 45%,var(--paper))}.template-variant-2 .hero-content h1{font-family:'Manrope',sans-serif;font-weight:600;letter-spacing:-4px}.template-variant-2 .demo-button{border-radius:30px}
+.template-variant-3 .demo-hero{direction:rtl}.template-variant-3 .hero-content,.template-variant-3 .hero-visual,.template-variant-3 .hero-caption{direction:ltr}.template-variant-3 .hero-content>.eyebrow{color:var(--accent)}.template-variant-3 .experience-card:nth-child(2){padding-top:45px}
+.template-variant-4 .hero-visual{border-radius:150px 0 150px 0}.template-variant-4 .hero-content h1{font-family:'Playfair Display',serif;font-weight:400;line-height:1.1}.template-variant-4 .demo-button{border-radius:0;background:transparent;color:var(--ink);border-bottom:1px solid currentColor;padding-left:0;padding-right:0}
+.layout-saas.template-variant-2 .hero-visual{border:0}.layout-saas.template-variant-2 .product-ui{transform:rotateX(7deg) rotateY(5deg)}.layout-saas.template-variant-3 .product-ui{transform:rotateX(4deg) rotateY(7deg)}.layout-event.template-variant-3 .event-art{transform:rotate(12deg)}
+}
+@media(max-width:650px){.template-variant-0 .hero-content>.eyebrow{padding-left:12px;border-left:3px solid var(--accent)}.template-variant-1 .hero-visual{border-radius:10px!important}.template-variant-2 .demo-button{border-radius:30px}.template-variant-4 .hero-visual{border-radius:100px 0 100px 0}}
