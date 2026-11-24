@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Low Frequency | Aurelion fusion concept</title>
+<meta name="description" content="Low Frequency — a late-night podcast about cities and sound. Aurelion fusion concept: retro CRT terminal × modern audio app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600&family=Major+Mono+Display&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050403;--ink:#ffb23f;--dim:#a8701f;--faint:rgba(255,178,63,.14);--hot:#ffd58a;--red:#ff4d2e;--line:rgba(255,178,63,.22)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Mono",ui-monospace,monospace;line-height:1.6;overflow-x:hidden;text-shadow:0 0 6px rgba(255,178,63,.45)}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+::selection{background:var(--ink);color:var(--bg)}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-shadow:none;border-bottom:1px solid rgba(255,255,255,.08)}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:640px){.exh-bar .exh-mid{display:none}.exh-bar{font-size:11px}}
+/* CRT overlays */
+.scan{position:fixed;inset:0;z-index:950;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.vignette{position:fixed;inset:0;z-index:949;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.75) 100%)}
+.flicker{position:fixed;inset:0;z-index:948;pointer-events:none;background:rgba(255,178,63,.025);animation:flick 4s steps(1) infinite}
+@keyframes flick{0%,100%{opacity:.6}7%{opacity:1}8%{opacity:.3}9%{opacity:.9}50%{opacity:.7}51%{opacity:1}}
+.roll{position:fixed;left:0;right:0;height:120px;z-index:947;pointer-events:none;background:linear-gradient(transparent,rgba(255,178,63,.05),transparent);animation:roll 7s linear infinite}
+@keyframes roll{from{top:-120px}to{top:100%}}
+/* nav */
+header{position:fixed;top:36px;left:0;right:0;z-index:900;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(16px,4vw,44px);background:rgba(5,4,3,.85);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.brand{font-family:"VT323",monospace;font-size:28px;letter-spacing:.04em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:blink 1.2s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{display:block;padding:6px 12px;text-decoration:none;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+nav a::before{content:"[ ";opacity:0}
+nav a::after{content:" ]";opacity:0}
+nav a:hover::before,nav a:hover::after,nav a.on::before,nav a.on::after{opacity:1}
+nav a.on{background:var(--ink);color:var(--bg);text-shadow:none}
+.menu-btn{display:none;border:1px solid var(--line);padding:8px 12px;font-size:14px;text-transform:uppercase}
+@media(max-width:820px){nav ul{position:fixed;top:100px;left:12px;right:12px;flex-direction:column;background:#0b0805;border:1px solid var(--ink);padding:10px;display:none}nav ul.open{display:flex}nav a{padding:14px}.menu-btn{display:block}}
+/* hero */
+.hero{min-height:100svh;padding:140px clamp(16px,4vw,44px) 60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1360px;margin:0 auto}
+.boot{font-size:13px;color:var(--dim);min-height:120px;white-space:pre-wrap}
+.boot .ok{color:var(--ink)}
+.hero h1{font-family:"VT323",monospace;font-weight:400;font-size:clamp(104px,13vw,190px);line-height:.78;letter-spacing:-.01em;margin:10px 0 18px;position:relative}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;inset:0;pointer-events:none}
+.glitch::before{color:#ff3e6c;transform:translate(-2px,0);mix-blend-mode:screen;opacity:.55;animation:gl1 3.2s infinite steps(1)}
+.glitch::after{color:#3ee8ff;transform:translate(2px,0);mix-blend-mode:screen;opacity:.45;animation:gl2 2.7s infinite steps(1)}
+@keyframes gl1{0%,100%{clip-path:inset(0 0 0 0)}20%{clip-path:inset(20% 0 60% 0);transform:translate(-5px,0)}22%{clip-path:inset(0 0 0 0);transform:translate(-2px,0)}}
+@keyframes gl2{0%,100%{clip-path:inset(0 0 0 0)}40%{clip-path:inset(55% 0 20% 0);transform:translate(6px,0)}42%{clip-path:inset(0 0 0 0);transform:translate(2px,0)}}
+.hero p.lead{font-size:clamp(16px,1.4vw,19px);max-width:520px;color:var(--hot)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:14px 22px;border:1px solid var(--ink);text-decoration:none;text-transform:uppercase;letter-spacing:.1em;font-size:14px;transition:.15s}
+.btn:hover,.btn.solid{background:var(--ink);color:var(--bg);text-shadow:none}
+.btn.solid:hover{background:var(--hot)}
+.meta-row{display:flex;gap:28px;margin-top:36px;font-size:13px;color:var(--dim);flex-wrap:wrap}
+.meta-row b{display:block;font:400 34px "VT323";color:var(--ink)}
+/* tv */
+.tv{position:relative;aspect-ratio:4/3.3;border-radius:28px;padding:22px;background:linear-gradient(160deg,#2a1d10,#110b05);box-shadow:inset 0 2px 0 rgba(255,255,255,.08),0 40px 90px rgba(0,0,0,.7),0 0 0 1px #3a2814}
+.tv-screen{position:relative;height:100%;border-radius:40px/32px;overflow:hidden;background:radial-gradient(ellipse at center,#1d1206,#060402 80%);box-shadow:inset 0 0 60px rgba(0,0,0,.9),inset 0 0 20px rgba(255,178,63,.2)}
+.tv canvas{position:absolute;inset:0;width:100%;height:100%}
+.tv-label{position:absolute;left:28px;top:22px;font:400 22px "VT323";z-index:2}
+.tv-label.r{left:auto;right:28px;color:var(--red);animation:blink 1s steps(1) infinite}
+.tv-freq{position:absolute;left:0;right:0;bottom:22px;text-align:center;font:400 clamp(30px,4vw,48px) "VT323";z-index:2;letter-spacing:.1em}
+.knobs{position:absolute;right:-10px;bottom:30px;display:flex;flex-direction:column;gap:12px}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:130px}.tv{max-width:520px;width:100%;justify-self:center}}
+/* sections */
+section{padding:100px clamp(16px,4vw,44px)}
+.wrap{max-width:1240px;margin:0 auto}
+.sec-label{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:.14em}
+.sec-label::before{content:"> "}
+h2{font-family:"VT323",monospace;font-weight:400;font-size:clamp(46px,7vw,92px);line-height:.9;margin:10px 0 18px}
+.intro{max-width:620px;color:var(--hot)}
+/* player */
+.player{margin-top:40px;border:1px solid var(--ink);background:#0a0704;box-shadow:0 0 0 4px #0a0704,0 0 0 5px var(--line),0 0 60px rgba(255,178,63,.12)}
+.p-top{display:flex;justify-content:space-between;gap:16px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);flex-wrap:wrap}
+.p-main{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:24px}
+.cover{aspect-ratio:1;border:1px solid var(--line);position:relative;overflow:hidden;background:#120c05}
+.cover svg{width:100%;height:100%;display:block}
+.cover .ep{position:absolute;left:10px;top:8px;font:400 26px "VT323"}
+.p-info h3{font:400 clamp(30px,4vw,48px)/1 "VT323";margin:6px 0 8px}
+.p-info p{color:var(--hot);font-size:14px;max-width:620px}
+.viz{width:100%;height:110px;display:block;margin:18px 0 10px;cursor:pointer}
+.scrub{position:relative;height:28px;cursor:pointer;touch-action:none}
+.scrub .rail{position:absolute;left:0;right:0;top:12px;height:4px;background:var(--faint)}
+.scrub .prog{position:absolute;left:0;top:12px;height:4px;background:var(--ink);box-shadow:0 0 10px var(--ink);width:0}
+.scrub .head{position:absolute;top:6px;width:4px;height:16px;background:var(--hot);transform:translateX(-2px);box-shadow:0 0 10px var(--hot)}
+.scrub .mark{position:absolute;top:8px;width:2px;height:12px;background:var(--dim)}
+.ctrl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px}
+.play{width:62px;height:62px;border:1px solid var(--ink);display:grid;place-items:center;font-size:22px;transition:.15s}
+.play:hover{background:var(--ink);color:var(--bg);text-shadow:none}
+.ctrl .sm{border:1px solid var(--line);padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.ctrl .sm:hover,.ctrl .sm[aria-pressed=true]{border-color:var(--ink);background:var(--faint)}
+.time{font:400 28px "VT323";margin-left:auto;letter-spacing:.05em}
+.chapters{border-top:1px solid var(--line);padding:18px 24px 22px}
+.chapters h4{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);margin-bottom:10px;font-weight:500}
+.chapters ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px}
+.chapters button{width:100%;text-align:left;display:flex;gap:12px;padding:10px 12px;border:1px solid transparent;font-size:14px}
+.chapters button:hover{border-color:var(--line)}
+.chapters button.now{border-color:var(--ink);background:var(--faint)}
+.chapters button span{color:var(--dim);font-family:"VT323";font-size:20px;line-height:1.1}
+@media(max-width:700px){.p-main{grid-template-columns:1fr}.cover{max-width:180px}.time{margin-left:0;width:100%}}
+/* episodes */
+.eps{margin-top:36px;border-top:1px solid var(--line)}
+.ep-row{display:grid;grid-template-columns:70px 1fr auto auto;gap:20px;align-items:center;width:100%;text-align:left;padding:22px 10px;border-bottom:1px solid var(--line);transition:background .15s,padding .2s;position:relative}
+.ep-row:hover{background:var(--faint);padding-left:20px}
+.ep-row.on{background:var(--ink);color:var(--bg);text-shadow:none}
+.ep-row.on .ep-sub,.ep-row.on .ep-len{color:var(--bg)}
+.ep-num{font:400 40px "VT323";line-height:1}
+.ep-row h3{font:500 18px "IBM Plex Mono"}
+.ep-sub{font-size:13px;color:var(--dim)}
+.ep-len{font:400 22px "VT323";color:var(--dim)}
+.ep-go{font-size:13px;text-transform:uppercase;letter-spacing:.1em;border:1px solid currentColor;padding:6px 10px}
+@media(max-width:620px){.ep-row{grid-template-columns:50px 1fr;gap:6px 14px}.ep-len,.ep-go{grid-column:2}.ep-go{justify-self:start}}
+/* about grid */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.spec{border:1px solid var(--line)}
+.spec div{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.spec div:last-child{border:0}
+.spec span{color:var(--dim)}
+.cities{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cities span{border:1px solid var(--line);padding:6px 12px;font-size:13px}
+.ascii{font:400 12px/1.15 "IBM Plex Mono";color:var(--dim);white-space:pre;overflow:hidden;margin-top:24px}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+/* terminal */
+.term{margin-top:36px;border:1px solid var(--ink);background:#080503;max-width:900px}
+.term-bar{display:flex;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--line);font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}
+.term-body{padding:22px;min-height:300px;font-size:15px;cursor:text}
+.term-body .q{color:var(--dim)}
+.term-body .a{color:var(--hot);margin-bottom:10px;word-break:break-word}
+.term-line{display:flex;gap:10px;align-items:baseline}
+.term-line label{color:var(--ink);white-space:nowrap}
+.term-line input{flex:none;width:1ch;max-width:100%;min-width:1ch;background:none;border:0;outline:0;color:var(--hot);font:inherit;text-shadow:inherit;caret-color:transparent}
+.cursor{display:inline-block;width:.6em;height:1.1em;background:var(--ink);vertical-align:text-bottom;animation:blink 1s steps(1) infinite;margin-left:-4px}
+.term-hint{font-size:12px;color:var(--dim);margin-top:14px}
+.done-msg{border:1px dashed var(--ink);padding:14px;margin-top:10px;color:var(--ink)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px clamp(16px,4vw,44px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim)}
+footer .big{font:400 clamp(48px,10vw,140px)/.8 "VT323";color:var(--ink);width:100%;letter-spacing:-.01em}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.9,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-04 · Retro CRT Terminal × Modern Audio App</span><a href="/contact.html">Build one like this →</a></div>
+<div class="scan" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div><div class="flicker" aria-hidden="true"></div><div class="roll" aria-hidden="true"></div>
+
+<header>
+  <a class="brand" href="#top"><i></i>LOW_FREQUENCY</a>
+  <button class="menu-btn" id="mb" aria-expanded="false">Menu</button>
+  <nav aria-label="Main"><ul id="menu">
+    <li><a href="#listen">Listen</a></li>
+    <li><a href="#episodes">Episodes</a></li>
+    <li><a href="#about">The show</a></li>
+    <li><a href="#guest">Be a guest</a></li>
+  </ul></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div>
+    <div class="boot" id="boot" aria-hidden="true"></div>
+    <h1><span class="glitch" data-t="LOW">LOW</span><br><span class="glitch" data-t="FREQ.">FREQ.</span></h1>
+    <p class="lead">A late-night podcast about cities and the sounds they make after midnight. Night-bus drivers, karaoke owners, the man who tunes the harbour foghorn. Headphones on, lights off.</p>
+    <div class="hero-cta">
+      <a class="btn solid" href="#listen">▶ Tune in</a>
+      <a class="btn" href="#episodes">All transmissions</a>
+    </div>
+    <div class="meta-row">
+      <div><b>48</b>episodes</div>
+      <div><b>23:00</b>new every Fri</div>
+      <div><b>11</b>cities taped</div>
+    </div>
+  </div>
+  <div class="tv" aria-hidden="true">
+    <div class="tv-screen">
+      <canvas id="tvc"></canvas>
+      <span class="tv-label">CH 04</span><span class="tv-label r">● REC</span>
+      <span class="tv-freq" id="freq">88.4 MHz</span>
+    </div>
+  </div>
+</section>
+
+<section id="listen">
+  <div class="wrap">
+    <p class="sec-label rv">now_playing</p>
+    <h2 class="rv">Press play.<br>Let the city talk.</h2>
+    <div class="player rv" id="player">
+      <div class="p-top"><span id="pt-left">Transmission · EP 48</span><span id="pt-right">stereo · 48kHz · tape hiss included</span></div>
+      <div class="p-main">
+        <div class="cover"><span class="ep" id="cov-ep">48</span><svg viewBox="0 0 100 100" id="cov" aria-hidden="true"></svg></div>
+        <div class="p-info">
+          <span class="sec-label" id="p-city">Hong Kong · 02:14</span>
+          <h3 id="p-title">The Foghorn Tuner</h3>
+          <p id="p-desc">Every harbour has a voice. We spend one night with the engineer who keeps Victoria Harbour's oldest horn in pitch.</p>
+          <canvas class="viz" id="viz" aria-label="Audio visualiser, click to seek"></canvas>
+          <div class="scrub" id="scrub" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="rail"></div><div id="marks"></div><div class="prog" id="prog"></div><div class="head" id="head"></div></div>
+          <div class="ctrl">
+            <button class="play" id="play" aria-label="Play">▶</button>
+            <button class="sm" id="back">−15s</button>
+            <button class="sm" id="fwd">+30s</button>
+            <button class="sm" id="speed">1.0×</button>
+            <button class="sm" id="tone" aria-pressed="false" title="A soft synth hum, off by default">Hum: off</button>
+            <span class="time" id="time">00:00 / 00:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="chapters"><h4>Chapters · click to jump</h4><ol id="chap"></ol></div>
+    </div>
+  </div>
+</section>
+
+<section id="episodes">
+  <div class="wrap">
+    <p class="sec-label rv">ls ./transmissions</p>
+    <h2 class="rv">Recent transmissions.</h2>
+    <p class="intro rv">Pick any episode and it loads straight into the player, chapters and all.</p>
+    <div class="eps" id="eps"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <p class="sec-label rv">cat about.txt</p>
+      <h2 class="rv">Recorded where<br>the city hums.</h2>
+      <p class="intro rv">No studio. Every episode is taped on location between 11pm and 5am with one microphone, one cassette deck and whoever is still awake. We cut out the ums, never the room tone.</p>
+      <div class="cities rv"><span>Hong Kong</span><span>Taipei</span><span>Kuala Lumpur</span><span>Osaka</span><span>Lisbon</span><span>Mexico City</span><span>Glasgow</span><span>Busan</span><span>Ho Chi Minh City</span><span>Marseille</span><span>Montréal</span></div>
+<pre class="ascii rv" aria-hidden="true">  ▁▂▃▅▆▇█▇▆▅▃▂▁   ▁▂▃▄▅▆▇▆▅▄▃▂▁   ▁▂▃▅▇█▇▅▃▂▁
+ ─────────────────────────────────────────────
+  side A ▸ the city      side B ▸ the people</pre>
+    </div>
+    <div class="spec rv">
+      <div><span>host</span>Wren Asakura</div>
+      <div><span>format</span>40–55 min · weekly</div>
+      <div><span>recorded on</span>1 mic · 1 tape deck</div>
+      <div><span>listeners</span>320K / month</div>
+      <div><span>avg. completion</span>81%</div>
+      <div><span>best heard</span>after 11pm</div>
+      <div><span>sponsors</span>by invitation only</div>
+    </div>
+  </div>
+</section>
+
+<section id="guest">
+  <div class="wrap">
+    <p class="sec-label rv">./request_guest.sh</p>
+    <h2 class="rv">Know a sound<br>we should hear?</h2>
+    <p class="intro rv">Night-shift worker, sound obsessive, keeper of a strange noise? Answer three questions in the terminal below.</p>
+    <form class="term rv" id="term" autocomplete="off">
+      <div class="term-bar"><span>guest_request — tty1</span><span id="term-step">1/3</span></div>
+      <div class="term-body" id="tbody">
+        <div id="log"></div>
+        <div class="term-line" id="tline"><label for="tin" id="tq">your_name &gt;</label><span style="flex:1;display:flex;min-width:0"><input id="tin" maxlength="140" aria-label="Your answer"><span class="cursor" id="cur"></span></span></div>
+        <p class="term-hint">Type and press Enter. Nothing leaves this page.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="big">GOODNIGHT, CITY.</div>
+  <span>Low Frequency © 2026 · fictional show</span>
+  <span>Concept by Aurelion</span>
+</footer>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* nav */
+const mb=$('#mb'),menu=$('#menu');
+mb.addEventListener('click',()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
+const links=$$('#menu a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section[id]').forEach(s=>so.observe(s));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.1});
+$$('.rv').forEach(el=>ro.observe(el));
+/* boot text */
+const bootLines=['LF-BIOS v2.6 ............ <span class="ok">OK</span>','tape deck ............... <span class="ok">LOADED</span>','tuning carrier .......... <span class="ok">88.4 MHz</span>','city noise floor ........ <span class="ok">-42 dB</span>','> ready. it\'s late. listen.'];
+const boot=$('#boot');if(reduce)boot.innerHTML=bootLines.join('\n');else{let i=0;(function n(){if(i<bootLines.length){boot.innerHTML+=(i?'\n':'')+bootLines[i++];setTimeout(n,380)}})()}
+/* tv canvas: noise + sine */
+const tvc=$('#tvc'),tx=tvc.getContext('2d');let tw,th;
+function tvSize(){const r=tvc.getBoundingClientRect();tw=tvc.width=Math.max(1,r.width/2|0);th=tvc.height=Math.max(1,r.height/2|0)}
+tvSize();addEventListener('resize',tvSize);
+let ft=0;
+function tvDraw(){ft+=.03;const img=tx.createImageData(tw,th),d=img.data;
+ for(let i=0;i<d.length;i+=4){const v=Math.random()*38;d[i]=v*1;d[i+1]=v*.66;d[i+2]=v*.22;d[i+3]=255}
+ tx.putImageData(img,0,0);
+ tx.strokeStyle='#ffb23f';tx.shadowColor='#ffb23f';tx.shadowBlur=8;tx.lineWidth=1.5;
+ for(let k=0;k<3;k++){tx.globalAlpha=1-k*.3;tx.beginPath();for(let x=0;x<=tw;x+=2){const y=th/2+Math.sin(x*.035+ft*(1+k*.4))*th*.16*Math.sin(ft*.5+k)+Math.sin(x*.11-ft*2)*th*.04;x?tx.lineTo(x,y):tx.moveTo(x,y)}tx.stroke()}
+ tx.globalAlpha=1;tx.shadowBlur=0;
+ if(!reduce)requestAnimationFrame(tvDraw)}
+tvDraw();
+setInterval(()=>{if(!reduce)$('#freq').textContent=(88.4+(Math.random()-.5)*.2).toFixed(1)+' MHz'},900);
+
+/* episodes */
+const EPS=[
+ {n:48,city:'Hong Kong',clock:'02:14',title:'The Foghorn Tuner',desc:"Every harbour has a voice. We spend one night with the engineer who keeps Victoria Harbour's oldest horn in pitch.",len:2834,seed:3,ch:[[0,'Cold open: the horn'],[312,'Sai Ying Pun, 1:40am'],[905,'How you tune a foghorn'],[1620,'The ferry that answers back'],[2390,'Last call, first light']]},
+ {n:47,city:'Taipei',clock:'01:02',title:'Karaoke at the End of the Line',desc:'A KTV room by the last MRT stop, booked every night by the same three night-shift nurses. Tonight they let us in.',len:2610,seed:7,ch:[[0,'Room 7'],[420,'The songbook'],[1110,'Why the high notes matter'],[1880,'4am encore']]},
+ {n:46,city:'Kuala Lumpur',clock:'03:30',title:'The Mamak Never Sleeps',desc:'Teh tarik, football replays and the clatter of steel cups. A 24-hour stall owner explains the rhythm of his night.',len:3010,seed:11,ch:[[0,'Pull, pour, repeat'],[600,'The 2am rush'],[1420,'Rain on the zinc roof'],[2200,'Regulars and strangers'],[2700,'Closing nothing']]},
+ {n:45,city:'Osaka',clock:'00:48',title:'Bus 0:48',desc:'The last bus out of Namba, ridden end to end. A driver with thirty years of announcements and one secret shortcut.',len:2390,seed:5,ch:[[0,'Doors closing'],[540,'Stop by stop'],[1300,'The shortcut'],[1900,'Depot lights']]},
+ {n:44,city:'Lisbon',clock:'04:05',title:'Tram Bells and Bakers',desc:'Between the last tram and the first bread, the hills of Alfama belong to the bakers. We follow the smell of flour.',len:2755,seed:9,ch:[[0,'Steep streets'],[480,'Ovens at 4am'],[1350,'A fado neighbour'],[2100,'First tram, first loaf']]}
+];
+let cur=EPS[0],pos=0,playing=false,speed=1,last=0;
+const fmt=s=>{s=Math.max(0,s|0);const m=s/60|0,ss=s%60;return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')};
+const epsEl=$('#eps');
+epsEl.innerHTML=EPS.map((e,i)=>`<button class="ep-row" data-i="${i}"><span class="ep-num">${e.n}</span><span><h3>${e.title}</h3><span class="ep-sub">${e.city} · taped ${e.clock}</span></span><span class="ep-len">${fmt(e.len)}</span><span class="ep-go">Load ▸</span></button>`).join('');
+epsEl.addEventListener('click',e=>{const b=e.target.closest('.ep-row');if(!b)return;load(EPS[+b.dataset.i],true);$('#listen').scrollIntoView({behavior:reduce?'auto':'smooth'})});
+function cover(seed){let s='';for(let i=0;i<14;i++){const r=8+((seed*(i+3)*37)%40);s+=`<circle cx="${50+Math.sin(seed+i)*6}" cy="${55+Math.cos(seed*i)*4}" r="${r}" fill="none" stroke="#ffb23f" stroke-opacity="${.15+(i%4)*.18}" stroke-width="${i%3?0.6:1.4}"/>`}
+ for(let i=0;i<24;i++){const h=4+((seed*7+i*13)%22);s+=`<rect x="${4+i*4}" y="${96-h}" width="2" height="${h}" fill="#ffb23f" opacity=".7"/>`}return s}
+function load(e,autoplay){cur=e;pos=0;
+ $('#p-city').textContent=e.city+' · '+e.clock;$('#p-title').textContent=e.title;$('#p-desc').textContent=e.desc;$('#cov-ep').textContent=e.n;$('#pt-left').textContent='Transmission · EP '+e.n;$('#cov').innerHTML=cover(e.seed);
+ $('#chap').innerHTML=e.ch.map((c,i)=>`<li><button data-t="${c[0]}"><span>${fmt(c[0])}</span>${c[1]}</button></li>`).join('');
+ $('#marks').innerHTML=e.ch.slice(1).map(c=>`<span class="mark" style="left:${c[0]/e.len*100}%"></span>`).join('');
+ $$('.ep-row').forEach(r=>r.classList.toggle('on',EPS[+r.dataset.i]===e));
+ if(autoplay)setPlay(true);update()}
+$('#chap').addEventListener('click',e=>{const b=e.target.closest('button');if(b){pos=+b.dataset.t;setPlay(true);update()}});
+function update(){const p=pos/cur.len*100;$('#prog').style.width=p+'%';$('#head').style.left=p+'%';$('#time').textContent=fmt(pos)+' / '+fmt(cur.len);$('#scrub').setAttribute('aria-valuenow',Math.round(p));$('#scrub').setAttribute('aria-valuetext',fmt(pos));
+ let idx=0;cur.ch.forEach((c,i)=>{if(pos>=c[0])idx=i});$$('#chap button').forEach((b,i)=>b.classList.toggle('now',i===idx))}
+function setPlay(v){playing=v;$('#play').textContent=v?'❚❚':'▶';$('#play').setAttribute('aria-label',v?'Pause':'Play');last=performance.now();tone()}
+$('#play').addEventListener('click',()=>setPlay(!playing));
+$('#back').addEventListener('click',()=>{pos=Math.max(0,pos-15);update()});
+$('#fwd').addEventListener('click',()=>{pos=Math.min(cur.len,pos+30);update()});
+$('#speed').addEventListener('click',()=>{speed=speed===1?1.5:speed===1.5?2:1;$('#speed').textContent=speed.toFixed(1)+'×'});
+/* scrub */
+const sc=$('#scrub');
+function seekX(x,el){const r=el.getBoundingClientRect();pos=Math.max(0,Math.min(1,(x-r.left)/r.width))*cur.len;update()}
+sc.addEventListener('pointerdown',e=>{sc.setPointerCapture(e.pointerId);seekX(e.clientX,sc);const mv=ev=>seekX(ev.clientX,sc);sc.addEventListener('pointermove',mv);sc.addEventListener('pointerup',()=>sc.removeEventListener('pointermove',mv),{once:true})});
+sc.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){pos=Math.min(cur.len,pos+10);update()}if(e.key==='ArrowLeft'){pos=Math.max(0,pos-10);update()}});
+$('#viz').addEventListener('click',e=>seekX(e.clientX,$('#viz')));
+/* viz */
+const vz=$('#viz'),vx=vz.getContext('2d');let vw,vh;
+function vSize(){const r=vz.getBoundingClientRect(),d=devicePixelRatio||1;vw=r.width;vh=r.height;vz.width=vw*d;vz.height=vh*d;vx.setTransform(d,0,0,d,0,0)}
+vSize();addEventListener('resize',vSize);
+const bars=96;const hgt=new Float32Array(bars);
+function peak(i,seed){return .25+.55*Math.abs(Math.sin(i*.37*seed+seed)*Math.cos(i*.13+seed*2))+.2*Math.abs(Math.sin(i*1.7))}
+function loop(t){const dt=(t-last)/1000;last=t;
+ if(playing){pos+=dt*speed;if(pos>=cur.len){pos=cur.len;setPlay(false)}update()}
+ vx.clearRect(0,0,vw,vh);const bw=vw/bars,pr=pos/cur.len;
+ for(let i=0;i<bars;i++){const base=peak(i,cur.seed);const live=playing?base*(.55+.45*Math.abs(Math.sin(t/180+i*.6)))*(.7+Math.random()*.3):base*.6;hgt[i]+=(live-hgt[i])*.25;const h=Math.max(2,hgt[i]*vh*.9);
+  const played=i/bars<pr;vx.fillStyle=played?'#ffb23f':'rgba(255,178,63,.25)';vx.shadowColor='#ffb23f';vx.shadowBlur=played?8:0;vx.fillRect(i*bw+1,(vh-h)/2,Math.max(1,bw-2),h)}
+ vx.shadowBlur=0;requestAnimationFrame(loop)}
+requestAnimationFrame(t=>{last=t;loop(t)});
+/* optional hum: off by default, starts only after user enables */
+let ac,osc,gain,humOn=false;
+function tone(){if(!humOn)return;if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();gain=ac.createGain();gain.gain.value=0;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=400;osc=ac.createOscillator();osc.type='triangle';osc.frequency.value=55;osc.connect(f).connect(gain).connect(ac.destination);osc.start()}
+ gain.gain.setTargetAtTime(playing?.035:0,ac.currentTime,.3)}
+$('#tone').addEventListener('click',()=>{humOn=!humOn;$('#tone').setAttribute('aria-pressed',humOn);$('#tone').textContent='Hum: '+(humOn?'on':'off');if(humOn)tone();else if(gain)gain.gain.setTargetAtTime(0,ac.currentTime,.2)});
+addEventListener('keydown',e=>{if(e.code==='Space'&&e.target===document.body){e.preventDefault();setPlay(!playing)}});
+load(EPS[0],false);
+
+/* terminal */
+const Q=[['your_name >','Who should we thank on air?'],['your_city >','Which city, which street?'],['the_sound >','Describe the sound in one line.']];
+let step=0;const ans=[];const tin=$('#tin'),log=$('#log');
+$('#tbody').addEventListener('click',()=>tin.focus());
+function sizeCursor(){tin.style.width=Math.max(1,tin.value.length+.5)+"ch"}tin.addEventListener("input",sizeCursor);
+$('#term').addEventListener('submit',e=>{e.preventDefault();const v=tin.value.trim();if(!v){log.insertAdjacentHTML('beforeend','<div class="q">! empty input. try again.</div>');return}
+ ans.push(v);const esc=v.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ log.insertAdjacentHTML('beforeend',`<div class="q">${Q[step][0]}</div><div class="a">${esc}</div>`);tin.value='';sizeCursor();step++;
+ if(step<Q.length){$('#tq').innerHTML=Q[step][0].replace('>','&gt;');$('#term-step').textContent=(step+1)+'/3';log.insertAdjacentHTML('beforeend',`<div class="q"># ${Q[step][1]}</div>`)}
+ else{$('#tline').remove();$('#term-step').textContent='done';const n=ans[0].replace(/[&<>"]/g,'');log.insertAdjacentHTML('beforeend',`<div class="done-msg">&gt; request logged. thank you, ${n}.<br>&gt; we'll listen for "${ans[2].replace(/[&<>"]/g,'')}" next time we're in ${ans[1].replace(/[&<>"]/g,'')}.<br>&gt; (demo only: nothing was sent.)</div>`)}
+});
+log.insertAdjacentHTML('beforeend',`<div class="q"># ${Q[0][1]}</div>`);
+})();
+</script>
+</body>
+</html>

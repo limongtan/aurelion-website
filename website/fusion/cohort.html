@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cohort | Aurelion fusion concept</title>
+<meta name="description" content="Cohort designs learning experiences people actually finish. A Swiss grid × game HUD fusion concept by Aurelion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f2f0e9;--ink:#111;--red:#ff3b1f;--lime:#c6ff3d;--mute:#6d6a62;--line:#111;--grid:rgba(17,17,17,.07);--mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Archivo',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.45;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:calc(100%/12) 100%,calc(100%/12) 100%;background-size:8.3333vw 8.3333vw}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+/* exhibit bar */
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:640px){.exh-bar .exh-mid{display:none}}
+/* nav */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:900;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px 24px;background:rgba(242,240,233,.86);backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:10px;font:900 22px/1 var(--sans);letter-spacing:-.04em;text-decoration:none}
+.brand i{width:22px;height:22px;background:var(--red);display:grid;place-items:center;color:var(--paper);font:800 11px var(--mono);font-style:normal}
+.nav ul{display:flex;gap:4px;list-style:none}
+.nav ul a{display:block;padding:8px 12px;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;border:2px solid transparent}
+.nav ul a:hover{border-color:var(--ink)}
+.nav ul a.on{background:var(--ink);color:var(--lime)}
+.hud-mini{justify-self:end;display:flex;align-items:center;gap:10px;font:600 11px var(--mono);text-transform:uppercase}
+.hud-mini .bar{width:110px;height:10px;border:2px solid var(--ink);position:relative}
+.hud-mini .bar b{position:absolute;inset:0 auto 0 0;width:0;background:var(--red);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.menu-btn{display:none;justify-self:end;border:2px solid var(--ink);padding:7px 12px;font:700 12px var(--mono);text-transform:uppercase}
+@media(max-width:900px){
+.nav{grid-template-columns:1fr auto;padding:12px 16px}
+.hud-mini{display:none}.menu-btn{display:block}
+.nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:2px solid var(--ink);padding:8px 16px 16px;display:none}
+.nav.open ul{display:flex}
+.nav ul a{padding:14px 4px;border:0;border-bottom:1px solid var(--grid)}
+}
+main,footer{position:relative;z-index:1}
+.wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+.lbl{font:700 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.lbl::before{content:"";width:10px;height:10px;background:var(--red)}
+.sec{padding:120px 0;border-bottom:2px solid var(--ink)}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:56px;align-items:end}
+.sec-head .lbl{grid-column:1/4;align-self:start}
+.sec-head h2{grid-column:4/11;font:900 clamp(38px,5.6vw,84px)/.92 var(--sans);letter-spacing:-.045em}
+.sec-head p{grid-column:4/10;color:var(--mute);font-size:18px;max-width:52ch}
+@media(max-width:900px){.sec{padding:80px 0}.sec-head{grid-template-columns:1fr}.sec-head>*{grid-column:1/-1!important}}
+/* hero */
+.hero{padding:150px 0 0;border-bottom:2px solid var(--ink);min-height:100vh;display:flex;flex-direction:column}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;flex:1}
+.hero-copy{grid-column:1/8;display:flex;flex-direction:column;justify-content:center;padding-bottom:40px}
+.hero h1{font:900 clamp(56px,10.5vw,168px)/.82 var(--sans);letter-spacing:-.06em;margin:28px 0 30px}
+.hero h1 .r{color:var(--red)}
+.hero h1 .strike{position:relative;display:inline-block}
+.hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.09em;background:var(--red);transform:scaleX(0);transform-origin:left;animation:strike 1s .9s forwards cubic-bezier(.7,0,.2,1)}
+@keyframes strike{to{transform:scaleX(1)}}
+.hero-lede{font-size:clamp(18px,1.6vw,22px);max-width:40ch;margin-bottom:34px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 22px;border:2px solid var(--ink);font:800 13px var(--mono);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--red)}
+.hud{grid-column:8/13;align-self:center;background:var(--ink);color:var(--paper);padding:22px;font-family:var(--mono);position:relative;box-shadow:12px 12px 0 var(--red)}
+.hud::before,.hud::after{content:"";position:absolute;width:18px;height:18px;border:3px solid var(--lime)}
+.hud::before{top:-9px;left:-9px;border-right:0;border-bottom:0}
+.hud::after{bottom:-9px;right:-9px;border-left:0;border-top:0}
+.hud-top{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;color:var(--lime);margin-bottom:18px}
+.hud-top .blink{animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.player{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+.avatar{width:64px;height:64px;background:var(--red);display:grid;place-items:center;flex:none}
+.avatar svg{width:40px;height:40px}
+.player strong{display:block;font-size:15px}
+.player small{color:#a19d93;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.stat{margin:12px 0}
+.stat-row{display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.meter{height:12px;background:#2a2a2a;position:relative;overflow:hidden}
+.meter b{position:absolute;inset:0 auto 0 0;background:var(--lime);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.meter.red b{background:var(--red)}
+.meter::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 10%,#111 10% calc(10% + 2px))}
+.quest{margin-top:18px;border-top:1px dashed #444;padding-top:14px;font-size:12px}
+.quest li{list-style:none;display:flex;gap:10px;padding:5px 0;color:#c9c5bb}
+.quest li.done{color:var(--lime);text-decoration:line-through}
+.quest li::before{content:"□"}
+.quest li.done::before{content:"■"}
+.ticker{border-top:2px solid var(--ink);background:var(--ink);color:var(--lime);overflow:hidden;white-space:nowrap;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.ticker div{display:inline-block;padding:14px 0;animation:tick 32s linear infinite}
+.ticker span{margin:0 28px}
+.ticker span::before{content:"▲ ";color:var(--red)}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(max-width:900px){.hero{padding-top:130px}.hero-copy,.hud{grid-column:1/-1}.hud{margin:0 8px 56px 0}}
+/* counters */
+.counters{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--ink)}
+.counter{padding:44px 24px;border-right:2px solid var(--ink)}
+.counter:last-child{border-right:0}
+.counter .n{font:900 clamp(48px,6vw,92px)/1 var(--sans);letter-spacing:-.05em;display:flex;align-items:baseline}
+.counter .n sup{font-size:.36em;color:var(--red);margin-left:4px}
+.counter p{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mute);margin-top:10px;max-width:24ch}
+@media(max-width:900px){.counters{grid-template-columns:1fr 1fr}.counter:nth-child(2){border-right:0}.counter:nth-child(-n+2){border-bottom:2px solid var(--ink)}}
+/* method */
+.method{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink)}
+.step{padding:30px 24px 34px;border-right:2px solid var(--ink);position:relative;min-height:320px;display:flex;flex-direction:column;transition:background .25s,color .25s}
+.step:last-child{border-right:0}
+.step:hover{background:var(--ink);color:var(--paper)}
+.step:hover .step-n{color:var(--lime)}
+.step-n{font:800 13px var(--mono);color:var(--red)}
+.step h3{font:900 34px/1 var(--sans);letter-spacing:-.04em;margin:auto 0 14px}
+.step p{font-size:15px;opacity:.8}
+.step .glyph{position:absolute;top:28px;right:24px;width:44px;height:44px}
+@media(max-width:900px){.method{grid-template-columns:1fr 1fr}.step{min-height:240px}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:2px solid var(--ink)}}
+@media(max-width:560px){.method{grid-template-columns:1fr}.step{border-right:0;border-bottom:2px solid var(--ink)}.step:last-child{border-bottom:0}}
+/* skill tree */
+.tree-wrap{display:grid;grid-template-columns:2fr 1fr;gap:0;border:2px solid var(--ink);background:var(--ink)}
+.tree{position:relative;background:var(--paper);min-height:520px;overflow:hidden}
+.tree svg.links{position:absolute;inset:0;width:100%;height:100%}
+.tree svg.links line{stroke:#c9c5bb;stroke-width:3;stroke-dasharray:6 6}
+.tree svg.links line.lit{stroke:var(--red);stroke-dasharray:none}
+.node{position:absolute;transform:translate(-50%,-50%);width:92px;height:92px;border:3px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font:700 10px var(--mono);text-transform:uppercase;text-align:center;letter-spacing:.04em;transition:transform .2s,background .2s,color .2s,box-shadow .2s;clip-path:polygon(14% 0,86% 0,100% 14%,100% 86%,86% 100%,14% 100%,0 86%,0 14%)}
+.node .ic{font-size:22px;line-height:1}
+.node.locked{color:#aaa49a;border-color:#c9c5bb;cursor:not-allowed}
+.node.avail{cursor:pointer;animation:pulse 1.6s infinite}
+.node.avail:hover{transform:translate(-50%,-50%) scale(1.08)}
+.node.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,59,31,.55)}50%{box-shadow:0 0 0 10px rgba(255,59,31,0)}}
+.tree-panel{background:var(--ink);color:var(--paper);padding:28px;font-family:var(--mono);display:flex;flex-direction:column;gap:18px}
+.tree-panel h3{font:900 30px/1 var(--sans);letter-spacing:-.03em;color:var(--lime)}
+.lvl{display:flex;justify-content:space-between;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.xp{height:18px;border:2px solid var(--lime);position:relative}
+.xp b{position:absolute;inset:2px auto 2px 2px;width:0;background:var(--lime);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.log{font-size:12px;color:#c9c5bb;flex:1;min-height:120px;border-top:1px dashed #444;padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.log span{animation:fadein .4s}
+.log span b{color:var(--red)}
+@keyframes fadein{from{opacity:0;transform:translateX(-6px)}}
+.reset{align-self:flex-start;border:2px solid var(--paper);padding:10px 14px;font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.reset:hover{background:var(--paper);color:var(--ink)}
+.toast{position:absolute;left:50%;top:22px;transform:translate(-50%,-20px);background:var(--red);color:#fff;padding:10px 16px;font:800 12px var(--mono);text-transform:uppercase;letter-spacing:.1em;opacity:0;transition:.35s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.tree-wrap{grid-template-columns:1fr}.tree{min-height:460px}.node{width:70px;height:70px;font-size:8px}.node .ic{font-size:18px}}
+/* quiz */
+.quiz-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.quiz-side{grid-column:1/5}
+.quiz-side p{color:var(--mute);font-size:17px;margin:18px 0}
+.quiz-side ul{list-style:none;font:600 13px var(--mono);text-transform:uppercase}
+.quiz-side li{padding:12px 0;border-bottom:1px solid var(--grid);display:flex;justify-content:space-between}
+.quiz{grid-column:6/13;border:2px solid var(--ink);background:#fff;position:relative;box-shadow:10px 10px 0 var(--ink)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--ink);color:var(--paper);font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.dots{display:flex;gap:6px}
+.dots i{width:22px;height:8px;background:#444}
+.dots i.ok{background:var(--lime)}.dots i.no{background:var(--red)}.dots i.cur{background:var(--paper)}
+.quiz-body{padding:32px 28px 30px;min-height:380px}
+.quiz-body h3{font:800 clamp(22px,2.4vw,30px)/1.15 var(--sans);letter-spacing:-.02em;margin-bottom:24px}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;border:2px solid var(--ink);padding:15px 18px;font:500 16px var(--sans);display:flex;gap:14px;align-items:center;transition:background .15s,transform .15s}
+.opt kbd{font:800 12px var(--mono);border:2px solid currentColor;width:26px;height:26px;display:grid;place-items:center;flex:none}
+.opt:hover:not(:disabled){transform:translateX(6px);background:var(--paper)}
+.opt.right{background:var(--lime);border-color:var(--ink)}
+.opt.wrong{background:var(--red);color:#fff;border-color:var(--red)}
+.opt:disabled{cursor:default}
+.feedback{margin-top:18px;font:600 14px var(--mono);min-height:44px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.feedback .next{background:var(--ink);color:var(--paper);padding:12px 16px;font:800 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;display:none}
+.feedback .next.show{display:block}
+.result{text-align:center;padding:30px 0}
+.result .big{font:900 120px/1 var(--sans);letter-spacing:-.06em}
+.result .big span{color:var(--red)}
+.result p{font:600 14px var(--mono);text-transform:uppercase;letter-spacing:.08em;margin:12px 0 24px}
+@media(max-width:900px){.quiz-side,.quiz{grid-column:1/-1}.quiz{box-shadow:6px 6px 0 var(--ink)}.quiz-body{padding:24px 18px}}
+/* builder */
+.builder{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+.mods{grid-column:1/8;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mod{text-align:left;border:2px solid var(--ink);padding:20px;background:var(--paper);position:relative;transition:background .2s,color .2s,transform .15s}
+.mod:hover{transform:translateY(-3px)}
+.mod .tag{font:700 10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--red)}
+.mod h4{font:800 21px/1.1 var(--sans);letter-spacing:-.02em;margin:10px 0 6px}
+.mod p{font-size:14px;opacity:.75}
+.mod .hrs{position:absolute;top:18px;right:18px;font:800 12px var(--mono)}
+.mod .chk{position:absolute;bottom:18px;right:18px;width:22px;height:22px;border:2px solid currentColor;display:grid;place-items:center;font-size:13px}
+.mod[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.mod[aria-pressed="true"] .tag{color:var(--lime)}
+.mod[aria-pressed="true"] .chk::after{content:"✓";color:var(--lime)}
+.summary{grid-column:8/13;position:sticky;top:120px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:26px;font-family:var(--mono)}
+.summary h3{font:900 26px var(--sans);letter-spacing:-.03em;margin-bottom:18px}
+.sum-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px dashed #444;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.sum-row b{font:900 34px var(--sans);letter-spacing:-.03em;color:var(--lime);text-transform:none}
+.outcomes{margin:18px 0;font-size:13px;color:#c9c5bb;min-height:90px}
+.outcomes li{list-style:none;padding:4px 0}
+.outcomes li::before{content:"→ ";color:var(--red)}
+.weeks{display:flex;gap:4px;margin:16px 0 22px;flex-wrap:wrap}
+.weeks i{flex:1;min-width:14px;height:28px;background:#2a2a2a;transition:background .3s}
+.weeks i.on{background:var(--red)}
+.summary .btn{border-color:var(--lime);color:var(--lime);width:100%;justify-content:center}
+.summary .btn:hover{box-shadow:5px 5px 0 var(--red)}
+@media(max-width:900px){.mods,.summary{grid-column:1/-1}.summary{position:static}}
+@media(max-width:560px){.mods{grid-template-columns:1fr}}
+/* work */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink)}
+.case{border-right:2px solid var(--ink);display:flex;flex-direction:column}
+.case:last-child{border-right:0}
+.case-art{aspect-ratio:4/3;border-bottom:2px solid var(--ink);position:relative;overflow:hidden}
+.case-art svg{width:100%;height:100%;display:block;transition:transform .6s}
+.case:hover .case-art svg{transform:scale(1.06)}
+.case-body{padding:24px;flex:1;display:flex;flex-direction:column;gap:10px}
+.case-body .lbl{font-size:10px}
+.case-body h3{font:900 28px/1 var(--sans);letter-spacing:-.03em}
+.case-body p{color:var(--mute);font-size:15px}
+.case-stat{margin-top:auto;padding-top:14px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;font:700 11px var(--mono);text-transform:uppercase}
+.case-stat b{font:900 32px var(--sans);color:var(--red)}
+@media(max-width:900px){.work{grid-template-columns:1fr}.case{border-right:0;border-bottom:2px solid var(--ink)}.case:last-child{border-bottom:0}}
+/* contact */
+.cta{background:var(--ink);color:var(--paper);padding:120px 0;border-bottom:2px solid var(--ink)}
+.cta-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.cta h2{grid-column:1/8;font:900 clamp(48px,8vw,132px)/.85 var(--sans);letter-spacing:-.06em}
+.cta h2 em{font-style:normal;color:var(--lime)}
+.cta form{grid-column:8/13;display:grid;gap:12px;font-family:var(--mono)}
+.cta label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#a19d93}
+.cta input,.cta select{width:100%;margin-top:6px;background:transparent;border:2px solid #444;color:var(--paper);padding:14px;font:500 15px var(--sans)}
+.cta input:focus,.cta select:focus{outline:none;border-color:var(--lime)}
+.cta select option{color:#111}
+.cta button{background:var(--red);color:#fff;padding:18px;font:800 13px var(--mono);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+.cta button:hover{background:var(--lime);color:var(--ink)}
+.sent{border:2px solid var(--lime);color:var(--lime);padding:20px;font:700 14px var(--mono);display:none}
+@media(max-width:900px){.cta{padding:80px 0}.cta h2,.cta form{grid-column:1/-1}}
+footer{padding:36px 0 44px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.foot .brand{color:var(--ink)}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}.hero h1 .strike::after{transform:scaleX(1)}}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-01 · Swiss Grid × Game HUD</span><a class="exh-cta" href="/contact.html">Build one like this →</a></div>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="#top"><i>C</i>Cohort</a>
+  <ul>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#tree">Skill tree</a></li>
+    <li><a href="#quiz">Play</a></li>
+    <li><a href="#builder">Build</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#start">Start</a></li>
+  </ul>
+  <div class="hud-mini" aria-hidden="true"><span>Scroll XP</span><span class="bar"><b id="scrollxp"></b></span></div>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="lbl">Learning experience design studio</p>
+      <h1>Training<br>people <span class="strike">skip</span><br><span class="r">finish.</span></h1>
+      <p class="hero-lede">Cohort builds corporate learning with the pull of a game and the rigour of a grid. Clear goals, visible progress, real skills on Monday morning.</p>
+      <div class="btns">
+        <a class="btn solid" href="#tree">Press start ▶</a>
+        <a class="btn" href="#builder">Build a programme</a>
+      </div>
+    </div>
+    <aside class="hud" aria-label="Sample learner dashboard">
+      <div class="hud-top"><span>Player 01 · Ops Lead</span><span class="blink">● Live</span></div>
+      <div class="player">
+        <div class="avatar"><svg viewBox="0 0 40 40" fill="#f2f0e9"><rect x="12" y="6" width="16" height="16"/><rect x="6" y="24" width="28" height="12"/><rect x="16" y="12" width="3" height="3" fill="#111"/><rect x="22" y="12" width="3" height="3" fill="#111"/></svg></div>
+        <div><strong>Level 07 · Coach</strong><small>Season: Leading Through Change</small></div>
+      </div>
+      <div class="stat"><div class="stat-row"><span>Feedback</span><span>82</span></div><div class="meter"><b data-w="82"></b></div></div>
+      <div class="stat"><div class="stat-row"><span>Delegation</span><span>64</span></div><div class="meter"><b data-w="64"></b></div></div>
+      <div class="stat"><div class="stat-row"><span>Hard talks</span><span>47</span></div><div class="meter red"><b data-w="47"></b></div></div>
+      <ul class="quest">
+        <li class="done">Run a 1:1 with the new framework</li>
+        <li class="done">Give one piece of SBI feedback</li>
+        <li>Delegate a decision, not a task</li>
+      </ul>
+    </aside>
+  </div>
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Onboarding that sticks</span><span>Leadership seasons</span><span>Compliance people enjoy</span><span>Sales enablement sprints</span><span>Manager quests</span><span>Microlearning drops</span>
+    <span>Onboarding that sticks</span><span>Leadership seasons</span><span>Compliance people enjoy</span><span>Sales enablement sprints</span><span>Manager quests</span><span>Microlearning drops</span>
+  </div></div>
+</section>
+
+<section class="counters" aria-label="Results">
+  <div class="counter rv"><div class="n"><span data-count="94">0</span><sup>%</sup></div><p>Average completion rate across live programmes</p></div>
+  <div class="counter rv"><div class="n"><span data-count="3.2" data-dec="1">0</span><sup>×</sup></div><p>More practice reps than a slide-deck workshop</p></div>
+  <div class="counter rv"><div class="n"><span data-count="41">0</span><sup>k</sup></div><p>Learners levelled up since we opened the studio</p></div>
+  <div class="counter rv"><div class="n"><span data-count="12">0</span><sup>d</sup></div><p>From kickoff call to a playable first module</p></div>
+</section>
+
+<section class="sec" id="method">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="lbl">01 · Method</p><h2>Designed like a game. Measured like a business.</h2><p>Four moves, same order every time. No mystery boxes, no 90-slide decks.</p></div>
+    <div class="method">
+      <article class="step rv"><span class="step-n">01 / Map</span><svg class="glyph" viewBox="0 0 44 44"><rect x="2" y="2" width="18" height="18" fill="#111"/><rect x="24" y="24" width="18" height="18" fill="#ff3b1f"/><path d="M20 11h13v13" stroke="#111" stroke-width="3" fill="none"/></svg><h3>Map the skill</h3><p>We turn vague goals into observable behaviours your managers can actually spot.</p></article>
+      <article class="step rv"><span class="step-n">02 / Level</span><svg class="glyph" viewBox="0 0 44 44"><rect x="2" y="28" width="10" height="14" fill="#111"/><rect x="17" y="18" width="10" height="24" fill="#111"/><rect x="32" y="4" width="10" height="38" fill="#ff3b1f"/></svg><h3>Design the levels</h3><p>Short missions that get harder on purpose. Every level ends with a real-world rep.</p></article>
+      <article class="step rv"><span class="step-n">03 / Play</span><svg class="glyph" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="#111" stroke-width="3"/><path d="M17 13l13 9-13 9z" fill="#ff3b1f"/></svg><h3>Run the season</h3><p>Cohorts move together. Live sessions, async drops, leaderboards that reward helping.</p></article>
+      <article class="step rv"><span class="step-n">04 / Prove</span><svg class="glyph" viewBox="0 0 44 44"><path d="M4 34l12-12 8 8 16-18" stroke="#ff3b1f" stroke-width="4" fill="none"/><path d="M4 40h36" stroke="#111" stroke-width="3"/></svg><h3>Prove the change</h3><p>Behaviour data, not smile sheets. You get a board-ready report at the end of every season.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tree">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="lbl">02 · Skill tree</p><h2>Progress you can see.</h2><p>This is how a Cohort leadership season unlocks. Click a glowing node to learn it, and watch the next branch open.</p></div>
+    <div class="tree-wrap rv">
+      <div class="tree" id="treeBox">
+        <svg class="links" id="links" aria-hidden="true"></svg>
+        <div class="toast" id="toast">Level up!</div>
+      </div>
+      <div class="tree-panel">
+        <p class="lbl" style="color:var(--paper)">Leadership · Season 1</p>
+        <h3 id="lvlName">Level 1 · Rookie</h3>
+        <div><div class="lvl"><span>XP</span><span id="xpText">0 / 600</span></div><div class="xp"><b id="xpBar"></b></div></div>
+        <div class="log" id="log" aria-live="polite"><span>&gt; Start with <b>Listening</b>. It unlocks everything else.</span></div>
+        <button class="reset" id="treeReset">Reset tree</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="quiz">
+  <div class="wrap quiz-grid">
+    <div class="quiz-side rv">
+      <p class="lbl">03 · Play a level</p>
+      <h2 style="font:900 clamp(38px,5vw,72px)/.92 var(--sans);letter-spacing:-.045em;margin-top:22px">Thirty seconds. Three calls.</h2>
+      <p>A real micro-level from our manager season. Scenario first, feedback instantly, no hunting for the right answer in a PDF.</p>
+      <ul><li>Format<span>Scenario</span></li><li>Time<span>~30 sec</span></li><li>Reward<span>+150 XP</span></li></ul>
+    </div>
+    <div class="quiz rv" id="quizBox">
+      <div class="quiz-top"><span id="qCount">Question 1 / 3</span><div class="dots" id="dots"><i class="cur"></i><i></i><i></i></div></div>
+      <div class="quiz-body" id="quizBody"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="builder">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="lbl">04 · Programme builder</p><h2>Stack your season.</h2><p>Pick the modules your team needs. We'll show you how long it runs and what changes when it's done.</p></div>
+    <div class="builder">
+      <div class="mods" id="mods"></div>
+      <aside class="summary rv" aria-live="polite">
+        <h3>Your season</h3>
+        <div class="sum-row"><span>Modules</span><b id="sMods">0</b></div>
+        <div class="sum-row"><span>Learning hours</span><b id="sHrs">0</b></div>
+        <div class="sum-row"><span>Runs for</span><b id="sWks">0 wks</b></div>
+        <div class="weeks" id="weeks"></div>
+        <ul class="outcomes" id="outs"><li>Pick a module to see outcomes.</li></ul>
+        <a class="btn" href="#start" id="sendSeason">Send me this season</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="lbl">05 · Selected seasons</p><h2>Shipped and scored.</h2></div>
+    <div class="work">
+      <article class="case rv"><div class="case-art"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#111"/><g fill="#c6ff3d"><rect x="40" y="200" width="40" height="60"/><rect x="100" y="160" width="40" height="100"/><rect x="160" y="120" width="40" height="140"/><rect x="220" y="80" width="40" height="180"/></g><rect x="280" y="40" width="40" height="220" fill="#ff3b1f"/><text x="40" y="60" fill="#f2f0e9" font-family="monospace" font-size="14">NORTHWIND RETAIL · ONBOARD</text></svg></div><div class="case-body"><p class="lbl">Retail · 2,400 staff</p><h3>Day One Quest</h3><p>Store onboarding rebuilt as a ten-level mobile quest. New hires reach the floor ready, not overwhelmed.</p><div class="case-stat"><span>Time to competence</span><b>−38%</b></div></div></article>
+      <article class="case rv"><div class="case-art"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#ff3b1f"/><g fill="none" stroke="#111" stroke-width="6"><circle cx="200" cy="150" r="40"/><circle cx="200" cy="150" r="80"/><circle cx="200" cy="150" r="120"/></g><circle cx="200" cy="150" r="16" fill="#f2f0e9"/><text x="24" y="276" fill="#111" font-family="monospace" font-size="14">LUMEN BANK · MANAGERS</text></svg></div><div class="case-body"><p class="lbl">Finance · 310 managers</p><h3>The Coach Season</h3><p>Eight weeks of coaching reps in cohorts of twelve, with peer XP for giving great feedback.</p><div class="case-stat"><span>Engagement score</span><b>+21</b></div></div></article>
+      <article class="case rv"><div class="case-art"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#f2f0e9"/><g fill="#111"><rect x="30" y="30" width="100" height="100"/><rect x="150" y="30" width="100" height="100" fill="#c6ff3d"/><rect x="270" y="30" width="100" height="100"/><rect x="30" y="150" width="100" height="100" fill="#ff3b1f"/><rect x="150" y="150" width="100" height="100"/><rect x="270" y="150" width="100" height="100"/></g><text x="30" y="282" fill="#111" font-family="monospace" font-size="14">ARCLIGHT · SAFETY</text></svg></div><div class="case-body"><p class="lbl">Energy · 5 sites</p><h3>Safe Hands Grid</h3><p>Compliance training turned into weekly five-minute drills. The audit team asked for more.</p><div class="case-stat"><span>Completion</span><b>99%</b></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="start">
+  <div class="wrap cta-grid">
+    <h2 class="rv">Ready, player <em>two?</em></h2>
+    <form id="ctaForm" class="rv" novalidate>
+      <label>Your name<input name="n" required placeholder="Alex from People Ops"></label>
+      <label>Work email<input name="e" type="email" required placeholder="alex@company.com"></label>
+      <label>What needs levelling up?<select name="t"><option>Onboarding</option><option>Leadership</option><option>Sales enablement</option><option>Compliance</option><option>Something else</option></select></label>
+      <button type="submit">Insert coin · Book a call</button>
+      <div class="sent" id="sent" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap foot"><a class="brand" href="#top"><i>C</i>Cohort</a><span>Learning experience design · Est. 2019</span><span>Fictional brand · Aurelion fusion concept</span></div></footer>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// mobile nav
+const nav=$('#nav'),mb=$('#menuBtn');
+mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});
+$$('.nav ul a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mb.setAttribute('aria-expanded',false);mb.textContent='Menu'}));
+// scroll XP + active nav
+const sx=$('#scrollxp'),links=$$('.nav ul a'),secs=links.map(a=>$(a.getAttribute('href')));
+addEventListener('scroll',()=>{const h=document.documentElement;sx.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<160)cur=i});links.forEach((a,i)=>a.classList.toggle('on',i===cur))},{passive:true});
+// reveal + counters
+const count=el=>{const t=parseFloat(el.dataset.count),d=+el.dataset.dec||0;if(RM){el.textContent=t.toFixed(d);return}let s=null;const f=ts=>{s=s||ts;const p=Math.min((ts-s)/1400,1),e=1-Math.pow(1-p,3);el.textContent=(t*e).toFixed(d);if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(e.target)}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+setTimeout(()=>$$('.meter b').forEach(b=>b.style.width=b.dataset.w+'%'),300);
+
+// SKILL TREE
+const nodes=[
+ {id:'listen',n:'Listening',ic:'◉',x:50,y:14,req:[],xp:60},
+ {id:'feed',n:'Feedback',ic:'✎',x:24,y:38,req:['listen'],xp:80},
+ {id:'one',n:'1:1s',ic:'⇄',x:76,y:38,req:['listen'],xp:80},
+ {id:'coach',n:'Coaching',ic:'✦',x:12,y:64,req:['feed'],xp:100},
+ {id:'deleg',n:'Delegation',ic:'⤳',x:40,y:64,req:['feed','one'],xp:100},
+ {id:'hard',n:'Hard talks',ic:'⚡',x:76,y:64,req:['one'],xp:100},
+ {id:'lead',n:'Leading change',ic:'★',x:50,y:88,req:['coach','deleg','hard'],xp:80,boss:true}];
+const box=$('#treeBox'),svg=$('#links'),own=new Set();let xp=0;const MAX=600;
+const levels=['Rookie','Listener','Communicator','Coach','Coach','Mentor','Leader','Leader'];
+nodes.forEach(nd=>{const b=document.createElement('button');b.className='node';b.style.left=nd.x+'%';b.style.top=nd.y+'%';b.innerHTML=`<span class="ic">${nd.ic}</span>${nd.n}`;b.id='n-'+nd.id;b.addEventListener('click',()=>learn(nd));box.appendChild(b);nd.el=b;
+ nd.req.forEach(r=>{const p=nodes.find(z=>z.id===r);const l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',p.x+'%');l.setAttribute('y1',p.y+'%');l.setAttribute('x2',nd.x+'%');l.setAttribute('y2',nd.y+'%');l.dataset.to=nd.id;svg.appendChild(l)})});
+const log=(t)=>{const s=document.createElement('span');s.innerHTML='&gt; '+t;const L=$('#log');L.appendChild(s);while(L.children.length>6)L.firstChild.remove()};
+const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),1400)};
+function paint(){nodes.forEach(nd=>{const ok=nd.req.every(r=>own.has(r));nd.el.className='node '+(own.has(nd.id)?'on':ok?'avail':'locked');nd.el.disabled=!ok&&!own.has(nd.id);nd.el.setAttribute('aria-label',nd.n+(own.has(nd.id)?' learned':ok?' available':' locked'))});
+ $$('#links line').forEach(l=>l.classList.toggle('lit',own.has(l.dataset.to)));
+ const pct=xp/MAX*100;$('#xpBar').style.width='calc('+pct+'% - 4px)';$('#xpText').textContent=xp+' / '+MAX;$('#lvlName').textContent='Level '+(own.size+1)+' · '+levels[own.size]}
+function learn(nd){if(own.has(nd.id)){log(`<b>${nd.n}</b> already learned. Nice reps.`);return}if(!nd.req.every(r=>own.has(r))){log(`Locked. Learn ${nd.req.map(r=>nodes.find(z=>z.id===r).n).join(' + ')} first.`);return}
+ own.add(nd.id);xp+=nd.xp;log(`Unlocked <b>${nd.n}</b> · +${nd.xp} XP`);toast(nd.boss?'Season complete ★':'+'+nd.xp+' XP');if(nd.boss)log('All branches cleared. Certificate unlocked.');paint()}
+$('#treeReset').addEventListener('click',()=>{own.clear();xp=0;$('#log').innerHTML='';log('Tree reset. Start with <b>Listening</b>.');paint()});
+paint();
+
+// QUIZ
+const Q=[
+ {q:'A new hire has missed two deadlines. What do you open your 1:1 with?',o:['“Why are you always late?”','“What’s getting in the way this week?”','Nothing. Wait for the review.','Email HR first.'],a:1,why:'Curious questions surface blockers. Accusations surface defences.'},
+ {q:'Your team says your meetings run long. The best first move?',o:['Cut every meeting to 15 min','Ignore it, they’re busy','Ask which meeting to fix first','Add a timer and a parking lot'],a:2,why:'Let the team pick. Change they choose sticks longer than change they get.'},
+ {q:'You want someone to own a decision. You say:',o:['“Do it exactly like I did.”','“Your call. Here’s the goal and the guardrails.”','“Run every step past me.”','“I’ll just do it.”'],a:1,why:'Delegate outcomes with clear limits. That is how people grow judgement.'}];
+let qi=0,score=0,res=[];const qb=$('#quizBody'),dots=$$('#dots i');
+function renderQ(){const it=Q[qi];$('#qCount').textContent=`Question ${qi+1} / 3`;dots.forEach((d,i)=>d.className=res[i]===true?'ok':res[i]===false?'no':i===qi?'cur':'');
+ qb.innerHTML=`<h3>${it.q}</h3><div class="opts">${it.o.map((o,i)=>`<button class="opt" data-i="${i}"><kbd>${'ABCD'[i]}</kbd>${o}</button>`).join('')}</div><div class="feedback"><span id="fb" aria-live="polite"></span><button class="next" id="nextQ">${qi<2?'Next ▶':'See score ▶'}</button></div>`;
+ $$('.opt').forEach(b=>b.addEventListener('click',()=>pick(+b.dataset.i)));$('#nextQ').addEventListener('click',()=>{qi++;qi<3?renderQ():done()})}
+function pick(i){const it=Q[qi],ok=i===it.a;res[qi]=ok;if(ok)score++;$$('.opt').forEach((b,j)=>{b.disabled=true;if(j===it.a)b.classList.add('right');else if(j===i)b.classList.add('wrong')});
+ $('#fb').innerHTML=(ok?'<span style="color:#111;background:#c6ff3d;padding:2px 6px">+50 XP</span> ':'<span style="color:#fff;background:#ff3b1f;padding:2px 6px">MISS</span> ')+it.why;$('#nextQ').classList.add('show');dots[qi].className=ok?'ok':'no'}
+function done(){$('#qCount').textContent='Level complete';const msg=['Respawn and try again.','Good start. One more run?','Strong instincts. Almost flawless.','Flawless. Manager material.'][score];
+ qb.innerHTML=`<div class="result"><div class="big">${score}<span>/3</span></div><p>${msg} · +${score*50} XP</p><button class="btn solid" id="again">Replay level ↺</button></div>`;
+ $('#again').addEventListener('click',()=>{qi=0;score=0;res=[];renderQ()})}
+renderQ();
+document.addEventListener('keydown',e=>{if(!$('#quiz').contains(document.activeElement)&&document.activeElement!==document.body)return;const k='abcd'.indexOf(e.key.toLowerCase());const b=$$('.opt')[k];if(b&&!b.disabled&&isVisible($('#quizBox')))b.click()});
+function isVisible(el){const r=el.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0}
+
+// BUILDER
+const M=[
+ {t:'Core',n:'Manager Foundations',d:'1:1s, goals and feedback loops.',h:6,o:'Managers run weekly 1:1s with a shared template',on:true},
+ {t:'Core',n:'Feedback Lab',d:'Live practice with actors and replays.',h:4,o:'Feedback given within 48 hours, not at review time'},
+ {t:'Growth',n:'Coaching Reps',d:'GROW conversations, peer-scored.',h:8,o:'Teams solve more problems without escalating'},
+ {t:'Growth',n:'Delegation Dojo',d:'Hand off decisions, not tasks.',h:4,o:'Managers free up roughly 4 hours a week'},
+ {t:'Advanced',n:'Hard Conversations',d:'Scripts for the talks people avoid.',h:6,o:'Performance issues raised early, calmly'},
+ {t:'Advanced',n:'Leading Change',d:'Boss level. Lead a real initiative.',h:10,o:'One live business change shipped per cohort'}];
+const mods=$('#mods');
+M.forEach((m,i)=>{const b=document.createElement('button');b.className='mod rv';b.setAttribute('aria-pressed',!!m.on);b.innerHTML=`<span class="tag">${m.t}</span><span class="hrs">${m.h}h</span><h4>${m.n}</h4><p>${m.d}</p><span class="chk"></span>`;b.addEventListener('click',()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');sum()});mods.appendChild(b);io.observe(b)});
+const wk=$('#weeks');for(let i=0;i<12;i++)wk.appendChild(document.createElement('i'));
+function sum(){const sel=M.filter((m,i)=>mods.children[i].getAttribute('aria-pressed')==='true');const h=sel.reduce((a,m)=>a+m.h,0),w=sel.length?Math.min(12,Math.ceil(h/3.5)+1):0;
+ $('#sMods').textContent=sel.length;$('#sHrs').textContent=h;$('#sWks').textContent=w+' wks';$$('#weeks i').forEach((x,i)=>x.classList.toggle('on',i<w));
+ $('#outs').innerHTML=sel.length?sel.map(m=>`<li>${m.o}</li>`).join(''):'<li>Pick a module to see outcomes.</li>'}
+sum();
+$('#sendSeason').addEventListener('click',()=>{const sel=M.filter((m,i)=>mods.children[i].getAttribute('aria-pressed')==='true').map(m=>m.n);if(sel.length){const s=$('select[name=t]');s.value='Leadership'}});
+
+// CTA
+$('#ctaForm').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=f.n.value.trim(),em=f.e.value.trim();const s=$('#sent');s.style.display='block';
+ if(!n||!/\S+@\S+\.\S+/.test(em)){s.style.borderColor='#ff3b1f';s.style.color='#ff3b1f';s.textContent='> Need a name and a valid email to continue.';return}
+ s.style.borderColor='';s.style.color='';s.textContent=`> Player joined: ${n.split(' ')[0]}. This is a concept site, so nothing was sent, but this is where your kickoff call would get booked.`;f.querySelector('button').textContent='Coin accepted ✓'});
+})();
+</script>
+</body>
+</html>

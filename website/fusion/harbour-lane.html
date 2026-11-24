@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Harbour Lane 港巷 | Aurelion fusion concept</title>
+<meta name="description" content="Harbour Lane 港巷 — a boutique Hong Kong property agency. Neo-noir neon meets a Swiss listing grid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Monoton&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a1230;--ink2:#111c45;--paper:#f4f2ec;--white:#fff;--black:#0d0d10;--pink:#ff2e88;--teal:#19e3d1;--rule:#0d0d10;--muted:#6b6d78;--sans:"Archivo","Noto Sans TC",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:var(--sans);background:var(--paper);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html[lang="zh-Hant-HK"] body{letter-spacing:.02em}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* NAV */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;transition:background .3s,backdrop-filter .3s;color:#fff}
+.nav.scrolled{background:rgba(10,18,48,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-weight:900;letter-spacing:.14em;font-size:15px}
+.brand b{font-family:"Noto Sans TC";color:var(--pink);text-shadow:0 0 12px rgba(255,46,136,.7);letter-spacing:.1em;font-size:18px}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.nav-links a{text-decoration:none;opacity:.82}.nav-links a:hover{opacity:1;color:var(--teal)}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:3px;gap:2px}
+.lang button{background:none;border:0;padding:5px 11px;border-radius:999px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.06em;color:#fff}
+.lang button[aria-pressed="true"]{background:var(--teal);color:var(--ink)}
+.burger{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;padding:7px 12px;border-radius:999px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.1em}
+.saved-badge{position:relative;display:inline-flex;align-items:center;gap:6px}
+.saved-badge .count{min-width:20px;height:20px;border-radius:10px;background:var(--pink);color:#fff;font-size:11px;display:inline-grid;place-items:center;padding:0 5px;transition:transform .3s cubic-bezier(.3,1.8,.5,1)}
+.saved-badge .count.bump{transform:scale(1.5)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;background:radial-gradient(120% 80% at 50% 0%,#1b2a66 0%,var(--ink) 55%,#050816 100%);color:#fff;overflow:hidden;display:grid;place-items:center;padding:140px 24px 90px}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);pointer-events:none}
+.rain{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:42%;pointer-events:none}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:1100px;width:100%}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);margin-bottom:28px}
+.sign{display:inline-block;cursor:pointer;user-select:none;border:2px solid rgba(255,46,136,.55);border-radius:18px;padding:22px 38px 26px;box-shadow:0 0 18px rgba(255,46,136,.45),inset 0 0 18px rgba(255,46,136,.35);background:rgba(10,0,20,.25);position:relative;outline:none}
+.sign:focus-visible{outline:2px dashed var(--teal);outline-offset:8px}
+.sign-word{font-family:"Monoton",var(--sans);font-size:clamp(46px,10vw,132px);line-height:1;color:#ffe6f2;text-shadow:0 0 4px #fff,0 0 12px var(--pink),0 0 28px var(--pink),0 0 60px var(--pink),0 0 90px rgba(255,46,136,.6);letter-spacing:.04em;display:block;animation:flicker 6s infinite;transition:opacity .15s}
+.sign-word.zh{font-family:"Noto Sans TC";font-weight:900;letter-spacing:.2em}
+.sign-sub{display:block;margin-top:14px;font-family:"Noto Sans TC",var(--sans);font-weight:700;font-size:clamp(18px,2.4vw,26px);letter-spacing:.5em;color:#dffffb;text-shadow:0 0 6px var(--teal),0 0 18px var(--teal),0 0 36px rgba(25,227,209,.6);animation:flicker2 9s infinite}
+.sign-hint{display:block;margin-top:14px;font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+@keyframes flicker{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.35}}
+@keyframes flicker2{0%,70%,72%,74%,100%{opacity:1}71%,73%{opacity:.25}}
+.hero h1{margin:42px auto 16px;font-size:clamp(28px,4.2vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;max-width:900px}
+.hero h1 em{font-style:normal;color:var(--teal);text-shadow:0 0 18px rgba(25,227,209,.5)}
+.hero p.lead{max-width:600px;margin:0 auto;color:rgba(255,255,255,.75);font-size:17px;line-height:1.6}
+.hero-cta{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 0 0 0 rgba(255,46,136,.6)}
+.btn-pink:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,46,136,.5)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff;background:transparent}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.hero-ticker{position:absolute;bottom:0;left:0;right:0;z-index:3;border-top:1px solid rgba(255,255,255,.15);background:rgba(5,8,22,.7);overflow:hidden;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:rgba(255,255,255,.7);padding:12px 0}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;padding-left:100%}
+.ticker-track span{margin-right:48px}.ticker-track b{color:var(--teal);font-weight:600}.ticker-track i{color:var(--pink);font-style:normal}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* SWISS SECTIONS */
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+section.swiss{padding:100px 0 60px}
+.sec-head{display:grid;grid-template-columns:1.15fr 1fr;gap:18px 48px;align-items:end;border-top:2px solid var(--rule);padding-top:18px;margin-bottom:48px}
+.sec-num{grid-column:1/-1;font-family:var(--mono);font-size:13px;letter-spacing:.12em}
+.sec-num b{color:var(--pink)}
+.sec-head h2{font-size:clamp(34px,5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.035em}
+.sec-head h2{grid-column:1}.sec-head>p:not(.sec-num){grid-column:2;font-size:17px;line-height:1.55;color:#33343c;max-width:620px}
+
+/* FINDER */
+.finder{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--rule);background:var(--white);margin-bottom:28px}
+.finder .f{padding:18px 20px;border-right:2px solid var(--rule)}
+.finder .f:last-child{border-right:0}
+.f label,.f .lbl{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.f select{width:100%;border:0;background:none;font-size:18px;font-weight:800;cursor:pointer;padding:2px 0;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#000 50%),linear-gradient(135deg,#000 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 6px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+.beds{display:flex;gap:6px}
+.beds button{flex:1;border:1.5px solid var(--rule);background:#fff;padding:7px 0;font-weight:800;cursor:pointer;font-size:14px;transition:.2s}
+.beds button[aria-pressed="true"]{background:var(--black);color:#fff}
+.range-val{font-size:18px;font-weight:800;margin-bottom:8px;display:block}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:4px;background:linear-gradient(90deg,var(--pink) var(--p,50%),#d5d3cc var(--p,50%));outline:none;border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--black);border:3px solid #fff;box-shadow:0 0 0 2px var(--black);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--black);border:3px solid #fff;box-shadow:0 0 0 2px var(--black);cursor:pointer}
+.results-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px;font-family:var(--mono);font-size:13px}
+.results-bar strong{font-family:var(--sans);font-size:22px;font-weight:900;margin-right:6px}
+.sort{display:flex;gap:6px;flex-wrap:wrap}
+.sort button{border:1.5px solid var(--rule);background:transparent;padding:6px 12px;font-family:var(--mono);font-size:12px;cursor:pointer;letter-spacing:.06em}
+.sort button[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.card{background:var(--white);border:2px solid var(--rule);display:flex;flex-direction:column;transition:opacity .35s,transform .35s;will-change:transform}
+.card.out{opacity:0;transform:scale(.94);pointer-events:none;position:absolute;visibility:hidden}
+.card-plan{position:relative;aspect-ratio:4/3;background:#f9f8f4;border-bottom:2px solid var(--rule);overflow:hidden}
+.card-plan>svg{position:absolute;inset:0;width:100%;height:100%}
+.card-tag{position:absolute;top:12px;left:12px;background:var(--black);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.14em;padding:5px 8px;text-transform:uppercase}
+.card-tag.hot{background:var(--pink)}
+.heart{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:2px solid var(--rule);background:#fff;cursor:pointer;display:grid;place-items:center;transition:transform .25s cubic-bezier(.3,1.8,.5,1)}
+.heart svg{width:18px;height:18px;fill:none;stroke:var(--black);stroke-width:2.2;transition:fill .2s,stroke .2s}
+.heart[aria-pressed="true"] svg{fill:var(--pink);stroke:var(--pink)}
+.heart:active{transform:scale(.85)}
+.heart.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.3)}}
+.card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-dist{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card-title{font-size:21px;font-weight:900;letter-spacing:-.01em;line-height:1.15}
+.card-specs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--rule);margin-top:auto}
+.card-specs div{padding:10px 0 0;font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card-specs b{display:block;font-family:var(--sans);font-size:16px;color:var(--black);letter-spacing:0;margin-top:2px}
+.card-price{font-size:26px;font-weight:900;letter-spacing:-.02em}
+.card-price small{font-size:13px;font-weight:600;color:var(--muted);margin-left:4px}
+.empty{grid-column:1/-1;border:2px dashed var(--rule);padding:60px 20px;text-align:center;font-weight:700;display:none}
+.empty.show{display:block}
+
+/* DISTRICTS */
+.districts{display:grid;grid-template-columns:repeat(4,1fr);border-left:2px solid var(--rule)}
+.district{border-right:2px solid var(--rule);border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:26px 22px 30px;position:relative;overflow:hidden;background:var(--paper);transition:background .3s,color .3s;cursor:default}
+.district:hover{background:var(--ink);color:#fff}
+.district:hover .d-zh{color:var(--pink);text-shadow:0 0 14px rgba(255,46,136,.7)}
+.d-zh{font-family:"Noto Sans TC";font-weight:900;font-size:54px;line-height:1;letter-spacing:.06em;transition:.3s}
+.d-en{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:12px 0 22px}
+.d-stat{font-size:36px;font-weight:900;letter-spacing:-.03em}
+.d-stat small{font-size:13px;font-weight:600;opacity:.6;margin-left:6px;letter-spacing:0}
+.d-note{font-size:14px;line-height:1.5;opacity:.75;margin-top:8px}
+
+/* MORTGAGE */
+.mort{display:grid;grid-template-columns:1.2fr 1fr;border:2px solid var(--rule)}
+.mort-inputs{padding:34px;background:var(--white);display:grid;gap:28px;border-right:2px solid var(--rule)}
+.mort-row .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.mort-row .top span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mort-row .top b{font-size:20px;font-weight:900}
+.mort-out{background:var(--ink);color:#fff;padding:34px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.mort-out::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;right:-120px;top:-120px;background:radial-gradient(circle,rgba(25,227,209,.25),transparent 70%)}
+.mo-lbl{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.mo-big{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:-.04em;line-height:1;margin:14px 0 6px;text-shadow:0 0 30px rgba(25,227,209,.35)}
+.mo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;border-top:1px solid rgba(255,255,255,.2);padding-top:22px;position:relative;z-index:1}
+.mo-grid span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+.mo-grid b{font-size:20px;font-weight:800}
+.bar{height:10px;display:flex;margin-top:22px;border-radius:5px;overflow:hidden;position:relative;z-index:1}
+.bar i{display:block;height:100%;transition:width .4s}
+.bar .p{background:var(--teal)}.bar .int{background:var(--pink)}
+.legend{display:flex;gap:18px;margin-top:10px;font-family:var(--mono);font-size:11px;opacity:.8;position:relative;z-index:1}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px}
+.mort-note{font-size:12px;color:var(--muted);margin-top:14px;font-family:var(--mono)}
+
+/* APPROACH */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--rule)}
+.step{padding:30px 28px 10px 0;border-right:2px solid var(--rule);margin-right:28px}
+.step:last-child{border-right:0}
+.step-n{font-family:"Monoton";font-size:64px;color:var(--pink);line-height:1}
+.step h3{font-size:24px;font-weight:900;margin:14px 0 10px;letter-spacing:-.01em}
+.step p{font-size:16px;line-height:1.6;color:#33343c}
+.quote{margin-top:80px;background:var(--ink);color:#fff;padding:56px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.quote-mark{font-family:"Monoton";font-size:120px;line-height:.7;color:var(--teal);text-shadow:0 0 20px rgba(25,227,209,.6)}
+.quote blockquote{font-size:clamp(20px,2.4vw,30px);font-weight:600;line-height:1.35;letter-spacing:-.01em}
+.quote cite{display:block;margin-top:18px;font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+
+/* CONTACT */
+.contact{background:var(--ink);color:#fff;padding:110px 0;position:relative;overflow:hidden}
+.contact .sec-head{border-color:#fff}
+.contact .sec-head>p:not(.sec-num){color:rgba(255,255,255,.7)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid #fff}
+.form .fld{border-right:2px solid #fff;border-bottom:2px solid #fff;padding:16px 20px}
+.form .fld:nth-child(2n){border-right:0}
+.form .fld.full{grid-column:1/-1;border-right:0}
+.form label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.form input,.form select{width:100%;background:transparent;border:0;color:#fff;font-size:18px;font-weight:600;outline:none;padding:4px 0}
+.form select option{color:#000}
+.form input::placeholder{color:rgba(255,255,255,.35)}
+.form .submit{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 20px;flex-wrap:wrap}
+.form .ok{font-family:var(--mono);font-size:13px;color:var(--teal);min-height:1em}
+footer{background:#050816;color:rgba(255,255,255,.6);padding:40px 0;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .brand{color:#fff}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .districts{grid-template-columns:repeat(2,1fr)}
+ .finder{grid-template-columns:1fr 1fr}
+ .finder .f:nth-child(2){border-right:0}
+ .finder .f:nth-child(-n+2){border-bottom:2px solid var(--rule)}
+ .mort{grid-template-columns:1fr}.mort-inputs{border-right:0;border-bottom:2px solid var(--rule)}
+}
+@media(max-width:760px){
+ .nav{padding:12px 16px}
+ .nav-links{position:fixed;top:96px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:0;background:var(--ink);border:1px solid rgba(255,255,255,.2);padding:8px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+ .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+ .nav-links a{padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.1)}
+ .nav-links .lang{align-self:flex-start;margin:12px}
+ .burger{display:inline-block}
+ .wrap{padding:0 18px}
+ section.swiss{padding:76px 0}
+ .sec-head{grid-template-columns:1fr;gap:12px}.sec-head h2,.sec-head>p:not(.sec-num){grid-column:1}
+ .grid{grid-template-columns:1fr}
+ .finder{grid-template-columns:1fr}
+ .finder .f{border-right:0!important;border-bottom:2px solid var(--rule)}
+ .finder .f:last-child{border-bottom:0}
+ .districts{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr}.step{border-right:0;margin-right:0;border-bottom:2px solid var(--rule);padding-right:0;padding-bottom:26px}
+ .quote{grid-template-columns:1fr;padding:34px 24px;gap:10px}.quote-mark{font-size:80px}
+ .form{grid-template-columns:1fr}.form .fld{border-right:0!important}
+ .sign{padding:16px 18px 20px}
+ .mort-inputs,.mort-out{padding:24px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ html{scroll-behavior:auto}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-09 · Neo-noir neon × Swiss listing grid</span><a class="exh-cta" href="/contact.html">Build one like this →</a></div>
+
+<header class="nav" id="nav">
+ <a class="brand" href="#top">HARBOUR LANE <b>港巷</b></a>
+ <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" data-i18n="menu">MENU</button>
+ <nav class="nav-links" id="navlinks" aria-label="Main">
+  <a href="#listings" data-i18n="nav1">Listings</a>
+  <a href="#districts" data-i18n="nav2">Districts</a>
+  <a href="#mortgage" data-i18n="nav3">Mortgage</a>
+  <a href="#approach" data-i18n="nav4">Approach</a>
+  <a href="#saved-jump" class="saved-badge" id="savedLink"><span data-i18n="saved">Saved</span><span class="count" id="savedCount">0</span></a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false">繁</button></div>
+ </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+ <canvas class="rain" id="rain" aria-hidden="true"></canvas>
+ <svg class="skyline" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+  <defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1840"/><stop offset="1" stop-color="#050816"/></linearGradient></defs>
+  <path fill="url(#sk)" d="M0 400V250h40v-60h30v40h25V160h45v90h20v-120h50v70h30v-40h40v120h25V110l40-30 40 30v140h20v-90h55v60h30v-150h60v170h25v-80h45v100h30V140h35v-40h30v40h35v120h20v-60h50v80h25V90h70v170h30v-110h45v60h30v-80h40v150h25V170h60v90h20v-50h45v190h30V200h40v-60h50v120h30v-70h40v80h30V160h40v240z"/>
+  <g fill="#ff2e88" opacity=".55"><rect x="160" y="150" width="6" height="4"/><rect x="430" y="200" width="6" height="4"/><rect x="720" y="160" width="6" height="4"/><rect x="990" y="210" width="6" height="4"/><rect x="1230" y="180" width="6" height="4"/></g>
+  <g fill="#19e3d1" opacity=".5"><rect x="300" y="130" width="5" height="3"/><rect x="560" y="230" width="5" height="3"/><rect x="840" y="190" width="5" height="3"/><rect x="1110" y="160" width="5" height="3"/><rect x="1350" y="230" width="5" height="3"/></g>
+ </svg>
+ <div class="hero-inner">
+  <p class="kicker" data-i18n="kicker">Boutique property · Hong Kong · Est. 2014</p>
+  <div class="sign" id="sign" role="button" tabindex="0" aria-label="Neon sign — click to change the word">
+   <span class="sign-word" id="signWord">HARBOUR</span>
+   <span class="sign-sub">港 巷 地 產</span>
+   <span class="sign-hint" data-i18n="hint">Tap the sign</span>
+  </div>
+  <h1 data-i18n-html="h1">Find the flat that feels like <em>coming home late</em> — and still being glad.</h1>
+  <p class="lead" data-i18n="lead">Nine hand-picked homes at a time. No listing farms, no phantom flats. Every place on this page has been walked, measured and loved by one of our four agents.</p>
+  <div class="hero-cta">
+   <a class="btn btn-pink" href="#listings" data-i18n="cta1">See this week's nine</a>
+   <a class="btn btn-ghost" href="#mortgage" data-i18n="cta2">Run the numbers</a>
+  </div>
+ </div>
+ <div class="hero-ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+</section>
+
+<section class="swiss" id="listings">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <p class="sec-num"><b>01</b> / <span data-i18n="s1n">Property finder</span></p>
+   <h2 data-i18n="s1t">This week's nine.</h2>
+   <p data-i18n="s1p">Filter by district, bedrooms and budget. Every floor plan is drawn to scale by our in-house surveyor — what you see is the flat you get.</p>
+  </div>
+  <div class="finder reveal" role="search">
+   <div class="f"><label for="fDist" data-i18n="fd">District</label>
+    <select id="fDist"><option value="all" data-i18n="all">All districts</option><option value="central" data-i18n="dCentral">Central &amp; Sheung Wan</option><option value="kt" data-i18n="dKt">Kennedy Town</option><option value="tst" data-i18n="dTst">Tsim Sha Tsui</option><option value="sai" data-i18n="dSai">Sai Kung</option></select></div>
+   <div class="f"><span class="lbl" data-i18n="fb">Bedrooms</span>
+    <div class="beds" id="fBeds" role="group" aria-label="Bedrooms"><button type="button" data-b="0" aria-pressed="true" data-i18n="any">Any</button><button type="button" data-b="1" aria-pressed="false">1</button><button type="button" data-b="2" aria-pressed="false">2</button><button type="button" data-b="3" aria-pressed="false">3+</button></div></div>
+   <div class="f"><label for="fBudget" data-i18n="fbud">Max budget</label><span class="range-val" id="budgetVal">HK$30M</span><input type="range" id="fBudget" min="5" max="30" step="1" value="30"></div>
+   <div class="f"><span class="lbl" data-i18n="fview">View</span><div class="beds" id="fSaved" role="group"><button type="button" data-s="0" aria-pressed="true" data-i18n="viewAll">All</button><button type="button" data-s="1" aria-pressed="false" data-i18n="viewSaved">♥ Saved</button></div></div>
+  </div>
+  <div class="results-bar reveal" id="saved-jump">
+   <div><strong id="resCount">9</strong><span data-i18n="homes">homes match</span></div>
+   <div class="sort" role="group" aria-label="Sort"><button type="button" data-sort="featured" aria-pressed="true" data-i18n="sFeat">Featured</button><button type="button" data-sort="asc" aria-pressed="false" data-i18n="sAsc">Price ↑</button><button type="button" data-sort="desc" aria-pressed="false" data-i18n="sDesc">Price ↓</button><button type="button" data-sort="size" aria-pressed="false" data-i18n="sSize">Size</button></div>
+  </div>
+  <div class="grid" id="grid"><div class="empty" id="empty" data-i18n="empty">Nothing here yet — loosen a filter, or tap a ♥ to save a home.</div></div>
+ </div>
+</section>
+
+<section class="swiss" id="districts">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <p class="sec-num"><b>02</b> / <span data-i18n="s2n">Neighbourhood intel</span></p>
+   <h2 data-i18n="s2t">Four districts. Known by heart.</h2>
+   <p data-i18n="s2p">We don't cover all of Hong Kong. We cover four neighbourhoods so well we know which buildings lose afternoon light in winter.</p>
+  </div>
+  <div class="districts reveal">
+   <div class="district"><div class="d-zh">上環</div><div class="d-en" data-i18n="dCentral">Central &amp; Sheung Wan</div><div class="d-stat">HK$23.8K<small data-i18n="psf">/ sq ft</small></div><p class="d-note" data-i18n="n1">Walk-ups with character above dried-seafood shops. Ten minutes to everything.</p></div>
+   <div class="district"><div class="d-zh">堅尼地城</div><div class="d-en" data-i18n="dKt">Kennedy Town</div><div class="d-stat">HK$19.4K<small data-i18n="psf">/ sq ft</small></div><p class="d-note" data-i18n="n2">Sunset on the waterfront, a tram at the door, brunch on every corner.</p></div>
+   <div class="district"><div class="d-zh">尖沙咀</div><div class="d-en" data-i18n="dTst">Tsim Sha Tsui</div><div class="d-stat">HK$21.1K<small data-i18n="psf">/ sq ft</small></div><p class="d-note" data-i18n="n3">Harbour views and neon at street level. For people who like the city loud.</p></div>
+   <div class="district"><div class="d-zh">西貢</div><div class="d-en" data-i18n="dSai">Sai Kung</div><div class="d-stat">HK$14.6K<small data-i18n="psf">/ sq ft</small></div><p class="d-note" data-i18n="n4">Village houses, rooftops and beaches. The city is a ferry and a bus away.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="swiss" id="mortgage">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <p class="sec-num"><b>03</b> / <span data-i18n="s3n">Mortgage calculator</span></p>
+   <h2 data-i18n="s3t">Know your number before you fall in love.</h2>
+   <p data-i18n="s3p">Drag the sliders. We'll show the monthly payment and how much of it goes to the bank.</p>
+  </div>
+  <div class="mort reveal">
+   <div class="mort-inputs">
+    <div class="mort-row"><div class="top"><span data-i18n="mPrice">Property price</span><b id="mPriceV"></b></div><input type="range" id="mPrice" min="3" max="40" step=".5" value="12"></div>
+    <div class="mort-row"><div class="top"><span data-i18n="mDown">Down payment</span><b id="mDownV"></b></div><input type="range" id="mDown" min="10" max="60" step="5" value="30"></div>
+    <div class="mort-row"><div class="top"><span data-i18n="mRate">Interest rate</span><b id="mRateV"></b></div><input type="range" id="mRate" min="1" max="6" step=".05" value="3.4"></div>
+    <div class="mort-row"><div class="top"><span data-i18n="mYears">Loan term</span><b id="mYearsV"></b></div><input type="range" id="mYears" min="10" max="30" step="5" value="25"></div>
+   </div>
+   <div class="mort-out" aria-live="polite">
+    <div><p class="mo-lbl" data-i18n="mMonthly">Monthly payment</p><p class="mo-big" id="mMonthly">—</p></div>
+    <div>
+     <div class="bar"><i class="p" id="barP"></i><i class="int" id="barI"></i></div>
+     <div class="legend"><span><i style="background:var(--teal)"></i><span data-i18n="mLp">Principal</span></span><span><i style="background:var(--pink)"></i><span data-i18n="mLi">Interest</span></span></div>
+     <div class="mo-grid"><div><span data-i18n="mLoan">Loan amount</span><b id="mLoan">—</b></div><div><span data-i18n="mInt">Total interest</span><b id="mInt">—</b></div><div><span data-i18n="mDownAmt">Cash up front</span><b id="mDownAmt">—</b></div><div><span data-i18n="mTotal">Total repaid</span><b id="mTotal">—</b></div></div>
+    </div>
+   </div>
+  </div>
+  <p class="mort-note" data-i18n="mNote">Illustrative only. Ask us for an introduction to an independent mortgage broker.</p>
+ </div>
+</section>
+
+<section class="swiss" id="approach">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <p class="sec-num"><b>04</b> / <span data-i18n="s4n">How we work</span></p>
+   <h2 data-i18n="s4t">Slow agency. Fast keys.</h2>
+   <p data-i18n="s4p">Three promises, written on the wall of our Sheung Wan office in neon so we can't forget them.</p>
+  </div>
+  <div class="steps reveal">
+   <div class="step"><div class="step-n">1</div><h3 data-i18n="st1">We walk it first</h3><p data-i18n="st1p">Every flat is visited at night and in the morning. We check the light, the noise, the lift and the landlord.</p></div>
+   <div class="step"><div class="step-n">2</div><h3 data-i18n="st2">One agent, start to keys</h3><p data-i18n="st2p">No hand-offs and no call centre. The person who showed you the flat answers your 11pm WhatsApp.</p></div>
+   <div class="step"><div class="step-n">3</div><h3 data-i18n="st3">Honest floor plans</h3><p data-i18n="st3p">Usable area in big type. Gross area in small type. The opposite of how this city usually does it.</p></div>
+  </div>
+  <div class="quote reveal"><div class="quote-mark">"</div><div><blockquote data-i18n="quote">They told us the second bedroom gets no sun before we asked. We signed that week because it was the first time an agent was straight with us.</blockquote><cite data-i18n="cite">— A couple who moved to Kennedy Town, 2025</cite></div></div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <p class="sec-num"><b style="color:var(--teal)">05</b> / <span data-i18n="s5n">Book a viewing</span></p>
+   <h2 data-i18n="s5t">Tonight, tomorrow, or this weekend.</h2>
+   <p data-i18n="s5p">Tell us what you're after. An agent replies within two hours, 9am to 11pm, every day.</p>
+  </div>
+  <form class="form reveal" id="form" novalidate>
+   <div class="fld"><label for="cName" data-i18n="cName">Your name</label><input id="cName" required data-i18n-ph="cNamePh" placeholder="Chan Tai Man"></div>
+   <div class="fld"><label for="cPhone" data-i18n="cPhone">WhatsApp</label><input id="cPhone" type="tel" placeholder="+852 ..."></div>
+   <div class="fld"><label for="cDist" data-i18n="fd">District</label><select id="cDist"><option data-i18n="dCentral">Central &amp; Sheung Wan</option><option data-i18n="dKt">Kennedy Town</option><option data-i18n="dTst">Tsim Sha Tsui</option><option data-i18n="dSai">Sai Kung</option></select></div>
+   <div class="fld"><label for="cWhen" data-i18n="cWhen">When</label><select id="cWhen"><option data-i18n="w1">Tonight</option><option data-i18n="w2">Tomorrow</option><option data-i18n="w3">This weekend</option></select></div>
+   <div class="submit"><span class="ok" id="ok" role="status"></span><button class="btn btn-pink" type="submit" data-i18n="cSend">Request viewing</button></div>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="wrap"><span class="brand">HARBOUR LANE <b>港巷</b></span><span data-i18n="foot">Fictional brand · Design concept by Aurelion</span><span>EAA C-0XXXXX (concept)</span></div></footer>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const T={
+en:{menu:"MENU",nav1:"Listings",nav2:"Districts",nav3:"Mortgage",nav4:"Approach",saved:"Saved",kicker:"Boutique property · Hong Kong · Est. 2014",hint:"Tap the sign",h1:'Find the flat that feels like <em>coming home late</em> — and still being glad.',lead:"Nine hand-picked homes at a time. No listing farms, no phantom flats. Every place on this page has been walked, measured and loved by one of our four agents.",cta1:"See this week's nine",cta2:"Run the numbers",s1n:"Property finder",s1t:"This week's nine.",s1p:"Filter by district, bedrooms and budget. Every floor plan is drawn to scale by our in-house surveyor. What you see is the flat you get.",fd:"District",all:"All districts",dCentral:"Central & Sheung Wan",dKt:"Kennedy Town",dTst:"Tsim Sha Tsui",dSai:"Sai Kung",fb:"Bedrooms",any:"Any",fbud:"Max budget",fview:"View",viewAll:"All",viewSaved:"♥ Saved",homes:"homes match",sFeat:"Featured",sAsc:"Price ↑",sDesc:"Price ↓",sSize:"Size",empty:"Nothing here yet. Loosen a filter, or tap a ♥ to save a home.",s2n:"Neighbourhood intel",s2t:"Four districts. Known by heart.",s2p:"We don't cover all of Hong Kong. We cover four neighbourhoods so well we know which buildings lose afternoon light in winter.",psf:"/ sq ft",n1:"Walk-ups with character above dried-seafood shops. Ten minutes to everything.",n2:"Sunset on the waterfront, a tram at the door, brunch on every corner.",n3:"Harbour views and neon at street level. For people who like the city loud.",n4:"Village houses, rooftops and beaches. The city is a ferry and a bus away.",s3n:"Mortgage calculator",s3t:"Know your number before you fall in love.",s3p:"Drag the sliders. We'll show the monthly payment and how much of it goes to the bank.",mPrice:"Property price",mDown:"Down payment",mRate:"Interest rate",mYears:"Loan term",mMonthly:"Monthly payment",mLp:"Principal",mLi:"Interest",mLoan:"Loan amount",mInt:"Total interest",mDownAmt:"Cash up front",mTotal:"Total repaid",mNote:"Illustrative only. Ask us for an introduction to an independent mortgage broker.",yrs:"years",s4n:"How we work",s4t:"Slow agency. Fast keys.",s4p:"Three promises, written on the wall of our Sheung Wan office in neon so we can't forget them.",st1:"We walk it first",st1p:"Every flat is visited at night and in the morning. We check the light, the noise, the lift and the landlord.",st2:"One agent, start to keys",st2p:"No hand-offs and no call centre. The person who showed you the flat answers your 11pm WhatsApp.",st3:"Honest floor plans",st3p:"Usable area in big type. Gross area in small type. The opposite of how this city usually does it.",quote:"They told us the second bedroom gets no sun before we asked. We signed that week because it was the first time an agent was straight with us.",cite:"— A couple who moved to Kennedy Town, 2025",s5n:"Book a viewing",s5t:"Tonight, tomorrow, or this weekend.",s5p:"Tell us what you're after. An agent replies within two hours, 9am to 11pm, every day.",cName:"Your name",cNamePh:"Chan Tai Man",cPhone:"WhatsApp",cWhen:"When",w1:"Tonight",w2:"Tomorrow",w3:"This weekend",cSend:"Request viewing",okMsg:"Got it, {n}. An agent will WhatsApp you within two hours. (Demo: nothing was sent.)",okNeed:"Add your name first and we'll take it from there.",foot:"Fictional brand · Design concept by Aurelion",bed:"Bed",beds:"Beds",studio:"Studio",size:"Usable",floor:"Floor",new:"New this week",hot:"Viewing tonight",signs:["HARBOUR","OPEN HOUSE","SEA VIEW","MOVE IN","LATE NIGHT","KEYS"],tick:["<b>上環</b> 2-bed walk-up <i>just listed</i>","<b>KENNEDY TOWN</b> harbour studio · viewing 8pm","<b>西貢</b> village house with roof · price cut","<b>TST</b> 28/F flat · signed in 4 days","<b>SHEUNG WAN</b> loft · usable 612 sq ft"]},
+zh:{menu:"選單",nav1:"盤源",nav2:"地區",nav3:"按揭",nav4:"做法",saved:"已收藏",kicker:"精品地產 · 香港 · 2014 年創立",hint:"點一下招牌",h1:'找一個<em>夜歸時</em>仍然覺得慶幸的家。',lead:"每次只推介九個精選單位。冇盤海，冇吹水盤。這頁上每一個單位，都由我們四位代理親身行過、量過、喜歡過。",cta1:"看本週九個盤",cta2:"計一計數",s1n:"搵樓",s1t:"本週九個盤。",s1p:"按地區、房數和預算篩選。每張平面圖都由我們自己的測量師按比例繪畫，看到的就是你會住的。",fd:"地區",all:"所有地區",dCentral:"中上環",dKt:"堅尼地城",dTst:"尖沙咀",dSai:"西貢",fb:"房數",any:"不限",fbud:"最高預算",fview:"顯示",viewAll:"全部",viewSaved:"♥ 已收藏",homes:"個單位符合",sFeat:"推介",sAsc:"價錢 ↑",sDesc:"價錢 ↓",sSize:"面積",empty:"暫時未有。放寬篩選，或按 ♥ 收藏單位。",s2n:"地區情報",s2t:"四個地區，了如指掌。",s2p:"我們不做全港。只做四區，熟到知道哪幾幢樓冬天下午會冇陽光。",psf:"/ 平方呎",n1:"海味舖樓上的唐樓，很有性格。十分鐘去到任何地方。",n2:"海旁日落、門口有電車、轉角就有早午餐。",n3:"海景加街頭霓虹。適合鍾意城市熱鬧的人。",n4:"村屋、天台、海灘。搭船加巴士就返到市區。",s3n:"按揭計算機",s3t:"愛上之前，先知道個數。",s3p:"拉一拉滑桿，即時看到每月供款，以及有幾多俾咗銀行。",mPrice:"樓價",mDown:"首期",mRate:"利率",mYears:"還款年期",mMonthly:"每月供款",mLp:"本金",mLi:"利息",mLoan:"貸款額",mInt:"總利息",mDownAmt:"首期現金",mTotal:"總還款",mNote:"只供參考。可由我們介紹獨立按揭顧問。",yrs:"年",s4n:"我們的做法",s4t:"慢慢揀，快快拎鎖匙。",s4p:"三個承諾，用霓虹燈寫在上環辦公室牆上，不敢忘記。",st1:"自己先行一次",st1p:"每個單位都會在夜晚和早上各看一次：光線、噪音、升降機、業主，全部查清楚。",st2:"一位代理跟到底",st2p:"不轉手，冇 call centre。帶你睇樓的那位，就是夜晚十一點回覆你 WhatsApp 的那位。",st3:"誠實平面圖",st3p:"實用面積用大字，建築面積用細字。跟這個城市的習慣剛好相反。",quote:"未問，他們已經講第二間房冇陽光。我們當週就簽約，因為第一次有代理咁老實。",cite:"— 搬到堅尼地城的一對夫婦，2025",s5n:"預約睇樓",s5t:"今晚、明天，或者今個週末。",s5p:"告訴我們你想要甚麼。代理會在兩小時內回覆，每日早上九點至晚上十一點。",cName:"你的名字",cNamePh:"陳大文",cPhone:"WhatsApp",cWhen:"時間",w1:"今晚",w2:"明天",w3:"今個週末",cSend:"預約睇樓",okMsg:"收到，{n}。代理會在兩小時內 WhatsApp 你。（示範：沒有送出任何資料。）",okNeed:"先填名字，其餘交給我們。",foot:"虛構品牌 · Aurelion 設計概念",bed:"房",beds:"房",studio:"開放式",size:"實用",floor:"樓層",new:"本週新盤",hot:"今晚可睇",signs:["港巷","睇樓","海景","入伙","夜歸","鎖匙"],tick:["<b>上環</b> 兩房唐樓 <i>剛剛放盤</i>","<b>堅尼地城</b> 海景開放式 · 今晚八點睇樓","<b>西貢</b> 連天台村屋 · 減價","<b>尖沙咀</b> 28 樓單位 · 四日成交","<b>上環</b> Loft · 實用 612 呎"]}
+};
+const L=[
+ {id:1,d:"central",en:"Tai Ping Shan walk-up",zh:"太平山街唐樓",beds:2,size:612,price:11.8,floor:"4/F",tag:"new",feat:1},
+ {id:2,d:"kt",en:"Waterfront studio, Catchick St",zh:"吉席街海旁開放式",beds:0,size:338,price:6.4,floor:"18/F",tag:"hot",feat:2},
+ {id:3,d:"sai",en:"Village house with roof",zh:"連天台村屋",beds:3,size:1180,price:16.5,floor:"G-2/F",tag:"",feat:3},
+ {id:4,d:"tst",en:"Harbour-view corner flat",zh:"海景轉角單位",beds:2,size:701,price:18.9,floor:"28/F",tag:"",feat:4},
+ {id:5,d:"central",en:"Po Hing Fong loft",zh:"普慶坊 Loft",beds:1,size:540,price:13.2,floor:"6/F",tag:"",feat:5},
+ {id:6,d:"kt",en:"Family flat near the tram",zh:"電車站旁家庭單位",beds:3,size:890,price:15.4,floor:"12/F",tag:"new",feat:6},
+ {id:7,d:"tst",en:"Neon-side one-bed",zh:"霓虹街一房",beds:1,size:402,price:7.9,floor:"9/F",tag:"",feat:7},
+ {id:8,d:"sai",en:"Seaside garden duplex",zh:"海邊花園複式",beds:2,size:960,price:21.5,floor:"G-1/F",tag:"hot",feat:8},
+ {id:9,d:"central",en:"Penthouse on Hollywood Rd",zh:"荷李活道頂層",beds:3,size:1320,price:28.6,floor:"PH",tag:"",feat:9}
+];
+const distKey={central:"dCentral",kt:"dKt",tst:"dTst",sai:"dSai"};
+let lang="en";const saved=new Set();
+const state={dist:"all",beds:0,budget:30,onlySaved:false,sort:"featured"};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const t=k=>T[lang][k]??k;
+
+// floor plan svg
+function plan(l){
+ const W=400,H=300,x0=40,y0=36,w=320,h=228;let s=`<svg viewBox="0 0 ${W} ${H}" aria-hidden="true"><defs><pattern id="g${l.id}" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#e7e4dc" stroke-width="1"/></pattern></defs><rect width="${W}" height="${H}" fill="url(#g${l.id})"/>`;
+ s+=`<rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="#fff" stroke="#0d0d10" stroke-width="6"/>`;
+ const rooms=[];const b=l.beds;
+ const lbl=(x,y,txt,c)=>`<text x="${x}" y="${y}" font-family="JetBrains Mono,monospace" font-size="11" fill="${c||'#6b6d78'}" text-anchor="middle" letter-spacing="1">${txt}</text>`;
+ if(b===0){s+=`<line x1="${x0+220}" y1="${y0}" x2="${x0+220}" y2="${y0+120}" stroke="#0d0d10" stroke-width="3"/><line x1="${x0+220}" y1="${y0+120}" x2="${x0+w}" y2="${y0+120}" stroke="#0d0d10" stroke-width="3"/>`;s+=lbl(x0+110,y0+120,"LIVE / SLEEP","#0d0d10")+lbl(x0+270,y0+64,"BATH")+lbl(x0+270,y0+180,"KITCHEN");}
+ else{
+  const bw=w/Math.min(b,3);
+  for(let i=0;i<Math.min(b,3);i++){const bx=x0+i*bw;if(i>0)s+=`<line x1="${bx}" y1="${y0}" x2="${bx}" y2="${y0+100}" stroke="#0d0d10" stroke-width="3"/>`;s+=lbl(bx+bw/2,y0+56,(i===0?"MASTER":"BED "+(i+1)),"#0d0d10");
+   s+=`<path d="M${bx+bw/2-14} ${y0+100} A 22 22 0 0 1 ${bx+bw/2+8} ${y0+78}" fill="none" stroke="#ff2e88" stroke-width="1.5"/>`;}
+  s+=`<line x1="${x0}" y1="${y0+100}" x2="${x0+w}" y2="${y0+100}" stroke="#0d0d10" stroke-width="3"/>`;
+  s+=`<line x1="${x0+w-90}" y1="${y0+100}" x2="${x0+w-90}" y2="${y0+h}" stroke="#0d0d10" stroke-width="3"/><line x1="${x0+w-90}" y1="${y0+165}" x2="${x0+w}" y2="${y0+165}" stroke="#0d0d10" stroke-width="3"/>`;
+  s+=lbl(x0+(w-90)/2,y0+168,"LIVING / DINING","#0d0d10")+lbl(x0+w-45,y0+136,"BATH")+lbl(x0+w-45,y0+200,"KITCHEN");
+ }
+ // window glow
+ s+=`<rect x="${x0+30}" y="${y0-4}" width="70" height="8" fill="#19e3d1"/><rect x="${x0+w-110}" y="${y0-4}" width="70" height="8" fill="#19e3d1"/>`;
+ s+=`<text x="${x0}" y="${H-12}" font-family="JetBrains Mono,monospace" font-size="10" fill="#6b6d78">N ↑ · ${l.size} SQ FT</text><line x1="${W-110}" y1="${H-16}" x2="${W-40}" y2="${H-16}" stroke="#0d0d10" stroke-width="2"/><text x="${W-75}" y="${H-22}" font-family="JetBrains Mono,monospace" font-size="9" fill="#6b6d78" text-anchor="middle">5 M</text></svg>`;
+ return s;
+}
+const grid=$('#grid'),empty=$('#empty');
+function buildCards(){
+ $$('.card').forEach(c=>c.remove());
+ L.forEach(l=>{
+  const a=document.createElement('article');a.className='card';a.dataset.id=l.id;
+  a.innerHTML=`<div class="card-plan">${plan(l)}${l.tag?`<span class="card-tag ${l.tag==='hot'?'hot':''}">${t(l.tag)}</span>`:''}<button class="heart" type="button" aria-pressed="${saved.has(l.id)}" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.2 0 3.7 1.3 5.2 3 1.5-1.7 3-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></button></div>
+  <div class="card-body"><p class="card-dist">${t(distKey[l.d])}</p><h3 class="card-title">${l[lang]}</h3><p class="card-price">HK$${l.price.toFixed(1)}M</p>
+  <div class="card-specs"><div>${t(l.beds===1?'bed':'beds')}<b>${l.beds===0?t('studio'):l.beds}</b></div><div>${t('size')}<b>${l.size}</b></div><div>${t('floor')}<b>${l.floor}</b></div></div></div>`;
+  a.querySelector('.heart').addEventListener('click',e=>{const h=e.currentTarget;saved.has(l.id)?saved.delete(l.id):saved.add(l.id);h.setAttribute('aria-pressed',saved.has(l.id));h.classList.remove('pop');void h.offsetWidth;h.classList.add('pop');updSaved();if(state.onlySaved)apply();});
+  grid.appendChild(a);
+ });
+}
+function updSaved(){const c=$('#savedCount');c.textContent=saved.size;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),250);}
+function apply(){
+ const cards=$$('.card');
+ const first=new Map(cards.map(c=>[c,c.getBoundingClientRect()]));
+ let list=L.filter(l=>(state.dist==='all'||l.d===state.dist)&&(state.beds===0||(state.beds===3?l.beds>=3:l.beds===state.beds))&&l.price<=state.budget&&(!state.onlySaved||saved.has(l.id)));
+ const srt={featured:(a,b)=>a.feat-b.feat,asc:(a,b)=>a.price-b.price,desc:(a,b)=>b.price-a.price,size:(a,b)=>b.size-a.size}[state.sort];
+ const order=[...L].sort(srt);const show=new Set(list.map(l=>l.id));
+ order.forEach(l=>{const c=grid.querySelector(`.card[data-id="${l.id}"]`);grid.appendChild(c);c.classList.toggle('out',!show.has(l.id));});
+ grid.appendChild(empty);empty.classList.toggle('show',list.length===0);
+ $('#resCount').textContent=list.length;
+ if(reduce)return;
+ $$('.card:not(.out)').forEach(c=>{const f=first.get(c);if(!f||!f.width)return;const l=c.getBoundingClientRect();const dx=f.left-l.left,dy=f.top-l.top;if(!dx&&!dy)return;c.style.transition='none';c.style.transform=`translate(${dx}px,${dy}px)`;requestAnimationFrame(()=>{requestAnimationFrame(()=>{c.style.transition='transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s';c.style.transform='';});});});
+}
+$('#fDist').addEventListener('change',e=>{state.dist=e.target.value;apply();});
+$$('#fBeds button').forEach(b=>b.addEventListener('click',()=>{state.beds=+b.dataset.b;$$('#fBeds button').forEach(x=>x.setAttribute('aria-pressed',x===b));apply();}));
+$$('#fSaved button').forEach(b=>b.addEventListener('click',()=>{state.onlySaved=b.dataset.s==='1';$$('#fSaved button').forEach(x=>x.setAttribute('aria-pressed',x===b));apply();}));
+$$('.sort button').forEach(b=>b.addEventListener('click',()=>{state.sort=b.dataset.sort;$$('.sort button').forEach(x=>x.setAttribute('aria-pressed',x===b));apply();}));
+const fb=$('#fBudget');function budUI(){state.budget=+fb.value;$('#budgetVal').textContent=`HK$${fb.value}M`;fb.style.setProperty('--p',((fb.value-fb.min)/(fb.max-fb.min)*100)+'%');}
+fb.addEventListener('input',()=>{budUI();apply();});
+$('#savedLink').addEventListener('click',e=>{e.preventDefault();$('#fSaved button[data-s="1"]').click();$('#saved-jump').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});closeNav();});
+
+// mortgage
+const fmt=n=>'HK$'+Math.round(n).toLocaleString('en-US');
+const fmtM=n=>n>=1e6?'HK$'+(n/1e6).toFixed(2)+'M':fmt(n);
+function mort(){
+ const P=+$('#mPrice').value*1e6,dp=+$('#mDown').value,r=+$('#mRate').value,y=+$('#mYears').value;
+ ['mPrice','mDown','mRate','mYears'].forEach(id=>{const el=$('#'+id);el.style.setProperty('--p',((el.value-el.min)/(el.max-el.min)*100)+'%');});
+ $('#mPriceV').textContent=fmtM(P);$('#mDownV').textContent=dp+'%';$('#mRateV').textContent=r.toFixed(2)+'%';$('#mYearsV').textContent=y+' '+t('yrs');
+ const loan=P*(1-dp/100),i=r/100/12,n=y*12;const m=loan*i/(1-Math.pow(1+i,-n));const tot=m*n,int=tot-loan;
+ $('#mMonthly').textContent=fmt(m);$('#mLoan').textContent=fmtM(loan);$('#mInt').textContent=fmtM(int);$('#mDownAmt').textContent=fmtM(P-loan);$('#mTotal').textContent=fmtM(tot);
+ $('#barP').style.width=(loan/tot*100)+'%';$('#barI').style.width=(int/tot*100)+'%';
+}
+['mPrice','mDown','mRate','mYears'].forEach(id=>$('#'+id).addEventListener('input',mort));
+
+// sign
+let si=0;const sw=$('#signWord');
+function setSign(){const w=t('signs')[si%t('signs').length];sw.style.opacity=.15;setTimeout(()=>{sw.textContent=w;sw.classList.toggle('zh',lang==='zh');sw.style.opacity=1;},reduce?0:140);}
+const sign=$('#sign');sign.addEventListener('click',()=>{si++;setSign();});
+sign.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();si++;setSign();}});
+
+// ticker
+function ticker(){const items=t('tick');$('#ticker').innerHTML=[...items,...items].map(x=>`<span>● ${x}</span>`).join('');}
+
+// i18n
+function setLang(l){
+ lang=l;document.documentElement.lang=l==='zh'?'zh-Hant-HK':'en';
+ $$('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);});
+ $$('[data-i18n-html]').forEach(el=>{el.innerHTML=t(el.dataset.i18nHtml);});
+ $$('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+ buildCards();apply();mort();setSign();ticker();$('#ok').textContent='';
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+// form
+$('#form').addEventListener('submit',e=>{e.preventDefault();const n=$('#cName').value.trim();$('#ok').textContent=n?t('okMsg').replace('{n}',n):t('okNeed');if(n)e.target.reset();});
+
+// nav
+const nav=$('#nav'),links=$('#navlinks'),burger=$('#burger');
+function closeNav(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+$$('#navlinks a').forEach(a=>a.addEventListener('click',()=>{if(a.id!=='savedLink')closeNav();}));
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+
+// rain
+const cv=$('#rain'),cx=cv.getContext('2d');let drops=[];
+function size(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;drops=Array.from({length:Math.min(140,cv.width/8)},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,l:8+Math.random()*18,v:4+Math.random()*6,c:Math.random()<.15?'255,46,136':(Math.random()<.2?'25,227,209':'180,200,255')}));}
+function rain(){cx.clearRect(0,0,cv.width,cv.height);for(const d of drops){cx.strokeStyle=`rgba(${d.c},.35)`;cx.lineWidth=1;cx.beginPath();cx.moveTo(d.x,d.y);cx.lineTo(d.x-1.5,d.y+d.l);cx.stroke();d.y+=d.v;d.x-=.4;if(d.y>cv.height){d.y=-20;d.x=Math.random()*cv.width;}}requestAnimationFrame(rain);}
+size();addEventListener('resize',size);if(!reduce)rain();
+
+budUI();setLang('en');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>NOVA/CUT | Aurelion fusion concept</title>
+<meta name="description" content="NOVA/CUT — a video creator's media kit and brand-partnership studio. Aurelion fusion concept: Y2K chrome × bento dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060c;--panel:#100e19;--line:rgba(255,255,255,.09);--ink:#f2f0ff;--mute:#a19cbc;--pink:#ff2ea6;--cyan:#22e6ff;--lime:#c6ff3d;--chrome:linear-gradient(115deg,#ffffff 0%,#a9b3c9 18%,#3d4459 32%,#e9eef8 46%,#8a93ab 60%,#ffffff 74%,#59617a 90%,#dfe5f2 100%);--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.08)}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:640px){.exh-bar .exh-mid{display:none}.exh-bar{font-size:11px}}
+/* bg fx */
+.aura{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(40vw 40vw at 85% 10%,rgba(255,46,166,.22),transparent 60%),radial-gradient(45vw 45vw at 5% 60%,rgba(34,230,255,.16),transparent 60%),radial-gradient(30vw 30vw at 60% 100%,rgba(198,255,61,.08),transparent 60%)}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* nav */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,48px);transition:background .3s,backdrop-filter .3s}
+.nav.scrolled{background:rgba(7,6,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:Unbounded,sans-serif;font-weight:900;font-size:20px;letter-spacing:-.02em;text-decoration:none;background:var(--chrome);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite}
+.logo b{color:var(--pink);-webkit-text-fill-color:var(--pink)}
+@keyframes sheen{to{background-position:-200% 0}}
+.nav ul{display:flex;gap:4px;list-style:none;padding:5px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03)}
+.nav ul a{display:block;padding:8px 16px;border-radius:99px;text-decoration:none;font-size:14px;color:var(--mute);transition:.2s}
+.nav ul a:hover,.nav ul a.on{background:rgba(255,255,255,.08);color:var(--ink)}
+.cta-pill{padding:10px 18px;border-radius:99px;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px;text-decoration:none;border:0;transition:transform .2s,box-shadow .2s}
+.cta-pill:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px var(--pink)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:12px;width:44px;height:44px}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;transition:.3s}
+@media(max-width:860px){.nav ul{position:fixed;top:96px;left:16px;right:16px;flex-direction:column;border-radius:20px;background:#13101e;box-shadow:0 30px 60px rgba(0,0,0,.7);padding:10px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:.25s}.nav ul.open{opacity:1;pointer-events:auto;transform:none}.nav ul a{padding:14px 16px;font-size:16px}.burger{display:block}.nav .cta-pill{display:none}}
+/* hero */
+.hero{min-height:100svh;padding:150px clamp(16px,4vw,48px) 60px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;max-width:1400px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:8px;font:600 12px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03);color:var(--mute)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(46px,8.4vw,128px);line-height:.88;letter-spacing:-.045em;margin:22px 0 24px}
+.chrome{background:var(--chrome);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite;filter:drop-shadow(0 6px 24px rgba(34,230,255,.18))}
+.hero h1 .slash{color:var(--pink);font-style:italic}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);color:var(--mute);max-width:540px}
+.hero p.lead strong{color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:16px;font-weight:700;text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.25s}
+.btn:hover{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(34,230,255,.12)}
+.btn.hot{background:linear-gradient(120deg,var(--pink),#ff7ad0 50%,var(--pink));background-size:200%;border:0;color:#fff;animation:sheen 4s linear infinite}
+.btn.hot:hover{box-shadow:0 14px 40px -10px var(--pink)}
+.hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap}
+.hero-stats div{font:600 12px "JetBrains Mono",monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.hero-stats b{display:block;font:800 30px Unbounded,sans-serif;color:var(--ink);letter-spacing:-.03em}
+/* blob orb */
+.orb-wrap{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center}
+.orb{position:absolute;inset:8%;border-radius:42% 58% 63% 37%/45% 41% 59% 55%;background:conic-gradient(from 30deg,#fff,#9aa4bd,#2a2f40,#e8ecf6,#ff2ea6,#5c6378,#fff,#22e6ff,#8d96ae,#fff);filter:blur(.3px) saturate(1.2);animation:morph 12s ease-in-out infinite,spin 24s linear infinite;box-shadow:inset -30px -40px 80px rgba(0,0,0,.55),inset 30px 30px 60px rgba(255,255,255,.55),0 40px 120px -20px rgba(255,46,166,.45)}
+.orb::after{content:"";position:absolute;inset:14% 40% 55% 18%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.95),transparent 70%);filter:blur(6px)}
+@keyframes morph{50%{border-radius:58% 42% 38% 62%/55% 61% 39% 45%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.18);animation:spin 40s linear infinite reverse}
+.chip{position:absolute;padding:10px 14px;border-radius:14px;background:rgba(16,14,25,.75);backdrop-filter:blur(10px);border:1px solid var(--line);font:600 13px "JetBrains Mono",monospace;white-space:nowrap;animation:float 5s ease-in-out infinite}
+.chip em{font-style:normal;color:var(--lime)}
+.chip.c1{top:6%;left:-4%}.chip.c2{bottom:16%;right:-6%;animation-delay:-2s}.chip.c3{bottom:2%;left:8%;animation-delay:-3.5s}
+.chip.c2 em{color:var(--pink)}.chip.c3 em{color:var(--cyan)}
+@keyframes float{50%{transform:translateY(-12px)}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:130px}.orb-wrap{max-width:300px;order:-1}.chip.c1{left:0}.chip.c2{right:0}}
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:22px 0;background:rgba(255,255,255,.015);-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font:800 26px Unbounded,sans-serif;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45);white-space:nowrap;transition:.2s}
+.marquee span:hover{color:var(--ink);-webkit-text-stroke:0}
+.marquee span::after{content:"✦";margin-left:56px;color:var(--pink);-webkit-text-stroke:0}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:110px clamp(16px,4vw,48px)}
+.wrap{max-width:1300px;margin:0 auto}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.kicker{font:600 12px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(34px,5vw,68px);line-height:.95;letter-spacing:-.04em;margin-top:12px}
+h2 em{font-style:normal;color:var(--pink)}
+.sec-head p{max-width:400px;color:var(--mute)}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
+.tile{position:relative;border-radius:var(--r);background:var(--panel);border:1px solid var(--line);padding:24px;overflow:hidden;transform-style:preserve-3d;transition:transform .15s ease-out,border-color .3s;will-change:transform}
+.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.09),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.tile:hover{border-color:rgba(255,255,255,.22)}
+.tile:hover::before{opacity:1}
+.tile h3{font:700 22px Unbounded,sans-serif;letter-spacing:-.03em;transform:translateZ(30px)}
+.tile p{color:var(--mute);font-size:14px;margin-top:6px;transform:translateZ(20px)}
+.tile .lbl{font:600 11px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.t-big{grid-column:span 2;grid-row:span 2;background:linear-gradient(160deg,#1a1030,#0d0b16 60%)}
+.t-wide{grid-column:span 2}
+.t-tall{grid-row:span 2}
+.t-big .num{font:900 clamp(60px,8vw,112px) Unbounded,sans-serif;letter-spacing:-.06em;line-height:.9;margin-top:auto}
+.t-big{display:flex;flex-direction:column}
+.screen{position:absolute;right:-40px;bottom:-40px;width:44%;aspect-ratio:9/16;border-radius:28px;background:linear-gradient(170deg,var(--pink),#6b1bff 55%,var(--cyan));transform:rotate(-12deg) translateZ(40px);box-shadow:0 30px 60px rgba(0,0,0,.6);border:6px solid #1c1a28;overflow:hidden}
+.screen::before{content:"▶";position:absolute;inset:0;display:grid;place-items:center;font-size:44px;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.4)}
+.screen::after{content:"";position:absolute;left:12px;right:12px;bottom:16px;height:4px;border-radius:4px;background:linear-gradient(90deg,#fff 62%,rgba(255,255,255,.3) 62%)}
+.t-pink{background:linear-gradient(140deg,var(--pink),#9b1366);border:0}
+.t-pink p,.t-pink .lbl{color:rgba(255,255,255,.8)}
+.t-cyan{background:var(--cyan);color:#06121a;border:0}
+.t-cyan p,.t-cyan .lbl{color:rgba(6,18,26,.7)}
+.t-chrome{background:var(--chrome);background-size:200% 100%;animation:sheen 9s linear infinite;color:#0d0d14;border:0}
+.t-chrome p,.t-chrome .lbl{color:rgba(13,13,20,.7)}
+.bars{position:absolute;left:24px;right:24px;bottom:22px;display:flex;align-items:end;gap:6px;height:90px}
+.bars i{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(var(--cyan),rgba(34,230,255,.15));animation:eq 1.8s ease-in-out infinite;transform-origin:bottom}
+@keyframes eq{50%{transform:scaleY(.45)}}
+.big-k{font:900 54px Unbounded,sans-serif;letter-spacing:-.05em;line-height:1;margin:auto 0 0;transform:translateZ(40px)}
+.t-tall .stack{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.t-tall .stack span{display:flex;justify-content:space-between;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.04);font-size:14px}
+.t-tall .stack b{color:var(--lime);font-family:"JetBrains Mono",monospace}
+@media(max-width:980px){.bento{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.bento{grid-template-columns:1fr;grid-auto-rows:auto}.tile{min-height:180px}.t-big,.t-wide,.t-tall{grid-column:auto;grid-row:auto}.t-big{min-height:360px}.t-tall{min-height:340px}.bars{position:relative;left:0;right:0;bottom:0;margin-top:20px}}
+/* stats dashboard */
+.dash{border-radius:28px;background:var(--panel);border:1px solid var(--line);padding:clamp(18px,3vw,36px);position:relative;overflow:hidden}
+.dash::before{content:"";position:absolute;inset:-1px;border-radius:28px;padding:1px;background:linear-gradient(120deg,var(--pink),transparent 30%,transparent 70%,var(--cyan));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.tabs{display:inline-flex;gap:6px;padding:6px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:12px 20px;border-radius:12px;font-weight:600;color:var(--mute);display:flex;gap:8px;align-items:center;transition:.25s}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+.tabs button .dot{width:9px;height:9px;border-radius:50%}
+.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.kpi{padding:22px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.kpi .lbl{font:600 11px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.kpi b{display:block;font:800 clamp(28px,3.4vw,42px) Unbounded,sans-serif;letter-spacing:-.04em;margin-top:8px}
+.kpi small{font:600 12px "JetBrains Mono",monospace;color:var(--lime)}
+.dash-lower{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:14px}
+.panel{padding:24px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.panel h4{font:700 15px "Space Grotesk";margin-bottom:18px;display:flex;justify-content:space-between}
+.panel h4 span{font:500 12px "JetBrains Mono",monospace;color:var(--mute)}
+.ab{display:grid;grid-template-columns:70px 1fr 48px;align-items:center;gap:12px;margin-bottom:14px;font-size:14px}
+.ab .track{height:12px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden}
+.ab .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--pink));transition:width 1s cubic-bezier(.2,.9,.2,1)}
+.ab output{font:600 13px "JetBrains Mono",monospace;text-align:right}
+.geo{display:flex;flex-wrap:wrap;gap:8px}
+.geo span{padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.05);font-size:14px;display:flex;gap:10px}
+.geo span b{font-family:"JetBrains Mono",monospace;color:var(--cyan)}
+.spark{width:100%;height:110px;margin-top:6px}
+@media(max-width:900px){.dash-grid{grid-template-columns:repeat(2,1fr)}.dash-lower{grid-template-columns:1fr}}
+/* rate card */
+.rate{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:start}
+.opts{display:grid;gap:12px}
+.opt{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 20px;border-radius:18px;background:var(--panel);border:1px solid var(--line);cursor:pointer;transition:.2s;user-select:none}
+.opt:hover{border-color:rgba(255,255,255,.25)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{width:26px;height:26px;border-radius:8px;border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:.2s}
+.opt .box::after{content:"✓";font-weight:800;color:var(--bg);transform:scale(0);transition:.2s}
+.opt.on{border-color:var(--pink);background:linear-gradient(120deg,rgba(255,46,166,.12),var(--panel) 60%)}
+.opt.on .box{background:var(--pink);border-color:var(--pink)}
+.opt.on .box::after{transform:scale(1)}
+.opt h5{font:700 17px "Space Grotesk"}
+.opt p{color:var(--mute);font-size:13px}
+.opt .price{font:600 15px "JetBrains Mono",monospace}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-weight:700}
+.qty output{font:600 14px "JetBrains Mono",monospace;min-width:18px;text-align:center}
+.addons{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.addon{padding:11px 16px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:14px;font-weight:500;transition:.2s}
+.addon[aria-pressed=true]{background:var(--cyan);color:#06121a;border-color:var(--cyan)}
+.receipt{position:sticky;top:120px;border-radius:24px;padding:28px;background:var(--chrome);background-size:200% 100%;color:#0d0d14;box-shadow:0 30px 80px -30px rgba(34,230,255,.5)}
+.receipt .lbl{font:600 11px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.receipt h4{font:900 26px Unbounded,sans-serif;letter-spacing:-.03em;margin:6px 0 18px}
+.receipt ul{list-style:none;border-top:1px dashed rgba(0,0,0,.3);padding-top:14px;min-height:120px}
+.receipt li{display:flex;justify-content:space-between;font:500 14px "JetBrains Mono",monospace;padding:5px 0;animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateX(-6px)}}
+.receipt .empty{opacity:.55;font:500 14px "Space Grotesk"}
+.total{display:flex;justify-content:space-between;align-items:end;border-top:2px solid #0d0d14;margin-top:14px;padding-top:14px}
+.total b{font:900 44px Unbounded,sans-serif;letter-spacing:-.05em;line-height:1}
+.receipt .btn{width:100%;justify-content:center;margin-top:18px;background:#0d0d14;color:#fff;border:0}
+.receipt .note{font-size:13px;margin-top:12px;opacity:.75;min-height:20px}
+@media(max-width:900px){.rate{grid-template-columns:1fr}.receipt{position:relative;top:0}}
+/* work */
+.reel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.clip{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);isolation:isolate}
+.clip .art{position:absolute;inset:0;z-index:-1;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+.clip:hover .art{transform:scale(1.08) rotate(1deg)}
+.clip .meta{position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.clip h3{font:800 20px Unbounded,sans-serif;letter-spacing:-.03em}
+.clip p{font:500 12px "JetBrains Mono",monospace;color:rgba(255,255,255,.75);margin-top:6px}
+.clip .pill{position:absolute;top:16px;left:16px;padding:6px 10px;border-radius:99px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);font:600 11px "JetBrains Mono",monospace}
+.a1{background:radial-gradient(circle at 30% 30%,#ff9ad5,transparent 40%),linear-gradient(160deg,#ff2ea6,#3a0b6b)}
+.a1::after{content:"";position:absolute;width:60%;aspect-ratio:1;left:20%;top:18%;border-radius:50%;background:var(--chrome);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.a2{background:repeating-linear-gradient(90deg,#0b2b33 0 18px,#0f3b46 18px 36px),#0b2b33}
+.a2::after{content:"";position:absolute;inset:22% 18%;border-radius:20px;border:3px solid var(--cyan);box-shadow:0 0 40px var(--cyan),inset 0 0 40px rgba(34,230,255,.4)}
+.a3{background:conic-gradient(from 200deg at 50% 60%,#c6ff3d,#1a1f0a,#c6ff3d,#0b0d05,#c6ff3d)}
+.a3::after{content:"";position:absolute;inset:30% 30%;border-radius:50%;background:#07060c;box-shadow:0 0 0 14px rgba(7,6,12,.4)}
+@media(max-width:860px){.reel{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.reel{grid-template-columns:1fr}}
+/* contact */
+.contact{text-align:center;padding-block:130px}
+.contact h2{font-size:clamp(44px,9vw,140px);line-height:.85}
+.mail{display:inline-flex;align-items:center;gap:14px;margin-top:40px;padding:18px 18px 18px 28px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--line);font:600 clamp(15px,2vw,22px) "JetBrains Mono",monospace;max-width:100%}
+.mail span{overflow:hidden;text-overflow:ellipsis}
+.mail button{flex:none;border:0;padding:12px 20px;border-radius:99px;background:var(--pink);color:#fff;font:700 14px "Space Grotesk";transition:.2s}
+.mail button:hover{transform:scale(1.05)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,220%);visibility:hidden;z-index:1100;padding:14px 22px;border-radius:16px;background:var(--ink);color:var(--bg);font-weight:700;box-shadow:0 20px 50px rgba(0,0,0,.5);transition:transform .4s cubic-bezier(.2,.9,.2,1.3)}
+.toast.show{transform:translate(-50%,0);visibility:visible}
+footer{border-top:1px solid var(--line);padding:30px clamp(16px,4vw,48px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--mute);font:500 13px "JetBrains Mono",monospace}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.9,.2,1),transform .9s cubic-bezier(.2,.9,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-03 · Y2K Chrome × Bento Dashboard</span><a href="/contact.html">Build one like this →</a></div>
+<div class="aura" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <a class="logo" href="#top">NOVA<b>/</b>CUT</a>
+  <ul id="menu">
+    <li><a href="#kit">Media kit</a></li>
+    <li><a href="#numbers">Numbers</a></li>
+    <li><a href="#rates">Rate card</a></li>
+    <li><a href="#work">Work</a></li>
+  </ul>
+  <a class="cta-pill" href="#contact">Book a cut</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div>
+    <span class="tag rv"><i></i> Booking Q1 · 3 slots left</span>
+    <h1 class="rv"><span class="chrome">CUTS</span><br>THAT <span class="slash">/</span><br><span class="chrome">STICK.</span></h1>
+    <p class="lead rv">I make <strong>60-second films</strong> that people watch twice and brands remember for a year. Tech, street culture, objects that deserve a close-up. <strong>4.8M people</strong> tune in every month.</p>
+    <div class="hero-cta rv">
+      <a class="btn hot" href="#rates">Build your package →</a>
+      <a class="btn" href="#numbers">See the numbers</a>
+    </div>
+    <div class="hero-stats rv">
+      <div><b data-count="4.8" data-suffix="M">0</b>Monthly reach</div>
+      <div><b data-count="11.2" data-suffix="%">0</b>Avg. engagement</div>
+      <div><b data-count="62" data-suffix="">0</b>Brand drops</div>
+    </div>
+  </div>
+  <div class="orb-wrap rv" aria-hidden="true">
+    <div class="ring"></div>
+    <div class="orb"></div>
+    <div class="chip c1">▲ watch time <em>+38%</em></div>
+    <div class="chip c2">● LIVE <em>REC</em> 00:59</div>
+    <div class="chip c3">saves <em>212K</em></div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Past partners">
+  <div class="marquee-track" id="mq">
+    <span>Halcyon Audio</span><span>Kitekat Optics</span><span>Velvet Run</span><span>Orbitwear</span><span>Pixelmint</span><span>Northloop Bikes</span><span>Glasshouse Labs</span><span>Moonsoda</span>
+  </div>
+</div>
+
+<section id="kit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker rv">01 / Media kit</p><h2 class="rv">One creator.<br><em>Every format.</em></h2></div>
+      <p class="rv">Shot, cut and scored in-house. Every deliverable is native to the platform it lives on, never a resize.</p>
+    </div>
+    <div class="bento">
+      <article class="tile t-big rv" data-tilt>
+        <span class="lbl">Signature format</span>
+        <h3>The 59-second<br>object film</h3>
+        <p>Macro lenses, synth score, zero filler.</p>
+        <div class="num chrome">59s</div>
+        <div class="screen"></div>
+      </article>
+      <article class="tile t-pink rv" data-tilt>
+        <span class="lbl">Avg. retention</span>
+        <div class="big-k">78%</div>
+        <p>Viewers stay to the final frame.</p>
+      </article>
+      <article class="tile t-tall rv" data-tilt>
+        <span class="lbl">Audience is</span>
+        <h3>Gen Z + young millennial</h3>
+        <div class="stack">
+          <span>18–24 <b>46%</b></span>
+          <span>25–34 <b>38%</b></span>
+          <span>Urban <b>81%</b></span>
+          <span>Buy online weekly <b>67%</b></span>
+        </div>
+      </article>
+      <article class="tile t-cyan rv" data-tilt>
+        <span class="lbl">Turnaround</span>
+        <div class="big-k">72h</div>
+        <p>Brief to first cut.</p>
+      </article>
+      <article class="tile t-wide rv" data-tilt>
+        <span class="lbl">Weekly upload rhythm</span>
+        <h3>Never misses a drop</h3>
+        <div class="bars" aria-hidden="true"><i style="height:60%"></i><i style="height:85%;animation-delay:-.3s"></i><i style="height:45%;animation-delay:-.6s"></i><i style="height:95%;animation-delay:-.9s"></i><i style="height:70%;animation-delay:-1.2s"></i><i style="height:80%;animation-delay:-.2s"></i><i style="height:55%;animation-delay:-.5s"></i><i style="height:90%;animation-delay:-.8s"></i><i style="height:65%;animation-delay:-1.1s"></i><i style="height:100%;animation-delay:-1.4s"></i></div>
+      </article>
+      <article class="tile t-chrome rv" data-tilt>
+        <span class="lbl">Studio</span>
+        <h3>Own studio, own score</h3>
+        <p>No licensing headaches.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker rv">02 / Numbers</p><h2 class="rv">Pick a platform.<br><em>Watch it move.</em></h2></div>
+      <p class="rv">Last 90 days, pulled the morning of every pitch. No vanity screenshots.</p>
+    </div>
+    <div class="dash rv">
+      <div class="tabs" role="tablist" aria-label="Platform">
+        <button role="tab" aria-selected="true" data-p="yt"><span class="dot" style="background:#ff3b3b"></span>YouTube</button>
+        <button role="tab" aria-selected="false" data-p="tt"><span class="dot" style="background:var(--cyan)"></span>TikTok</button>
+        <button role="tab" aria-selected="false" data-p="ig"><span class="dot" style="background:var(--pink)"></span>Instagram</button>
+      </div>
+      <div class="dash-grid">
+        <div class="kpi"><span class="lbl">Followers</span><b id="k1">0</b><small id="k1d"></small></div>
+        <div class="kpi"><span class="lbl">Avg. views</span><b id="k2">0</b><small id="k2d"></small></div>
+        <div class="kpi"><span class="lbl">Engagement</span><b id="k3">0</b><small id="k3d"></small></div>
+        <div class="kpi"><span class="lbl">Watch time</span><b id="k4">0</b><small id="k4d"></small></div>
+      </div>
+      <div class="dash-lower">
+        <div class="panel">
+          <h4>Audience by age <span id="pn">YouTube · 90d</span></h4>
+          <div id="ages"></div>
+        </div>
+        <div class="panel">
+          <h4>Views trend <span>weekly</span></h4>
+          <svg class="spark" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff2ea6" stop-opacity=".5"/><stop offset="1" stop-color="#ff2ea6" stop-opacity="0"/></linearGradient></defs><path id="spa" fill="url(#sg)"/><path id="spl" fill="none" stroke="#22e6ff" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <h4 style="margin:18px 0 12px">Top cities</h4>
+          <div class="geo" id="geo"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker rv">03 / Rate card</p><h2 class="rv">Build the drop.<br><em>See the price.</em></h2></div>
+      <p class="rv">Transparent pricing. Mix deliverables, stack add-ons, and send me the package in one click.</p>
+    </div>
+    <div class="rate">
+      <div class="rv">
+        <div class="opts" id="opts">
+          <div class="opt" data-id="yt" data-price="4800"><span class="box"></span><div><h5>Dedicated YouTube film</h5><p>3–5 min story built around your product</p></div><div class="qty"><button aria-label="Less" data-d="-1">−</button><output>1</output><button aria-label="More" data-d="1">+</button></div></div>
+          <div class="opt" data-id="short" data-price="1900"><span class="box"></span><div><h5>Short-form cut</h5><p>59s vertical for TikTok, Reels or Shorts</p></div><div class="qty"><button aria-label="Less" data-d="-1">−</button><output>1</output><button aria-label="More" data-d="1">+</button></div></div>
+          <div class="opt" data-id="int" data-price="2400"><span class="box"></span><div><h5>Integrated segment</h5><p>60–90s inside a main-channel upload</p></div><div class="qty"><button aria-label="Less" data-d="-1">−</button><output>1</output><button aria-label="More" data-d="1">+</button></div></div>
+          <div class="opt" data-id="story" data-price="650"><span class="box"></span><div><h5>Story set</h5><p>3 frames with link sticker</p></div><div class="qty"><button aria-label="Less" data-d="-1">−</button><output>1</output><button aria-label="More" data-d="1">+</button></div></div>
+        </div>
+        <p class="kicker" style="margin:28px 0 6px">Add-ons</p>
+        <div class="addons" id="addons">
+          <button class="addon" aria-pressed="false" data-name="Usage rights 90d" data-price="1500">Usage rights · 90d</button>
+          <button class="addon" aria-pressed="false" data-name="Whitelisting" data-price="1200">Whitelisting</button>
+          <button class="addon" aria-pressed="false" data-name="Raw footage" data-price="800">Raw footage</button>
+          <button class="addon" aria-pressed="false" data-name="Rush 48h" data-price="900">Rush · 48h</button>
+          <button class="addon" aria-pressed="false" data-name="Custom score" data-price="700">Custom score</button>
+        </div>
+      </div>
+      <aside class="receipt rv" aria-live="polite">
+        <span class="lbl">Your package</span>
+        <h4 id="pkg">Pick something →</h4>
+        <ul id="lines"><li class="empty">Tap a deliverable to start building.</li></ul>
+        <div class="total"><span class="lbl">Total (USD)</span><b id="total">$0</b></div>
+        <button class="btn" id="send">Send this package</button>
+        <p class="note" id="note"></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker rv">04 / Recent drops</p><h2 class="rv">Proof,<br><em>in motion.</em></h2></div>
+      <p class="rv">Three campaigns from this year. Every one beat the brand's own channel benchmark.</p>
+    </div>
+    <div class="reel">
+      <article class="clip rv"><div class="art a1"></div><span class="pill">2.1M views</span><div class="meta"><h3>Halcyon Audio · "Silence"</h3><p>Launch film · +41% pre-orders</p></div></article>
+      <article class="clip rv"><div class="art a2"></div><span class="pill">880K views</span><div class="meta"><h3>Glasshouse Labs · "Frame Rate"</h3><p>Short series ×6 · 14% CTR</p></div></article>
+      <article class="clip rv"><div class="art a3"></div><span class="pill">1.4M views</span><div class="meta"><h3>Moonsoda · "Fizz Theory"</h3><p>Integrated segment · sold out in 3 days</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="kicker rv">05 / Let's cut</p>
+  <h2 class="rv"><span class="chrome">YOUR BRAND,</span><br>NEXT <em>FRAME.</em></h2>
+  <div class="mail rv"><span id="email">studio@novacut.example</span><button id="copy">Copy email</button></div>
+</section>
+</main>
+
+<footer><span>NOVA/CUT © 2026 · fictional brand</span><span>Concept by Aurelion</span></footer>
+<div class="toast" id="toast" role="status">Copied ✓</div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* nav */
+const nav=$('#nav'),burger=$('#burger'),menu=$('#menu');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded',false)}});
+const links=$$('#menu a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section[id]').forEach(s=>so.observe(s));
+/* reveal */
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';ro.observe(el)});
+/* counters */
+function tween(el,to,dec,suffix,prefix=''){if(reduce){el.textContent=prefix+to.toFixed(dec)+suffix;return}const t0=performance.now(),from=parseFloat(el.dataset.v||0);el.dataset.v=to;(function f(t){const p=Math.min((t-t0)/900,1),e=1-Math.pow(1-p,3);el.textContent=prefix+(from+(to-from)*e).toFixed(dec)+suffix;if(p<1)requestAnimationFrame(f)})(t0)}
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,v=parseFloat(el.dataset.count);tween(el,v,el.dataset.count.includes('.')?1:0,el.dataset.suffix);co.unobserve(el)}}));
+$$('[data-count]').forEach(el=>co.observe(el));
+/* marquee duplicate */
+const mq=$('#mq');mq.innerHTML+=mq.innerHTML;
+/* tilt */
+if(!reduce&&matchMedia('(hover:hover)').matches){$$('[data-tilt]').forEach(t=>{t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;t.style.transform=`perspective(900px) rotateX(${(.5-y)*10}deg) rotateY(${(x-.5)*12}deg) translateZ(0)`;t.style.setProperty('--mx',x*100+'%');t.style.setProperty('--my',y*100+'%')});t.addEventListener('pointerleave',()=>t.style.transform='')})}
+/* platform data */
+const D={
+ yt:{name:'YouTube',k:[[1.92,'M',2,'+84K / 90d'],[612,'K',0,'per upload'],[9.4,'%',1,'+1.2 pts'],[38,'K hrs',0,'per month']],ages:[['13–17',8],['18–24',41],['25–34',39],['35–44',9],['45+',3]],trend:[30,42,38,55,49,63,58,72,70,84,79,95],geo:[['Hong Kong','14%'],['Kuala Lumpur','11%'],['Taipei','9%'],['London','7%'],['LA','6%']]},
+ tt:{name:'TikTok',k:[[2.4,'M',1,'+310K / 90d'],[1.1,'M',1,'per post'],[13.8,'%',1,'+2.6 pts'],[71,'%',0,'avg. completion']],ages:[['13–17',14],['18–24',55],['25–34',24],['35–44',5],['45+',2]],trend:[40,35,62,58,80,66,92,74,88,99,85,97],geo:[['Manila','13%'],['Hong Kong','12%'],['Singapore','10%'],['Jakarta','8%'],['Taipei','7%']]},
+ ig:{name:'Instagram',k:[[486,'K',0,'+29K / 90d'],[204,'K',0,'per reel'],[7.9,'%',1,'+0.8 pts'],[212,'K',0,'saves / month']],ages:[['13–17',5],['18–24',37],['25–34',44],['35–44',11],['45+',3]],trend:[50,48,53,57,55,61,64,62,68,71,74,78],geo:[['Hong Kong','18%'],['Singapore','12%'],['Seoul','8%'],['Sydney','7%'],['Bangkok','6%']]}
+};
+const tabs=$$('.tabs button');
+function show(p){const d=D[p];tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.p===p));
+ d.k.forEach(([v,s,dec,delta],i)=>{tween($('#k'+(i+1)),v,dec,s);$('#k'+(i+1)+'d').textContent=delta});
+ $('#pn').textContent=d.name+' · 90d';
+ const ages=$('#ages');if(!ages.children.length)ages.innerHTML=d.ages.map(()=>'<div class="ab"><span></span><div class="track"><div class="fill"></div></div><output></output></div>').join('');
+ [...ages.children].forEach((row,i)=>{row.children[0].textContent=d.ages[i][0];row.querySelector('.fill').style.width=(d.ages[i][1]/60*100)+'%';tween(row.querySelector('output'),d.ages[i][1],0,'%')});
+ const pts=d.trend.map((v,i)=>[i*(300/11),110-v],);const line='M'+pts.map(p=>p.join(',')).join(' L');$('#spl').setAttribute('d',line);$('#spa').setAttribute('d',line+' L300,110 L0,110 Z');
+ $('#geo').innerHTML=d.geo.map(g=>`<span>${g[0]} <b>${g[1]}</b></span>`).join('');
+}
+tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.p)));
+$('.tabs').addEventListener('keydown',e=>{const i=tabs.findIndex(b=>b.getAttribute('aria-selected')==='true');if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:2))%3];n.focus();show(n.dataset.p)}});
+const dob=new IntersectionObserver(es=>{if(es[0].isIntersecting){show('yt');dob.disconnect()}},{threshold:.2});dob.observe($('.dash'));
+/* rate card */
+const fmt=n=>'$'+n.toLocaleString('en-US');
+const opts=$$('.opt'),addons=$$('.addon');
+function calc(){let lines=[],tot=0,count=0;
+ opts.forEach(o=>{if(o.classList.contains('on')){const q=+o.querySelector('output').textContent,p=+o.dataset.price*q;tot+=p;count+=q;lines.push([`${q}× ${o.querySelector('h5').textContent}`,p])}});
+ let ad=0;addons.forEach(a=>{if(a.getAttribute('aria-pressed')==='true'){tot+=+a.dataset.price;ad++;lines.push(['+ '+a.dataset.name,+a.dataset.price])}});
+ if(count>=3)lines.push(['Bundle saving −10%',-Math.round(tot*.1)]),tot=Math.round(tot*.9);
+ $('#lines').innerHTML=lines.length?lines.map(l=>`<li><span>${l[0]}</span><span>${l[1]<0?'−'+fmt(-l[1]):fmt(l[1])}</span></li>`).join(''):'<li class="empty">Tap a deliverable to start building.</li>';
+ const names=['Pick something →','The Single Drop','The Double Feature','The Takeover','The Full Season'];
+ $('#pkg').textContent=count===0?names[0]:names[Math.min(count,4)];
+ const el=$('#total');tween(el,tot,0,'','$');setTimeout(()=>el.textContent=fmt(tot),reduce?0:920);
+ $('#note').textContent=count>=3?'Bundle unlocked: 10% off 3+ deliverables.':count?'Add '+(3-count)+' more deliverable'+(3-count>1?'s':'')+' to unlock 10% off.':'';
+}
+opts.forEach(o=>{o.setAttribute('role','checkbox');o.setAttribute('aria-checked','false');o.tabIndex=0;
+ const tog=()=>{const on=o.classList.toggle('on');o.setAttribute('aria-checked',on);calc()};
+ o.addEventListener('click',e=>{const b=e.target.closest('.qty button');if(b){e.stopPropagation();const out=o.querySelector('output');out.textContent=Math.max(1,Math.min(9,+out.textContent+ +b.dataset.d));if(!o.classList.contains('on')){o.classList.add('on');o.setAttribute('aria-checked','true')}calc();return}tog()});
+ o.addEventListener('keydown',e=>{if(e.target===o&&(e.key===' '||e.key==='Enter')){e.preventDefault();tog()}});
+});
+addons.forEach(a=>a.addEventListener('click',()=>{a.setAttribute('aria-pressed',a.getAttribute('aria-pressed')!=='true');calc()}));
+$('#send').addEventListener('click',()=>{const t=$('#total').textContent;$('#note').textContent=t==='$0'?'Pick at least one deliverable first.':`Package "${$('#pkg').textContent}" (${t}) saved. I'll reply within 24h. (Demo — nothing was sent.)`});
+/* copy */
+const toast=$('#toast');let tt;
+function pop(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('show'),2200)}
+$('#copy').addEventListener('click',async()=>{const e=$('#email').textContent;try{await navigator.clipboard.writeText(e);pop('Email copied ✓  '+e)}catch{const r=document.createRange();r.selectNodeContents($('#email'));const s=getSelection();s.removeAllRanges();s.addRange(r);pop('Selected — press Ctrl+C')}});
+})();
+</script>
+</body>
+</html>
