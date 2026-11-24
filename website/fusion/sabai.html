@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sabai | Aurelion fusion concept</title>
+<meta name="description" content="Sabai: yoga and breathwork by an independent teacher. Organic shapes meet a brutalist timetable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,800;1,9..144,300;1,9..144,500&family=Space+Mono:wght@400;700&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#efe6d6;--sand2:#e6dac4;--sage:#a9b89a;--sage-d:#5f7255;--clay:#c9774f;--clay-l:#e2a383;--ink:#141310;--cream:#faf6ee;--serif:"Fraunces",Georgia,serif;--mono:"Space Mono",ui-monospace,monospace;--sans:"Familjen Grotesk",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--sand);color:var(--ink);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}button{font:inherit;color:inherit}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.18;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+
+.nav{position:fixed;top:36px;left:0;right:0;z-index:900;display:grid;grid-template-columns:auto 1fr auto;align-items:stretch;border-bottom:2px solid var(--ink);background:rgba(239,230,214,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.logo{display:flex;align-items:center;gap:10px;padding:14px 22px;border-right:2px solid var(--ink);text-decoration:none;font-family:var(--serif);font-size:26px;font-weight:500;font-style:italic;letter-spacing:-.02em}
+.logo svg{width:28px;height:28px}
+.nav-links{display:flex;align-items:stretch;justify-content:flex-end}
+.nav-links a{display:flex;align-items:center;padding:0 22px;border-left:2px solid var(--ink);text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;transition:background .2s}
+.nav-links a:hover{background:var(--sage)}
+.nav-cta{display:flex;align-items:center;padding:0 24px;background:var(--ink);color:var(--sand);text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.nav-cta:hover{background:var(--clay)}
+.burger{display:none;background:none;border:0;border-left:2px solid var(--ink);padding:0 18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;cursor:pointer}
+
+/* blobs that follow cursor */
+.blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.blob{position:absolute;width:44vmax;height:44vmax;left:0;top:0;will-change:transform;opacity:.55;filter:blur(2px)}
+.blob path{transition:d 0s}
+main,footer{position:relative;z-index:1}
+
+/* HERO */
+.hero{overflow-x:clip;min-height:100svh;padding:150px 28px 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;max-width:1400px;margin:0 auto}
+.tagline{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:inline-flex;gap:10px;align-items:center;border:2px solid var(--ink);padding:8px 12px;background:var(--cream)}
+.tagline i{width:8px;height:8px;border-radius:50%;background:var(--clay);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.8);opacity:.4}}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(56px,9.5vw,148px);line-height:.88;letter-spacing:-.045em;margin:28px 0 26px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--clay)}
+.hero h1 .out{display:inline-block;padding:0 .12em;border-radius:999px;background:var(--sage);font-style:italic}
+.hero p{font-size:19px;line-height:1.55;max-width:520px}
+.hero-cta{display:flex;gap:0;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 26px;border:2px solid var(--ink);font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:var(--cream);transition:background .2s,transform .2s,box-shadow .2s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+.btn.dark{background:var(--ink);color:var(--sand)}
+.btn.dark:hover{background:var(--clay);color:var(--ink)}
+.hero-cta .btn+.btn{margin-left:-2px}
+.hero-art{position:relative;aspect-ratio:1;max-width:560px;width:100%;justify-self:center}
+.hero-art>svg:first-child{width:100%;height:100%;overflow:visible}
+.stamp{position:absolute;right:2%;bottom:6%;width:130px;height:130px;animation:spin 22s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink);background:var(--cream);margin-top:20px}
+.hero-meta div{padding:16px 18px;border-right:2px solid var(--ink)}
+.hero-meta div:last-child{border-right:0}
+.hero-meta b{display:block;font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:-.03em}
+.hero-meta span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+section{padding:110px 28px}
+.wrap{max-width:1400px;margin:0 auto}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:flex;justify-content:space-between;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:10px 0;margin-bottom:46px}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,6vw,88px);line-height:.95;letter-spacing:-.04em}
+h2 em{font-style:italic;font-weight:500;color:var(--sage-d)}
+
+/* BREATHE */
+.breathe{background:var(--ink);color:var(--sand);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.breathe .label{border-color:var(--sand)}
+.breathe h2 em{color:var(--clay-l)}
+.breathe-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.breathe-copy p{font-size:18px;line-height:1.6;color:rgba(239,230,214,.78);margin:24px 0 32px;max-width:460px}
+.patterns{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--sand)}
+.patterns button{background:none;border:0;border-right:2px solid var(--sand);padding:16px 10px;cursor:pointer;color:var(--sand);text-align:left;transition:background .2s}
+.patterns button:last-child{border-right:0}
+.patterns button b{display:block;font-family:var(--serif);font-size:24px;font-weight:500}
+.patterns button span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;opacity:.7}
+.patterns button[aria-pressed="true"]{background:var(--sage);color:var(--ink)}
+.controls{display:flex;gap:0;margin-top:24px;align-items:stretch}
+.controls .btn{background:var(--clay);color:var(--ink);border-color:var(--sand)}
+.controls .btn:hover{box-shadow:5px 5px 0 var(--sand)}
+.cycles{display:flex;align-items:center;padding:0 18px;border:2px solid var(--sand);margin-left:-2px;font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.stage{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center;display:grid;place-items:center}
+.stage svg.ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.breath-blob{position:absolute;width:62%;height:62%;transform:scale(.55);transition:transform 4s cubic-bezier(.45,0,.55,1)}
+.breath-blob svg{width:100%;height:100%}
+.phase{position:relative;text-align:center;z-index:2}
+.phase b{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(34px,4vw,52px);color:var(--ink);letter-spacing:-.02em}
+.phase span{font-family:var(--mono);font-size:14px;letter-spacing:.1em;color:var(--ink)}
+
+/* TIMETABLE */
+.tt-head{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:34px}
+.filters{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--ink);background:var(--cream)}
+.filters .grp{display:flex;align-items:stretch;border-right:2px solid var(--ink)}
+.filters .grp:last-child{border-right:0}
+.filters .grp span{display:flex;align-items:center;padding:0 12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--sand2);border-right:2px solid var(--ink)}
+.filters button{background:none;border:0;padding:12px 14px;font-family:var(--mono);font-size:12px;cursor:pointer;letter-spacing:.04em;transition:background .2s}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--sand)}
+.tt{border:2px solid var(--ink);background:var(--cream);display:grid;grid-template-columns:repeat(7,1fr)}
+.day{border-right:2px solid var(--ink);min-height:360px;display:flex;flex-direction:column}
+.day:last-child{border-right:0}
+.day h3{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:12px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;background:var(--sand2)}
+.slot{margin:8px;padding:12px;border:2px solid var(--ink);border-radius:22px 22px 22px 4px;background:var(--sand);display:flex;flex-direction:column;gap:6px;transition:opacity .3s,transform .3s,background .3s,max-height .3s;position:relative}
+.slot.l-gentle{background:#dfe6d6}.slot.l-flow{background:#f2dccd}.slot.l-strong{background:#ecc4ae}
+.slot.dim{opacity:.18;transform:scale(.96);pointer-events:none;filter:grayscale(1)}
+.slot time{font-family:var(--mono);font-size:12px;font-weight:700}
+.slot h4{font-family:var(--serif);font-size:19px;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.slot .meta{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;display:flex;gap:6px;flex-wrap:wrap}
+.slot .meta i{font-style:normal;border:1px solid var(--ink);padding:2px 6px;border-radius:999px}
+.slot .meta i.live::before{content:"● ";color:var(--clay)}
+.slot button{margin-top:4px;background:var(--ink);color:var(--sand);border:0;padding:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:999px;transition:background .2s}
+.slot button:hover{background:var(--clay);color:var(--ink)}
+.slot.booked{outline:3px solid var(--sage-d);outline-offset:2px}
+.slot.booked button{background:var(--sage-d);color:var(--cream)}
+.tt-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:12px}
+.tt-foot b{font-family:var(--serif);font-size:24px;font-weight:500;margin-right:6px}
+.legend{display:flex;gap:14px;flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:14px;height:14px;border:1.5px solid var(--ink);border-radius:50%;vertical-align:-3px;margin-right:6px;background:var(--c)}
+
+/* TEACHER */
+.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink)}
+.portrait{border-right:2px solid var(--ink);background:var(--sage);position:relative;min-height:520px;overflow:hidden}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.bio{padding:44px;background:var(--cream);display:flex;flex-direction:column;gap:22px}
+.bio p{font-size:18px;line-height:1.6}
+.bio .pull{font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.6vw,36px);line-height:1.15;letter-spacing:-.02em}
+.creds{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);margin-top:auto}
+.creds div{padding:14px 0;border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.creds div:nth-child(odd){padding-right:12px}
+
+/* PRICING */
+.price-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
+.toggle{display:inline-grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);background:var(--cream);position:relative}
+.toggle button{position:relative;z-index:1;background:none;border:0;padding:14px 18px;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:color .3s}
+.toggle .knob{position:absolute;top:0;bottom:0;left:0;width:50%;background:var(--ink);transition:transform .4s cubic-bezier(.6,0,.2,1)}
+.toggle.yearly .knob{transform:translateX(100%)}
+.toggle button[aria-pressed="true"]{color:var(--sand)}
+.save{font-family:var(--mono);font-size:11px;background:var(--clay);padding:3px 7px;border-radius:999px;margin-left:8px;color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--ink)}
+.plan{padding:34px 30px;border-right:2px solid var(--ink);background:var(--cream);display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+.plan:last-child{border-right:0}
+.plan.feat{background:var(--ink);color:var(--sand)}
+.plan .shape{position:absolute;width:220px;height:220px;right:-70px;top:-70px;opacity:.5}
+.plan h3{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;position:relative}
+.amount{font-family:var(--serif);font-size:72px;font-weight:300;letter-spacing:-.05em;line-height:1;position:relative}
+.amount sup{font-size:24px;vertical-align:top;margin-right:4px;font-weight:500}
+.amount small{font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin-left:6px}
+.per{font-family:var(--mono);font-size:11px;opacity:.7;min-height:1.2em}
+.plan ul{list-style:none;border-top:2px solid currentColor;padding-top:14px;display:grid;gap:10px;font-size:16px}
+.plan li::before{content:"◐ ";color:var(--clay)}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan.feat .btn{background:var(--clay);border-color:var(--sand);color:var(--ink)}
+.plan.feat .btn:hover{box-shadow:5px 5px 0 var(--sand)}
+
+/* LETTER */
+.letter{background:var(--sage);border-top:2px solid var(--ink)}
+.letter-box{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.letter form{display:flex;border:2px solid var(--ink);background:var(--cream)}
+.letter input{flex:1;min-width:0;border:0;background:none;padding:18px;font-family:var(--mono);font-size:14px;outline:none}
+.letter .btn{border:0;border-left:2px solid var(--ink)}
+.letter .msg{font-family:var(--mono);font-size:13px;margin-top:12px;min-height:1.2em}
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink);margin-top:70px;background:var(--cream)}
+.testi{padding:28px;border-right:2px solid var(--ink)}
+.testi:last-child{border-right:0}
+.testi p{font-family:var(--serif);font-size:21px;line-height:1.3;font-style:italic}
+.testi span{display:block;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+footer{border-top:2px solid var(--ink);background:var(--ink);color:var(--sand);padding:0}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;max-width:1400px;margin:0 auto}
+.foot>div{padding:40px 28px;border-right:1px solid rgba(239,230,214,.25)}
+.foot>div:last-child{border-right:0}
+.foot .big{font-family:var(--serif);font-style:italic;font-size:clamp(60px,10vw,140px);line-height:.8;letter-spacing:-.05em}
+.foot h5{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;opacity:.6}
+.foot a{display:block;text-decoration:none;font-size:15px;line-height:1.9}
+.foot a:hover{color:var(--clay-l)}
+.fine{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:14px;border-top:1px solid rgba(239,230,214,.25);opacity:.6}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1100px){
+ .tt{grid-template-columns:repeat(4,1fr)}
+ .day:nth-child(4){border-right:0}
+ .day:nth-child(-n+4){border-bottom:2px solid var(--ink)}
+}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;padding-top:130px}
+ .hero-art{max-width:420px;order:-1}
+ .hero-meta{grid-template-columns:1fr 1fr}
+ .hero-meta div:nth-child(2){border-right:0}.hero-meta div:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+ .breathe-grid,.teacher-grid,.letter-box{grid-template-columns:1fr}
+ .portrait{border-right:0;border-bottom:2px solid var(--ink);min-height:380px}
+ .plans,.testis{grid-template-columns:1fr}
+ .plan,.testi{border-right:0;border-bottom:2px solid var(--ink)}
+ .plan:last-child,.testi:last-child{border-bottom:0}
+ .tt-head{grid-template-columns:1fr}
+ .foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid rgba(239,230,214,.25)}
+}
+@media(max-width:760px){
+ .nav{grid-template-columns:1fr auto auto}
+ .burger{display:block}
+ .nav-links{position:fixed;top:96px;left:0;right:0;flex-direction:column;background:var(--sand);border-bottom:2px solid var(--ink);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.25s}
+ .nav-links.open{opacity:1;transform:none;pointer-events:auto}
+ .nav-links a{border-left:0;border-top:2px solid var(--ink);padding:18px 22px}
+ .nav-cta{padding:0 14px;font-size:11px}
+ .logo{padding:12px 14px;font-size:22px;border-right:0}
+ section{padding:76px 18px}
+ .hero{padding:120px 18px 30px}
+ .tt{grid-template-columns:1fr}
+ .day{border-right:0!important;border-bottom:2px solid var(--ink);min-height:0}
+ .day:last-child{border-bottom:0}
+ .day.empty-day{display:none}
+ .filters{flex-direction:column}
+ .filters .grp{border-right:0;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+ .filters .grp:last-child{border-bottom:0}
+ .filters .grp span{flex-basis:100%;border-right:0;border-bottom:2px solid var(--ink);padding:8px 12px}
+ .filters button{flex:1}
+ .bio{padding:26px}
+ .patterns button{padding:12px 8px}.patterns button b{font-size:19px}
+ .hero-cta .btn{flex:1;justify-content:center}
+ .letter form{flex-direction:column}.letter .btn{border-left:0;border-top:2px solid var(--ink);justify-content:center}
+ .foot{grid-template-columns:1fr}.foot>div{border-right:0!important;border-bottom:1px solid rgba(239,230,214,.25)}
+ .stamp{width:96px;height:96px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ html{scroll-behavior:auto}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-10 · Biomorphic blobs × Brutalist timetable</span><a class="exh-cta" href="/contact.html">Build one like this →</a></div>
+
+<div class="blobs" aria-hidden="true">
+ <svg class="blob" id="b1" viewBox="0 0 200 200"><path fill="#a9b89a" d=""/></svg>
+ <svg class="blob" id="b2" viewBox="0 0 200 200"><path fill="#e2a383" d=""/></svg>
+</div>
+
+<header class="nav">
+ <a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3c9 0 17 6 17 16s-7 18-17 18S3 30 3 20 11 3 20 3z" fill="#c9774f" stroke="#141310" stroke-width="2.5"/><circle cx="20" cy="20" r="6" fill="#efe6d6" stroke="#141310" stroke-width="2.5"/></svg>Sabai</a>
+ <nav class="nav-links" id="links" aria-label="Main">
+  <a href="#breathe">Breathe</a><a href="#schedule">Schedule</a><a href="#teacher">Teacher</a><a href="#membership">Membership</a>
+ </nav>
+ <button class="burger" id="burger" aria-expanded="false" aria-controls="links">Menu</button>
+ <a class="nav-cta" href="#membership">Join</a>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="reveal">
+  <span class="tagline"><i></i> Live classes this week · 14 spots left</span>
+  <h1>Slow is a <em>skill.</em><br>Learn it <span class="out">daily.</span></h1>
+  <p>Yoga and breathwork for people with full calendars and tired shoulders. Join live from your living room, or press play at 6am. Twenty minutes counts.</p>
+  <div class="hero-cta"><a class="btn dark" href="#breathe">Take one breath now ↓</a><a class="btn" href="#schedule">See the week</a></div>
+ </div>
+ <div class="hero-art reveal" aria-hidden="true">
+  <svg viewBox="0 0 500 500">
+   <path id="hb1" fill="#a9b89a" stroke="#141310" stroke-width="3" d=""/>
+   <path id="hb2" fill="#c9774f" stroke="#141310" stroke-width="3" d=""/>
+   <path id="hb3" fill="#faf6ee" stroke="#141310" stroke-width="3" d=""/>
+   <g stroke="#141310" stroke-width="3" fill="none" stroke-linecap="round">
+    <circle cx="250" cy="178" r="21" fill="#141310"/>
+    <path d="M250 199 C 244 236 244 270 250 304"/>
+    <path d="M249 222 C 222 232 204 262 196 300"/>
+    <path d="M251 222 C 278 232 296 262 304 300"/>
+    <path d="M168 318 C 200 296 300 296 332 318 C 300 342 200 342 168 318 Z" fill="#c9774f"/>
+    <circle cx="196" cy="304" r="6" fill="#141310"/><circle cx="304" cy="304" r="6" fill="#141310"/>
+    <path d="M214 150 C 230 132 270 132 286 150" stroke="#c9774f" stroke-dasharray="2 8"/>
+   </g>
+  </svg>
+  <svg class="stamp" viewBox="0 0 120 120"><defs><path id="circ" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><circle cx="60" cy="60" r="58" fill="#141310"/><text font-family="Space Mono" font-size="10" fill="#efe6d6"><textPath href="#circ" textLength="286" lengthAdjust="spacing">BREATHE IN · BREATHE OUT · STAY ·</textPath></text><circle cx="60" cy="60" r="14" fill="#c9774f"/></svg>
+ </div>
+ <div class="hero-meta reveal">
+  <div><b data-count="2400">0</b><span>Students in 31 countries</span></div>
+  <div><b data-count="186">0</b><span>On-demand classes</span></div>
+  <div><b data-count="9">0</b><span>Live classes a week</span></div>
+  <div><b>4.9★</b><span>Avg. class rating</span></div>
+ </div>
+</section>
+
+<section class="breathe" id="breathe">
+ <div class="wrap">
+  <div class="label"><span>01 — Try it</span><span>No sign-up needed</span></div>
+  <div class="breathe-grid">
+   <div class="breathe-copy reveal">
+    <h2>One minute.<br><em>Right now.</em></h2>
+    <p>Pick a pattern and press start. Follow the shape: it grows as you breathe in, rests while you hold, and softens as you let go. Most people feel a shift by the third round.</p>
+    <div class="patterns" role="group" aria-label="Breathing pattern">
+     <button type="button" data-p="478" aria-pressed="true"><b>4·7·8</b><span>To fall asleep</span></button>
+     <button type="button" data-p="box" aria-pressed="false"><b>Box</b><span>To focus</span></button>
+     <button type="button" data-p="coh" aria-pressed="false"><b>5·5</b><span>To steady</span></button>
+    </div>
+    <div class="controls"><button class="btn" id="bStart" type="button">▶ Start</button><span class="cycles" id="cycles">Round 0 / 4</span></div>
+   </div>
+   <div class="stage reveal" aria-live="polite">
+    <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="94" fill="none" stroke="rgba(239,230,214,.18)" stroke-width="2"/><circle id="ringP" cx="100" cy="100" r="94" fill="none" stroke="#e2a383" stroke-width="3" stroke-linecap="round" stroke-dasharray="590.6" stroke-dashoffset="590.6"/></svg>
+    <div class="breath-blob" id="bb"><svg viewBox="0 0 200 200" aria-hidden="true"><path id="bbp" fill="#a9b89a" d=""/></svg></div>
+    <div class="phase"><b id="phase">Ready</b><span id="count">press start</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="schedule">
+ <div class="wrap">
+  <div class="label"><span>02 — The week</span><span>All times GMT+8 · Replays within 1 hr</span></div>
+  <div class="tt-head reveal">
+   <h2>Pick a class.<br><em>Show up as you are.</em></h2>
+   <div class="filters">
+    <div class="grp" data-g="level"><span>Level</span><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="gentle" aria-pressed="false">Gentle</button><button type="button" data-v="flow" aria-pressed="false">Flow</button><button type="button" data-v="strong" aria-pressed="false">Strong</button></div>
+    <div class="grp" data-g="format"><span>Format</span><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="live" aria-pressed="false">Live</button><button type="button" data-v="demand" aria-pressed="false">On-demand</button></div>
+   </div>
+  </div>
+  <div class="tt reveal" id="tt"></div>
+  <div class="tt-foot"><div><b id="ttCount">0</b> classes shown · <b id="ttBooked">0</b> booked</div><div class="legend"><span style="--c:#dfe6d6">Gentle</span><span style="--c:#f2dccd">Flow</span><span style="--c:#ecc4ae">Strong</span></div></div>
+ </div>
+</section>
+
+<section id="teacher">
+ <div class="wrap">
+  <div class="label"><span>03 — Your teacher</span><span>Bangkok → everywhere</span></div>
+  <div class="teacher-grid reveal">
+   <div class="portrait" aria-hidden="true">
+    <svg viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice">
+     <rect width="500" height="600" fill="#a9b89a"/>
+     <path d="M-40 420 C 80 340 160 470 280 400 S 460 320 560 380 L 560 640 L -40 640 Z" fill="#5f7255"/>
+     <circle cx="370" cy="150" r="70" fill="#e2a383" stroke="#141310" stroke-width="3"/>
+     <g stroke="#141310" stroke-width="4" fill="none" stroke-linecap="round">
+      <circle cx="230" cy="250" r="34" fill="#141310"/>
+      <path d="M230 284 C 228 330 232 370 236 420"/>
+      <path d="M232 310 C 280 300 320 270 350 225"/>
+      <path d="M232 310 C 190 290 160 250 150 200"/>
+      <path d="M236 420 L 330 470"/>
+      <path d="M236 420 L 160 540"/>
+     </g>
+     <text x="40" y="570" font-family="Space Mono" font-size="14" letter-spacing="3" fill="#141310">WARRIOR III · NOT PERFECT, PRESENT</text>
+    </svg>
+   </div>
+   <div class="bio">
+    <p class="pull">"I used to teach people to touch their toes. Now I teach them to notice their jaw is clenched."</p>
+    <p>Hi, I'm Nim. I spent eight years in a corporate tower before burning out and landing on a mat in Chiang Mai. Sabai (สบาย) means <em>at ease</em>. That's the whole curriculum: helping busy people find ease in their body, one breath at a time.</p>
+    <p>No mirrors, no costumes, no pressure. Just good teaching, clear cues, and a community that shows up.</p>
+    <div class="creds"><div>500-hr RYT</div><div>Breathwork facilitator</div><div>Trauma-informed cert.</div><div>9 years teaching</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="membership" style="padding-top:20px">
+ <div class="wrap">
+  <div class="label"><span>04 — Membership</span><span>Cancel anytime · 7-day free trial</span></div>
+  <div class="price-head reveal">
+   <h2>Practise more.<br><em>Pay less per class.</em></h2>
+   <div class="toggle" id="toggle" role="group" aria-label="Billing"><span class="knob"></span><button type="button" data-b="m" aria-pressed="true">Monthly</button><button type="button" data-b="y" aria-pressed="false">Yearly<span class="save">−25%</span></button></div>
+  </div>
+  <div class="plans reveal">
+   <div class="plan"><svg class="shape" viewBox="0 0 200 200"><path fill="#a9b89a" d="M44 30C80 0 150 10 175 55s10 110-40 130S30 175 15 120 8 60 44 30z"/></svg><h3>Drop-in</h3><p class="amount"><sup>$</sup><span data-m="18" data-y="18">18</span><small>/class</small></p><p class="per">Pay as you go</p><ul><li>Any single live class</li><li>Replay for 48 hours</li><li>No commitment</li></ul><a class="btn" href="#schedule">Pick a class</a></div>
+   <div class="plan feat"><svg class="shape" viewBox="0 0 200 200"><path fill="#c9774f" d="M100 10c50 0 90 30 90 80s-35 100-90 100S10 150 10 100 50 10 100 10z"/></svg><h3>Sabai Unlimited ★</h3><p class="amount"><sup>$</sup><span data-m="39" data-y="29">39</span><small>/mo</small></p><p class="per" data-m="Billed monthly" data-y="$348 billed yearly · save $120">Billed monthly</p><ul><li>All 9 live classes a week</li><li>186+ on-demand library</li><li>Monthly breathwork circle</li><li>Members' chat</li></ul><a class="btn" href="#join">Start free trial</a></div>
+   <div class="plan"><svg class="shape" viewBox="0 0 200 200"><path fill="#e2a383" d="M30 60C50 15 140 0 170 50s20 120-30 135-120 10-130-50S10 105 30 60z"/></svg><h3>1:1 Private</h3><p class="amount"><sup>$</sup><span data-m="95" data-y="79">95</span><small>/session</small></p><p class="per" data-m="Single session" data-y="Pack of 10 · billed $790">Single session</p><ul><li>60-min video session</li><li>A plan built for your body</li><li>Voice notes between sessions</li></ul><a class="btn" href="#join">Book a call</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="letter" id="join">
+ <div class="wrap">
+  <div class="label"><span>05 — Sunday letter</span><span>One email a week · Never spam</span></div>
+  <div class="letter-box reveal">
+   <h2>A slower inbox.<br><em>Every Sunday.</em></h2>
+   <div>
+    <p style="font-size:18px;line-height:1.55;margin-bottom:20px">A short practice, one idea worth sitting with, and next week's class schedule. Plus a free 20-minute "desk reset" class when you join.</p>
+    <form id="letterForm" novalidate><label class="sr" for="em" style="position:absolute;left:-9999px">Email</label><input id="em" type="email" placeholder="you@email.com" autocomplete="email"><button class="btn dark" type="submit">Send it →</button></form>
+    <p class="msg" id="msg" role="status"></p>
+   </div>
+  </div>
+  <div class="testis reveal">
+   <div class="testi"><p>"I stopped dreading Monday mornings. The 7am flow is now non-negotiable."</p><span>— Product manager, Singapore</span></div>
+   <div class="testi"><p>"4·7·8 got me through my thesis defence. Not exaggerating."</p><span>— PhD student, Melbourne</span></div>
+   <div class="testi"><p>"The first teacher who made me feel like I belonged on a mat."</p><span>— Nurse, Kuala Lumpur</span></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="foot">
+  <div><div class="big">sabai.</div></div>
+  <div><h5>Practise</h5><a href="#breathe">Breathe</a><a href="#schedule">Schedule</a><a href="#membership">Membership</a></div>
+  <div><h5>Say hi</h5><a href="#join">Sunday letter</a><a href="#teacher">About Nim</a><a href="#top">Back to top ↑</a></div>
+ </div>
+ <p class="fine">Fictional brand · Design concept by Aurelion</p>
+</footer>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+
+// organic blob path generator
+function blobPath(cx,cy,r,n,t,amp,seed){
+ const pts=[];for(let i=0;i<n;i++){const a=i/n*Math.PI*2;const rr=r*(1+amp*Math.sin(t+i*1.7+seed)*Math.cos(t*.7+i*2.3+seed*2));pts.push([cx+Math.cos(a)*rr,cy+Math.sin(a)*rr]);}
+ let d=`M${((pts[0][0]+pts[n-1][0])/2).toFixed(1)} ${((pts[0][1]+pts[n-1][1])/2).toFixed(1)}`;
+ for(let i=0;i<n;i++){const p=pts[i],q=pts[(i+1)%n];d+=` Q${p[0].toFixed(1)} ${p[1].toFixed(1)} ${((p[0]+q[0])/2).toFixed(1)} ${((p[1]+q[1])/2).toFixed(1)}`;}
+ return d+'Z';
+}
+const bg1=$('#b1 path'),bg2=$('#b2 path'),hb1=$('#hb1'),hb2=$('#hb2'),hb3=$('#hb3'),bbp=$('#bbp');
+let mx=innerWidth*.7,my=innerHeight*.4,p1={x:mx,y:my},p2={x:mx,y:my};
+addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
+const B1=$('#b1'),B2=$('#b2');
+function frame(ts){
+ const t=ts/1000;
+ bg1.setAttribute('d',blobPath(100,100,70,7,t*.6,.14,1));
+ bg2.setAttribute('d',blobPath(100,100,60,6,t*.5,.18,4));
+ hb1.setAttribute('d',blobPath(250,250,200,8,t*.4,.08,2));
+ hb2.setAttribute('d',blobPath(320,330,90,6,t*.6,.12,5));
+ hb3.setAttribute('d',blobPath(250,270,130,7,t*.5,.1,8));
+ bbp.setAttribute('d',blobPath(100,100,80,7,t*.9,.11,3));
+ p1.x+=(mx-p1.x)*.04;p1.y+=(my-p1.y)*.04;p2.x+=(mx-p2.x)*.02;p2.y+=(my-p2.y)*.02;
+ const s=Math.max(innerWidth,innerHeight)*.44;
+ B1.style.transform=`translate(${p1.x-s*.5}px,${p1.y-s*.5}px)`;
+ B2.style.transform=`translate(${innerWidth-p2.x-s*.6}px,${innerHeight-p2.y-s*.4}px)`;
+ if(!reduce)requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,end=+el.dataset.count;cio.unobserve(el);if(reduce){el.textContent=end.toLocaleString();return;}const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/1400);el.textContent=Math.round(end*(1-Math.pow(1-k,3))).toLocaleString()+(k===1&&end>1000?'+':'');if(k<1)requestAnimationFrame(f);})(st);}),{threshold:.5});
+$$('[data-count]').forEach(el=>cio.observe(el));
+
+// breathing
+const P={"478":[["Breathe in",4,1],["Hold",7,1],["Breathe out",8,.55]],box:[["Breathe in",4,1],["Hold",4,1],["Breathe out",4,.55],["Hold",4,.55]],coh:[["Breathe in",5,1],["Breathe out",5,.55]]};
+let pat="478",running=false,timer=null,round=0;const ROUNDS=4;
+const bb=$('#bb'),ph=$('#phase'),ct=$('#count'),ring=$('#ringP'),startB=$('#bStart'),cyc=$('#cycles');
+const C=590.6;
+function stop(msg){running=false;clearTimeout(timer);startB.textContent='▶ Start';bb.style.transitionDuration='1.2s';bb.style.transform='scale(.55)';ph.textContent=msg||'Ready';ct.textContent=msg?'nicely done':'press start';ring.style.transition='stroke-dashoffset .6s';ring.style.strokeDashoffset=C;}
+function run(){
+ round=0;let step=0;running=true;startB.textContent='■ Stop';
+ const seq=P[pat];const total=seq.reduce((a,s)=>a+s[1],0);let elapsed=0;
+ function next(){
+  if(!running)return;
+  if(step===seq.length){step=0;elapsed=0;}
+  if(step===0){round++;if(round>ROUNDS){stop('Well done');cyc.textContent=`Round ${ROUNDS} / ${ROUNDS}`;return;}cyc.textContent=`Round ${round} / ${ROUNDS}`;}
+  const [label,sec,scale]=seq[step];
+  ph.textContent=label;bb.style.transitionDuration=sec+'s';bb.style.transform=`scale(${scale})`;
+  elapsed+=sec;ring.style.transition=`stroke-dashoffset ${sec}s linear`;ring.style.strokeDashoffset=C*(1-elapsed/total);
+  if(step===0){ring.style.transition='none';ring.style.strokeDashoffset=C;void ring.getBoundingClientRect();ring.style.transition=`stroke-dashoffset ${sec}s linear`;ring.style.strokeDashoffset=C*(1-sec/total);}
+  let left=sec;ct.textContent=left;
+  const tick=()=>{if(!running)return;left--;if(left>0){ct.textContent=left;timer=setTimeout(tick,1000);}else{step++;next();}};
+  timer=setTimeout(tick,1000);
+ }
+ next();
+}
+startB.addEventListener('click',()=>running?stop():run());
+$$('.patterns button').forEach(b=>b.addEventListener('click',()=>{pat=b.dataset.p;$$('.patterns button').forEach(x=>x.setAttribute('aria-pressed',x===b));if(running)stop();cyc.textContent=`Round 0 / ${ROUNDS}`;}));
+
+// timetable
+const days=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+const K=[
+ [0,"07:00","Morning Flow","flow","live",45],[0,"20:30","Desk Reset","gentle","demand",20],
+ [1,"12:15","Lunch Breath","gentle","live",25],[1,"19:00","Strong Spine","strong","live",60],
+ [2,"07:00","Sun Salute Lab","flow","live",45],[2,"21:00","Yin & 4·7·8","gentle","demand",40],
+ [3,"06:30","Core Fire","strong","demand",35],[3,"19:30","Hip Release","gentle","live",50],
+ [4,"07:00","Friday Flow","flow","live",45],[4,"18:00","Power Hour","strong","demand",60],
+ [5,"09:00","Long Saturday","flow","live",75],[5,"16:00","Breathwork Circle","gentle","live",60],
+ [6,"10:00","Slow Sunday","gentle","demand",50],[6,"18:30","Inversions 101","strong","live",45]
+];
+const tt=$('#tt');const booked=new Set();const F={level:"all",format:"all"};
+days.forEach((d,i)=>{const col=document.createElement('div');col.className='day';col.innerHTML=`<h3><span>${d}</span><span>${String(i+1).padStart(2,'0')}</span></h3>`;
+ K.filter(k=>k[0]===i).forEach((k,j)=>{const id=i+'-'+j;const s=document.createElement('article');s.className=`slot l-${k[3]}`;s.dataset.level=k[3];s.dataset.format=k[4];
+  s.innerHTML=`<time>${k[1]} · ${k[5]} min</time><h4>${k[2]}</h4><div class="meta"><i>${k[3]}</i><i class="${k[4]==='live'?'live':''}">${k[4]==='live'?'Live':'On-demand'}</i></div><button type="button">${k[4]==='live'?'Book spot':'Add to list'}</button>`;
+  const btn=s.querySelector('button');btn.addEventListener('click',()=>{const on=!booked.has(id);on?booked.add(id):booked.delete(id);s.classList.toggle('booked',on);btn.textContent=on?(k[4]==='live'?'✓ Booked':'✓ In your list'):(k[4]==='live'?'Book spot':'Add to list');$('#ttBooked').textContent=booked.size;});
+  col.appendChild(s);});
+ tt.appendChild(col);});
+function filt(){let n=0;$$('.day').forEach(col=>{let any=0;col.querySelectorAll('.slot').forEach(s=>{const ok=(F.level==='all'||s.dataset.level===F.level)&&(F.format==='all'||s.dataset.format===F.format);s.classList.toggle('dim',!ok);if(ok){n++;any++;}});col.classList.toggle('empty-day',!any);});$('#ttCount').textContent=n;}
+$$('.filters .grp').forEach(g=>g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{F[g.dataset.g]=b.dataset.v;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));filt();})));
+filt();
+
+// pricing toggle
+const tg=$('#toggle');
+function animNum(el,to){const from=+el.textContent;if(reduce||from===to){el.textContent=to;return;}const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/600);el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);})(st);}
+tg.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const y=b.dataset.b==='y';tg.classList.toggle('yearly',y);tg.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+ $$('.amount span').forEach(s=>animNum(s,+(y?s.dataset.y:s.dataset.m)));$$('.per[data-m]').forEach(p=>p.textContent=y?p.dataset.y:p.dataset.m);}));
+
+// newsletter
+$('#letterForm').addEventListener('submit',e=>{e.preventDefault();const v=$('#em').value.trim();$('#msg').textContent=/^\S+@\S+\.\S+$/.test(v)?`Lovely. Your desk-reset class is on its way to ${v}. (Demo: nothing was sent.)`:'That email looks a little off. Try again?';if(/^\S+@\S+\.\S+$/.test(v))e.target.reset();});
+
+// nav
+const links=$('#links'),bur=$('#burger');
+bur.addEventListener('click',()=>{const o=links.classList.toggle('open');bur.setAttribute('aria-expanded',o);bur.textContent=o?'Close':'Menu';});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');bur.setAttribute('aria-expanded','false');bur.textContent='Menu';}));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
+$$('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
