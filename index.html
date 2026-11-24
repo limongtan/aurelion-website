@@ -2961,19 +2961,73 @@ dialog::backdrop { background: #030b13c7; backdrop-filter: blur(8px); }
 .grow-aside { font-weight: 400; opacity: .72; }
 .grow-deck { margin: 24px 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.28rem); max-width: 40rem; }
 .ai-stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 64px); align-items: center; padding: clamp(22px, 3.4vw, 48px); background: var(--raised); border: 1px solid var(--line); border-radius: 28px; }
-.ai-picker h3 { margin: 0 0 18px; font-family: var(--display); font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 600; letter-spacing: -.03em; }
-.ai-pains { display: grid; gap: 10px; margin-bottom: 26px; }
-.ai-pain { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 18px; text-align: left; font: inherit; font-weight: 600; color: var(--text); background: transparent; border: 1px solid var(--line-strong); border-radius: 14px; cursor: pointer; transition: border-color .2s, background .2s, transform .2s; }
+.ai-pick-head { margin-bottom: 18px; }
+.ai-pick-head h3 { margin: 0; font-family: var(--display); font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 600; letter-spacing: -.03em; }
+.ai-pick-sub { margin: 4px 0 0; color: var(--muted); }
+.ai-pains { display: grid; gap: 9px; margin-bottom: 24px; }
+.ai-pain { display: flex; align-items: center; gap: 12px; width: 100%; padding: 13px 16px; text-align: left; font: inherit; font-weight: 600; color: var(--text); background: transparent; border: 1px solid var(--line-strong); border-radius: 14px; cursor: pointer; transition: border-color .2s, background .2s, transform .2s; }
 .ai-pain::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--muted); transition: inherit; }
+.ai-pain em { margin-left: auto; flex: none; padding: 3px 9px; border-radius: 999px; background: #e6c287; color: #132231; font-style: normal; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .ai-pain:hover { border-color: var(--gold); transform: translateX(3px); }
 .ai-pain[aria-pressed="true"] { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 14%, transparent); }
 .ai-pain[aria-pressed="true"]::before { background: var(--gold); border-color: var(--gold); }
-.ai-pay-after { margin: 0; font-family: var(--display); font-size: clamp(1.35rem, 2.3vw, 2.05rem); font-weight: 600; line-height: 1.18; letter-spacing: -.03em; color: var(--gold); text-wrap: pretty; }
+.ai-pay-after { margin: 0; font-family: var(--display); font-size: clamp(1.3rem, 2.2vw, 1.95rem); font-weight: 600; line-height: 1.18; letter-spacing: -.03em; color: var(--gold); text-wrap: pretty; }
 .ai-pay-before { margin: 8px 0 0; color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--muted) 60%, transparent); }
 .ai-offer { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); }
-.ai-screen { margin: 0; }
-.ai-video { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 20px; background: #eef1f4; box-shadow: 0 40px 80px -40px #000000c0, 0 0 0 1px #ffffff14; }
-.ai-screen figcaption { margin-top: 10px; text-align: center; color: var(--muted); font-size: .8rem; }
+.ai-screen { position: relative; aspect-ratio: 1; }
+.ai-panel { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 22px; overflow: hidden; }
+.ai-panel[hidden] { display: none; }
+.ai-panel-caption { position: absolute; left: 0; right: 0; bottom: 10px; margin: 0; text-align: center; color: #5b6772; font-size: .74rem; }
+/* demo video */
+.ai-panel-demo { background: #eef1f4; box-shadow: 0 40px 80px -40px #000000c0; }
+.ai-video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ai-panel-demo .ai-panel-caption { background: linear-gradient(transparent, #eef1f4cc); padding-top: 14px; bottom: 0; padding-bottom: 8px; }
+/* reels */
+.ai-panel-reels { gap: 12px; background: radial-gradient(120% 90% at 30% 10%, #3b2a6b, #160f2e 60%, #0b0a18); box-shadow: 0 40px 80px -40px #000000c0; padding: 16px 12px 12px; }
+.ai-phone { height: 72%; aspect-ratio: 9 / 16; padding: 6px; border-radius: 26px; background: #0b0b10; box-shadow: 0 0 0 1px #ffffff26, 0 30px 60px -20px #000000d0; }
+.ai-reel { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 20px; background: #1d1830; }
+.ai-styles { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.ai-style { padding: 5px 11px; font: inherit; font-size: .76rem; font-weight: 700; color: #e9e4ff; background: #ffffff14; border: 1px solid #ffffff2e; border-radius: 999px; cursor: pointer; }
+.ai-style[aria-pressed="true"] { background: #e6c287; color: #132231; border-color: #e6c287; }
+.ai-stamp { margin: 0; color: #cfc6ee; font-size: .72rem; text-align: center; }
+/* website enquiry mock */
+.ai-panel-web { background: linear-gradient(140deg, #1d2c3b, #0c141d); box-shadow: 0 40px 80px -40px #000000c0; }
+.ai-panel-web .ai-panel-caption { color: #9fb0bf; }
+.ai-browser { position: relative; width: 86%; margin-top: -8%; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px -24px #000000d0; }
+.ai-browser-bar { display: flex; gap: 5px; align-items: center; height: 24px; padding: 0 10px; background: #e9e6df; }
+.ai-browser-bar i { width: 8px; height: 8px; border-radius: 50%; background: #c9c4ba; }
+.ai-browser img { display: block; width: 100%; height: auto; }
+.ai-wa-btn { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; background: #25d366; box-shadow: 0 8px 20px -6px #000a; }
+.ai-tap { position: absolute; right: 12px; bottom: 12px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #fff; opacity: 0; }
+.ai-chat { position: absolute; right: 6%; bottom: 13%; display: grid; gap: 6px; max-width: 64%; padding: 12px 14px; border-radius: 16px 16px 4px 16px; background: #fff; color: #15202b; font-size: .9rem; line-height: 1.35; box-shadow: 0 24px 48px -18px #000000d0; opacity: 0; transform: translateY(14px); }
+.ai-chat b { color: #1d6b34; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; }
+.ai-panel-web.is-playing .ai-wa-btn { animation: ai-press 6s ease-in-out infinite; }
+.ai-panel-web.is-playing .ai-tap { animation: ai-ring 6s ease-out infinite; }
+.ai-panel-web.is-playing .ai-chat { animation: ai-chat 6s cubic-bezier(.2,.7,.3,1) infinite; }
+@keyframes ai-press { 0%, 22% { transform: scale(1); } 26% { transform: scale(.84); } 32%, 100% { transform: scale(1); } }
+@keyframes ai-ring { 0%, 24% { opacity: 0; transform: scale(.8); } 27% { opacity: .9; } 40%, 100% { opacity: 0; transform: scale(1.9); } }
+@keyframes ai-chat { 0%, 34% { opacity: 0; transform: translateY(14px); } 42%, 90% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-6px); } }
+/* flagship */
+.ai-flagship { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(22px, 4vw, 56px); margin-top: clamp(22px, 3vw, 36px); padding: clamp(24px, 3.6vw, 48px); border-radius: 28px; background: radial-gradient(130% 120% at 0% 0%, #3b2a6b 0%, #1a1433 55%, #0f1822 100%); color: #f6f3eb; border: 1px solid #e6c28755; }
+.ai-flagship .eyebrow { color: #e6c287; margin-bottom: 12px; }
+.ai-fs-main h3 { margin: 0 0 14px; font-family: var(--display); font-size: clamp(1.7rem, 3.2vw, 2.9rem); font-weight: 600; line-height: 1.08; letter-spacing: -.04em; }
+.ai-fs-copy { margin: 0 0 20px; color: #d8d2ea; max-width: 34rem; }
+.ai-fs-stat { margin: 0 0 24px; color: #d8d2ea; }
+.ai-fs-stat b { display: block; font-family: var(--display); font-size: clamp(1.6rem, 2.8vw, 2.4rem); line-height: 1.1; color: #e6c287; letter-spacing: -.03em; }
+.ai-fs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; }
+.ai-fs-link { display: inline-flex; gap: 8px; color: #e6c287; font-weight: 700; text-decoration: none; }
+.ai-fs-link:hover { text-decoration: underline; }
+.ai-fs-side { display: grid; gap: 12px; align-content: start; }
+.ai-fs-claim { justify-self: start; margin: 0; }
+.ai-edition { padding: 16px 18px; border-radius: 16px; background: #ffffff0f; border: 1px solid #ffffff22; }
+.ai-edition.is-rec { border-color: #e6c287; background: #e6c28714; }
+.ai-edition-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: 0 0 6px; }
+.ai-edition-top b { font-family: var(--display); font-size: 1.15rem; }
+.ai-edition-top em { padding: 2px 8px; border-radius: 999px; background: #e6c287; color: #132231; font-style: normal; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.ai-edition-top span { margin-left: auto; font-weight: 700; color: #e6c287; }
+.ai-edition > p:last-child { margin: 0; color: #d8d2ea; font-size: .92rem; }
+.ai-fs-coach { margin: 4px 0 0; color: #d8d2ea; font-size: .92rem; }
+/* steps */
 .ai-steps { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 44px); margin: clamp(40px, 5vw, 70px) 0 0; padding: 34px 0 0; list-style: none; }
 .ai-steps::before { content: ""; position: absolute; top: 8px; left: 9px; right: 9px; height: 2px; background: linear-gradient(90deg, var(--gold), #e6c287 50%, var(--gold)); opacity: .75; }
 .ai-steps li { position: relative; }
@@ -2990,21 +3044,29 @@ dialog::backdrop { background: #030b13c7; backdrop-filter: blur(8px); }
 .grow-links a { display: inline-flex; gap: 8px; color: var(--gold); font-weight: 700; text-decoration: none; }
 .grow-links a:hover { text-decoration: underline; }
 @media (max-width: 960px) {
-  .ai-stage { grid-template-columns: minmax(0, 1fr); }
-  .ai-stage { gap: 0; }
+  .ai-stage { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .ai-picker { display: contents; }
-  .ai-picker h3 { order: 1; }
+  .ai-pick-head { order: 1; }
   .ai-pains { order: 2; margin-bottom: 22px; }
   .ai-screen { order: 3; margin-bottom: 20px; }
   .ai-pay { order: 4; }
   .ai-offer { order: 5; }
+  .ai-flagship { grid-template-columns: minmax(0, 1fr); }
   .ai-steps { grid-template-columns: minmax(0, 1fr); padding: 0 0 0 34px; }
   .ai-steps::before { top: 10px; bottom: 10px; left: 8px; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, var(--gold), #e6c287 50%, var(--gold)); }
   .ai-dot { top: 4px; left: -34px; }
   .grow-why { grid-template-columns: minmax(0, 1fr); }
   .grow-why .button { justify-self: start; }
 }
-@media (prefers-reduced-motion: reduce) { .ai-pain { transition: none; } }
+@media (max-width: 420px) {
+  .ai-styles { flex-wrap: nowrap; justify-content: flex-start; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 0 4px; }
+  .ai-styles::-webkit-scrollbar { display: none; }
+  .ai-style { flex: none; padding: 4px 10px; font-size: .72rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-pain { transition: none; }
+  .ai-panel-web .ai-chat { opacity: 1; transform: none; animation: none !important; }
+}
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Aurelion Sdn Bhd","url":"https://www.aurelion-earth.com/","slogan":"Evolve Beyond","telephone":"+601110541499","email":"andy.tan@aurelion-earth.com","sameAs":["https://www.instagram.com/the.aurelion.earth/"],"address":{"@type":"PostalAddress","streetAddress":"Unit 773, Regus Tribeca, Residensi Tribeca, 215 Jalan Imbi, Bukit Bintang","addressLocality":"Kuala Lumpur","postalCode":"55100","addressCountry":"MY"}}</script>
 <script>window.AURELION_MEDIA = {"horizon-2026": "assets/video/horizon-2026.mp4", "milky-way": "assets/video/milky-way.mp4", "annapurna": "assets/video/annapurna.mp4", "insights-cosmos": "assets/video/insights-cosmos.mp4", "orbit": "assets/video/orbit.mp4", "team-ridge": "assets/video/team-ridge.mp4"};
@@ -3089,23 +3151,57 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
         </div>
         <div class="ai-stage" data-reveal>
           <div class="ai-picker">
-            <h3 data-i18n="grow-pick-title">What eats your team’s time?</h3>
-            <div class="ai-pains" role="group" aria-label="Pick a job">
-              <button type="button" class="ai-pain" aria-pressed="true" data-pain="sales" data-video="assets/ai-demo.mp4" data-poster="assets/ai-demo-poster.jpg"><span data-i18n="grow-pain-sales">Typing the nightly sales report</span></button>
-              <button type="button" class="ai-pain" aria-pressed="false" data-pain="hr" data-video="assets/ai-demo-hr.mp4" data-poster="assets/ai-demo-hr-poster.jpg"><span data-i18n="grow-pain-hr">Chasing leave requests</span></button>
-              <button type="button" class="ai-pain" aria-pressed="false" data-pain="accounts" data-video="assets/ai-demo-accounts.mp4" data-poster="assets/ai-demo-accounts-poster.jpg"><span data-i18n="grow-pain-accounts">Matching invoices to the bank</span></button>
-              <button type="button" class="ai-pain" aria-pressed="false" data-pain="service" data-video="assets/ai-demo-service.mp4" data-poster="assets/ai-demo-service-poster.jpg"><span data-i18n="grow-pain-service">Answering the same price questions</span></button>
+            <div class="ai-pick-head"><h3 data-i18n="grow-pick-title">Take your team to the next level.</h3><p class="ai-pick-sub" data-i18n="grow-pick-sub">Pick what you want them doing next.</p></div>
+            <div class="ai-pains" role="group" aria-label="Pick a goal">
+              <button type="button" class="ai-pain is-flagship" aria-pressed="true" data-pain="media" data-kind="reels"><span data-i18n="grow-opt-media">Make a week of reels in-house</span><em data-i18n="grow-flagship">Flagship</em></button>
+              <button type="button" class="ai-pain" aria-pressed="false" data-pain="service" data-kind="demo" data-video="assets/ai-demo-service.mp4" data-poster="assets/ai-demo-service-poster.jpg"><span data-i18n="grow-opt-service">Answer customer questions after hours</span></button>
+              <button type="button" class="ai-pain" aria-pressed="false" data-pain="sales" data-kind="demo" data-video="assets/ai-demo.mp4" data-poster="assets/ai-demo-poster.jpg"><span data-i18n="grow-opt-sales">See how every outlet did today</span></button>
+              <button type="button" class="ai-pain" aria-pressed="false" data-pain="web" data-kind="web"><span data-i18n="grow-opt-web">Turn more website visits into enquiries</span></button>
+              <button type="button" class="ai-pain" aria-pressed="false" data-pain="accounts" data-kind="demo" data-video="assets/ai-demo-accounts.mp4" data-poster="assets/ai-demo-accounts-poster.jpg"><span data-i18n="grow-opt-accounts">Know which invoices are paid</span></button>
             </div>
-            <div class="ai-pay" data-pay="sales"><p class="ai-pay-after" data-i18n="grow-pay-sales">Your daily sales report sends itself at 9pm.</p><p class="ai-pay-before" data-i18n="grow-before-sales">Before: typed by hand at 9:47pm.</p></div>
-            <div class="ai-pay" data-pay="hr" hidden><p class="ai-pay-after" data-i18n="grow-pay-hr">Leave requests check the balance and ask the manager for you.</p><p class="ai-pay-before" data-i18n="grow-before-hr">Before: lost in the office chat group.</p></div>
+            <div class="ai-pay" data-pay="media"><p class="ai-pay-after" data-i18n="grow-pay-media">Your team plans, makes and batches a week of reels in one sitting.</p><p class="ai-pay-before" data-i18n="grow-before-media">Before: RM300 to RM1,500 per video from an agency, and days of back-and-forth.</p></div>
+            <div class="ai-pay" data-pay="service" hidden><p class="ai-pay-after" data-i18n="grow-pay-service">Price questions are answered from your price list, day or night. The rest come to your staff.</p><p class="ai-pay-before" data-i18n="grow-before-service">Before: the same questions all day, and silence after hours.</p></div>
+            <div class="ai-pay" data-pay="sales" hidden><p class="ai-pay-after" data-i18n="grow-pay-sales">Sales by outlet and product, sent to you at 9pm.</p><p class="ai-pay-before" data-i18n="grow-before-sales">Before: chasing each outlet for numbers at 9:47pm.</p></div>
+            <div class="ai-pay" data-pay="web" hidden><p class="ai-pay-after" data-i18n="grow-pay-web">A website built to make people message you, not just look.</p><p class="ai-pay-before" data-i18n="grow-before-web">Before: a site that looks fine but never rings.</p></div>
             <div class="ai-pay" data-pay="accounts" hidden><p class="ai-pay-after" data-i18n="grow-pay-accounts">Invoices are matched to the bank statement, and the unpaid ones are listed.</p><p class="ai-pay-before" data-i18n="grow-before-accounts">Before: ticked by hand, line by line.</p></div>
-            <div class="ai-pay" data-pay="service" hidden><p class="ai-pay-after" data-i18n="grow-pay-service">Price questions are answered from your price list. The rest come to your staff.</p><p class="ai-pay-before" data-i18n="grow-before-service">Before: the same questions, all day long.</p></div>
             <p class="ai-offer" data-i18n="grow-offer">We can set this up for you, teach your staff to use it, and help them make it part of their day.</p>
           </div>
-          <figure class="ai-screen">
-            <video class="ai-video" data-src="assets/ai-demo.mp4" poster="assets/ai-demo-poster.jpg" width="720" height="720" muted loop playsinline preload="none" aria-label="Screen recording of a tool built with AI"></video>
-            <figcaption data-i18n="grow-caption">Real tool built with AI · sped up · sample data</figcaption>
-          </figure>
+          <div class="ai-screen">
+            <div class="ai-panel ai-panel-reels" data-panel="reels">
+              <div class="ai-phone"><video class="ai-reel" poster="assets/reels/clips/isometric.jpg" width="360" height="640" muted playsinline preload="none" aria-label="A real Instagram reel made with Aurelion's AI content engine"></video></div>
+              <div class="ai-styles" role="group" aria-label="Pick a style"><button type="button" class="ai-style" aria-pressed="true" data-src="assets/reels/clips/isometric.mp4" data-poster="assets/reels/clips/isometric.jpg"><span data-i18n="grow-style-isometric">Isometric</span></button><button type="button" class="ai-style" aria-pressed="false" data-src="assets/reels/clips/founder-vlog.mp4" data-poster="assets/reels/clips/founder-vlog.jpg"><span data-i18n="grow-style-founder">Founder vlog</span></button><button type="button" class="ai-style" aria-pressed="false" data-src="assets/reels/clips/3d-character.mp4" data-poster="assets/reels/clips/3d-character.jpg"><span data-i18n="grow-style-3d">3D character</span></button><button type="button" class="ai-style" aria-pressed="false" data-src="assets/reels/clips/storybook.mp4" data-poster="assets/reels/clips/storybook.jpg"><span data-i18n="grow-style-storybook">Storybook</span></button></div>
+              <p class="ai-stamp" data-i18n="grow-reels-stamp">Real reels from our own account · 124 in 60 days</p>
+            </div>
+            <div class="ai-panel ai-panel-demo" data-panel="demo" hidden>
+              <video class="ai-video" width="720" height="720" muted loop playsinline preload="none" aria-label="Screen recording of a tool built with AI"></video>
+              <p class="ai-panel-caption" data-i18n="grow-caption">Real tool built with AI · sped up · sample data</p>
+            </div>
+            <div class="ai-panel ai-panel-web" data-panel="web" hidden>
+              <div class="ai-browser" aria-hidden="true">
+                <div class="ai-browser-bar"><i></i><i></i><i></i></div>
+                <img src="assets/images/web-showcase-apex.jpg" alt="" loading="lazy" width="880" height="516">
+                <span class="ai-wa-btn"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></span>
+                <span class="ai-tap"></span>
+              </div>
+              <div class="ai-chat" aria-hidden="true"><b data-i18n="grow-web-new">New enquiry · from your website</b><span data-i18n="grow-web-chat">Hi! How much is a monthly membership?</span></div>
+              <p class="ai-panel-caption" data-i18n="grow-web-caption">Illustration of a visitor tapping WhatsApp on your site</p>
+            </div>
+          </div>
+        </div>
+        <div class="ai-flagship" data-reveal>
+          <div class="ai-fs-main">
+            <p class="eyebrow" data-i18n="grow-fs-kicker">FLAGSHIP PROGRAMME</p>
+            <h3 data-i18n="grow-fs-title">Presence in the New Era: AI Media Content</h3>
+            <p class="ai-fs-copy" data-i18n="grow-fs-copy">Your own people learn to make Instagram and Facebook videos with AI: research, script, produce, post, then read the numbers and make the next one better.</p>
+            <p class="ai-fs-stat"><b data-i18n="grow-fs-stat">124 reels in 60 days</b> <span data-i18n="grow-fs-stat-sub">made with our own AI content engine. Your team learns the same one.</span></p>
+            <div class="ai-fs-actions"><a class="button button-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I'd%20like%20to%20reserve%20seats%20for%20Presence%20in%20the%20New%20Era%20(AI%20Media%20Content)." target="_blank" rel="noopener noreferrer"><span data-i18n="grow-fs-cta">Reserve seats</span><span aria-hidden="true">↗</span></a><a class="ai-fs-link" href="reels.html"><span data-i18n="grow-fs-reels">See our reels</span><span aria-hidden="true">↗</span></a></div>
+          </div>
+          <div class="ai-fs-side">
+            <p class="ai-badge ai-fs-claim" data-i18n="grow-fs-claim">HRD Corp claimable training</p>
+            <div class="ai-edition"><p class="ai-edition-top"><b data-i18n="grow-fs-2d">2 days</b><span data-i18n="grow-fs-2d-price">RM2,499 per person</span></p><p data-i18n="grow-fs-2d-copy">3 finished reels, 10 scripts and a week of posts.</p></div>
+            <div class="ai-edition is-rec"><p class="ai-edition-top"><b data-i18n="grow-fs-3d">3 days</b><em data-i18n="grow-fs-rec">Recommended</em><span data-i18n="grow-fs-3d-price">RM3,499 per person</span></p><p data-i18n="grow-fs-3d-copy">Day 3 comes after 2 to 3 weeks of posting, so you plan on your own results.</p></div>
+            <p class="ai-fs-coach" data-i18n="grow-fs-coach">Optional coaching: Andy reviews your team’s results with them every week.</p>
+          </div>
         </div>
         <ol class="ai-steps" data-reveal>
           <li>
@@ -3140,28 +3236,51 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
       <script>
       (() => {
         const root = document.getElementById("grow");
-        const video = root.querySelector(".ai-video");
-        const buttons = [...root.querySelectorAll(".ai-pain")];
-        const still = matchMedia("(prefers-reduced-motion: reduce)").matches || navigator.connection?.saveData;
-        let started = false;
-        const play = () => { if (!still) video.play().catch(() => {}); };
-        const load = src => { video.src = src; video.load(); play(); };
-        if (still) video.controls = true;
-        video.addEventListener("loadedmetadata", () => { if (video.duration) video.currentTime = video.duration * 0.88; });
-        const io = new IntersectionObserver(entries => {
-          entries.forEach(e => {
-            if (e.isIntersecting) { if (!started) { started = true; if (!still) load(video.dataset.src); } else play(); }
-            else if (started) video.pause();
-          });
-        }, { threshold: 0.35 });
-        io.observe(video);
-        buttons.forEach(btn => btn.addEventListener("click", () => {
-          buttons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+        const screen = root.querySelector(".ai-screen");
+        const panels = [...root.querySelectorAll(".ai-panel")];
+        const demo = root.querySelector(".ai-video");
+        const reel = root.querySelector(".ai-reel");
+        const web = root.querySelector(".ai-panel-web");
+        const goals = [...root.querySelectorAll(".ai-pain")];
+        const styles = [...root.querySelectorAll(".ai-style")];
+        const still = matchMedia("(prefers-reduced-motion: reduce)").matches || !!navigator.connection?.saveData;
+        let kind = "reels", visible = false, styleIndex = 0;
+        if (still) { demo.controls = true; reel.controls = true; }
+        const tryPlay = v => { if (!still && visible) v.play().catch(() => {}); };
+        const setSrc = (v, src) => { if (v.getAttribute("src") !== src) { v.src = src; v.load(); } };
+        demo.addEventListener("loadedmetadata", () => { if (demo.duration) demo.currentTime = demo.duration * 0.88; });
+        reel.addEventListener("ended", () => pickStyle((styleIndex + 1) % styles.length));
+        function pickStyle(i) {
+          styleIndex = i;
+          styles.forEach((b, j) => b.setAttribute("aria-pressed", String(j === i)));
+          reel.poster = styles[i].dataset.poster;
+          if (kind !== "reels") return;
+          if (visible || still) setSrc(reel, styles[i].dataset.src);
+          tryPlay(reel);
+        }
+        function show() {
+          panels.forEach(p => { p.hidden = p.dataset.panel !== kind; });
+          if (kind !== "demo") demo.pause();
+          if (kind !== "reels") reel.pause();
+          web.classList.remove("is-playing");
+          if (!visible && !still) return;
+          if (kind === "reels") pickStyle(styleIndex);
+          if (kind === "demo") { const g = goals.find(b => b.getAttribute("aria-pressed") === "true"); demo.poster = g.dataset.poster; setSrc(demo, g.dataset.video); tryPlay(demo); }
+          if (kind === "web") { void web.offsetWidth; web.classList.add("is-playing"); }
+        }
+        goals.forEach(btn => btn.addEventListener("click", () => {
+          goals.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
           root.querySelectorAll(".ai-pay").forEach(p => { p.hidden = p.dataset.pay !== btn.dataset.pain; });
-          video.poster = btn.dataset.poster;
-          video.dataset.src = btn.dataset.video;
-          if (started || still) { started = true; still ? (video.src = btn.dataset.video) : load(btn.dataset.video); }
+          kind = btn.dataset.kind;
+          if (kind === "demo") demo.poster = btn.dataset.poster;
+          show();
         }));
+        styles.forEach((btn, i) => btn.addEventListener("click", () => pickStyle(i)));
+        new IntersectionObserver(entries => entries.forEach(e => {
+          visible = e.isIntersecting;
+          if (visible) show(); else { demo.pause(); reel.pause(); }
+        }), { threshold: 0.3 }).observe(screen);
+        if (still) show();
       })();
       </script>
     </section>
@@ -3233,8 +3352,8 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
       <p data-i18n="intro-ai-managers" class="programme-intro">Decide where AI can help your team by trying it on a workflow you know. Build a tool in Claude, then use what you learned to judge what is worth building next.</p>
       <button class="text-link" type="button" data-programme="ai-managers"><span data-i18n="course-details" >Explore the program</span><span aria-hidden="true">↗</span></button>
     </article><article class="programme-row">
-      <div><h4 data-i18n="title-ai-media" >AI Media Content</h4><p data-i18n="audience-ai-media" class="programme-audience">Marketing, communications and content teams</p></div>
-      <p data-i18n="intro-ai-media" class="programme-intro">Take a real content brief from first idea to a draft you can discuss with your team. Explore where AI helps with concepts, writing and visuals while keeping editorial decisions in human hands.</p>
+      <div><h4 data-i18n="title-ai-media" >Presence in the New Era · AI Media Content</h4><p data-i18n="audience-ai-media" class="programme-audience">Flagship · marketing, sales, HR and anyone who should be on camera</p></div>
+      <p data-i18n="intro-ai-media" class="programme-intro">Your own people learn to make Instagram and Facebook videos with AI: research, script, produce, post, then read the numbers and make the next one better. 2 or 3 days, with optional weekly coaching after.</p>
       <button class="text-link" type="button" data-programme="ai-media"><span data-i18n="course-details" >Explore the program</span><span aria-hidden="true">↗</span></button>
     </article>
         </div>
@@ -3788,21 +3907,50 @@ window.AURELION_TRANSLATIONS = {
     "grow-h2b": "(or build them too).",
     "grow-h3": "We coach the rollout.",
     "grow-deck": "Tell us one job your team does by hand every week. We’ll show you what AI could take off their plate.",
-    "grow-pick-title": "What eats your team’s time?",
-    "grow-pain-sales": "Typing the nightly sales report",
-    "grow-pain-hr": "Chasing leave requests",
-    "grow-pain-accounts": "Matching invoices to the bank",
-    "grow-pain-service": "Answering the same price questions",
-    "grow-pay-sales": "Your daily sales report sends itself at 9pm.",
-    "grow-before-sales": "Before: typed by hand at 9:47pm.",
-    "grow-pay-hr": "Leave requests check the balance and ask the manager for you.",
-    "grow-before-hr": "Before: lost in the office chat group.",
+    "grow-pick-title": "Take your team to the next level.",
+    "grow-pick-sub": "Pick what you want them doing next.",
+    "grow-flagship": "Flagship",
+    "grow-opt-media": "Make a week of reels in-house",
+    "grow-pay-media": "Your team plans, makes and batches a week of reels in one sitting.",
+    "grow-before-media": "Before: RM300 to RM1,500 per video from an agency, and days of back-and-forth.",
+    "grow-opt-service": "Answer customer questions after hours",
+    "grow-pay-service": "Price questions are answered from your price list, day or night. The rest come to your staff.",
+    "grow-before-service": "Before: the same questions all day, and silence after hours.",
+    "grow-opt-sales": "See how every outlet did today",
+    "grow-pay-sales": "Sales by outlet and product, sent to you at 9pm.",
+    "grow-before-sales": "Before: chasing each outlet for numbers at 9:47pm.",
+    "grow-opt-web": "Turn more website visits into enquiries",
+    "grow-pay-web": "A website built to make people message you, not just look.",
+    "grow-before-web": "Before: a site that looks fine but never rings.",
+    "grow-opt-accounts": "Know which invoices are paid",
     "grow-pay-accounts": "Invoices are matched to the bank statement, and the unpaid ones are listed.",
     "grow-before-accounts": "Before: ticked by hand, line by line.",
-    "grow-pay-service": "Price questions are answered from your price list. The rest come to your staff.",
-    "grow-before-service": "Before: the same questions, all day long.",
     "grow-offer": "We can set this up for you, teach your staff to use it, and help them make it part of their day.",
     "grow-caption": "Real tool built with AI · sped up · sample data",
+    "grow-reels-stamp": "Real reels from our own account · 124 in 60 days",
+    "grow-style-isometric": "Isometric",
+    "grow-style-founder": "Founder vlog",
+    "grow-style-3d": "3D character",
+    "grow-style-storybook": "Storybook",
+    "grow-web-chat": "Hi! How much is a monthly membership?",
+    "grow-web-new": "New enquiry · from your website",
+    "grow-web-caption": "Illustration of a visitor tapping WhatsApp on your site",
+    "grow-fs-kicker": "FLAGSHIP PROGRAMME",
+    "grow-fs-title": "Presence in the New Era: AI Media Content",
+    "grow-fs-copy": "Your own people learn to make Instagram and Facebook videos with AI: research, script, produce, post, then read the numbers and make the next one better.",
+    "grow-fs-stat": "124 reels in 60 days",
+    "grow-fs-stat-sub": "made with our own AI content engine. Your team learns the same one.",
+    "grow-fs-claim": "HRD Corp claimable training",
+    "grow-fs-2d": "2 days",
+    "grow-fs-2d-price": "RM2,499 per person",
+    "grow-fs-2d-copy": "3 finished reels, 10 scripts and a week of posts.",
+    "grow-fs-3d": "3 days",
+    "grow-fs-rec": "Recommended",
+    "grow-fs-3d-price": "RM3,499 per person",
+    "grow-fs-3d-copy": "Day 3 comes after 2 to 3 weeks of posting, so you plan on your own results.",
+    "grow-fs-coach": "Optional coaching: Andy reviews your team’s results with them every week.",
+    "grow-fs-cta": "Reserve seats",
+    "grow-fs-reels": "See our reels",
     "grow-build-tag": "Build",
     "grow-build-title": "We set it up for you.",
     "grow-build-copy": "Websites, reports, customer replies, HR tools. Whatever your team does by hand.",
@@ -3818,6 +3966,9 @@ window.AURELION_TRANSLATIONS = {
     "grow-cta": "Show me what AI can take off my team’s plate",
     "grow-link-web": "Browse our website designs",
     "grow-link-ai": "See the AI course",
+    "title-ai-media": "Presence in the New Era · AI Media Content",
+    "audience-ai-media": "Flagship · marketing, sales, HR and anyone who should be on camera",
+    "intro-ai-media": "Your own people learn to make Instagram and Facebook videos with AI: research, script, produce, post, then read the numbers and make the next one better. 2 or 3 days, with optional weekly coaching after.",
     "nav-approach": "Our approach",
     "nav-programmes": "Programs",
     "nav-team": "Team Performance",
@@ -3916,9 +4067,6 @@ window.AURELION_TRANSLATIONS = {
     "title-ai-managers": "Lead with AI · For Managers",
     "audience-ai-managers": "Managers, business owners and department heads",
     "intro-ai-managers": "Decide where AI can help your team by trying it on a workflow you know. Build a tool in Claude, then use what you learned to judge what is worth building next.",
-    "title-ai-media": "AI Media Content",
-    "audience-ai-media": "Marketing, communications and content teams",
-    "intro-ai-media": "Take a real content brief from first idea to a draft you can discuss with your team. Explore where AI helps with concepts, writing and visuals while keeping editorial decisions in human hands.",
     "programme-tail": "Tell us what needs to change. We’ll help you choose where to begin.",
     "programme-plan": "Plan your program",
     "lab-kicker": "A PRACTICAL FIRST STEP",
@@ -4191,21 +4339,50 @@ window.AURELION_TRANSLATIONS = {
     "grow-h2b": "（也可以自己做）。",
     "grow-h3": "我们陪你落地推行。",
     "grow-deck": "告诉我们一项团队每周都在手动做的工作，我们让你看看 AI 能帮他们分担多少。",
-    "grow-pick-title": "什么工作最花团队的时间？",
-    "grow-pain-sales": "每晚手打销售报告",
-    "grow-pain-hr": "追请假申请",
-    "grow-pain-accounts": "对发票和银行月结单",
-    "grow-pain-service": "回答同样的价格问题",
-    "grow-pay-sales": "每日销售报告晚上 9 点自动发出。",
-    "grow-before-sales": "以前：晚上 9:47 还在手打。",
-    "grow-pay-hr": "请假申请自动查余额、自动问主管。",
-    "grow-before-hr": "以前：淹没在办公室群组里。",
+    "grow-pick-title": "带你的团队更上一层楼。",
+    "grow-pick-sub": "选一项你希望团队接下来做到的事。",
+    "grow-flagship": "旗舰",
+    "grow-opt-media": "团队自己做出一周的短视频",
+    "grow-pay-media": "团队一次坐下来，就能规划、制作并排好一周的短视频。",
+    "grow-before-media": "以前：外包一条视频 RM300 至 RM1,500，还要来回改好几天。",
+    "grow-opt-service": "下班后也能回答客户问题",
+    "grow-pay-service": "价格问题按你的价目表自动回答，日夜都行，其他的转给员工。",
+    "grow-before-service": "以前：一整天同样的问题，下班后没人回。",
+    "grow-opt-sales": "每天看到每间分店的表现",
+    "grow-pay-sales": "按分店和产品整理的销售，晚上 9 点自动发给你。",
+    "grow-before-sales": "以前：晚上 9:47 还在追每间分店要数字。",
+    "grow-opt-web": "让更多网站访客变成询问",
+    "grow-pay-web": "一个让人想马上联系你的网站，而不只是好看。",
+    "grow-before-web": "以前：网站看起来还行，但电话从来不响。",
+    "grow-opt-accounts": "清楚知道哪些发票已付款",
     "grow-pay-accounts": "发票自动对上银行月结单，未付款的一目了然。",
     "grow-before-accounts": "以前：一行一行手动打勾。",
-    "grow-pay-service": "价格问题按你的价目表自动回答，其他的转给员工。",
-    "grow-before-service": "以前：同样的问题，一整天。",
     "grow-offer": "我们可以帮你做好，教员工怎么用，并协助他们把它变成日常工作的一部分。",
     "grow-caption": "用 AI 做出的真实工具 · 加速播放 · 示例数据",
+    "grow-reels-stamp": "我们自己账号的真实短视频 · 60 天 124 条",
+    "grow-style-isometric": "等距 3D",
+    "grow-style-founder": "创办人 Vlog",
+    "grow-style-3d": "3D 角色",
+    "grow-style-storybook": "绘本风",
+    "grow-web-chat": "你好！月费会员多少钱？",
+    "grow-web-new": "新询问 · 来自你的网站",
+    "grow-web-caption": "示意：访客在你的网站点击 WhatsApp",
+    "grow-fs-kicker": "旗舰课程",
+    "grow-fs-title": "Presence in the New Era：AI 媒体内容",
+    "grow-fs-copy": "让你自己的员工学会用 AI 制作 Instagram 和 Facebook 视频：研究、写脚本、制作、发布，再看数据，把下一条做得更好。",
+    "grow-fs-stat": "60 天 124 条短视频",
+    "grow-fs-stat-sub": "全部由我们自己的 AI 内容引擎制作。你的团队学的就是这一套。",
+    "grow-fs-claim": "HRD Corp 可申请培训",
+    "grow-fs-2d": "2 天",
+    "grow-fs-2d-price": "每人 RM2,499",
+    "grow-fs-2d-copy": "3 条完成的短视频、10 份脚本和一周的贴文。",
+    "grow-fs-3d": "3 天",
+    "grow-fs-rec": "推荐",
+    "grow-fs-3d-price": "每人 RM3,499",
+    "grow-fs-3d-copy": "第 3 天安排在发布 2 至 3 周之后，用你自己的成绩来规划。",
+    "grow-fs-coach": "可选辅导：Andy 每周和你的团队一起检讨成绩。",
+    "grow-fs-cta": "预留名额",
+    "grow-fs-reels": "看看我们的短视频",
     "grow-build-tag": "打造",
     "grow-build-title": "我们帮你做好。",
     "grow-build-copy": "网站、报告、客户回复、人事工具。凡是团队手动在做的。",
@@ -4221,6 +4398,9 @@ window.AURELION_TRANSLATIONS = {
     "grow-cta": "让我看看 AI 能帮团队分担什么",
     "grow-link-web": "浏览我们的网站设计",
     "grow-link-ai": "查看 AI 课程",
+    "title-ai-media": "Presence in the New Era · AI 媒体内容",
+    "audience-ai-media": "旗舰课程 · 营销、销售、人事，以及需要出镜的人",
+    "intro-ai-media": "让你自己的员工学会用 AI 制作 Instagram 和 Facebook 视频：研究、写脚本、制作、发布，再看数据，把下一条做得更好。2 天或 3 天，课后可选每周辅导。",
     "nav-approach": "我们的理念",
     "nav-programmes": "培训课程",
     "nav-team": "团队效能",
@@ -4319,9 +4499,6 @@ window.AURELION_TRANSLATIONS = {
     "title-ai-managers": "Lead with AI · 管理者实作课",
     "audience-ai-managers": "管理者、企业负责人及部门主管",
     "intro-ai-managers": "从熟悉的工作流程入手，判断 AI 能怎样帮到团队。在 Claude 中制作一个工具，再用亲手尝试的经验评估下一项值得投入的工作。",
-    "title-ai-media": "AI 媒体内容创作",
-    "audience-ai-media": "营销、传播与内容团队",
-    "intro-ai-media": "带来一个真实的内容需求，从概念出发，做出可与团队讨论的初稿。探索 AI 如何协助构思、写作和视觉呈现，由创作者把关最后的表达。",
     "programme-tail": "告诉我们您希望改善什么，我们会协助找到合适的起点。",
     "programme-plan": "规划您的培训方案",
     "lab-kicker": "务实的第一步",
@@ -4594,21 +4771,50 @@ window.AURELION_TRANSLATIONS = {
     "grow-h2b": "（也可以自己做）。",
     "grow-h3": "我們陪你落地推行。",
     "grow-deck": "告訴我們一項團隊每週都在手動做的工作，我們讓你看看 AI 能幫他們分擔多少。",
-    "grow-pick-title": "什麼工作最花團隊的時間？",
-    "grow-pain-sales": "每晚手打銷售報告",
-    "grow-pain-hr": "追請假申請",
-    "grow-pain-accounts": "對發票和銀行月結單",
-    "grow-pain-service": "回答同樣的價格問題",
-    "grow-pay-sales": "每日銷售報告晚上 9 點自動發出。",
-    "grow-before-sales": "以前：晚上 9:47 還在手打。",
-    "grow-pay-hr": "請假申請自動查餘額、自動問主管。",
-    "grow-before-hr": "以前：淹沒在辦公室群組裡。",
+    "grow-pick-title": "帶你的團隊更上一層樓。",
+    "grow-pick-sub": "選一項你希望團隊接下來做到的事。",
+    "grow-flagship": "旗艦",
+    "grow-opt-media": "團隊自己做出一週的短影音",
+    "grow-pay-media": "團隊一次坐下來，就能規劃、製作並排好一週的短影音。",
+    "grow-before-media": "以前：外包一支影片 RM300 至 RM1,500，還要來回改好幾天。",
+    "grow-opt-service": "下班後也能回答客戶問題",
+    "grow-pay-service": "價格問題按你的價目表自動回答，日夜都行，其他的轉給員工。",
+    "grow-before-service": "以前：一整天同樣的問題，下班後沒人回。",
+    "grow-opt-sales": "每天看到每間分店的表現",
+    "grow-pay-sales": "按分店和產品整理的銷售，晚上 9 點自動發給你。",
+    "grow-before-sales": "以前：晚上 9:47 還在追每間分店要數字。",
+    "grow-opt-web": "讓更多網站訪客變成詢問",
+    "grow-pay-web": "一個讓人想馬上聯絡你的網站，而不只是好看。",
+    "grow-before-web": "以前：網站看起來還行，但電話從來不響。",
+    "grow-opt-accounts": "清楚知道哪些發票已付款",
     "grow-pay-accounts": "發票自動對上銀行月結單，未付款的一目了然。",
     "grow-before-accounts": "以前：一行一行手動打勾。",
-    "grow-pay-service": "價格問題按你的價目表自動回答，其他的轉給員工。",
-    "grow-before-service": "以前：同樣的問題，一整天。",
     "grow-offer": "我們可以幫你做好，教員工怎麼用，並協助他們把它變成日常工作的一部分。",
     "grow-caption": "用 AI 做出的真實工具 · 加速播放 · 示例資料",
+    "grow-reels-stamp": "我們自己帳號的真實短影音 · 60 天 124 支",
+    "grow-style-isometric": "等距 3D",
+    "grow-style-founder": "創辦人 Vlog",
+    "grow-style-3d": "3D 角色",
+    "grow-style-storybook": "繪本風",
+    "grow-web-chat": "你好！月費會員多少錢？",
+    "grow-web-new": "新詢問 · 來自你的網站",
+    "grow-web-caption": "示意：訪客在你的網站點擊 WhatsApp",
+    "grow-fs-kicker": "旗艦課程",
+    "grow-fs-title": "Presence in the New Era：AI 媒體內容",
+    "grow-fs-copy": "讓你自己的員工學會用 AI 製作 Instagram 和 Facebook 影片：研究、寫腳本、製作、發布，再看數據，把下一支做得更好。",
+    "grow-fs-stat": "60 天 124 支短影音",
+    "grow-fs-stat-sub": "全部由我們自己的 AI 內容引擎製作。你的團隊學的就是這一套。",
+    "grow-fs-claim": "HRD Corp 可申請培訓",
+    "grow-fs-2d": "2 天",
+    "grow-fs-2d-price": "每人 RM2,499",
+    "grow-fs-2d-copy": "3 支完成的短影音、10 份腳本和一週的貼文。",
+    "grow-fs-3d": "3 天",
+    "grow-fs-rec": "推薦",
+    "grow-fs-3d-price": "每人 RM3,499",
+    "grow-fs-3d-copy": "第 3 天安排在發布 2 至 3 週之後，用你自己的成績來規劃。",
+    "grow-fs-coach": "可選輔導：Andy 每週和你的團隊一起檢討成績。",
+    "grow-fs-cta": "預留名額",
+    "grow-fs-reels": "看看我們的短影音",
     "grow-build-tag": "打造",
     "grow-build-title": "我們幫你做好。",
     "grow-build-copy": "網站、報告、客戶回覆、人事工具。凡是團隊手動在做的。",
@@ -4624,6 +4830,9 @@ window.AURELION_TRANSLATIONS = {
     "grow-cta": "讓我看看 AI 能幫團隊分擔什麼",
     "grow-link-web": "瀏覽我們的網站設計",
     "grow-link-ai": "查看 AI 課程",
+    "title-ai-media": "Presence in the New Era · AI 媒體內容",
+    "audience-ai-media": "旗艦課程 · 行銷、銷售、人事，以及需要出鏡的人",
+    "intro-ai-media": "讓你自己的員工學會用 AI 製作 Instagram 和 Facebook 影片：研究、寫腳本、製作、發布，再看數據，把下一支做得更好。2 天或 3 天，課後可選每週輔導。",
     "nav-approach": "我們的理念",
     "nav-programmes": "培訓課程",
     "nav-team": "團隊效能",
@@ -4722,9 +4931,6 @@ window.AURELION_TRANSLATIONS = {
     "title-ai-managers": "Lead with AI · 主管實作課",
     "audience-ai-managers": "主管、企業負責人及部門主管",
     "intro-ai-managers": "從熟悉的工作流程入手，判斷 AI 能怎樣幫到團隊。在 Claude 中製作一個工具，再用親手嘗試的經驗評估下一項值得投入的工作。",
-    "title-ai-media": "AI 媒體內容創作",
-    "audience-ai-media": "行銷、傳播與內容團隊",
-    "intro-ai-media": "帶來一個真實的內容需求，從概念出發，做出可與團隊討論的初稿。探索 AI 如何協助構思、寫作和視覺呈現，由創作者把關最後的表達。",
     "programme-tail": "告訴我們您希望改善什麼，我們會協助找到合適的起點。",
     "programme-plan": "規劃您的培訓方案",
     "lab-kicker": "務實的第一步",
@@ -5318,22 +5524,18 @@ window.AURELION_TRANSLATIONS = {
       category: 'ai',
       image: '',
       imageAlt: localized('', '', ''),
-      title: localized('AI Media Content', 'AI 媒体内容创作', 'AI 媒體內容創作'),
-      audience: localized('Marketing, communications and content teams', '营销、传播与内容团队', '行銷、傳播與內容團隊'),
-      intro: localized(
-        'Take a real content brief from first idea to a draft you can discuss with your team. Explore where AI helps with concepts, writing and visuals while keeping editorial decisions in human hands.',
-        '带来一个真实的内容需求，从概念出发，做出可与团队讨论的初稿。探索 AI 如何协助构思、写作和视觉呈现，由创作者把关最后的表达。',
-        '帶來一個真實的內容需求，從概念出發，做出可與團隊討論的初稿。探索 AI 如何協助構思、寫作和視覺呈現，由創作者把關最後的表達。'
-      ),
+      title: localized("Presence in the New Era · AI Media Content", "Presence in the New Era · AI 媒体内容", "Presence in the New Era · AI 媒體內容"),
+      audience: localized("Flagship · marketing, sales, HR and anyone who should be on camera", "旗舰课程 · 营销、销售、人事，以及需要出镜的人", "旗艦課程 · 行銷、銷售、人事，以及需要出鏡的人"),
+      intro: localized("Your own people learn to make Instagram and Facebook videos with AI: research, script, produce, post, then read the numbers and make the next one better. HRD Corp claimable. 2-day edition RM2,499 per person; 3-day edition RM3,499 per person, with Results Day held after 2 to 3 weeks of real posting.", "让你自己的员工学会用 AI 制作 Instagram 和 Facebook 视频：研究、写脚本、制作、发布，再看数据，把下一条做得更好。HRD Corp 可申请。2 天版每人 RM2,499；3 天版每人 RM3,499，第 3 天安排在真实发布 2 至 3 周之后。", "讓你自己的員工學會用 AI 製作 Instagram 和 Facebook 影片：研究、寫腳本、製作、發布，再看數據，把下一支做得更好。HRD Corp 可申請。2 天版每人 RM2,499；3 天版每人 RM3,499，第 3 天安排在真實發布 2 至 3 週之後。"),
       outcomes: localized(
-        ['Give AI a creative brief with a clear audience, message and tone.', 'Explore and compare written or visual directions.', 'Review a draft for accuracy, brand fit and readiness for publication.'],
-        ['为 AI 写一份受众、重点和风格明确的创意需求。', '探索并比较不同的文案或视觉方向。', '检查初稿的准确性、品牌契合度和发布准备情况。'],
-        ['為 AI 寫一份受眾、重點和風格明確的創意需求。', '探索並比較不同的文案或視覺方向。', '檢查初稿的準確性、品牌契合度和發布準備情況。']
+        ["A working AI reel studio on your own laptop, and a playbook of what works in your industry.","10 ready-to-film scripts and up to 12 finished videos for your own brand (3-day edition).","A posting plan and a weekly routine for reading the numbers and improving the next video."],
+        ["在自己的手提电脑上建好 AI 短视频工作室，以及一份你所在行业的成功打法。","10 份可直接拍摄的脚本，以及最多 12 条为自己品牌完成的视频（3 天版）。","一份发布计划，以及每周看数据、改进下一条视频的固定流程。"],
+        ["在自己的筆電上建好 AI 短影音工作室，以及一份你所在行業的成功打法。","10 份可直接拍攝的腳本，以及最多 12 支為自己品牌完成的影片（3 天版）。","一份發布計畫，以及每週看數據、改進下一支影片的固定流程。"]
       ),
       plan: localized(
-        ['Brief the work around an audience and a real communication goal.', 'Develop and revise content ideas using AI tools.', 'Review the draft and decide what to refine before it goes live.'],
-        ['围绕目标受众和真实传播目标明确需求。', '使用 AI 工具构思并修改内容。', '审阅初稿，决定正式发布前还要完善什么。'],
-        ['圍繞目標受眾和真實傳播目標明確需求。', '使用 AI 工具構思並修改內容。', '審閱初稿，決定正式發布前還要完善什麼。']
+        ["Day 1: set up your AI reel studio, study what works in your industry, write scripts that hook.","Day 2: make videos with free AI tools, package and batch a week, publish and measure.","Day 3 (3-day edition): story videos, a week in one sitting, and a 30-day plan from your own results.","Optional after: Growth Lab Plus coaching with Andy, RM10,499 a month, 3 months minimum, not HRD Corp claimable."],
+        ["第 1 天：建好 AI 短视频工作室，研究行业里有效的内容，写出抓人的脚本。","第 2 天：用免费 AI 工具制作视频，一次排好一周，发布并看数据。","第 3 天（3 天版）：故事类视频、一次做好一周，并按自己的成绩制定 30 天计划。","课后可选：Growth Lab Plus，由 Andy 辅导，每月 RM10,499，最少 3 个月，不可用 HRD Corp 申请。"],
+        ["第 1 天：建好 AI 短影音工作室，研究行業裡有效的內容，寫出抓人的腳本。","第 2 天：用免費 AI 工具製作影片，一次排好一週，發布並看數據。","第 3 天（3 天版）：故事類影片、一次做好一週，並按自己的成績制定 30 天計畫。","課後可選：Growth Lab Plus，由 Andy 輔導，每月 RM10,499，最少 3 個月，不可用 HRD Corp 申請。"]
       )
     }
   ];
