@@ -179,13 +179,36 @@ const liveFrame = (box, src, w = 1440, eager = false) => {
   return {f, get src() { return want; }, set(s) { if (s === want) return; want = s; if (started) go(); }};
 };
 
+/* lite mode: phones / touch get snapshots instead of live iframes */
+const lite = !fine || innerWidth < 800;
+const thumbOf = h => { const m = /^fusion\/([\w-]+)\.html$/.exec(h || ''); return m ? 'fusion/thumbs/' + m[1] + '.webp' : null; };
+const media = (box, src, w = 1440, eager = false) => {
+  if (lite && thumbOf(src)) {
+    const img = document.createElement('img'); img.className = 'snap-img'; img.alt = ''; img.loading = eager ? 'eager' : 'lazy'; img.decoding = 'async'; img.src = thumbOf(src);
+    box.appendChild(img);
+    let want = src; return {get src() { return want; }, set(x) { if (x === want) return; want = x; img.src = thumbOf(x) || img.src; }};
+  }
+  return liveFrame(box, src, w, eager);
+};
+
 /* ---------- Hero before/after ---------- */
 const cmp = $('.cmp');
 if (cmp) {
-  liveFrame($('.cmp-b', cmp), cmp.dataset.src, 1440, true);
+  media($('.cmp-b', cmp), cmp.dataset.src, 1440, true);
   const range = $('input', cmp);
   const setPos = v => cmp.style.setProperty('--pos', v + '%');
   range.addEventListener('input', () => { cmp.dataset.touched = 1; setPos(range.value); });
+  /* drag anywhere on the picture (iOS Safari only drags a range by its tiny thumb) */
+  let dragging = false, sx0 = 0, sy0 = 0, decided = false;
+  const posFrom = e => { const r = cmp.getBoundingClientRect(); const v = clamp((e.clientX - r.left) / r.width * 100, 0, 100); cmp.dataset.touched = 1; setPos(v); range.value = v; };
+  cmp.addEventListener('pointerdown', e => { dragging = true; decided = e.pointerType === 'mouse'; sx0 = e.clientX; sy0 = e.clientY; if (decided) { cmp.setPointerCapture(e.pointerId); posFrom(e); } });
+  cmp.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    if (!decided) { const dx = Math.abs(e.clientX - sx0), dy = Math.abs(e.clientY - sy0); if (dx < 6 && dy < 6) return; if (dy > dx) { dragging = false; return; } decided = true; try { cmp.setPointerCapture(e.pointerId); } catch (_) {} }
+    posFrom(e);
+  });
+  const end = e => { if (dragging && !decided && e.type === 'pointerup') posFrom(e); dragging = false; };
+  cmp.addEventListener('pointerup', end); cmp.addEventListener('pointercancel', end);
   if (!reduce) {
     const t0 = performance.now() + 1600;
     const sweep = now => {
@@ -204,7 +227,7 @@ if (cmp) {
 const zoom = $('.ex-zoom');
 if (zoom) {
   const frame = $('.zm-frame'), copy = $('.zm-copy');
-  liveFrame(frame, frame.dataset.src);
+  media(frame, frame.dataset.src);
   let ticking = false;
   const upd = () => {
     ticking = false;
@@ -226,12 +249,12 @@ if (zoom) {
 const track = $('.fx-track'), pin = $('.fx-pin'), bar = $('.fx-bar i'), fcount = $('.fx-count b');
 track.innerHTML = FUSION.map((f, i) => `
   <article class="fx" tabindex="0" role="button" data-i="${i}" data-cursor="cur.step" aria-label="${esc(f.name)}" style="--c1:${f.c[0]};--c4:${f.c[3]}">
-    <div class="fx-screen"><div class="fx-inner"><div class="fx-poster">${esc(f.name)}</div></div></div>
+    <div class="fx-screen"><div class="fx-inner"><div class="fx-poster snap" style="background-image:url(fusion/thumbs/${f.slug}.webp)">${esc(f.name)}</div></div></div>
     <div class="fx-cap"><span class="mono">${f.no}</span><h3>${esc(f.name)}</h3><span class="mono formula">${esc(f.a)} × ${esc(f.b)}</span><p></p></div>
   </article>`).join('') + `<div class="fx-end"><span class="mono" style="color:var(--acc-t)">F-${String(FUSION.length + 1).padStart(2, '0')} · <span data-i18n="fx.reserved"></span></span><h3><span data-i18n-html="fx.endH"></span><span class="dot"></span></h3><a class="ex-btn solid" data-wa="wa.msg"><span data-i18n="fx.endBtn"></span> <span class="arr">→</span></a></div>`;
 const fxEls = $$('.fx', track);
 fxEls.forEach(el => {
-  liveFrame($('.fx-inner', el), 'fusion/' + FUSION[+el.dataset.i].slug + '.html');
+  if (!lite) liveFrame($('.fx-inner', el), 'fusion/' + FUSION[+el.dataset.i].slug + '.html');
   const open = () => openViewer(FITEMS, +el.dataset.i);
   el.addEventListener('click', open);
   el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
@@ -271,6 +294,7 @@ const calcUpd = () => {
   requestAnimationFrame(step);
   $('.calc-sub').textContent = t('calc.extra', {c: cust < 10 ? cust.toFixed(1) : fmt(cust), y: fmt(month * 12)});
   $('.calc-out .ex-btn').href = waLink(t('wa.msg'));
+  const pay = $('.calc-pay'); if (pay) { const days = month > 0 ? 6000 / (month / 30.4) : 0; pay.hidden = !month; pay.innerHTML = t('calc.pay', {d: days < 1 ? '&lt;1' : fmt(Math.ceil(days))}); }
 };
 $$('#c-vis,#c-val', calc).forEach(i => i.addEventListener('input', calcUpd));
 $$('.calc-lift button', calc).forEach(b => b.addEventListener('click', () => { lift = +b.dataset.l; $$('.calc-lift button', calc).forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); }); calcUpd(); }));
@@ -281,7 +305,7 @@ let curSme = 'fnb';
 const thumbFor = (box, href) => {
   const it = byHref(href);
   if (it?.kind === 'card') box.append(...[...$('.design-preview', it.el).children].filter(n => !n.classList.contains('preview-link')).map(n => n.cloneNode(true)));
-  else liveFrame(box, href, 1440);
+  else media(box, href, 1440);
 };
 const showSme = (k, anim = true) => {
   curSme = k; const s = SME.find(x => x.k === k) || SME[0];
@@ -304,17 +328,20 @@ const renderPricing = () => {
     <div class="tier-save"><span>${esc(t('price.save', {x: fmt(x.was - x.now)}))}</span><small>${esc(t('price.day', {d: Math.round(x.now / 365)}))}</small></div>
     <ul>${L(x.feats).map(f => `<li>${esc(f)}</li>`).join('')}</ul>
     <a class="ex-btn ${x.feat ? 'wa' : 'solid'}" href="${waLink(t('price.msg', {t: L(x.name), p: 'RM' + fmt(x.now)}))}" target="_blank" rel="noopener">${WA_SVG}${esc(t('price.cta'))}</a></article>`).join('');
+  const cny = $('.price-cny'); if (cny) cny.textContent = t('price.cny');
   $('.inc-chips').innerHTML = [1,2,3,4,5,6,7,8].map(i => `<span>${esc(t('price.inc' + i))}</span>`).join('');
 };
 const END = new Date('2026-12-31T23:59:59+08:00').getTime();
-const cd = $('.cd');
+const cd = $('.cd'), barCd = $('.bar-cd');
+const parts = () => { const ms = Math.max(0, END - Date.now()); return {ms, d: Math.floor(ms / 864e5), h: Math.floor(ms % 864e5 / 36e5), m: Math.floor(ms % 36e5 / 6e4), s: Math.floor(ms % 6e4 / 1e3)}; };
+const pad = n => String(n).padStart(2, '0');
 const tick = () => {
-  const ms = END - Date.now();
-  if (ms <= 0) { cd.textContent = t('price.over'); return; }
-  const d = Math.floor(ms / 864e5), h = Math.floor(ms % 864e5 / 36e5), m = Math.floor(ms % 36e5 / 6e4);
-  cd.innerHTML = `${esc(t('price.ends'))} <b>${esc(t('price.cd', {d, h, m}))}</b>`;
+  const p = parts();
+  if (p.ms <= 0) { cd.textContent = t('price.over'); document.documentElement.classList.remove('has-bar'); return; }
+  cd.innerHTML = `<span class="lbl">${esc(t('price.ends'))}</span><div class="cd-cells">${[['d', p.d], ['h', pad(p.h)], ['m', pad(p.m)], ['s', pad(p.s)]].map(([k, v]) => `<div><b>${v}</b><small>${esc(t('cd.' + k))}</small></div>`).join('')}</div>`;
+  if (barCd) barCd.textContent = `${t('bar.ends')} ${p.d}${lang === 'en' ? 'd' : (lang === 'zh' ? t('cd.d') : ' ' + t('cd.d'))} ${pad(p.h)}:${pad(p.m)}:${pad(p.s)}`;
 };
-setInterval(tick, 30000);
+setInterval(tick, 1000);
 
 /* ---------- Personas ---------- */
 const psTabs = $('.ps-tabs'), psChips = $('.ps-chips');
@@ -325,7 +352,7 @@ const renderPersonas = () => {
   const list = psList();
   psChips.innerHTML = list.map((it, j) => `<button type="button" class="${j === psEx ? 'on' : ''}" data-j="${j}">${esc(it.name)}</button>`).join('');
   const src = list[psEx]?.href;
-  if (!psFrame) psFrame = liveFrame($('.ps-screen'), src); else psFrame.set(src);
+  if (!psFrame) psFrame = media($('.ps-screen'), src); else psFrame.set(src);
 };
 const psArm = () => { clearTimeout(psTimer); if (!psPaused && !reduce && psSeen) psTimer = setTimeout(() => { psI = (psI + 1) % PERSONAS.length; psEx = 0; renderPersonas(); psArm(); }, 8000); };
 const psPause = () => { psPaused = true; clearTimeout(psTimer); psTabs.classList.add('paused'); };
@@ -414,7 +441,7 @@ let vList = [], vI = 0, lastFocus = null;
 function openViewer(list, i) {
   if (!list.length || i < 0) return;
   vList = list; lastFocus = document.activeElement;
-  vw.classList.add('open'); vw.setAttribute('aria-hidden', 'false'); document.documentElement.style.overflow = 'hidden'; document.body.classList.add('vw-open');
+  vw.classList.add('open'); vw.setAttribute('aria-hidden', 'false'); document.documentElement.style.overflow = 'hidden'; document.body.classList.add('vw-open'); document.body.classList.remove('mbar-on');
   if (cur?.isConnected) cur.classList.remove('on');
   showV(i); setTimeout(() => $('.vw-close').focus(), 50);
 }
@@ -486,6 +513,23 @@ document.addEventListener('keydown', e => {
 const bub = $('.wa-bub');
 if (!store.get('ex-wa-bub')) setTimeout(() => { if (!document.body.classList.contains('vw-open')) { bub.classList.add('on'); setTimeout(() => bub.classList.remove('on'), 9000); } }, 9000);
 $('button', bub).addEventListener('click', () => { bub.classList.remove('on'); store.set('ex-wa-bub', '1'); });
+
+/* ---------- Urgency: offer bar, mobile CTA bar, exit intent ---------- */
+const ss = {get: k => { try { return sessionStorage.getItem(k); } catch (_) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (_) {} }};
+if (END > Date.now() && !ss.get('ex-bar-x')) document.documentElement.classList.add('has-bar');
+$('.ex-bar button')?.addEventListener('click', () => { document.documentElement.classList.remove('has-bar'); ss.set('ex-bar-x', '1'); requestAnimationFrame(sizePin); });
+const heroEl = $('.ex-hero');
+const mbarUpd = () => document.body.classList.toggle('mbar-on', scrollY > heroEl.offsetHeight * .75 && !document.body.classList.contains('vw-open'));
+addEventListener('scroll', mbarUpd, {passive:true});
+const exitEl = $('.ex-exit');
+if (exitEl) {
+  const openExit = () => { if (exitEl.classList.contains('open') || document.body.classList.contains('vw-open') || store.get('ex-exit') || END <= Date.now()) return; store.set('ex-exit', '1'); $('.exit-box h3').innerHTML = t('exit.h', {d: parts().d}); exitEl.classList.add('open'); exitEl.setAttribute('aria-hidden', 'false'); setTimeout(() => $('.exit-box .ex-btn').focus(), 50); };
+  const closeExit = () => { exitEl.classList.remove('open'); exitEl.setAttribute('aria-hidden', 'true'); };
+  const armedAt = Date.now() + 12000;
+  if (fine) document.addEventListener('mouseout', e => { if (!e.relatedTarget && e.clientY <= 4 && Date.now() > armedAt) openExit(); });
+  exitEl.addEventListener('click', e => { if (e.target === exitEl || e.target.closest('.x,.no,[href="#pricing"]')) closeExit(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && exitEl.classList.contains('open')) closeExit(); });
+}
 
 /* ---------- Apply language ---------- */
 function applyLang(l) {

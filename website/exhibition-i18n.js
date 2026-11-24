@@ -227,3 +227,69 @@ ms: {
   "f.all": "Semua reka bentuk", "f.Business": "Perniagaan", "f.Hospitality": "Hospitaliti", "f.Retail": "Runcit", "f.Lifestyle": "Gaya hidup", "f.Culture": "Budaya", "f.Technology": "Teknologi", "f.Immersive": "Imersif"
 }
 };
+
+/* Year-end holiday pricing + urgency layer */
+Object.assign(window.EX_I18N.en, {
+  "bar.text": "Year-end holiday pricing · save up to RM3,800", "bar.ends": "Ends in", "bar.cta": "Claim on WhatsApp", "bar.close": "Hide offer bar",
+  "hero.badge": "Year-end holiday pricing: websites from RM2,500 (normally RM3,500)",
+  "hero.meta2": "Holiday pricing ends 31 Dec 2026 · EN / BM / 中文", "hero.price": "Holiday prices from RM2,500",
+  "tk.1": "Domain, hosting & SSL included", "tk.2": "Live in 1 week to 1 month", "tk.3": "English · Bahasa Melayu · 中文", "tk.4": "See your design before we build",
+  "tk.5": "FPX, GrabPay & card ready", "tk.6": "A real team on WhatsApp", "tk.7": "Holiday pricing ends 31 Dec",
+  "calc.pay": "At your numbers, a Business Website (RM6,000) pays for itself in about <b>{d} days</b>.",
+  "faq.a5": "Year-end holiday pricing starts at RM2,500 (normally RM3,500), with domain, hosting and SSL included for the first year. No monthly builder fees.",
+  "price.label2": "Year-end holiday pricing · until 31 Dec 2026",
+  "price.h2": "Year-end holiday pricing.<br><em>Save up to RM3,800.</em>",
+  "price.lead": "Domain, hosting, security and the website itself, in one package, at holiday prices. Start before 31 Dec and you could be live before the Chinese New Year and Ramadan rush.",
+  "price.ends": "Holiday pricing ends in", "cd.d": "days", "cd.h": "hrs", "cd.m": "min", "cd.s": "sec",
+  "price.was": "normally", "price.cta": "Claim holiday price", "price.cny": "Start by 31 Dec → you could be live before Chinese New Year (6 Feb)",
+  "price.msg": "Hi Aurelion! I’d like to claim the year-end holiday price for the {t} package ({p}).",
+  "mb.price": "Holiday prices",
+  "exit.k": "Before you go", "exit.h": "Holiday pricing ends in <b>{d} days</b>.",
+  "exit.p": "Save up to RM3,800 on a custom website, with domain, hosting and SSL included. One WhatsApp message is all it takes to start.",
+  "exit.see": "See packages", "exit.no": "No thanks",
+  "close.p": "Your competitors are one search result away. Holiday pricing ends 31 Dec: start now and be the one they choose."
+});
+Object.assign(window.EX_I18N.zh, {
+  "bar.text": "年终假期优惠 · 最多省 RM3,800", "bar.ends": "倒数", "bar.cta": "WhatsApp 领取优惠", "bar.close": "隐藏优惠栏",
+  "hero.badge": "年终假期优惠：网站 RM2,500 起（原价 RM3,500）",
+  "hero.meta2": "假期优惠至 2026 年 12 月 31 日 · 英 / 马 / 中", "hero.price": "假期优惠 RM2,500 起",
+  "tk.1": "含域名、托管与 SSL", "tk.2": "1 周至 1 个月上线", "tk.3": "英文 · 马来文 · 中文", "tk.4": "开工前先看设计",
+  "tk.5": "支持 FPX、GrabPay 与银行卡", "tk.6": "真人团队 WhatsApp 直达", "tk.7": "假期优惠 12 月 31 日截止",
+  "calc.pay": "按你的数字，企业网站（RM6,000）大约 <b>{d} 天</b>就能回本。",
+  "faq.a5": "年终假期优惠 RM2,500 起（原价 RM3,500），首年包含域名、托管和 SSL，不用每月付建站平台费用。",
+  "price.label2": "年终假期优惠 · 至 2026 年 12 月 31 日",
+  "price.h2": "年终假期优惠，<br><em>最多省 RM3,800。</em>",
+  "price.lead": "域名、托管、安全证书和网站本身，一个配套全包，享假期优惠价。12 月 31 日前开始，就有机会赶在农历新年和斋月旺季前上线。",
+  "price.ends": "假期优惠倒数", "cd.d": "天", "cd.h": "时", "cd.m": "分", "cd.s": "秒",
+  "price.was": "原价", "price.cta": "领取假期优惠", "price.cny": "12 月 31 日前开始 → 有机会在农历新年（2 月 6 日）前上线",
+  "price.msg": "你好 Aurelion！我想领取「{t}」配套的年终假期优惠价（{p}）。",
+  "mb.price": "假期优惠",
+  "exit.k": "离开之前", "exit.h": "假期优惠只剩 <b>{d} 天</b>。",
+  "exit.p": "定制网站最多省 RM3,800，含域名、托管和 SSL。只要一条 WhatsApp 就能开始。",
+  "exit.see": "查看配套", "exit.no": "不用了",
+  "close.p": "你的对手只差一个搜索结果。假期优惠 12 月 31 日截止：现在开始，成为客户的选择。"
+});
+Object.assign(window.EX_I18N.ms, {
+  "bar.text": "Harga istimewa hujung tahun · jimat sehingga RM3,800", "bar.ends": "Tamat dalam", "bar.cta": "Tuntut di WhatsApp", "bar.close": "Sembunyikan tawaran",
+  "hero.badge": "Harga istimewa hujung tahun: laman web dari RM2,500 (biasa RM3,500)",
+  "hero.meta2": "Harga cuti tamat 31 Dis 2026 · EN / BM / 中文", "hero.price": "Harga cuti dari RM2,500",
+  "tk.1": "Domain, pengehosan & SSL termasuk", "tk.2": "Siap dalam 1 minggu hingga 1 bulan", "tk.3": "English · Bahasa Melayu · 中文", "tk.4": "Lihat reka bentuk sebelum kami bina",
+  "tk.5": "Sedia FPX, GrabPay & kad", "tk.6": "Pasukan sebenar di WhatsApp", "tk.7": "Harga cuti tamat 31 Dis",
+  "calc.pay": "Mengikut angka anda, Laman Web Perniagaan (RM6,000) membayar dirinya dalam kira-kira <b>{d} hari</b>.",
+  "faq.a5": "Harga istimewa hujung tahun bermula RM2,500 (biasa RM3,500), termasuk domain, pengehosan dan SSL tahun pertama. Tiada yuran bulanan pembina laman.",
+  "price.label2": "Harga istimewa hujung tahun · hingga 31 Dis 2026",
+  "price.h2": "Harga istimewa hujung tahun.<br><em>Jimat sehingga RM3,800.</em>",
+  "price.lead": "Domain, pengehosan, keselamatan dan laman web itu sendiri, dalam satu pakej, pada harga cuti. Mula sebelum 31 Dis dan anda boleh dilancarkan sebelum musim sibuk Tahun Baru Cina dan Ramadan.",
+  "price.ends": "Harga cuti tamat dalam", "cd.d": "hari", "cd.h": "jam", "cd.m": "min", "cd.s": "saat",
+  "price.was": "biasa", "price.cta": "Tuntut harga cuti", "price.cny": "Mula sebelum 31 Dis → boleh siap sebelum Tahun Baru Cina (6 Feb)",
+  "price.msg": "Hai Aurelion! Saya ingin menuntut harga istimewa hujung tahun untuk pakej {t} ({p}).",
+  "mb.price": "Harga cuti",
+  "exit.k": "Sebelum anda pergi", "exit.h": "Harga cuti tamat dalam <b>{d} hari</b>.",
+  "exit.p": "Jimat sehingga RM3,800 untuk laman web khas, termasuk domain, pengehosan dan SSL. Hanya satu mesej WhatsApp untuk bermula.",
+  "exit.see": "Lihat pakej", "exit.no": "Tidak, terima kasih",
+  "close.p": "Pesaing anda hanya satu hasil carian jauhnya. Harga cuti tamat 31 Dis: mula sekarang dan jadilah pilihan mereka."
+});
+window.EX_I18N.en["price.msgBar"] = "Hi Aurelion! I’d like to claim your year-end holiday pricing for a website for my business.";
+window.EX_I18N.zh["price.msgBar"] = "你好 Aurelion！我想为我的生意领取网站的年终假期优惠价。";
+window.EX_I18N.ms["price.msgBar"] = "Hai Aurelion! Saya ingin menuntut harga istimewa hujung tahun untuk laman web perniagaan saya.";
+window.EX_I18N.en["bar.short"] = "Holiday pricing"; window.EX_I18N.zh["bar.short"] = "假期优惠"; window.EX_I18N.ms["bar.short"] = "Harga cuti";
