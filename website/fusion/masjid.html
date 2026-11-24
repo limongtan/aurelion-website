@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Masjid Al-Ihsan | Aurelion fusion concept</title>
+<meta name="description" content="A contemporary mosque website template by Aurelion: live prayer times, programmes, infaq, bookings and a warm welcome for visitors.">
+<meta name="theme-color" content="#0f3b36">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --em:#0f3b36;--em2:#0a2a26;--em3:#165047;--teal:#2c6e63;
+  --ivory:#f6f1e7;--sand:#ebe1cd;--sand2:#e0d3b8;--ink:#13201e;--mut:#5d6b67;
+  --brass:#b8893b;--brass2:#d7b06a;--line:#13201e1f;--lineL:#f6f1e726;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif;--ar:'Amiri','Noto Naskh Arabic',serif;
+  --r:22px;--wrap:1240px;--hdr:68px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 46px)}
+body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.65 var(--sans);overflow-x:hidden;padding-top:36px}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+img,svg{display:block}
+::selection{background:var(--brass);color:#fff}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.ar{font-family:var(--ar);direction:rtl;unicode-bidi:isolate}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+.serif{font-family:var(--serif)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* exhibit bar */
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.exh-bar a{color:#e9e7e1;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:640px){.exh-bar .exh-mid{display:none}}
+
+/* header */
+.hdr{position:sticky;top:36px;z-index:90;height:var(--hdr);transition:background .35s,box-shadow .35s,color .35s;color:var(--ivory)}
+.hdr.solid{background:#f6f1e7ee;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);color:var(--ink)}
+.hdr .wrap{height:100%;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.01em;flex:none}
+.brand-mark{width:38px;height:44px;flex:none}
+.brand small{display:block;font-weight:500;font-size:11.5px;opacity:.7;letter-spacing:.06em}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:99px;opacity:.85;transition:background .2s,opacity .2s}
+.nav a:hover,.nav a.on{opacity:1;background:#ffffff1c}
+.hdr.solid .nav a:hover,.hdr.solid .nav a.on{background:#0f3b3612}
+.next-pill{display:none;align-items:center;gap:8px;font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:99px;background:var(--em);color:var(--ivory);white-space:nowrap;font-variant-numeric:tabular-nums}
+.hdr.solid .next-pill{display:inline-flex}
+.next-pill i{width:7px;height:7px;border-radius:50%;background:var(--brass2);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.lang{display:flex;border:1px solid currentColor;border-radius:99px;padding:2px;opacity:.9;flex:none}
+.lang button{border:0;background:none;padding:5px 10px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.06em}
+.lang button.on{background:var(--brass);color:#fff}
+.burger{display:none;border:1px solid currentColor;background:none;border-radius:99px;min-height:40px;padding:0 14px;font-size:13px;font-weight:700}
+.mnav{display:none}
+
+/* hero */
+.hero{position:relative;background:var(--em);color:var(--ivory);margin-top:calc(-1 * var(--hdr));padding:calc(var(--hdr) + 48px) 0 150px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--pat-gold);background-size:96px;opacity:.12}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 80% at 85% 20%,#2c6e6355,transparent 60%),linear-gradient(180deg,transparent 60%,#0a2a26)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.hero-copy{grid-column:1/8}
+.greet{display:flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.greet .ar{font-size:30px;color:var(--brass2);line-height:1}
+.greet span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;font-weight:600}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(54px,8.6vw,128px);line-height:1.02;letter-spacing:-.02em;margin:0 0 26px}
+.hero h1 em{font-style:italic;color:var(--brass2);font-weight:500}
+.hero-lede{font-size:clamp(16px,1.4vw,19px);max-width:46ch;opacity:.86;margin:0 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;border-radius:99px;font-weight:700;font-size:14.5px;border:1px solid transparent;transition:transform .25s,background .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--brass);color:#fff}.btn.gold:hover{background:#a3762d}
+.btn.ghost{border-color:#f6f1e766;color:var(--ivory)}.btn.ghost:hover{border-color:var(--ivory)}
+.btn.em{background:var(--em);color:var(--ivory)}.btn.em:hover{background:var(--em3)}
+.btn.line{border-color:var(--line);color:var(--ink)}.btn.line:hover{border-color:var(--ink)}
+.hero-arch{grid-column:8/13;position:relative;justify-self:end;width:min(100%,430px);aspect-ratio:3/4.1;border-radius:999px 999px 0 0;border:1px solid #d7b06a66;padding:14px;margin-bottom:-60px}
+.hero-arch .inner{position:relative;width:100%;height:100%;border-radius:999px 999px 0 0;overflow:hidden;background:radial-gradient(circle at 50% 38%,#1f5a52,#0a2a26 75%);box-shadow:inset 0 0 0 1px #d7b06a33}
+.hero-arch .inner::before{content:"";position:absolute;inset:0;background-image:var(--pat-gold);background-size:64px;opacity:.16}
+.rosette{position:absolute;left:50%;top:40%;width:118%;aspect-ratio:1;transform:translate(-50%,-50%)}
+.rosette g{transform-origin:0 0;transform-box:view-box;animation:spin 140s linear infinite}
+.rosette g.rev{animation-direction:reverse;animation-duration:200s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.arch-name{position:absolute;left:0;right:0;bottom:26px;text-align:center}
+.arch-name .ar{font-size:clamp(34px,3.4vw,48px);color:var(--brass2);line-height:1.2;display:block}
+.arch-name small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+.hero-arch .lamp{position:absolute;left:50%;top:-1px;width:1px;height:48px;background:linear-gradient(#d7b06a,transparent);transform:translateX(-50%)}
+
+/* prayer strip */
+.prayer{position:relative;z-index:5;margin-top:-96px}
+.pcard{background:var(--ivory);border-radius:var(--r);box-shadow:0 30px 80px -30px #0a2a2666,0 0 0 1px var(--line);overflow:hidden}
+.ptop{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;padding:18px 24px;border-bottom:1px solid var(--line)}
+.ptop b{font-family:var(--serif);font-size:22px;font-weight:600}
+.ptop .hij{color:var(--em3);font-weight:600}
+.ptop .loc{margin-left:auto;font-size:13px;color:var(--mut);display:flex;align-items:center;gap:8px}
+.pgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.pt{padding:20px 22px 22px;border-right:1px solid var(--line);position:relative;transition:background .4s,color .4s}
+.pt:last-child{border-right:0}
+.pt .nm{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.pt .sub{font-size:11.5px;color:var(--mut);opacity:.8}
+.pt .tm{font-family:var(--serif);font-size:clamp(30px,3vw,42px);font-weight:600;line-height:1.1;margin-top:6px;font-variant-numeric:lining-nums tabular-nums}
+.pt.past .tm{opacity:.45}
+.pt.next{background:var(--em);color:var(--ivory)}
+.pt.next .nm,.pt.next .sub{color:var(--brass2)}
+.pt.next::before{content:"";position:absolute;inset:0;background-image:var(--pat-gold);background-size:70px;opacity:.1;pointer-events:none}
+.pt .cd{display:none;font-size:12.5px;font-weight:700;margin-top:8px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.pt.next .cd{display:block}
+.pfoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:12px 24px;background:var(--sand);font-size:12.5px;color:var(--mut)}
+.pfoot a{color:var(--em3);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* ticker */
+.ticker{margin-top:28px;display:flex;align-items:center;gap:16px;overflow:hidden;border-block:1px solid var(--line);padding:12px 0}
+.ticker .lbl{flex:none;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;background:var(--brass);color:#fff;padding:5px 10px;border-radius:99px}
+.ticker .track{display:flex;gap:48px;width:max-content;animation:tick 40s linear infinite;white-space:nowrap;font-weight:600;font-size:14px}
+.ticker:hover .track{animation-play-state:paused}
+.ticker .track span::before{content:"✦";color:var(--brass);margin-right:14px}
+.ticker .mask{overflow:hidden;flex:1;mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+.sec{padding:clamp(80px,9vw,128px) 0}
+.shead{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 24px;align-items:end;margin-bottom:clamp(32px,4vw,52px)}
+.shead .no{grid-column:1/-1;display:flex;align-items:center;gap:14px}
+.shead .no::after{content:"";flex:1;height:1px;background:var(--line)}
+.shead h2{grid-column:1/8;font-family:var(--serif);font-weight:600;font-size:clamp(40px,5.2vw,72px);line-height:.95;letter-spacing:-.015em;margin:0}
+.shead h2 em{font-style:italic;color:var(--em3);font-weight:500}
+.shead p{grid-column:8/13;margin:0;color:var(--mut);font-size:16.5px}
+.dark{background:var(--em2);color:var(--ivory);position:relative;isolation:isolate}
+.dark::before{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--pat-gold);background-size:96px;opacity:.07}
+.dark .shead .no::after{background:var(--lineL)}
+.dark .shead h2 em{color:var(--brass2)}
+.dark .shead p{color:#f6f1e7b3}
+
+/* programme */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.filters .lab{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-right:6px;min-width:78px}
+.chip{border:1px solid var(--line);background:transparent;border-radius:99px;padding:8px 14px;font-size:13px;font-weight:600;min-height:38px;transition:.2s}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--em);border-color:var(--em);color:var(--ivory)}
+.chip .today{font-size:10px;color:var(--brass);font-weight:800;margin-left:4px}
+.chip.on .today{color:var(--brass2)}
+.prog{margin-top:26px;border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:130px 130px minmax(0,1fr) 150px;gap:16px;align-items:center;padding:18px 4px;border-bottom:1px solid var(--line);animation:rowin .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rowin{from{opacity:0;transform:translateY(10px)}}
+.row .d{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.row .t{font-variant-numeric:tabular-nums;color:var(--mut);font-weight:600}
+.row h3{margin:0;font-family:var(--serif);font-size:25px;font-weight:600;line-height:1.15}
+.row small{display:block;color:var(--mut);font-size:13px}
+.tag{justify-self:end;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:var(--sand);white-space:nowrap}
+.tag.child{background:#f3dfb6}.tag.youth{background:#cfe3dc}.tag.women{background:#ead3c4}.tag.adult{background:var(--sand2)}.tag.all{background:var(--em);color:var(--ivory)}
+.empty{padding:40px 4px;color:var(--mut)}
+
+/* jumaat */
+.jgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px}
+.jarch{position:relative;border-radius:999px 999px var(--r) var(--r);border:1px solid #d7b06a55;padding:clamp(60px,7vw,90px) clamp(24px,3vw,40px) 36px;text-align:center;overflow:hidden;isolation:isolate}
+.jarch::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 30%,#1f5a52,transparent 70%)}
+.jarch .k{font-family:var(--serif);font-size:clamp(64px,8vw,104px);line-height:1;font-weight:600;color:var(--brass2);font-variant-numeric:lining-nums}
+.jarch p{margin:6px 0 0;opacity:.85}
+.jarch .when{margin-top:22px;display:inline-block;border:1px solid var(--lineL);border-radius:99px;padding:8px 16px;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.jcards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.jc{border:1px solid var(--lineL);border-radius:var(--r);padding:24px;background:#ffffff08}
+.jc h3{margin:0 0 12px;font-family:var(--serif);font-size:26px;font-weight:600}
+.jc.wide{grid-column:1/-1}
+.rota{width:100%;border-collapse:collapse;font-size:14px}
+.rota th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);font-weight:800;padding:0 0 10px}
+.rota td{padding:11px 0;border-top:1px solid var(--lineL)}
+.rota tr.now td{color:var(--brass2);font-weight:700}
+.jc ul{margin:0;padding-left:18px;opacity:.88}
+.jc li{margin:4px 0}
+
+/* infaq */
+.igrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:start}
+.panel{background:#fff;border-radius:var(--r);box-shadow:0 0 0 1px var(--line);padding:clamp(22px,3vw,34px)}
+.funds{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 24px}
+.fund{text-align:left;border:1px solid var(--line);background:var(--ivory);border-radius:16px;padding:16px;transition:.2s;position:relative}
+.fund b{display:block;font-size:15px}
+.fund small{color:var(--mut);font-size:12.5px;line-height:1.4;display:block;margin-top:2px}
+.fund.on{border-color:var(--em);background:var(--em);color:var(--ivory)}
+.fund.on small{color:#f6f1e7bb}
+.fund.on::after{content:"✓";position:absolute;top:12px;right:14px;color:var(--brass2);font-weight:800}
+.amts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.amt{border:1px solid var(--line);background:none;border-radius:12px;padding:12px 18px;font-weight:800;font-variant-numeric:tabular-nums;min-height:46px}
+.amt.on{background:var(--brass);border-color:var(--brass);color:#fff}
+.custom{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;padding:0 0 0 14px;min-height:46px;flex:1 1 150px}
+.custom span{font-weight:800;color:var(--mut)}
+.custom input{border:0;background:none;outline:none;padding:12px;width:100%;font-weight:700}
+.custom:focus-within{border-color:var(--brass)}
+.summary{margin-top:24px;padding:18px 20px;border-radius:16px;background:var(--sand);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.summary b{font-family:var(--serif);font-size:28px;font-weight:600;font-variant-numeric:lining-nums}
+.note{font-size:12.5px;color:var(--mut);margin-top:12px}
+.qr{text-align:center}
+.qrbox{position:relative;width:min(240px,100%);aspect-ratio:1;margin:8px auto 16px;border-radius:18px;border:2px dashed var(--brass);display:grid;place-items:center;background-image:var(--pat-em);background-size:40px;overflow:hidden}
+.qrbox span{background:var(--ivory);padding:10px 14px;border-radius:10px;font-weight:800;font-size:13px;line-height:1.35;max-width:80%;box-shadow:0 0 0 1px var(--line)}
+.acct{font-size:13.5px;text-align:left;border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+.acct div{display:flex;justify-content:space-between;gap:10px;padding:4px 0}
+.acct div span:first-child{color:var(--mut)}
+.goal{margin-top:24px}
+.goal .bar{height:14px;border-radius:99px;background:var(--sand);overflow:hidden;margin:12px 0 8px;position:relative}
+.goal .bar i{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--em),var(--teal));border-radius:99px;transition:width 2s cubic-bezier(.2,.8,.2,1)}
+.goal .bar i::after{content:"";position:absolute;inset:0;background-image:var(--pat-gold);background-size:28px;opacity:.35}
+.goal .nums{display:flex;justify-content:space-between;font-size:13px;color:var(--mut);font-variant-numeric:tabular-nums}
+.goal .nums b{color:var(--ink);font-size:18px}
+
+/* facilities */
+.fgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.fac{border-radius:200px 200px var(--r) var(--r);background:#fff;box-shadow:0 0 0 1px var(--line);padding:0 22px 24px;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.fac:hover{transform:translateY(-6px);box-shadow:0 0 0 1px var(--line),0 24px 50px -28px #0a2a2666}
+.fac .art{height:150px;margin:0 -22px 20px;background:var(--em);background-image:var(--pat-gold);background-size:48px;position:relative}
+.fac .art svg{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:120px;height:120px}
+.fac h3{margin:0 0 6px;font-family:var(--serif);font-size:25px;font-weight:600;line-height:1.1}
+.fac p{margin:0 0 12px;color:var(--mut);font-size:14px}
+.fac .cap{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--em3)}
+.fac.jen .art{background-color:#2a3a37}
+.fac.jen a{display:inline-flex;margin-top:4px;font-weight:800;color:var(--em3);text-decoration:underline;text-underline-offset:3px}
+.book{margin-top:24px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px;align-items:start}
+.book h3{font-family:var(--serif);font-size:34px;font-weight:600;margin:0 0 10px;line-height:1.05}
+.book p{color:var(--mut);margin:0}
+form .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label.f{display:grid;gap:6px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+label.f.full{grid-column:1/-1}
+.inp{border:1px solid var(--line);background:var(--ivory);border-radius:12px;padding:12px 14px;font-size:15px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);min-height:48px;width:100%}
+.inp:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 3px #b8893b22}
+.inp.err{border-color:#b4442c}
+.formrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px}
+.ok{display:none;margin-top:16px;padding:16px 18px;border-radius:14px;background:#e3efe9;border:1px solid #2c6e6333;color:var(--em)}
+.ok.show{display:block;animation:rowin .4s both}
+.ok b{display:block;font-size:15px}
+
+/* visitor guide */
+.vgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,60px);align-items:start}
+.welcome{position:sticky;top:calc(var(--hdr) + 60px);border-radius:999px 999px var(--r) var(--r);background:var(--sand);padding:80px 32px 32px;text-align:center;overflow:hidden;isolation:isolate}
+.welcome::before{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--pat-em);background-size:56px;opacity:.5;mask:linear-gradient(#000,transparent 65%)}
+.welcome .ar{font-size:44px;color:var(--em3);line-height:1.3}
+.welcome h3{font-family:var(--serif);font-size:36px;font-weight:600;line-height:1.05;margin:10px 0 12px}
+.welcome p{color:var(--mut);margin:0 0 20px}
+.acc{border-top:2px solid var(--ink)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;display:flex;align-items:center;gap:18px;padding:22px 4px;cursor:pointer;font-family:var(--serif);font-size:clamp(22px,2.2vw,28px);font-weight:600;line-height:1.15}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .n{font-family:var(--sans);font-size:12px;font-weight:800;color:var(--brass);letter-spacing:.1em;min-width:26px}
+.acc summary .pm{margin-left:auto;width:34px;height:34px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .3s,background .3s}
+.acc details[open] summary .pm{transform:rotate(45deg);background:var(--em);color:var(--ivory);border-color:var(--em)}
+.acc .body{padding:0 4px 24px 48px;color:var(--mut);max-width:62ch}
+.acc .body ul{margin:8px 0 0;padding-left:18px}
+
+/* news */
+.ngrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.news{background:#fff;border-radius:var(--r);box-shadow:0 0 0 1px var(--line);padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .3s}
+.news:hover{transform:translateY(-4px)}
+.news .dt{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.news .dt i{width:28px;height:28px;flex:none;border-radius:50% 50% 4px 4px;background:var(--em);background-image:var(--pat-gold);background-size:14px}
+.news h3{margin:0;font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1}
+.news p{margin:0;color:var(--mut);font-size:14.5px}
+
+/* contact */
+.cgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:stretch}
+.cinfo{display:grid;gap:18px;align-content:start}
+.cinfo div{border-top:1px solid var(--lineL);padding-top:14px}
+.cinfo small{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);margin-bottom:4px}
+.cinfo b{font-weight:600;font-size:17px}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:380px;background:#0d332e;box-shadow:0 0 0 1px var(--lineL)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{position:absolute;left:54%;top:46%;transform:translate(-50%,-100%);text-align:center}
+.map .pin span{display:block;width:44px;height:54px;margin:0 auto;border-radius:99px 99px 6px 6px;background:var(--brass);box-shadow:0 10px 30px #0008;position:relative}
+.map .pin span::after{content:"";position:absolute;inset:8px;border-radius:99px 99px 3px 3px;background-image:var(--pat-em);background-size:16px;background-color:var(--ivory)}
+.map .pin::after{content:"";position:absolute;left:50%;bottom:-6px;width:60px;height:60px;border-radius:50%;border:2px solid var(--brass2);transform:translate(-50%,50%) scale(.3);opacity:0;animation:ring 2.4s infinite}
+@keyframes ring{0%{transform:translate(-50%,50%) scale(.3);opacity:.9}100%{transform:translate(-50%,50%) scale(1.6);opacity:0}}
+.map .pin b{display:inline-block;margin-top:10px;background:var(--ivory);color:var(--ink);font-size:12.5px;padding:6px 10px;border-radius:99px;box-shadow:0 6px 20px #0006;white-space:nowrap}
+.map .acts{position:absolute;left:16px;bottom:16px;display:flex;gap:8px;flex-wrap:wrap}
+.map .acts a{background:var(--ivory);color:var(--ink);font-weight:800;font-size:13px;padding:10px 14px;border-radius:99px}
+.map .acts a:hover{background:var(--brass);color:#fff}
+
+/* footer */
+footer{background:var(--em2);color:var(--ivory);border-top:1px solid var(--lineL);padding:56px 0 32px}
+.fgrid2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer .ar{font-size:38px;color:var(--brass2);line-height:1.3}
+footer h4{margin:0 0 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass2)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;opacity:.85}
+footer a:hover{color:var(--brass2)}
+.fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--lineL);font-size:12.5px;opacity:.7}
+.tpl{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--lineL);border-radius:99px;padding:4px 10px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1080px){
+  .nav{display:none}
+  .burger{display:inline-flex;align-items:center}
+  .lang{margin-left:auto}
+  .mnav{position:fixed;inset:calc(36px + var(--hdr)) 0 auto 0;z-index:89;background:var(--ivory);color:var(--ink);padding:8px 20px 20px;box-shadow:0 20px 40px #0003;flex-direction:column}
+  .mnav.open{display:flex}
+  .mnav a{padding:14px 2px;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:24px;font-weight:600}
+  .hero-copy{grid-column:1/-1}
+  .hero-arch{grid-column:1/-1;justify-self:center;width:min(78%,360px);margin:20px 0 -40px}
+  .pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pt:nth-child(3){border-right:0}
+  .pt:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .shead h2,.shead p{grid-column:1/-1}
+  .jgrid,.igrid,.book,.vgrid,.cgrid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .welcome{position:relative;top:0}
+}
+@media(max-width:700px){
+  .hdr .next-pill{display:none!important}
+  .brand small{display:none}
+  .hero{padding-bottom:120px}
+  .hero h1{font-size:clamp(50px,15vw,72px)}
+  .prayer{margin-top:-80px}
+  .ptop{padding:14px 16px}.ptop .loc{margin-left:0}
+  .pt{padding:14px 14px 16px}
+  .pt .tm{font-size:28px}
+  .pfoot{padding:12px 16px}
+  .row{grid-template-columns:1fr auto;gap:4px 12px;padding:16px 2px}
+  .row .d{grid-column:1}.row .t{grid-column:2;justify-self:end}
+  .row .ti{grid-column:1/-1}
+  .row .tag{grid-column:1/-1;justify-self:start}
+  .row h3{font-size:22px}
+  .filters .lab{flex-basis:100%}
+  .jcards,.funds,form .grid{grid-template-columns:1fr}
+  .fgrid,.ngrid{grid-template-columns:1fr}
+  .fgrid2{grid-template-columns:1fr 1fr}
+  .fgrid2>div:first-child{grid-column:1/-1}
+  .acc .body{padding-left:4px}
+  .map{min-height:320px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .rosette g,.ticker .track,.next-pill i,.map .pin::after,.row,.ok.show{animation:none}
+  .goal .bar i{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-11 · Islamic Geometry × Contemporary Swiss</span><a class="exh-cta" href="/contact.html">Build one like this →</a></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="brand-mark" viewBox="0 0 38 44" aria-hidden="true"><path d="M2 43V19a17 17 0 0 1 34 0v24z" fill="none" stroke="currentColor" stroke-width="1.6"/><g id="mark-star" transform="translate(19 23)"></g></svg><span data-c="shortName"></span></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#waktu" data-i18n="nav.prayer"></a><a href="#program" data-i18n="nav.prog"></a><a href="#jumaat" data-i18n="nav.friday"></a><a href="#infaq" data-i18n="nav.infaq"></a><a href="#kemudahan" data-i18n="nav.fac"></a><a href="#lawatan" data-i18n="nav.visit"></a><a href="#hubungi" data-i18n="nav.contact"></a>
+    </nav>
+    <span class="next-pill" aria-live="off"><i></i><span id="pill-txt"></span></span>
+    <div class="lang" role="group" aria-label="Bahasa / Language"><button type="button" data-lang="bm" class="on" aria-pressed="true">BM</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" data-i18n="menu"></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#waktu" data-i18n="nav.prayer"></a><a href="#program" data-i18n="nav.prog"></a><a href="#jumaat" data-i18n="nav.friday"></a><a href="#infaq" data-i18n="nav.infaq"></a><a href="#kemudahan" data-i18n="nav.fac"></a><a href="#lawatan" data-i18n="nav.visit"></a><a href="#hubungi" data-i18n="nav.contact"></a>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="greet rv"><span class="ar" lang="ar">السلام عليكم</span><span data-i18n="hero.greet"></span></div>
+      <h1 class="rv"><span data-c="nameLead"></span><br><em data-c="nameTail"></em></h1>
+      <p class="hero-lede rv" data-i18n="hero.lede"></p>
+      <div class="btns rv"><a class="btn gold" href="#waktu" data-i18n="hero.cta1"></a><a class="btn ghost" href="#lawatan" data-i18n="hero.cta2"></a></div>
+    </div>
+    <div class="hero-arch rv" aria-hidden="true">
+      <span class="lamp"></span>
+      <div class="inner">
+        <svg class="rosette" viewBox="-200 -200 400 400" id="rosette"></svg>
+        <div class="arch-name"><span class="ar" lang="ar" data-c="nameArabic"></span><small data-c="locality"></small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prayer" id="waktu" aria-labelledby="ptitle">
+  <div class="wrap">
+    <div class="pcard rv">
+      <div class="ptop"><b id="ptitle" data-i18n="pt.title"></b><span id="gdate"></span><span class="hij" id="hdate"></span><span class="loc"><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s5-4.6 5-8A5 5 0 0 0 1 5c0 3.4 5 8 5 8z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="5" r="1.6" fill="currentColor"/></svg><span data-c="locality"></span></span></div>
+      <div class="pgrid" id="pgrid"></div>
+      <div class="pfoot"><span data-i18n="pt.note"></span><a href="https://www.e-solat.gov.my/" target="_blank" rel="noopener" data-i18n="pt.official"></a></div>
+    </div>
+    <div class="ticker" aria-label="Pengumuman"><span class="lbl" data-i18n="news.lbl"></span><div class="mask"><div class="track" id="ticker"></div></div></div>
+  </div>
+</section>
+
+<section class="sec" id="program" aria-labelledby="prog-t">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="prog.no"></span><h2 id="prog-t" data-i18n-html="prog.h"></h2><p data-i18n="prog.p"></p></div>
+    <div class="filters rv" role="group" aria-label="Audience"><span class="lab" data-i18n="prog.for"></span><div id="f-aud" style="display:contents"></div></div>
+    <div class="filters rv" role="group" aria-label="Day"><span class="lab" data-i18n="prog.day"></span><div id="f-day" style="display:contents"></div></div>
+    <div class="prog" id="prog" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec dark" id="jumaat" aria-labelledby="jum-t">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="jum.no"></span><h2 id="jum-t" data-i18n-html="jum.h"></h2><p data-i18n="jum.p"></p></div>
+    <div class="jgrid">
+      <div class="jarch rv"><span class="eyebrow" data-i18n="jum.khutbah"></span><div class="k" data-c="fridayKhutbah"></div><p data-c-i18n="fridayNote"></p><span class="when" id="jum-when"></span></div>
+      <div class="jcards">
+        <div class="jc wide rv"><h3 data-i18n="jum.rota"></h3><table class="rota"><thead><tr><th data-i18n="jum.date"></th><th>Imam</th><th data-i18n="jum.khatib"></th></tr></thead><tbody id="rota"></tbody></table></div>
+        <div class="jc rv"><h3 data-i18n="jum.park"></h3><ul><li data-i18n="jum.park1"></li><li data-i18n="jum.park2"></li><li data-i18n="jum.park3"></li></ul></div>
+        <div class="jc rv"><h3 data-i18n="jum.tips"></h3><ul><li data-i18n="jum.tip1"></li><li data-i18n="jum.tip2"></li><li data-i18n="jum.tip3"></li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="infaq" aria-labelledby="inf-t">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="inf.no"></span><h2 id="inf-t" data-i18n-html="inf.h"></h2><p data-i18n="inf.p"></p></div>
+    <div class="igrid">
+      <div class="panel rv">
+        <span class="eyebrow" data-i18n="inf.step1"></span>
+        <div class="funds" id="funds" role="radiogroup"></div>
+        <span class="eyebrow" data-i18n="inf.step2"></span>
+        <div class="amts" id="amts"></div>
+        <div class="summary"><div><small data-i18n="inf.sum" style="color:var(--mut);font-size:12.5px;display:block"></small><b id="sum-amt">RM50</b> <span id="sum-fund" style="color:var(--mut)"></span></div><button class="btn em" type="button" id="give" data-i18n="inf.go"></button></div>
+        <div class="ok" id="give-ok" role="status"></div>
+        <div class="goal" id="goal"><div style="display:flex;justify-content:space-between;align-items:end;gap:10px"><span class="eyebrow" data-i18n="inf.goal"></span><b id="goal-pct" style="font-family:var(--serif);font-size:30px">0%</b></div><div class="bar"><i></i></div><div class="nums"><span><b id="goal-raised">RM0</b> <span data-i18n="inf.raised"></span></span><span><span data-i18n="inf.target"></span> <b id="goal-target"></b></span></div></div>
+      </div>
+      <div class="panel qr rv">
+        <span class="eyebrow" data-i18n="inf.qr"></span>
+        <div class="qrbox" aria-label="QR placeholder"><span>Your official DuitNow QR here<br><small style="font-weight:600;color:var(--mut)" data-i18n="inf.qrsub"></small></span></div>
+        <p class="note" style="margin:0" data-i18n="inf.qrnote"></p>
+        <div class="acct"><div><span data-i18n="inf.acc1"></span><b data-c="bankName"></b></div><div><span data-i18n="inf.acc2"></span><b data-c="accountName"></b></div><div><span data-i18n="inf.acc3"></span><b data-c="accountNo"></b></div></div>
+        <p class="note" data-i18n="inf.receipt"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kemudahan" aria-labelledby="fac-t" style="background:var(--sand);padding-bottom:clamp(80px,9vw,128px)">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="fac.no"></span><h2 id="fac-t" data-i18n-html="fac.h"></h2><p data-i18n="fac.p"></p></div>
+    <div class="fgrid" id="facs"></div>
+    <div class="book panel rv">
+      <div><span class="eyebrow" data-i18n="bk.no"></span><h3 data-i18n="bk.h"></h3><p data-i18n="bk.p"></p></div>
+      <form id="bk" novalidate>
+        <div class="grid">
+          <label class="f"><span data-i18n="bk.name"></span><input class="inp" name="name" autocomplete="name" required></label>
+          <label class="f"><span data-i18n="bk.phone"></span><input class="inp" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+          <label class="f"><span data-i18n="bk.fac"></span><select class="inp" name="fac" id="bk-fac" required></select></label>
+          <label class="f"><span data-i18n="bk.date"></span><input class="inp" name="date" type="date" id="bk-date" required></label>
+          <label class="f full"><span data-i18n="bk.purpose"></span><select class="inp" name="purpose" id="bk-purpose" required></select></label>
+          <label class="f full"><span data-i18n="bk.notes"></span><textarea class="inp" name="notes" rows="3"></textarea></label>
+        </div>
+        <div class="formrow"><button class="btn em" type="submit" data-i18n="bk.send"></button><span class="note" style="margin:0" data-i18n="bk.demo"></span></div>
+        <div class="ok" id="bk-ok" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="lawatan" aria-labelledby="vis-t">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="vis.no"></span><h2 id="vis-t" data-i18n-html="vis.h"></h2><p data-i18n="vis.p"></p></div>
+    <div class="vgrid">
+      <div class="welcome rv"><span class="ar" lang="ar">السلام عليكم</span><h3 data-i18n="vis.wh"></h3><p data-i18n="vis.wp"></p><a class="btn em" href="#kemudahan" data-i18n="vis.book"></a></div>
+      <div class="acc rv" id="acc"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="berita" aria-labelledby="news-t" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="news.no"></span><h2 id="news-t" data-i18n-html="news.h"></h2><p data-i18n="news.p"></p></div>
+    <div class="ngrid" id="news"></div>
+  </div>
+</section>
+
+<section class="sec dark" id="hubungi" aria-labelledby="con-t">
+  <div class="wrap">
+    <div class="shead rv"><span class="no eyebrow" data-i18n="con.no"></span><h2 id="con-t" data-i18n-html="con.h"></h2><p data-i18n="con.p"></p></div>
+    <div class="cgrid">
+      <div class="cinfo rv">
+        <div><small data-i18n="con.addr"></small><b data-c="address"></b></div>
+        <div><small data-i18n="con.phone"></small><b><a data-c="phone" data-href="tel"></a></b></div>
+        <div><small data-i18n="con.email"></small><b><a data-c="email" data-href="mailto"></a></b></div>
+        <div><small data-i18n="con.office"></small><b data-i18n="con.hours"></b></div>
+        <div><small data-i18n="con.jenazah"></small><b><a data-c="jenazahPhone" data-href="tel"></a></b></div>
+      </div>
+      <div class="map rv" role="img" aria-label="Map">
+        <svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" id="mapsvg" aria-hidden="true"></svg>
+        <div class="pin"><span></span><b data-c="shortName"></b></div>
+        <div class="acts"><a id="gmaps" target="_blank" rel="noopener">Google Maps ↗</a><a id="waze" target="_blank" rel="noopener">Waze ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid2">
+      <div><span class="ar" lang="ar" data-c="nameArabic"></span><p style="margin:6px 0 0;opacity:.8;max-width:40ch" data-c="tagline-i18n"></p></div>
+      <div><h4 data-i18n="ft.visit"></h4><ul><li><a href="#waktu" data-i18n="nav.prayer"></a></li><li><a href="#program" data-i18n="nav.prog"></a></li><li><a href="#jumaat" data-i18n="nav.friday"></a></li><li><a href="#lawatan" data-i18n="nav.visit"></a></li></ul></div>
+      <div><h4 data-i18n="ft.support"></h4><ul><li><a href="#infaq" data-i18n="nav.infaq"></a></li><li><a href="#kemudahan" data-i18n="nav.fac"></a></li><li><a href="#berita" data-i18n="ft.news"></a></li><li><a href="#hubungi" data-i18n="nav.contact"></a></li></ul></div>
+    </div>
+    <div class="fbot"><span>© <span id="yr"></span> <span data-c="name"></span></span><span class="tpl" data-i18n="ft.tpl"></span><span data-i18n="ft.built"></span></div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   CONFIG — customise this block for each mosque. Every name, location,
+   contact detail and prayer-time calculation on the page reads from here.
+   lat/lng: the mosque's coordinates (Google Maps → right-click → copy).
+   utcOffset: hours from UTC (Malaysia = 8, no daylight saving).
+   ===================================================================== */
+const CONFIG = {
+  name: 'Masjid Al-Ihsan',
+  nameLead: 'Masjid',
+  nameTail: 'Al-Ihsan',
+  shortName: 'Al-Ihsan',
+  nameArabic: 'مسجد الإحسان',
+  locality: 'Taman Seri Damai, Selangor',
+  tagline: { bm: 'Rumah ibadah, rumah komuniti. Pintu kami terbuka untuk semua.', en: 'A house of prayer and a home for the community. Our doors are open to all.' },
+  address: 'Jalan Damai 3, Taman Seri Damai, 43000 Selangor',
+  lat: 3.0738, lng: 101.5183, timezone: 'Asia/Kuala_Lumpur', utcOffset: 8,
+  phone: '+60 3-0000 0000', email: 'urusetia@masjid-alihsan.example', jenazahPhone: '+60 12-000 0000',
+  fridayKhutbah: '1:15',
+  fridayNote: { bm: 'Azan kedua jam 1:15 tengah hari. Sila hadir awal; dewan utama dan ruang tambahan dibuka dari jam 12:30.', en: 'Second azan at 1:15 pm. Please come early; the main hall and overflow spaces open from 12:30.' },
+  bankName: 'Nama Bank (placeholder)', accountName: 'Masjid Al-Ihsan', accountNo: '0000-0000-0000',
+  buildingFund: { target: 3000000, raised: 1962400 },
+  ihtiyatMin: 1 // minutes added for caution, as many official timetables do
+};
+
+/* ---------- i18n ---------- */
+const I = {
+bm:{
+ 'menu':'Menu','nav.prayer':'Waktu Solat','nav.prog':'Program','nav.friday':'Jumaat','nav.infaq':'Infaq','nav.fac':'Kemudahan','nav.visit':'Lawatan','nav.contact':'Hubungi',
+ 'hero.greet':'Selamat datang','hero.lede':'Rumah ibadah dan rumah komuniti di {locality}. Solat berjemaah, ilmu, khidmat masyarakat, dan pintu yang sentiasa terbuka untuk jiran kita.','hero.cta1':'Waktu solat hari ini','hero.cta2':'Kali pertama berkunjung?',
+ 'pt.title':'Waktu Solat','pt.note':'Waktu anggaran berdasarkan kiraan astronomi untuk lokasi masjid.','pt.official':'Rujuk JAKIM e-Solat untuk waktu rasmi','pt.next':'Seterusnya','pt.in':'dalam','pt.tomorrow':'esok',
+ 'news.lbl':'Terkini',
+ 'prog.no':'01 · Program Mingguan','prog.h':'Ilmu untuk setiap <em>peringkat umur.</em>','prog.p':'Kuliah, kelas tafsir, tahfiz kanak-kanak, bulatan belia dan halaqah muslimah. Pilih untuk siapa dan hari yang sesuai.','prog.for':'Untuk','prog.day':'Hari','prog.empty':'Tiada program untuk pilihan ini. Cuba hari atau kumpulan lain.','prog.maghrib':'Lepas Maghrib','prog.isyak':'Lepas Isyak','prog.subuh':'Lepas Subuh',
+ 'aud.any':'Semua','aud.adult':'Dewasa','aud.youth':'Belia','aud.child':'Kanak-kanak','aud.women':'Muslimah','aud.all':'Terbuka','day.any':'Semua hari',
+ 'jum.no':'02 · Solat Jumaat','jum.h':'Hari Jumaat <em>bersama kami.</em>','jum.p':'Waktu khutbah, imam dan khatib bertugas, dan panduan parkir supaya semuanya tenang dan teratur.','jum.khutbah':'Azan kedua · tengah hari','jum.rota':'Jadual bertugas','jum.date':'Tarikh','jum.khatib':'Khatib','jum.park':'Parkir','jum.park1':'Parkir utama dan sekolah bersebelahan dibuka dari 12:15.','jum.park2':'Sukarelawan trafik bertugas di pintu masuk Jalan Damai 3.','jum.park3':'Ruang khas untuk warga emas dan OKU di pintu utama.','jum.tips':'Panduan ringkas','jum.tip1':'Matikan atau senyapkan telefon.','jum.tip2':'Saf wanita di aras mezanin.','jum.tip3':'Kotak infaq Jumaat di setiap pintu.','jum.this':'Jumaat ini','jum.tba':'Akan dimaklumkan',
+ 'inf.no':'03 · Infaq & Sumbangan','inf.h':'Setiap sumbangan <em>menghidupkan masjid.</em>','inf.p':'Pilih tabung, pilih jumlah. Sumbangan anda membiayai operasi harian, kelas tahfiz, dapur komuniti dan pembinaan.','inf.step1':'1 · Pilih tabung','inf.step2':'2 · Pilih jumlah','inf.sum':'Infaq anda','inf.go':'Teruskan','inf.to':'kepada','inf.goal':'Tabung pembinaan dewan baharu','inf.raised':'terkumpul','inf.target':'Sasaran','inf.qr':'Imbas untuk menyumbang','inf.qrsub':'Tempat QR rasmi masjid','inf.qrnote':'Pada laman sebenar, kod QR rasmi masjid dipaparkan di sini.','inf.acc1':'Bank','inf.acc2':'Nama akaun','inf.acc3':'No. akaun','inf.receipt':'Resit rasmi dikeluarkan oleh pejabat masjid atas permintaan.','inf.okh':'Terima kasih. Semoga diberkati.','inf.okp':'Demo sahaja: pada laman sebenar, butang ini membuka halaman bayaran rasmi masjid untuk {amt} kepada {fund}. Tiada bayaran dibuat di sini.','inf.custom':'Jumlah lain',
+ 'fund.ops':'Dana Operasi','fund.ops.d':'Elektrik, air, kebersihan dan penyelenggaraan.','fund.tahfiz':'Dana Tahfiz','fund.tahfiz.d':'Yuran dan buku untuk pelajar tahfiz.','fund.kitchen':'Dapur Komuniti','fund.kitchen.d':'Hidangan percuma setiap Sabtu.','fund.build':'Tabung Pembinaan','fund.build.d':'Dewan serbaguna dan ruang kelas baharu.',
+ 'fac.no':'04 · Kemudahan','fac.h':'Ruang untuk saat <em>yang bermakna.</em>','fac.p':'Dewan untuk akad nikah dan majlis, bilik kelas, dan khidmat pengurusan jenazah yang sentiasa bersedia.',
+ 'f.hall':'Dewan Serbaguna','f.hall.d':'Untuk akad nikah, majlis kesyukuran dan program komuniti.','f.hall.c':'Hingga 400 tetamu','f.class':'Bilik Kelas','f.class.d':'Empat bilik berhawa dingin untuk kelas dan seminar.','f.class.c':'20–40 orang','f.nikah':'Ruang Akad Nikah','f.nikah.d':'Ruang tenang dan indah untuk detik akad.','f.nikah.c':'Hingga 60 tetamu','f.jen':'Pengurusan Jenazah','f.jen.d':'Kami bersama anda. Urusan mandi, kafan dan solat jenazah dibantu oleh pasukan terlatih.','f.jen.c':'Talian 24 jam','f.jen.call':'Hubungi talian khas',
+ 'bk.no':'Tempahan','bk.h':'Mohon tempahan ruang.','bk.p':'Isi borang ringkas ini. Pejabat masjid akan menghubungi anda untuk pengesahan dan butiran.','bk.name':'Nama penuh','bk.phone':'No. telefon','bk.fac':'Kemudahan','bk.date':'Tarikh','bk.purpose':'Tujuan','bk.notes':'Catatan (pilihan)','bk.send':'Hantar permohonan','bk.demo':'Demo: borang tidak dihantar ke mana-mana.','bk.okh':'Permohonan diterima','bk.okp':'Rujukan {ref}: {fac} pada {date} untuk {purpose}. Pejabat akan menghubungi {name} dalam masa 2 hari bekerja. (Demo, tiada data dihantar.)','bk.err':'Sila lengkapkan ruangan yang ditanda.',
+ 'p.nikah':'Akad nikah','p.kesyukuran':'Majlis kesyukuran','p.kelas':'Kelas / seminar','p.mesyuarat':'Mesyuarat','p.lain':'Lain-lain',
+ 'vis.no':'05 · Kali pertama berkunjung?','vis.h':'Semua dialu-alukan. <em>Ya, anda juga.</em>','vis.p':'Ingin tahu tentang masjid kami? Jiran, pelajar dan pelancong dijemput singgah. Ini sedikit panduan supaya anda rasa selesa.','vis.wh':'Pintu kami terbuka.','vis.wp':'Tiada soalan yang terlalu kecil. Sukarelawan kami gembira menyambut anda dan menjawab apa sahaja.','vis.book':'Tempah lawatan berpandu',
+ 'v1':'Apa yang perlu dipakai?','v1b':'Pakaian sopan yang menutup bahu dan lutut. Pelawat wanita dijemput menutup rambut; selendang dan jubah disediakan percuma di kaunter pelawat.','v2':'Adab di dalam masjid','v2b':'<ul><li>Tanggalkan kasut sebelum masuk ruang solat; rak kasut disediakan.</li><li>Bercakap perlahan dan elakkan berjalan di hadapan orang yang sedang solat.</li><li>Anda boleh duduk dan memerhati dengan tenang.</li></ul>','v3':'Waktu lawatan','v3b':'Setiap hari 9:00 pagi hingga 5:00 petang, kecuali waktu solat dan Jumaat 12:00–2:30 petang. Kumpulan besar dinasihatkan membuat tempahan.','v4':'Lawatan berpandu & rumah terbuka','v4b':'Lawatan berpandu percuma setiap Sabtu jam 10:00 pagi dalam BM dan Inggeris. Rumah terbuka diadakan setiap musim perayaan; teh tarik disediakan.','v5':'Bolehkah saya mengambil gambar?','v5b':'Boleh, di ruang umum. Sila minta izin sebelum mengambil gambar orang, dan elakkan mengambil gambar ketika solat sedang berlangsung.',
+ 'news.no':'06 · Pengumuman','news.h':'Berita <em>komuniti.</em>','news.p':'Aktiviti, pendaftaran dan pengumuman terkini dari jawatankuasa masjid.',
+ 'n1':'Gotong-royong perdana','n1d':'Bersihkan masjid dan taman bersama. Sarapan disediakan untuk semua sukarelawan.','n2':'Pendaftaran Tahfiz 2027 dibuka','n2d':'Untuk kanak-kanak 7–12 tahun. Tempat terhad; sesi suai kenal ibu bapa setiap Ahad.','n3':'Rumah terbuka untuk jiran','n3d':'Lawatan berpandu, pameran seni geometri dan juadah tempatan. Semua dijemput.','n4':'Program derma darah','n4d':'Bersama hospital daerah, di dewan serbaguna 9 pagi hingga 1 petang.',
+ 'con.no':'07 · Hubungi','con.h':'Datang, <em>singgahlah.</em>','con.p':'Pejabat masjid sedia membantu untuk pertanyaan, tempahan, infaq dan urusan jenazah.','con.addr':'Alamat','con.phone':'Pejabat','con.email':'E-mel','con.office':'Waktu pejabat','con.hours':'Isnin–Sabtu, 9:00 pagi – 5:00 petang','con.jenazah':'Pengurusan jenazah (24 jam)',
+ 'ft.visit':'Kunjungi','ft.support':'Sokong','ft.news':'Pengumuman','ft.tpl':'Templat · kandungan ilustrasi','ft.built':'Reka bentuk & binaan oleh Aurelion',
+ 'days':['Ahad','Isnin','Selasa','Rabu','Khamis','Jumaat','Sabtu'],'today':'hari ini'
+},
+en:{
+ 'menu':'Menu','nav.prayer':'Prayer Times','nav.prog':'Programmes','nav.friday':'Friday','nav.infaq':'Give','nav.fac':'Facilities','nav.visit':'Visit','nav.contact':'Contact',
+ 'hero.greet':'Welcome','hero.lede':'A house of prayer and a home for the community in {locality}. Congregational prayer, learning, service to our neighbours, and a door that is always open.','hero.cta1':'Today’s prayer times','hero.cta2':'First time visiting?',
+ 'pt.title':'Prayer Times','pt.note':'Approximate times from an astronomical calculation for the mosque’s location.','pt.official':'See JAKIM e-Solat for official times','pt.next':'Next','pt.in':'in','pt.tomorrow':'tomorrow',
+ 'news.lbl':'Latest',
+ 'prog.no':'01 · Weekly Programme','prog.h':'Learning for <em>every age.</em>','prog.p':'Talks, tafsir classes, kids’ tahfiz, youth circles and sisters’ study circles. Choose who it’s for and the day that suits you.','prog.for':'For','prog.day':'Day','prog.empty':'Nothing scheduled for that choice. Try another day or group.','prog.maghrib':'After Maghrib','prog.isyak':'After Isyak','prog.subuh':'After Subuh',
+ 'aud.any':'Everyone','aud.adult':'Adults','aud.youth':'Youth','aud.child':'Children','aud.women':'Sisters','aud.all':'Open to all','day.any':'All days',
+ 'jum.no':'02 · Friday Prayer','jum.h':'Friday, <em>together.</em>','jum.p':'Khutbah time, who is leading, and parking guidance so the day stays calm and orderly.','jum.khutbah':'Second azan · midday','jum.rota':'Duty rota','jum.date':'Date','jum.khatib':'Khatib','jum.park':'Parking','jum.park1':'Main car park and the neighbouring school open from 12:15.','jum.park2':'Traffic volunteers on duty at the Jalan Damai 3 entrance.','jum.park3':'Reserved spaces for seniors and disabled visitors at the main door.','jum.tips':'Quick guide','jum.tip1':'Please switch phones off or to silent.','jum.tip2':'Sisters’ rows are on the mezzanine level.','jum.tip3':'Friday donation boxes at every door.','jum.this':'This Friday','jum.tba':'To be announced',
+ 'inf.no':'03 · Give','inf.h':'Every gift <em>keeps the mosque alive.</em>','inf.p':'Choose a fund, choose an amount. Your support covers daily operations, tahfiz classes, the community kitchen and our new building.','inf.step1':'1 · Choose a fund','inf.step2':'2 · Choose an amount','inf.sum':'Your gift','inf.go':'Continue','inf.to':'to','inf.goal':'New community hall building fund','inf.raised':'raised','inf.target':'Target','inf.qr':'Scan to give','inf.qrsub':'The mosque’s official QR goes here','inf.qrnote':'On the live site, the mosque’s official QR code is shown here.','inf.acc1':'Bank','inf.acc2':'Account name','inf.acc3':'Account no.','inf.receipt':'Official receipts are issued by the mosque office on request.','inf.okh':'Thank you. May it be blessed.','inf.okp':'Demo only: on the live site this button opens the mosque’s official payment page for {amt} to {fund}. No payment is made here.','inf.custom':'Other amount',
+ 'fund.ops':'Operations','fund.ops.d':'Electricity, water, cleaning and upkeep.','fund.tahfiz':'Tahfiz Fund','fund.tahfiz.d':'Fees and books for tahfiz students.','fund.kitchen':'Community Kitchen','fund.kitchen.d':'Free meals every Saturday.','fund.build':'Building Fund','fund.build.d':'A new multipurpose hall and classrooms.',
+ 'fac.no':'04 · Facilities','fac.h':'Spaces for the moments <em>that matter.</em>','fac.p':'A hall for nikah and gatherings, classrooms, and a funeral service team that is always ready.',
+ 'f.hall':'Multipurpose Hall','f.hall.d':'For nikah ceremonies, thanksgiving gatherings and community events.','f.hall.c':'Up to 400 guests','f.class':'Classrooms','f.class.d':'Four air-conditioned rooms for classes and seminars.','f.class.c':'20–40 people','f.nikah':'Nikah Room','f.nikah.d':'A calm, beautiful space for the akad.','f.nikah.c':'Up to 60 guests','f.jen':'Funeral Services','f.jen.d':'We are with you. Washing, shrouding and the funeral prayer are handled by a trained team.','f.jen.c':'24-hour line','f.jen.call':'Call the dedicated line',
+ 'bk.no':'Bookings','bk.h':'Request a space.','bk.p':'Fill in this short form. The mosque office will contact you to confirm and arrange the details.','bk.name':'Full name','bk.phone':'Phone','bk.fac':'Facility','bk.date':'Date','bk.purpose':'Purpose','bk.notes':'Notes (optional)','bk.send':'Send request','bk.demo':'Demo: this form is not sent anywhere.','bk.okh':'Request received','bk.okp':'Reference {ref}: {fac} on {date} for {purpose}. The office will contact {name} within 2 working days. (Demo, no data sent.)','bk.err':'Please complete the highlighted fields.',
+ 'p.nikah':'Nikah ceremony','p.kesyukuran':'Thanksgiving gathering','p.kelas':'Class / seminar','p.mesyuarat':'Meeting','p.lain':'Other',
+ 'vis.no':'05 · First time visiting?','vis.h':'Everyone is welcome. <em>Yes, you too.</em>','vis.p':'Curious about our mosque? Neighbours, students and travellers are invited to drop by. Here’s a little guide so you feel at ease.','vis.wh':'Our doors are open.','vis.wp':'No question is too small. Our volunteers are happy to welcome you and answer anything.','vis.book':'Book a guided visit',
+ 'v1':'What should I wear?','v1b':'Modest clothing that covers shoulders and knees. Women visitors are invited to cover their hair; scarves and robes are lent free at the visitor desk.','v2':'Etiquette inside','v2b':'<ul><li>Remove your shoes before entering the prayer hall; racks are provided.</li><li>Speak softly and avoid walking directly in front of someone who is praying.</li><li>You are welcome to sit quietly and observe.</li></ul>','v3':'Visiting hours','v3b':'Daily 9:00 am to 5:00 pm, except during prayers and Fridays 12:00–2:30 pm. Large groups, please book ahead.','v4':'Guided tours & open house','v4b':'Free guided tours every Saturday at 10:00 am in Malay and English. Open houses run every festive season, with teh tarik on us.','v5':'Can I take photos?','v5b':'Yes, in public areas. Please ask before photographing people, and avoid taking photos while a prayer is in progress.',
+ 'news.no':'06 · Announcements','news.h':'Community <em>news.</em>','news.p':'Activities, registrations and the latest notices from the mosque committee.',
+ 'n1':'Community clean-up day','n1d':'Tidy the mosque and gardens together. Breakfast for every volunteer.','n2':'Tahfiz 2027 registration open','n2d':'For children aged 7–12. Limited places; parents’ briefing every Sunday.','n3':'Open house for our neighbours','n3d':'Guided tours, a geometric art exhibition and local food. Everyone is invited.','n4':'Blood donation drive','n4d':'With the district hospital, in the multipurpose hall, 9 am to 1 pm.',
+ 'con.no':'07 · Contact','con.h':'Come by, <em>say salam.</em>','con.p':'The mosque office is here to help with questions, bookings, donations and funeral arrangements.','con.addr':'Address','con.phone':'Office','con.email':'Email','con.office':'Office hours','con.hours':'Monday–Saturday, 9:00 am – 5:00 pm','con.jenazah':'Funeral services (24 hours)',
+ 'ft.visit':'Visit','ft.support':'Support','ft.news':'Announcements','ft.tpl':'Template · illustrative content','ft.built':'Designed & built by Aurelion',
+ 'days':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],'today':'today'
+}};
+let lang = 'bm';
+const t = (k, v = {}) => String(I[lang][k] ?? I.bm[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? CONFIG[x] ?? '');
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const rm = n => 'RM' + Math.round(n).toLocaleString('en-MY');
+
+/* ---------- geometry ---------- */
+function star(cx, cy, R, rot = 0) {
+  const r = R * 0.7654, p = [];
+  for (let i = 0; i < 16; i++) { const a = (i * 22.5 + rot - 90) * Math.PI / 180, rr = i % 2 ? r : R; p.push((cx + rr * Math.cos(a)).toFixed(2) + ',' + (cy + rr * Math.sin(a)).toFixed(2)); }
+  return p.join(' ');
+}
+function tile(color, S = 96) {
+  const R = S * 0.29, h = S / 2;
+  let g = '';
+  [[h, h], [0, 0], [S, 0], [0, S], [S, S]].forEach(([x, y]) => { g += `<polygon points="${star(x, y, R)}"/><polygon points="${star(x, y, R * 0.55, 22.5)}"/>`; });
+  [[h, 0], [0, h], [S, h], [h, S]].forEach(([x, y]) => { g += `<polygon points="${star(x, y, R * 0.42, 22.5)}"/>`; });
+  g += `<path d="M${h} ${h - R}V${R * .42}M${h} ${h + R}V${S - R * .42}M${h - R} ${h}H${R * .42}M${h + R} ${h}H${S - R * .42}"/>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}"><g fill="none" stroke="${color}" stroke-width="1.1">${g}</g></svg>`;
+  return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+}
+document.documentElement.style.setProperty('--pat-gold', tile('#d7b06a'));
+document.documentElement.style.setProperty('--pat-em', tile('#0f3b3633'));
+(() => {
+  let s = '<circle r="196" fill="none" stroke="#d7b06a" stroke-opacity=".35"/>';
+  const g1 = [], g2 = [];
+  for (let k = 1; k <= 7; k++) { const R = 26 * k, op = (0.9 - k * 0.09).toFixed(2); (k % 2 ? g1 : g2).push(`<polygon points="${star(0, 0, R, k * 11.25)}" fill="none" stroke="#d7b06a" stroke-opacity="${op}" stroke-width="${k < 3 ? 1.4 : 1}"/>`); }
+  for (let i = 0; i < 16; i++) { const a = i * 22.5 * Math.PI / 180; g1.push(`<line x1="${(52 * Math.cos(a)).toFixed(1)}" y1="${(52 * Math.sin(a)).toFixed(1)}" x2="${(182 * Math.cos(a)).toFixed(1)}" y2="${(182 * Math.sin(a)).toFixed(1)}" stroke="#d7b06a" stroke-opacity=".18"/>`); }
+  s += `<g>${g1.join('')}</g><g class="rev">${g2.join('')}</g><polygon points="${star(0, 0, 18)}" fill="#d7b06a" fill-opacity=".85"/>`;
+  $('#rosette').innerHTML = s;
+  $('#mark-star').innerHTML = `<polygon points="${star(0, 0, 8)}" fill="currentColor"/>`;
+})();
+
+/* ---------- prayer times (astronomical, JAKIM-style angles) ---------- */
+const PT = (() => {
+  const D = Math.PI / 180, sin = x => Math.sin(x * D), cos = x => Math.cos(x * D), tan = x => Math.tan(x * D);
+  const asin = x => Math.asin(x) / D, acos = x => Math.acos(Math.max(-1, Math.min(1, x))) / D, atan2 = (y, x) => Math.atan2(y, x) / D, acot = x => Math.atan(1 / x) / D;
+  const fix = (a, b) => { a -= b * Math.floor(a / b); return a < 0 ? a + b : a; };
+  const julian = (y, m, d) => { if (m <= 2) { y--; m += 12; } const A = Math.floor(y / 100), B = 2 - A + Math.floor(A / 4); return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + d + B - 1524.5; };
+  const sun = jd => { const n = jd - 2451545, g = fix(357.529 + 0.98560028 * n, 360), q = fix(280.459 + 0.98564736 * n, 360), L = fix(q + 1.915 * sin(g) + 0.020 * sin(2 * g), 360), e = 23.439 - 0.00000036 * n; return {decl: asin(sin(e) * sin(L)), eqt: q / 15 - fix(atan2(cos(e) * sin(L), cos(L)) / 15, 24)}; };
+  return (y, m, d, lat, lng, tz) => {
+    const jd = julian(y, m, d) - lng / (15 * 24);
+    const mid = t => fix(12 - sun(jd + t).eqt, 24);
+    const ang = (a, t, ccw) => { const dc = sun(jd + t).decl, v = acos((-sin(a) - sin(dc) * sin(lat)) / (cos(dc) * cos(lat))) / 15; return mid(t) + (ccw ? -v : v); };
+    const asr = (f, t) => { const dc = sun(jd + t).decl; return ang(-acot(f + tan(Math.abs(lat - dc))), t); };
+    let T = {subuh: 5, syuruk: 6, zohor: 12, asar: 13, maghrib: 18, isyak: 18};
+    for (let i = 0; i < 2; i++) { const p = {}; for (const k in T) p[k] = T[k] / 24;
+      T = {subuh: ang(20, p.subuh, true), syuruk: ang(0.833, p.syuruk, true), zohor: mid(p.zohor), asar: asr(1, p.asar), maghrib: ang(0.833, p.maghrib), isyak: ang(18, p.isyak)}; }
+    const adj = tz - lng / 15, ih = CONFIG.ihtiyatMin / 60, out = {};
+    for (const k in T) { let h = T[k] + adj + (k === 'syuruk' ? 0 : ih); out[k] = Math.round(h * 60) * 60; } // seconds of local day
+    return out;
+  };
+})();
+const PNAMES = [['subuh', 'Dawn'], ['syuruk', 'Sunrise'], ['zohor', 'Midday'], ['asar', 'Afternoon'], ['maghrib', 'Sunset'], ['isyak', 'Night']];
+const BMN = {subuh: 'Subuh', syuruk: 'Syuruk', zohor: 'Zohor', asar: 'Asar', maghrib: 'Maghrib', isyak: 'Isyak'};
+const fmtT = s => { const h = Math.floor(s / 3600) % 24, m = Math.floor(s / 60) % 60; return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0'); };
+const fmtCd = s => { s = Math.max(0, s); const h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60, x = s % 60; return [h, m, x].map(v => String(v).padStart(2, '0')).join(':'); };
+const klParts = (date = new Date()) => { const o = {}; new Intl.DateTimeFormat('en-GB', {timeZone: CONFIG.timezone, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', weekday: 'short', hourCycle: 'h23'}).formatToParts(date).forEach(p => o[p.type] = p.value); return {y: +o.year, m: +o.month, d: +o.day, sec: +o.hour * 3600 + +o.minute * 60 + +o.second, wd: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday)}; };
+let today = null, todayTimes = null, tomorrowSubuh = 0;
+function computeDay() {
+  const k = klParts(); today = k;
+  todayTimes = PT(k.y, k.m, k.d, CONFIG.lat, CONFIG.lng, CONFIG.utcOffset);
+  const tm = new Date(Date.UTC(k.y, k.m - 1, k.d + 1));
+  tomorrowSubuh = PT(tm.getUTCFullYear(), tm.getUTCMonth() + 1, tm.getUTCDate(), CONFIG.lat, CONFIG.lng, CONFIG.utcOffset).subuh;
+  window.__prayer = Object.fromEntries(Object.entries(todayTimes).map(([a, b]) => [a, fmtT(b)]));
+}
+function renderPrayerGrid() {
+  $('#pgrid').innerHTML = PNAMES.map(([k, en]) => `<div class="pt" data-k="${k}"><div class="nm">${BMN[k]}</div><div class="sub">${lang === 'en' ? en : '&nbsp;'}</div><div class="tm">${fmtT(todayTimes[k])}</div><div class="cd"></div></div>`).join('');
+  const loc = lang === 'bm' ? 'ms-MY' : 'en-MY';
+  $('#gdate').textContent = new Intl.DateTimeFormat(loc, {timeZone: CONFIG.timezone, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}).format(new Date());
+  let hij = '';
+  for (const cal of ['islamic-umalqura', 'islamic']) {
+    try { const f = new Intl.DateTimeFormat(loc + '-u-ca-' + cal, {timeZone: CONFIG.timezone, day: 'numeric', month: 'long', year: 'numeric'}); if (f.resolvedOptions().calendar === cal) { hij = f.format(new Date()); break; } } catch (_) {}
+  }
+  $('#hdate').textContent = hij ? hij.replace(/\s*(AH|H)$/, '') + ' H' : '';
+}
+function tickPrayer() {
+  const k = klParts();
+  if (!today || k.d !== today.d) { computeDay(); renderPrayerGrid(); }
+  const order = ['subuh', 'zohor', 'asar', 'maghrib', 'isyak'];
+  let next = order.find(p => todayTimes[p] > k.sec), target = next ? todayTimes[next] : 86400 + tomorrowSubuh;
+  if (!next) next = 'subuh';
+  const left = target - k.sec;
+  $$('.pt', $('#pgrid')).forEach(el => {
+    const key = el.dataset.k, isNext = key === next && (todayTimes[next] > k.sec);
+    el.classList.toggle('next', isNext || (!order.some(p => todayTimes[p] > k.sec) && key === 'subuh' && false));
+    el.classList.toggle('past', todayTimes[key] <= k.sec && !isNext);
+    if (isNext) $('.cd', el).textContent = `${t('pt.in')} ${fmtCd(left)}`;
+  });
+  if (!order.some(p => todayTimes[p] > k.sec)) { const s = $('.pt[data-k="subuh"]'); s.classList.add('next'); s.classList.remove('past'); $('.cd', s).textContent = `${t('pt.tomorrow')} ${fmtT(tomorrowSubuh)} · ${fmtCd(left)}`; }
+  $('#pill-txt').textContent = `${BMN[next]} ${fmtT(next === 'subuh' && !order.some(p => todayTimes[p] > k.sec) ? tomorrowSubuh : todayTimes[next])} · ${fmtCd(left)}`;
+}
+
+/* ---------- data ---------- */
+const AUD = ['any', 'adult', 'youth', 'child', 'women'];
+const PROG = [
+  {d:1,t:'maghrib',bm:'Kuliah Maghrib: Fiqh Harian',en:'Maghrib Talk: Everyday Fiqh',a:'adult',w:{bm:'Ustaz jemputan',en:'Guest ustaz'}},
+  {d:1,t:'17:00',bm:'Kelas Iqra Kanak-kanak',en:'Children’s Iqra Class',a:'child',w:{bm:'Guru tahfiz masjid',en:'Mosque tahfiz teachers'}},
+  {d:2,t:'maghrib',bm:'Kelas Tafsir Bersiri',en:'Tafsir Series',a:'adult',w:{bm:'Imam masjid',en:'Mosque imam'}},
+  {d:2,t:'10:00',bm:'Halaqah Muslimah: Sirah',en:'Sisters’ Circle: Sirah',a:'women',w:{bm:'Ustazah jemputan',en:'Guest ustazah'}},
+  {d:3,t:'17:00',bm:'Tahfiz Kanak-kanak',en:'Kids’ Tahfiz',a:'child',w:{bm:'Umur 7–12',en:'Ages 7–12'}},
+  {d:3,t:'isyak',bm:'Bulatan Belia: Iman & Kerjaya',en:'Youth Circle: Faith & Careers',a:'youth',w:{bm:'Umur 15–25',en:'Ages 15–25'}},
+  {d:4,t:'maghrib',bm:'Kuliah Akidah',en:'Foundations of Belief',a:'adult',w:{bm:'Ustaz jemputan',en:'Guest ustaz'}},
+  {d:4,t:'10:00',bm:'Kelas Tajwid Muslimah',en:'Sisters’ Tajwid Class',a:'women',w:{bm:'Semua tahap',en:'All levels'}},
+  {d:5,t:'13:15',bm:'Solat Jumaat & Khutbah',en:'Friday Prayer & Khutbah',a:'all',w:{bm:'Dewan utama',en:'Main hall'}},
+  {d:5,t:'17:00',bm:'Tahfiz Kanak-kanak',en:'Kids’ Tahfiz',a:'child',w:{bm:'Umur 7–12',en:'Ages 7–12'}},
+  {d:6,t:'08:00',bm:'Dapur Komuniti',en:'Community Kitchen',a:'all',w:{bm:'Hidangan percuma, sukarelawan dialu-alukan',en:'Free meals, volunteers welcome'}},
+  {d:6,t:'10:00',bm:'Lawatan Berpandu Rumah Terbuka',en:'Open-House Guided Tour',a:'all',w:{bm:'BM & English',en:'Malay & English'}},
+  {d:6,t:'21:00',bm:'Futsal & Sembang Belia',en:'Youth Futsal & Talk',a:'youth',w:{bm:'Gelanggang belakang masjid',en:'Court behind the mosque'}},
+  {d:0,t:'subuh',bm:'Kuliah Subuh Hujung Minggu',en:'Weekend Dawn Talk',a:'adult',w:{bm:'Sarapan selepas kuliah',en:'Breakfast afterwards'}},
+  {d:0,t:'10:00',bm:'Kelas Fardu Ain Kanak-kanak',en:'Children’s Fardu Ain Class',a:'child',w:{bm:'Umur 6–10',en:'Ages 6–10'}},
+  {d:0,t:'15:00',bm:'Halaqah Muslimah Hujung Minggu',en:'Weekend Sisters’ Circle',a:'women',w:{bm:'Ruang muslimah, aras 1',en:'Sisters’ room, level 1'}},
+];
+const FUNDS = ['ops', 'tahfiz', 'kitchen', 'build'];
+const AMTS = [10, 50, 100, 250, 500];
+const FACS = [{k:'hall',icon:'hall'},{k:'class',icon:'class'},{k:'nikah',icon:'nikah'},{k:'jen',icon:'jen'}];
+const PURP = ['nikah', 'kesyukuran', 'kelas', 'mesyuarat', 'lain'];
+const NEWS = [{k:'n1',off:4},{k:'n2',off:9},{k:'n3',off:17},{k:'n4',off:24}];
+
+/* ---------- programme ---------- */
+let fAud = 'any', fDay = -1;
+function renderFilters() {
+  $('#f-aud').innerHTML = AUD.map(a => `<button type="button" class="chip${a === fAud ? ' on' : ''}" data-a="${a}" aria-pressed="${a === fAud}">${t('aud.' + a)}</button>`).join('');
+  const order = [1, 2, 3, 4, 5, 6, 0];
+  $('#f-day').innerHTML = `<button type="button" class="chip${fDay === -1 ? ' on' : ''}" data-d="-1" aria-pressed="${fDay === -1}">${t('day.any')}</button>` + order.map(d => `<button type="button" class="chip${d === fDay ? ' on' : ''}" data-d="${d}" aria-pressed="${d === fDay}">${I[lang].days[d]}${today && d === today.wd ? `<span class="today">• ${t('today')}</span>` : ''}</button>`).join('');
+}
+function renderProg() {
+  const days = I[lang].days, order = [1, 2, 3, 4, 5, 6, 0];
+  const list = PROG.filter(p => (fAud === 'any' || p.a === fAud || p.a === 'all') && (fDay === -1 || p.d === fDay))
+    .sort((a, b) => order.indexOf(a.d) - order.indexOf(b.d) || String(a.t).localeCompare(String(b.t)));
+  const tl = x => /^\d/.test(x) ? x : t('prog.' + x);
+  $('#prog').innerHTML = list.length ? list.map((p, i) => `<div class="row" style="animation-delay:${i * 35}ms"><span class="d">${days[p.d]}</span><span class="t">${tl(p.t)}</span><div class="ti"><h3>${esc(p[lang])}</h3><small>${esc(p.w[lang])}</small></div><span class="tag ${p.a}">${t('aud.' + p.a)}</span></div>`).join('') : `<p class="empty">${t('prog.empty')}</p>`;
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('#f-aud .chip'), d = e.target.closest('#f-day .chip');
+  if (a) { fAud = a.dataset.a; renderFilters(); renderProg(); }
+  if (d) { fDay = +d.dataset.d; renderFilters(); renderProg(); }
+});
+
+/* ---------- Jumaat ---------- */
+function renderJumaat() {
+  const k = klParts(), base = new Date(Date.UTC(k.y, k.m - 1, k.d));
+  const toFri = (5 - k.wd + 7) % 7; base.setUTCDate(base.getUTCDate() + toFri);
+  const loc = lang === 'bm' ? 'ms-MY' : 'en-MY', f = new Intl.DateTimeFormat(loc, {day: 'numeric', month: 'short', timeZone: 'UTC'});
+  const rota = [['Imam Bertugas 1', 'Khatib Bertugas A'], ['Imam Bertugas 2', 'Khatib Bertugas B'], ['Imam Bertugas 1', 'Khatib Jemputan'], ['Imam Bertugas 3', 'Khatib Bertugas C']];
+  $('#rota').innerHTML = rota.map(([im, kh], i) => { const d = new Date(base); d.setUTCDate(d.getUTCDate() + i * 7); const lab = lang === 'en' ? [im.replace('Imam Bertugas', 'Duty Imam'), kh.replace('Khatib Bertugas', 'Duty Khatib').replace('Khatib Jemputan', 'Guest Khatib')] : [im, kh]; return `<tr class="${i === 0 ? 'now' : ''}"><td>${f.format(d)}${i === 0 ? ' · ' + t('jum.this') : ''}</td><td>${lab[0]}</td><td>${lab[1]}</td></tr>`; }).join('');
+  $('#jum-when').textContent = `${t('jum.this')} · ${new Intl.DateTimeFormat(loc, {weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC'}).format(base)}`;
+}
+
+/* ---------- infaq ---------- */
+let fund = 'tahfiz', amt = 50;
+function renderInfaq() {
+  $('#funds').innerHTML = FUNDS.map(f => `<button type="button" class="fund${f === fund ? ' on' : ''}" role="radio" aria-checked="${f === fund}" data-f="${f}"><b>${t('fund.' + f)}</b><small>${t('fund.' + f + '.d')}</small></button>`).join('');
+  const custom = !AMTS.includes(amt);
+  $('#amts').innerHTML = AMTS.map(a => `<button type="button" class="amt${a === amt ? ' on' : ''}" data-v="${a}" aria-pressed="${a === amt}">RM${a}</button>`).join('') + `<label class="custom"><span>RM</span><input id="amt-c" type="number" min="1" step="1" inputmode="numeric" placeholder="${t('inf.custom')}" aria-label="${t('inf.custom')}" value="${custom && amt ? amt : ''}"></label>`;
+  updSum();
+}
+function updSum() { $('#sum-amt').textContent = rm(amt || 0); $('#sum-fund').textContent = `${t('inf.to')} ${t('fund.' + fund)}`; }
+document.addEventListener('click', e => {
+  const f = e.target.closest('.fund'), a = e.target.closest('.amt');
+  if (f) { fund = f.dataset.f; $$('.fund').forEach(x => { x.classList.toggle('on', x === f); x.setAttribute('aria-checked', x === f); }); updSum(); }
+  if (a) { amt = +a.dataset.v; $$('.amt').forEach(x => { x.classList.toggle('on', x === a); x.setAttribute('aria-pressed', x === a); }); const c = $('#amt-c'); if (c) c.value = ''; updSum(); }
+});
+document.addEventListener('input', e => { if (e.target.id === 'amt-c') { const v = Math.max(0, Math.round(+e.target.value || 0)); amt = v; $$('.amt').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', false); }); updSum(); } });
+$('#give').addEventListener('click', () => {
+  const ok = $('#give-ok');
+  if (!amt) { $('#amt-c')?.focus(); return; }
+  ok.innerHTML = `<b>${t('inf.okh')}</b>${t('inf.okp', {amt: rm(amt), fund: t('fund.' + fund)})}`; ok.classList.add('show');
+});
+let goalDone = false;
+function animateGoal() {
+  if (goalDone) return; goalDone = true;
+  const {target, raised} = CONFIG.buildingFund, pct = raised / target * 100;
+  $('#goal-target').textContent = rm(target);
+  $('#goal .bar i').style.width = pct + '%';
+  const t0 = performance.now(), dur = reduce ? 0 : 2000;
+  const step = now => { const k = dur ? Math.min(1, (now - t0) / dur) : 1, e = 1 - Math.pow(1 - k, 3); $('#goal-raised').textContent = rm(raised * e); $('#goal-pct').textContent = Math.round(pct * e) + '%'; if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+/* ---------- facilities & booking ---------- */
+const FICON = {
+  hall: '<path d="M14 116V60a46 46 0 0 1 92 0v56" /><path d="M34 116V70a26 26 0 0 1 52 0v46"/><path d="M60 24v-8"/>',
+  class: '<path d="M18 116V58a42 42 0 0 1 84 0v58"/><rect x="38" y="62" width="44" height="28" rx="2"/><path d="M48 104h24"/>',
+  nikah: '<path d="M20 116V62a40 40 0 0 1 80 0v54"/><circle cx="52" cy="80" r="11"/><circle cx="68" cy="80" r="11"/>',
+  jen: '<path d="M22 116V64a38 38 0 0 1 76 0v52"/><path d="M60 50v42M48 66h24"/>'
+};
+function renderFacs() {
+  $('#facs').innerHTML = FACS.map(({k, icon}) => `<article class="fac rv in${k === 'jen' ? ' jen' : ''}"><div class="art"><svg viewBox="0 0 120 120" fill="none" stroke="#d7b06a" stroke-width="2">${FICON[icon]}</svg></div><span class="cap">${t('f.' + k + '.c')}</span><h3>${t('f.' + k)}</h3><p>${t('f.' + k + '.d')}</p>${k === 'jen' ? `<a href="tel:${CONFIG.jenazahPhone.replace(/[^+\d]/g, '')}">${t('f.jen.call')} · ${CONFIG.jenazahPhone}</a>` : ''}</article>`).join('');
+  const fs = $('#bk-fac'), ps = $('#bk-purpose'), fv = fs.value, pv = ps.value;
+  fs.innerHTML = ['hall', 'class', 'nikah'].map(k => `<option value="${k}">${t('f.' + k)}</option>`).join(''); if (fv) fs.value = fv;
+  ps.innerHTML = PURP.map(k => `<option value="${k}">${t('p.' + k)}</option>`).join(''); if (pv) ps.value = pv;
+}
+(() => { const k = klParts(), d = new Date(Date.UTC(k.y, k.m - 1, k.d + 1)); $('#bk-date').min = d.toISOString().slice(0, 10); })();
+$('#bk').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, req = ['name', 'phone', 'date'].map(n => f.elements[n]);
+  let bad = null; req.forEach(i => { const err = !i.value.trim(); i.classList.toggle('err', err); if (err && !bad) bad = i; });
+  const ok = $('#bk-ok');
+  if (bad) { ok.innerHTML = `<b>${t('bk.err')}</b>`; ok.classList.add('show'); bad.focus(); return; }
+  const loc = lang === 'bm' ? 'ms-MY' : 'en-MY';
+  const date = new Intl.DateTimeFormat(loc, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(new Date(f.elements.date.value + 'T00:00:00Z'));
+  const ref = 'MAI-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+  ok.innerHTML = `<b>${t('bk.okh')}</b>${esc(t('bk.okp', {ref, fac: t('f.' + f.elements.fac.value), date, purpose: t('p.' + f.elements.purpose.value).toLowerCase(), name: f.elements.name.value.trim()}))}`;
+  ok.classList.add('show'); f.reset(); renderFacs();
+});
+$('#bk').addEventListener('input', e => e.target.classList.remove('err'));
+
+/* ---------- visitor guide ---------- */
+function renderAcc() {
+  const open = $$('#acc details').map(d => d.open);
+  $('#acc').innerHTML = [1, 2, 3, 4, 5].map((n, i) => `<details${open.length ? (open[i] ? ' open' : '') : (i === 0 ? ' open' : '')}><summary><span class="n">0${n}</span>${t('v' + n)}<span class="pm" aria-hidden="true">+</span></summary><div class="body">${t('v' + n + 'b')}</div></details>`).join('');
+}
+
+/* ---------- news & ticker ---------- */
+function renderNews() {
+  const k = klParts(), loc = lang === 'bm' ? 'ms-MY' : 'en-MY', f = new Intl.DateTimeFormat(loc, {day: 'numeric', month: 'long', timeZone: 'UTC'});
+  const items = NEWS.map(n => { const d = new Date(Date.UTC(k.y, k.m - 1, k.d + n.off)); return {...n, date: f.format(d)}; });
+  $('#news').innerHTML = items.slice(0, 3).map(n => `<article class="news rv in"><span class="dt"><i></i>${n.date}</span><h3>${t(n.k)}</h3><p>${t(n.k + 'd')}</p></article>`).join('');
+  const tk = items.map(n => `<span>${t(n.k)} · ${n.date}</span>`).join('');
+  $('#ticker').innerHTML = tk + tk;
+}
+
+/* ---------- map ---------- */
+(() => {
+  let s = '<rect width="700" height="420" fill="#0d332e"/>';
+  s += '<path d="M-20 330 C 120 300, 200 380, 330 340 S 560 260, 720 300" fill="none" stroke="#2c6e63" stroke-width="26" stroke-linecap="round" opacity=".55"/>';
+  s += '<rect x="70" y="60" width="150" height="110" rx="18" fill="#165047" opacity=".7"/><rect x="470" y="70" width="170" height="90" rx="18" fill="#165047" opacity=".55"/>';
+  for (let x = 40; x < 700; x += 70) s += `<line x1="${x}" y1="0" x2="${x + 30}" y2="420" stroke="#f6f1e7" stroke-opacity=".06" stroke-width="2"/>`;
+  for (let y = 30; y < 420; y += 60) s += `<line x1="0" y1="${y}" x2="700" y2="${y - 20}" stroke="#f6f1e7" stroke-opacity=".06" stroke-width="2"/>`;
+  s += '<path d="M0 210 L700 175" stroke="#d7b06a" stroke-opacity=".5" stroke-width="5"/><path d="M380 0 L360 420" stroke="#d7b06a" stroke-opacity=".35" stroke-width="4"/>';
+  s += '<text x="20" y="200" fill="#d7b06a" fill-opacity=".7" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" letter-spacing="2">JALAN DAMAI 3</text>';
+  $('#mapsvg').innerHTML = s;
+  $('#gmaps').href = `https://www.google.com/maps/search/?api=1&query=${CONFIG.lat},${CONFIG.lng}`;
+  $('#waze').href = `https://waze.com/ul?ll=${CONFIG.lat},${CONFIG.lng}&navigate=yes`;
+})();
+
+/* ---------- apply language & config ---------- */
+function apply() {
+  document.documentElement.lang = lang === 'bm' ? 'ms' : 'en';
+  $$('[data-i18n]').forEach(el => el.textContent = t(el.dataset.i18n));
+  $$('[data-i18n-html]').forEach(el => el.innerHTML = t(el.dataset.i18nHtml));
+  $$('[data-c]').forEach(el => {
+    const key = el.dataset.c;
+    if (key === 'tagline-i18n') { el.textContent = CONFIG.tagline[lang]; return; }
+    el.textContent = CONFIG[key];
+    if (el.dataset.href === 'tel') el.href = 'tel:' + CONFIG[key].replace(/[^+\d]/g, '');
+    if (el.dataset.href === 'mailto') el.href = 'mailto:' + CONFIG[key];
+  });
+  $$('[data-c-i18n]').forEach(el => el.textContent = CONFIG[el.dataset.cI18n][lang]);
+  $('.burger').textContent = $('#mnav').classList.contains('open') ? (lang === 'bm' ? 'Tutup' : 'Close') : t('menu');
+  renderPrayerGrid(); renderFilters(); renderProg(); renderJumaat(); renderInfaq(); renderFacs(); renderAcc(); renderNews(); tickPrayer();
+  if (goalDone) { goalDone = false; animateGoal(); }
+}
+$$('.lang button').forEach(b => b.addEventListener('click', () => {
+  lang = b.dataset.lang;
+  $$('.lang button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
+  try { localStorage.setItem('masjid-lang', lang); } catch (_) {}
+  apply();
+}));
+try { const s = localStorage.getItem('masjid-lang'); if (s === 'en') { lang = 'en'; $$('.lang button').forEach(x => { const on = x.dataset.lang === 'en'; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); }); } } catch (_) {}
+
+/* ---------- header, nav, reveal ---------- */
+const hdr = $('#hdr'), hero = $('.hero');
+const onScroll = () => hdr.classList.toggle('solid', scrollY > hero.offsetHeight - 160 || document.getElementById('mnav').classList.contains('open'));
+addEventListener('scroll', onScroll, {passive: true});
+const burger = $('.burger'), mnav = $('#mnav');
+burger.addEventListener('click', () => { const o = mnav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); burger.textContent = o ? (lang === 'bm' ? 'Tutup' : 'Close') : t('menu'); if (o) hdr.classList.add('solid'); else onScroll(); });
+$$('#mnav a').forEach(a => a.addEventListener('click', () => { mnav.classList.remove('open'); burger.setAttribute('aria-expanded', false); burger.textContent = t('menu'); }));
+const links = $$('.nav a');
+const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), {rootMargin: '-45% 0px -50% 0px'});
+['waktu', 'program', 'jumaat', 'infaq', 'kemudahan', 'lawatan', 'hubungi'].forEach(id => so.observe(document.getElementById(id)));
+const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); if (e.target.contains($('#goal'))) animateGoal(); } }), {threshold: .12});
+
+computeDay();
+apply();
+$('#yr').textContent = today.y;
+$$('.rv').forEach(el => ro.observe(el));
+onScroll();
+setInterval(tickPrayer, 1000);
+</script>
+</body>
+</html>
