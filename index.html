@@ -2950,40 +2950,58 @@ dialog::backdrop { background: #030b13c7; backdrop-filter: blur(8px); }
 }
 
 
-/* Websites & AI section (replaces Our approach) */
+/* AI for Business section (replaces Our approach) */
 .primary-navigation .nav-grow span { color: var(--gold); }
-.grow { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.grow-head { max-width: 50rem; margin-bottom: clamp(36px, 5vw, 64px); }
-.grow-head h2 { margin: 0; font-family: var(--display); font-size: clamp(2.5rem, 5.6vw, 5.2rem); font-weight: 600; line-height: 1.02; letter-spacing: -.045em; text-wrap: balance; }
-.grow-deck { margin: 22px 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.3rem); max-width: 36rem; }
-.grow-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
-.grow-card { display: flex; flex-direction: column; color: inherit; text-decoration: none; background: var(--raised); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; transition: transform .35s cubic-bezier(.2,.7,.3,1), border-color .35s; }
-.grow-card:hover, .grow-card:focus-visible { transform: translateY(-4px); border-color: var(--gold); }
-.grow-visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(140deg, #1d2c3b, #0c141d); }
-.grow-frame { position: absolute; width: 74%; height: auto; border-radius: 10px; border: 1px solid #ffffff2e; box-shadow: 0 24px 50px -18px #000000b3; transition: transform .5s cubic-bezier(.2,.7,.3,1); }
-.grow-frame-back { top: 9%; right: 6%; transform: rotate(2.5deg); }
-.grow-frame-front { bottom: 7%; left: 6%; transform: rotate(-2deg); }
-.grow-card:hover .grow-frame-back { transform: rotate(4deg) translate(8px, -6px); }
-.grow-card:hover .grow-frame-front { transform: rotate(-3deg) translate(-8px, 6px); }
-.grow-visual-ai { background: #eef1f4; }
-.grow-visual-ai img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; transition: transform .5s cubic-bezier(.2,.7,.3,1); }
-.grow-card:hover .grow-visual-ai img { transform: scale(1.04); }
-.grow-body { display: flex; flex-direction: column; flex: 1; padding: clamp(22px, 2.6vw, 36px); }
-.grow-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-.grow-meta .eyebrow { margin: 0; }
-.grow-chip { flex: none; padding: 6px 12px; border-radius: 999px; background: #e6c287; color: #132231; font-size: .8rem; font-weight: 750; letter-spacing: .01em; }
-.grow-body h3 { margin: 0 0 12px; font-family: var(--display); font-size: clamp(1.55rem, 2.6vw, 2.35rem); font-weight: 600; line-height: 1.12; letter-spacing: -.035em; }
-.grow-body p:not(.eyebrow) { margin: 0 0 22px; color: var(--muted); }
-.grow-cta { margin-top: auto; display: inline-flex; gap: 8px; align-items: center; font-weight: 700; color: var(--gold); }
-.grow-why { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 18px 40px; margin-top: clamp(28px, 4vw, 52px); padding-top: clamp(26px, 3.6vw, 44px); border-top: 1px solid var(--line); }
-.grow-why .eyebrow { grid-column: 1 / -1; margin: 0; }
-.grow-why-line { margin: 0; max-width: 44rem; font-family: var(--display); font-size: clamp(1.35rem, 2.4vw, 2.1rem); font-weight: 600; line-height: 1.22; letter-spacing: -.03em; text-wrap: pretty; }
-@media (max-width: 860px) {
-  .grow-cards { grid-template-columns: minmax(0, 1fr); }
+.grow { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+.grow-head { max-width: 62rem; margin-bottom: clamp(40px, 5.5vw, 76px); }
+.grow-head h2 { margin: 0; font-family: var(--display); font-size: clamp(2.3rem, 5vw, 4.7rem); font-weight: 600; line-height: 1.04; letter-spacing: -.045em; }
+.grow-beat { display: block; }
+.grow-beat + .grow-beat { color: var(--muted); }
+.grow-beat:last-child { color: var(--gold); }
+.grow-deck { margin: 24px 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.28rem); max-width: 40rem; }
+.ai-flow { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 30px); padding-top: 34px; }
+.ai-flow::before { content: ""; position: absolute; top: 8px; left: 12px; right: 12px; height: 2px; background: linear-gradient(90deg, var(--gold), #e6c287 50%, var(--gold)); opacity: .75; }
+.ai-node { position: relative; display: flex; flex-direction: column; padding: clamp(22px, 2.4vw, 32px); background: var(--raised); border: 1px solid var(--line); border-radius: 22px; transition: transform .35s cubic-bezier(.2,.7,.3,1), border-color .35s; }
+.ai-node:hover { transform: translateY(-4px); border-color: var(--gold); }
+.ai-node-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-height: 30px; margin-bottom: 10px; }
+.ai-dot { position: absolute; top: -34px; left: clamp(22px, 2.4vw, 32px); width: 18px; height: 18px; border-radius: 50%; background: var(--surface); border: 2px solid var(--gold); box-shadow: 0 0 0 6px var(--surface); }
+.ai-dot::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--gold); }
+.ai-tag { font-family: var(--display); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.ai-badge { margin-left: auto; padding: 5px 10px; border-radius: 999px; background: #e6c287; color: #132231; font-size: .72rem; font-weight: 750; }
+.ai-node h3 { margin: 0 0 18px; font-family: var(--display); font-size: clamp(1.45rem, 2.2vw, 2rem); font-weight: 600; line-height: 1.12; letter-spacing: -.035em; }
+.ai-mock { margin: 0 0 18px; padding: 14px; border-radius: 14px; background: #f4f1ea; color: #15202b; border: 1px solid #00000014; box-shadow: 0 18px 36px -24px #000000aa; font-size: .86rem; line-height: 1.35; list-style: none; }
+.ai-mock-notify { display: flex; align-items: center; gap: 12px; }
+.ai-app { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(160deg, #d9a54a, #9a6516); color: #fff; font-weight: 800; font-size: 1.15rem; }
+.ai-mock b { display: block; font-weight: 700; }
+.ai-mock small { display: block; color: #5b6772; font-size: .78rem; }
+.ai-mock-prompt { display: grid; gap: 6px; }
+.ai-mock-prompt small { text-transform: uppercase; letter-spacing: .12em; font-weight: 700; color: #9a6516; font-size: .68rem; }
+.ai-built { justify-self: start; margin-top: 4px; padding: 4px 9px; border-radius: 999px; background: #d8f0dc; color: #1d6b34; font-size: .74rem; font-weight: 700; }
+.ai-mock-rollout { display: grid; gap: 7px; }
+.ai-mock-rollout li { display: flex; justify-content: space-between; align-items: center; padding: 6px 4px; border-bottom: 1px dashed #00000018; }
+.ai-mock-rollout li:last-child { border-bottom: 0; }
+.ai-mock-rollout span { font-weight: 700; }
+.ai-mock-rollout i { font-style: normal; font-size: .74rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #e9e6df; color: #5b6772; }
+.ai-mock-rollout .is-live i { background: #d8f0dc; color: #1d6b34; }
+.ai-mock-rollout .is-now i { background: #f6e3bd; color: #7a4d0c; }
+.ai-example { margin: 0 0 14px; font-weight: 600; }
+.ai-chips { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 0; padding: 0; list-style: none; }
+.ai-chips li { padding: 5px 11px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--muted); font-size: .8rem; }
+.ai-together { margin: 22px 0 0; text-align: center; color: var(--muted); font-size: .95rem; }
+.grow-why { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px 40px; margin-top: clamp(30px, 4vw, 52px); padding: clamp(22px, 3vw, 34px) clamp(22px, 3vw, 40px); border: 1px solid var(--gold); border-radius: 22px; }
+.grow-why-line { margin: 0; font-family: var(--display); font-size: clamp(1.25rem, 2.1vw, 1.8rem); font-weight: 600; line-height: 1.25; letter-spacing: -.03em; text-wrap: pretty; }
+.grow-links { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 22px; }
+.grow-links a { display: inline-flex; gap: 8px; color: var(--gold); font-weight: 700; text-decoration: none; }
+.grow-links a:hover { text-decoration: underline; }
+@media (max-width: 960px) {
+  .ai-flow { grid-template-columns: minmax(0, 1fr); padding-top: 0; padding-left: 34px; }
+  .ai-flow::before { top: 12px; bottom: 12px; left: 8px; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, var(--gold), #e6c287 50%, var(--gold)); }
+  .ai-dot { top: clamp(22px, 2.4vw, 32px); left: -35px; }
+  .ai-together { text-align: left; }
   .grow-why { grid-template-columns: minmax(0, 1fr); }
   .grow-why .button { justify-self: start; }
 }
-@media (prefers-reduced-motion: reduce) { .grow-card, .grow-frame, .grow-visual-ai img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .ai-node { transition: none; } }
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Aurelion Sdn Bhd","url":"https://www.aurelion-earth.com/","slogan":"Evolve Beyond","telephone":"+601110541499","email":"andy.tan@aurelion-earth.com","sameAs":["https://www.instagram.com/the.aurelion.earth/"],"address":{"@type":"PostalAddress","streetAddress":"Unit 773, Regus Tribeca, Residensi Tribeca, 215 Jalan Imbi, Bukit Bintang","addressLocality":"Kuala Lumpur","postalCode":"55100","addressCountry":"MY"}}</script>
 <script>window.AURELION_MEDIA = {"horizon-2026": "assets/video/horizon-2026.mp4", "milky-way": "assets/video/milky-way.mp4", "annapurna": "assets/video/annapurna.mp4", "insights-cosmos": "assets/video/insights-cosmos.mp4", "orbit": "assets/video/orbit.mp4", "team-ridge": "assets/video/team-ridge.mp4"};
@@ -2994,7 +3012,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
   <div id="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Aurelion home"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"><span class="brand-service" data-i18n="brand-service">Corporate Training &amp; Consulting</span></a>
-    <nav class="primary-navigation" aria-label="Main navigation"><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html" class="nav-priority"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">Websites &amp; AI</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a></nav>
+    <nav class="primary-navigation" aria-label="Main navigation"><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html" class="nav-priority"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">AI for Business</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a></nav>
     <div class="header-actions">
       <div class="language-switch" role="group" aria-label="Language">
         <button type="button" data-language="en" aria-pressed="true">EN</button>
@@ -3010,7 +3028,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
     <div class="menu-shell">
       <div class="menu-top"><a href="#home" class="brand"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"></a><button id="menu-close" class="close-button" aria-label="Close menu" type="button">×</button></div>
       <div class="menu-body">
-        <div><h2 data-i18n="menu-title" id="menu-title">Explore Aurelion</h2><nav aria-label="Expanded navigation"><a href="#home"><span data-i18n="rail-home">Home</span></a><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">Websites &amp; AI</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a><a href="partnerships.html"><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#inquiry"><span data-i18n="nav-contact">Contact us</span></a></nav></div>
+        <div><h2 data-i18n="menu-title" id="menu-title">Explore Aurelion</h2><nav aria-label="Expanded navigation"><a href="#home"><span data-i18n="rail-home">Home</span></a><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">AI for Business</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a><a href="partnerships.html"><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#inquiry"><span data-i18n="nav-contact">Contact us</span></a></nav></div>
         <div class="menu-aside">
           <p data-i18n="menu-shortcuts-title" class="eyebrow">QUICK LINKS</p>
           <div class="menu-shortcuts">
@@ -3023,7 +3041,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
       <div class="menu-bottom"><span>KUALA LUMPUR · MALAYSIA</span><a href="https://wa.me/601110541499" target="_blank" rel="noopener noreferrer">+60 11-1054 1499 ↗</a></div>
     </div>
   </dialog>
-  <nav class="chapter-rail" aria-label="Homepage sections"><a href="#home" data-section="home" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-home">Home</span></a><a href="#grow" data-section="grow" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-grow">Websites &amp; AI</span></a><a href="#lpi-spotlight" data-section="lpi-spotlight" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-team">Team Performance</span></a><a href="#programmes" data-section="programmes" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-programmes">HRD Courses</span></a><a href="#in-practice" data-section="in-practice" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-practice">In practice</span></a><a href="#embrace" data-section="embrace" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#insights" data-section="insights" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#about" data-section="about" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-about">About Aurelion</span></a><a href="#inquiry" data-section="inquiry" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-contact">Contact us</span></a></nav>
+  <nav class="chapter-rail" aria-label="Homepage sections"><a href="#home" data-section="home" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-home">Home</span></a><a href="#grow" data-section="grow" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-grow">AI for Business</span></a><a href="#lpi-spotlight" data-section="lpi-spotlight" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-team">Team Performance</span></a><a href="#programmes" data-section="programmes" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-programmes">HRD Courses</span></a><a href="#in-practice" data-section="in-practice" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-practice">In practice</span></a><a href="#embrace" data-section="embrace" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#insights" data-section="insights" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#about" data-section="about" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-about">About Aurelion</span></a><a href="#inquiry" data-section="inquiry" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-contact">Contact us</span></a></nav>
   <main id="main" tabindex="-1" data-view="home">
     <section class="hero" id="home" aria-labelledby="hero-title">
       <video class="ambient-film hero-film" data-motion data-clip="horizon-2026" muted loop playsinline preload="none" poster="assets/images/horizon-2026.webp" aria-hidden="true"></video>
@@ -3051,7 +3069,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
         <a class="hero-provider" href="#claimability"><img src="assets/images/hrdcorp-registered-provider.png" alt="" width="48" height="48"><span data-i18n="credential-provider" >HRD Corp Registered Training Provider</span></a>
       </div>
       <div class="hero-bottom shell">
-        <a href="#grow" class="scroll-hint"><span aria-hidden="true">↓</span><span data-i18n="scroll" >Websites &amp; AI</span></a>
+        <a href="#grow" class="scroll-hint"><span aria-hidden="true">↓</span><span data-i18n="scroll" >AI for Business</span></a>
         <div class="scene-picker" role="group" aria-label="Homepage scenes">
           <span class="scene-name" data-scene-name aria-live="polite">Himalayan horizon</span>
           <div class="scene-dots"><button type="button" data-scene="horizon-2026" aria-pressed="true"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-horizon" class=sr-only>Himalayan horizon</span></button><button type="button" data-scene="milky-way" aria-pressed="false"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-milky-way" class=sr-only>Milky Way</span></button><button type="button" data-scene="annapurna" aria-pressed="false"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-annapurna" class=sr-only>Annapurna at dawn</span></button><button type="button" data-scene="himalaya-still" aria-pressed="false"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-still" class=sr-only>Himalaya still</span></button></div>
@@ -3062,39 +3080,52 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
     <section class="grow section-space" id="grow" aria-labelledby="grow-title">
       <div class="shell">
         <div class="grow-head" data-reveal>
-          <p class="eyebrow" data-i18n="grow-kicker">WEBSITES &amp; AI FOR GROWING BUSINESSES</p>
-          <h2 id="grow-title" data-i18n="grow-title">They Google you before they call.</h2>
-          <p class="grow-deck" data-i18n="grow-deck">Give customers a reason to call. Give your team the tools to follow up.</p>
+          <p class="eyebrow" data-i18n="grow-kicker">AI FOR BUSINESS · ONE TEAM, START TO FINISH</p>
+          <h2 id="grow-title"><span class="grow-beat" data-i18n="grow-h1">We build AI tools.</span> <span class="grow-beat" data-i18n="grow-h2">We teach your team to build their own.</span> <span class="grow-beat" data-i18n="grow-h3">We coach the rollout.</span></h2>
+          <p class="grow-deck" data-i18n="grow-deck">Tools, HRD Corp claimable training and hands-on coaching from one team, so AI fits into how your company already works.</p>
         </div>
-        <div class="grow-cards" data-reveal>
-          <a class="grow-card" href="website/">
-            <div class="grow-visual grow-visual-web" aria-hidden="true">
-              <img class="grow-frame grow-frame-back" src="assets/images/web-showcase-atelier.jpg" alt="" loading="lazy" width="880" height="516">
-              <img class="grow-frame grow-frame-front" src="assets/images/web-showcase-apex.jpg" alt="" loading="lazy" width="880" height="516">
+        <div class="ai-flow" data-reveal>
+          <article class="ai-node">
+            <div class="ai-node-top"><span class="ai-dot" aria-hidden="true"></span><span class="ai-tag" data-i18n="grow-build-tag">Build</span></div>
+            <h3 data-i18n="grow-build-title">We deploy the tools.</h3>
+            <div class="ai-mock ai-mock-notify" aria-hidden="true">
+              <span class="ai-app">9</span>
+              <span><b data-i18n="grow-build-mock-a">Daily sales summary</b><small data-i18n="grow-build-mock-b">9:00 PM · sent automatically</small></span>
             </div>
-            <div class="grow-body">
-              <div class="grow-meta"><p class="eyebrow" data-i18n="grow-web-kicker">CUSTOM WEBSITES</p><span class="grow-chip" data-i18n="grow-web-price">From RM2,500</span></div>
-              <h3 data-i18n="grow-web-title">A website that sells.</h3>
-              <p data-i18n="grow-web-copy">Agency-level design at one honest price. Domain, hosting and SSL included for the first year, no monthly builder fees, and no site that looks like a template.</p>
-              <span class="grow-cta"><span data-i18n="grow-web-cta">Walk the Web Exhibition</span><span aria-hidden="true">↗</span></span>
+            <p class="ai-example" data-i18n="grow-build-example">A sales report that sends itself at 9pm.</p>
+            <ul class="ai-chips"><li data-i18n="grow-build-c1">Websites that sell</li><li data-i18n="grow-build-c2">Customer reply helper</li><li data-i18n="grow-build-c3">Growth insights report</li></ul>
+          </article>
+          <article class="ai-node">
+            <div class="ai-node-top"><span class="ai-dot" aria-hidden="true"></span><span class="ai-tag" data-i18n="grow-train-tag">Train</span><span class="ai-badge" data-i18n="grow-train-badge">HRD Corp claimable training</span></div>
+            <h3 data-i18n="grow-train-title">Your team learns to build.</h3>
+            <div class="ai-mock ai-mock-prompt" aria-hidden="true">
+              <small data-i18n="grow-train-mock-a">Your staff type</small>
+              <b data-i18n="grow-train-mock-b">“Make a follow-up tracker for our quotations.”</b>
+              <span class="ai-built" data-i18n="grow-train-mock-c">Tool ready · works on phone</span>
             </div>
-          </a>
-          <a class="grow-card" href="ai.html">
-            <div class="grow-visual grow-visual-ai" aria-hidden="true">
-              <img src="assets/ai-demo-poster.jpg" alt="" loading="lazy" width="720" height="720">
-            </div>
-            <div class="grow-body">
-              <div class="grow-meta"><p class="eyebrow" data-i18n="grow-ai-kicker">AI FOR YOUR TEAM</p><span class="grow-chip" data-i18n="grow-ai-chip">2-day course</span></div>
-              <h3 data-i18n="grow-ai-title">Let AI do the work nobody wants to do.</h3>
-              <p data-i18n="grow-ai-copy">Your staff learn to build their own tools: the 9pm sales report that sends itself, a leave tracker, a helper that answers price questions. If they can explain the job, they can build the tool.</p>
-              <span class="grow-cta"><span data-i18n="grow-ai-cta">See what your team could build</span><span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+            <p class="ai-example" data-i18n="grow-train-example">Admin staff build a tool for a weekly task.</p>
+            <ul class="ai-chips"><li data-i18n="grow-train-c1">Build with AI</li><li data-i18n="grow-train-c2">Lead with AI</li><li data-i18n="grow-train-c3">AI Media</li></ul>
+          </article>
+          <article class="ai-node">
+            <div class="ai-node-top"><span class="ai-dot" aria-hidden="true"></span><span class="ai-tag" data-i18n="grow-coach-tag">Coach</span></div>
+            <h3 data-i18n="grow-coach-title">We guide the switch.</h3>
+            <ul class="ai-mock ai-mock-rollout" aria-hidden="true">
+              <li class="is-live"><span data-i18n="grow-coach-mock-a">Sales</span><i data-i18n="grow-coach-mock-live">Live</i></li>
+              <li class="is-now"><span data-i18n="grow-coach-mock-b">HR</span><i data-i18n="grow-coach-mock-now">Rolling out</i></li>
+              <li><span data-i18n="grow-coach-mock-c">Accounts</span><i data-i18n="grow-coach-mock-next">Next</i></li>
+            </ul>
+            <p class="ai-example" data-i18n="grow-coach-example">Managers get coaching as teams roll it out.</p>
+            <ul class="ai-chips"><li data-i18n="grow-coach-c1">Pick what to automate first</li><li data-i18n="grow-coach-c2">Team-by-team rollout</li><li data-i18n="grow-coach-c3">People side of change</li></ul>
+          </article>
         </div>
+        <p class="ai-together" data-i18n="grow-together">Use one, or all three together.</p>
         <div class="grow-why" data-reveal>
-          <p class="eyebrow" data-i18n="grow-why-kicker">WHY WE DO BOTH</p>
-          <p class="grow-why-line" data-i18n="grow-why-line">We build the website your customers see. We train your team to build the tools they’ll use behind it.</p>
-          <a class="button button-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I'd%20like%20to%20see%20what%20my%20business%20website%20could%20look%20like." target="_blank" rel="noopener noreferrer"><span data-i18n="grow-why-cta">Show me what my site could look like</span><span aria-hidden="true">↗</span></a>
+          <p class="grow-why-line" data-i18n="grow-levy">Paying the HRD Corp levy? The training can be claimed against it.</p>
+          <a class="button button-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I'd%20like%20to%20plan%20an%20AI%20rollout%20for%20my%20business." target="_blank" rel="noopener noreferrer"><span data-i18n="grow-cta">Plan my AI rollout</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="grow-links">
+          <a href="website/"><span data-i18n="grow-link-web">Browse our website designs</span><span aria-hidden="true">↗</span></a>
+          <a href="ai.html"><span data-i18n="grow-link-ai">See AI tools staff built</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -3689,7 +3720,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
     </main>
   <main id="activation-kit" data-view="kit" hidden></main>
   <footer class="site-footer">
-    <div class="shell footer-main"><a href="#home" class="brand"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"></a><p data-i18n="footer-mission">Accelerating human adaptive capacity in the AI era.</p><nav aria-label="Footer navigation"><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">Websites &amp; AI</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a><a href="partnerships.html"><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#inquiry"><span data-i18n="nav-contact">Contact us</span></a></nav></div>
+    <div class="shell footer-main"><a href="#home" class="brand"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"></a><p data-i18n="footer-mission">Accelerating human adaptive capacity in the AI era.</p><nav aria-label="Footer navigation"><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">AI for Business</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a><a href="partnerships.html"><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#inquiry"><span data-i18n="nav-contact">Contact us</span></a></nav></div>
     <div class="shell footer-connect">
       <div class="footer-visit">
         <h2 data-i18n="nav-contact" >Contact us</h2>
@@ -3713,24 +3744,48 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
   <script>
 window.AURELION_TRANSLATIONS = {
   "en": {
-    "nav-grow": "Websites & AI",
-    "scroll": "Websites & AI",
-    "grow-kicker": "WEBSITES & AI FOR GROWING BUSINESSES",
-    "grow-title": "They Google you before they call.",
-    "grow-deck": "Give customers a reason to call. Give your team the tools to follow up.",
-    "grow-web-kicker": "CUSTOM WEBSITES",
-    "grow-web-price": "From RM2,500",
-    "grow-web-title": "A website that sells.",
-    "grow-web-copy": "Agency-level design at one honest price. Domain, hosting and SSL included for the first year, no monthly builder fees, and no site that looks like a template.",
-    "grow-web-cta": "Walk the Web Exhibition",
-    "grow-ai-kicker": "AI FOR YOUR TEAM",
-    "grow-ai-chip": "2-day course",
-    "grow-ai-title": "Let AI do the work nobody wants to do.",
-    "grow-ai-copy": "Your staff learn to build their own tools: the 9pm sales report that sends itself, a leave tracker, a helper that answers price questions. If they can explain the job, they can build the tool.",
-    "grow-ai-cta": "See what your team could build",
-    "grow-why-kicker": "WHY WE DO BOTH",
-    "grow-why-line": "We build the website your customers see. We train your team to build the tools they’ll use behind it.",
-    "grow-why-cta": "Show me what my site could look like",
+    "nav-grow": "AI for Business",
+    "scroll": "AI for Business",
+    "grow-kicker": "AI FOR BUSINESS · ONE TEAM, START TO FINISH",
+    "grow-h1": "We build AI tools.",
+    "grow-h2": "We teach your team to build their own.",
+    "grow-h3": "We coach the rollout.",
+    "grow-deck": "Tools, HRD Corp claimable training and hands-on coaching from one team, so AI fits into how your company already works.",
+    "grow-build-tag": "Build",
+    "grow-build-title": "We deploy the tools.",
+    "grow-build-mock-a": "Daily sales summary",
+    "grow-build-mock-b": "9:00 PM · sent automatically",
+    "grow-build-example": "A sales report that sends itself at 9pm.",
+    "grow-build-c1": "Websites that sell",
+    "grow-build-c2": "Customer reply helper",
+    "grow-build-c3": "Growth insights report",
+    "grow-train-tag": "Train",
+    "grow-train-badge": "HRD Corp claimable training",
+    "grow-train-title": "Your team learns to build.",
+    "grow-train-mock-a": "Your staff type",
+    "grow-train-mock-b": "“Make a follow-up tracker for our quotations.”",
+    "grow-train-mock-c": "Tool ready · works on phone",
+    "grow-train-example": "Admin staff build a tool for a weekly task.",
+    "grow-train-c1": "Build with AI",
+    "grow-train-c2": "Lead with AI",
+    "grow-train-c3": "AI Media",
+    "grow-coach-tag": "Coach",
+    "grow-coach-title": "We guide the switch.",
+    "grow-coach-mock-a": "Sales",
+    "grow-coach-mock-b": "HR",
+    "grow-coach-mock-c": "Accounts",
+    "grow-coach-mock-live": "Live",
+    "grow-coach-mock-now": "Rolling out",
+    "grow-coach-mock-next": "Next",
+    "grow-coach-example": "Managers get coaching as teams roll it out.",
+    "grow-coach-c1": "Pick what to automate first",
+    "grow-coach-c2": "Team-by-team rollout",
+    "grow-coach-c3": "People side of change",
+    "grow-together": "Use one, or all three together.",
+    "grow-levy": "Paying the HRD Corp levy? The training can be claimed against it.",
+    "grow-cta": "Plan my AI rollout",
+    "grow-link-web": "Browse our website designs",
+    "grow-link-ai": "See AI tools staff built",
     "nav-approach": "Our approach",
     "nav-programmes": "Programs",
     "nav-team": "Team Performance",
@@ -4096,24 +4151,48 @@ window.AURELION_TRANSLATIONS = {
     "course-parent": "Within the S.P.A.C.E. Summit approach"
   },
   "zh-Hans": {
-    "nav-grow": "网站与 AI",
-    "scroll": "网站与 AI",
-    "grow-kicker": "为成长中的企业打造网站与 AI",
-    "grow-title": "客户打电话之前，会先上网搜你。",
-    "grow-deck": "给客户一个联系你的理由，给团队跟进的工具。",
-    "grow-web-kicker": "定制网站",
-    "grow-web-price": "RM2,500 起",
-    "grow-web-title": "一个会帮你卖的网站。",
-    "grow-web-copy": "代理公司级别的设计，一个实在的价格。首年包含域名、主机和 SSL，没有每月建站订阅费，也不会像模板网站。",
-    "grow-web-cta": "逛逛网站展览馆",
-    "grow-ai-kicker": "团队的 AI 能力",
-    "grow-ai-chip": "两天课程",
-    "grow-ai-title": "没人想做的工作，交给 AI。",
-    "grow-ai-copy": "让员工学会自己做工具：晚上 9 点自动发出的销售报告、请假追踪表、自动回答价格问题的小助手。只要讲得清楚这份工作，就做得出这个工具。",
-    "grow-ai-cta": "看看你的团队能做出什么",
-    "grow-why-kicker": "为什么两样都做",
-    "grow-why-line": "我们打造客户看得见的网站，也培训你的团队打造背后要用的工具。",
-    "grow-why-cta": "看看我的网站可以是什么样子",
+    "nav-grow": "企业 AI",
+    "scroll": "企业 AI",
+    "grow-kicker": "企业 AI · 一个团队，从头到尾",
+    "grow-h1": "我们打造 AI 工具。",
+    "grow-h2": "我们教你的团队自己做。",
+    "grow-h3": "我们陪你落地推行。",
+    "grow-deck": "工具、HRD Corp 可申请的培训和实战辅导，由同一个团队提供，让 AI 融入你公司现有的做事方式。",
+    "grow-build-tag": "打造",
+    "grow-build-title": "我们部署工具。",
+    "grow-build-mock-a": "每日销售汇总",
+    "grow-build-mock-b": "晚上 9:00 · 自动发送",
+    "grow-build-example": "晚上 9 点自动发出的销售报告。",
+    "grow-build-c1": "会帮你卖的网站",
+    "grow-build-c2": "客户回复小助手",
+    "grow-build-c3": "成长洞察报告",
+    "grow-train-tag": "培训",
+    "grow-train-badge": "HRD Corp 可申请培训",
+    "grow-train-title": "团队学会自己做。",
+    "grow-train-mock-a": "员工输入",
+    "grow-train-mock-b": "“帮我们做一个报价跟进表。”",
+    "grow-train-mock-c": "工具完成 · 手机可用",
+    "grow-train-example": "行政人员为每周的重复工作做出一个工具。",
+    "grow-train-c1": "Build with AI",
+    "grow-train-c2": "Lead with AI",
+    "grow-train-c3": "AI Media",
+    "grow-coach-tag": "辅导",
+    "grow-coach-title": "我们带你顺利转型。",
+    "grow-coach-mock-a": "销售",
+    "grow-coach-mock-b": "人事",
+    "grow-coach-mock-c": "财务",
+    "grow-coach-mock-live": "已上线",
+    "grow-coach-mock-now": "推行中",
+    "grow-coach-mock-next": "下一步",
+    "grow-coach-example": "团队推行时，主管全程获得辅导。",
+    "grow-coach-c1": "先决定自动化什么",
+    "grow-coach-c2": "逐个团队推行",
+    "grow-coach-c3": "变革中的人",
+    "grow-together": "可以只选一项，也可以三项一起。",
+    "grow-levy": "有缴交 HRD Corp 税？培训费用可以申请。",
+    "grow-cta": "规划我的 AI 推行",
+    "grow-link-web": "浏览我们的网站设计",
+    "grow-link-ai": "看看员工做出的 AI 工具",
     "nav-approach": "我们的理念",
     "nav-programmes": "培训课程",
     "nav-team": "团队效能",
@@ -4479,24 +4558,48 @@ window.AURELION_TRANSLATIONS = {
     "course-parent": "属于 S.P.A.C.E. Summit 整体方案"
   },
   "zh-Hant": {
-    "nav-grow": "網站與 AI",
-    "scroll": "網站與 AI",
-    "grow-kicker": "為成長中的企業打造網站與 AI",
-    "grow-title": "客戶打電話之前，會先上網搜你。",
-    "grow-deck": "給客戶一個聯絡你的理由，給團隊跟進的工具。",
-    "grow-web-kicker": "客製網站",
-    "grow-web-price": "RM2,500 起",
-    "grow-web-title": "一個會幫你賣的網站。",
-    "grow-web-copy": "代理公司級別的設計，一個實在的價格。首年包含網域、主機和 SSL，沒有每月建站訂閱費，也不會像範本網站。",
-    "grow-web-cta": "逛逛網站展覽館",
-    "grow-ai-kicker": "團隊的 AI 能力",
-    "grow-ai-chip": "兩天課程",
-    "grow-ai-title": "沒人想做的工作，交給 AI。",
-    "grow-ai-copy": "讓員工學會自己做工具：晚上 9 點自動發出的銷售報告、請假追蹤表、自動回答價格問題的小助手。只要講得清楚這份工作，就做得出這個工具。",
-    "grow-ai-cta": "看看你的團隊能做出什麼",
-    "grow-why-kicker": "為什麼兩樣都做",
-    "grow-why-line": "我們打造客戶看得見的網站，也培訓你的團隊打造背後要用的工具。",
-    "grow-why-cta": "看看我的網站可以是什麼樣子",
+    "nav-grow": "企業 AI",
+    "scroll": "企業 AI",
+    "grow-kicker": "企業 AI · 一個團隊，從頭到尾",
+    "grow-h1": "我們打造 AI 工具。",
+    "grow-h2": "我們教你的團隊自己做。",
+    "grow-h3": "我們陪你落地推行。",
+    "grow-deck": "工具、HRD Corp 可申請的培訓和實戰輔導，由同一個團隊提供，讓 AI 融入你公司現有的做事方式。",
+    "grow-build-tag": "打造",
+    "grow-build-title": "我們部署工具。",
+    "grow-build-mock-a": "每日銷售匯總",
+    "grow-build-mock-b": "晚上 9:00 · 自動發送",
+    "grow-build-example": "晚上 9 點自動發出的銷售報告。",
+    "grow-build-c1": "會幫你賣的網站",
+    "grow-build-c2": "客戶回覆小助手",
+    "grow-build-c3": "成長洞察報告",
+    "grow-train-tag": "培訓",
+    "grow-train-badge": "HRD Corp 可申請培訓",
+    "grow-train-title": "團隊學會自己做。",
+    "grow-train-mock-a": "員工輸入",
+    "grow-train-mock-b": "「幫我們做一個報價跟進表。」",
+    "grow-train-mock-c": "工具完成 · 手機可用",
+    "grow-train-example": "行政人員為每週的重複工作做出一個工具。",
+    "grow-train-c1": "Build with AI",
+    "grow-train-c2": "Lead with AI",
+    "grow-train-c3": "AI Media",
+    "grow-coach-tag": "輔導",
+    "grow-coach-title": "我們帶你順利轉型。",
+    "grow-coach-mock-a": "銷售",
+    "grow-coach-mock-b": "人事",
+    "grow-coach-mock-c": "財務",
+    "grow-coach-mock-live": "已上線",
+    "grow-coach-mock-now": "推行中",
+    "grow-coach-mock-next": "下一步",
+    "grow-coach-example": "團隊推行時，主管全程獲得輔導。",
+    "grow-coach-c1": "先決定自動化什麼",
+    "grow-coach-c2": "逐個團隊推行",
+    "grow-coach-c3": "變革中的人",
+    "grow-together": "可以只選一項，也可以三項一起。",
+    "grow-levy": "有繳交 HRD Corp 稅？培訓費用可以申請。",
+    "grow-cta": "規劃我的 AI 推行",
+    "grow-link-web": "瀏覽我們的網站設計",
+    "grow-link-ai": "看看員工做出的 AI 工具",
     "nav-approach": "我們的理念",
     "nav-programmes": "培訓課程",
     "nav-team": "團隊效能",
