@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Batu &amp; Beam | Aurelion fusion concept</title>
+<meta name="description" content="Batu &amp; Beam: renovation and interior design across the Klang Valley. Blueprint drafting meets a material swatch board.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3f0e8;--paper2:#e9e4d7;--card:#fbf9f4;--ink:#14213d;--ink2:#3a4663;--blue:#2b59c3;--blue-l:#cdd9f3;--grid:rgba(43,89,195,.09);--grid2:rgba(43,89,195,.16);--brass:#b08d57;--brass-d:#7d6036;--oak:#c49a6c;--sage:#9caf98;--sage-d:#56705a;--red:#c4553b;--serif:"Instrument Serif",Georgia,serif;--mono:"JetBrains Mono",ui-monospace,monospace;--sans:"Inter Tight",system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* NAV */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;height:64px;background:rgba(243,240,232,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:34px;height:34px}
+.brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em}
+.brand b i{color:var(--brass-d)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:8px 12px;border:1px solid transparent;transition:border-color .2s,background .2s}
+.nav-links a:hover{border-color:var(--ink);background:var(--card)}
+.nav-links a.nav-cta{background:var(--ink);color:var(--paper);margin-left:8px}
+.nav-links a.nav-cta:hover{background:var(--blue);border-color:var(--blue)}
+.lang{display:inline-flex;border:1px solid var(--ink);margin-left:8px}
+.lang button{background:none;border:0;padding:6px 9px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.lang button+button{border-left:1px solid var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--brass);color:#fff}
+.lang button:hover:not([aria-pressed="true"]){background:var(--paper2)}
+.burger{display:none;background:var(--card);border:1px solid var(--ink);padding:8px 12px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+
+/* COMMON */
+section{padding:110px 24px;position:relative}
+.wrap{max-width:1320px;margin:0 auto}
+.tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px}
+.tag::before{content:"";width:28px;height:1px;background:currentColor}
+.sec-head{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,80px);line-height:.98;letter-spacing:-.02em;margin-top:16px}
+h2 em{color:var(--blue)}
+.sec-head p{font-size:17px;line-height:1.6;color:var(--ink2);max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border:1px solid var(--ink);background:var(--card);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--ink)}
+.btn.dark{background:var(--ink);color:var(--paper)}
+.btn.dark:hover{background:var(--blue);box-shadow:4px 4px 0 var(--brass)}
+.btn.brass{background:var(--brass);color:#fff;border-color:var(--brass-d)}
+.btn.brass:hover{box-shadow:4px 4px 0 var(--ink)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.mono{font-family:var(--mono)}
+
+/* HERO */
+.hero{min-height:100svh;padding:150px 24px 60px;display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;max-width:1320px;margin:0 auto}
+.hero-k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ink);padding:7px 12px;background:var(--card)}
+.hero-k i{width:8px;height:8px;background:var(--brass);display:inline-block;animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em;margin:26px 0 22px}
+.hero h1 em{color:var(--blue);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.1em;height:.055em;background:var(--brass);transform:scaleX(0);transform-origin:left;animation:under 1s 1.4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes under{to{transform:scaleX(1)}}
+html[lang^=zh] .hero h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.12}html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-style:normal}html[lang^=zh] .hero h1{font-size:clamp(38px,5vw,72px)}
+.hero-p{font-size:18px;line-height:1.6;color:var(--ink2);max-width:540px}
+.hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--ink)}
+.hero-meta div{padding:14px 12px 0 0}
+.hero-meta b{display:block;font-family:var(--serif);font-weight:400;font-size:30px}
+.hero-meta span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.sheet{position:relative;background:var(--card);border:1px solid var(--ink);box-shadow:10px 10px 0 rgba(20,33,61,.08);padding:18px;cursor:crosshair;overflow:hidden}
+.sheet svg.plan{width:100%;height:auto;display:block}
+.plan .wall{stroke:var(--ink);stroke-width:5;fill:none;stroke-linecap:square}
+.plan .iw{stroke:var(--ink);stroke-width:3;fill:none;stroke-linecap:square}
+.plan .thin{stroke:var(--ink2);stroke-width:1.1;fill:none}
+.plan .fur{stroke:var(--blue);stroke-width:1.2;fill:none}
+.plan .dim{stroke:var(--brass-d);stroke-width:.9;fill:none}
+.plan text{font-family:var(--mono);font-size:10px;fill:var(--ink);letter-spacing:.06em}
+.plan text.dt{fill:var(--brass-d);font-size:9px}
+.plan text.rl{font-size:10.5px;font-weight:600}
+.plan text.sub{fill:var(--ink2);font-size:8.5px}
+.plan .lbl{opacity:0;transition:opacity .6s}
+.plan.done .lbl{opacity:1}
+.cross-x,.cross-y{position:absolute;background:rgba(43,89,195,.35);pointer-events:none;opacity:0;transition:opacity .2s}
+.cross-x{height:1px;left:0;right:0}.cross-y{width:1px;top:0;bottom:0}
+.sheet:hover .cross-x,.sheet:hover .cross-y,.sheet:hover .coord{opacity:1}
+.coord{position:absolute;right:12px;top:10px;font-family:var(--mono);font-size:10px;color:var(--blue);background:var(--card);padding:3px 6px;border:1px solid var(--blue-l);opacity:0;transition:opacity .2s;pointer-events:none}
+.tblock{display:grid;grid-template-columns:1.4fr 1fr 1fr;border:1px solid var(--ink);margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.tblock div{padding:7px 9px;border-right:1px solid var(--ink)}
+.tblock div:last-child{border-right:0}
+.tblock b{display:block;font-weight:600;font-size:11px;color:var(--ink);margin-top:2px}
+.tblock span{color:var(--ink2)}
+.scroll-hint{position:absolute;left:20px;top:6px;font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;transition:opacity .4s}
+.pins{position:absolute;right:-14px;top:30%;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.pin{width:54px;height:54px;box-shadow:0 6px 14px rgba(20,33,61,.18);border:1px solid rgba(0,0,0,.1);transform:rotate(var(--r,0deg))}
+
+/* SWATCH TEXTURES */
+.t-terr{background-color:#ebe5d8;background-image:radial-gradient(circle at 20% 30%,#9caf98 0 2.5px,transparent 3px),radial-gradient(circle at 70% 60%,#b08d57 0 2px,transparent 2.5px),radial-gradient(circle at 45% 80%,#c4553b 0 1.6px,transparent 2px),radial-gradient(circle at 85% 20%,#14213d 0 1.4px,transparent 2px),radial-gradient(circle at 10% 75%,#d9cfbd 0 3px,transparent 3.5px);background-size:22px 22px,27px 27px,19px 19px,31px 31px,24px 24px}
+.t-oak{background-color:#c49a6c;background-image:repeating-linear-gradient(92deg,rgba(90,55,25,.18) 0 1px,transparent 1px 7px),repeating-linear-gradient(88deg,rgba(255,240,210,.15) 0 2px,transparent 2px 13px),linear-gradient(90deg,#c9a072,#b98d5e 40%,#cfa678 70%,#bf9465)}
+.t-brass{background:repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0 1px,transparent 1px 3px),linear-gradient(135deg,#8a6a3a,#d9b77c 35%,#b08d57 55%,#e6c98f 75%,#8f6e3e)}
+.t-sage{background-color:#9caf98;background-image:linear-gradient(#e9e4d7 2px,transparent 2px),linear-gradient(90deg,#e9e4d7 2px,transparent 2px),linear-gradient(135deg,rgba(255,255,255,.18),transparent 60%);background-size:18px 18px,18px 18px,100% 100%}
+.t-conc{background-color:#b9b6ae;background-image:radial-gradient(circle at 30% 40%,rgba(0,0,0,.08) 0 1px,transparent 1.5px),radial-gradient(circle at 70% 70%,rgba(255,255,255,.25) 0 1px,transparent 1.5px);background-size:9px 9px,13px 13px}
+.t-chalk{background:linear-gradient(135deg,#f6f3ec,#e8e3d8)}
+.t-ink{background:linear-gradient(135deg,#1f2e52,#14213d)}
+.t-zel{background-color:#eef0ea;background-image:linear-gradient(#cfd3c9 1.5px,transparent 1.5px),linear-gradient(90deg,#cfd3c9 1.5px,transparent 1.5px),radial-gradient(circle at 30% 30%,rgba(255,255,255,.7),transparent 50%);background-size:14px 14px,14px 14px,14px 14px}
+.t-black{background:linear-gradient(135deg,#3a3a3a,#111 60%,#2a2a2a)}
+.t-chrome{background:linear-gradient(135deg,#9aa0a8,#eef1f4 40%,#a7adb5 60%,#e3e7ec)}
+
+/* MARQUEE */
+.marq{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:12px 0}
+.marq div{display:inline-flex;gap:48px;animation:marq 38s linear infinite;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.marq span::before{content:"◇ ";color:var(--brass)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ESTIMATOR */
+.est{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--ink);padding:26px}
+.fld{border:0;margin-bottom:26px}
+.fld legend,.fld>label.lg{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:12px;display:flex;justify-content:space-between;width:100%}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink)}
+.seg label{position:relative;cursor:pointer;text-align:center;padding:14px 8px;border-right:1px solid var(--ink);transition:background .2s}
+.seg label:last-child{border-right:0}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:hover{background:var(--paper2)}
+.seg label:has(input:checked){background:var(--ink);color:var(--paper)}
+.seg label:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:-4px}
+.seg b{display:block;font-weight:600;font-size:15px}
+.seg small{display:block;font-family:var(--mono);font-size:10px;opacity:.7;margin-top:3px;letter-spacing:.04em}
+.size-row{display:flex;align-items:center;gap:16px}
+.size-out{font-family:var(--serif);font-size:40px;line-height:1;min-width:150px}
+.size-out small{font-family:var(--mono);font-size:11px;margin-left:4px;color:var(--ink2)}
+input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:28px;background:transparent;cursor:pointer;min-width:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--blue) var(--p,40%),var(--ink2) var(--p,40%))}
+input[type=range]::-moz-range-track{height:2px;background:var(--ink2)}
+input[type=range]::-moz-range-progress{height:2px;background:var(--blue)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-9px;background:var(--brass);border:2px solid var(--ink);transform:rotate(45deg)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;background:var(--brass);border:2px solid var(--ink);border-radius:0;transform:rotate(45deg)}
+.ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;color:var(--ink2);margin-top:2px}
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chk{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid rgba(20,33,61,.3);cursor:pointer;transition:border-color .2s,background .2s;font-size:14.5px}
+.chk:hover{border-color:var(--ink)}
+.chk input{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid var(--ink);flex:none;display:grid;place-items:center;cursor:pointer}
+.chk input:checked{background:var(--blue);border-color:var(--blue)}
+.chk input:checked::after{content:"";width:8px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.chk:has(input:checked){background:rgba(43,89,195,.06);border-color:var(--blue)}
+.chk input:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.fin label{padding:12px 6px}
+.result{position:sticky;top:120px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:26px;overflow:hidden}
+.result::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.result>*{position:relative}
+.disc{display:flex;gap:10px;align-items:flex-start;background:var(--brass);color:#fff;padding:10px 12px;font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.03em;margin-bottom:22px}
+.disc b{font-size:14px;line-height:1}
+.r-lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,240,232,.6)}
+.r-range{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);line-height:1.05;margin:6px 0 4px;letter-spacing:-.01em}
+.r-range span{color:var(--brass)}
+.r-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid rgba(243,240,232,.2);border-bottom:1px solid rgba(243,240,232,.2);padding:14px 0;margin:16px 0}
+.r-row b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;margin-top:4px}
+.bars{display:grid;gap:7px;margin-bottom:18px}
+.bar{display:grid;grid-template-columns:120px 1fr 74px;gap:10px;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em}
+.bar i{display:block;height:6px;background:rgba(243,240,232,.12);position:relative}
+.bar i::after{content:"";position:absolute;inset:0;width:var(--w,0%);background:linear-gradient(90deg,var(--blue),#7ea0ea);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.bar em{font-style:normal;text-align:right;color:rgba(243,240,232,.75)}
+.bar.off{opacity:.3}
+.r-empty{font-family:var(--mono);font-size:12px;color:var(--brass);min-height:1em}
+.notinc{font-size:13px;line-height:1.55;color:rgba(243,240,232,.75);margin:6px 0 20px;padding-left:16px}
+.notinc li::marker{content:"— "}
+.rates{font-family:var(--mono);font-size:10px;color:rgba(243,240,232,.45);margin-top:14px;letter-spacing:.03em}
+.result .btn{width:100%;justify-content:center}
+
+/* WHATSAPP PREVIEW */
+.wa{display:none;margin-top:18px;background:#efe7dc;border-radius:14px;overflow:hidden;color:#111;box-shadow:0 18px 40px rgba(0,0,0,.35);transform-origin:top center}
+.wa.show{display:block;animation:pop .45s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{opacity:0;transform:translateY(-10px) scale(.96)}}
+.wa-h{background:#1f5e54;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 14px}
+.wa-h .av{width:34px;height:34px;border-radius:50%;background:var(--brass);display:grid;place-items:center;font-family:var(--serif);font-size:17px}
+.wa-h b{display:block;font-size:14px;font-weight:600}
+.wa-h small{font-size:11px;opacity:.8}
+.wa-h button{margin-left:auto;background:none;border:0;color:#fff;font-size:20px;cursor:pointer;line-height:1;padding:4px}
+.wa-body{padding:14px;background-image:radial-gradient(rgba(0,0,0,.04) 1px,transparent 1px);background-size:12px 12px}
+.bub{background:#d9fdd3;border-radius:10px 2px 10px 10px;padding:10px 12px;margin-left:auto;max-width:92%;font-size:13.5px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.bub .tm{display:block;text-align:right;font-size:10px;color:#6b7b70;margin-top:4px}
+.wa-f{display:flex;gap:8px;align-items:center;padding:10px 14px;background:#f6f1ea;font-family:var(--mono);font-size:10.5px;color:#7a5a2a;border-top:1px solid #e2d8ca}
+.wa-f button{margin-left:auto;background:#1f5e54;color:#fff;border:0;padding:7px 10px;font-family:var(--mono);font-size:10.5px;cursor:pointer;border-radius:4px;white-space:nowrap}
+
+/* GALLERY */
+.filters{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--card);width:max-content;max-width:100%;margin-bottom:28px}
+.filters button{background:none;border:0;border-right:1px solid var(--ink);padding:11px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.filters button:last-child{border-right:0}
+.filters button:hover{background:var(--paper2)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.filters sup{font-size:9px;margin-left:3px;color:var(--brass)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:var(--card);border:1px solid var(--ink);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--blue-l)}
+.pcard.hide{display:none}
+.pc-draw{position:relative;border-bottom:1px solid var(--ink);background-color:#fff;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:12px 12px;padding:12px}
+.pc-draw svg{width:100%;height:auto;display:block}
+.pc-draw .ow{stroke:var(--ink);stroke-width:3.4;fill:none}
+.pc-draw .cw{stroke:var(--ink);stroke-width:2.2;fill:none}
+.pc-draw .bo{stroke:var(--ink);stroke-width:2.2;fill:none;transition:stroke .4s,opacity .4s}
+.pc-draw .ao{stroke:var(--blue);stroke-width:2.4;fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.2,1)}
+.pc-draw text{font-family:var(--mono);font-size:7px;fill:var(--ink);letter-spacing:.05em;text-anchor:middle;transition:opacity .4s}
+.pc-draw .la{opacity:0;fill:var(--blue)}
+.pcard.after .bo{stroke:var(--red);stroke-dasharray:3 3;opacity:.75}
+.pcard.after .ao{stroke-dashoffset:0}
+.pcard.after .lb{opacity:0}
+.pcard.after .la{opacity:1}
+.stamp{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--ink);background:var(--card)}
+.pcard.after .stamp{border-color:var(--blue);color:var(--blue)}
+.tog{position:absolute;right:12px;top:12px;display:flex;border:1px solid var(--ink);background:var(--card)}
+.tog button{background:none;border:0;padding:4px 8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.tog button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.pc-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pc-body h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.05}
+.pc-body p{font-size:14px;line-height:1.5;color:var(--ink2)}
+.pc-meta{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid rgba(20,33,61,.25);margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2)}
+.pc-meta b{display:block;color:var(--ink);font-size:11.5px;font-weight:600;margin-top:2px;text-transform:none}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--ink2)}
+.legend i{display:inline-block;width:22px;height:0;border-top:2px solid var(--ink);vertical-align:middle;margin-right:6px}
+.legend .r{border-top:2px dashed var(--red)}.legend .n{border-top-color:var(--blue)}
+
+/* MATERIALS */
+.mat{background:var(--paper2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.board{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.room{background:var(--card);border:1px solid var(--ink);padding:14px;position:relative}
+.room svg{width:100%;height:auto;display:block}
+.room svg .sw-t{transition:opacity .35s}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);margin-top:12px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+.spec div{padding:8px;border-right:1px solid var(--ink)}
+.spec div:last-child{border-right:0}
+.spec b{display:block;font-weight:600;color:var(--blue);margin-top:2px;font-size:10.5px}
+.cats{display:grid;gap:22px}
+.cat h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px;display:flex;justify-content:space-between}
+.chips{display:flex;gap:12px;flex-wrap:wrap}
+.chip{width:86px;background:var(--card);border:1px solid var(--ink);padding:6px 6px 8px;cursor:pointer;text-align:left;transition:transform .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s}
+.chip i{display:block;height:64px;border:1px solid rgba(0,0,0,.12)}
+.chip span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;margin-top:6px;line-height:1.3}
+.chip:hover{transform:translateY(-4px) rotate(-2deg);box-shadow:4px 6px 0 rgba(20,33,61,.15)}
+.chip[aria-pressed="true"]{outline:2px solid var(--blue);outline-offset:3px;transform:translateY(-4px)}
+
+/* PROCESS */
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;list-style:none;padding-top:40px}
+.track{position:absolute;left:0;right:0;top:12px;height:1px;background:rgba(20,33,61,.2)}
+.track i{position:absolute;inset:0;background:var(--blue);transform:scaleX(var(--k,0));transform-origin:left}
+.step{position:relative;background:var(--card);border:1px solid var(--ink);padding:18px;display:flex;flex-direction:column;gap:8px}
+.step::before{content:"";position:absolute;top:-34px;left:18px;width:12px;height:12px;background:var(--paper);border:1px solid var(--ink);transform:rotate(45deg);transition:background .3s}
+.step.on::before{background:var(--brass)}
+.step .n{font-family:var(--mono);font-size:10.5px;color:var(--blue);letter-spacing:.1em}
+.step h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1}
+.step p{font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.step .dur{font-family:var(--mono);font-size:10.5px;color:var(--ink2)}
+.pay{margin-top:auto;font-family:var(--mono);font-size:10.5px;padding:6px 8px;border:1px dashed var(--brass-d);color:var(--brass-d);background:rgba(176,141,87,.07)}
+.paybar{display:flex;height:40px;border:1px solid var(--ink);margin-top:30px;font-family:var(--mono);font-size:10.5px}
+.paybar div{display:flex;align-items:center;justify-content:center;border-right:1px solid var(--ink);white-space:nowrap;overflow:hidden;transition:filter .2s}
+.paybar div:last-child{border-right:0}
+.paybar div:hover{filter:brightness(1.08)}
+.paynote{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-top:10px}
+
+/* CREDS */
+.creds{padding:0 24px}
+.cred-strip{display:grid;grid-template-columns:repeat(4,1fr) 1.6fr;border:1px solid var(--ink);background:var(--card)}
+.cred-strip>div{padding:20px;border-right:1px solid var(--ink)}
+.cred-strip>div:last-child{border-right:0}
+.cred-strip small{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.cred-strip b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;margin-top:6px}
+.cred-strip em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--brass-d)}
+.quote{font-family:var(--serif);font-size:20px;line-height:1.3}
+.quote cite{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.06em;color:var(--ink2);margin-top:8px}
+
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:48px}
+.faq{border-top:1px solid var(--ink)}
+.q{border-bottom:1px solid var(--ink)}
+.q button{width:100%;background:none;border:0;text-align:left;padding:20px 0;display:flex;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:500}
+.q button:hover{color:var(--blue)}
+.q button i{flex:none;width:22px;height:22px;position:relative}
+.q button i::before,.q button i::after{content:"";position:absolute;left:3px;right:3px;top:10px;height:1.5px;background:currentColor;transition:transform .3s}
+.q button i::after{transform:rotate(90deg)}
+.q button[aria-expanded="true"] i::after{transform:rotate(0)}
+.qa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.qa>div{overflow:hidden}
+.qa p{padding:0 0 20px;font-size:15px;line-height:1.6;color:var(--ink2);max-width:640px}
+.q.open .qa{grid-template-rows:1fr}
+
+/* CONTACT */
+.contact{background:var(--ink);color:var(--paper)}
+.contact h2 em{color:var(--brass)}
+.contact .tag{color:var(--brass)}
+.contact .sec-head p{color:rgba(243,240,232,.75)}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px}
+.cform label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,240,232,.7)}
+.cform input,.cform select,.cform textarea{background:transparent;border:0;border-bottom:1px solid rgba(243,240,232,.4);padding:10px 0;font-family:var(--sans);font-size:16px;color:var(--paper);text-transform:none;letter-spacing:0;border-radius:0}
+.cform select option{color:var(--ink)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:0;border-bottom-color:var(--brass)}
+.cform .full{grid-column:1/-1}
+.cform .btn{justify-self:start}
+.okmsg{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:var(--brass);min-height:1.2em}
+
+footer{background:#0d1730;color:rgba(243,240,232,.75);padding:60px 24px 40px;font-size:14px}
+.f-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:12px;font-weight:600}
+.areas{display:flex;flex-wrap:wrap;gap:6px}
+.areas span{border:1px solid rgba(243,240,232,.25);padding:5px 9px;font-family:var(--mono);font-size:11px}
+footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
+.f-base{border-top:1px solid rgba(243,240,232,.15);margin-top:40px;padding-top:18px;font-family:var(--mono);font-size:10.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:1080px){
+ .nav-links{position:fixed;top:100px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--ink);padding:10px 16px 18px;gap:2px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+ .nav-links.open{opacity:1;transform:none;pointer-events:auto}
+ .nav-links a{padding:13px 8px;border-bottom:1px solid rgba(20,33,61,.12)}
+ .nav-links a.nav-cta{margin:10px 0 0;text-align:center}
+ .lang{margin:12px 0 0;align-self:flex-start}
+ .burger{display:inline-block}
+ .hero{grid-template-columns:1fr;padding-top:130px}
+ .est,.board,.faq-wrap{grid-template-columns:1fr}
+ .result{position:relative;top:0}
+ .grid{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .track{display:none}
+ .step::before{display:none}
+ .cred-strip{grid-template-columns:1fr 1fr}
+ .cred-strip>div{border-bottom:1px solid var(--ink)}
+ .cred-strip>div:last-child{grid-column:1/-1;border-bottom:0}
+ .sec-head{grid-template-columns:1fr}
+ .pins{right:6px}
+}
+@media(max-width:640px){
+ section{padding:80px 16px}
+ .creds{padding:0 16px}
+ .nav{padding:0 16px}
+ .brand b{font-size:22px}
+ .hero{padding:124px 16px 40px;gap:30px}
+ .hero-meta b{font-size:24px}
+ .sheet{padding:10px}
+ .tblock{grid-template-columns:1fr 1fr}.tblock div:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--ink)}
+ .pins{display:none}
+ .panel,.result{padding:18px}
+ .scope{grid-template-columns:1fr}
+ .seg b{font-size:13.5px}
+ .size-out{font-size:32px;min-width:120px}
+ .bar{grid-template-columns:96px 1fr 62px}
+ .grid,.steps{grid-template-columns:1fr}
+ .spec{grid-template-columns:1fr 1fr}.spec div:nth-child(2){border-right:0}.spec div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+ .chip{width:calc(25% - 9px);min-width:70px}
+ .chip i{height:52px}
+ .cred-strip{grid-template-columns:1fr}
+ .cform{grid-template-columns:1fr}
+ .f-grid{grid-template-columns:1fr}
+ .q button{font-size:16px}
+ .filters button{padding:10px 12px;font-size:10.5px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+ .hero h1 em::after{transform:scaleX(1)}
+}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-12 · Blueprint drafting × Material swatch board</span><a class="exh-cta" href="/website/?t=batu-beam#finder">Build one like this →</a></div>
+
+<header class="nav" id="nav">
+ <a class="brand" href="#top" aria-label="Batu &amp; Beam home">
+  <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" stroke="#14213d" stroke-width="1.5"/><path d="M1 22H33M12 1V33" stroke="#14213d" stroke-width="1"/><rect x="13" y="23" width="19" height="9" fill="#b08d57"/><circle cx="6.5" cy="27.5" r="3" fill="#9caf98"/><path d="M15 6h14M15 10h10M15 14h12" stroke="#2b59c3" stroke-width="1.2"/></svg>
+  <b>Batu <i>&amp;</i> Beam</b>
+ </a>
+ <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" data-i18n="menu">MENU</button>
+ <nav class="nav-links" id="navlinks" aria-label="Main">
+  <a href="#estimate" data-i18n="nav1">Estimate</a>
+  <a href="#projects" data-i18n="nav2">Projects</a>
+  <a href="#materials" data-i18n="nav3">Materials</a>
+  <a href="#process" data-i18n="nav4">Process</a>
+  <a href="#faq" data-i18n="nav5">FAQ</a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ms" aria-pressed="false">BM</button><button type="button" data-lang="zh" aria-pressed="false">中文</button></div>
+  <a href="#contact" class="nav-cta" data-i18n="navCta">Book a site visit</a>
+ </nav>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div>
+  <span class="hero-k"><i></i><span data-i18n="heroK">Renovation &amp; interior design · Klang Valley</span></span>
+  <h1 id="h1" data-i18n-html="heroH">Know the plan, the price range and the <em>finish date</em> before the first wall comes down.</h1>
+  <p class="hero-p" data-i18n="heroP">Condos, landed homes and shoplots across KL &amp; Selangor. One drawing set, one fixed-scope quotation and one project lead from site visit to handover.</p>
+  <div class="hero-cta">
+   <a class="btn dark" href="#estimate"><span data-i18n="heroC1">Get a ballpark in 60 s</span> →</a>
+   <a class="btn" href="#projects" data-i18n="heroC2">See plan changes</a>
+  </div>
+  <div class="hero-meta">
+   <div><b>3</b><span data-i18n="m1">Property types</span></div>
+   <div><b>5</b><span data-i18n="m2">Fixed stages</span></div>
+   <div><b>1</b><span data-i18n="m3">Project lead</span></div>
+  </div>
+ </div>
+ <div class="sheet" id="sheet">
+  <span class="scroll-hint" id="shint">Scroll to furnish ↓</span>
+  <svg class="plan" id="plan" viewBox="0 0 560 430" role="img" aria-label="Floor plan drawing of a three-room condo">
+   <g class="dl-w">
+    <path class="wall" d="M40 40H520V390H40Z"/>
+    <path class="iw" d="M300 40V168"/><path class="iw" d="M300 208V300"/><path class="iw" d="M300 210H520"/>
+    <path class="iw" d="M390 210V250"/><path class="iw" d="M390 290V390"/><path class="iw" d="M300 300H390"/>
+    <path class="iw" d="M40 250H140"/><path class="iw" d="M200 250V390"/>
+    <path class="thin" d="M300 208H338M338 208A38 38 0 0 0 300 170"/>
+    <path class="thin" d="M390 290V252M390 252A38 38 0 0 1 428 290"/>
+    <path class="thin" d="M110 33H230M110 47H230M360 33H470M360 47H470M527 260V350M513 260V350"/>
+   </g>
+   <g class="dl-f">
+    <path class="fur" d="M70 170h150v42H70zM70 170v-14h150v14"/>
+    <path class="fur" d="M120 80a28 28 0 1 0 56 0a28 28 0 1 0-56 0M110 56h-8M194 56h8M110 104h-8M194 104h8"/>
+    <path class="fur" d="M370 62h120v116H370zM378 70h48v22h-48zM434 70h48v22h-48z"/>
+    <path class="fur" d="M50 262h140v20M50 262v116M50 378h140"/>
+    <path class="fur" d="M210 300h70v60h-70zM230 320a10 10 0 1 0 20 0a10 10 0 1 0-20 0"/>
+    <path class="fur" d="M400 300h110v80H400zM470 220h40v80"/>
+    <path class="fur" d="M312 312h66v24h-66zM330 356a12 9 0 1 0 24 0a12 9 0 1 0-24 0"/>
+   </g>
+   <g class="dl-d">
+    <path class="dim" d="M40 16H520M40 10V22M300 10V22M520 10V22"/>
+    <path class="dim" d="M16 40V390M10 40H22M10 250H22M10 390H22"/>
+    <path class="dim" d="M40 412H200M200 412H390M390 412H520M40 406V418M200 406V418M390 406V418M520 406V418"/>
+   </g>
+   <g class="lbl">
+    <text class="dt" x="160" y="12" text-anchor="middle">7 200</text><text class="dt" x="410" y="12" text-anchor="middle">6 100</text>
+    <text class="dt" x="8" y="150" transform="rotate(-90 8 150)" text-anchor="middle">5 600</text><text class="dt" x="8" y="320" transform="rotate(-90 8 320)" text-anchor="middle">3 500</text>
+    <text class="dt" x="120" y="428" text-anchor="middle">4 000</text><text class="dt" x="295" y="428" text-anchor="middle">4 700</text><text class="dt" x="455" y="428" text-anchor="middle">3 200</text>
+    <text class="rl" x="160" y="140" text-anchor="middle">LIVING / DINING</text><text class="sub" x="160" y="153" text-anchor="middle">7.2 × 5.6 · 434 sq ft</text>
+    <text class="rl" x="430" y="196" text-anchor="middle">MASTER</text><text class="rl" x="455" y="244" text-anchor="middle">BED 2</text>
+    <text class="rl" x="120" y="316" text-anchor="middle">KITCHEN</text><text class="rl" x="245" y="290" text-anchor="middle">BED 3</text><text class="rl" x="345" y="350" text-anchor="middle">BATH</text>
+   </g>
+  </svg>
+  <div class="cross-x" id="cx"></div><div class="cross-y" id="cy"></div><div class="coord" id="coord">X 000 · Y 000</div>
+  <div class="tblock"><div><span>Project</span><b>Condo · Mont Kiara (sample)</b></div><div><span>Sheet</span><b>A-101 · Rev C</b></div><div><span>Scale</span><b>1:50</b></div></div>
+  <div class="pins" aria-hidden="true"><i class="pin t-terr" style="--r:-6deg"></i><i class="pin t-oak" style="--r:4deg"></i><i class="pin t-brass" style="--r:-3deg"></i><i class="pin t-sage" style="--r:7deg"></i></div>
+ </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div><span>Measured drawings</span><span>Fixed-scope quotation</span><span>Weekly photo log</span><span>Condo · Landed · Shoplot</span><span>Management-office paperwork handled</span><span>One project lead</span><span>Measured drawings</span><span>Fixed-scope quotation</span><span>Weekly photo log</span><span>Condo · Landed · Shoplot</span><span>Management-office paperwork handled</span><span>One project lead</span></div></div>
+
+<!-- ESTIMATOR -->
+<section id="estimate">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-i18n="estK">01 · Cost estimator</span><h2 data-i18n-html="estH">A ballpark <em>before</em> you call.</h2></div>
+   <p data-i18n="estP">Pick your property, size and scope. The range updates as you go, so the first conversation starts from real numbers.</p>
+  </div>
+  <div class="est">
+   <form class="panel reveal" id="estForm" onsubmit="return false">
+    <fieldset class="fld"><legend data-i18n="lblType">Property type</legend>
+     <div class="seg">
+      <label><input type="radio" name="ptype" value="condo" checked><b data-i18n="tCondo">Condo</b><small>400–3,000 sq ft</small></label>
+      <label><input type="radio" name="ptype" value="landed"><b data-i18n="tLanded">Landed</b><small>1,000–6,000 sq ft</small></label>
+      <label><input type="radio" name="ptype" value="shop"><b data-i18n="tShop">Shoplot</b><small>800–5,000 sq ft</small></label>
+     </div>
+    </fieldset>
+    <div class="fld"><label class="lg" for="size"><span data-i18n="lblSize">Built-up size</span><span id="sizeHint"></span></label>
+     <div class="size-row"><output class="size-out" id="sizeOut" for="size">1,100<small>sq ft</small></output><input type="range" id="size" min="400" max="3000" step="50" value="1100" aria-label="Size in square feet"></div>
+     <div class="ticks"><span id="tMin">400</span><span id="tMax">3,000</span></div>
+    </div>
+    <fieldset class="fld"><legend data-i18n="lblScope">Scope of work</legend>
+     <div class="scope">
+      <label class="chk"><input type="checkbox" name="scope" value="kit" checked><span data-i18n="sKit">Kitchen</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="bath" checked><span data-i18n="sBath">Bathrooms</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="floor" checked><span data-i18n="sFloor">Flooring</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="carp"><span data-i18n="sCarp">Built-in carpentry</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="elec"><span data-i18n="sElec">Electrical &amp; lighting</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="paint" checked><span data-i18n="sPaint">Painting</span></label>
+     </div>
+    </fieldset>
+    <fieldset class="fld" style="margin-bottom:0"><legend data-i18n="lblFinish">Finish level</legend>
+     <div class="seg fin">
+      <label><input type="radio" name="fin" value="0"><b data-i18n="fEss">Essential</b><small data-i18n="fEssD">Solid, standard</small></label>
+      <label><input type="radio" name="fin" value="1" checked><b data-i18n="fCom">Comfort</b><small data-i18n="fComD">Mid-range brands</small></label>
+      <label><input type="radio" name="fin" value="2"><b data-i18n="fSig">Signature</b><small data-i18n="fSigD">Premium, custom</small></label>
+     </div>
+    </fieldset>
+   </form>
+
+   <aside class="result reveal" aria-live="polite">
+    <div class="disc"><b>!</b><span data-i18n="disc">Illustrative ballpark for this demo — real quotes follow a site visit.</span></div>
+    <div class="r-lbl" data-i18n="range">Estimated range</div>
+    <div class="r-range" id="rRange">RM 0 <span>–</span> RM 0</div>
+    <div class="r-empty" id="rEmpty"></div>
+    <div class="r-row">
+     <div><span class="r-lbl" data-i18n="weeks">Estimated duration</span><b id="rWeeks">0–0 <small data-i18n="wk">weeks</small></b></div>
+     <div><span class="r-lbl" data-i18n="midpt">Per sq ft (mid)</span><b id="rPsf">RM 0</b></div>
+    </div>
+    <div class="bars" id="bars"></div>
+    <div class="r-lbl" data-i18n="notInc">Not included</div>
+    <ul class="notinc">
+     <li data-i18n="ni1">Loose furniture, appliances and air-con units</li>
+     <li data-i18n="ni2">Structural works, hacking load-bearing walls and authority permits</li>
+     <li data-i18n="ni3">Management-office renovation deposits and fees</li>
+     <li data-i18n="ni4">3D design fee and SST, where applicable</li>
+    </ul>
+    <button class="btn brass" type="button" id="sendBtn"><span data-i18n="send">Send this estimate</span> ↗</button>
+    <div class="wa" id="wa" role="dialog" aria-label="WhatsApp message preview">
+     <div class="wa-h"><span class="av">B</span><div><b>Batu &amp; Beam</b><small data-i18n="waSub">+60 12-000 0000 (sample) · replies in office hours</small></div><button type="button" id="waX" aria-label="Close preview">×</button></div>
+     <div class="wa-body"><div class="bub" id="bub"></div></div>
+     <div class="wa-f"><span data-i18n="waNote">Demo: WhatsApp was not opened and nothing was sent.</span><button type="button" id="waCopy" data-i18n="copy">Copy text</button></div>
+    </div>
+    <p class="rates" data-i18n="rates">Sample unit rates written into this demo only. Not a price list.</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="padding-top:40px">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-i18n="prK">02 · Selected projects</span><h2 data-i18n-html="prH">The drawing, <em>before</em> and after.</h2></div>
+   <p data-i18n="prP">Flip any sheet to see what changed on plan: walls taken out, rooms re-planned, kitchens opened. Budgets and durations shown as bands.</p>
+  </div>
+  <div class="filters reveal" role="group" aria-label="Filter projects" id="filters">
+   <button type="button" data-f="all" aria-pressed="true"><span data-i18n="fAll">All</span><sup>6</sup></button>
+   <button type="button" data-f="condo" aria-pressed="false"><span data-i18n="tCondo">Condo</span><sup>2</sup></button>
+   <button type="button" data-f="landed" aria-pressed="false"><span data-i18n="tLanded">Landed</span><sup>2</sup></button>
+   <button type="button" data-f="commercial" aria-pressed="false"><span data-i18n="fCom2">Commercial</span><sup>2</sup></button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="legend"><span><i></i>Kept</span><span><i class="r"></i>Removed</span><span><i class="n"></i>New</span><span>All projects on this page are fictional samples.</span></div>
+ </div>
+</section>
+
+<!-- MATERIALS -->
+<section id="materials" class="mat">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-i18n="maK">03 · Swatch board</span><h2 data-i18n-html="maH">Touch the <em>materials</em>, see the room.</h2></div>
+   <p data-i18n="maP">Tap a swatch and the kitchen re-dresses itself. We bring the physical board to your site visit, so you can feel the oak grain and the brass weight in hand.</p>
+  </div>
+  <div class="board">
+   <div class="room reveal">
+    <svg viewBox="0 0 400 300" role="img" aria-label="Kitchen elevation that changes with the selected materials">
+     <defs>
+      <pattern id="p-terr" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#ebe5d8"/><circle cx="6" cy="8" r="2.4" fill="#9caf98"/><path d="M22 4l4 2-2 4-4-1z" fill="#b08d57"/><circle cx="33" cy="20" r="1.6" fill="#c4553b"/><path d="M10 26l5 1-1 4-5-2z" fill="#14213d" opacity=".8"/><circle cx="28" cy="34" r="2.8" fill="#d6ccb8"/><circle cx="16" cy="16" r="1.2" fill="#9caf98"/><circle cx="37" cy="5" r="1.2" fill="#b08d57"/></pattern>
+      <pattern id="p-oak" width="60" height="24" patternUnits="userSpaceOnUse"><rect width="60" height="24" fill="#c49a6c"/><path d="M0 5c15 2 30-2 60 1M0 12c20-3 40 3 60-1M0 19c18 2 35-1 60 2" stroke="#9b7146" stroke-width=".7" fill="none" opacity=".7"/><path d="M0 23.5H60" stroke="#8d6640" stroke-width="1"/></pattern>
+      <pattern id="p-conc" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="#b9b6ae"/><circle cx="5" cy="9" r=".8" fill="#8f8c85"/><circle cx="20" cy="22" r="1" fill="#d2cfc8"/><circle cx="26" cy="6" r=".7" fill="#8f8c85"/></pattern>
+      <pattern id="p-sage" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#e9e4d7"/><rect x="1" y="1" width="18" height="18" fill="#9caf98"/><path d="M2 2l8 0" stroke="#fff" opacity=".35"/></pattern>
+      <pattern id="p-zel" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#cfd3c9"/><rect x="1" y="1" width="14" height="14" fill="#eef0ea"/><circle cx="5" cy="5" r="3" fill="#fff" opacity=".7"/></pattern>
+      <pattern id="p-chalk" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#f2eee5"/></pattern>
+      <pattern id="p-ink" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#1d2b4c"/></pattern>
+      <linearGradient id="g-brass" x1="0" x2="1"><stop offset="0" stop-color="#8a6a3a"/><stop offset=".45" stop-color="#e6c98f"/><stop offset="1" stop-color="#9c7a45"/></linearGradient>
+      <linearGradient id="g-black" x1="0" x2="1"><stop offset="0" stop-color="#111"/><stop offset=".5" stop-color="#444"/><stop offset="1" stop-color="#111"/></linearGradient>
+      <linearGradient id="g-chrome" x1="0" x2="1"><stop offset="0" stop-color="#8e949c"/><stop offset=".5" stop-color="#f3f5f7"/><stop offset="1" stop-color="#9aa0a8"/></linearGradient>
+     </defs>
+     <rect width="400" height="300" fill="#f1ede4"/>
+     <rect x="290" y="34" width="88" height="96" fill="#cfe0ea" stroke="#14213d" stroke-width="2"/><path d="M334 34V130M290 82H378" stroke="#14213d" stroke-width="1.5"/><path d="M298 120c10-20 22-30 34-34M340 122c8-14 18-22 30-24" stroke="#9caf98" stroke-width="3" fill="none"/>
+     <rect id="r-floor" x="0" y="228" width="400" height="72" fill="url(#p-terr)"/>
+     <path d="M0 228H400" stroke="#14213d" stroke-width="2"/>
+     <rect id="r-splash" x="30" y="92" width="240" height="48" fill="url(#p-sage)" stroke="#14213d" stroke-width="1.5"/>
+     <rect id="r-upper" x="30" y="30" width="160" height="58" fill="url(#p-oak)" stroke="#14213d" stroke-width="2"/>
+     <path d="M110 30V88" stroke="#14213d" stroke-width="1.5"/>
+     <rect id="r-lower" x="30" y="148" width="240" height="80" fill="url(#p-oak)" stroke="#14213d" stroke-width="2"/>
+     <path d="M110 148V228M190 148V228" stroke="#14213d" stroke-width="1.5"/>
+     <rect x="24" y="140" width="252" height="9" fill="#ebe5d8" stroke="#14213d" stroke-width="1.5"/>
+     <g class="hw"><rect x="96" y="56" width="4" height="20" rx="2"/><rect x="120" y="56" width="4" height="20" rx="2"/><rect x="60" y="160" width="28" height="4" rx="2"/><rect x="138" y="160" width="28" height="4" rx="2"/><rect x="218" y="160" width="28" height="4" rx="2"/><path d="M226 140v-22h14v6h-4v-2h-6v18z"/><path d="M232 0v10" stroke="#14213d"/></g>
+     <path d="M232 0V8" stroke="#14213d" stroke-width="1.5"/>
+     <g class="hw"><path d="M218 30h28l-6-22h-16z"/></g>
+     <ellipse cx="232" cy="34" rx="20" ry="4" fill="#fff6d8" opacity=".8"/>
+     <path d="M50 140c0-12 10-20 22-20h4v20" fill="#9caf98" opacity=".9"/><rect x="60" y="126" width="16" height="14" fill="#c4553b" opacity=".85"/>
+     <text x="392" y="292" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8" fill="#14213d">ELEV. K-02 · 1:25</text>
+    </svg>
+    <div class="spec" id="spec"></div>
+   </div>
+   <div class="cats reveal" id="cats"></div>
+  </div>
+ </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-i18n="psK">04 · How a project runs</span><h2 data-i18n-html="psH">Five stages. <em>No surprises</em> in between.</h2></div>
+   <p data-i18n="psP">You pay against finished milestones, never ahead of the work. The schedule below is a sample; your contract sets the real one.</p>
+  </div>
+  <ol class="steps" id="steps">
+   <li class="track" aria-hidden="true"><i id="trackI"></i></li>
+   <li class="step reveal"><span class="n">STAGE 01</span><h3>Site visit</h3><span class="dur">Day 1 · ~90 min</span><p>We measure, check wiring, plumbing points and management rules, and listen.</p><span class="pay">Sample: free, no obligation</span></li>
+   <li class="step reveal"><span class="n">STAGE 02</span><h3>3D design</h3><span class="dur">Weeks 1–3</span><p>Measured plan, 3D views and a material board you can hold. Two revision rounds.</p><span class="pay">Sample: design fee, credited if you build with us</span></li>
+   <li class="step reveal"><span class="n">STAGE 03</span><h3>Quotation</h3><span class="dur">Week 3–4</span><p>Line-by-line, fixed scope. Every brand, model and thickness written down.</p><span class="pay">Sample: 20% deposit on signing</span></li>
+   <li class="step reveal"><span class="n">STAGE 04</span><h3>Build</h3><span class="dur">6–20 weeks</span><p>Weekly photo log in a shared chat. One project lead on site, every week.</p><span class="pay">Sample: 30% after M&amp;E · 30% after carpentry</span></li>
+   <li class="step reveal"><span class="n">STAGE 05</span><h3>Handover</h3><span class="dur">Final week</span><p>Joint defects walk with a checklist. Fixes logged, dated and closed.</p><span class="pay">Sample: 15% at handover · 5% after defects period</span></li>
+  </ol>
+  <div class="paybar reveal" aria-label="Sample payment split">
+   <div style="flex:20;background:#e9e4d7" title="Deposit on signing">20% deposit</div>
+   <div style="flex:30;background:var(--blue-l)" title="After M&amp;E rough-in">30% M&amp;E</div>
+   <div style="flex:30;background:#cfdacd" title="After carpentry installed">30% carpentry</div>
+   <div style="flex:15;background:#e7d6b8" title="At handover">15%</div>
+   <div style="flex:5;background:var(--brass);color:#fff" title="Retention after defects period">5%</div>
+  </div>
+  <p class="paynote">Payment milestones shown as a sample for this demo. Real terms are agreed in writing per project.</p>
+ </div>
+</section>
+
+<!-- CREDENTIALS -->
+<div class="creds">
+ <div class="wrap cred-strip reveal">
+  <div><small>Contractor licence</small><b>CIDB Grade G__</b><em>(sample)</em></div>
+  <div><small>Company</small><b>SSM reg. no.</b><em>(sample)</em></div>
+  <div><small>Workmanship warranty</small><b>12 months</b><em>(sample)</em></div>
+  <div><small>Site insurance</small><b>CAR policy</b><em>(sample)</em></div>
+  <div><p class="quote">“They showed us the timeline on day one and we moved in the week they said.”<cite>Sample testimonial · condo owner, PJ · placeholder text</cite></p></div>
+ </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+ <div class="wrap faq-wrap">
+  <div class="reveal"><span class="tag" data-i18n="fqK">05 · Questions</span><h2 data-i18n-html="fqH">Asked at <em>every</em> site visit.</h2></div>
+  <div class="faq reveal" id="faqList"></div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-i18n="ctK">06 · Site visit</span><h2 data-i18n-html="ctH">Book the <em>tape measure</em>.</h2></div>
+   <p data-i18n="ctP">Tell us where and what. A project lead calls back within one working day to set a time.</p>
+  </div>
+  <form class="cform reveal" id="cform" novalidate>
+   <label><span data-i18n="cName">Your name</span><input name="n" autocomplete="name" placeholder="Aisyah Tan"></label>
+   <label><span data-i18n="cPhone">WhatsApp number</span><input name="p" inputmode="tel" autocomplete="tel" placeholder="012-345 6789"></label>
+   <label><span data-i18n="cArea">Area</span><select name="a"><option>Kuala Lumpur</option><option>Petaling Jaya</option><option>Shah Alam</option><option>Subang Jaya</option><option>Cheras</option><option>Puchong</option><option>Other</option></select></label>
+   <label><span data-i18n="lblType">Property type</span><select name="t"><option data-i18n="tCondo">Condo</option><option data-i18n="tLanded">Landed</option><option data-i18n="tShop">Shoplot</option></select></label>
+   <label class="full"><span data-i18n="cMsg">What would you like to change?</span><textarea name="m" rows="2" placeholder="Open up the kitchen, redo both bathrooms…"></textarea></label>
+   <button class="btn brass" type="submit"><span data-i18n="cSend">Request a site visit</span> →</button>
+   <p class="okmsg" id="okmsg" role="status"></p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="f-grid">
+   <div><p class="fb">Batu &amp; Beam</p><p style="margin-top:10px;max-width:320px;line-height:1.6">Renovation and interior design for condos, landed homes and shoplots. Studio and material library in Petaling Jaya (fictional).</p></div>
+   <div><h5>Service areas</h5><div class="areas"><span>Kuala Lumpur</span><span>Petaling Jaya</span><span>Shah Alam</span><span>Subang Jaya</span><span>Cheras</span><span>Puchong</span><span>Mont Kiara</span><span>Bangsar</span><span>Klang</span><span>Kajang</span></div></div>
+   <div><h5>Studio hours</h5><p style="line-height:1.7">Mon–Fri 9am–6pm<br>Sat 10am–4pm, by appointment<br>Site visits Mon–Sat</p></div>
+  </div>
+  <div class="f-base"><span data-i18n="foot">Fictional brand · Design concept by Aurelion</span><span>Sheet 1 of 1 · Rev C · Not for construction</span></div>
+ </div>
+</footer>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+
+/* ---------- i18n ---------- */
+const T={
+en:{menu:"MENU",nav1:"Estimate",nav2:"Projects",nav3:"Materials",nav4:"Process",nav5:"FAQ",navCta:"Book a site visit",
+heroK:"Renovation & interior design · Klang Valley",heroH:'Know the plan, the price range and the <em>finish date</em> before the first wall comes down.',heroP:"Condos, landed homes and shoplots across KL & Selangor. One drawing set, one fixed-scope quotation and one project lead from site visit to handover.",heroC1:"Get a ballpark in 60 s",heroC2:"See plan changes",m1:"Property types",m2:"Fixed stages",m3:"Project lead",hint:"Scroll to furnish ↓",
+estK:"01 · Cost estimator",estH:'A ballpark <em>before</em> you call.',estP:"Pick your property, size and scope. The range updates as you go, so the first conversation starts from real numbers.",lblType:"Property type",tCondo:"Condo",tLanded:"Landed",tShop:"Shoplot",lblSize:"Built-up size",lblScope:"Scope of work",sKit:"Kitchen",sBath:"Bathrooms",sFloor:"Flooring",sCarp:"Built-in carpentry",sElec:"Electrical & lighting",sPaint:"Painting",lblFinish:"Finish level",fEss:"Essential",fCom:"Comfort",fSig:"Signature",fEssD:"Solid, standard",fComD:"Mid-range brands",fSigD:"Premium, custom",
+disc:"Illustrative ballpark for this demo — real quotes follow a site visit.",range:"Estimated range",weeks:"Estimated duration",wk:"weeks",midpt:"Per sq ft (mid)",notInc:"Not included",ni1:"Loose furniture, appliances and air-con units",ni2:"Structural works, hacking load-bearing walls and authority permits",ni3:"Management-office renovation deposits and fees",ni4:"3D design fee and SST, where applicable",send:"Send this estimate",empty:"Tick at least one scope item to see a range.",baths:"bathrooms assumed",rates:"Sample unit rates written into this demo only. Not a price list.",
+waSub:"+60 12-000 0000 (sample) · replies in office hours",waNote:"Demo: WhatsApp was not opened and nothing was sent.",copy:"Copy text",copied:"Copied",waHi:"Hi Batu & Beam, I used your estimator and would like a site visit.",waProp:"Property",waSize:"Size",waScope:"Scope",waFin:"Finish",waRange:"Ballpark",waTime:"Duration",waEnd:"Is a site visit possible this week?",
+prK:"02 · Selected projects",prH:'The drawing, <em>before</em> and after.',prP:"Flip any sheet to see what changed on plan: walls taken out, rooms re-planned, kitchens opened. Budgets and durations shown as bands.",fAll:"All",fCom2:"Commercial",before:"Before",after:"After",
+maK:"03 · Swatch board",maH:'Touch the <em>materials</em>, see the room.',maP:"Tap a swatch and the kitchen re-dresses itself. We bring the physical board to your site visit, so you can feel the oak grain and the brass weight in hand.",
+psK:"04 · How a project runs",psH:'Five stages. <em>No surprises</em> in between.',psP:"You pay against finished milestones, never ahead of the work. The schedule below is a sample; your contract sets the real one.",
+fqK:"05 · Questions",fqH:'Asked at <em>every</em> site visit.',ctK:"06 · Site visit",ctH:'Book the <em>tape measure</em>.',ctP:"Tell us where and what. A project lead calls back within one working day to set a time.",cName:"Your name",cPhone:"WhatsApp number",cArea:"Area",cMsg:"What would you like to change?",cSend:"Request a site visit",ok:"Thanks, {n}. A project lead would call you within one working day. (Demo: nothing was sent.)",okNeed:"Add your name and number first.",foot:"Fictional brand · Design concept by Aurelion"},
+ms:{menu:"MENU",nav1:"Anggaran",nav2:"Projek",nav3:"Bahan",nav4:"Proses",nav5:"Soalan Lazim",navCta:"Tempah lawatan tapak",
+heroK:"Ubah suai & reka bentuk dalaman · Lembah Klang",heroH:'Ketahui pelan, julat harga dan <em>tarikh siap</em> sebelum dinding pertama dirobohkan.',heroP:"Kondo, rumah bertanah dan rumah kedai di sekitar KL & Selangor. Satu set lukisan, satu sebut harga berskop tetap dan satu ketua projek dari lawatan tapak hingga serahan kunci.",heroC1:"Dapatkan anggaran dalam 60 saat",heroC2:"Lihat perubahan pelan",m1:"Jenis hartanah",m2:"Peringkat tetap",m3:"Ketua projek",hint:"Tatal untuk isi perabot ↓",
+estK:"01 · Kalkulator kos",estH:'Anggaran kasar <em>sebelum</em> anda menelefon.',estP:"Pilih hartanah, saiz dan skop kerja. Julat dikemas kini serta-merta, jadi perbincangan pertama bermula dengan angka sebenar.",lblType:"Jenis hartanah",tCondo:"Kondo",tLanded:"Rumah bertanah",tShop:"Rumah kedai",lblSize:"Keluasan binaan",lblScope:"Skop kerja",sKit:"Dapur",sBath:"Bilik air",sFloor:"Lantai",sCarp:"Perabot terbina dalam",sElec:"Elektrik & lampu",sPaint:"Mengecat",lblFinish:"Tahap kemasan",fEss:"Asas",fCom:"Selesa",fSig:"Premium",fEssD:"Kukuh, standard",fComD:"Jenama pertengahan",fSigD:"Premium, tempahan",
+disc:"Anggaran ilustrasi untuk demo ini — sebut harga sebenar selepas lawatan tapak.",range:"Julat anggaran",weeks:"Anggaran tempoh",wk:"minggu",midpt:"Sekaki persegi (purata)",notInc:"Tidak termasuk",ni1:"Perabot lepas, perkakas elektrik dan unit penghawa dingin",ni2:"Kerja struktur, memecah dinding galas beban dan permit pihak berkuasa",ni3:"Deposit dan yuran ubah suai pejabat pengurusan",ni4:"Yuran reka bentuk 3D dan SST, jika berkenaan",send:"Hantar anggaran ini",empty:"Tandakan sekurang-kurangnya satu skop untuk melihat julat.",baths:"bilik air dianggarkan",rates:"Kadar unit contoh dalam demo ini sahaja. Bukan senarai harga.",
+waSub:"+60 12-000 0000 (contoh) · balas waktu pejabat",waNote:"Demo: WhatsApp tidak dibuka dan tiada apa-apa dihantar.",copy:"Salin teks",copied:"Disalin",waHi:"Hai Batu & Beam, saya telah guna kalkulator anda dan ingin menempah lawatan tapak.",waProp:"Hartanah",waSize:"Saiz",waScope:"Skop",waFin:"Kemasan",waRange:"Anggaran",waTime:"Tempoh",waEnd:"Boleh buat lawatan tapak minggu ini?",
+prK:"02 · Projek pilihan",prH:'Lukisan, <em>sebelum</em> dan selepas.',prP:"Tukar mana-mana helaian untuk melihat perubahan pada pelan. Bajet dan tempoh ditunjukkan dalam julat.",fAll:"Semua",fCom2:"Komersial",before:"Sebelum",after:"Selepas",
+maK:"03 · Papan bahan",maH:'Sentuh <em>bahan</em>, lihat ruangnya.',maP:"Tekan satu sampel dan dapur bertukar serta-merta. Kami bawa papan bahan sebenar semasa lawatan tapak.",
+psK:"04 · Cara projek berjalan",psH:'Lima peringkat. <em>Tiada kejutan</em> di tengah jalan.',psP:"Anda bayar mengikut peringkat yang siap, bukan lebih awal. Jadual di bawah hanya contoh; kontrak anda menetapkan yang sebenar.",
+fqK:"05 · Soalan",fqH:'Ditanya di <em>setiap</em> lawatan tapak.',ctK:"06 · Lawatan tapak",ctH:'Tempah <em>pita pengukur</em>.',ctP:"Beritahu kami lokasi dan keperluan anda. Ketua projek akan menghubungi anda dalam satu hari bekerja.",cName:"Nama anda",cPhone:"Nombor WhatsApp",cArea:"Kawasan",cMsg:"Apa yang anda mahu ubah?",cSend:"Mohon lawatan tapak",ok:"Terima kasih, {n}. Ketua projek akan menghubungi anda dalam satu hari bekerja. (Demo: tiada apa-apa dihantar.)",okNeed:"Sila isi nama dan nombor anda dahulu.",foot:"Jenama rekaan · Konsep reka bentuk oleh Aurelion"},
+zh:{menu:"菜单",nav1:"估价",nav2:"案例",nav3:"材料",nav4:"流程",nav5:"常见问题",navCta:"预约上门勘察",
+heroK:"装修与室内设计 · 巴生谷",heroH:'动工之前，先看清图纸、预算范围和<em>完工日期</em>。',heroP:"服务吉隆坡及雪兰莪的公寓、有地住宅与店屋。一套图纸、一份固定范围报价、一位项目负责人，从上门勘察到交屋全程跟进。",heroC1:"60 秒获取预算参考",heroC2:"查看改图前后",m1:"物业类型",m2:"固定阶段",m3:"项目负责人",hint:"向下滚动，摆上家具 ↓",
+estK:"01 · 装修预算估算",estH:'打电话之前，<em>先</em>心里有数。',estP:"选择物业类型、面积和施工范围，预算区间即时更新，第一次沟通就从真实数字开始。",lblType:"物业类型",tCondo:"公寓",tLanded:"有地住宅",tShop:"店屋",lblSize:"建筑面积",lblScope:"施工范围",sKit:"厨房",sBath:"浴室",sFloor:"地板",sCarp:"定制柜体",sElec:"电路与灯光",sPaint:"油漆",lblFinish:"装修档次",fEss:"基础",fCom:"舒适",fSig:"臻选",fEssD:"扎实标准",fComD:"中端品牌",fSigD:"高端定制",
+disc:"本演示仅为示意性预算参考，正式报价以上门勘察后为准。",range:"预算区间",weeks:"预计工期",wk:"周",midpt:"每平方英尺（中位）",notInc:"不包括",ni1:"活动家具、家电及冷气机",ni2:"结构工程、拆除承重墙及政府审批",ni3:"管理处装修押金及费用",ni4:"3D 设计费及 SST（如适用）",send:"发送这份估价",empty:"请至少勾选一项施工范围。",baths:"间浴室（估算）",rates:"示例单价仅用于本演示，并非价目表。",
+waSub:"+60 12-000 0000（示例）· 办公时间回复",waNote:"演示：未打开 WhatsApp，也没有发送任何内容。",copy:"复制文字",copied:"已复制",waHi:"您好 Batu & Beam，我用过网站的估价工具，想预约上门勘察。",waProp:"物业",waSize:"面积",waScope:"范围",waFin:"档次",waRange:"预算参考",waTime:"工期",waEnd:"请问这周可以安排上门勘察吗？",
+prK:"02 · 精选案例",prH:'图纸的<em>改造</em>前后。',prP:"切换任意图纸，看看平面图上改了什么：拆墙、重新规划房间、开放式厨房。预算与工期以区间显示。",fAll:"全部",fCom2:"商业",before:"改造前",after:"改造后",
+maK:"03 · 材料板",maH:'摸得到的<em>材料</em>，看得见的空间。',maP:"点选材料样板，厨房立即换装。上门勘察时，我们会带上实体材料板。",
+psK:"04 · 项目流程",psH:'五个阶段，<em>中途不出意外</em>。',psP:"按已完成的阶段付款，绝不预付。以下为示例安排，实际以合同为准。",
+fqK:"05 · 常见问题",fqH:'<em>每次</em>勘察都会被问到。',ctK:"06 · 上门勘察",ctH:'预约<em>上门量尺</em>。',ctP:"告诉我们地点和需求，项目负责人会在一个工作日内回电约时间。",cName:"您的姓名",cPhone:"WhatsApp 号码",cArea:"地区",cMsg:"想改造哪些地方？",cSend:"预约上门勘察",ok:"谢谢，{n}。项目负责人会在一个工作日内联系您。（演示：没有发送任何内容。）",okNeed:"请先填写姓名和号码。",foot:"虚构品牌 · Aurelion 设计概念"}
+};
+let lang='en';
+const t=k=>(T[lang][k]!==undefined?T[lang][k]:(T.en[k]!==undefined?T.en[k]:k));
+function fill(str,n){return str.split('{n}').join(n);}
+
+/* ---------- nav ---------- */
+const links=$('#navlinks'),burger=$('#burger');
+function closeNav(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+$$('.nav-links a').forEach(a=>a.addEventListener('click',closeNav));
+addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
+
+/* ---------- hero plan draw ---------- */
+const plan=$('#plan');
+function prep(sel){return $$(sel+' path').map(p=>{const L=Math.ceil(p.getTotalLength())+1;p.style.strokeDasharray=L;p.style.strokeDashoffset=reduce?0:L;return {p,L};});}
+const W=prep('.dl-w'),F=prep('.dl-f'),D=prep('.dl-d');
+if(reduce){plan.classList.add('done');$('#shint').style.opacity=0;}
+else{
+ W.forEach((o,i)=>{o.p.style.transition=`stroke-dashoffset ${i===0?1.6:.8}s cubic-bezier(.6,0,.2,1) ${i===0?.2:.9+i*.09}s`;});
+ requestAnimationFrame(()=>requestAnimationFrame(()=>W.forEach(o=>o.p.style.strokeDashoffset=0)));
+ setTimeout(()=>plan.classList.add('done'),2300);
+ const sheet=$('#sheet');let start=0;
+ const calc=()=>{const r=sheet.getBoundingClientRect();const top=r.top+scrollY;start=Math.max(0,top-innerHeight*.6);};
+ const onScroll=()=>{const k=Math.min(1,Math.max(0,(scrollY-start)/(innerHeight*.35)));
+  F.forEach((o,i)=>{const kk=Math.min(1,Math.max(0,k*1.4-i*.06));o.p.style.strokeDashoffset=o.L*(1-kk);});
+  D.forEach(o=>{o.p.style.strokeDashoffset=o.L*(1-Math.min(1,k*1.2));});
+  $('#shint').style.opacity=k>.05?0:1;};
+ calc();onScroll();addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',()=>{calc();onScroll();});
+ // crosshair
+ const cx=$('#cx'),cy=$('#cy'),co=$('#coord');
+ sheet.addEventListener('pointermove',e=>{const r=sheet.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;cx.style.top=y+'px';cy.style.left=x+'px';co.textContent=`X ${String(Math.round(x/r.width*7200)).padStart(4,'0')} · Y ${String(Math.round(y/r.height*5600)).padStart(4,'0')} mm`;});
+}
+
+/* ---------- estimator (sample rates, demo only) ---------- */
+const RATE={
+ kit:{label:'sKit',fixed:{condo:16000,landed:26000,shop:20000},wk:3},
+ bath:{label:'sBath',per:8500,wk:2},
+ floor:{label:'sFloor',psf:11,wk:1.5},
+ carp:{label:'sCarp',psf:16,wk:3},
+ elec:{label:'sElec',psf:6.5,wk:1.5},
+ paint:{label:'sPaint',psf:3.2,wk:1}
+};
+const FIN=[1,1.5,2.25],PT={condo:1,landed:1.12,shop:1.06},RANGE={condo:[400,3000,1100],landed:[1000,6000,2200],shop:[800,5000,1600]};
+const form=$('#estForm'),size=$('#size'),sizeOut=$('#sizeOut');
+let lastLo=0,lastHi=0,curEst=null;
+const fmt=n=>n.toLocaleString('en-MY');
+const rm=n=>'RM '+fmt(Math.round(n/500)*500);
+function readForm(){
+ const type=form.querySelector('input[name=ptype]:checked').value;
+ const fin=+form.querySelector('input[name=fin]:checked').value;
+ const sq=+size.value;
+ const scopes=$$('input[name=scope]').filter(c=>c.checked).map(c=>c.value);
+ return {type,fin,sq,scopes};
+}
+function estimate(s){
+ const nb=s.type==='shop'?Math.max(1,Math.round(s.sq/1500)):Math.max(1,Math.min(6,Math.round(s.sq/650)));
+ const parts={};let total=0,wsum=0;
+ Object.keys(RATE).forEach(k=>{const r=RATE[k];let v=0;
+  if(r.fixed)v=r.fixed[s.type]*(s.sq>2500?1.25:1);
+  else if(r.per)v=r.per*nb;
+  else v=r.psf*s.sq;
+  v*=FIN[s.fin]*PT[s.type];parts[k]=v;
+  if(s.scopes.includes(k)){total+=v;wsum+=r.wk+(k==='bath'?(nb-1)*.5:0)+(r.psf?s.sq/2000:0);}
+ });
+ const base=s.scopes.length?2+wsum*.55+s.fin*.8+(s.type==='landed'?1:0):0;
+ return {nb,parts,total,lo:total*.88,hi:total*1.18,wlo:Math.max(2,Math.round(base)),whi:Math.max(3,Math.round(base*1.3+1))};
+}
+function tween(el,a1,b1,a2,b2){
+ if(reduce){el.innerHTML=`${rm(a2)} <span>–</span> ${rm(b2)}`;return;}
+ const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/450),e=1-Math.pow(1-k,3);el.innerHTML=`${rm(a1+(a2-a1)*e)} <span>–</span> ${rm(b1+(b2-b1)*e)}`;if(k<1)requestAnimationFrame(f);})(st);
+}
+function updSize(){const p=(size.value-size.min)/(size.max-size.min)*100;size.style.setProperty('--p',p+'%');sizeOut.innerHTML=fmt(+size.value)+'<small>sq ft</small>';}
+function calcUI(){
+ const s=readForm(),e=estimate(s);curEst={s,e};updSize();
+ $('#sizeHint').textContent=s.scopes.includes('bath')?`≈ ${e.nb} ${t('baths')}`:'';
+ const max=Math.max(...Object.values(e.parts));
+ $('#bars').innerHTML=Object.keys(RATE).map(k=>{const on=s.scopes.includes(k);return `<div class="bar${on?'':' off'}"><span>${t(RATE[k].label)}</span><i style="--w:${on?(e.parts[k]/max*100).toFixed(1):0}%"></i><em>${on?rm(e.parts[k]):'—'}</em></div>`;}).join('');
+ $('#rEmpty').textContent=s.scopes.length?'':t('empty');
+ tween($('#rRange'),lastLo,lastHi,e.lo,e.hi);lastLo=e.lo;lastHi=e.hi;
+ $('#rWeeks').innerHTML=s.scopes.length?`${e.wlo}–${e.whi} <small>${t('wk')}</small>`:`— <small>${t('wk')}</small>`;
+ $('#rPsf').textContent=s.scopes.length?'RM '+Math.round((e.lo+e.hi)/2/s.sq):'—';
+ $('#sendBtn').disabled=!s.scopes.length;$('#sendBtn').style.opacity=s.scopes.length?1:.5;
+ if($('#wa').classList.contains('show'))buildMsg();
+}
+form.addEventListener('change',e=>{
+ if(e.target.name==='ptype'){const r=RANGE[e.target.value];size.min=r[0];size.max=r[1];size.value=r[2];$('#tMin').textContent=fmt(r[0]);$('#tMax').textContent=fmt(r[1]);}
+ calcUI();
+});
+size.addEventListener('input',calcUI);
+
+/* WhatsApp preview */
+function buildMsg(){
+ const {s,e}=curEst;const tl={condo:'tCondo',landed:'tLanded',shop:'tShop'}[s.type];
+ const msg=`${t('waHi')}\n\n• ${t('waProp')}: ${t(tl)}\n• ${t('waSize')}: ${fmt(s.sq)} sq ft\n• ${t('waScope')}: ${s.scopes.map(k=>t(RATE[k].label)).join(', ')}\n• ${t('waFin')}: ${t(['fEss','fCom','fSig'][s.fin])}\n• ${t('waRange')}: ${rm(e.lo)} – ${rm(e.hi)}\n• ${t('waTime')}: ${e.wlo}–${e.whi} ${t('wk')}\n\n${t('waEnd')}`;
+ const d=new Date();const tm=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+ const b=$('#bub');b.textContent=msg;const sp=document.createElement('span');sp.className='tm';sp.textContent=tm+' ✓✓';b.appendChild(sp);
+ return msg;
+}
+$('#sendBtn').addEventListener('click',()=>{if(!curEst||!curEst.s.scopes.length)return;buildMsg();const w=$('#wa');w.classList.remove('show');void w.offsetWidth;w.classList.add('show');w.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});});
+$('#waX').addEventListener('click',()=>$('#wa').classList.remove('show'));
+$('#waCopy').addEventListener('click',()=>{const m=buildMsg();const btn=$('#waCopy');const done=()=>{btn.textContent=t('copied');setTimeout(()=>btn.textContent=t('copy'),1400);};
+ try{if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(m).then(done,()=>{});}else done();}catch(err){done();}});
+
+/* ---------- projects ---------- */
+const P=[
+ {c:'condo',n:'Mont Kiara condo',a:'Kuala Lumpur',sq:'1,250',bud:'RM 90–120k',dur:'10–12 wks',d:'Enclosed kitchen opened to the living room, island added. Wall confirmed non-structural on site.',
+  cw:[[120,10,120,130],[120,70,190,70]],bo:[[10,62,72,62],[72,62,72,10]],ao:[[30,80,88,80],[88,80,88,92],[88,92,30,92],[30,92,30,80]],
+  lb:[[41,38,'KITCHEN'],[65,110,'LIVING'],[155,42,'BED 1'],[155,102,'BED 2']],la:[[44,30,'OPEN KITCHEN'],[59,74,'ISLAND'],[65,114,'LIVING'],[155,42,'BED 1'],[155,102,'BED 2']]},
+ {c:'condo',n:'Cheras 3-room unit',a:'Cheras',sq:'950',bud:'RM 55–75k',dur:'8–9 wks',d:'Third bedroom becomes a study with a glass slider, so the living room gains daylight.',
+  cw:[[130,10,130,130],[130,72,190,72]],bo:[[10,64,70,64],[70,64,70,10]],ao:[[70,10,70,30],[10,64,40,64]],
+  lb:[[40,38,'BED 3'],[70,104,'LIVING'],[160,42,'MASTER'],[160,102,'BED 2']],la:[[40,38,'STUDY'],[86,50,'GLASS'],[70,104,'LIVING + LIGHT'],[160,42,'MASTER'],[160,102,'BED 2']]},
+ {c:'landed',n:'Subang double-storey terrace',a:'Subang Jaya',sq:'2,400',bud:'RM 210–270k',dur:'16–18 wks',d:'Rear kitchen split into dry and wet zones, with a powder room tucked under the stairs.',
+  cw:[[10,78,190,78],[140,10,140,78]],bo:[[100,78,100,130]],ao:[[70,78,70,130],[140,104,190,104],[140,104,140,130]],
+  lb:[[75,46,'LIVING'],[165,46,'STAIR'],[55,106,'KITCHEN'],[145,106,'YARD']],la:[[75,46,'LIVING'],[165,46,'STAIR'],[40,106,'DRY'],[105,106,'WET KITCHEN'],[165,92,'YARD'],[165,120,'POWDER']]},
+ {c:'landed',n:'Shah Alam semi-D master suite',a:'Shah Alam',sq:'3,200',bud:'RM 280–360k',dur:'18–22 wks',d:'Small fourth bedroom absorbed into the master as a walk-in wardrobe and a larger bathroom.',
+  cw:[[100,10,100,130],[10,80,100,80]],bo:[[150,10,150,130],[100,70,150,70]],ao:[[150,10,150,62],[150,62,190,62],[100,92,150,92]],
+  lb:[[55,46,'HALL'],[55,106,'BED 3'],[125,40,'BED 4'],[125,100,'BATH'],[170,70,'MASTER']],la:[[55,46,'HALL'],[55,106,'BED 3'],[125,46,'WALK-IN'],[170,40,'BATH+'],[125,112,'MASTER'],[170,100,'SUITE']]},
+ {c:'commercial',n:'PJ shoplot café, ground floor',a:'Petaling Jaya',sq:'1,600',bud:'RM 150–190k',dur:'11–13 wks',d:'Old retail partitions out; open seating, bar counter and a proper back-of-house.',
+  cw:[[140,10,140,130]],bo:[[10,50,140,50],[10,90,140,90]],ao:[[80,96,135,96],[135,96,135,124],[140,60,190,60]],
+  lb:[[75,32,'UNIT A'],[75,72,'UNIT B'],[75,112,'STORE'],[165,70,'BACK']],la:[[60,50,'OPEN SEATING'],[108,112,'BAR'],[165,38,'KITCHEN'],[165,98,'STORE']]},
+ {c:'commercial',n:'Puchong clinic, first floor',a:'Puchong',sq:'1,400',bud:'RM 120–160k',dur:'10–12 wks',d:'Open office re-planned into reception, two consult rooms and a treatment bay.',
+  cw:[[10,70,60,70]],bo:[[100,10,100,130]],ao:[[60,10,60,130],[60,50,190,50],[125,50,125,130],[60,96,125,96]],
+  lb:[[35,42,'PANTRY'],[55,106,'OFFICE'],[145,70,'OPEN PLAN']],la:[[35,42,'RECEPT.'],[35,104,'WAIT'],[125,32,'TREATMENT'],[92,74,'CONSULT 1'],[158,92,'CONSULT 2'],[92,114,'STORE']]}
+];
+const ln=(a,cls)=>`<path class="${cls}"${cls==="ao"?" pathLength=\"1\"":""} d="M${a[0]} ${a[1]}L${a[2]} ${a[3]}"/>`;
+const tx=(a,cls)=>`<text class="${cls}" x="${a[0]}" y="${a[1]}">${a[2]}</text>`;
+function renderProjects(){
+ $('#grid').innerHTML=P.map((p,i)=>`<article class="pcard reveal" data-c="${p.c}">
+  <div class="pc-draw"><span class="stamp">${t('before')}</span><div class="tog" role="group" aria-label="Plan view"><button type="button" aria-pressed="true" data-v="b">${t('before')}</button><button type="button" aria-pressed="false" data-v="a">${t('after')}</button></div>
+  <svg viewBox="0 0 200 140" role="img" aria-label="Plan of ${p.n}"><path class="ow" d="M10 10H190V130H10Z"/>${p.cw.map(a=>`<path class="cw" d="M${a[0]} ${a[1]}L${a[2]} ${a[3]}"/>`).join('')}${p.bo.map(a=>ln(a,'bo')).join('')}${p.ao.map(a=>ln(a,'ao')).join('')}${p.lb.map(a=>tx(a,'lb')).join('')}${p.la.map(a=>tx(a,'la')).join('')}</svg></div>
+  <div class="pc-body"><span class="tag">${String(i+1).padStart(2,'0')} · ${p.a}</span><h3>${p.n}</h3><p>${p.d}</p>
+  <div class="pc-meta"><div>Size<b>${p.sq} sq ft</b></div><div>Budget band<b>${p.bud}</b></div><div>Duration<b>${p.dur}</b></div></div></div></article>`).join('');
+ $$('.pcard').forEach(card=>{card.querySelectorAll('.tog button').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.v==='a';card.classList.toggle('after',a);card.querySelectorAll('.tog button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));card.querySelector('.stamp').textContent=a?t('after'):t('before');}));});
+ applyFilter();$$('#grid .reveal').forEach(el=>io.observe(el));
+}
+let filt='all';
+function applyFilter(){$$('.pcard').forEach(c=>c.classList.toggle('hide',filt!=='all'&&c.dataset.c!==filt));}
+$$('#filters button').forEach(b=>b.addEventListener('click',()=>{filt=b.dataset.f;$$('#filters button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applyFilter();}));
+
+/* ---------- swatch board ---------- */
+const CATS=[
+ {id:'floor',h:'Floor',el:'#r-floor',o:[['terr','Terrazzo TZ-01','t-terr','url(#p-terr)'],['oak','Oak plank OK-03','t-oak','url(#p-oak)'],['conc','Micro-cement MC-02','t-conc','url(#p-conc)'],['sage','Sage tile ST-04','t-sage','url(#p-sage)']]},
+ {id:'cab',h:'Cabinetry',el:'#r-lower,#r-upper',o:[['oak','Oak veneer OK-01','t-oak','url(#p-oak)'],['sage','Sage lacquer SG-02','t-sage','#9caf98'],['chalk','Chalk matte CH-01','t-chalk','url(#p-chalk)'],['ink','Ink blue IN-05','t-ink','url(#p-ink)']]},
+ {id:'splash',h:'Backsplash',el:'#r-splash',o:[['sage','Sage tile ST-04','t-sage','url(#p-sage)'],['zel','Zellige white ZW-02','t-zel','url(#p-zel)'],['terr','Terrazzo TZ-01','t-terr','url(#p-terr)'],['oak','Oak slat OK-07','t-oak','url(#p-oak)']]},
+ {id:'hw',h:'Hardware',el:'.hw',o:[['brass','Brushed brass BR-01','t-brass','url(#g-brass)'],['black','Matte black BK-02','t-black','url(#g-black)'],['chrome','Polished chrome CR-03','t-chrome','url(#g-chrome)']]}
+];
+const sel={floor:0,cab:0,splash:0,hw:0};
+$('#cats').innerHTML=CATS.map(c=>`<div class="cat"><h4><span>${c.h}</span><span id="cn-${c.id}"></span></h4><div class="chips">${c.o.map((o,i)=>`<button type="button" class="chip" data-c="${c.id}" data-i="${i}" aria-pressed="${i===0}"><i class="${o[2]}"></i><span>${o[1]}</span></button>`).join('')}</div></div>`).join('');
+function applySw(){
+ CATS.forEach(c=>{const o=c.o[sel[c.id]];$$(c.el).forEach(g=>{if(g.tagName.toLowerCase()==='g')g.querySelectorAll('rect,path').forEach(x=>{if(!x.getAttribute('stroke'))x.setAttribute('fill',o[3]);});else g.setAttribute('fill',o[3]);});$('#cn-'+c.id).textContent=o[1].split(' ').pop();});
+ $('#spec').innerHTML=CATS.map(c=>`<div>${c.h}<b>${c.o[sel[c.id]][1]}</b></div>`).join('');
+}
+$('#cats').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;sel[b.dataset.c]=+b.dataset.i;$$(`.chip[data-c="${b.dataset.c}"]`).forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applySw();});
+applySw();
+
+/* ---------- process track ---------- */
+const steps=$('#steps'),stepEls=$$('.step'),trackI=$('#trackI');
+function track(){const r=steps.getBoundingClientRect();const k=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/(r.height+innerHeight*.25)));trackI.style.setProperty('--k',reduce?1:k);stepEls.forEach((s,i)=>s.classList.toggle('on',reduce||k>=i/stepEls.length+.02));}
+addEventListener('scroll',track,{passive:true});track();
+
+/* ---------- FAQ ---------- */
+const FAQ=[
+ ['Is the estimator a quotation?','No. It is a sample ballpark using rates written into this demo. A real quotation is line-by-line and only follows a site visit and measured drawings.'],
+ ['Do you handle the management office and permits?','We prepare the renovation application, contractor passes and drawings for the management office. Structural changes need an engineer and council approval, quoted separately.'],
+ ['Can I live in the unit during works?','For a single bathroom or painting, often yes. For kitchen or whole-unit jobs we plan a move-out window, and the schedule shows it from the start.'],
+ ['What happens if the scope changes mid-build?','Every change is written as a variation order with its price and time impact. Nothing extra is built until you approve it in writing.'],
+ ['How do I know what is happening on site?','Your project lead posts a weekly photo log and a short progress note in one shared chat, plus a site walk at each payment milestone.'],
+ ['What is covered after handover?','Workmanship defects during the warranty period (sample: 12 months) are fixed at no charge. Brand warranties for fittings pass to you with the paperwork.']
+];
+$('#faqList').innerHTML=FAQ.map((q,i)=>`<div class="q"><button type="button" aria-expanded="false" aria-controls="qa${i}" id="qb${i}">${q[0]}<i aria-hidden="true"></i></button><div class="qa" id="qa${i}" role="region" aria-labelledby="qb${i}"><div><p>${q[1]}</p></div></div></div>`).join('');
+$$('.q button').forEach(b=>b.addEventListener('click',()=>{const q=b.parentElement,o=!q.classList.contains('open');$$('.q').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});if(o){q.classList.add('open');b.setAttribute('aria-expanded','true');}}));
+
+/* ---------- contact (demo) ---------- */
+$('#cform').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=f.n.value.trim(),p=f.p.value.trim();$('#okmsg').textContent=(n&&p)?fill(t('ok'),n.split(' ')[0]):t('okNeed');if(n&&p)f.reset();});
+
+/* ---------- lang ---------- */
+function setLang(l){
+ lang=l;document.documentElement.lang=l==='zh'?'zh-Hans':(l==='ms'?'ms':'en');
+ $$('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);});
+ $$('[data-i18n-html]').forEach(el=>{el.innerHTML=t(el.dataset.i18nHtml);});
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===l)));
+ $('#shint').textContent=t('hint');
+ $$('.pcard').forEach(c=>{const a=c.classList.contains('after');c.querySelector('.stamp').textContent=a?t('after'):t('before');const bs=c.querySelectorAll('.tog button');bs[0].textContent=t('before');bs[1].textContent=t('after');});
+ if(curEst)calcUI();
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+/* ---------- reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+
+renderProjects();calcUI();
+})();
+</script>
+</body>
+</html>

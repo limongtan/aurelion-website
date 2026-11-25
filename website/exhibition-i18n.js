@@ -3,7 +3,7 @@
 window.EX_I18N = {
 en: {
   skip: "Skip to the exhibits",
-  "nav.fusion": "Signature", "nav.smes": "For SMEs", "nav.why": "Why us", "nav.pricing": "Pricing", "nav.collection": "Collection",
+  "nav.finder": "Find my site", "hero.find": "See your website before you pay", "nav.fusion": "Signature", "nav.smes": "For SMEs", "nav.why": "Why us", "nav.pricing": "Pricing", "nav.collection": "Collection",
   "nav.search": "Search", "nav.cta": "WhatsApp us", "nav.menu": "Menu", "nav.close": "Close",
   "theme.light": "Switch to light mode", "theme.dark": "Switch to dark mode",
   "hero.meta1": "{n} live exhibits", "hero.meta2": "Launch price until 31 Dec 2026 · EN / BM / 中文",
@@ -78,7 +78,7 @@ en: {
 },
 zh: {
   skip: "跳到作品",
-  "nav.fusion": "招牌作品", "nav.smes": "中小企业", "nav.why": "为什么选我们", "nav.pricing": "价格", "nav.collection": "全部作品",
+  "nav.finder": "找我的网站", "hero.find": "付款前先看到你的网站", "nav.fusion": "招牌作品", "nav.smes": "中小企业", "nav.why": "为什么选我们", "nav.pricing": "价格", "nav.collection": "全部作品",
   "nav.search": "搜索", "nav.cta": "WhatsApp 联系", "nav.menu": "菜单", "nav.close": "关闭",
   "theme.light": "切换到浅色模式", "theme.dark": "切换到深色模式",
   "hero.meta1": "{n} 个在线作品", "hero.meta2": "优惠价至 2026 年 12 月 31 日 · 英 / 马 / 中",
@@ -153,7 +153,7 @@ zh: {
 },
 ms: {
   skip: "Langkau ke pameran",
-  "nav.fusion": "Istimewa", "nav.smes": "Untuk PKS", "nav.why": "Kenapa kami", "nav.pricing": "Harga", "nav.collection": "Koleksi",
+  "nav.finder": "Cari laman saya", "hero.find": "Lihat laman web anda sebelum bayar", "nav.fusion": "Istimewa", "nav.smes": "Untuk PKS", "nav.why": "Kenapa kami", "nav.pricing": "Harga", "nav.collection": "Koleksi",
   "nav.search": "Cari", "nav.cta": "WhatsApp kami", "nav.menu": "Menu", "nav.close": "Tutup",
   "theme.light": "Tukar ke mod cerah", "theme.dark": "Tukar ke mod gelap",
   "hero.meta1": "{n} pameran langsung", "hero.meta2": "Harga pelancaran hingga 31 Dis 2026 · EN / BM / 中文",
