@@ -282,79 +282,83 @@ if (zoom) {
 }
 
 /* ---------- Fusion Lab track ---------- */
-/* industry picks (finder order) + signature fusions; free horizontal scroll, never hijacks the page scroll */
-const IND_ORDER = ['batu-beam', 'seri-dental', 'little-orbit', 'rumah-teduh', 'ember-salt', 'loom-lantern', 'laman-realty', 'meridian-co', 'kompas-academy', 'studio-wren', 'rumah-kita', 'cahaya-works'];
-const IND_LAB = {
-  'batu-beam': {en:'Renovation · Interior design', zh:'装修 · 室内设计', ms:'Ubah suai · Reka bentuk dalaman'},
-  'seri-dental': {en:'Clinic · Dental · Aesthetics', zh:'诊所 · 牙科 · 医美', ms:'Klinik · Pergigian · Estetik'},
-  'little-orbit': {en:'Tuition · Enrichment · Preschool', zh:'补习 · 才艺 · 幼儿园', ms:'Tuisyen · Pengayaan · Prasekolah'},
-  'rumah-teduh': {en:'Homestay · Hotel · Travel', zh:'民宿 · 酒店 · 旅游', ms:'Homestay · Hotel · Pelancongan'},
-  'ember-salt': {en:'F&B · Café · Catering', zh:'餐饮 · 咖啡馆 · 到会', ms:'F&B · Kafe · Katering'},
-  'loom-lantern': {en:'Retail · Online shop', zh:'零售 · 网店', ms:'Runcit · Kedai dalam talian'},
-  'laman-realty': {en:'Property · Real estate agent', zh:'房地产 · 中介', ms:'Hartanah · Ejen hartanah'},
-  'meridian-co': {en:'Law · Accounting · Consulting', zh:'法律 · 会计 · 咨询', ms:'Guaman · Perakaunan · Perundingan'},
-  'kompas-academy': {en:'Training provider · Coach', zh:'培训机构 · 教练', ms:'Penyedia latihan · Jurulatih'},
-  'studio-wren': {en:'Creator · Freelancer · Personal brand', zh:'创作者 · 自由职业 · 个人品牌', ms:'Pencipta · Pekerja bebas · Jenama peribadi'},
-  'rumah-kita': {en:'Mosque · Church · Temple · NGO', zh:'清真寺 · 教堂 · 庙宇 · 非营利', ms:'Masjid · Gereja · Kuil · NGO'},
-  'cahaya-works': {en:'Any other business', zh:'其他行业', ms:'Perniagaan lain'},
-};
-const track = $('.fx-track'), bar = $('.fx-bar i'), fcount = $('.fx-count b'), fxTot = $('.fx-count i');
-let fxGrp = 'ind', fxList = [], fxEls = [], fxDragged = false;
-const fxItemsOf = g => g === 'ind' ? IND_ORDER.map(s => FUSION.find(f => f.slug === s)).filter(Boolean) : FUSION.filter(f => f.grp !== 'ind');
-const fxStep = () => fxEls[0] ? fxEls[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) : track.clientWidth;
-const fxIdx = () => clamp(Math.round(track.scrollLeft / Math.max(1, fxStep())), 0, Math.max(0, fxList.length - 1));
-function fxUpd() {
-  const max = track.scrollWidth - track.clientWidth, p = max > 0 ? track.scrollLeft / max : 0, i = fxIdx();
-  bar.style.transform = `scaleX(${Math.max(.04, p)})`;
-  fcount.textContent = String(i + 1).padStart(2, '0'); if (fxTot) fxTot.textContent = String(fxList.length).padStart(2, '0');
-  $$('.fx-dots button').forEach((b, k) => b.setAttribute('aria-current', k === i));
-  const pv = $('.fx-prev'), nx = $('.fx-next'); if (pv) pv.disabled = track.scrollLeft < 8; if (nx) nx.disabled = track.scrollLeft > max - 8;
-  const on = $('.fx-dots button[aria-current="true"]'); if (on) { const r = on.parentElement; const x = on.offsetLeft - r.clientWidth / 2 + on.offsetWidth / 2; r.scrollTo({left: x, behavior: 'smooth'}); }
-}
-const fxGo = i => { const el = fxEls[clamp(i, 0, fxEls.length - 1)]; if (el) track.scrollTo({left: el.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft), behavior: reduce ? 'auto' : 'smooth'}); };
-function buildFx() {
-  fxList = fxItemsOf(fxGrp);
-  const end = fxGrp === 'sig'
-    ? `<div class="fx-end"><span class="mono" style="color:var(--acc-t)">F-${String(FUSION.length + 1).padStart(2, '0')} · <span data-i18n="fx.reserved">${esc(t('fx.reserved'))}</span></span><h3><span data-i18n-html="fx.endH">${t('fx.endH')}</span><span class="dot"></span></h3><a class="ex-btn solid" data-wa="wa.msg" href="${waLink(t('wa.msg'))}" target="_blank" rel="noopener"><span data-i18n="fx.endBtn">${esc(t('fx.endBtn'))}</span> <span class="arr">→</span></a></div>`
-    : `<div class="fx-end"><span class="mono" style="color:var(--acc-t)" data-i18n="fx.endIndK">${esc(t('fx.endIndK'))}</span><h3><span data-i18n-html="fx.endIndH">${t('fx.endIndH')}</span><span class="dot"></span></h3><a class="ex-btn solid" href="#finder"><span data-i18n="fx.endIndBtn">${esc(t('fx.endIndBtn'))}</span> <span class="arr">→</span></a></div>`;
-  track.innerHTML = fxList.map((f, i) => `
+/* signature fusions: on desktop the section pins, scrolling down slides across them, then the page carries on.
+   When the visitor pauses, the row keeps drifting on its own; phones swipe and auto-advance. */
+const track = $('.fx-track'), pin = $('.fx-pin'), bar = $('.fx-bar i'), fcount = $('.fx-count b'), fxTot = $('.fx-count i');
+const fxList = FUSION.filter(f => f.grp !== 'ind');
+track.innerHTML = fxList.map((f, i) => `
   <article class="fx" tabindex="0" role="button" data-i="${i}" data-cursor="cur.step" aria-label="${esc(f.name)}" style="--c1:${f.c[0]};--c4:${f.c[3]}">
-    <div class="fx-screen"><div class="fx-inner"><div class="fx-poster snap" style="background-image:url(fusion/thumbs/${f.slug}.webp)">${esc(f.name)}</div></div>${fxGrp === 'ind' ? `<span class="fx-tag mono">${esc(L(IND_LAB[f.slug]))}</span>` : ''}</div>
-    <div class="fx-cap"><span class="mono">${fxGrp === 'ind' ? String(i + 1).padStart(2, '0') : f.no}</span><h3>${esc(f.name)}</h3><span class="mono formula">${esc(f.a)} × ${esc(f.b)}</span><p></p></div>
-  </article>`).join('') + end;
-  fxEls = $$('.fx', track);
-  fxEls.forEach(el => {
-    const f = fxList[+el.dataset.i];
-    if (!lite) liveFrame($('.fx-inner', el), 'fusion/' + f.slug + '.html' + (f.grp === 'ind' ? '?l=' + lang : ''));
-    const open = () => openViewer(fxList.map(x => FITEMS.find(it => it.f === x)), +el.dataset.i);
-    el.addEventListener('click', e => { if (fxDragged) { e.preventDefault(); return; } open(); });
-    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-  });
-  $('.fx-dots').innerHTML = fxList.map((f, i) => `<button type="button" data-j="${i}" aria-label="${esc(f.name)}"><span class="mono">${String(i + 1).padStart(2, '0')}</span>${esc(f.name)}</button>`).join('');
-  track.scrollLeft = 0; renderFusion(); requestAnimationFrame(fxUpd);
+    <div class="fx-screen"><div class="fx-inner"><div class="fx-poster snap" style="background-image:url(fusion/thumbs/${f.slug}.webp)">${esc(f.name)}</div></div></div>
+    <div class="fx-cap"><span class="mono">${f.no}</span><h3>${esc(f.name)}</h3><span class="mono formula">${esc(f.a)} × ${esc(f.b)}</span><p></p></div>
+  </article>`).join('') + `<div class="fx-end"><span class="mono" style="color:var(--acc-t)">F-${String(FUSION.length + 1).padStart(2, '0')} · <span data-i18n="fx.reserved">${esc(t('fx.reserved'))}</span></span><h3><span data-i18n-html="fx.endH">${t('fx.endH')}</span><span class="dot"></span></h3><a class="ex-btn solid" data-wa="wa.msg" href="${waLink(t('wa.msg'))}" target="_blank" rel="noopener"><span data-i18n="fx.endBtn">${esc(t('fx.endBtn'))}</span> <span class="arr">→</span></a></div>`;
+const fxEls = $$('.fx', track);
+fxEls.forEach(el => {
+  const f = fxList[+el.dataset.i];
+  if (!lite) liveFrame($('.fx-inner', el), 'fusion/' + f.slug + '.html');
+  const open = () => openViewer(fxList.map(x => FITEMS.find(it => it.f === x)), +el.dataset.i);
+  el.addEventListener('click', open);
+  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+});
+$('.fx-dots').innerHTML = fxList.map((f, i) => `<button type="button" data-j="${i}" aria-label="${esc(f.name)}"><span class="mono">${String(i + 1).padStart(2, '0')}</span>${esc(f.name)}</button>`).join('');
+if (fxTot) fxTot.textContent = String(fxList.length).padStart(2, '0');
+function renderFusion() { fxEls.forEach(el => { $('.fx-cap p', el).textContent = L(fxList[+el.dataset.i].pitch); }); }
+let pinOn = false, travel = 0;
+const pinTop = () => pin.getBoundingClientRect().top + scrollY;
+const fxMax = () => pinOn ? travel : Math.max(1, track.scrollWidth - track.clientWidth);
+const fxProg = () => pinOn ? clamp(-pin.getBoundingClientRect().top / Math.max(1, travel), 0, 1) : clamp(track.scrollLeft / fxMax(), 0, 1);
+const fxX = i => { const el = fxEls[clamp(i, 0, fxEls.length - 1)]; return el ? Math.min(fxMax(), el.offsetLeft - (parseFloat(getComputedStyle(track).paddingLeft) || 0)) : 0; };
+const fxIdx = () => { const x = fxProg() * fxMax(); let best = 0; fxEls.forEach((el, k) => { if (Math.abs(fxX(k) - x) < Math.abs(fxX(best) - x)) best = k; }); return best; };
+let fxLastI = -1;
+function fxUpd() {
+  const p = fxProg(), i = fxIdx();
+  if (pinOn) track.style.transform = `translate3d(${(-p * travel).toFixed(1)}px,0,0)`;
+  bar.style.transform = `scaleX(${Math.max(.03, p)})`;
+  fcount.textContent = String(i + 1).padStart(2, '0');
+  if (i !== fxLastI) {
+    fxLastI = i;
+    $$('.fx-dots button').forEach((b, k) => b.setAttribute('aria-current', k === i));
+    const on = $('.fx-dots button[aria-current="true"]'); if (on) { const r = on.parentElement; r.scrollLeft = on.offsetLeft - r.clientWidth / 2 + on.offsetWidth / 2; }
+  }
+  $('.fx-prev').disabled = p < .002; $('.fx-next').disabled = p > .998;
 }
-function renderFusion() {
-  fxEls.forEach(el => { const f = fxList[+el.dataset.i]; $('.fx-cap p', el).textContent = L(f.pitch); const tg = $('.fx-tag', el); if (tg) tg.textContent = L(IND_LAB[f.slug]); });
-  const lb = $('.fx-top [data-i18n-html^="fx.label"]'); if (lb) { lb.dataset.i18nHtml = fxGrp === 'ind' ? 'fx.labeli' : 'fx.label'; lb.innerHTML = t(lb.dataset.i18nHtml); }
-  const h = $('#fx-title'), ld = $('.fx-top .ex-lead');
-  if (h) { h.dataset.i18nHtml = fxGrp === 'ind' ? 'fx.h2i' : 'fx.h2'; h.innerHTML = t(h.dataset.i18nHtml); }
-  if (ld) { ld.dataset.i18n = fxGrp === 'ind' ? 'fx.leadi' : 'fx.lead'; ld.textContent = t(ld.dataset.i18n); }
-  $$('.fx-tabs button').forEach(b => { b.setAttribute('aria-selected', b.dataset.grp === fxGrp); $('i', b).textContent = fxItemsOf(b.dataset.grp).length; });
+const fxGo = i => { const x = fxX(i); if (pinOn) scrollTo({top: pinTop() + x, behavior: reduce ? 'auto' : 'smooth'}); else track.scrollTo({left: x, behavior: reduce ? 'auto' : 'smooth'}); };
+function sizePin() {
+  pinOn = innerWidth > 800 && !reduce;
+  pin.classList.toggle('fx-free', !pinOn);
+  if (!pinOn) { pin.style.height = ''; track.style.transform = ''; travel = 0; fxUpd(); return; }
+  travel = Math.max(0, track.scrollWidth - innerWidth);
+  pin.style.height = (innerHeight + travel) + 'px';
+  fxUpd();
 }
-$$('.fx-tabs button').forEach(b => b.addEventListener('click', () => { if (b.dataset.grp === fxGrp) return; fxGrp = b.dataset.grp; buildFx(); }));
+addEventListener('scroll', () => requestAnimationFrame(fxUpd), {passive: true});
+track.addEventListener('scroll', () => requestAnimationFrame(fxUpd), {passive: true});
+addEventListener('resize', () => { clearTimeout(sizePin._t); sizePin._t = setTimeout(sizePin, 120); });
+addEventListener('load', sizePin);
 $('.fx-prev').addEventListener('click', () => fxGo(fxIdx() - 1));
 $('.fx-next').addEventListener('click', () => fxGo(fxIdx() + 1));
 $('.fx-dots').addEventListener('click', e => { const b = e.target.closest('button'); if (b) fxGo(+b.dataset.j); });
-track.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); const i = fxIdx() + (e.key === 'ArrowRight' ? 1 : -1); fxGo(i); setTimeout(() => fxEls[clamp(i, 0, fxEls.length - 1)]?.focus({preventScroll: true}), 350); } });
-track.addEventListener('scroll', () => requestAnimationFrame(fxUpd), {passive: true});
-/* mouse drag to scroll (touch scrolls natively) */
-let fxDown = null;
-track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; fxDown = {x: e.clientX, s: track.scrollLeft}; fxDragged = false; });
-addEventListener('pointermove', e => { if (!fxDown) return; const dx = e.clientX - fxDown.x; if (!fxDragged && Math.abs(dx) > 6) { fxDragged = true; track.classList.add('drag'); } if (fxDragged) track.scrollLeft = fxDown.s - dx; });
-addEventListener('pointerup', () => { if (!fxDown) return; fxDown = null; if (fxDragged) { track.classList.remove('drag'); setTimeout(() => { fxDragged = false; }, 60); requestAnimationFrame(() => fxGo(fxIdx())); } });
-const sizePin = () => fxUpd();
-addEventListener('resize', () => { clearTimeout(sizePin._t); sizePin._t = setTimeout(sizePin, 120); });
-buildFx();
+track.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); fxGo(fxIdx() + (e.key === 'ArrowRight' ? 1 : -1)); } });
+/* autoplay: drifts while the row is pinned on screen and the visitor isn't scrolling, hovering a card or reading the viewer */
+let fxLast = 0, fxAcc = 0, fxT = 0, fxSeen = false, fxHover = false, fxStepT = 0;
+['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(ev => addEventListener(ev, () => { fxLast = performance.now(); }, {passive: true, capture: true}));
+track.addEventListener('pointermove', e => { fxHover = e.pointerType === 'mouse' && !!e.target.closest('.fx, .fx-end'); });
+track.addEventListener('pointerleave', () => { fxHover = false; });
+new IntersectionObserver(([e]) => { fxSeen = e.isIntersecting; }, {threshold: .3}).observe(track);
+function fxAuto(now) {
+  requestAnimationFrame(fxAuto);
+  const dt = Math.min(200, now - (fxT || now)); fxT = now;
+  if (reduce || !fxSeen || fxHover || document.hidden || document.body.classList.contains('vw-open') || now - fxLast < 1200) { fxAcc = 0; fxStepT = now; return; }
+  if (pinOn) {
+    const r = pin.getBoundingClientRect();
+    if (r.top > 1 || r.bottom < innerHeight - 1 || -r.top >= travel - 1) return;
+    fxAcc += dt * .06; const s = Math.floor(fxAcc);
+    if (s >= 1) { fxAcc -= s; const sb = document.documentElement.style.scrollBehavior; document.documentElement.style.scrollBehavior = 'auto'; scrollTo(0, scrollY + s); document.documentElement.style.scrollBehavior = sb; }
+  } else if (now - fxStepT > 3200) {
+    fxStepT = now; if (fxProg() < .995) fxGo(fxIdx() + 1);
+  }
+}
+requestAnimationFrame(fxAuto);
+sizePin(); renderFusion();
 
 /* ---------- FAQ card spotlight ---------- */
 if (fine) $$('.faq-c').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
