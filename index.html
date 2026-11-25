@@ -2950,6 +2950,33 @@ dialog::backdrop { background: #030b13c7; backdrop-filter: blur(8px); }
 }
 
 
+/* Streamlined hero + proof strip */
+.hero .hero-kicker { margin: 0 0 14px; font-size: .78rem; letter-spacing: .22em; color: #f0dbc0; }
+.hero h1.hero-h1 { max-width: none; font-size: clamp(2.5rem, 6vw, 5.8rem); line-height: 1.02; letter-spacing: -.045em; }
+.hero h1.hero-h1 > span { display: block; }
+.hero .hero-h1-gold { background: linear-gradient(100deg, #f8e3b8, #e6c287 45%, #c99a4e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .hero-sub { max-width: 40rem; margin-top: 18px; font-size: clamp(1.05rem, 1.6vw, 1.4rem); line-height: 1.4; }
+.hero .hero-lower { margin-top: clamp(22px, 3vw, 36px); }
+.proof { background: var(--surface); border-bottom: 1px solid var(--line); }
+.proof-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.proof-item { display: flex; flex-direction: column; justify-content: center; gap: 3px; min-height: 92px; padding: 18px clamp(14px, 2vw, 28px); color: inherit; text-decoration: none; border-left: 1px solid var(--line); }
+.proof-item:first-child { border-left: 0; padding-left: 0; }
+.proof-hrd { flex-direction: row; align-items: center; gap: 12px; }
+.proof-hrd img { flex: none; width: 40px; height: 40px; }
+.proof-k { color: var(--gold); font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.proof-v { font-family: var(--display); font-weight: 600; font-size: clamp(.98rem, 1.25vw, 1.15rem); line-height: 1.25; letter-spacing: -.01em; }
+a.proof-item:hover .proof-v { text-decoration: underline; text-decoration-color: var(--gold); }
+.edge-help { margin: 26px 0 0; color: var(--muted); }
+.edge-help a { display: inline-flex; gap: 6px; margin-left: 6px; color: var(--gold); font-weight: 700; text-decoration: none; }
+.edge-help a:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .proof-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof-item { min-height: 0; padding: 14px 14px; border-left: 0; border-top: 1px solid var(--line); }
+  .proof-item:first-child { grid-column: 1 / -1; border-top: 0; padding-left: 0; }
+  .proof-item:nth-child(2) { padding-left: 0; }
+  .proof-item:nth-child(3) { border-left: 1px solid var(--line); }
+  .proof-item:nth-child(4) { grid-column: 1 / -1; padding-left: 0; }
+}
 /* Adaptive Edge: four areas under the hero */
 .edge { background: var(--bg, transparent); }
 .edge-head { max-width: 60rem; margin-bottom: clamp(32px, 4.5vw, 60px); }
@@ -3139,32 +3166,31 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
       <div class="menu-bottom"><span>KUALA LUMPUR · MALAYSIA</span><a href="https://wa.me/601110541499" target="_blank" rel="noopener noreferrer">+60 11-1054 1499 ↗</a></div>
     </div>
   </dialog>
-  <nav class="chapter-rail" aria-label="Homepage sections"><a href="#home" data-section="home" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-home">Home</span></a><a href="#edge" data-section="edge" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-edge">What we do</span></a><a href="#grow" data-section="grow" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-grow">AI for Business</span></a><a href="#approach" data-section="approach" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-approach">Our approach</span></a><a href="#lpi-spotlight" data-section="lpi-spotlight" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-team">Team Performance</span></a><a href="#programmes" data-section="programmes" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-programmes">HRD Courses</span></a><a href="#in-practice" data-section="in-practice" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-practice">In practice</span></a><a href="#embrace" data-section="embrace" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-partnerships">Partnerships &amp; CSR</span></a><a href="#insights" data-section="insights" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#about" data-section="about" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-about">About Aurelion</span></a><a href="#inquiry" data-section="inquiry" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-contact">Contact us</span></a></nav>
+  <nav class="chapter-rail" aria-label="Homepage sections"><a href="#home" data-section="home" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-home">Home</span></a><a href="#edge" data-section="edge" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-edge">What we do</span></a><a href="#in-practice" data-section="in-practice" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="rail-practice">In practice</span></a><a href="#grow" data-section="grow" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-grow">AI for Business</span></a><a href="#approach" data-section="approach" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-approach">Our approach</span></a><a href="#programmes" data-section="programmes" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-programmes">HRD Courses</span></a><a href="#about" data-section="about" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-about">About Aurelion</span></a><a href="#inquiry" data-section="inquiry" class="chapter-link"><i aria-hidden="true"></i><span data-i18n="nav-contact">Contact us</span></a></nav>
   <main id="main" tabindex="-1" data-view="home">
     <section class="hero" id="home" aria-labelledby="hero-title">
       <video class="ambient-film hero-film" data-motion data-clip="horizon-2026" muted loop playsinline preload="none" poster="assets/images/horizon-2026.webp" aria-hidden="true"></video>
       <div class="hero-shade"></div>
       <div class="hero-content shell">
-        <h1 data-i18n="hero-title" id="hero-title">Evolve Beyond</h1>
-        <p data-i18n="hero-subhead" class="hero-subhead">Disruption Is Here. Burnout &amp; Fragmentation Are Optional.</p>
+        <p class="eyebrow hero-kicker" data-i18n="hero-title">Evolve Beyond</p>
+        <h1 class="hero-h1" id="hero-title"><span data-i18n="hero-h1a">AI-ready teams.</span> <span class="hero-h1-gold" data-i18n="hero-h1b">Human‑strong leaders.</span></h1>
+        <p class="hero-subhead hero-sub" data-i18n="hero-sub">AI tools, AI courses and leadership training for Malaysian companies. HRD Corp claimable.</p>
         <div class="hero-lower">
-          <p data-i18n="hero-copy">Cultivate leaders who stay clear under pressure, teams that work across boundaries, and an organization that brings human insight and AI together to learn faster, decide better, and move as one.</p>
           <div class="hero-actions">
             <div class="hero-offer">
-              <a class="button button-gold" href="hrd-courses.html" aria-describedby="hero-explore-note"><span data-i18n="hero-explore">Explore Our Programs</span><span aria-hidden="true">↗</span></a>
-              <p id="hero-explore-note" data-i18n="course-claim">HRD Corp Claimable</p>
+              <a class="button button-starlight" href="#grow" aria-describedby="hero-start-ai-note"><span data-i18n="hero-start-ai">Automate a task your team repeats</span><span aria-hidden="true">↓</span></a>
+              <p id="hero-start-ai-note" data-i18n="hero-start-ai-note">We build AI tools for you, and teach your staff to build their own.</p>
             </div>
             <div class="hero-offer">
-              <a class="button button-starlight" href="https://insights.aurelion-earth.com" aria-describedby="hero-insights-note"><span data-i18n="hero-insights">Discover Your Hidden Strength</span><span aria-hidden="true">↗</span></a>
-              <p id="hero-insights-note" data-i18n="hero-report-note">A personal growth report powered by Aurelion’s Growth Intelligence Engine.</p>
+              <a class="button button-starlight" href="#edge" aria-describedby="hero-start-team-note"><span data-i18n="hero-start-team">Help managers and teams work better together</span><span aria-hidden="true">↓</span></a>
+              <p id="hero-start-team-note" data-i18n="hero-start-team-note">Leadership and team programmes with LPI team mapping. HRD Corp claimable.</p>
             </div>
             <div class="hero-offer">
-              <a class="button button-starlight" href="team-performance.html" aria-describedby="hero-team-note"><span data-i18n="hero-team">See How Your Team Works</span><span aria-hidden="true">↗</span></a>
-              <p id="hero-team-note" data-i18n="hero-lpi-note">Map how your team communicates, makes decisions, and handles pressure with the Leonard Personality Inventory (LPI).</p>
+              <a class="button button-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20can%20you%20recommend%20a%20programme%20for%20my%20team%3F%20Team%20size%3A%20%2C%20Goal%3A%20" target="_blank" rel="noopener noreferrer" aria-describedby="hero-rec-note"><span data-i18n="hero-rec">Get a programme recommendation</span><span aria-hidden="true">↗</span></a>
+              <p id="hero-rec-note" data-i18n="hero-rec-note">Tell us your team size and goal on WhatsApp. We’ll suggest where to start.</p>
             </div>
           </div>
         </div>
-        <a class="hero-provider" href="#claimability"><img src="assets/images/hrdcorp-registered-provider.png" alt="" width="48" height="48"><span data-i18n="credential-provider" >HRD Corp Registered Training Provider</span></a>
       </div>
       <div class="hero-bottom shell">
         <a href="#edge" class="scroll-hint"><span aria-hidden="true">↓</span><span data-i18n="scroll" >What we do</span></a>
@@ -3173,6 +3199,14 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
           <div class="scene-dots"><button type="button" data-scene="horizon-2026" aria-pressed="true"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-horizon" class=sr-only>Himalayan horizon</span></button><button type="button" data-scene="milky-way" aria-pressed="false"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-milky-way" class=sr-only>Milky Way</span></button><button type="button" data-scene="annapurna" aria-pressed="false"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-annapurna" class=sr-only>Annapurna at dawn</span></button><button type="button" data-scene="himalaya-still" aria-pressed="false"><span aria-hidden="true" class="scene-dot"></span><span data-i18n="film-still" class=sr-only>Himalaya still</span></button></div>
           <div class="film-controls"><button type="button" data-toggle-motion aria-pressed="false"><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="sr-only motion-label">Pause background motion</span></button></div>
         </div>
+      </div>
+    </section>
+    <section class="proof" id="proof" aria-label="Why teams trust Aurelion">
+      <div class="shell proof-row">
+        <a class="proof-item proof-hrd" href="#claimability"><img src="assets/images/hrdcorp-registered-provider.png" alt="" width="40" height="40"><span class="proof-v" data-i18n="proof-hrd">HRD Corp Registered Training Provider</span></a>
+        <div class="proof-item"><span class="proof-k" data-i18n="proof-clients-k">Delivered for</span><span class="proof-v" data-i18n="proof-clients">Walihin Petroleum · BIG Pasaraya</span></div>
+        <a class="proof-item" href="reels.html"><span class="proof-k" data-i18n="proof-reels-k">We use it ourselves</span><span class="proof-v" data-i18n="proof-reels">124 reels in 60 days</span></a>
+        <div class="proof-item"><span class="proof-k" data-i18n="proof-price-k">Prices shown upfront</span><span class="proof-v" data-i18n="proof-price">AI Media course from RM2,499 per person</span></div>
       </div>
     </section>
     <section class="edge section-space" id="edge" aria-labelledby="edge-title">
@@ -3224,6 +3258,19 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
             </div>
           </article>
         </div>
+        <p class="edge-help"><span data-i18n="edge-help">Not sure where to start?</span> <a href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20can%20you%20recommend%20a%20programme%20for%20my%20team%3F%20Team%20size%3A%20%2C%20Goal%3A%20" target="_blank" rel="noopener noreferrer"><span data-i18n="edge-help-cta">Get a programme recommendation</span><span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+    <section class="in-practice section-space" id="in-practice" aria-labelledby="practice-title">
+      <div class="shell">
+        <div class="section-lead"><div><p data-i18n="practice-kicker" class="eyebrow">GROWTH, IN PRACTICE</p><h2 data-i18n="practice-title" id="practice-title">People learning to move together.</h2></div><p class="practice-caption">TEAM BUILD X · WALIHIN PETROLEUM<br>KUCHING, SARAWAK</p></div>
+        <div class="practice-gallery">
+          <figure><img src="assets/images/team-buildx-debrief.webp" loading="lazy" alt="A Team Build X circle debrief after a practical challenge"></figure>
+          <figure><img src="assets/images/team-buildx-group.webp" loading="lazy" alt="Aurelion Team Build X participants"></figure>
+          <figure><img src="assets/images/team-buildx-activity.jpeg" loading="lazy" alt="Team Build X collaborative exercise"></figure>
+        </div>
+        <div class="testimonial"><blockquote>“<span data-i18n="quote" >This training truly inspired our team and brought real improvement to how we think.</span>”</blockquote><p>Mr. Teo<br><span data-i18n="quote-role" >Managing Director, Walihin Petroleum</span></p></div>
+        <a class="text-link social-context" href="https://www.instagram.com/the.aurelion.earth/" target="_blank" rel="noopener noreferrer"><span data-i18n="workshop-ig" >Follow Aurelion on Instagram</span> <span aria-hidden="true">↗</span></a>
       </div>
     </section>
     <section class="grow section-space" id="grow" aria-labelledby="grow-title">
@@ -3412,12 +3459,6 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
         <div class="approach-next"><a class="button button-gold" href="#programmes" ><span data-i18n="approach-programmes" >Find the right program</span><span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
-    <section class="v3-lpi-spotlight" id="lpi-spotlight" aria-labelledby="v3-lpi-title">
-      <div class="shell v3-lpi-grid">
-        <div><p class="eyebrow" data-i18n="lpi-spot-kicker">TEAM PERFORMANCE · LPI</p><h2 id="v3-lpi-title" data-i18n="lpi-spot-title">See the patterns behind your team’s performance.</h2></div>
-        <div><p data-i18n="lpi-spot-copy">The Leonard Personality Inventory gives people a shared language for working styles. Our facilitated Team Mapping Lab turns those insights into better conversations, decisions and ways of working.</p><div class="v3-inline-actions"><a class="button button-gold" href="team-performance.html"><span data-i18n="lpi-spot-cta">Explore Team Performance &amp; LPI</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#team-scenario"><span data-i18n="lpi-spot-scenario">Try the five-perspective scenario</span><span aria-hidden="true">↗</span></a></div></div>
-      </div>
-    </section>
     <section class="programmes section-space" id="programmes">
       <div class="shell">
         <div class="section-lead">
@@ -3501,50 +3542,6 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
     <section class="event" id="year-end">
       <div class="shell event-content"><div><p data-i18n="event-label" class="eyebrow">TEAM BUILD X · REFLECTIONS &amp; GROWTH</p><h2 data-i18n="event-title" >End the year with more than a celebration.</h2></div><div><p data-i18n="event-copy" >Bring 20–40 colleagues together for an afternoon workshop and a facilitated dinner. Reflect on the year, appreciate each other and shape a team charter with practical next steps.</p><div class="course-credentials--on-film"><div class="course-credentials"><img src="assets/images/hrdcorp-claimable.png" alt="" width="42" height="42"><div><strong data-i18n="course-claim" >HRD Corp Claimable</strong><span data-i18n="course-lpi" >LPI assessment included</span></div></div></div><a class="button button-gold" href="#inquiry" data-interest="year-end"><span data-i18n="event-cta" >Plan a year-end experience</span><span aria-hidden="true">↗</span></a></div></div>
     </section>
-    <section class="in-practice section-space" id="in-practice" aria-labelledby="practice-title">
-      <div class="shell">
-        <div class="section-lead"><div><p data-i18n="practice-kicker" class="eyebrow">GROWTH, IN PRACTICE</p><h2 data-i18n="practice-title" id="practice-title">People learning to move together.</h2></div><p class="practice-caption">TEAM BUILD X · WALIHIN PETROLEUM<br>KUCHING, SARAWAK</p></div>
-        <div class="practice-gallery">
-          <figure><img src="assets/images/team-buildx-debrief.webp" loading="lazy" alt="A Team Build X circle debrief after a practical challenge"></figure>
-          <figure><img src="assets/images/team-buildx-group.webp" loading="lazy" alt="Aurelion Team Build X participants"></figure>
-          <figure><img src="assets/images/team-buildx-activity.jpeg" loading="lazy" alt="Team Build X collaborative exercise"></figure>
-        </div>
-        <div class="testimonial"><blockquote>“<span data-i18n="quote" >This training truly inspired our team and brought real improvement to how we think.</span>”</blockquote><p>Mr. Teo<br><span data-i18n="quote-role" >Managing Director, Walihin Petroleum</span></p></div>
-        <a class="text-link social-context" href="https://www.instagram.com/the.aurelion.earth/" target="_blank" rel="noopener noreferrer"><span data-i18n="workshop-ig" >Follow Aurelion on Instagram</span> <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-    <section class="v3-embrace section-space" id="embrace" aria-labelledby="embrace-title">
-      <div class="shell">
-        <div class="v3-embrace-intro"><div><p class="eyebrow" data-i18n="embrace-kicker">10 OCTOBER 2026 · WORLD MENTAL HEALTH DAY</p><h2 id="embrace-title" data-i18n="embrace-title">When partners come together, people feel it.</h2></div><div><p data-i18n="embrace-copy">EMBRACE: Well Within &amp; Well Beyond brought people into a shared conversation about well-being, connection and purpose at Regus Tribeca, Kuala Lumpur. Aurelion collaborated with Regus, Popomama, Pong Ent and Hello Family to make the day possible.</p><a class="text-link" href="partnerships.html"><span data-i18n="embrace-story">Explore the EMBRACE story &amp; partners</span><span aria-hidden="true">↗</span></a></div></div>
-        <div class="v3-embrace-gallery"><figure class="v3-embrace-wide"><img src="assets/images/embrace-309.webp" alt="Participants and partners at the EMBRACE workshop at Regus Tribeca" width="2200" height="1467" loading="lazy"><figcaption>EMBRACE · REGUS TRIBECA · KUALA LUMPUR</figcaption></figure><figure><img src="assets/images/embrace-201.webp" alt="Participants sharing a light moment during a workshop exercise" width="2200" height="1467" loading="lazy"></figure><figure><img src="assets/images/embrace-209.webp" alt="Aurelion Insights presented at the EMBRACE event" width="2200" height="1467" loading="lazy"></figure></div>
-        <div class="v3-partner-line"><span data-i18n="embrace-partners-label">IN COLLABORATION WITH</span><strong>Regus Tribeca</strong><strong>Popomama</strong><strong>Pong Ent</strong><strong>Hello Family</strong></div>
-      </div>
-    </section>
-    <section class="insights insights-preview" id="insights" aria-labelledby="insights-title">
-      <video class="ambient-film space-film" data-motion data-clip="insights-cosmos" muted loop playsinline preload="none" poster="assets/images/insights-cosmos.webp" aria-hidden="true"></video>
-      <div class="insights-shade" aria-hidden="true"></div>
-      <div class="shell insights-content">
-        <div class="insights-pitch">
-          <img class="insights-wordmark" src="assets/images/aurelion-insights-logo.jpeg" alt="Aurelion Insights" width="1600" height="1162" loading="lazy">
-          <h2 data-i18n="insights-title" id="insights-title">What are you missing about yourself?</h2>
-          <p data-i18n="insights-hook" class="insights-hook">Bring a real challenge from work or life. Your personalized growth report helps you spot a blind spot, put an overlooked strength to work and choose one move to make next.</p>
-          <div class="insights-actions">
-            <a class="button button-gold" href="#insights-order" ><span data-i18n="get-growth-report" >Get Your Growth Report</span><span aria-hidden="true">↗</span></a>
-            <a class="button button-outline" href="#insights-example" ><span data-i18n="insights-read-example" >Look inside a sample</span><span aria-hidden="true">↗</span></a>
-          </div>
-          <p data-i18n="insights-home-price" class="insights-entry-price">RM39.99 per report</p>
-        </div>
-        <aside class="insights-prompts" aria-labelledby="insights-prompts-title">
-          <h3 data-i18n="insights-prompts-title" id="insights-prompts-title">Bring the question you keep coming back to.</h3>
-          <ul>
-            <li><span data-i18n="insights-prompt-lead" >At work</span><p data-i18n="insights-prompt-lead-quote" >“Why do I take over as soon as the pressure is on?”</p></li>
-            <li><span data-i18n="insights-prompt-relate" >In relationships</span><p data-i18n="insights-prompt-relate-quote" >“Why do I keep putting off a conversation I know I need to have?”</p></li>
-            <li><span data-i18n="insights-prompt-strength" >Finding your strengths</span><p data-i18n="insights-prompt-strength-quote" >“What am I good at that I keep overlooking?”</p></li>
-          </ul>
-        </aside>
-      </div>
-      <div class="insights-controls film-controls"><button type="button" data-cycle-film="space" aria-label="Change space scene"><span data-film-label="space">Deep space</span><span aria-hidden="true">↻</span></button><button type="button" data-toggle-motion aria-pressed="false"><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="sr-only motion-label">Pause background motion</span></button></div>
-    </section>
     <section class="v3-about section-space" id="about" aria-labelledby="about-title">
       <div class="shell v3-about-grid">
         <div>
@@ -3617,7 +3614,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
       </div>
     </section>
     <section class="faq section-space">
-      <div class="shell faq-layout"><div><p data-i18n="faq-label" class="eyebrow">BEFORE WE BEGIN</p><h2 data-i18n="faq-title" >A few practical details.</h2></div><div class="faq-list"><details id="claimability"><summary><span data-i18n="faq-claim">Are your training courses HRD Corp Claimable?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-claim-a">Yes. Aurelion is an HRD Corp Registered Training Provider. All our HRD courses are HRD Corp Claimable and include an LPI assessment. We can provide the program information your HR team needs for its application.</p></details><details><summary><span data-i18n="faq-scope">Where should our organization begin?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-scope-a">Start with the change you want to see. We can scope a S.P.A.C.E. Summit engagement, apply Team Build X to one team, or begin with the half-day Team Mapping Lab.</p></details><details><summary><span data-i18n="faq-within">How does Team Build X relate to S.P.A.C.E. Summit?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-within-a">Team Build X is a program within the S.P.A.C.E. Summit approach. It brings the same individual-to-team-to-organization thinking into a team’s working relationships and business challenges.</p></details><details><summary><span data-i18n="faq-insights">Where can I explore the Pro growth report?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-insights-a">The Pro model powers the Personal Growth Report at Life Garden, our brand for individual growth. Follow the Life Garden link in the Aurelion Insights section to explore the report.</p></details></div></div>
+      <div class="shell faq-layout"><div><p data-i18n="faq-label" class="eyebrow">BEFORE WE BEGIN</p><h2 data-i18n="faq-title" >A few practical details.</h2></div><div class="faq-list"><details id="claimability"><summary><span data-i18n="faq-claim">Are your training courses HRD Corp Claimable?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-claim-a">Yes. Aurelion is an HRD Corp Registered Training Provider. All our HRD courses are HRD Corp Claimable and include an LPI assessment. We can provide the program information your HR team needs for its application.</p></details><details><summary><span data-i18n="faq-levy">How does the HRD Corp claim work?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-levy-a">Book your seats and we send the course details. Your HR team applies for the HRD Corp grant before the class. Once it is approved, the fee is paid from your company’s levy. All claims are subject to HRD Corp approval.</p></details><details><summary><span data-i18n="faq-scope">Where should our organization begin?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-scope-a">Start with the change you want to see. We can scope a S.P.A.C.E. Summit engagement, apply Team Build X to one team, or begin with the half-day Team Mapping Lab.</p></details><details><summary><span data-i18n="faq-within">How does Team Build X relate to S.P.A.C.E. Summit?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-within-a">Team Build X is a program within the S.P.A.C.E. Summit approach. It brings the same individual-to-team-to-organization thinking into a team’s working relationships and business challenges.</p></details><details><summary><span data-i18n="faq-insights">Where can I explore the Pro growth report?</span><span aria-hidden="true">+</span></summary><p data-i18n="faq-insights-a">The Pro model powers the Personal Growth Report at Life Garden, our brand for individual growth. Follow the Life Garden link in the Aurelion Insights section to explore the report.</p></details></div></div>
     </section>
     <section class="inquiry section-space" id="inquiry">
       <div class="shell inquiry-layout">
@@ -4027,6 +4024,26 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
   <script>
 window.AURELION_TRANSLATIONS = {
   "en": {
+    "hero-h1a": "AI-ready teams.",
+    "hero-h1b": "Human‑strong leaders.",
+    "hero-sub": "AI tools, AI courses and leadership training for Malaysian companies. HRD Corp claimable.",
+    "hero-start-ai": "Automate a task your team repeats",
+    "hero-start-ai-note": "We build AI tools for you, and teach your staff to build their own.",
+    "hero-start-team": "Help managers and teams work better together",
+    "hero-start-team-note": "Leadership and team programmes with LPI team mapping. HRD Corp claimable.",
+    "hero-rec": "Get a programme recommendation",
+    "hero-rec-note": "Tell us your team size and goal on WhatsApp. We’ll suggest where to start.",
+    "proof-hrd": "HRD Corp Registered Training Provider",
+    "proof-clients-k": "Delivered for",
+    "proof-clients": "Walihin Petroleum · BIG Pasaraya",
+    "proof-reels-k": "We use it ourselves",
+    "proof-reels": "124 reels in 60 days",
+    "proof-price-k": "Prices shown upfront",
+    "proof-price": "AI Media course from RM2,499 per person",
+    "edge-help": "Not sure where to start?",
+    "edge-help-cta": "Get a programme recommendation",
+    "faq-levy": "How does the HRD Corp claim work?",
+    "faq-levy-a": "Book your seats and we send the course details. Your HR team applies for the HRD Corp grant before the class. Once it is approved, the fee is paid from your company’s levy. All claims are subject to HRD Corp approval.",
     "rail-edge": "What we do",
     "scroll": "What we do",
     "edge-kicker": "FOUR WAYS IN · ONE TEAM BEHIND THEM",
@@ -4498,6 +4515,26 @@ window.AURELION_TRANSLATIONS = {
     "course-parent": "Within the S.P.A.C.E. Summit approach"
   },
   "zh-Hans": {
+    "hero-h1a": "能驾驭 AI 的团队，",
+    "hero-h1b": "内心强大的领导者。",
+    "hero-sub": "为马来西亚企业提供 AI 工具、AI 课程与领导力培训。HRD Corp 可申请。",
+    "hero-start-ai": "把团队重复做的工作自动化",
+    "hero-start-ai-note": "我们为你打造 AI 工具，也教员工自己做。",
+    "hero-start-team": "让主管和团队合作得更好",
+    "hero-start-team-note": "领导力与团队课程，配合 LPI 团队分析。HRD Corp 可申请。",
+    "hero-rec": "获取课程建议",
+    "hero-rec-note": "在 WhatsApp 告诉我们团队人数和目标，我们建议你从哪里开始。",
+    "proof-hrd": "HRD Corp 注册培训机构",
+    "proof-clients-k": "曾服务",
+    "proof-clients": "Walihin Petroleum · BIG Pasaraya",
+    "proof-reels-k": "我们自己也在用",
+    "proof-reels": "60 天 124 条短视频",
+    "proof-price-k": "价格公开",
+    "proof-price": "AI 媒体课程每人 RM2,499 起",
+    "edge-help": "不确定从哪里开始？",
+    "edge-help-cta": "获取课程建议",
+    "faq-levy": "HRD Corp 申请流程是怎样的？",
+    "faq-levy-a": "预订名额后，我们会提供课程资料。贵公司 HR 在上课前向 HRD Corp 申请补助，获批后，费用将从公司的 levy 中支付。所有申请以 HRD Corp 批准为准。",
     "rail-edge": "我们做什么",
     "scroll": "我们做什么",
     "edge-kicker": "四个切入点 · 同一个团队支持你",
@@ -4969,6 +5006,26 @@ window.AURELION_TRANSLATIONS = {
     "course-parent": "属于 S.P.A.C.E. Summit 整体方案"
   },
   "zh-Hant": {
+    "hero-h1a": "能駕馭 AI 的團隊，",
+    "hero-h1b": "內心強大的領導者。",
+    "hero-sub": "為馬來西亞企業提供 AI 工具、AI 課程與領導力培訓。HRD Corp 可申請。",
+    "hero-start-ai": "把團隊重複做的工作自動化",
+    "hero-start-ai-note": "我們為你打造 AI 工具，也教員工自己做。",
+    "hero-start-team": "讓主管和團隊合作得更好",
+    "hero-start-team-note": "領導力與團隊課程，配合 LPI 團隊分析。HRD Corp 可申請。",
+    "hero-rec": "取得課程建議",
+    "hero-rec-note": "在 WhatsApp 告訴我們團隊人數和目標，我們建議你從哪裡開始。",
+    "proof-hrd": "HRD Corp 註冊培訓機構",
+    "proof-clients-k": "曾服務",
+    "proof-clients": "Walihin Petroleum · BIG Pasaraya",
+    "proof-reels-k": "我們自己也在用",
+    "proof-reels": "60 天 124 支短影音",
+    "proof-price-k": "價格公開",
+    "proof-price": "AI 媒體課程每人 RM2,499 起",
+    "edge-help": "不確定從哪裡開始？",
+    "edge-help-cta": "取得課程建議",
+    "faq-levy": "HRD Corp 申請流程是怎樣的？",
+    "faq-levy-a": "預訂名額後，我們會提供課程資料。貴公司 HR 在上課前向 HRD Corp 申請補助，獲批後，費用將從公司的 levy 中支付。所有申請以 HRD Corp 批准為準。",
     "rail-edge": "我們做什麼",
     "scroll": "我們做什麼",
     "edge-kicker": "四個切入點 · 同一個團隊支持你",
