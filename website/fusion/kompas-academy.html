@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en" data-goal-default="cred">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kompas Academy · Corporate training sample</title>
+<meta name="description" content="Kompas Academy: a sample corporate training and leadership coaching site for Petaling Jaya. Programme finder, public run calendar, HRD Corp claim guide. An industry sample by Aurelion.">
+<script src="/website/fusion/af-kit.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Source+Serif+4:ital,opsz,wght@1,8..60,400;1,8..60,600&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f0e8;--bg2:#e9e4d8;--card:#fffdf8;--ink:#0f2c2e;--ink2:#4b5c5c;--line:rgba(15,44,46,.15);--acc:#e5542e;--on-acc:#fff;--acc2:#1e7a6d;--hl:#f4c64e;--dark:#0f2c2e;--on-dark:#f3f0e8;--dim-dark:rgba(243,240,232,.66);--sans:"Schibsted Grotesk",system-ui,"PingFang SC","Microsoft YaHei",sans-serif;--serif:"Source Serif 4",Georgia,"Songti SC",serif;--mono:"Martian Mono",ui-monospace,monospace;--r:22px}
+html[data-vibe=warm]{--bg:#f7eee2;--bg2:#efe1cf;--card:#fffaf3;--ink:#3b2417;--ink2:#6e5442;--line:rgba(59,36,23,.15);--acc:#c4572f;--acc2:#8b6a3a;--hl:#f0b65a;--dark:#3b2417;--on-dark:#f7eee2}
+html[data-vibe=bold]{--bg:#0b0b0c;--bg2:#161618;--card:#141416;--ink:#f3f3ee;--ink2:#a9a9a2;--line:rgba(255,255,255,.14);--acc:#c8ff3d;--on-acc:#0b0b0c;--acc2:#7cf0ff;--hl:#c8ff3d;--dark:#000;--on-dark:#f3f3ee;--dim-dark:rgba(243,243,238,.62)}
+html[data-vibe=minimal]{--bg:#fff;--bg2:#f4f5f7;--card:#fff;--ink:#121417;--ink2:#5b6068;--line:rgba(18,20,23,.12);--acc:#2557e8;--acc2:#2557e8;--hl:#dbe5ff;--dark:#121417;--on-dark:#fff}
+html[data-vibe=luxe]{--bg:#0d2620;--bg2:#12332a;--card:#123128;--ink:#f1ead6;--ink2:#bdb59e;--line:rgba(241,234,214,.15);--acc:#c9a45c;--on-acc:#0d2620;--acc2:#e3c98d;--hl:#c9a45c;--dark:#081a15;--on-dark:#f1ead6;--dim-dark:rgba(241,234,214,.62)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh,36px) + 76px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* nav */
+.nav{position:fixed;top:var(--exh,36px);left:0;right:0;z-index:900;height:68px;display:flex;align-items:center;gap:18px;padding:0 28px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.nav.sc{box-shadow:0 10px 30px -18px rgba(0,0,0,.4)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.03em;margin-right:auto;white-space:nowrap}
+.logo svg{width:34px;height:34px;flex:none}.logo{min-width:0}.logo>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.logo small{display:block;font:400 9px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-top:1px}
+.links{display:flex;gap:2px}
+.links a{text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:99px;white-space:nowrap;transition:background .2s}
+.links a:hover{background:var(--bg2)}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;padding:3px;flex:none}
+.lang button{border:0;background:none;padding:5px 9px;border-radius:99px;font:600 11px var(--mono)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.burger{display:none;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 14px;font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:99px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:transform .25s,background .2s,color .2s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.55)}
+.btn.acc{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.sm{padding:10px 16px;font-size:13.5px}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.g-cta{display:none!important}
+html[data-goal=cred] .g-cred,html[data-goal=book] .g-book,html[data-goal=sell] .g-sell,html[data-goal=enq] .g-enq{display:inline-flex!important}
+
+/* hero */
+.hero{position:relative;padding:calc(var(--exh,36px) + 118px) 28px 70px;overflow:hidden}
+.topo{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
+.topo path{fill:none;stroke:var(--line);stroke-width:1.2}
+.hero-in{position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;font:400 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--ink);font:600 10.5px var(--mono);letter-spacing:.08em}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--acc2);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc2) 25%,transparent)}
+h1{font-weight:800;font-size:clamp(44px,5.7vw,86px);line-height:.98;letter-spacing:-.04em;margin:24px 0 24px}
+h1 em,h2 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.02em;color:var(--acc)}
+html[lang^=zh] h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.15}html[lang^=zh] h1{font-size:clamp(38px,4.8vw,70px)}
+html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-family:var(--sans);font-style:normal;font-weight:800}
+.lede{font-size:19px;line-height:1.55;color:var(--ink2);max-width:560px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border-top:1px solid var(--line)}
+.facts div{padding:14px 14px 0 0}
+.facts b{display:block;font-size:15px}
+.facts span{font:400 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.visual{position:relative;aspect-ratio:4/4.3;max-height:640px}
+.ph{position:absolute;inset:0 0 0 9%;border-radius:200px 200px var(--r) var(--r);overflow:hidden;background:var(--bg2)}
+.ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.ph.in img{transform:scale(1)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35))}
+.dial{position:absolute;left:-2%;bottom:-4%;width:46%;aspect-ratio:1;filter:drop-shadow(0 18px 30px rgba(0,0,0,.28))}
+.dial svg{width:100%;height:100%;overflow:visible}
+.dial .face{fill:var(--card);stroke:var(--ink);stroke-width:1.5}
+.dial .tk{stroke:var(--ink);stroke-width:1.2}.dial .tk.b{stroke-width:2.4}
+.dial text{font-family:var(--mono);font-size:8.5px;fill:var(--ink);letter-spacing:.08em}
+.dial .needle{transition:transform 1.2s cubic-bezier(.3,1.4,.4,1);transform-origin:100px 100px}
+.dial .spin{animation:spin 60s linear infinite;transform-origin:100px 100px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.run{position:absolute;right:-2%;top:12%;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;width:min(250px,56%);box-shadow:0 24px 40px -22px rgba(0,0,0,.45);text-decoration:none;transition:transform .3s}
+.run:hover{transform:translateY(-4px)}
+.run small{display:block;font:600 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+.run b{display:block;font-size:16px;line-height:1.2;margin:6px 0 4px}
+.run span{font-size:13px;color:var(--ink2)}
+.bar{height:6px;border-radius:9px;background:var(--bg2);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);border-radius:9px}
+.cap{position:absolute;right:16px;bottom:14px;color:#fff;font:400 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+
+/* sections */
+main{display:flex;flex-direction:column}
+.sec{position:relative;padding:110px 28px}
+.wrap{max-width:1320px;margin:0 auto}
+.kick{display:flex;align-items:center;gap:12px;font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.kick b{color:var(--acc);font-weight:600}
+.kick::after{content:"";flex:1;height:1px;background:var(--line)}
+.head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin:22px 0 46px}
+h2{font-weight:800;font-size:clamp(36px,4.6vw,66px);line-height:1;letter-spacing:-.035em}
+.head p{font-size:17px;color:var(--ink2);max-width:520px}
+.dark{background:var(--dark);color:var(--on-dark);--ink:var(--on-dark);--ink2:var(--dim-dark);--line:rgba(255,255,255,.14);--card:rgba(255,255,255,.05);--bg2:rgba(255,255,255,.1)}
+html[data-vibe=minimal] .dark{--acc:#7ea2ff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.goal-cred{order:5}.goal-book{order:3}.goal-sell{order:7}.goal-enq{order:9}
+#finder{order:1}#programmes{order:2}#facilitator{order:4}#hrd{order:6}#faq{order:8}#contact{order:10}
+html[data-goal=cred] .goal-cred,html[data-goal=book] .goal-book,html[data-goal=sell] .goal-sell,html[data-goal=enq] .goal-enq{order:-1}
+.goal-flag{display:none;margin-left:10px;padding:4px 9px;border-radius:99px;background:var(--acc);color:var(--on-acc);font:600 9.5px var(--mono);letter-spacing:.1em}
+html[data-goal=cred] .goal-cred .goal-flag,html[data-goal=book] .goal-book .goal-flag,html[data-goal=sell] .goal-sell .goal-flag,html[data-goal=enq] .goal-enq .goal-flag{display:inline-block}
+
+/* proof */
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:22px 0;margin-bottom:46px;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq div{display:inline-flex;gap:64px;align-items:center;white-space:nowrap;animation:mq 40s linear infinite}
+.marq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.wm{font-size:24px;color:var(--ink);opacity:.75;transition:opacity .2s}.wm:hover{opacity:1}
+.wm.a{font-weight:800;letter-spacing:.18em;font-size:18px}.wm.b{font-family:var(--serif);font-style:italic;font-size:27px}.wm.c{font-family:var(--mono);font-size:17px;letter-spacing:-.02em}.wm.d{font-weight:500;letter-spacing:-.04em}.wm.e{font-weight:800;letter-spacing:-.06em;text-transform:lowercase;font-size:28px}
+.wm sup{font-size:.45em;margin-left:2px}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.case:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(0,0,0,.5)}
+.case figure{aspect-ratio:16/10;overflow:hidden;position:relative}
+.case figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.case:hover figure img{transform:scale(1.05)}
+.case figure span{position:absolute;left:14px;top:14px;background:var(--card);color:var(--ink);border-radius:99px;padding:5px 10px;font:600 9.5px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.case-b{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.case h3{font-size:21px;line-height:1.2;letter-spacing:-.02em}
+.case p{font-size:14.5px;color:var(--ink2)}
+.res{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);display:flex;gap:14px;align-items:baseline}
+.res b{font-size:34px;letter-spacing:-.04em;color:var(--acc);font-weight:800;white-space:nowrap}
+.res span{font-size:13px;color:var(--ink2)}
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.cred{display:flex;gap:14px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:18px}
+.cred svg{flex:none;width:42px;height:42px}
+.cred b{display:block;font-size:15px}.cred span{font-size:12.5px;color:var(--ink2)}
+.proc{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;counter-reset:p}
+.proc li{list-style:none;padding:22px 22px 0 0;border-top:2px solid var(--ink);position:relative}
+.proc li::before{counter-increment:p;content:"0" counter(p);font:600 11px var(--mono);color:var(--acc)}
+.proc b{display:block;font-size:20px;margin:8px 0 6px;letter-spacing:-.02em}
+.proc span{font-size:14px;color:var(--ink2)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.quote{padding:24px;border-radius:var(--r);background:var(--bg2)}
+.quote p{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45}
+html[lang^=zh] .quote p{font-family:var(--sans);font-style:normal;font-size:17px}
+.quote footer{margin-top:16px;font-size:13px;color:var(--ink2)}
+.tagS{display:inline-block;font:600 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:3px 8px;margin-top:8px}
+
+/* calendar / booking */
+.cal{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:start}
+.months{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:9px 15px;font-weight:600;font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dark .chip[aria-pressed=true]{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.runs{display:grid;gap:10px}
+.rrow{display:grid;grid-template-columns:76px minmax(0,1fr) 150px;gap:18px;align-items:center;text-align:left;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--card);transition:border-color .2s,transform .25s}
+.rrow:hover{transform:translateX(4px);border-color:var(--ink)}
+.rrow[aria-pressed=true]{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}
+.rrow:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.dt{text-align:center;border-right:1px solid var(--line);padding-right:14px}
+.dt b{display:block;font-size:30px;line-height:1;letter-spacing:-.04em}.dt span{font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.rrow h3{font-size:17px;line-height:1.25;letter-spacing:-.01em}
+.rrow .m{font-size:13px;color:var(--ink2);margin-top:3px}
+.seats{font:600 11px var(--mono);text-align:right}
+.seats .bar{margin-top:6px}
+.seats.low{color:var(--acc)}
+.book{position:sticky;top:calc(var(--exh,36px) + 90px);background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.book h3{font-size:22px;letter-spacing:-.02em}
+.book .sel{margin:14px 0;padding:14px;border-radius:14px;background:var(--bg2);font-size:14px;min-height:70px}
+.book .sel b{display:block;font-size:16px}
+.fld{display:grid;gap:6px;margin-bottom:12px}
+.fld label{font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.fld input,.fld select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);font-size:16px;color:var(--ink)}
+.dark .fld input,.dark .fld select{background:rgba(255,255,255,.06)}
+.fld select option{color:#111}
+.step{display:flex;align-items:center;border:1px solid var(--line);border-radius:99px;width:max-content}
+.step button{width:42px;height:42px;border:0;background:none;font-size:20px;border-radius:99px}
+.step button:hover{background:var(--bg2)}
+.step output{min-width:44px;text-align:center;font-weight:700;font-size:18px}
+.sum{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:14px 0;border-top:1px dashed var(--line);margin-top:6px;font-size:14px}
+.sum b{text-align:right}
+.sum .tot{font-size:26px;letter-spacing:-.03em;font-weight:800}
+.note{font-size:12.5px;color:var(--ink2);margin-top:10px}
+.err{color:var(--acc);font:600 12px var(--mono);min-height:1.2em;margin:4px 0 8px}
+.okbox{text-align:center;padding:10px 0}
+.okbox svg{width:64px;height:64px;margin:0 auto 10px}
+.okbox h3{margin-bottom:6px}
+
+/* shop */
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .3s,box-shadow .3s}
+.prod:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(0,0,0,.5)}
+.prod .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--bg2)}
+.prod .ic svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:1.6}
+.prod h3{font-size:18px;line-height:1.25;letter-spacing:-.015em}
+.prod p{font-size:14px;color:var(--ink2)}
+.prod .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px}
+.price{font-size:22px;font-weight:800;letter-spacing:-.03em}
+.hrd{position:absolute;right:18px;top:20px;font:600 9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);border:1px solid currentColor;border-radius:99px;padding:3px 7px}
+.cartbtn{position:fixed;right:22px;bottom:22px;z-index:940;display:none;align-items:center;gap:10px;padding:14px 18px;border-radius:99px;background:var(--acc);color:var(--on-acc);border:0;font-weight:700;box-shadow:0 18px 30px -12px rgba(0,0,0,.5)}
+.cartbtn.on{display:inline-flex}
+.cartbtn b{background:var(--on-acc);color:var(--acc);border-radius:99px;min-width:24px;height:24px;display:grid;place-items:center;font-size:13px}
+.drawer{position:fixed;inset:0;z-index:1100;pointer-events:none}
+.drawer .bgd{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity .3s}
+.drawer aside{position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--card);color:var(--ink);display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),visibility 0s .4s;box-shadow:-20px 0 50px -20px rgba(0,0,0,.5)}
+html[data-vibe=bold] .drawer aside,html[data-vibe=luxe] .drawer aside{background:var(--bg2)}
+.drawer.open{pointer-events:auto}.drawer.open .bgd{opacity:1}.drawer.open aside{transform:none;visibility:visible;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h3{font-size:20px}
+.x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:none;font-size:16px}
+.items{flex:1;overflow:auto;padding:8px 22px}
+.it{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:14px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.it .step button{width:32px;height:32px;font-size:16px}.it .step output{min-width:28px;font-size:14px}
+.empty{padding:40px 0;text-align:center;color:var(--ink2)}
+.df{padding:18px 22px 22px;border-top:1px solid var(--line)}
+.pay{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.pay span{font:600 10px var(--mono);letter-spacing:.04em;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+
+/* enquiry */
+.enq{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.enq form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.bub{background:#dcf8c6;color:#111;border-radius:18px 18px 4px 18px;padding:16px 18px;font-size:14.5px;line-height:1.55;white-space:pre-wrap;box-shadow:0 18px 30px -20px rgba(0,0,0,.4);max-width:440px;margin-left:auto;position:relative}
+.wa{background:#0b141a;border-radius:28px;padding:22px;max-width:480px;margin-left:auto}
+.wa-h{display:flex;align-items:center;gap:10px;color:#e9edef;font-size:14px;margin-bottom:16px}
+.wa-h i{width:34px;height:34px;border-radius:50%;background:var(--acc);display:grid;place-items:center;font-style:normal;font-weight:800;color:var(--on-acc)}
+.wa-h small{display:block;color:#8696a0;font-size:11.5px}
+
+/* finder */
+.fnd{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
+.q{margin-bottom:26px}
+.q h3{font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:12px;display:flex;gap:10px}
+.q h3 b{color:var(--acc)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.rec{background:var(--card);border:1px solid var(--line);border-radius:28px;overflow:hidden;position:relative}
+.rec-top{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;padding:26px 26px 20px}
+.mini{width:150px;aspect-ratio:1}
+.mini svg{width:100%;height:100%}
+.mini .face{fill:none;stroke:var(--line);stroke-width:1.2}.mini .tk{stroke:var(--ink2);stroke-width:1}.mini text{font-family:var(--mono);font-size:9px;fill:var(--ink2)}
+.mini .needle{transition:transform 1s cubic-bezier(.3,1.5,.4,1);transform-origin:100px 100px}
+.rec small{font:600 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.rec h3{font-size:clamp(24px,2.4vw,32px);line-height:1.1;letter-spacing:-.03em;margin:8px 0}
+.rec .fit{font-size:14.5px;color:var(--ink2)}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+.spec div{padding:14px 18px;border-right:1px solid var(--line)}.spec div:last-child{border-right:0}
+.spec span{display:block;font:600 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.spec b{display:block;font-size:15.5px;margin-top:4px;line-height:1.3}
+.outs{list-style:none;padding:20px 26px;display:grid;gap:10px}
+.outs li{display:flex;gap:12px;font-size:15px}
+.outs li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%}
+.outs li::before{-webkit-mask:none;background:radial-gradient(circle,var(--card) 0 3px,var(--acc) 3.5px)}
+.rec-act{display:flex;gap:10px;flex-wrap:wrap;padding:0 26px 26px;align-items:center}
+.rec-act .note{margin:0}
+.swap{animation:sw .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes sw{from{opacity:0;transform:translateY(10px)}}
+
+/* programmes */
+.plist{border-top:1px solid var(--ink)}
+.pr{border-bottom:1px solid var(--line);overflow:hidden}
+.pr summary{list-style:none;display:grid;grid-template-columns:70px minmax(0,1fr) 170px 150px 40px;gap:18px;align-items:center;padding:24px 0;cursor:pointer}
+.pr summary::-webkit-details-marker{display:none}
+.pr summary .n{font:600 12px var(--mono);color:var(--acc)}
+.pr summary h3{font-size:clamp(20px,2vw,27px);letter-spacing:-.025em;line-height:1.15;transition:transform .3s}
+.pr summary:hover h3{transform:translateX(6px)}
+.pr summary .m{font-size:14px;color:var(--ink2)}
+.pr summary i{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;transition:transform .3s,background .2s}
+.pr[open] summary i{transform:rotate(45deg);background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.pr .body{display:grid;grid-template-columns:70px 1fr 1fr;gap:18px;padding:0 0 26px}
+.pr .body p{font-size:15.5px;color:var(--ink2)}
+.pr .body ul{list-style:none;display:grid;gap:6px;font-size:14.5px}
+.pr .body li::before{content:"→ ";color:var(--acc)}
+
+/* facilitator */
+.fac{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.port{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-height:620px}
+.port img{width:100%;height:100%;object-fit:cover}
+.port figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:var(--card);color:var(--ink);border-radius:16px;padding:14px 16px;display:flex;justify-content:space-between;gap:10px;align-items:center;backdrop-filter:blur(8px)}
+.port figcaption b{display:block}.port figcaption span{font-size:12.5px;color:var(--ink2)}
+.port .lg{display:flex;gap:4px}.port .lg em{font:600 10px var(--sans);font-style:normal;border:1px solid var(--line);border-radius:99px;padding:3px 7px}
+.bio p{font-size:17.5px;color:var(--ink2);margin-top:16px;max-width:600px}
+.bio blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.3vw,30px);line-height:1.35;margin-top:22px;padding-left:20px;border-left:3px solid var(--acc)}
+html[lang^=zh] .bio blockquote{font-family:var(--sans);font-style:normal}
+.cv{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.cv div{padding:14px 16px;border:1px solid var(--line);border-radius:14px}
+.cv span{display:block;font:600 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}.cv b{font-size:15px}
+
+/* hrd */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.st{padding:28px 28px 28px 0;position:relative}
+.st .num{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-weight:800;font-size:20px;background:var(--bg);position:relative;z-index:1;transition:background .3s,color .3s}
+.st:hover .num{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+.steps::before{content:"";position:absolute;left:28px;right:33%;top:56px;border-top:1.5px dashed var(--line)}
+.st h3{font-size:21px;letter-spacing:-.02em;margin:20px 0 8px}
+.st p{font-size:15px;color:var(--ink2);max-width:340px}
+.st em{display:inline-block;margin-top:12px;font:600 10px var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2)}
+.reg{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px 22px;border-radius:18px;background:var(--bg2);font-size:14px}
+.reg b{font-family:var(--mono);font-size:13px}
+
+/* faq */
+.faq2{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.fq{border-bottom:1px solid var(--line);overflow:hidden}
+.fq summary{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font-weight:700;font-size:18px;cursor:pointer;letter-spacing:-.01em}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary i{flex:none;font-style:normal;transition:transform .3s;color:var(--acc);font-size:22px;line-height:1}
+.fq[open] summary i{transform:rotate(45deg)}
+.fq p{padding:0 40px 20px 0;color:var(--ink2);font-size:15.5px}
+
+/* contact */
+.con{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cbox{border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:18px;align-content:start}
+.cbox small{display:block;font:600 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:4px}
+.cbox p{font-size:16px}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--bg2);position:relative;min-height:320px}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .rd{fill:none;stroke:var(--card);stroke-width:12;stroke-linecap:round}
+.map .rd2{fill:none;stroke:var(--line);stroke-width:2}
+.map .pk{fill:color-mix(in srgb,var(--acc2) 22%,var(--bg2))}
+.map .lbl{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);background:var(--ink);color:var(--bg);padding:8px 12px;border-radius:12px;font-weight:700;font-size:14px;white-space:nowrap}
+.map .lbl::after{content:"";position:absolute;left:50%;bottom:-6px;width:12px;height:12px;background:inherit;transform:translateX(-50%) rotate(45deg)}
+.map .dot{position:absolute;left:50%;top:44%;width:16px;height:16px;margin:4px 0 0 -8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 var(--acc);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 18px transparent}}
+
+footer.ft{background:var(--dark);color:var(--on-dark);padding:80px 28px 30px}
+.ft-in{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.ft .big{font-weight:800;font-size:clamp(48px,7vw,104px);letter-spacing:-.05em;line-height:.9}
+.ft .big em{font-family:var(--serif);font-weight:400;color:var(--acc)}
+.ft h4{font:600 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:12px}
+.ft a{display:block;text-decoration:none;line-height:2.1;opacity:.9}.ft a:hover{color:var(--acc)}
+.fine{max-width:1320px;margin:50px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font:400 10.5px var(--mono);letter-spacing:.06em;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mbar{display:none}
+
+@media(max-width:1180px){.links a{padding:8px 8px;font-size:13px}.nav{gap:12px}}
+@media(max-width:1020px){
+ .hero-in,.cal,.fnd,.fac,.faq2,.con,.enq,.head{grid-template-columns:1fr}
+ .hero-in{gap:44px}.visual{max-width:620px;width:100%;margin:0 auto}
+ .cases,.quotes,.grid6{grid-template-columns:1fr 1fr}
+ .book{position:static}
+ .pr summary{grid-template-columns:50px minmax(0,1fr) 40px}.pr summary .m{display:none}
+ .pr .body{grid-template-columns:1fr;padding-left:68px}
+ .wa,.bub{margin-left:0}
+}
+@media(max-width:900px){
+ .burger{display:block}
+ .links{position:fixed;top:calc(var(--exh,36px) + 68px);left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0;opacity:0;transform:translateY(-8px);pointer-events:none;transition:.25s;box-shadow:0 20px 30px -20px rgba(0,0,0,.4)}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links a{padding:15px 24px;font-size:16px;border-radius:0}
+ html .nav .ncta.g-cta{display:none!important}
+ .mbar{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:12px;z-index:950;padding:8px;border-radius:99px;background:var(--ink);transform:translateY(150%);transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 20px 40px -14px rgba(0,0,0,.55)}
+ .mbar.show{transform:none}
+ .mbar .btn{flex:1;padding:13px 12px;font-size:14px}
+ .mbar .btn.ghost{color:var(--bg);border-color:transparent;flex:0 0 auto}
+ .cartbtn{bottom:84px}
+ .proc,.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}
+ .creds{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .nav{padding:0 14px;height:62px;gap:8px}.burger{width:40px;height:40px;padding:0;font-size:0;position:relative;flex:none}.burger::before{content:"";position:absolute;left:12px;right:12px;top:14px;height:2px;background:currentColor;box-shadow:0 5px 0 currentColor,0 10px 0 currentColor}.burger[aria-expanded=true]::before{top:18px;box-shadow:none;transform:rotate(45deg)}.burger[aria-expanded=true]::after{content:"";position:absolute;left:12px;right:12px;top:18px;height:2px;background:currentColor;transform:rotate(-45deg)}.links{top:calc(var(--exh,36px) + 62px)}
+ .logo{font-size:17px}.logo small{display:none}.logo svg{width:30px;height:30px}
+ .lang button{padding:5px 7px}
+ .hero{padding:calc(var(--exh,36px) + 96px) 16px 56px}
+ .lede{font-size:17px}
+ .hero-cta .btn{flex:1 1 100%}.hero-in>.rv:first-child{display:contents}.hero-in{gap:0}.visual{order:5;margin-top:34px}.facts{order:6;margin-top:30px}
+ .facts{grid-template-columns:1fr 1fr 1fr}.facts b{font-size:13.5px}
+ .sec{padding:76px 16px}
+ .cases,.quotes,.grid6,.proc,.steps,.cv{grid-template-columns:1fr}
+ .rrow{grid-template-columns:58px minmax(0,1fr);gap:14px;padding:14px}
+ .rrow .seats{grid-column:2;text-align:left}
+ .dt b{font-size:24px}
+ .rec-top{grid-template-columns:96px 1fr;gap:14px;padding:20px}.mini{width:96px}
+ .spec{grid-template-columns:1fr}.spec div{border-right:0;border-bottom:1px solid var(--line)}.spec div:last-child{border-bottom:0}
+ .outs{padding:18px 20px}.rec-act{padding:0 20px 20px}
+ .pr summary{grid-template-columns:34px minmax(0,1fr) 36px;gap:12px}.pr .body{padding-left:0}
+ .run{right:0;top:6%;width:62%;padding:11px 12px}.run b{font-size:14px}
+ .dial{width:44%}
+ .ft-in{grid-template-columns:1fr 1fr}.ft-in>div:first-child{grid-column:1/-1}
+ .ft{padding:60px 16px 100px}
+ .enq form,.book,.cbox{padding:20px}
+ .fq p{padding-right:0}
+ .reg{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}.ph img{transform:none}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Corporate training with a programme finder</span><a class="exh-cta" href="/website/?t=kompas-academy#finder">Build one like this →</a></div>
+
+<header class="nav" id="nav">
+ <a class="logo" href="#top" aria-label="Home"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 5l4.2 15L20 35l-4.2-15z" fill="var(--acc)"/><path d="M20 20l4.2 0L20 35z" fill="currentColor"/><circle cx="20" cy="20" r="2.2" fill="var(--bg)"/></svg><span><span data-af-name>Kompas Academy</span><small data-i="logo_s">Training · Coaching</small></span></a>
+ <nav class="links" id="links" aria-label="Main">
+  <a href="#finder" data-i="n1">Programme finder</a><a href="#programmes" data-i="n2">Programmes</a><a href="#calendar" data-i="n3">Public runs</a><a href="#facilitator" data-i="n4">Facilitator</a><a href="#hrd" data-i="n5">HRD Corp</a><a href="#faq" data-i="n6">FAQ</a>
+ </nav>
+ <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+ <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" data-i="menu">Menu</button>
+ <a class="btn sm acc ncta g-cta g-cred" href="#proof" data-i="cta_cred_s">See results</a><a class="btn sm acc ncta g-cta g-book" href="#calendar" data-i="cta_book_s">Book a seat</a><a class="btn sm acc ncta g-cta g-sell" href="#shop" data-i="cta_sell_s">Shop</a><a class="btn sm acc ncta g-cta g-enq" href="#enquire" data-i="cta_enq_s">WhatsApp us</a>
+</header>
+
+<section class="hero" id="top">
+ <svg class="topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-40 720C200 640 330 760 560 690S900 520 1130 590 1400 520 1500 470"/><path d="M-40 770C190 700 340 820 580 750S910 590 1140 650 1410 590 1500 540"/><path d="M-40 820C180 760 350 880 600 810S920 660 1150 710 1420 660 1500 610"/><path d="M-40 170C160 120 300 220 520 160S820 40 1040 90 1340 40 1500 10"/><path d="M-40 230C170 180 300 280 530 220S830 100 1050 150 1350 100 1500 70"/><path d="M1180 300c60-50 170-40 200 30s-30 150-120 150-140-120-80-180z"/><path d="M1210 320c40-30 120-26 140 22s-22 104-84 104-96-84-56-126z"/></svg>
+ <div class="hero-in">
+  <div class="rv">
+   <div class="eyebrow"><span class="pill"><i></i><span data-i="hrd_pill">HRD Corp claimable</span></span><span><span data-i="h_eb">Corporate training &amp; coaching</span> · <span data-af-area>Petaling Jaya</span></span></div>
+   <h1 data-i="h1">Your best people got promoted. <em>Now help them lead.</em></h1>
+   <p class="lede" data-i="lede">Practical leadership, feedback and communication programmes for Malaysian teams. In-house at your office, public runs in PJ, or virtual. Taught in English, BM or Mandarin.</p>
+   <div class="hero-cta">
+    <a class="btn acc g-cta g-cred" href="#proof"><span data-i="cta_cred">See client results</span><span class="ar">→</span></a>
+    <a class="btn acc g-cta g-book" href="#calendar"><span data-i="cta_book">Book a public run</span><span class="ar">→</span></a>
+    <a class="btn acc g-cta g-sell" href="#shop"><span data-i="cta_sell">Shop seats &amp; toolkits</span><span class="ar">→</span></a>
+    <a class="btn acc g-cta g-enq" href="#enquire"><span data-i="cta_enq">Get a proposal on WhatsApp</span><span class="ar">→</span></a>
+    <a class="btn ghost" href="#finder" data-i="cta_find">Find your programme</a>
+   </div>
+   <div class="facts"><div><b data-i="f1">In-house · Public · Virtual</b><span data-i="f1s">Three formats</span></div><div><b>EN · BM · 中文</b><span data-i="f2s">Delivery languages</span></div><div><b data-i="f3">5 to 500 staff</b><span data-i="f3s">Team sizes we run</span></div></div>
+  </div>
+  <div class="visual rv">
+   <div class="ph" id="ph"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1100&q=80" alt="A facilitator sorting sticky notes on a wall while a team of managers discusses around laptops" fetchpriority="high"><span class="cap" data-i="cap">Workshop in session · sample photo</span></div>
+   <a class="run" href="#calendar"><small data-i="next">Next public run</small><b id="nextN">First-Time Manager Bootcamp</b><span id="nextD"></span><div class="bar"><i id="nextB" style="width:70%"></i></div></a>
+   <div class="dial" aria-hidden="true"><svg viewBox="0 0 200 200" id="dial"></svg></div>
+  </div>
+ </div>
+</section>
+
+<main>
+<!-- GOAL: CRED -->
+<section class="sec goal-cred" id="proof">
+ <div class="wrap">
+  <div class="kick"><b>045°</b><span data-i="pf_k">Client results</span><span class="goal-flag" data-i="flag">Start here</span></div>
+  <div class="head rv"><h2 data-i="pf_h">Work that changed <em>how teams run.</em></h2><p data-i="pf_p">A few recent engagements. Clients are fictional and figures are samples, but the shape of the work is real: diagnose first, train, then follow up.</p></div>
+  <div class="marq" aria-label="Client wordmarks (fictional)"><div id="marq"></div></div>
+  <div class="cases" id="cases"></div>
+  <div class="creds" id="creds"></div>
+  <ol class="proc" id="proc"></ol>
+  <div class="quotes" id="quotes"></div>
+ </div>
+</section>
+
+<!-- GOAL: BOOK -->
+<section class="sec goal-book dark" id="calendar">
+ <div class="wrap">
+  <div class="kick"><b>090°</b><span data-i="cl_k">Public runs · Petaling Jaya &amp; virtual</span><span class="goal-flag" data-i="flag">Start here</span></div>
+  <div class="head rv"><h2 data-i="cl_h">Send one person, <em>or the whole team.</em></h2><p data-i="cl_p">Open runs for smaller teams. Pick a date, choose how many seats, and we hold them while you apply for the HRD Corp grant.</p></div>
+  <div class="cal">
+   <div class="rv"><div class="months" id="months" role="group" aria-label="Month"></div><div class="runs" id="runs"></div></div>
+   <div class="book rv" id="book" aria-live="polite"></div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: SELL -->
+<section class="sec goal-sell" id="shop">
+ <div class="wrap">
+  <div class="kick"><b>135°</b><span data-i="sh_k">Seats, coaching &amp; toolkits</span><span class="goal-flag" data-i="flag">Start here</span></div>
+  <div class="head rv"><h2 data-i="sh_h">Buy it now, <em>claim it later.</em></h2><p data-i="sh_p">Workshop seats, coaching packs and ready-to-use manager toolkits. Pay by card or FPX. Items marked HRD Corp can be claimed against your levy.</p></div>
+  <div class="grid6" id="prods"></div>
+ </div>
+</section>
+
+<!-- GOAL: ENQ -->
+<section class="sec goal-enq" id="enquire" style="background:var(--bg2)">
+ <div class="wrap enq">
+  <div class="rv">
+   <div class="kick"><b>180°</b><span data-i="eq_k">Proposal in one working day</span><span class="goal-flag" data-i="flag">Start here</span></div>
+   <h2 style="margin:22px 0 18px" data-i="eq_h">Tell us the problem. <em>We'll send a plan.</em></h2>
+   <form id="eqF" novalidate>
+    <div class="fld"><label for="eCo" data-i="eq_co">Company</label><input id="eCo" autocomplete="organization" data-ph="eq_coph" placeholder="e.g. Selatan Precision Sdn Bhd"></div>
+    <div class="fld"><label for="eSz" data-i="eq_sz">Team size</label><select id="eSz"></select></div>
+    <div class="fld"><label for="eCh" data-i="eq_ch">Main challenge</label><select id="eCh"></select></div>
+    <button class="btn acc" type="submit" style="width:100%;margin-top:6px"><span data-i="eq_send">Send on WhatsApp</span><span class="ar">→</span></button>
+    <p class="note" data-i="eq_note">Opens WhatsApp with your message filled in. No forms to chase.</p>
+   </form>
+  </div>
+  <div class="wa rv" aria-live="polite"><div class="wa-h"><i data-af-initial>K</i><div><span data-af-name>Kompas Academy</span><small data-i="eq_on">Usually replies within the hour</small></div></div><div class="bub" id="bub"></div></div>
+ </div>
+</section>
+
+<!-- SIGNATURE: FINDER -->
+<section class="sec dark" id="finder">
+ <div class="wrap">
+  <div class="kick"><b>000°</b><span data-i="fd_k">Programme finder · 3 questions</span></div>
+  <div class="head rv"><h2 data-i="fd_h">Three answers. <em>One clear bearing.</em></h2><p data-i="fd_p">Tell us who needs it, what is going wrong and how you'd like to run it. We'll point you to the programme we would actually recommend.</p></div>
+  <div class="fnd">
+   <div class="rv">
+    <div class="q"><h3><b>01</b><span data-i="q1">How many people?</span></h3><div class="opts" id="o1" role="group"></div></div>
+    <div class="q"><h3><b>02</b><span data-i="q2">What's the main challenge?</span></h3><div class="opts" id="o2" role="group"></div></div>
+    <div class="q"><h3><b>03</b><span data-i="q3">Which format?</span></h3><div class="opts" id="o3" role="group"></div></div>
+   </div>
+   <div class="rec rv" id="rec" aria-live="polite"></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="programmes">
+ <div class="wrap">
+  <div class="kick"><b>030°</b><span data-i="pg_k">All programmes</span></div>
+  <div class="head rv"><h2 data-i="pg_h">Six programmes. <em>No fluff.</em></h2><p data-i="pg_p">Each one is built around real conversations your managers will have next week, with practice, not slides. All are HRD Corp claimable.</p></div>
+  <div class="plist rv" id="plist"></div>
+ </div>
+</section>
+
+<section class="sec" id="facilitator" style="background:var(--bg2)">
+ <div class="wrap fac">
+  <figure class="port rv"><img loading="lazy" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80" alt="Portrait of the lead facilitator, smiling, in a striped jacket"><figcaption><div><b>Anita Rosario</b><span data-i="fa_role">Lead facilitator &amp; executive coach</span></div><div class="lg"><em>EN</em><em>BM</em><em>粤</em></div></figcaption></figure>
+  <div class="bio rv">
+   <div class="kick"><b>270°</b><span data-i="fa_k">Your facilitator · sample profile</span></div>
+   <h2 style="margin-top:22px" data-i="fa_h">Eighteen years on the shop floor <em>before the training room.</em></h2>
+   <p data-i="fa_p">Anita ran operations and HR teams in manufacturing and banking before she started teaching managers. She keeps sessions practical: real scripts, role-play with your own situations, and a follow-up call a month later to see what stuck.</p>
+   <blockquote data-i="fa_q">"Nobody changes because of a slide. They change after they've practised the hard conversation once, somewhere safe."</blockquote>
+   <div class="cv"><div><span data-i="cv1">Background</span><b data-i="cv1b">Ops &amp; HR, 18 years</b></div><div><span data-i="cv2">Credentials</span><b data-i="cv2b">Certified coach · HRD Corp TTT</b></div><div><span data-i="cv3">Industries</span><b data-i="cv3b">Manufacturing, banking, hospitality</b></div><div><span data-i="cv4">Note</span><b data-i="cv4b">Fictional person, sample details</b></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="hrd">
+ <div class="wrap">
+  <div class="kick"><b>315°</b><span data-i="hr_k">HRD Corp, made simple</span></div>
+  <div class="head rv"><h2 data-i="hr_h">Claim it in <em>three steps.</em></h2><p data-i="hr_p">If your company pays the HRD Corp levy, our programmes can be paid from it. We prepare the paperwork; you click submit.</p></div>
+  <div class="steps rv" id="steps"></div>
+  <div class="reg rv"><span data-i="hr_reg">Training provider registration no.</span><b data-i="hr_no">TP 1000 2345 6789 · sample number</b><span class="note" style="margin:0" data-i="hr_fine">Simplified guide. Always check HRD Corp's latest guidelines.</span></div>
+ </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:30px">
+ <div class="wrap faq2">
+  <div class="rv"><div class="kick"><b>?</b><span data-i="fq_k">FAQ</span></div><h2 style="margin-top:22px" data-i="fq_h">What HR managers <em>usually ask.</em></h2></div>
+  <div class="rv" id="faqL"></div>
+ </div>
+</section>
+
+<section class="sec" id="contact" style="padding-top:30px">
+ <div class="wrap">
+  <div class="kick"><b>N</b><span data-i="ct_k">Visit or call</span></div>
+  <div class="con" style="margin-top:30px">
+   <div class="cbox rv">
+    <h2 data-i="ct_h">Come for coffee, <em>bring the problem.</em></h2>
+    <div><small data-i="ct_a">Address</small><p><span data-i="ct_addr">Level 9, Wisma Kompas, Jalan Barat</span>, <span data-af-area>Petaling Jaya</span> <span class="note" data-i="smp">(sample address)</span></p></div>
+    <div><small data-i="ct_h2">Office hours</small><p data-i="ct_hrs">Mon–Fri, 9am–6pm · closed on public holidays</p></div>
+    <div><small data-i="ct_p">Phone &amp; WhatsApp</small><p>+60 3-7000 0000 <span class="note" data-i="smp2">(sample)</span></p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn acc sm" type="button" data-demo><span data-i="ct_wa">WhatsApp us</span></button><a class="btn ghost sm" href="#finder" data-i="cta_find">Find your programme</a></div>
+   </div>
+   <div class="map rv" aria-hidden="true"><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice"><rect class="pk" x="40" y="40" width="150" height="110" rx="20"/><rect class="pk" x="420" y="250" width="160" height="120" rx="20"/><circle class="pk" cx="470" cy="90" r="46"/><path class="rd" d="M-20 300C120 260 260 320 620 200"/><path class="rd" d="M240-20L300 420"/><path class="rd" d="M-20 120L620 100"/><path class="rd" d="M420-20C400 140 470 260 450 420"/><path class="rd2" d="M-20 300C120 260 260 320 620 200"/><path class="rd2" d="M240-20L300 420"/></svg><span class="lbl"><span data-af-name>Kompas Academy</span> · <span data-af-area>Petaling Jaya</span></span><span class="dot"></span></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="ft">
+ <div class="ft-in">
+  <div><div class="big"><span data-af-name>Kompas Academy</span><em>.</em></div><p style="margin-top:18px;max-width:440px;opacity:.75" data-i="ft_p">Leadership, communication and coaching programmes for Malaysian teams. HRD Corp claimable.</p></div>
+  <div><h4 data-i="ft_e">Explore</h4><a href="#finder" data-i="n1">Programme finder</a><a href="#programmes" data-i="n2">Programmes</a><a href="#calendar" data-i="n3">Public runs</a><a href="#proof" data-i="pf_k">Client results</a></div>
+  <div><h4 data-i="ft_c">Company</h4><a href="#facilitator" data-i="n4">Facilitator</a><a href="#hrd" data-i="n5">HRD Corp</a><a href="#shop" data-i="sh_k2">Shop</a><a href="#contact" data-i="ct_k">Visit or call</a></div>
+ </div>
+ <div class="fine"><span>© 2026 <span data-af-name>Kompas Academy</span> · <span data-af-area>Petaling Jaya</span></span><span data-i="fine">Sample site · clients, people, figures and registration number are fictional · Design by Aurelion</span></div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="btn acc g-cta g-cred" href="#proof" data-i="cta_cred">See client results</a><a class="btn acc g-cta g-book" href="#calendar" data-i="cta_book">Book a public run</a><a class="btn acc g-cta g-sell" href="#shop" data-i="cta_sell_s">Shop</a><a class="btn acc g-cta g-enq" href="#enquire" data-i="cta_enq_s">WhatsApp us</a><a class="btn ghost" href="#finder" data-i="m_find">Finder</a></div>
+<button class="cartbtn" id="cartBtn" type="button"><span data-i="cart">Cart</span><b id="cartN">0</b></button>
+<div class="drawer" id="drawer" aria-hidden="true"><div class="bgd" data-close></div><aside role="dialog" aria-modal="true" aria-labelledby="dT"><div class="dh"><h3 id="dT" data-i="cart_h">Your cart</h3><button class="x" type="button" data-close aria-label="Close">✕</button></div><div class="items" id="items"></div><div class="df"><div class="sum" style="border:0;padding:0"><span data-i="sub">Subtotal</span><b class="tot" id="cartT">RM 0</b></div><p class="note" data-i="cart_n">HRD Corp items: we email the quote and course code for your grant application.</p><div class="pay"><span>Card</span><span>FPX</span><span>GrabPay</span><span>Touch 'n Go</span></div><button class="btn acc" type="button" id="checkout" style="width:100%"><span data-i="checkout">Checkout</span><span class="ar">→</span></button></div></aside></div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const K=window.AFK||{};
+const D={
+en:{logo_s:"Training · Coaching",n1:"Programme finder",n2:"Programmes",n3:"Public runs",n4:"Facilitator",n5:"HRD Corp",n6:"FAQ",menu:"Menu",close:"Close",
+cta_cred_s:"See results",cta_book_s:"Book a seat",cta_sell_s:"Shop",cta_enq_s:"WhatsApp us",hrd_pill:"HRD Corp claimable",h_eb:"Corporate training &amp; coaching",
+h1:"Your best people got promoted. <em>Now help them lead.</em>",lede:"Practical leadership, feedback and communication programmes for Malaysian teams. In-house at your office, public runs in PJ, or virtual. Taught in English, BM or Mandarin.",
+cta_cred:"See client results",cta_book:"Book a public run",cta_sell:"Shop seats &amp; toolkits",cta_enq:"Get a proposal on WhatsApp",cta_find:"Find your programme",m_find:"Finder",
+f1:"In-house · Public · Virtual",f1s:"Three formats",f2s:"Delivery languages",f3:"5 to 500 staff",f3s:"Team sizes we run",cap:"Workshop in session · sample photo",next:"Next public run",left:"{n} seats left",full:"Full · waitlist",
+flag:"Start here",pf_k:"Client results",pf_h:"Work that changed <em>how teams run.</em>",pf_p:"A few recent engagements. Clients are fictional and figures are samples, but the shape of the work is real: diagnose first, train, then follow up.",
+cl_k:"Public runs · Petaling Jaya &amp; virtual",cl_h:"Send one person, <em>or the whole team.</em>",cl_p:"Open runs for smaller teams. Pick a date, choose how many seats, and we hold them while you apply for the HRD Corp grant.",
+sh_k:"Seats, coaching &amp; toolkits",sh_k2:"Shop",sh_h:"Buy it now, <em>claim it later.</em>",sh_p:"Workshop seats, coaching packs and ready-to-use manager toolkits. Pay by card or FPX. Items marked HRD Corp can be claimed against your levy.",
+eq_k:"Proposal in one working day",eq_h:"Tell us the problem. <em>We'll send a plan.</em>",eq_co:"Company",eq_coph:"e.g. Selatan Precision Sdn Bhd",eq_sz:"Team size",eq_ch:"Main challenge",eq_send:"Send on WhatsApp",eq_note:"Opens WhatsApp with your message filled in. No forms to chase.",eq_on:"Usually replies within the hour",
+eq_msg:"Hi {biz}!{co}\n\nWe have {sz} people who need help with: {ch}.\n\nCould you send a proposal and your next available dates? Thank you.",eq_from:" I'm from {co}.",
+fd_k:"Programme finder · 3 questions",fd_h:"Three answers. <em>One clear bearing.</em>",fd_p:"Tell us who needs it, what is going wrong and how you'd like to run it. We'll point you to the programme we would actually recommend.",
+q1:"How many people?",q2:"What's the main challenge?",q3:"Which format?",
+pg_k:"All programmes",pg_h:"Six programmes. <em>No fluff.</em>",pg_p:"Each one is built around real conversations your managers will have next week, with practice, not slides. All are HRD Corp claimable.",
+fa_role:"Lead facilitator &amp; executive coach",fa_k:"Your facilitator · sample profile",fa_h:"Eighteen years on the shop floor <em>before the training room.</em>",fa_p:"Anita ran operations and HR teams in manufacturing and banking before she started teaching managers. She keeps sessions practical: real scripts, role-play with your own situations, and a follow-up call a month later to see what stuck.",
+fa_q:"\"Nobody changes because of a slide. They change after they've practised the hard conversation once, somewhere safe.\"",cv1:"Background",cv1b:"Ops &amp; HR, 18 years",cv2:"Credentials",cv2b:"Certified coach · HRD Corp TTT",cv3:"Industries",cv3b:"Manufacturing, banking, hospitality",cv4:"Note",cv4b:"Fictional person, sample details",
+hr_k:"HRD Corp, made simple",hr_h:"Claim it in <em>three steps.</em>",hr_p:"If your company pays the HRD Corp levy, our programmes can be paid from it. We prepare the paperwork; you click submit.",hr_reg:"Training provider registration no.",hr_no:"TP 1000 2345 6789 · sample number",hr_fine:"Simplified guide. Always check HRD Corp's latest guidelines.",
+fq_k:"FAQ",fq_h:"What HR managers <em>usually ask.</em>",ct_k:"Visit or call",ct_h:"Come for coffee, <em>bring the problem.</em>",ct_a:"Address",ct_addr:"Level 9, Wisma Kompas, Jalan Barat",smp:"(sample address)",smp2:"(sample)",ct_h2:"Office hours",ct_hrs:"Mon–Fri, 9am–6pm · closed on public holidays",ct_p:"Phone &amp; WhatsApp",ct_wa:"WhatsApp us",
+ft_p:"Leadership, communication and coaching programmes for Malaysian teams. HRD Corp claimable.",ft_e:"Explore",ft_c:"Company",fine:"Sample site · clients, people, figures and registration number are fictional · Design by Aurelion",
+cart:"Cart",cart_h:"Your cart",sub:"Subtotal",cart_n:"HRD Corp items: we email the quote and course code for your grant application.",checkout:"Checkout",add:"Add",added:"Added ✓",empty:"Your cart is empty. Add a seat or a toolkit.",
+b_pick:"Pick a run on the left",b_none:"Choose a date to see the price and hold seats.",b_pax:"Seats",b_name:"Your name",b_mail:"Work email",b_co:"Company",b_fee:"Fee per seat",b_tot:"Total (before grant)",b_go:"Hold my seats",b_hrd:"HRD Corp claimable. We send the quote and course code within one working day.",
+b_err:"Please fill in your name and a valid work email.",b_ok:"Seats on hold",b_okp:"{n} seat(s) held for 5 working days. Check your inbox for the quote and HRD Corp course code.",b_again:"Book another run",b_wait:"Join waitlist",
+v_pj:"Petaling Jaya",v_kl:"KL Sentral",v_vr:"Virtual (Zoom)",days:"{n} days",day1:"1 day",half:"2 × half-day",
+r_dur:"Duration",r_fmt:"How it runs",r_fee:"Indicative fee",r_why:"Why this fits",r_book:"See public dates",r_prop:"Get this proposal",r_sample:"Sample pricing, before HRD Corp grant.",
+sz:{s:"1–5",m:"6–15",l:"16–40",x:"40+"},szp:{s:"1 to 5",m:"6 to 15",l:"16 to 40",x:"more than 40"},
+ch:{nw:"New managers finding their feet",fb:"Avoiding hard conversations",tk:"Presenting &amp; persuading",cg:"Leading through change",co:"Managers who tell, not coach"},
+fm:{inh:"In-house",pub:"Public run",vir:"Virtual"},
+fmd:{inh:"At your office, one private cohort of up to 20",pub:"Join a scheduled run in Petaling Jaya with other companies",vir:"Live on Zoom or Teams, in half-day blocks"},
+cohorts:{s:"Small group or 1:1",m:"1 cohort",l:"2 cohorts of up to 20",x:"Phased rollout, cohorts of 20"},
+xl_pub:"For 40+ people, an in-house run usually costs less per head than public seats.",
+perpax:"per seat",percohort:"per cohort",from:"from"},
+ms:{logo_s:"Latihan · Bimbingan",n1:"Pencari program",n2:"Program",n3:"Kelas awam",n4:"Fasilitator",n5:"HRD Corp",n6:"Soalan lazim",menu:"Menu",close:"Tutup",
+cta_cred_s:"Lihat hasil",cta_book_s:"Tempah tempat",cta_sell_s:"Kedai",cta_enq_s:"WhatsApp kami",hrd_pill:"Boleh tuntut HRD Corp",h_eb:"Latihan korporat &amp; bimbingan",
+h1:"Staf terbaik anda sudah dinaikkan pangkat. <em>Kini bantu mereka memimpin.</em>",lede:"Program kepimpinan, maklum balas dan komunikasi yang praktikal untuk pasukan di Malaysia. Secara dalaman di pejabat anda, kelas awam di PJ, atau maya. Dalam Bahasa Inggeris, BM atau Mandarin.",
+cta_cred:"Lihat hasil klien",cta_book:"Tempah kelas awam",cta_sell:"Beli tempat &amp; kit",cta_enq:"Dapatkan cadangan di WhatsApp",cta_find:"Cari program anda",m_find:"Pencari",
+f1:"Dalaman · Awam · Maya",f1s:"Tiga format",f2s:"Bahasa penyampaian",f3:"5 hingga 500 staf",f3s:"Saiz pasukan",cap:"Bengkel sedang berjalan · foto contoh",next:"Kelas awam seterusnya",left:"Tinggal {n} tempat",full:"Penuh · senarai menunggu",
+flag:"Mula di sini",pf_k:"Hasil klien",pf_h:"Kerja yang mengubah <em>cara pasukan bekerja.</em>",pf_p:"Beberapa projek terkini. Klien adalah rekaan dan angka hanyalah contoh, tetapi cara kerjanya benar: kenal pasti masalah, latih, kemudian susuli.",
+cl_k:"Kelas awam · Petaling Jaya &amp; maya",cl_h:"Hantar seorang, <em>atau satu pasukan.</em>",cl_p:"Kelas terbuka untuk pasukan kecil. Pilih tarikh dan bilangan tempat, kami simpan tempat itu sementara anda memohon geran HRD Corp.",
+sh_k:"Tempat, bimbingan &amp; kit",sh_k2:"Kedai",sh_h:"Beli sekarang, <em>tuntut kemudian.</em>",sh_p:"Tempat bengkel, pakej bimbingan dan kit pengurus yang sedia guna. Bayar dengan kad atau FPX. Item bertanda HRD Corp boleh dituntut daripada levi anda.",
+eq_k:"Cadangan dalam satu hari bekerja",eq_h:"Ceritakan masalahnya. <em>Kami hantar pelan.</em>",eq_co:"Syarikat",eq_coph:"cth. Selatan Precision Sdn Bhd",eq_sz:"Saiz pasukan",eq_ch:"Cabaran utama",eq_send:"Hantar di WhatsApp",eq_note:"WhatsApp dibuka dengan mesej anda sedia diisi. Tiada borang panjang.",eq_on:"Biasanya membalas dalam sejam",
+eq_msg:"Hai {biz}!{co}\n\nKami ada {sz} orang yang perlukan bantuan dalam: {ch}.\n\nBoleh hantar cadangan dan tarikh terdekat yang ada? Terima kasih.",eq_from:" Saya dari {co}.",
+fd_k:"Pencari program · 3 soalan",fd_h:"Tiga jawapan. <em>Satu hala tuju.</em>",fd_p:"Beritahu kami siapa yang perlukan, apa masalahnya dan cara yang anda mahu. Kami tunjukkan program yang benar-benar kami sarankan.",
+q1:"Berapa orang?",q2:"Apakah cabaran utama?",q3:"Format mana?",
+pg_k:"Semua program",pg_h:"Enam program. <em>Tanpa basa-basi.</em>",pg_p:"Setiap program dibina berdasarkan perbualan sebenar yang pengurus anda akan hadapi minggu depan, dengan latihan amali, bukan slaid. Semuanya boleh dituntut HRD Corp.",
+fa_role:"Fasilitator utama &amp; jurulatih eksekutif",fa_k:"Fasilitator anda · profil contoh",fa_h:"Lapan belas tahun di lantai operasi <em>sebelum bilik latihan.</em>",fa_p:"Anita mengetuai pasukan operasi dan HR dalam sektor pembuatan dan perbankan sebelum mula melatih pengurus. Sesinya praktikal: skrip sebenar, main peranan dengan situasi anda sendiri, dan panggilan susulan sebulan kemudian.",
+fa_q:"\"Tiada siapa berubah kerana satu slaid. Mereka berubah selepas berlatih perbualan sukar itu sekali, di tempat yang selamat.\"",cv1:"Latar belakang",cv1b:"Operasi &amp; HR, 18 tahun",cv2:"Kelayakan",cv2b:"Jurulatih bertauliah · HRD Corp TTT",cv3:"Industri",cv3b:"Pembuatan, perbankan, hospitaliti",cv4:"Nota",cv4b:"Watak rekaan, butiran contoh",
+hr_k:"HRD Corp, dipermudah",hr_h:"Tuntut dalam <em>tiga langkah.</em>",hr_p:"Jika syarikat anda membayar levi HRD Corp, program kami boleh dibayar daripadanya. Kami sediakan dokumen; anda cuma tekan hantar.",hr_reg:"No. pendaftaran penyedia latihan",hr_no:"TP 1000 2345 6789 · nombor contoh",hr_fine:"Panduan ringkas. Sentiasa semak garis panduan terkini HRD Corp.",
+fq_k:"Soalan lazim",fq_h:"Soalan biasa <em>pengurus HR.</em>",ct_k:"Lawat atau hubungi",ct_h:"Jom minum kopi, <em>bawa masalahnya.</em>",ct_a:"Alamat",ct_addr:"Aras 9, Wisma Kompas, Jalan Barat",smp:"(alamat contoh)",smp2:"(contoh)",ct_h2:"Waktu pejabat",ct_hrs:"Isnin–Jumaat, 9 pagi–6 petang · tutup pada cuti umum",ct_p:"Telefon &amp; WhatsApp",ct_wa:"WhatsApp kami",
+ft_p:"Program kepimpinan, komunikasi dan bimbingan untuk pasukan di Malaysia. Boleh tuntut HRD Corp.",ft_e:"Teroka",ft_c:"Syarikat",fine:"Laman contoh · klien, individu, angka dan nombor pendaftaran adalah rekaan · Reka bentuk oleh Aurelion",
+cart:"Troli",cart_h:"Troli anda",sub:"Jumlah kecil",cart_n:"Item HRD Corp: kami e-melkan sebut harga dan kod kursus untuk permohonan geran anda.",checkout:"Bayar",add:"Tambah",added:"Ditambah ✓",empty:"Troli anda kosong. Tambah tempat atau kit.",
+b_pick:"Pilih kelas di sebelah kiri",b_none:"Pilih tarikh untuk melihat harga dan menyimpan tempat.",b_pax:"Tempat",b_name:"Nama anda",b_mail:"E-mel kerja",b_co:"Syarikat",b_fee:"Yuran seorang",b_tot:"Jumlah (sebelum geran)",b_go:"Simpan tempat saya",b_hrd:"Boleh tuntut HRD Corp. Kami hantar sebut harga dan kod kursus dalam satu hari bekerja.",
+b_err:"Sila isi nama dan e-mel kerja yang sah.",b_ok:"Tempat disimpan",b_okp:"{n} tempat disimpan selama 5 hari bekerja. Semak e-mel anda untuk sebut harga dan kod kursus HRD Corp.",b_again:"Tempah kelas lain",b_wait:"Sertai senarai menunggu",
+v_pj:"Petaling Jaya",v_kl:"KL Sentral",v_vr:"Maya (Zoom)",days:"{n} hari",day1:"1 hari",half:"2 × separuh hari",
+r_dur:"Tempoh",r_fmt:"Cara dijalankan",r_fee:"Anggaran yuran",r_why:"Kenapa sesuai",r_book:"Lihat tarikh awam",r_prop:"Dapatkan cadangan ini",r_sample:"Harga contoh, sebelum geran HRD Corp.",
+sz:{s:"1–5",m:"6–15",l:"16–40",x:"40+"},szp:{s:"1 hingga 5",m:"6 hingga 15",l:"16 hingga 40",x:"lebih 40"},
+ch:{nw:"Pengurus baharu masih mencari rentak",fb:"Mengelak perbualan sukar",tk:"Membentang &amp; meyakinkan",cg:"Memimpin ketika perubahan",co:"Pengurus yang mengarah, bukan membimbing"},
+fm:{inh:"Dalaman",pub:"Kelas awam",vir:"Maya"},
+fmd:{inh:"Di pejabat anda, satu kohort tertutup sehingga 20 orang",pub:"Sertai kelas berjadual di Petaling Jaya bersama syarikat lain",vir:"Secara langsung di Zoom atau Teams, dalam blok separuh hari"},
+cohorts:{s:"Kumpulan kecil atau 1:1",m:"1 kohort",l:"2 kohort, maksimum 20",x:"Berperingkat, kohort 20 orang"},
+xl_pub:"Untuk lebih 40 orang, kelas dalaman biasanya lebih jimat seorang berbanding tempat awam.",
+perpax:"seorang",percohort:"satu kohort",from:"dari"},
+zh:{logo_s:"企业培训 · 教练",n1:"课程推荐",n2:"课程",n3:"公开班",n4:"讲师",n5:"HRD Corp",n6:"常见问题",menu:"菜单",close:"关闭",
+cta_cred_s:"客户成果",cta_book_s:"预订座位",cta_sell_s:"商店",cta_enq_s:"WhatsApp咨询",hrd_pill:"可申请 HRD Corp 津贴",h_eb:"企业培训与领导力教练",
+h1:"你最优秀的员工<br>升职了。<em>现在，<br>帮他们学会带人。</em>",lede:"为马来西亚团队设计的实用领导力、反馈与沟通课程。可到贵公司内训、参加八打灵再也的公开班，或线上进行。英文、马来文或华语授课。",
+cta_cred:"查看客户成果",cta_book:"预订公开班",cta_sell:"选购座位与工具包",cta_enq:"WhatsApp 获取方案",cta_find:"找到合适的课程",m_find:"推荐",
+f1:"内训 · 公开班 · 线上",f1s:"三种形式",f2s:"授课语言",f3:"5 至 500 人",f3s:"可承接的团队规模",cap:"工作坊进行中 · 示例照片",next:"下一期公开班",left:"剩 {n} 个座位",full:"已满 · 候补",
+flag:"从这里开始",pf_k:"客户成果",pf_h:"真正改变了<em>团队运作方式</em>的项目。",pf_p:"近期的几个项目。客户为虚构，数据为示例，但做法是真实的：先诊断，再培训，然后跟进。",
+cl_k:"公开班 · 八打灵再也与线上",cl_h:"派一个人来，<em>或整个团队。</em>",cl_p:"适合小团队的公开班。选好日期和座位数，我们会在你申请 HRD Corp 津贴期间为你保留座位。",
+sh_k:"座位、教练与工具包",sh_k2:"商店",sh_h:"现在购买，<em>稍后申请。</em>",sh_p:"工作坊座位、教练套餐和即用型经理工具包。可用信用卡或 FPX 付款。标有 HRD Corp 的项目可从公司人力资源发展基金中扣除。",
+eq_k:"一个工作日内回复方案",eq_h:"告诉我们问题，<em>我们给你方案。</em>",eq_co:"公司名称",eq_coph:"例如：Selatan Precision Sdn Bhd",eq_sz:"团队人数",eq_ch:"主要挑战",eq_send:"通过 WhatsApp 发送",eq_note:"会打开 WhatsApp 并自动填好信息，不用填长表格。",eq_on:"通常一小时内回复",
+eq_msg:"你好 {biz}！{co}\n\n我们有 {sz} 人需要在这方面提升：{ch}。\n\n可以发一份方案和最近可安排的日期吗？谢谢。",eq_from:"我来自 {co}。",
+fd_k:"课程推荐 · 3 个问题",fd_h:"三个答案，<em>一个清晰方向。</em>",fd_p:"告诉我们谁需要培训、问题出在哪里、你希望怎么上课。我们会推荐自己真心建议的课程。",
+q1:"有多少人？",q2:"主要挑战是什么？",q3:"哪种形式？",
+pg_k:"全部课程",pg_h:"六门课程，<em>不说空话。</em>",pg_p:"每门课都围绕经理们下周就会遇到的真实对话设计，重在练习，而不是看幻灯片。全部可申请 HRD Corp 津贴。",
+fa_role:"首席讲师兼高管教练",fa_k:"你的讲师 · 示例简介",fa_h:"先在一线工作十八年，<em>才走进培训室。</em>",fa_p:"Anita 在制造业和银行业带领营运与人力资源团队多年，之后才开始培训经理。她的课程很实用：真实话术、用你们自己的情境做角色扮演，一个月后再打电话跟进效果。",
+fa_q:"「没有人因为一张幻灯片而改变。他们是在安全的环境里练习过一次艰难对话后，才真正改变。」",cv1:"背景",cv1b:"营运与人力资源，18 年",cv2:"资质",cv2b:"认证教练 · HRD Corp TTT",cv3:"行业",cv3b:"制造业、银行业、酒店业",cv4:"说明",cv4b:"虚构人物，示例资料",
+hr_k:"HRD Corp 申请，其实很简单",hr_h:"<em>三步</em>完成申请。",hr_p:"如果贵公司缴纳 HRD Corp 人力资源发展税，我们的课程费用可以从中支付。文件我们来准备，你只需提交。",hr_reg:"培训机构注册号",hr_no:"TP 1000 2345 6789 · 示例号码",hr_fine:"简化说明，请以 HRD Corp 最新指引为准。",
+fq_k:"常见问题",fq_h:"人事经理<em>最常问的问题。</em>",ct_k:"来访或致电",ct_h:"来喝杯咖啡，<em>把问题带来。</em>",ct_a:"地址",ct_addr:"Level 9, Wisma Kompas, Jalan Barat",smp:"（示例地址）",smp2:"（示例）",ct_h2:"办公时间",ct_hrs:"周一至周五，上午 9 点至下午 6 点 · 公共假期休息",ct_p:"电话与 WhatsApp",ct_wa:"WhatsApp 联系我们",
+ft_p:"为马来西亚团队打造的领导力、沟通与教练课程，可申请 HRD Corp 津贴。",ft_e:"浏览",ft_c:"关于我们",fine:"示例网站 · 客户、人物、数据及注册号均为虚构 · Aurelion 设计",
+cart:"购物车",cart_h:"你的购物车",sub:"小计",cart_n:"HRD Corp 项目：我们会把报价单和课程编号电邮给你，方便申请津贴。",checkout:"结账",add:"加入",added:"已加入 ✓",empty:"购物车是空的，加入座位或工具包吧。",
+b_pick:"请在左边选择一期课程",b_none:"选择日期即可查看价格并保留座位。",b_pax:"座位数",b_name:"你的姓名",b_mail:"工作电邮",b_co:"公司",b_fee:"每位费用",b_tot:"总额（津贴前）",b_go:"为我保留座位",b_hrd:"可申请 HRD Corp 津贴。我们会在一个工作日内发送报价单和课程编号。",
+b_err:"请填写姓名和有效的工作电邮。",b_ok:"座位已保留",b_okp:"已为你保留 {n} 个座位，有效期 5 个工作日。请查看电邮中的报价单和 HRD Corp 课程编号。",b_again:"再预订一期",b_wait:"加入候补",
+v_pj:"八打灵再也",v_kl:"吉隆坡中环",v_vr:"线上（Zoom）",days:"{n} 天",day1:"1 天",half:"2 × 半天",
+r_dur:"时长",r_fmt:"上课方式",r_fee:"参考费用",r_why:"为什么适合",r_book:"查看公开班日期",r_prop:"获取此方案",r_sample:"示例价格，未扣除 HRD Corp 津贴。",
+sz:{s:"1–5",m:"6–15",l:"16–40",x:"40+"},szp:{s:"1 至 5",m:"6 至 15",l:"16 至 40",x:"40 多"},
+ch:{nw:"新任经理还没找到方向",fb:"回避艰难对话",tk:"演讲与说服",cg:"在变革中带领团队",co:"经理只会下指令，不会辅导"},
+fm:{inh:"企业内训",pub:"公开班",vir:"线上"},
+fmd:{inh:"在贵公司进行，一个专属班最多 20 人",pub:"与其他公司学员一起参加八打灵再也的定期公开班",vir:"通过 Zoom 或 Teams 实时进行，以半天为单位"},
+cohorts:{s:"小组或一对一",m:"1 个班",l:"2 个班，每班最多 20 人",x:"分阶段推行，每班 20 人"},
+xl_pub:"超过 40 人时，企业内训的人均费用通常比公开班更低。",
+perpax:"每位",percohort:"每班",from:"起"}};
+let lang=K.l||(()=>{try{return localStorage.getItem('af-lang')}catch(e){return null}})()||'en';if(!D[lang])lang='en';
+const t=k=>D[lang][k]!==undefined?D[lang][k]:D.en[k];
+const T=o=>o?(o[lang]||o.en):'';
+const fill=(s,o)=>String(s).replace(/\{(\w+)\}/g,(m,k)=>k in o?o[k]:m);
+const rm=n=>'RM '+Math.round(n).toLocaleString('en-MY');
+const biz=()=>{const e=$('[data-af-name]');return K.n||(e?e.textContent:'Kompas Academy');};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- programmes ---------- */
+const P={
+nw:{b:0,days:2,fee:1890,day:7800,n:{en:"First-Time Manager Bootcamp",ms:"Kem Pengurus Kali Pertama",zh:"新任经理训练营"},
+ s:{en:"For people promoted from the team they now lead. Delegating, setting expectations, and the first difficult talk.",ms:"Untuk mereka yang dinaikkan pangkat daripada pasukan yang kini mereka pimpin. Mewakilkan tugas, menetapkan jangkaan dan perbualan sukar pertama.",zh:"适合从团队成员升任为主管的人：学会分派工作、设定期望，以及第一次艰难对话。"},
+ o:{en:["Delegate a real task with a clear brief and check-in","Run a weekly 15-minute one-to-one","Handle the first underperformance conversation without drama"],ms:["Mewakilkan tugas sebenar dengan taklimat dan semakan yang jelas","Menjalankan sesi satu-sama-satu 15 minit setiap minggu","Mengendalikan perbualan prestasi rendah pertama dengan tenang"],zh:["用清楚的说明和跟进方式分派一项真实任务","每周进行 15 分钟一对一面谈","冷静处理第一次绩效不佳的谈话"]}},
+fb:{b:72,days:1,fee:890,day:7200,n:{en:"Feedback &amp; Difficult Conversations",ms:"Maklum Balas &amp; Perbualan Sukar",zh:"反馈与艰难对话"},
+ s:{en:"Saying the uncomfortable thing early, kindly and clearly, then agreeing what happens next.",ms:"Menyatakan perkara yang tidak selesa lebih awal, dengan baik dan jelas, kemudian bersetuju tentang langkah seterusnya.",zh:"及早、友善又清楚地说出难以开口的话，并一起约定下一步。"},
+ o:{en:["Give feedback in under two minutes using observed facts","Stay calm when the other person gets defensive","Close every talk with an agreed next step and date"],ms:["Memberi maklum balas dalam dua minit berdasarkan fakta yang diperhati","Kekal tenang apabila pihak lain bersikap defensif","Menutup setiap perbualan dengan langkah dan tarikh yang dipersetujui"],zh:["用观察到的事实在两分钟内给出反馈","对方防御时依然保持冷静","每次谈话都以双方同意的下一步和日期结束"]}},
+tk:{b:144,days:1,fee:950,day:7200,n:{en:"Present with Confidence",ms:"Membentang dengan Yakin",zh:"自信表达与演讲"},
+ s:{en:"Short, structured updates for management meetings, client pitches and town halls. Filmed practice with coaching.",ms:"Pembentangan ringkas dan tersusun untuk mesyuarat pengurusan, pitch klien dan majlis bersama staf. Latihan dirakam dengan bimbingan.",zh:"为管理层会议、客户提案和全员大会准备简短而有条理的发言，全程录像练习并获得指导。"},
+ o:{en:["Structure any update in three parts","Handle tough questions from senior people","Cut a 20-slide deck to five that land"],ms:["Menyusun apa jua laporan dalam tiga bahagian","Menangani soalan sukar daripada pihak atasan","Memendekkan 20 slaid kepada lima yang berkesan"],zh:["用三段式组织任何汇报","应对高层的尖锐提问","把 20 页幻灯片精简成真正有效的 5 页"]}},
+cg:{b:216,days:1,fee:1050,day:7800,n:{en:"Leading Through Change",ms:"Memimpin Ketika Perubahan",zh:"在变革中领导团队"},
+ s:{en:"For mergers, new systems and restructures. Explaining the why, handling worry, and keeping work moving.",ms:"Untuk penggabungan, sistem baharu dan penstrukturan semula. Menerangkan sebabnya, menangani kebimbangan dan memastikan kerja terus bergerak.",zh:"适用于并购、新系统上线和组织重组：讲清原因、处理担忧，并让工作持续推进。"},
+ o:{en:["Explain a change in plain words your team repeats","Spot and respond to quiet resistance","Plan the first 30 days after an announcement"],ms:["Menerangkan perubahan dengan bahasa mudah yang pasukan boleh ulang","Mengesan dan menangani tentangan senyap","Merancang 30 hari pertama selepas pengumuman"],zh:["用团队能复述的大白话说明变革","察觉并回应无声的抗拒","规划宣布后的头 30 天"]}},
+co:{b:288,days:2,fee:1950,day:8200,n:{en:"Coaching Skills for Leaders",ms:"Kemahiran Bimbingan untuk Pemimpin",zh:"领导者的教练技巧"},
+ s:{en:"Moving from giving answers to asking better questions, so your people solve problems without queuing at your desk.",ms:"Beralih daripada memberi jawapan kepada bertanya soalan yang lebih baik, supaya staf boleh selesaikan masalah sendiri.",zh:"从直接给答案，转变为提出更好的问题，让下属自己解决问题，不必排队等你拍板。"},
+ o:{en:["Run a 20-minute coaching conversation","Ask questions that move people to action","Know when to coach and when to just decide"],ms:["Menjalankan perbualan bimbingan 20 minit","Bertanya soalan yang mendorong tindakan","Tahu bila perlu membimbing dan bila perlu terus membuat keputusan"],zh:["主持一场 20 分钟的教练式对话","提出能推动行动的问题","分辨什么时候该辅导、什么时候该直接决定"]}},
+ex:{b:330,days:0,fee:6800,day:6800,n:{en:"Executive 1:1 Coaching",ms:"Bimbingan Eksekutif 1:1",zh:"高管一对一教练"},
+ s:{en:"Six private sessions over three months for a senior leader or a small leadership team, around one goal you choose.",ms:"Enam sesi peribadi selama tiga bulan untuk pemimpin kanan atau pasukan kepimpinan kecil, berfokus pada satu matlamat pilihan anda.",zh:"为高层主管或小型领导团队提供三个月共六次的私人教练课程，围绕你选定的一个目标。"},
+ o:{en:["One clear goal agreed with you and HR","Practice between sessions, not just talk","A short progress note at the halfway point"],ms:["Satu matlamat jelas dipersetujui bersama anda dan HR","Latihan antara sesi, bukan sekadar berbual","Nota kemajuan ringkas di pertengahan program"],zh:["与你和人事部门共同确定一个清晰目标","每次课程之间都有练习，不只是聊天","中期提供简短的进展报告"]}}};
+const PK=Object.keys(P);
+const durTxt=(p,f)=>p.days===0?T({en:"6 sessions · 3 months",ms:"6 sesi · 3 bulan",zh:"6 次 · 3 个月"}):f==='vir'?(p.days===1?t('half'):T({en:"4 × half-day",ms:"4 × separuh hari",zh:"4 × 半天"})):p.days===1?t('day1'):fill(t('days'),{n:p.days});
+
+/* ---------- dial ---------- */
+function dialSVG(cls,labels){let s=`<circle class="face" cx="100" cy="100" r="92"/><g class="${cls?'spin':''}">`;
+ for(let i=0;i<72;i++){const a=i*5*Math.PI/180,r1=i%18===0?76:i%6===0?80:84;s+=`<line class="tk${i%18===0?' b':''}" x1="${100+Math.sin(a)*r1}" y1="${100-Math.cos(a)*r1}" x2="${100+Math.sin(a)*88}" y2="${100-Math.cos(a)*88}"/>`;}
+ s+='</g>';
+ if(labels){['N','E','S','W'].forEach((l,i)=>{const a=i*Math.PI/2;s+=`<text x="${100+Math.sin(a)*64}" y="${103-Math.cos(a)*64}" text-anchor="middle">${l}</text>`;});}
+ s+=`<g class="needle"><path d="M100 30l9 70-9 70-9-70z" fill="var(--acc)"/><path d="M100 100l9 0-9 70z" fill="var(--ink)"/><circle cx="100" cy="100" r="6" fill="var(--card)" stroke="var(--ink)" stroke-width="1.5"/></g>`;return s;}
+$('#dial').innerHTML=dialSVG(1,1);
+const heroNeedle=$('#dial .needle');let hn=0;
+if(!reduce){setInterval(()=>{hn=(hn+[38,-22,64,-40][Math.floor(Math.random()*4)]+360)%360;heroNeedle.style.transform=`rotate(${hn}deg)`;},2600);}
+
+/* ---------- proof ---------- */
+const WM=[['a','SELATAN PRECISION'],['b','Meru Health'],['c','kinta/foods'],['d','Batu Bay Logistics'],['e','orkid hotels'],['a','TERAS ENERGY'],['b','Lumen Capital'],['c','sinar.retail']];
+$('#marq').innerHTML=(WM.map(w=>`<span class="wm ${w[0]}">${w[1]}</span>`).join('')).repeat(2);
+const CASES=[
+{img:'1591115765373-5207764f72e7',tag:{en:"Manufacturing · Shah Alam",ms:"Pembuatan · Shah Alam",zh:"制造业 · 莎阿南"},h:{en:"48 new line supervisors, three cohorts, one shared playbook",ms:"48 penyelia barisan baharu, tiga kohort, satu panduan bersama",zh:"48 名新任产线主管，三个班，一套共同做法"},p:{en:"First-Time Manager Bootcamp in BM and English, then a 60-day check-in with each supervisor's manager.",ms:"Kem Pengurus Kali Pertama dalam BM dan Bahasa Inggeris, diikuti semakan 60 hari bersama pengurus setiap penyelia.",zh:"以马来文和英文进行新任经理训练营，60 天后再与每位主管的上司跟进。"},r:"11 → 4",rs:{en:"supervisor resignations, year on year (sample figures)",ms:"peletakan jawatan penyelia, tahun ke tahun (angka contoh)",zh:"主管离职人数同比变化（示例数据）"}},
+{img:'1542744173-8e7e53415bb0',tag:{en:"Banking · Kuala Lumpur",ms:"Perbankan · Kuala Lumpur",zh:"银行业 · 吉隆坡"},h:{en:"Feedback that actually happens, across 120 branch managers",ms:"Maklum balas yang benar-benar berlaku, merentas 120 pengurus cawangan",zh:"让反馈真正发生：覆盖 120 位分行经理"},p:{en:"Six virtual cohorts of Feedback &amp; Difficult Conversations, timed around month-end closing.",ms:"Enam kohort maya Maklum Balas &amp; Perbualan Sukar, dijadualkan mengikut penutupan akaun hujung bulan.",zh:"六个线上班的反馈与艰难对话课程，时间避开月底结账。"},r:"31% → 78%",rs:{en:"managers holding monthly one-to-ones (sample survey)",ms:"pengurus yang mengadakan sesi satu-sama-satu bulanan (tinjauan contoh)",zh:"每月进行一对一面谈的经理比例（示例调查）"}},
+{img:'1556761175-5973dc0f32e7',tag:{en:"Hospitality · George Town",ms:"Hospitaliti · George Town",zh:"酒店业 · 乔治市"},h:{en:"Keeping 26 department heads steady through a merger",ms:"Memastikan 26 ketua jabatan kekal tenang sepanjang penggabungan",zh:"在并购期间稳住 26 位部门主管"},p:{en:"Leading Through Change, run twice in English and BM, plus three coaching calls for the GM.",ms:"Memimpin Ketika Perubahan, dijalankan dua kali dalam Bahasa Inggeris dan BM, serta tiga panggilan bimbingan untuk Pengurus Besar.",zh:"在变革中领导团队课程以英文和马来文各办一次，另为总经理提供三次教练通话。"},r:"+9 pts",rs:{en:"staff engagement score after six months (sample)",ms:"skor penglibatan staf selepas enam bulan (contoh)",zh:"六个月后员工敬业度得分（示例）"}}];
+const CREDS=[
+{i:'<path d="M21 4l14 6v9c0 9-6 15-14 18C13 34 7 28 7 19v-9z" fill="none" stroke="var(--acc)" stroke-width="2"/><path d="M15 20l4 4 8-9" fill="none" stroke="var(--acc)" stroke-width="2.4"/>',h:{en:"HRD Corp registered provider",ms:"Penyedia berdaftar HRD Corp",zh:"HRD Corp 注册培训机构"},s:{en:"Reg. no. shown is a sample",ms:"No. pendaftaran ialah contoh",zh:"注册号为示例"}},
+{i:'<circle cx="21" cy="17" r="10" fill="none" stroke="var(--acc)" stroke-width="2"/><path d="M14 25l-3 13 10-5 10 5-3-13" fill="none" stroke="var(--acc)" stroke-width="2"/>',h:{en:"Certified coaches on every run",ms:"Jurulatih bertauliah dalam setiap kelas",zh:"每期都有认证教练"},s:{en:"Credential names are samples",ms:"Nama kelayakan ialah contoh",zh:"资质名称为示例"}},
+{i:'<rect x="7" y="7" width="28" height="28" rx="6" fill="none" stroke="var(--acc)" stroke-width="2"/><path d="M13 27V19M21 27V13M29 27v-5" stroke="var(--acc)" stroke-width="2.6" stroke-linecap="round"/>',h:{en:"Evaluation report for HR",ms:"Laporan penilaian untuk HR",zh:"为人事部门提供评估报告"},s:{en:"After every programme, plus a 30-day check-in",ms:"Selepas setiap program, serta semakan 30 hari",zh:"每次课程后提供，另加 30 天跟进"}}];
+const PROC=[[{en:"Diagnose",ms:"Kenal pasti",zh:"诊断"},{en:"A 45-minute call with HR and one line manager.",ms:"Panggilan 45 minit bersama HR dan seorang pengurus.",zh:"与人事和一位直属经理进行 45 分钟通话。"}],[{en:"Design",ms:"Reka",zh:"设计"},{en:"Your cases, your language, your shift patterns.",ms:"Kes anda, bahasa anda, jadual syif anda.",zh:"用你们的案例、语言和排班安排。"}],[{en:"Deliver",ms:"Laksana",zh:"授课"},{en:"Mostly practice. Slides only where they help.",ms:"Kebanyakannya latihan amali. Slaid hanya bila perlu.",zh:"以练习为主，只在有帮助时才用幻灯片。"}],[{en:"Follow up",ms:"Susuli",zh:"跟进"},{en:"A check-in at 30 days and a short report for HR.",ms:"Semakan pada hari ke-30 dan laporan ringkas untuk HR.",zh:"30 天后跟进，并给人事一份简短报告。"}]];
+const QUOTES=[[{en:"\"Our supervisors finally have the same words for the same problems. The follow-up call was what made it stick.\"",ms:"\"Penyelia kami akhirnya guna bahasa yang sama untuk masalah yang sama. Panggilan susulan itulah yang membuatkannya kekal.\"",zh:"「我们的主管终于用同一套说法讨论同样的问题。真正让效果持续的是后续的跟进电话。」"},{en:"HR manager, manufacturing, Shah Alam",ms:"Pengurus HR, pembuatan, Shah Alam",zh:"人事经理，制造业，莎阿南"}],[{en:"\"They ran it in BM for the floor and English for the office, same day. Nobody felt left out.\"",ms:"\"Mereka jalankan dalam BM untuk staf operasi dan Bahasa Inggeris untuk pejabat, pada hari yang sama. Tiada siapa rasa tersisih.\"",zh:"「同一天里，给一线员工用马来文，给办公室用英文。没有人觉得被冷落。」"},{en:"Operations director, logistics, Port Klang",ms:"Pengarah operasi, logistik, Pelabuhan Klang",zh:"营运总监，物流业，巴生港"}],[{en:"\"The HRD Corp paperwork arrived before I asked for it. That alone saved me a week.\"",ms:"\"Dokumen HRD Corp sampai sebelum saya minta. Itu sahaja jimat seminggu.\"",zh:"「我还没开口，HRD Corp 的文件就已经准备好了。光这一点就帮我省了一个星期。」"},{en:"Head of L&amp;D, bank, Kuala Lumpur",ms:"Ketua L&amp;D, bank, Kuala Lumpur",zh:"培训发展主管，银行，吉隆坡"}]];
+function proof(){
+ $('#cases').innerHTML=CASES.map(c=>`<article class="case rv in"><figure><img loading="lazy" src="https://images.unsplash.com/photo-${c.img}?auto=format&fit=crop&w=760&q=75" alt="${esc(T(c.h).replace(/&amp;/g,'&'))}"><span>${T(c.tag)}</span></figure><div class="case-b"><h3>${T(c.h)}</h3><p>${T(c.p)}</p><div class="res"><b>${c.r}</b><span>${T(c.rs)}</span></div></div></article>`).join('');
+ $('#creds').innerHTML=CREDS.map(c=>`<div class="cred"><svg viewBox="0 0 42 42" aria-hidden="true">${c.i}</svg><div><b>${T(c.h)}</b><span>${T(c.s)}</span></div></div>`).join('');
+ $('#proc').innerHTML=PROC.map(p=>`<li><b>${T(p[0])}</b><span>${T(p[1])}</span></li>`).join('');
+ const sr=T({en:"Sample review",ms:"Ulasan contoh",zh:"示例评价"});
+ $('#quotes').innerHTML=QUOTES.map(q=>`<figure class="quote"><p>${T(q[0])}</p><footer>${T(q[1])}<br><span class="tagS">${sr}</span></footer></figure>`).join('');}
+
+/* ---------- calendar & booking ---------- */
+const RUNS=[['fb','2026-12-03','vr','EN',3,18],['nw','2026-12-09','pj','EN',6,20],['tk','2026-12-16','pj','EN',2,16],['cg','2027-01-13','kl','EN',8,20],['nw','2027-01-20','pj','BM',11,20],['tk','2027-01-27','vr','BM',9,16],['co','2027-02-17','pj','EN',12,18],['fb','2027-02-24','pj','EN · 中文',14,20],['co','2027-03-10','pj','EN',0,18],['nw','2027-03-17','kl','EN',15,20]].map((r,i)=>({i,p:r[0],d:new Date(r[1]+'T09:00:00'),v:r[2],lg:r[3],left:r[4],cap:r[5]}));
+const MON=[...new Set(RUNS.map(r=>r.d.getFullYear()*12+r.d.getMonth()))];
+const loc=()=>lang==='ms'?'ms-MY':lang==='zh'?'zh-CN':'en-MY';
+const BK={m:MON[0],run:0,pax:2,done:false};
+function months(){$('#months').innerHTML=MON.map(m=>{const d=new Date(Math.floor(m/12),m%12,1);return `<button type="button" class="chip" data-m="${m}" aria-pressed="${BK.m===m}">${d.toLocaleDateString(loc(),{month:'short',year:'numeric'})}</button>`;}).join('');}
+function runs(){
+ $('#runs').innerHTML=RUNS.filter(r=>r.d.getFullYear()*12+r.d.getMonth()===BK.m).map(r=>{const p=P[r.p];const pct=Math.round((r.cap-r.left)/r.cap*100);
+  return `<button type="button" class="rrow" data-run="${r.i}" aria-pressed="${BK.run===r.i}"><div class="dt"><b>${r.d.getDate()}</b><span>${r.d.toLocaleDateString(loc(),{weekday:'short'})}</span></div><div><h3>${T(p.n)}</h3><p class="m">${durTxt(p,r.v==='vr'?'vir':'pub')} · ${t('v_'+r.v)} · ${r.lg}</p></div><div class="seats${r.left<=3?' low':''}">${r.left?fill(t('left'),{n:r.left}):t('full')}<div class="bar"><i style="width:${pct}%"></i></div></div></button>`;}).join('');}
+function book(){const b=$('#book');const r=RUNS[BK.run];
+ if(BK.done&&r){b.innerHTML=`<div class="okbox"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="var(--acc)"/><path d="M19 33l9 9 17-19" fill="none" stroke="var(--on-acc)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>${t('b_ok')}</h3><p class="note">${fill(t('b_okp'),{n:BK.pax})}</p><div class="sel" style="text-align:left"><b>${T(P[r.p].n)}</b>${r.d.toLocaleDateString(loc(),{weekday:'long',day:'numeric',month:'long'})} · ${t('v_'+r.v)}</div><button class="btn ghost sm" type="button" id="bAgain">${t('b_again')}</button></div>`;return;}
+ if(!r){b.innerHTML=`<h3>${t('b_pick')}</h3><div class="sel">${t('b_none')}</div><div class="sum"><span>${t('b_fee')}</span><b>—</b></div>`;return;}
+ const p=P[r.p];
+ b.innerHTML=`<h3>${T(p.n)}</h3><div class="sel"><b>${r.d.toLocaleDateString(loc(),{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</b>${durTxt(p,r.v==='vr'?'vir':'pub')} · ${t('v_'+r.v)} · ${r.lg}</div>
+ <div class="fld"><label>${t('b_pax')}</label><div class="step"><button type="button" data-px="-1" aria-label="−">−</button><output id="pax">${BK.pax}</output><button type="button" data-px="1" aria-label="+">+</button></div></div>
+ <div class="fld"><label for="bN">${t('b_name')}</label><input id="bN" autocomplete="name"></div>
+ <div class="fld"><label for="bM">${t('b_mail')}</label><input id="bM" type="email" autocomplete="email" placeholder="name@company.com.my"></div>
+ <div class="sum"><span>${t('b_fee')}</span><b>${rm(p.fee)}</b><span>${t('b_tot')}</span><b class="tot" id="bT">${rm(p.fee*BK.pax)}</b></div>
+ <p class="err" id="bE" role="alert"></p><button class="btn acc" type="button" id="bGo" style="width:100%">${r.left?t('b_go'):t('b_wait')} <span class="ar">→</span></button><p class="note">${t('b_hrd')}</p>`;}
+$('#months').addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(!b)return;BK.m=+b.dataset.m;months();runs();});
+$('#runs').addEventListener('click',e=>{const b=e.target.closest('[data-run]');if(!b)return;BK.run=+b.dataset.run;BK.done=false;const r=RUNS[BK.run];BK.pax=Math.min(BK.pax,Math.max(1,r.left||1));runs();book();if(innerWidth<1020)$('#book').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});});
+$('#book').addEventListener('click',e=>{const r=RUNS[BK.run];
+ const px=e.target.closest('[data-px]');if(px&&r){const max=Math.max(1,Math.min(6,r.left||6));BK.pax=Math.min(max,Math.max(1,BK.pax+ +px.dataset.px));$('#pax').textContent=BK.pax;$('#bT').textContent=rm(P[r.p].fee*BK.pax);return;}
+ if(e.target.closest('#bGo')){const n=$('#bN').value.trim(),m=$('#bM').value.trim();if(n.length<2||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){$('#bE').textContent=t('b_err');return;}BK.done=true;book();window.afDemo&&afDemo(T({en:"Demo: on your site this confirms the booking and emails the quote.",ms:"Demo: di laman anda, ini mengesahkan tempahan dan menghantar sebut harga melalui e-mel.",zh:"演示：在你的网站上，这会确认预订并电邮报价单。"}));return;}
+ if(e.target.closest('#bAgain')){BK.done=false;BK.run=null;runs();book();}});
+function nextRun(){const r=RUNS.find(x=>x.left>0);$('#nextN').innerHTML=T(P[r.p].n);$('#nextD').textContent=r.d.toLocaleDateString(loc(),{day:'numeric',month:'short'})+' · '+t('v_'+r.v)+' · '+fill(t('left'),{n:r.left});$('#nextB').style.width=Math.round((r.cap-r.left)/r.cap*100)+'%';}
+
+/* ---------- shop ---------- */
+const ICO={seat:'<rect x="4" y="9" width="16" height="9" rx="2"/><path d="M7 9V6a5 5 0 0 1 10 0v3M7 18v3M17 18v3"/>',coach:'<circle cx="9" cy="8" r="3"/><circle cx="16" cy="10" r="2.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M14 20c0-2.5 1.5-4 4-4s3 1.5 3 4"/>',kit:'<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>',pulse:'<path d="M3 12h4l2-5 4 10 2-5h6"/>',gift:'<rect x="4" y="9" width="16" height="12" rx="1"/><path d="M12 9v12M4 13h16M12 9c-2-4-6-4-6-1s6 1 6 1c2-4 6-4 6-1s-6 1-6 1"/>'};
+const PRODS=[
+{id:1,ic:'seat',h:true,pr:1890,n:{en:"Seat · First-Time Manager Bootcamp",ms:"Tempat · Kem Pengurus Kali Pertama",zh:"座位 · 新任经理训练营"},d:{en:"2-day public run in Petaling Jaya. Lunch and workbook included.",ms:"Kelas awam 2 hari di Petaling Jaya. Termasuk makan tengah hari dan buku kerja.",zh:"八打灵再也两天公开班，含午餐和练习册。"}},
+{id:2,ic:'seat',h:true,pr:890,n:{en:"Seat · Feedback &amp; Difficult Conversations",ms:"Tempat · Maklum Balas &amp; Perbualan Sukar",zh:"座位 · 反馈与艰难对话"},d:{en:"Virtual, two half-days. Join from anywhere in Malaysia.",ms:"Maya, dua separuh hari. Sertai dari mana-mana di Malaysia.",zh:"线上两个半天，在马来西亚任何地方都能参加。"}},
+{id:3,ic:'coach',h:true,pr:3600,n:{en:"Coaching pack · 3 sessions",ms:"Pakej bimbingan · 3 sesi",zh:"教练套餐 · 3 次"},d:{en:"One-to-one with Anita, 60 minutes each, in person or online.",ms:"Satu-sama-satu bersama Anita, 60 minit setiap sesi, bersemuka atau dalam talian.",zh:"与 Anita 一对一，每次 60 分钟，面对面或线上。"}},
+{id:4,ic:'kit',h:false,pr:89,n:{en:"Manager's First 90 Days toolkit",ms:"Kit 90 Hari Pertama Pengurus",zh:"经理上任 90 天工具包"},d:{en:"PDF guide plus editable one-to-one and delegation templates.",ms:"Panduan PDF serta templat satu-sama-satu dan perwakilan tugas yang boleh disunting.",zh:"PDF 指南，附可编辑的一对一与分派工作模板。"}},
+{id:5,ic:'pulse',h:false,pr:650,n:{en:"Team pulse check · up to 30 staff",ms:"Semakan nadi pasukan · sehingga 30 staf",zh:"团队状态调查 · 最多 30 人"},d:{en:"A 10-question anonymous survey with a one-page summary for HR.",ms:"Tinjauan tanpa nama 10 soalan dengan ringkasan satu muka surat untuk HR.",zh:"10 题匿名问卷，附给人事的一页总结。"}},
+{id:6,ic:'gift',h:false,pr:500,n:{en:"Gift voucher · RM 500",ms:"Baucar hadiah · RM 500",zh:"礼券 · RM 500"},d:{en:"For a newly promoted colleague. Valid 12 months on any public run.",ms:"Untuk rakan sekerja yang baru dinaikkan pangkat. Sah 12 bulan untuk mana-mana kelas awam.",zh:"送给刚升职的同事，12 个月内可用于任何公开班。"}}];
+const CART=new Map();
+function prods(){$('#prods').innerHTML=PRODS.map(p=>`<article class="prod rv in">${p.h?'<span class="hrd">HRD Corp</span>':''}<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICO[p.ic]}</svg></div><h3>${T(p.n)}</h3><p>${T(p.d)}</p><div class="row"><span class="price">${rm(p.pr)}</span><button class="btn sm" type="button" data-add="${p.id}">${t('add')} +</button></div></article>`).join('');}
+function cart(){let n=0,tot=0;const items=[...CART].map(([id,q])=>{const p=PRODS.find(x=>x.id===id);n+=q;tot+=q*p.pr;return `<div class="it"><b>${T(p.n)}</b><b>${rm(p.pr*q)}</b><div class="step"><button type="button" data-q="${id}" data-d="-1" aria-label="−">−</button><output>${q}</output><button type="button" data-q="${id}" data-d="1" aria-label="+">+</button></div>${p.h?'<span class="hrd" style="position:static;align-self:center;justify-self:end">HRD Corp</span>':'<span></span>'}</div>`;}).join('');
+ $('#items').innerHTML=items||`<p class="empty">${t('empty')}</p>`;$('#cartT').textContent=rm(tot);$('#cartN').textContent=n;$('#cartBtn').classList.toggle('on',n>0);$('#checkout').disabled=!n;}
+const drawer=$('#drawer');let lastF=null;
+function openCart(o){drawer.classList.toggle('open',o);drawer.setAttribute('aria-hidden',!o);if(o){lastF=document.activeElement;setTimeout(()=>drawer.querySelector('.x').focus(),50);}else if(lastF)lastF.focus({preventScroll:true});}
+$('#prods').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;const id=+b.dataset.add;CART.set(id,(CART.get(id)||0)+1);cart();b.textContent=t('added');setTimeout(()=>{b.textContent=t('add')+' +';},1200);openCart(true);});
+$('#items').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;const id=+b.dataset.q,q=(CART.get(id)||0)+ +b.dataset.d;q>0?CART.set(id,q):CART.delete(id);cart();});
+$('#cartBtn').addEventListener('click',()=>openCart(true));
+drawer.addEventListener('click',e=>{if(e.target.closest('[data-close]'))openCart(false);});
+$('#checkout').addEventListener('click',()=>window.afDemo&&afDemo(T({en:"Demo: on your site this opens secure checkout (Card, FPX, GrabPay, Touch 'n Go).",ms:"Demo: di laman anda, ini membuka pembayaran selamat (Kad, FPX, GrabPay, Touch 'n Go).",zh:"演示：在你的网站上，这会打开安全结账页面（信用卡、FPX、GrabPay、Touch 'n Go）。"})));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))openCart(false);});
+
+/* ---------- enquiry ---------- */
+function eqOpts(){const sz=$('#eSz'),ch=$('#eCh'),a=sz.value||'m',b=ch.value||'nw';sz.innerHTML=Object.keys(t('sz')).map(k=>`<option value="${k}">${t('sz')[k]}</option>`).join('');ch.innerHTML=Object.keys(t('ch')).map(k=>`<option value="${k}">${t('ch')[k]}</option>`).join('');sz.value=a;ch.value=b;bub();}
+function bub(){const cv=$('#eCo').value.trim(),co=cv?fill(t('eq_from'),{co:cv}):'';const tmp=document.createElement('div');tmp.innerHTML=t('ch')[$('#eCh').value];
+ $('#bub').textContent=fill(t('eq_msg'),{biz:biz(),co,sz:t('szp')[$('#eSz').value],ch:tmp.textContent});}
+['input','change'].forEach(ev=>$('#eqF').addEventListener(ev,bub));
+$('#eqF').addEventListener('submit',e=>{e.preventDefault();window.afDemo&&afDemo();});
+
+/* ---------- finder ---------- */
+const FD={s:'m',c:'nw',f:'inh'};
+function fOpts(){
+ $('#o1').innerHTML=Object.keys(t('sz')).map(k=>`<button type="button" class="chip" data-k="s" data-v="${k}" aria-pressed="${FD.s===k}">${t('sz')[k]}</button>`).join('');
+ $('#o2').innerHTML=Object.keys(t('ch')).map(k=>`<button type="button" class="chip" data-k="c" data-v="${k}" aria-pressed="${FD.c===k}">${t('ch')[k]}</button>`).join('');
+ $('#o3').innerHTML=Object.keys(t('fm')).map(k=>`<button type="button" class="chip" data-k="f" data-v="${k}" aria-pressed="${FD.f===k}">${t('fm')[k]}</button>`).join('');
+ ['o1','o2','o3'].forEach((id,i)=>$('#'+id).setAttribute('aria-label',t('q'+(i+1))));}
+let recNeedle=0;
+function rec(anim){let key=FD.c;if(FD.s==='s'&&FD.f==='inh'&&(FD.c==='cg'||FD.c==='co'))key='ex';
+ const p=P[key],f=key==='ex'?'inh':FD.f;
+ let fee,unit;if(key==='ex'){fee=p.fee;unit=T({en:"per leader",ms:"seorang pemimpin",zh:"每位领导者"});}
+ else if(f==='pub'){fee=p.fee;unit=t('perpax');}
+ else{const cohorts={s:1,m:1,l:2,x:3}[FD.s];fee=(f==='vir'?p.day*.62:p.day)*Math.max(1,p.days)*cohorts;unit=FD.s==='x'?T({en:"first 3 cohorts",ms:"3 kohort pertama",zh:"前 3 个班"}):cohorts>1?T({en:"for 2 cohorts",ms:"untuk 2 kohort",zh:"2 个班"}):t('percohort');}
+ const nr=RUNS.find(r=>r.p===key&&r.left>0);
+ const how=key==='ex'?T({en:"Private sessions at your office or online",ms:"Sesi peribadi di pejabat anda atau dalam talian",zh:"在贵公司或线上进行的私人课程"}):t('fmd')[f]+(f==='pub'&&nr?` · ${T({en:"next",ms:"seterusnya",zh:"下一期"})} ${nr.d.toLocaleDateString(loc(),{day:'numeric',month:'short'})}`:'');
+ const fit=(key==='ex'?T({en:"With five people or fewer, focused coaching beats a workshop.",ms:"Dengan lima orang atau kurang, bimbingan fokus lebih berkesan daripada bengkel.",zh:"五人或以下时，针对性教练比工作坊更有效。"}):t('cohorts')[FD.s])+(FD.s==='x'&&f==='pub'?' · '+t('xl_pub'):'');
+ const deg=(p.b+360)%360;
+ $('#rec').innerHTML=`<div class="rec-top"><div class="mini" aria-hidden="true"><svg viewBox="0 0 200 200">${dialSVG(0,1)}</svg></div><div class="swap"><small>${T({en:"We'd recommend",ms:"Kami sarankan",zh:"我们推荐"})}</small><h3>${T(p.n)}</h3><p class="fit">${T(p.s)}</p></div></div>
+ <div class="spec swap"><div><span>${t('r_dur')}</span><b>${durTxt(p,f)}</b></div><div><span>${t('r_fmt')}</span><b>${how}</b></div><div><span>${t('r_fee')}</span><b>${t('from')==='起'?rm(fee)+' '+t('from'):t('from')+' '+rm(fee)} <small style="font-weight:400;color:var(--ink2)">${unit}</small></b></div></div>
+ <ul class="outs swap">${T(p.o).map(o=>`<li>${o}</li>`).join('')}</ul>
+ <div class="rec-act"><a class="btn acc sm" href="#enquire" data-prop>${t('r_prop')} <span class="ar">→</span></a>${nr?`<a class="btn ghost sm" href="#calendar" data-cal="${nr.i}">${t('r_book')}</a>`:''}<p class="note">${fit}${/[.。]$/.test(fit)?'':(lang==='zh'?'。':'.')} ${t('r_sample')}</p></div>`;
+ const nd=$('#rec .needle');nd.style.transform=`rotate(${recNeedle}deg)`;
+ let target=deg;while(target<recNeedle-180)target+=360;while(target>recNeedle+180)target-=360;recNeedle=target;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{nd.style.transform=`rotate(${recNeedle}deg)`;}));
+ if(heroNeedle&&anim){hn=recNeedle;heroNeedle.style.transform=`rotate(${hn}deg)`;}}
+['o1','o2','o3'].forEach(id=>$('#'+id).addEventListener('click',e=>{const b=e.target.closest('[data-v]');if(!b)return;FD[b.dataset.k]=b.dataset.v;$$('#'+id+' .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));rec(1);}));
+$('#rec').addEventListener('click',e=>{const c=e.target.closest('[data-cal]');if(c){const r=RUNS[+c.dataset.cal];BK.m=r.d.getFullYear()*12+r.d.getMonth();BK.run=r.i;BK.done=false;months();runs();book();}
+ if(e.target.closest('[data-prop]')){$('#eSz').value=FD.s;$('#eCh').value=FD.c;bub();}});
+
+/* ---------- programme list ---------- */
+function plist(){$('#plist').innerHTML=PK.map((k,i)=>{const p=P[k];return `<details class="pr"${i===0?' open':''}><summary><span class="n">0${i+1}</span><h3>${T(p.n)}</h3><span class="m">${durTxt(p,'inh')}</span><span class="m">${t('from')==='起'?rm(p.fee)+' '+t('from'):t('from')+' '+rm(p.fee)}</span><i aria-hidden="true">+</i></summary><div class="body"><span></span><p>${T(p.s)}</p><ul>${T(p.o).map(o=>`<li>${o}</li>`).join('')}</ul></div></details>`;}).join('');}
+
+/* ---------- hrd steps ---------- */
+const STEPS=[[{en:"Pick a programme, get our quote",ms:"Pilih program, dapatkan sebut harga",zh:"选好课程，索取报价"},{en:"We send a quote with the HRD Corp course code, dates and trainer details within one working day.",ms:"Kami hantar sebut harga bersama kod kursus HRD Corp, tarikh dan butiran jurulatih dalam satu hari bekerja.",zh:"我们会在一个工作日内发送报价单，附 HRD Corp 课程编号、日期和讲师资料。"},{en:"Day 1",ms:"Hari 1",zh:"第 1 天"}],
+[{en:"Apply for the grant before training",ms:"Mohon geran sebelum latihan",zh:"培训前申请津贴"},{en:"Submit the grant application in HRD Corp's online portal using our quote. It must be approved before the first day.",ms:"Hantar permohonan geran di portal dalam talian HRD Corp menggunakan sebut harga kami. Ia mesti diluluskan sebelum hari pertama.",zh:"用我们的报价单在 HRD Corp 线上系统提交津贴申请，须在开课前获批。"},{en:"Before day one",ms:"Sebelum hari pertama",zh:"开课前"}],
+[{en:"Train, then claim",ms:"Berlatih, kemudian tuntut",zh:"上课，然后申请报销"},{en:"After the programme we send the attendance list, invoice and evaluation summary. You submit the claim.",ms:"Selepas program, kami hantar senarai kehadiran, invois dan ringkasan penilaian. Anda hantar tuntutan.",zh:"课程结束后，我们会提供出席名单、发票和评估总结，由你提交报销申请。"},{en:"After the programme",ms:"Selepas program",zh:"课程结束后"}]];
+function steps(){$('#steps').innerHTML=STEPS.map((s,i)=>`<div class="st"><div class="num">${i+1}</div><h3>${T(s[0])}</h3><p>${T(s[1])}</p><em>${T(s[2])}</em></div>`).join('');}
+
+/* ---------- faq ---------- */
+const FAQ=[[{en:"Are all your programmes HRD Corp claimable?",ms:"Adakah semua program anda boleh dituntut HRD Corp?",zh:"所有课程都可以申请 HRD Corp 津贴吗？"},{en:"Yes, every programme on this page is registered as claimable (sample). Your company needs to be a registered employer with enough levy balance. We prepare the quote and documents.",ms:"Ya, setiap program di halaman ini didaftarkan sebagai boleh dituntut (contoh). Syarikat anda perlu majikan berdaftar dengan baki levi yang mencukupi. Kami sediakan sebut harga dan dokumen.",zh:"是的，本页所有课程均已注册为可申请课程（示例）。贵公司须为已注册雇主并有足够的基金余额，报价和文件由我们准备。"}],
+[{en:"Can you run it in Bahasa Melayu or Mandarin?",ms:"Boleh dijalankan dalam Bahasa Melayu atau Mandarin?",zh:"可以用马来文或华语授课吗？"},{en:"Every programme runs in English or BM. Selected programmes can be co-facilitated in Mandarin. Mixed-language groups are fine; we plan for it.",ms:"Setiap program boleh dijalankan dalam Bahasa Inggeris atau BM. Program tertentu boleh dibantu fasilitator berbahasa Mandarin. Kumpulan pelbagai bahasa tiada masalah; kami rancang untuknya.",zh:"所有课程都可用英文或马来文进行，部分课程可加派华语讲师协同授课。混合语言的小组也没问题，我们会事先安排。"}],
+[{en:"How many people per in-house cohort?",ms:"Berapa orang bagi setiap kohort dalaman?",zh:"每个内训班多少人？"},{en:"Up to 20 for workshops that involve a lot of practice. For bigger groups we split into cohorts so nobody hides at the back.",ms:"Sehingga 20 orang untuk bengkel yang banyak latihan amali. Untuk kumpulan besar, kami bahagikan kepada beberapa kohort supaya tiada yang bersembunyi di belakang.",zh:"练习较多的工作坊每班最多 20 人。人数较多时会分班，确保没有人躲在后排。"}],
+[{en:"Do you customise the content?",ms:"Adakah kandungan disesuaikan?",zh:"课程内容会定制吗？"},{en:"Every in-house run starts with a short diagnosis call. We swap in cases from your industry and your real situations at no extra charge.",ms:"Setiap kelas dalaman bermula dengan panggilan diagnosis ringkas. Kami gunakan kes daripada industri dan situasi sebenar anda tanpa caj tambahan.",zh:"每个内训都从一次简短的诊断通话开始，我们会免费换入贵行业的案例和你们的真实情境。"}],
+[{en:"What happens after the training?",ms:"Apa yang berlaku selepas latihan?",zh:"培训结束后呢？"},{en:"Participants get a one-page action plan. We do a 30-day check-in and send HR a short evaluation report. Coaching is optional.",ms:"Peserta menerima pelan tindakan satu muka surat. Kami buat semakan pada hari ke-30 dan hantar laporan penilaian ringkas kepada HR. Bimbingan adalah pilihan.",zh:"学员会拿到一页行动计划。我们会在 30 天后跟进，并给人事一份简短评估报告。教练辅导可另选。"}],
+[{en:"Do you travel outside the Klang Valley?",ms:"Adakah anda ke luar Lembah Klang?",zh:"会到巴生谷以外的地方授课吗？"},{en:"Yes. We regularly run programmes in Penang, Ipoh, Johor Bahru and East Malaysia. Travel and accommodation are billed at cost.",ms:"Ya. Kami kerap menjalankan program di Pulau Pinang, Ipoh, Johor Bahru dan Malaysia Timur. Kos perjalanan dan penginapan dicaj mengikut kos sebenar.",zh:"会的。我们经常在槟城、怡保、新山和东马开课，交通和住宿按实际费用收取。"}]];
+function faq(){$('#faqL').innerHTML=FAQ.map((f,i)=>`<details class="fq"${i===0?' open':''}><summary>${T(f[0])}<i aria-hidden="true">+</i></summary><p>${T(f[1])}</p></details>`).join('');}
+
+/* ---------- language ---------- */
+function render(){
+ document.documentElement.lang=lang==='ms'?'ms':lang==='zh'?'zh-Hans':'en';
+ $$('[data-i]').forEach(el=>{const v=t(el.dataset.i);if(typeof v==='string')el.innerHTML=v;});
+ $$('[data-ph]').forEach(el=>el.placeholder=t(el.dataset.ph));
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===lang));
+ $('#burger').textContent=t(links.classList.contains('open')?'close':'menu');
+ proof();months();runs();book();nextRun();prods();cart();eqOpts();fOpts();rec(0);plist();steps();faq();
+ if(window.afFill)afFill();bub();}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.l;try{localStorage.setItem('af-lang',lang);}catch(e){}render();}));
+
+/* ---------- nav, menu, reveal ---------- */
+const links=$('#links'),bur=$('#burger');
+bur.addEventListener('click',()=>{const o=links.classList.toggle('open');bur.setAttribute('aria-expanded',o);bur.textContent=t(o?'close':'menu');});
+links.addEventListener('click',e=>{if(e.target.closest('a')){links.classList.remove('open');bur.setAttribute('aria-expanded','false');bur.textContent=t('menu');}});
+$$('[data-demo]').forEach(b=>b.addEventListener('click',()=>window.afDemo&&afDemo()));
+const nav=$('#nav'),mbar=$('#mbar');
+addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('sc',y>20);mbar.classList.toggle('show',y>innerHeight*.6);},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+$$('.rv,.ph').forEach(el=>io.observe(el));
+render();
+})();
+</script>
+</body>
+</html>

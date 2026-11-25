@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en" data-goal-default="enq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Laman Realty · Homes in Mont Kiara, Bangsar &amp; Cheras</title>
+<meta name="description" content="Laman Realty: a boutique property agency for Mont Kiara, Bangsar and Cheras. Listings on a live map, a mortgage calculator in RM and viewings arranged on WhatsApp.">
+<script src="/website/fusion/af-kit.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--exh:36px;--bg:#f7f6f2;--card:#fff;--ink:#14171a;--mute:#5d646b;--line:#e4e2db;--soft:#efede6;--acc:#e4532f;--on:#fff;--acc2:#1f5f4f;--on2:#fff;--map:#e9e7df;--road:#fff;--disp:"Bricolage Grotesque","Inter",system-ui,sans-serif;--sans:"Inter",system-ui,"PingFang SC","Microsoft YaHei",sans-serif;--r:18px;--sh:0 1px 2px rgba(20,23,26,.05),0 18px 40px -18px rgba(20,23,26,.25)}
+html[data-vibe=warm]{--bg:#f6efe4;--card:#fffaf2;--ink:#2b1d14;--mute:#77604f;--line:#e8d9c5;--soft:#efe3d2;--acc:#c4622d;--acc2:#6d4529;--map:#eadcc8;--road:#fbf4ea}
+html[data-vibe=bold]{--bg:#0c0c0e;--card:#16161a;--ink:#f4f4ef;--mute:#a4a4ad;--line:#2a2a31;--soft:#1d1d22;--acc:#c8ff3e;--on:#0c0c0e;--acc2:#ff4f9a;--on2:#0c0c0e;--map:#18181d;--road:#2b2b33;--sh:0 0 0 1px #2a2a31}
+html[data-vibe=minimal]{--bg:#fff;--card:#fff;--ink:#111;--mute:#666;--line:#e9e9e9;--soft:#f5f5f5;--acc:#2350ff;--acc2:#111;--map:#f2f2f2;--road:#fff;--sh:0 0 0 1px #e9e9e9;--r:10px}
+html[data-vibe=luxe]{--bg:#0f2a24;--card:#14352e;--ink:#f3ecd9;--mute:#bdb59d;--line:#2b4c43;--soft:#173b33;--acc:#c9a54e;--on:#1a1406;--acc2:#e6d29a;--on2:#1a1406;--map:#123029;--road:#1d4239;--sh:0 18px 40px -20px #000}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh) + 84px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px;border-radius:6px}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+/* nav */
+.nav{position:fixed;top:var(--exh);left:0;right:0;z-index:900;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1360px;margin:0 auto;height:68px;display:flex;align-items:center;gap:20px;padding:0 28px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.logo-m{width:36px;height:36px;border-radius:11px;background:var(--acc2);color:var(--on2);display:grid;place-items:center;font:800 18px/1 var(--disp);flex:none;position:relative}
+.logo-m::after{content:"";position:absolute;right:-3px;top:-3px;width:11px;height:11px;border-radius:50%;background:var(--acc);border:2px solid var(--bg)}
+.logo b{font:800 21px/1 var(--disp);letter-spacing:-.02em;white-space:nowrap}
+.logo small{display:block;font-size:10.5px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+.links{display:flex;gap:2px}
+.links a{text-decoration:none;font-size:14px;font-weight:500;padding:8px 12px;border-radius:99px;transition:background .2s}
+.links a:hover{background:var(--soft)}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--card)}
+.lang button{border:0;background:none;padding:5px 10px;border-radius:99px;font-size:12px;font-weight:600;color:var(--mute)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--ink);margin:auto;position:relative;transition:transform .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded=true] span{background:transparent}.burger[aria-expanded=true] span::before{transform:translateY(6px) rotate(45deg)}.burger[aria-expanded=true] span::after{transform:translateY(-6px) rotate(-45deg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:99px;border:1px solid transparent;font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--acc);color:var(--on);box-shadow:0 10px 24px -12px var(--acc)}
+.btn-d{background:var(--ink);color:var(--bg)}
+.btn-g{border-color:var(--line);background:var(--card)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-s{padding:10px 16px;font-size:14px}
+.gc{display:none!important}
+html[data-goal=enq] .gc-enq,html[data-goal=book] .gc-book,html[data-goal=sell] .gc-sell,html[data-goal=cred] .gc-cred{display:inline-flex!important}
+/* layout */
+main{display:flex;flex-direction:column}
+main>.hero{order:-5}
+html[data-goal=enq] .goal-enq,html[data-goal=book] .goal-book,html[data-goal=sell] .goal-sell,html[data-goal=cred] .goal-cred{order:-4}
+section{padding:96px 28px}
+.wrap{max-width:1360px;margin:0 auto}
+.kick{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2)}
+html[data-vibe=bold] .kick,html[data-vibe=luxe] .kick{color:var(--acc)}
+.kick::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc)}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.025em;line-height:1.02}
+h2{font-size:clamp(34px,4.4vw,60px);font-weight:700;margin:14px 0 14px}
+h2 em{font-style:normal;color:var(--acc)}
+html[data-vibe=minimal] h2 em,html[data-vibe=minimal] h1 em{color:var(--acc)}
+.lede{font-size:17.5px;color:var(--mute);max-width:600px}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+.tagS{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);border:1px dashed var(--line);padding:3px 8px;border-radius:99px;white-space:nowrap}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+html[lang=zh-Hans] h1,html[lang=zh-Hans] h2,html[lang=zh-Hans] h3{letter-spacing:0;line-height:1.18}html[lang=zh-Hans] .hero h1{word-spacing:-.3em}
+/* hero */
+.hero{padding:calc(var(--exh) + 104px) 28px 56px}
+.hero-g{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1fr 1.18fr;gap:48px;align-items:center}
+.eyb{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--mute);background:var(--card);border:1px solid var(--line);padding:7px 14px 7px 8px;border-radius:99px}
+.eyb i{width:22px;height:22px;border-radius:50%;background:var(--acc2);display:grid;place-items:center}
+.eyb i::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--on2);animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.5}}
+.hero h1{font-size:clamp(44px,5.6vw,84px);font-weight:800;margin:22px 0 20px}
+.hero h1 em{font-style:normal;color:var(--acc);position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:0;bottom:-.08em;width:100%;height:.28em;overflow:visible}
+.hero h1 em path{stroke:var(--acc);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.2s .7s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-p{font-size:18px;color:var(--mute);max-width:540px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.search{margin-top:30px;display:grid;grid-template-columns:auto 1fr 1fr auto;align-items:center;gap:6px;padding:7px;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh);max-width:600px}
+.seg2{display:flex;background:var(--soft);border-radius:15px;padding:3px}
+.seg2 button{border:0;background:none;padding:10px 14px;border-radius:12px;font-weight:600;font-size:14px;color:var(--mute)}
+.seg2 button[aria-pressed=true]{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.sf{display:flex;flex-direction:column;padding:2px 12px;border-left:1px solid var(--line);min-width:0}
+.sf span{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.sf select{border:0;background:none;font-weight:600;font-size:14.5px;padding:2px 0;min-width:0;width:100%;cursor:pointer}
+.sf select option{color:#111}
+.search .go{width:48px;height:48px;border-radius:15px;border:0;background:var(--acc);color:var(--on);display:grid;place-items:center}
+.search .go svg{width:20px;height:20px}
+.hero-v{position:relative;height:min(68vh,620px);min-height:440px}
+.hv-main{position:absolute;inset:0 0 0 8%;border-radius:28px;overflow:hidden;box-shadow:var(--sh)}
+.hv-main img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:kb 18s ease-out forwards}
+@keyframes kb{to{transform:scale(1)}}
+.hv-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.45))}
+.hv-cap{position:absolute;right:20px;bottom:18px;z-index:2;color:#fff;font-size:12px;font-weight:500;opacity:.85}
+.hv-card{text-decoration:none;color:inherit;position:absolute;left:0;bottom:34px;z-index:3;width:300px;background:var(--card);border-radius:20px;padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);border:1px solid var(--line);animation:up .9s .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.hv-card img{width:100%;height:150px;object-fit:cover;border-radius:13px}
+.hv-card .p{display:flex;justify-content:space-between;align-items:center;padding:12px 6px 4px}
+.hv-card b{font:700 22px/1 var(--disp)}
+.hv-card small{display:block;font-size:12.5px;color:var(--mute);padding:0 6px 6px}
+.hv-pin{white-space:nowrap;position:absolute;z-index:3;display:flex;align-items:center;gap:6px;background:var(--acc);color:var(--on);font-weight:700;font-size:13px;padding:7px 12px;border-radius:99px;box-shadow:0 10px 24px -8px rgba(0,0,0,.5);animation:up .8s cubic-bezier(.2,.8,.2,1) both}
+.hv-pin::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:var(--acc)}
+.hv-chip{position:absolute;top:22px;left:calc(8% + 20px);z-index:3;background:rgba(15,15,15,.55);backdrop-filter:blur(8px);color:#fff;font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:99px}
+.hv-chip b{color:#9ff0c8}
+.strip{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.strip div{font-size:13px;color:var(--mute)}.strip b{display:block;font:700 20px/1.2 var(--disp);color:var(--ink)}
+/* goal: enquiry */
+.enq-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.enq-f{padding:30px}
+.fl{margin-bottom:20px}
+.fl>span,.fl>label{display:block;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);padding:10px 16px;border-radius:99px;font-weight:600;font-size:14px;transition:background .2s,border-color .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.in2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.inp{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:13px 14px;font-size:15px}
+.inp option{color:#111}
+.wa{border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(0,0,0,.4);max-width:440px;justify-self:center;width:100%;background:#efe7dc;color:#111}
+.wa-h{display:flex;align-items:center;gap:10px;background:#1f5e54;color:#fff;padding:12px 16px}
+.wa-h .av{width:36px;height:36px;border-radius:50%;background:#e4532f;display:grid;place-items:center;font:800 16px var(--disp)}
+.wa-h b{font-size:14.5px;display:block}.wa-h small{font-size:11.5px;opacity:.8}
+.wa-b{padding:18px 14px;min-height:230px;display:flex;flex-direction:column;gap:8px;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:12px 12px}
+.bub{background:#d9fdd3;border-radius:12px 3px 12px 12px;padding:10px 12px;margin-left:auto;max-width:90%;font-size:14px;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.bub.in{background:#fff;border-radius:3px 12px 12px 12px;margin-left:0}
+.bub time{display:block;text-align:right;font-size:10.5px;color:#667;margin-top:3px}
+.wa-f{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#f6f1ea;border-top:1px solid #e5dccf}
+.wa-f span{flex:1;font-size:12px;color:#776}
+.wa-f button{background:#1f5e54;color:#fff;border:0;border-radius:99px;padding:10px 16px;font-weight:700;font-size:13.5px;display:flex;gap:6px;align-items:center}
+/* goal: booking */
+.bk{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.bk-p{padding:28px}
+.step{display:flex;align-items:center;gap:10px;font:700 18px/1.2 var(--disp);margin:0 0 14px}
+.step i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--acc2);color:var(--on2);display:grid;place-items:center;font-size:13px;flex:none}
+.bk-sec+.bk-sec{margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.lpick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lp{display:flex;gap:10px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:8px;transition:border-color .2s,box-shadow .2s}
+.lp img{width:58px;height:50px;border-radius:9px;object-fit:cover;flex:none}
+.lp b{display:block;font-size:13.5px;line-height:1.25}.lp small{font-size:12px;color:var(--mute)}
+.lp[aria-pressed=true]{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}
+.dates{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.dt{flex:none;width:64px;border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:10px 0;text-align:center}
+.dt small{display:block;font-size:11px;font-weight:600;text-transform:uppercase;color:var(--mute)}
+.dt b{display:block;font:700 22px/1.1 var(--disp)}
+.dt[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.dt[aria-pressed=true] small{color:inherit;opacity:.7}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.slots .chip{padding:10px 4px;border-radius:12px}
+.bk>*,.enq-g>*,.calc>*,.split>*,.hero-g>*,.ct-g>*,.faq-g>*,.trust>*{min-width:0}
+.sum{position:sticky;top:calc(var(--exh) + 92px);overflow:hidden}
+.sum img{width:100%;height:190px;object-fit:cover}
+.sum-b{padding:22px}
+.sum-b h3{font-size:24px;margin-bottom:4px}
+.sum dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:18px 0;font-size:14px}
+.sum dt{color:var(--mute)}.sum dd{font-weight:600;text-align:right}
+.sum .btn{width:100%}
+.note{font-size:12.5px;color:var(--mute);margin-top:12px}
+/* goal: shop */
+.shop{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prod{overflow:hidden;display:flex;flex-direction:column}
+.prod .ph{height:200px;overflow:hidden}
+.prod .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.prod:hover .ph img{transform:scale(1.05)}
+.prod-b{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod-b h3{font-size:20px}
+.prod-b p{font-size:14px;color:var(--mute)}
+.prod-f{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.prod-f b{font:700 22px var(--disp)}
+.prod-f small{display:block;font-size:11px;color:var(--mute);font-weight:500}
+.cartbtn{position:fixed;right:22px;bottom:96px;z-index:800;display:none;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;border-radius:99px;padding:13px 18px;font-weight:700;box-shadow:0 14px 30px -10px rgba(0,0,0,.5)}
+.cartbtn.show{display:flex}
+.cartbtn i{font-style:normal;background:var(--acc);color:var(--on);border-radius:99px;padding:1px 8px;font-size:13px}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:1200;background:var(--card);border-left:1px solid var(--line);transform:translateX(100%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s;display:flex;flex-direction:column;box-shadow:-30px 0 60px -30px rgba(0,0,0,.5)}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dr-h h3{font-size:22px}
+.x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:none;font-size:20px;line-height:1}
+.dr-l{flex:1;overflow:auto;padding:12px 22px}
+.ci{display:grid;grid-template-columns:54px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.ci img{width:54px;height:54px;border-radius:10px;object-fit:cover}
+.ci b{font-size:14px;display:block;line-height:1.3}.ci small{color:var(--mute);font-size:12.5px}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-weight:700}
+.dr-f{padding:18px 22px;border-top:1px solid var(--line)}
+.tot{display:flex;justify-content:space-between;font:700 22px var(--disp);margin-bottom:14px}
+.pays{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.pays span{font-size:11px;font-weight:700;border:1px solid var(--line);border-radius:6px;padding:5px 8px;color:var(--mute)}
+.empty{color:var(--mute);font-size:14px;padding:30px 0;text-align:center}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+/* goal: proof */
+.deals{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.deal{overflow:hidden}
+.deal .ph{height:230px;position:relative;overflow:hidden}
+.deal .ph img{width:100%;height:100%;object-fit:cover}
+.deal .st{position:absolute;left:14px;top:14px;background:var(--acc);color:var(--on);font-weight:700;font-size:12px;padding:6px 10px;border-radius:99px}
+.deal-b{padding:20px}
+.deal-b h3{font-size:21px;margin-bottom:6px}
+.deal-b p{font-size:14px;color:var(--mute)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+.kpis b{display:block;font:700 19px var(--disp)}.kpis span{font-size:11.5px;color:var(--mute)}
+.marks{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;margin:46px 0 30px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marks span{font:700 19px var(--disp);color:var(--mute);letter-spacing:-.01em;opacity:.8}
+.marks span:nth-child(2n){font-family:Georgia,serif;font-style:italic;font-weight:400}
+.marks span:nth-child(3n){letter-spacing:.2em;font-size:14px;text-transform:uppercase}
+.trust{display:grid;grid-template-columns:1fr 1.4fr;gap:22px}
+.memb{padding:24px;display:grid;gap:14px}
+.memb div{display:flex;gap:14px;align-items:center}
+.memb i{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;flex:none;font:800 13px var(--disp);color:var(--acc2)}
+html[data-vibe=bold] .memb i,html[data-vibe=luxe] .memb i{color:var(--acc)}
+.memb b{display:block;font-size:14.5px}.memb small{color:var(--mute);font-size:12.5px}
+.proc{padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:p}
+.proc div{counter-increment:p}
+.proc div::before{content:"0" counter(p);display:block;font:800 30px var(--disp);color:var(--acc)}
+.proc b{display:block;margin:6px 0 4px}.proc p{font-size:13.5px;color:var(--mute)}
+/* listings split */
+.lx{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filt{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.filt .sep{width:1px;height:28px;background:var(--line)}
+.filt select{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:10px 14px;font-weight:600;font-size:14px}
+.filt select option{color:#111}
+.count{margin-left:auto;font-size:14px;color:var(--mute)}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:start}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-height:760px;overflow:auto;padding:4px 10px 4px 4px;scrollbar-width:thin}
+.lc{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.lc:hover,.lc.on{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--acc)}
+.lc .ph{position:relative;height:170px;overflow:hidden}
+.lc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.lc:hover .ph img{transform:scale(1.06)}
+.lc .bdg{position:absolute;left:10px;top:10px;display:flex;gap:6px}
+.lc .bdg span{background:rgba(255,255,255,.92);color:#14171a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:99px;letter-spacing:.02em}
+.lc .bdg span.r{background:var(--acc2);color:var(--on2)}
+.lc .smp{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;padding:3px 7px;border-radius:99px;letter-spacing:.04em}
+.lc-b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.lc-b .pr{font:700 22px/1.1 var(--disp)}
+.lc-b .pr small{font:500 13px var(--sans);color:var(--mute)}
+.lc-b h3{font:600 15px/1.35 var(--sans);letter-spacing:0}
+.lc-b .ar{font-size:13px;color:var(--mute)}
+.specs{display:flex;gap:14px;font-size:13px;color:var(--mute);margin:8px 0 10px}
+.specs b{color:var(--ink)}
+.lc-b .btn{margin-top:auto;width:100%;padding:11px 14px;font-size:14px}
+.nores{grid-column:1/-1;padding:40px;text-align:center;color:var(--mute)}
+.mapw{position:sticky;top:calc(var(--exh) + 92px);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--map);height:760px}
+.mapw svg{position:absolute;inset:0;width:100%;height:100%}
+.mapw .dist{transition:opacity .3s}
+.mapt{position:absolute;left:16px;bottom:16px;z-index:2;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:600}
+.mapt small{display:block;font-weight:500;color:var(--mute);font-size:11px}
+.pin{position:absolute;z-index:3;transform:translate(-50%,-100%);background:var(--card);color:var(--ink);border:1px solid var(--line);font-weight:700;font-size:12.5px;padding:6px 10px;border-radius:99px;box-shadow:0 6px 16px -6px rgba(0,0,0,.35);transition:transform .2s,background .2s,color .2s;white-space:nowrap}
+.pin::after{content:"";position:absolute;left:50%;bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:var(--card);transition:border-color .2s}
+.pin.on,.pin:hover{background:var(--acc);color:var(--on);border-color:var(--acc);transform:translate(-50%,-100%) scale(1.14);z-index:5}
+.pin.on::after,.pin:hover::after{border-top-color:var(--acc)}
+.pin.off{display:none}
+.mapl{position:absolute;right:14px;bottom:14px;z-index:2;font-size:11px;color:var(--mute);background:var(--card);padding:4px 8px;border-radius:8px;border:1px solid var(--line)}
+/* modal */
+.modal{position:fixed;left:50%;top:50%;z-index:1200;width:min(460px,calc(100% - 32px));max-height:calc(100% - 40px);overflow:auto;transform:translate(-50%,-46%);opacity:0;pointer-events:none;visibility:hidden;transition:opacity .3s,transform .3s,visibility 0s .3s;background:var(--card);border-radius:22px;border:1px solid var(--line)}
+.modal.open{opacity:1;transform:translate(-50%,-50%);pointer-events:auto;visibility:visible;transition:opacity .3s,transform .3s}
+.md-h{display:flex;gap:12px;align-items:center;padding:16px;border-bottom:1px solid var(--line)}
+.md-h img{width:64px;height:56px;border-radius:10px;object-fit:cover}
+.md-h b{display:block;font-size:15px;line-height:1.3}.md-h small{color:var(--mute);font-size:13px}
+.md-h .x{margin-left:auto;flex:none}
+.md-b{padding:18px}
+.md-b .wa{margin-top:16px;max-width:none;box-shadow:none;border:1px solid var(--line)}
+.md-b .wa-b{min-height:0}
+/* calculator */
+.calc{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:stretch}
+.calc-f{padding:30px}
+.rg{margin-bottom:24px}
+.rg-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.rg-h span{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.rg-h output{font:700 24px var(--disp)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:26px;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:99px;background:linear-gradient(90deg,var(--acc) var(--p,50%),var(--line) var(--p,50%))}
+input[type=range]::-moz-range-track{height:6px;border-radius:99px;background:var(--line)}
+input[type=range]::-moz-range-progress{height:6px;border-radius:99px;background:var(--acc)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--card);border:3px solid var(--acc);margin-top:-8px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--card);border:3px solid var(--acc)}
+.rg-t{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mute)}
+.calc-r{padding:30px;background:var(--acc2);color:var(--on2);border-color:transparent;display:flex;flex-direction:column}
+html[data-vibe=bold] .calc-r{background:#1d1d22;color:var(--ink)}
+.calc-r .lbl{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.mo{font:800 clamp(48px,6vw,76px)/1 var(--disp);letter-spacing:-.03em;margin:8px 0 2px}
+.mo small{font-size:.32em;font-weight:600;opacity:.7;letter-spacing:0}
+.donut{display:flex;align-items:center;gap:22px;margin:24px 0}
+.donut svg{width:120px;height:120px;flex:none;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:16}
+.dl{display:grid;gap:10px;font-size:14px;flex:1}
+.dl div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:8px}
+html[data-vibe=bold] .dl div{border-color:var(--line)}
+.dl i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px}
+.calc-r .note{color:inherit;opacity:.75}
+.calc-r .btn{margin-top:auto;background:var(--card);color:var(--ink)}
+/* areas */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.area{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;display:flex;align-items:flex-end;color:#fff;isolation:isolate}
+.area img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s}
+.area:hover img{transform:scale(1.06)}
+.area::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,0) 10%,rgba(0,0,0,.5) 42%,rgba(0,0,0,.88))}
+.area-b{padding:24px}
+.area-b h3{font-size:34px;margin-bottom:6px}
+.area-b p{font-size:14.5px;opacity:.88;margin-bottom:14px}
+.area-b ul{list-style:none;display:grid;gap:6px;font-size:13.5px}
+.area-b li::before{content:"→ ";color:#ffb39f}
+.area-b .from{display:flex;gap:18px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.25);font-size:12px;opacity:.9}
+.area-b .from b{display:block;font:700 18px var(--disp)}
+/* agents */
+.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ag{overflow:hidden}
+.ag .ph{height:300px;overflow:hidden}
+.ag .ph img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .6s}
+.ag:hover .ph img{transform:scale(1.04)}
+.ag-b{padding:20px}
+.ag-b h3{font-size:22px}
+.ag-b .ren{font-size:12px;color:var(--mute);margin:2px 0 10px}
+.ag-b p{font-size:14px;color:var(--mute);margin-bottom:12px}
+.langs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.langs span{font-size:12px;font-weight:600;background:var(--soft);padding:4px 10px;border-radius:99px}
+.rev{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.rev blockquote{padding:26px;font:500 19px/1.45 var(--disp);letter-spacing:-.01em}
+.rev cite{display:block;margin-top:14px;font:500 13px var(--sans);color:var(--mute);font-style:normal}
+.rev cite b{color:var(--ink)}
+/* faq */
+.faq-g{display:grid;grid-template-columns:1fr 1.5fr;gap:48px}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;padding:22px 0;text-align:left;font:600 18px/1.35 var(--sans)}
+.qa button i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .3s,background .3s}
+.qa button i::before,.qa button i::after{content:"";position:absolute;left:8px;right:8px;top:14px;height:2px;background:currentColor}
+.qa button i::after{transform:rotate(90deg);transition:transform .3s}
+.qa button[aria-expanded=true] i{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.qa button[aria-expanded=true] i::after{transform:none}
+.qa-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.qa-a>div{overflow:hidden}
+.qa-a p{padding:0 0 22px;color:var(--mute);max-width:640px}
+.qa.open .qa-a{grid-template-rows:1fr}
+/* contact */
+.ct{background:var(--ink);color:var(--bg)}
+html[data-vibe=bold] .ct{background:#141418;color:var(--ink)}
+html[data-vibe=luxe] .ct{background:#0a1f1a;color:var(--ink)}
+.ct .kick{color:var(--acc)}
+.ct-g{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.ct h2{color:inherit}
+.ct p.lede{color:inherit;opacity:.72}
+.ct-list{display:grid;gap:16px;margin:30px 0}
+.ct-list div{display:flex;gap:14px;align-items:flex-start}
+.ct-list i{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex:none}
+.ct-list svg{width:18px;height:18px}
+.ct-list b{display:block}.ct-list span{opacity:.72;font-size:14.5px}
+.ct-ph{border-radius:24px;overflow:hidden;height:440px;position:relative}
+.ct-ph img{width:100%;height:100%;object-fit:cover}
+.ct-ph .lb{position:absolute;left:18px;bottom:18px;background:var(--card);color:var(--ink);padding:12px 16px;border-radius:14px;font-size:13.5px;box-shadow:var(--sh)}
+.ct-ph .lb b{display:block;font:700 17px var(--disp)}
+footer{background:var(--ink);color:var(--bg);padding:0 28px 110px;font-size:13.5px}
+html[data-vibe=bold] footer{background:#141418;color:var(--ink)}
+html[data-vibe=luxe] footer{background:#0a1f1a;color:var(--ink)}
+.ft{max-width:1360px;margin:0 auto;border-top:1px solid rgba(255,255,255,.14);padding-top:30px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;opacity:.75}
+.ft b{font:800 18px var(--disp)}
+/* sticky mobile cta */
+.mcta{display:none}
+@media(max-width:1180px){.links a{padding:8px 9px;font-size:13.5px}}
+@media(max-width:1060px){
+ .burger{display:block}
+ .links{position:fixed;top:calc(var(--exh) + 68px);left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 20px 20px;gap:0;transform:translateY(-10px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;box-shadow:0 30px 40px -30px rgba(0,0,0,.4)}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links a{padding:14px 6px;border-radius:0;border-bottom:1px solid var(--line);font-size:16px}
+ html[data-goal] .nav-in .nav-cta{display:none!important}
+ .hero-g,.enq-g,.bk,.calc,.ct-g,.faq-g,.trust{grid-template-columns:1fr}
+ .split{grid-template-columns:1fr}
+ .mapw{position:relative;top:0;height:380px;order:-1}
+ .list{max-height:none;overflow:visible;padding:0}
+ .sum{position:relative;top:0}
+ .shop,.deals,.areas,.agents{grid-template-columns:1fr 1fr}
+ .proc{grid-template-columns:1fr 1fr}
+ .hero-v{height:520px}
+}
+@media(max-width:640px){
+ section{padding:72px 16px}
+ .nav-in{padding:0 16px;gap:10px;height:62px}
+ .links{top:calc(var(--exh) + 62px)}
+ .logo small{display:none}.logo b{font-size:19px}
+ .lang button{padding:5px 7px}
+ .hero{padding:calc(var(--exh) + 88px) 16px 40px}
+ .hero h1{font-size:44px}
+ html[lang=zh-Hans] .hero h1{font-size:40px}
+ .hero-p{font-size:16.5px}
+ .search{grid-template-columns:1fr 1fr;border-radius:20px}
+ .seg2{grid-column:1/-1}.seg2 button{flex:1}
+ .sf{border-left:0;background:var(--soft);border-radius:12px;padding:8px 12px}
+ .search .go{grid-column:1/-1;width:100%;height:46px}
+ .hero-g{gap:26px}.hero-v{height:250px;min-height:0;order:-1}.hv-main{border-radius:22px}
+ .hv-main{left:0}
+ .hv-card{width:auto;bottom:12px;left:12px;padding:2px 4px;border-radius:14px}.hv-card img{display:none}.hv-card .p{padding:8px 6px 2px;gap:10px}.hv-card b{font-size:17px}.hv-card small{font-size:11.5px}.hv-cap{display:none}
+ .hv-chip{left:12px;top:12px;font-size:11.5px}
+ .hv-pin.p3{display:none}.hv-pin.p2{left:auto!important;right:14px;top:40%!important;font-size:12px}
+ .strip{gap:18px}
+ .in2,.lpick{grid-template-columns:1fr}
+ .slots{grid-template-columns:repeat(3,1fr)}
+ .shop,.deals,.areas,.agents,.rev,.list{grid-template-columns:1fr}
+ .proc{grid-template-columns:1fr}
+ .mapw{height:320px}
+ .enq-f,.bk-p,.calc-f,.calc-r{padding:20px}
+ .filt .seg2{width:100%}.filt .seg2 button{flex:1}.filt select{flex:1 1 40%;min-width:0}.filt .sep{display:none}.count{width:100%;margin:0}
+ .area{min-height:380px}
+ .ct-ph{height:300px}
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:850;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+ .mcta .btn{flex:1;padding:13px 10px;font-size:14.5px}
+ .cartbtn{bottom:84px;right:14px}
+ .qa button{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.hero h1 em path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Property agency · Listings on a live map</span><a class="exh-cta" href="/website/?t=laman-realty#finder">Build one like this →</a></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.3z" fill="currentColor"/></symbol><symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></symbol><symbol id="clk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol></svg>
+
+<header class="nav">
+ <div class="nav-in">
+  <a class="logo" href="#top" aria-label="Home"><span class="logo-m" data-af-initial>L</span><span><b data-af-name>Laman Realty</b><small data-i="logoS">Property agency</small></span></a>
+  <nav class="links" id="links" aria-label="Main">
+   <a href="#listings" data-i="n1">Listings</a><a href="#calculator" data-i="n2">Calculator</a><a href="#areas" data-i="n3">Neighbourhoods</a><a href="#agents" data-i="n4">Agents</a><a href="#faq" data-i="n5">FAQ</a><a href="#contact" data-i="n6">Contact</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+  <a class="btn btn-d btn-s nav-cta gc gc-enq" href="#enquire" data-i="navEnq">WhatsApp us</a>
+  <a class="btn btn-d btn-s nav-cta gc gc-book" href="#viewing" data-i="navBook">Book a viewing</a>
+  <a class="btn btn-d btn-s nav-cta gc gc-sell" href="#shop" data-i="navSell">Services</a>
+  <a class="btn btn-d btn-s nav-cta gc gc-cred" href="#proof" data-i="navCred">Recent deals</a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Menu"><span></span></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div class="hero-g">
+  <div>
+   <span class="eyb"><i></i><span><span data-i="eyb">Boutique agency ·</span> <span data-af-area>Bangsar</span></span></span>
+   <h1 id="h1"><span data-i="h1a">Find a home in KL that fits</span> <em><span data-i="h1b">the way you live.</span><svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C70 4 180 2 296 10"/></svg></em></h1>
+   <p class="hero-p" data-i="heroP">Condos, terraces and family homes in Mont Kiara, Bangsar and Cheras. Clear prices, viewings arranged on WhatsApp, and REN-registered agents who know every block.</p>
+   <form class="search" id="search" role="search" aria-label="Search listings">
+    <div class="seg2" role="group" aria-label="Buy or rent"><button type="button" data-t="buy" aria-pressed="true" data-i="buy">Buy</button><button type="button" data-t="rent" aria-pressed="false" data-i="rent">Rent</button></div>
+    <label class="sf"><span data-i="area">Area</span><select id="sArea"><option value="all" data-i="allAreas">All areas</option><option value="mk">Mont Kiara</option><option value="bs">Bangsar</option><option value="ch">Cheras</option></select></label>
+    <label class="sf"><span data-i="beds">Bedrooms</span><select id="sBeds"><option value="0" data-i="any">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></label>
+    <button class="go" type="submit" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+   </form>
+   <div class="hero-cta">
+    <a class="btn btn-a gc gc-enq" href="#enquire"><svg><use href="#wa"/></svg><span data-i="cEnq">Tell us what you need on WhatsApp</span></a>
+    <a class="btn btn-a gc gc-book" href="#viewing"><svg><use href="#cal"/></svg><span data-i="cBook">Book a viewing this week</span></a>
+    <a class="btn btn-a gc gc-sell" href="#shop"><svg><use href="#bag"/></svg><span data-i="cSell">Shop owner &amp; tenant services</span></a>
+    <a class="btn btn-a gc gc-cred" href="#proof"><span data-i="cCred">See our recent deals</span><svg><use href="#arr"/></svg></a>
+    <a class="btn btn-g" href="#listings" data-i="cList">Browse the map</a>
+   </div>
+   <div class="strip"><div><b>3</b><span data-i="st1">neighbourhoods we know street by street</span></div><div><b>REN</b><span data-i="st2">registered agents only</span></div><div><b>7 <span data-i="days">days</span></b><span data-i="st3">a week for viewings</span></div></div>
+  </div>
+  <div class="hero-v">
+   <div class="hv-main"><img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80" alt="Kuala Lumpur skyline at dusk with the Petronas Twin Towers" fetchpriority="high"><span class="hv-cap" data-i="cap">Kuala Lumpur at dusk</span></div>
+   <span class="hv-chip"><b>●</b> <span data-i="chip">Listings updated weekly · sample data</span></span>
+   <span class="hv-pin" style="left:46%;top:30%;animation-delay:.9s">RM 1.28M</span>
+   <span class="hv-pin p2" style="left:72%;top:46%;animation-delay:1.1s">RM 4,800/<span data-i="mo">mo</span></span>
+   <span class="hv-pin p3" style="left:58%;top:62%;animation-delay:1.3s">RM 598k</span>
+   <a class="hv-card" href="#listings"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Bright living room of a featured condo"><div class="p"><b>RM 1,280,000</b><span class="tagS" data-i="sample">Sample</span></div><small><span data-i="feat">Featured · 3 bed · 1,420 sq ft · Mont Kiara</span></small></a>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: ENQUIRY -->
+<section class="goal-enq" id="enquire">
+ <div class="wrap enq-g">
+  <div class="rv">
+   <span class="kick" data-i="eK">Quick enquiry</span>
+   <h2 data-ih="eH">Tell us the home. <em>We'll shortlist it.</em></h2>
+   <p class="lede" data-i="eP">Three taps and we have your brief. An agent replies on WhatsApp with matching units, usually the same day.</p>
+   <div class="card enq-f" style="margin-top:26px">
+    <div class="fl"><span data-i="eQ1">I want to</span><div class="chips" id="eWant"></div></div>
+    <div class="in2">
+     <div class="fl"><label for="eArea" data-i="area">Area</label><select class="inp" id="eArea"><option>Mont Kiara</option><option>Bangsar</option><option>Cheras</option><option value="any" data-i="anyArea">Not sure yet</option></select></div>
+     <div class="fl"><label for="eBud" data-i="budget">Budget</label><select class="inp" id="eBud"></select></div>
+    </div>
+    <div class="fl" style="margin:0"><label for="eName" data-i="yName">Your name</label><input class="inp" id="eName" autocomplete="given-name" maxlength="40" placeholder="Aisyah"></div>
+   </div>
+  </div>
+  <div class="wa rv" aria-live="polite">
+   <div class="wa-h"><span class="av" data-af-initial>L</span><div><b data-af-name>Laman Realty</b><small data-i="waOn">online · replies in about 1 hour</small></div></div>
+   <div class="wa-b"><div class="bub in" data-i="waHi">Hi! Tell us what you're looking for and we'll send matching units. 🏡</div><div class="bub" id="eMsg"></div></div>
+   <div class="wa-f"><span data-i="waNote">Preview of your message</span><button type="button" class="demo-wa"><svg width="16" height="16"><use href="#wa"/></svg><span data-i="send">Send on WhatsApp</span></button></div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: BOOKING -->
+<section class="goal-book" id="viewing" style="background:var(--soft)">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="bK">Book a viewing</span><h2 data-ih="bH">Pick a home, a day, <em>a time.</em></h2><p class="lede" data-i="bP">Viewings run seven days a week, including most public holidays. Your agent meets you at the lobby or the gate.</p></div></div>
+  <div class="bk">
+   <div class="card bk-p rv">
+    <div class="bk-sec"><p class="step"><i>1</i><span data-i="b1">Which home?</span></p><div class="lpick" id="bList"></div></div>
+    <div class="bk-sec"><p class="step"><i>2</i><span data-i="b2">Which day?</span></p><div class="dates" id="bDates"></div></div>
+    <div class="bk-sec"><p class="step"><i>3</i><span data-i="b3">What time?</span></p><div class="slots" id="bSlots"></div><p class="note" data-i="bNote">Greyed-out slots are already taken (sample).</p></div>
+   </div>
+   <aside class="card sum rv" aria-live="polite">
+    <img id="sImg" src="" alt="">
+    <div class="sum-b">
+     <span class="tagS" data-i="sumK">Your viewing</span>
+     <h3 id="sName" style="margin-top:10px"></h3>
+     <dl><dt data-i="dWhen">When</dt><dd id="sWhen">—</dd><dt data-i="dPrice">Price</dt><dd id="sPrice"></dd><dt data-i="dAgent">Agent</dt><dd id="sAgent"></dd><dt data-i="dMeet">Meet at</dt><dd id="sMeet"></dd></dl>
+     <button class="btn btn-a" type="button" id="bConfirm"><svg><use href="#cal"/></svg><span data-i="bConf">Confirm viewing</span></button>
+     <p class="note" data-i="bConfN">We'll confirm on WhatsApp and send the agent's name, car plate and the lobby code.</p>
+    </div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- LISTINGS SPLIT -->
+<section class="lx" id="listings">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="lK">Listings on the map</span><h2 data-ih="lH">See where it is <em>before</em> you see it.</h2><p class="lede" data-i="lP">Hover a home to find it on the map. Filter by buy or rent, price and bedrooms.</p></div><span class="tagS" data-i="lSmp">All listings are sample data</span></div>
+  <div class="filt rv" id="filt">
+   <div class="seg2" role="group" aria-label="Buy or rent" id="fType"><button type="button" data-t="buy" aria-pressed="true" data-i="buy">Buy</button><button type="button" data-t="rent" aria-pressed="false" data-i="rent">Rent</button></div>
+   <span class="sep"></span>
+   <select id="fArea" aria-label="Area"><option value="all" data-i="allAreas">All areas</option><option value="mk">Mont Kiara</option><option value="bs">Bangsar</option><option value="ch">Cheras</option></select>
+   <select id="fPrice" aria-label="Maximum price"></select>
+   <div class="chips" id="fBeds" role="group" aria-label="Bedrooms"></div>
+   <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <div class="split">
+   <div class="list" id="list"></div>
+   <div class="mapw rv" id="map">
+    <div class="mapt"><span data-i="mapT">Our patch, seen from</span> <span data-af-area>Bangsar</span><small data-i="mapS">Stylised map · not to scale</small></div>
+    <svg viewBox="0 0 600 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+     <defs><pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="var(--line)"/></pattern></defs>
+     <rect width="600" height="760" fill="url(#dots)"/>
+     <path class="dist" d="M40 60 C140 30 260 50 300 120 C330 190 270 280 170 290 C80 300 20 230 30 150Z" fill="var(--acc2)" opacity=".12"/>
+     <path class="dist" d="M60 420 C120 360 250 370 290 430 C330 500 280 600 180 610 C90 615 30 540 60 420Z" fill="var(--acc2)" opacity=".12"/>
+     <path class="dist" d="M380 300 C470 260 580 320 575 420 C570 520 500 600 420 590 C350 580 320 500 330 420 C335 360 350 320 380 300Z" fill="var(--acc)" opacity=".1"/>
+     <g fill="none" stroke="var(--road)" stroke-linecap="round"><path d="M0 330 C150 340 260 330 600 250" stroke-width="16"/><path d="M220 0 C240 200 230 420 300 760" stroke-width="12"/><path d="M330 330 C400 420 420 560 600 700" stroke-width="12"/><path d="M0 520 C120 500 200 470 300 420" stroke-width="9"/><path d="M300 120 C380 160 430 220 450 300" stroke-width="7"/></g>
+     <path d="M0 690 C140 650 260 700 420 660 C500 640 560 660 600 650" fill="none" stroke="#7fb4d9" stroke-width="6" opacity=".5"/>
+     <g font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="var(--mute)"><text x="78" y="88">MONT KIARA</text><text x="96" y="452">BANGSAR</text><text x="392" y="292">CHERAS</text></g>
+     <g font-family="Inter,sans-serif" font-size="9.5" font-weight="600" letter-spacing="1.5" fill="var(--mute)" opacity=".75"><text x="20" y="322">SPRINT</text><text x="470" y="640" transform="rotate(38 470 640)">JLN CHERAS</text><text x="20" y="512">FEDERAL HWY</text></g>
+     <g transform="translate(318 318)"><circle r="24" fill="var(--card)" stroke="var(--line)"/><path d="M-6 10V-12M6 10V-12M-6-12l0-6M6-12l0-6M-6 0H6" stroke="var(--ink)" stroke-width="2.2" fill="none"/><text y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="var(--ink)">KLCC</text></g>
+    </svg>
+    <div id="pins"></div>
+    
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="cK">Monthly instalment calculator</span><h2 data-ih="cH">What will it cost you <em>each month?</em></h2><p class="lede" data-i="cP">Move the sliders to see an estimated loan repayment in ringgit. Ask us for the latest bank rates for your profile.</p></div></div>
+  <div class="calc">
+   <div class="card calc-f rv">
+    <div class="rg"><div class="rg-h"><span data-i="kPrice">Property price</span><output id="oPrice"></output></div><input type="range" id="rPrice" min="300000" max="3000000" step="10000" value="850000" aria-label="Property price"><div class="rg-t"><span>RM 300k</span><span>RM 3M</span></div></div>
+    <div class="rg"><div class="rg-h"><span data-i="kDown">Down payment</span><output id="oDown"></output></div><input type="range" id="rDown" min="10" max="50" step="5" value="10" aria-label="Down payment percent"><div class="rg-t"><span>10%</span><span>50%</span></div></div>
+    <div class="rg"><div class="rg-h"><span data-i="kRate">Interest rate (p.a.)</span><output id="oRate"></output></div><input type="range" id="rRate" min="3" max="6" step="0.05" value="4.2" aria-label="Interest rate"><div class="rg-t"><span>3.00%</span><span>6.00%</span></div></div>
+    <div class="rg" style="margin:0"><div class="rg-h"><span data-i="kTen">Loan tenure</span><output id="oTen"></output></div><input type="range" id="rTen" min="5" max="35" step="1" value="35" aria-label="Loan tenure in years"><div class="rg-t"><span>5</span><span>35</span></div></div>
+   </div>
+   <div class="card calc-r rv" aria-live="polite">
+    <span class="lbl" data-i="kMo">Estimated monthly instalment</span>
+    <div class="mo" id="oMo">RM 0<small></small></div>
+    <div class="donut">
+     <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="48" stroke="rgba(255,255,255,.2)"/><circle id="dArc" cx="60" cy="60" r="48" stroke="var(--acc)" stroke-dasharray="0 302" stroke-linecap="round"/></svg>
+     <div class="dl"><div><span><i style="background:rgba(255,255,255,.35)"></i><span data-i="kLoan">Loan amount</span></span><b id="oLoan"></b></div><div><span><i style="background:var(--acc)"></i><span data-i="kInt">Total interest</span></span><b id="oInt"></b></div><div><span data-i="kInc">Suggested income</span><b id="oInc"></b></div></div>
+    </div>
+    <p class="note" data-i="kNote">Estimate only, not a loan offer. Excludes legal fees, stamp duty, MRTA and valuation. Suggested income assumes repayments stay near a third of take-home pay.</p>
+    <a class="btn" href="#enquire" data-i="kCta" style="margin-top:20px">Ask an agent about financing</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- AREAS -->
+<section id="areas" style="padding-top:20px">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="aK">Neighbourhood guides</span><h2 data-ih="aH">Three neighbourhoods. <em>Known by heart.</em></h2></div><p class="lede" data-i="aP">We only work where we live and walk. That's how we know which block floods, which lift is slow and which mamak stays open late.</p></div>
+  <div class="areas" id="areaGrid"></div>
+ </div>
+</section>
+
+<!-- GOAL: SHOP -->
+<section class="goal-sell" id="shop" style="background:var(--soft)">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="pK">Owner &amp; tenant services</span><h2 data-ih="pH">Letting or moving in? <em>Sorted, fixed price.</em></h2><p class="lede" data-i="pP">Book the extras online. Pay by card, FPX, GrabPay or Touch 'n Go eWallet.</p></div><span class="tagS" data-i="pSmp">Sample prices</span></div>
+  <div class="shop" id="shopGrid"></div>
+ </div>
+</section>
+
+<!-- GOAL: PROOF -->
+<section class="goal-cred" id="proof">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="rK">Recent deals</span><h2 data-ih="rH">Homes we've sold and let <em>lately.</em></h2><p class="lede" data-i="rP">A few recent stories. Figures are sample data for this concept.</p></div></div>
+  <div class="deals" id="deals"></div>
+  <div class="marks rv" aria-label="Clients (fictional)"><span>Kiara Holdings</span><span>Seri Bayu Dev.</span><span>Northgate Relocation</span><span>Hartwell &amp; Co</span><span>Tanjung Asset</span><span>Lumen Expat Housing</span></div>
+  <div class="trust">
+   <div class="card memb rv">
+    <div><i>BOVAEA</i><span><b data-i="m1">Registered estate agency</b><small data-i="m1s">Board of Valuers, Appraisers, Estate Agents &amp; Property Managers · E (3) 0000 (sample)</small></span></div>
+    <div><i>REN</i><span><b data-i="m2">Every agent is REN-registered</b><small data-i="m2s">Ask to see the tag. Numbers on this page are samples.</small></span></div>
+    <div><i>MIEA</i><span><b data-i="m3">Member, Malaysian Institute of Estate Agents</b><small data-i="m3s">Membership shown as a sample</small></span></div>
+   </div>
+   <div class="card proc rv" id="proc"></div>
+  </div>
+ </div>
+</section>
+
+<!-- AGENTS -->
+<section id="agents">
+ <div class="wrap">
+  <div class="sh rv"><div><span class="kick" data-i="gK">Your agents</span><h2 data-ih="gH">Real people. <em>Registered.</em> Reachable.</h2></div><p class="lede" data-i="gP">One agent stays with you from the first viewing to the keys. They answer WhatsApp at night too, within reason.</p></div>
+  <div class="agents" id="agentGrid"></div>
+  <div class="rev">
+   <blockquote class="card rv"><span data-i="q1">"We were relocating from Penang with two kids. Hana shortlisted four condos near the schools and we signed on the second weekend."</span><cite><b>Melissa &amp; Kar Wai</b> · <span data-i="q1c">rented in Mont Kiara · sample review</span></cite></blockquote>
+   <blockquote class="card rv"><span data-i="q2">"Clear advice on pricing our terrace. No pressure, and every viewing came with feedback the same evening."</span><cite><b>Encik Rahman</b> · <span data-i="q2c">sold in Cheras · sample review</span></cite></blockquote>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--soft)">
+ <div class="wrap faq-g">
+  <div class="rv"><span class="kick">FAQ</span><h2 data-ih="fH">Before you <em>sign anything.</em></h2><p class="lede" data-i="fP">Straight answers to what buyers and tenants ask us most.</p></div>
+  <div id="faqList" class="rv"></div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section class="ct" id="contact">
+ <div class="wrap ct-g">
+  <div class="rv">
+   <span class="kick" data-i="tK">Visit or message</span>
+   <h2 data-ih="tH">Coffee's on us at the <em>office.</em></h2>
+   <p class="lede" data-i="tP">Drop by for a chat about the market, or skip the trip and WhatsApp us your brief.</p>
+   <div class="ct-list">
+    <div><i><svg><use href="#pin"/></svg></i><span><b><span data-af-name>Laman Realty</span> · <span data-af-area>Bangsar</span></b><span data-i="addr">Lot 2-1, Jalan Sample, 59100 Kuala Lumpur (sample address)</span></span></div>
+    <div><i><svg><use href="#clk"/></svg></i><span><b data-i="hrs">Mon–Sat 9:30am–7pm · Sun by appointment</b><span data-i="hrs2">Viewings daily until 8pm. Closed on Hari Raya and Chinese New Year.</span></span></div>
+    <div><i><svg><use href="#wa"/></svg></i><span><b>+60 12-000 0000</b><span data-i="waS">WhatsApp, calls and Telegram (sample number)</span></span></div>
+   </div>
+   <a class="btn btn-a demo-wa" href="#"><svg><use href="#wa"/></svg><span data-i="ctWa">Message us on WhatsApp</span></a>
+  </div>
+  <div class="ct-ph rv"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=80" alt="Warm, light-filled living room"><div class="lb"><b data-af-name>Laman Realty</b><span data-i="ctLb">5 min from the LRT · parking at the back</span></div></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="ft"><span><b data-af-name>Laman Realty</b> <span data-i="ft1">Sdn Bhd (sample) · Registered estate agency E (3) 0000 (sample) · Fictional business for a design concept.</span></span><span data-i="ft2">Design concept by Aurelion</span></div>
+</footer>
+
+<div class="mcta">
+ <a class="btn btn-g" href="#listings" data-i="mList">Map</a>
+ <a class="btn btn-a gc gc-enq" href="#enquire"><svg><use href="#wa"/></svg><span data-i="mEnq">WhatsApp us</span></a>
+ <a class="btn btn-a gc gc-book" href="#viewing"><svg><use href="#cal"/></svg><span data-i="navBook">Book a viewing</span></a>
+ <a class="btn btn-a gc gc-sell" href="#shop"><svg><use href="#bag"/></svg><span data-i="navSell">Services</span></a>
+ <a class="btn btn-a gc gc-cred" href="#proof"><span data-i="navCred">Recent deals</span></a>
+</div>
+
+<button class="cartbtn" id="cartBtn" type="button"><svg width="18" height="18"><use href="#bag"/></svg><span data-i="cart">Cart</span><i id="cartN">0</i></button>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Cart" aria-hidden="true">
+ <div class="dr-h"><h3 data-i="cart">Cart</h3><button class="x" type="button" data-close aria-label="Close">×</button></div>
+ <div class="dr-l" id="cartL"></div>
+ <div class="dr-f"><div class="tot"><span data-i="total">Total</span><span id="cartT">RM 0</span></div><button class="btn btn-a" type="button" id="checkout" style="width:100%" data-i="checkout">Checkout</button><div class="pays"><span>Card</span><span>FPX</span><span>GrabPay</span><span>Touch 'n Go</span></div></div>
+</aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mdName" aria-hidden="true">
+ <div class="md-h"><img id="mdImg" src="" alt=""><div><b id="mdName"></b><small id="mdSub"></small></div><button class="x" type="button" data-close aria-label="Close">×</button></div>
+ <div class="md-b">
+  <div class="fl"><span data-i="mdDay">When suits you?</span><div class="chips" id="mdDays"></div></div>
+  <div class="fl" style="margin:0"><span data-i="mdTime">Time of day</span><div class="chips" id="mdTimes"></div></div>
+  <div class="wa"><div class="wa-b"><div class="bub" id="mdMsg"></div></div><div class="wa-f"><span data-i="waNote">Preview of your message</span><button type="button" class="demo-wa"><svg width="16" height="16"><use href="#wa"/></svg><span data-i="send">Send on WhatsApp</span></button></div></div>
+ </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var H=document.documentElement,K=window.AFK||{};
+var U=function(id,w){return 'https://images.unsplash.com/photo-'+id+'?auto=format&fit=crop&w='+(w||700)+'&q=80'};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var L='en';
+var T={
+en:{logoS:'Property agency',n1:'Listings',n2:'Calculator',n3:'Neighbourhoods',n4:'Agents',n5:'FAQ',n6:'Contact',navEnq:'WhatsApp us',navBook:'Book a viewing',navSell:'Services',navCred:'Recent deals',
+eyb:'Boutique agency ·',h1a:'Find a home in KL that fits',h1b:'the way you live.',heroP:'Condos, terraces and family homes in Mont Kiara, Bangsar and Cheras. Clear prices, viewings arranged on WhatsApp, and REN-registered agents who know every block.',
+buy:'Buy',rent:'Rent',area:'Area',allAreas:'All areas',beds:'Bedrooms',any:'Any',cEnq:'Tell us what you need on WhatsApp',cBook:'Book a viewing this week',cSell:"Shop owner & tenant services",cCred:'See our recent deals',cList:'Browse the map',
+st1:'neighbourhoods we know street by street',st2:'registered agents only',days:'days',st3:'a week for viewings',cap:'Kuala Lumpur at dusk',chip:'Listings updated weekly · sample data',mo:'mo',sample:'Sample',feat:'Featured · 3 bed · 1,420 sq ft · Mont Kiara',
+eK:'Quick enquiry',eH:"Tell us the home. <em>We'll shortlist it.</em>",eP:'Three taps and we have your brief. An agent replies on WhatsApp with matching units, usually the same day.',eQ1:'I want to',anyArea:'Not sure yet',budget:'Budget',yName:'Your name',waOn:'online · replies in about 1 hour',waHi:"Hi! Tell us what you're looking for and we'll send matching units. 🏡",waNote:'Preview of your message',send:'Send on WhatsApp',
+wBuy:'Buy',wRent:'Rent',wSell:'Sell my home',msgHi:'Hi {n}! I’m {name}.',msgWant:{buy:'I’d like to buy a home',rent:'I’d like to rent a home',sell:'I’d like to sell my property'},msgIn:'in',msgAny:'any of your areas',msgBud:'Budget',msgEnd:'Could you send me a few options? Thanks!',
+bK:'Book a viewing',bH:'Pick a home, a day, <em>a time.</em>',bP:'Viewings run seven days a week, including most public holidays. Your agent meets you at the lobby or the gate.',b1:'Which home?',b2:'Which day?',b3:'What time?',bNote:'Greyed-out slots are already taken (sample).',sumK:'Your viewing',dWhen:'When',dPrice:'Price',dAgent:'Agent',dMeet:'Meet at',bConf:'Confirm viewing',bConfN:"We'll confirm on WhatsApp and send the agent's name, car plate and the lobby code.",pickTime:'Pick a time',meetL:'Guardhouse / lobby',bDemo:'Demo: on your site this sends the viewing request to your agent on WhatsApp.',today:'Today',
+lK:'Listings on the map',lH:'See where it is <em>before</em> you see it.',lP:'Hover a home to find it on the map. Filter by buy or rent, price and bedrooms.',lSmp:'All listings are sample data',anyPrice:'Any price',upTo:'Up to',homes:'homes',home:'home',noRes:'No homes match. Try a higher price or fewer bedrooms.',reqV:'Request a viewing',bed:'bed',bath:'bath',sqft:'sq ft',forRent:'For rent',forSale:'For sale',smpL:'SAMPLE',
+mapT:'Our patch, seen from',mapS:'Stylised map · not to scale · tap a pin',mapL:'Tap a pin to jump to the listing',
+mdDay:'When suits you?',mdTime:'Time of day',tMorn:'Morning',tAft:'Afternoon',tEve:'Evening',mdMsg:'Hi {n}, I’d like to view {l} ({p}). {d}, {t} works for me. Is it available?',dToday:'Today',dTmr:'Tomorrow',dWknd:'This weekend',dNext:'Next week',
+cK:'Monthly instalment calculator',cH:'What will it cost you <em>each month?</em>',cP:'Move the sliders to see an estimated loan repayment in ringgit. Ask us for the latest bank rates for your profile.',kPrice:'Property price',kDown:'Down payment',kRate:'Interest rate (p.a.)',kTen:'Loan tenure',kMo:'Estimated monthly instalment',kLoan:'Loan amount',kInt:'Total interest',kInc:'Suggested income',kNote:'Estimate only, not a loan offer. Excludes legal fees, stamp duty, MRTA and valuation. Suggested income assumes repayments stay near a third of take-home pay.',kCta:'Ask an agent about financing',yrs:'years',perMo:'/month',
+aK:'Neighbourhood guides',aH:'Three neighbourhoods. <em>Known by heart.</em>',aP:'We only work where we live and walk. That’s how we know which block floods, which lift is slow and which mamak stays open late.',typBuy:'Typical condo price',typRent:'Typical 3-bed rent',smpF:'sample figures',
+pK:'Owner & tenant services',pH:'Letting or moving in? <em>Sorted, fixed price.</em>',pP:"Book the extras online. Pay by card, FPX, GrabPay or Touch 'n Go eWallet.",pSmp:'Sample prices',add:'Add',added:'Added',from:'from',cart:'Cart',total:'Total',checkout:'Checkout',emptyC:'Your cart is empty.',coDemo:'Demo: on your site this opens a secure checkout with card, FPX, GrabPay and Touch ’n Go.',
+rK:'Recent deals',rH:'Homes we’ve sold and let <em>lately.</em>',rP:'A few recent stories. Figures are sample data for this concept.',m1:'Registered estate agency',m1s:'Board of Valuers, Appraisers, Estate Agents & Property Managers · E (3) 0000 (sample)',m2:'Every agent is REN-registered',m2s:'Ask to see the tag. Numbers on this page are samples.',m3:'Member, Malaysian Institute of Estate Agents',m3s:'Membership shown as a sample',
+gK:'Your agents',gH:'Real people. <em>Registered.</em> Reachable.',gP:'One agent stays with you from the first viewing to the keys. They answer WhatsApp at night too, within reason.',chat:'Chat with',
+q1:'"We were relocating from Penang with two kids. Hana shortlisted four condos near the schools and we signed on the second weekend."',q1c:'rented in Mont Kiara · sample review',q2:'"Clear advice on pricing our terrace. No pressure, and every viewing came with feedback the same evening."',q2c:'sold in Cheras · sample review',
+fH:'Before you <em>sign anything.</em>',fP:'Straight answers to what buyers and tenants ask us most.',
+tK:'Visit or message',tH:'Coffee’s on us at the <em>office.</em>',tP:'Drop by for a chat about the market, or skip the trip and WhatsApp us your brief.',addr:'Lot 2-1, Jalan Sample, 59100 Kuala Lumpur (sample address)',hrs:'Mon–Sat 9:30am–7pm · Sun by appointment',hrs2:'Viewings daily until 8pm. Closed on Hari Raya and Chinese New Year.',waS:'WhatsApp, calls and Telegram (sample number)',ctWa:'Message us on WhatsApp',ctLb:'5 min from the LRT · parking at the back',
+ft1:'Sdn Bhd (sample) · Registered estate agency E (3) 0000 (sample) · Fictional business for a design concept.',ft2:'Design concept by Aurelion',mList:'Map',mEnq:'WhatsApp us'},
+ms:{logoS:'Agensi hartanah',n1:'Senarai',n2:'Kalkulator',n3:'Kawasan',n4:'Ejen',n5:'Soalan',n6:'Hubungi',navEnq:'WhatsApp kami',navBook:'Tempah lawatan',navSell:'Perkhidmatan',navCred:'Urusan terkini',
+eyb:'Agensi butik ·',h1a:'Cari rumah di KL yang sesuai dengan',h1b:'cara hidup anda.',heroP:'Kondo, teres dan rumah keluarga di Mont Kiara, Bangsar dan Cheras. Harga jelas, lawatan diatur melalui WhatsApp, dan ejen berdaftar REN yang kenal setiap blok.',
+buy:'Beli',rent:'Sewa',area:'Kawasan',allAreas:'Semua kawasan',beds:'Bilik tidur',any:'Mana-mana',cEnq:'Beritahu keperluan anda di WhatsApp',cBook:'Tempah lawatan minggu ini',cSell:'Perkhidmatan pemilik & penyewa',cCred:'Lihat urusan terkini kami',cList:'Lihat peta',
+st1:'kawasan yang kami kenal setiap jalan',st2:'ejen berdaftar sahaja',days:'hari',st3:'seminggu untuk lawatan',cap:'Kuala Lumpur waktu senja',chip:'Senarai dikemas kini setiap minggu · data contoh',mo:'bln',sample:'Contoh',feat:'Pilihan · 3 bilik · 1,420 kp · Mont Kiara',
+eK:'Pertanyaan pantas',eH:'Ceritakan rumah idaman. <em>Kami senarai pendek.</em>',eP:'Tiga ketikan dan kami faham keperluan anda. Ejen akan membalas di WhatsApp dengan unit yang sepadan, biasanya pada hari yang sama.',eQ1:'Saya mahu',anyArea:'Belum pasti',budget:'Bajet',yName:'Nama anda',waOn:'dalam talian · balas dalam kira-kira 1 jam',waHi:'Hai! Beritahu kami rumah yang anda cari, kami akan hantar unit yang sesuai. 🏡',waNote:'Pratonton mesej anda',send:'Hantar di WhatsApp',
+wBuy:'Beli',wRent:'Sewa',wSell:'Jual rumah saya',msgHi:'Hai {n}! Saya {name}.',msgWant:{buy:'Saya mahu membeli rumah',rent:'Saya mahu menyewa rumah',sell:'Saya mahu menjual hartanah saya'},msgIn:'di',msgAny:'mana-mana kawasan anda',msgBud:'Bajet',msgEnd:'Boleh kongsikan beberapa pilihan? Terima kasih!',
+bK:'Tempah lawatan',bH:'Pilih rumah, hari <em>dan masa.</em>',bP:'Lawatan dibuat tujuh hari seminggu, termasuk kebanyakan cuti umum. Ejen anda akan menunggu di lobi atau pintu pagar.',b1:'Rumah mana?',b2:'Hari apa?',b3:'Pukul berapa?',bNote:'Slot berwarna kelabu sudah ditempah (contoh).',sumK:'Lawatan anda',dWhen:'Bila',dPrice:'Harga',dAgent:'Ejen',dMeet:'Jumpa di',bConf:'Sahkan lawatan',bConfN:'Kami akan sahkan di WhatsApp dan kongsikan nama ejen, nombor kereta dan kod lobi.',pickTime:'Pilih masa',meetL:'Pondok pengawal / lobi',bDemo:'Demo: di laman anda, ini menghantar permintaan lawatan kepada ejen melalui WhatsApp.',today:'Hari ini',
+lK:'Senarai di atas peta',lH:'Lihat lokasinya <em>sebelum</em> melawat.',lP:'Halakan tetikus pada rumah untuk melihatnya di peta. Tapis ikut beli atau sewa, harga dan bilik tidur.',lSmp:'Semua senarai ialah data contoh',anyPrice:'Semua harga',upTo:'Sehingga',homes:'rumah',home:'rumah',noRes:'Tiada rumah sepadan. Cuba harga lebih tinggi atau kurangkan bilik.',reqV:'Minta lawatan',bed:'bilik',bath:'bilik air',sqft:'kp',forRent:'Untuk disewa',forSale:'Untuk dijual',smpL:'CONTOH',
+mapT:'Kawasan kami, dari',mapS:'Peta ilustrasi · bukan berskala · ketik pin',mapL:'Ketik pin untuk ke senarai',
+mdDay:'Bila sesuai?',mdTime:'Waktu',tMorn:'Pagi',tAft:'Petang',tEve:'Malam',mdMsg:'Hai {n}, saya ingin melawat {l} ({p}). {d}, waktu {t} sesuai untuk saya. Adakah masih ada?',dToday:'Hari ini',dTmr:'Esok',dWknd:'Hujung minggu ini',dNext:'Minggu depan',
+cK:'Kalkulator ansuran bulanan',cH:'Berapa bayaran anda <em>setiap bulan?</em>',cP:'Gerakkan peluncur untuk anggaran bayaran balik pinjaman dalam ringgit. Tanya kami kadar bank terkini untuk profil anda.',kPrice:'Harga hartanah',kDown:'Bayaran pendahuluan',kRate:'Kadar faedah (setahun)',kTen:'Tempoh pinjaman',kMo:'Anggaran ansuran bulanan',kLoan:'Jumlah pinjaman',kInt:'Jumlah faedah',kInc:'Cadangan pendapatan',kNote:'Anggaran sahaja, bukan tawaran pinjaman. Tidak termasuk yuran guaman, duti setem, MRTA dan penilaian. Cadangan pendapatan mengandaikan ansuran sekitar satu pertiga gaji bersih.',kCta:'Tanya ejen tentang pembiayaan',yrs:'tahun',perMo:'/bulan',
+aK:'Panduan kawasan',aH:'Tiga kawasan. <em>Kami kenal benar.</em>',aP:'Kami hanya bekerja di kawasan yang kami diami dan jelajahi. Sebab itu kami tahu blok mana yang banjir, lif mana yang lambat dan mamak mana yang buka lewat malam.',typBuy:'Harga kondo biasa',typRent:'Sewa biasa 3 bilik',smpF:'angka contoh',
+pK:'Perkhidmatan pemilik & penyewa',pH:'Mahu sewakan atau pindah masuk? <em>Harga tetap.</em>',pP:"Tempah perkhidmatan tambahan dalam talian. Bayar dengan kad, FPX, GrabPay atau Touch 'n Go eWallet.",pSmp:'Harga contoh',add:'Tambah',added:'Ditambah',from:'dari',cart:'Troli',total:'Jumlah',checkout:'Bayar',emptyC:'Troli anda kosong.',coDemo:'Demo: di laman anda, ini membuka pembayaran selamat dengan kad, FPX, GrabPay dan Touch ’n Go.',
+rK:'Urusan terkini',rH:'Rumah yang kami jual dan sewakan <em>baru-baru ini.</em>',rP:'Beberapa kisah terkini. Angka ialah data contoh untuk konsep ini.',m1:'Agensi hartanah berdaftar',m1s:'Lembaga Penilai, Pentaksir, Ejen Harta Tanah dan Pengurus Harta · E (3) 0000 (contoh)',m2:'Setiap ejen berdaftar REN',m2s:'Minta lihat tag mereka. Nombor di laman ini ialah contoh.',m3:'Ahli, Malaysian Institute of Estate Agents',m3s:'Keahlian ditunjukkan sebagai contoh',
+gK:'Ejen anda',gH:'Orang sebenar. <em>Berdaftar.</em> Mudah dihubungi.',gP:'Seorang ejen bersama anda dari lawatan pertama hingga serah kunci. Mereka juga membalas WhatsApp pada waktu malam, dengan munasabah.',chat:'Sembang dengan',
+q1:'"Kami berpindah dari Pulau Pinang dengan dua anak. Hana senarai pendek empat kondo berhampiran sekolah dan kami tandatangan pada hujung minggu kedua."',q1c:'menyewa di Mont Kiara · ulasan contoh',q2:'"Nasihat harga yang jelas untuk rumah teres kami. Tiada desakan, dan setiap lawatan disusuli maklum balas pada petang yang sama."',q2c:'menjual di Cheras · ulasan contoh',
+fH:'Sebelum anda <em>tandatangan.</em>',fP:'Jawapan terus untuk soalan yang paling kerap ditanya pembeli dan penyewa.',
+tK:'Singgah atau mesej',tH:'Kopi percuma di <em>pejabat kami.</em>',tP:'Singgah untuk berbual tentang pasaran, atau terus WhatsApp keperluan anda.',addr:'Lot 2-1, Jalan Sample, 59100 Kuala Lumpur (alamat contoh)',hrs:'Isn–Sab 9:30 pg–7 ptg · Ahad dengan temu janji',hrs2:'Lawatan setiap hari hingga 8 malam. Tutup pada Hari Raya dan Tahun Baru Cina.',waS:'WhatsApp, panggilan dan Telegram (nombor contoh)',ctWa:'Mesej kami di WhatsApp',ctLb:'5 minit dari LRT · parkir di belakang',
+ft1:'Sdn Bhd (contoh) · Agensi hartanah berdaftar E (3) 0000 (contoh) · Perniagaan rekaan untuk konsep reka bentuk.',ft2:'Konsep reka bentuk oleh Aurelion',mList:'Peta',mEnq:'WhatsApp kami'},
+zh:{logoS:'房地产中介',n1:'房源',n2:'计算器',n3:'社区',n4:'经纪人',n5:'常见问题',n6:'联系',navEnq:'WhatsApp 咨询',navBook:'预约看房',navSell:'服务',navCred:'近期成交',
+eyb:'精品中介 ·',h1a:'在吉隆坡，找到最适合',h1b:'你生活方式的家。',heroP:'满家乐、孟沙和蕉赖的公寓、排屋和家庭住宅。价格透明，看房用 WhatsApp 预约，REN 注册经纪人熟悉每一栋楼。',
+buy:'买房',rent:'租房',area:'地区',allAreas:'所有地区',beds:'卧室',any:'不限',cEnq:'用 WhatsApp 告诉我们你的需求',cBook:'预约本周看房',cSell:'业主与租客服务',cCred:'查看近期成交',cList:'浏览地图',
+st1:'个社区，每条街都熟悉',st2:'只用注册经纪人',days:'天',st3:'每周都可看房',cap:'黄昏时分的吉隆坡',chip:'房源每周更新 · 示例数据',mo:'月',sample:'示例',feat:'精选 · 3 房 · 1,420 平方尺 · 满家乐',
+eK:'快速咨询',eH:'说说你想要的家，<em>我们帮你筛选。</em>',eP:'点三下，我们就了解你的需求。经纪人通常当天就会在 WhatsApp 发来合适的单位。',eQ1:'我想',anyArea:'还没决定',budget:'预算',yName:'你的名字',waOn:'在线 · 约 1 小时内回复',waHi:'你好！告诉我们你想找什么样的房子，我们会发合适的单位给你。🏡',waNote:'消息预览',send:'用 WhatsApp 发送',
+wBuy:'买房',wRent:'租房',wSell:'卖房',msgHi:'{n} 你好！我是 {name}。',msgWant:{buy:'我想买房',rent:'我想租房',sell:'我想出售我的房产'},msgIn:'地区：',msgAny:'你们的任何地区',msgBud:'预算',msgEnd:'可以发几个选择给我吗？谢谢！',
+bK:'预约看房',bH:'选房子、选日期、<em>选时间。</em>',bP:'每周七天都可看房，大部分公共假期也可以。经纪人会在大堂或门口等你。',b1:'看哪一间？',b2:'哪一天？',b3:'几点？',bNote:'灰色时段已被预约（示例）。',sumK:'你的看房安排',dWhen:'时间',dPrice:'价格',dAgent:'经纪人',dMeet:'见面地点',bConf:'确认看房',bConfN:'我们会在 WhatsApp 确认，并告诉你经纪人姓名、车牌和大堂密码。',pickTime:'请选择时间',meetL:'警卫亭 / 大堂',bDemo:'演示：在你的网站上，这会把看房请求通过 WhatsApp 发给经纪人。',today:'今天',
+lK:'地图上的房源',lH:'看房之前，<em>先看位置。</em>',lP:'把鼠标移到房源上，就能在地图上找到它。可按买或租、价格和卧室筛选。',lSmp:'所有房源均为示例数据',anyPrice:'不限价格',upTo:'最高',homes:'套房源',home:'套房源',noRes:'没有符合的房源。试试提高价格或减少卧室数。',reqV:'预约看房',bed:'房',bath:'卫',sqft:'平方尺',forRent:'出租',forSale:'出售',smpL:'示例',
+mapT:'我们的服务范围，以此为中心：',mapS:'示意地图 · 非按比例 · 点图钉查看',mapL:'点一下图钉即可跳到房源',
+mdDay:'什么时候方便？',mdTime:'时段',tMorn:'上午',tAft:'下午',tEve:'晚上',mdMsg:'{n} 你好，我想看 {l}（{p}）。{d}{t}我方便，请问还有吗？',dToday:'今天',dTmr:'明天',dWknd:'这个周末',dNext:'下周',
+cK:'月供计算器',cH:'每个月要付<em>多少钱？</em>',cP:'拖动滑杆，即可估算以令吉计算的月供。欢迎向我们询问适合你的最新银行利率。',kPrice:'房价',kDown:'首付',kRate:'年利率',kTen:'贷款年限',kMo:'预计每月供款',kLoan:'贷款额',kInt:'总利息',kInc:'建议月收入',kNote:'仅为估算，并非贷款要约。不包括律师费、印花税、房贷保险（MRTA）和估价费。建议收入以月供约占净收入三分之一计算。',kCta:'向经纪人咨询贷款',yrs:'年',perMo:'/月',
+aK:'社区指南',aH:'三个社区，<em>了如指掌。</em>',aP:'我们只在自己生活和走过的地方工作。所以我们知道哪栋楼会淹水、哪部电梯慢、哪家嘛嘛档开到深夜。',typBuy:'一般公寓价格',typRent:'一般 3 房租金',smpF:'示例数据',
+pK:'业主与租客服务',pH:'出租或入住？<em>固定价格，一次搞定。</em>',pP:"在线预订附加服务。可用信用卡、FPX、GrabPay 或 Touch 'n Go 电子钱包付款。",pSmp:'示例价格',add:'加入',added:'已加入',from:'起',cart:'购物车',total:'合计',checkout:'结账',emptyC:'购物车是空的。',coDemo:'演示：在你的网站上，这会打开支持信用卡、FPX、GrabPay 和 Touch ’n Go 的安全结账页面。',
+rK:'近期成交',rH:'最近卖出和租出的<em>房子。</em>',rP:'几个近期案例。数字为本概念的示例数据。',m1:'注册房地产中介公司',m1s:'马来西亚估价师、评估师、房地产经纪人及物业管理人局 · E (3) 0000（示例）',m2:'每位经纪人都有 REN 注册',m2s:'可要求查看名牌。本页号码均为示例。',m3:'马来西亚房地产经纪人协会会员',m3s:'会员资格为示例',
+gK:'你的经纪人',gH:'真实的人，<em>有注册，</em>找得到。',gP:'从第一次看房到交钥匙，都由同一位经纪人跟进。晚上也会回复 WhatsApp（在合理范围内）。',chat:'联系',
+q1:'“我们带着两个孩子从槟城搬来。Hana 筛选了四间靠近学校的公寓，第二个周末我们就签约了。”',q1c:'在满家乐租房 · 示例评价',q2:'“对我们排屋的定价建议很清楚，没有压力，每次看房当晚都有反馈。”',q2c:'在蕉赖卖房 · 示例评价',
+fH:'签约之前，<em>先弄清楚。</em>',fP:'买家和租客最常问的问题，直接回答。',
+tK:'来访或留言',tH:'来<em>办公室</em>喝杯咖啡吧。',tP:'过来聊聊市场行情，或者直接用 WhatsApp 告诉我们你的需求。',addr:'Lot 2-1, Jalan Sample, 59100 吉隆坡（示例地址）',hrs:'周一至周六 9:30–19:00 · 周日需预约',hrs2:'每天可看房至晚上 8 点。开斋节和农历新年休息。',waS:'WhatsApp、电话和 Telegram（示例号码）',ctWa:'用 WhatsApp 联系我们',ctLb:'距 LRT 5 分钟 · 后面有停车位',
+ft1:'私人有限公司（示例）· 注册房地产中介 E (3) 0000（示例）· 为设计概念虚构的企业。',ft2:'设计概念：Aurelion',mList:'地图',mEnq:'WhatsApp 咨询'}
+};
+var t=function(k){var v=T[L][k];return v==null?T.en[k]:v};
+var tx=function(o){return o[L]||o.en};
+
+/* ---------- data ---------- */
+var AREA={mk:'Mont Kiara',bs:'Bangsar',ch:'Cheras'};
+var AG=[
+ {n:'Hana Lim',img:'1607746882042-944635dfe10e',ren:'REN 00001',area:'mk',langs:['English','中文','BM'],b:{en:'Relocation specialist. Knows the international-school runs and every condo gym worth using.',ms:'Pakar pindah randah. Tahu laluan ke sekolah antarabangsa dan gim kondo yang berbaloi.',zh:'搬迁专家，熟悉国际学校接送路线，也知道哪些公寓健身房最好用。'}},
+ {n:'Daniel Wong',img:'1507003211169-0a1dd7228f2d',ren:'REN 00002',area:'bs',langs:['English','中文','Cantonese'],b:{en:'Bangsar born and raised. Landed homes, renovation potential and the real story behind each street.',ms:'Anak jati Bangsar. Rumah bertanah, potensi ubah suai dan cerita sebenar setiap jalan.',zh:'在孟沙土生土长，专注有地住宅、翻新潜力和每条街背后的故事。'}},
+ {n:'Aiman Razak',img:'1566492031773-4f4e44671857',ren:'REN 00003',area:'ch',langs:['BM','English'],b:{en:'First-home buyers and young families in Cheras. Patient with loan paperwork and MRT commute questions.',ms:'Pembeli rumah pertama dan keluarga muda di Cheras. Sabar dengan dokumen pinjaman dan soalan perjalanan MRT.',zh:'专注蕉赖首购族和年轻家庭，对贷款文件和地铁通勤问题很有耐心。'}}
+];
+var LS=[
+ {id:1,t:'buy',a:'mk',p:1280000,bd:3,ba:2,sf:1420,img:'1600607687939-ce8a6c25118c',x:20,y:12,ag:0,n:{en:'Residensi Kiara Hijau, corner unit',ms:'Residensi Kiara Hijau, unit sudut',zh:'Residensi Kiara Hijau 角落单位'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}},
+ {id:2,t:'buy',a:'mk',p:890000,bd:2,ba:2,sf:1050,img:'1600607687920-4e2a09cf159d',x:34,y:19,ag:0,n:{en:'Kiara Loft, duplex with city view',ms:'Kiara Loft, dupleks pemandangan bandar',zh:'Kiara Loft 复式，城市景观'},ty:{en:'Duplex',ms:'Dupleks',zh:'复式'}},
+ {id:3,t:'rent',a:'mk',p:4800,bd:3,ba:3,sf:1600,img:'1502672260266-1c1ef2d93688',x:13,y:27,ag:0,n:{en:'Serai Residences, fully furnished',ms:'Serai Residences, berperabot penuh',zh:'Serai Residences，全装修'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}},
+ {id:4,t:'rent',a:'mk',p:3200,bd:2,ba:2,sf:980,img:'1493809842364-78817add7ffb',x:42,y:30,ag:0,n:{en:'Kiara Park Suites, near schools',ms:'Kiara Park Suites, dekat sekolah',zh:'Kiara Park Suites，近学校'},ty:{en:'Serviced residence',ms:'Residensi servis',zh:'服务式公寓'}},
+ {id:5,t:'buy',a:'bs',p:3650000,bd:4,ba:4,sf:3200,img:'1600585154340-be6161a56a0c',x:30,y:61,ag:1,n:{en:'Bukit Bandaraya semi-D, garden',ms:'Semi-D Bukit Bandaraya, berlaman',zh:'Bukit Bandaraya 半独立式，带花园'},ty:{en:'Semi-D',ms:'Semi-D',zh:'半独立式'}},
+ {id:6,t:'buy',a:'bs',p:1450000,bd:3,ba:2,sf:1300,img:'1522708323590-d24dbb6b0267',x:17,y:70,ag:1,n:{en:'Telawi Heights, walk to the cafés',ms:'Telawi Heights, jalan kaki ke kafe',zh:'Telawi Heights，步行到咖啡馆'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}},
+ {id:7,t:'rent',a:'bs',p:6500,bd:4,ba:3,sf:2400,img:'1600047509807-ba8f99d2cdde',x:41,y:74,ag:1,n:{en:'Jalan Ara terrace, renovated',ms:'Teres Jalan Ara, diubah suai',zh:'Jalan Ara 排屋，已翻新'},ty:{en:'Terrace',ms:'Teres',zh:'排屋'}},
+ {id:8,t:'rent',a:'bs',p:3600,bd:2,ba:2,sf:1100,img:'1560448204-e02f11c3d0e2',x:24,y:79,ag:1,n:{en:'Bangsar South studio-plus, near LRT',ms:'Bangsar South, dekat LRT',zh:'Bangsar South 单位，近 LRT'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}},
+ {id:9,t:'buy',a:'ch',p:598000,bd:3,ba:2,sf:1100,img:'1586023492125-27b2c045efd7',x:72,y:46,ag:2,n:{en:'Taman Connaught condo, 5 min to MRT',ms:'Kondo Taman Connaught, 5 minit ke MRT',zh:'Taman Connaught 公寓，5 分钟到地铁'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}},
+ {id:10,t:'buy',a:'ch',p:820000,bd:4,ba:3,sf:1650,img:'1600566753190-17f0baa2a6c3',x:84,y:58,ag:2,n:{en:'Double-storey terrace, freehold',ms:'Teres dua tingkat, pegangan bebas',zh:'双层排屋，永久地契'},ty:{en:'Terrace',ms:'Teres',zh:'排屋'}},
+ {id:11,t:'rent',a:'ch',p:1900,bd:3,ba:2,sf:1000,img:'1505691938895-1758d7feb511',x:63,y:63,ag:2,n:{en:'Cheras Sentral, partly furnished',ms:'Cheras Sentral, separa berperabot',zh:'Cheras Sentral，部分装修'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}},
+ {id:12,t:'rent',a:'ch',p:2400,bd:3,ba:2,sf:1200,img:'1618221195710-dd6b41faaea6',x:78,y:71,ag:2,n:{en:'Taman Midah family condo',ms:'Kondo keluarga Taman Midah',zh:'Taman Midah 家庭公寓'},ty:{en:'Condo',ms:'Kondo',zh:'公寓'}}
+];
+var fmt=function(n){return 'RM '+Math.round(n).toLocaleString('en-MY')};
+var short=function(l){return l.t==='rent'?'RM '+(l.p>=1000?(l.p/1000).toFixed(l.p%1000?1:0)+'k':l.p):(l.p>=1e6?'RM '+(l.p/1e6).toFixed(2).replace(/0$/,'')+'M':'RM '+Math.round(l.p/1000)+'k')};
+var price=function(l){return fmt(l.p)+(l.t==='rent'?t('perMo'):'')};
+
+/* ---------- reveal ---------- */
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px'}):null;
+var reveal=function(){$$('.rv:not(.in)').forEach(function(el){io?io.observe(el):el.classList.add('in')})};
+
+/* ---------- listings + map ---------- */
+var F={t:'buy',a:'all',max:0,bd:0};
+var PRICES={buy:[0,700000,1000000,1500000,4000000],rent:[0,2500,3500,5000,7000]};
+function renderPrice(){var s=$('#fPrice');s.innerHTML=PRICES[F.t].map(function(v){return '<option value="'+v+'">'+(v?t('upTo')+' '+fmt(v):t('anyPrice'))+'</option>'}).join('');s.value=F.max;if(s.value!==String(F.max)){F.max=0;s.value='0'}}
+function renderBeds(){$('#fBeds').innerHTML=[0,2,3,4].map(function(b){return '<button type="button" class="chip" data-b="'+b+'" aria-pressed="'+(F.bd===b)+'">'+(b?b+'+ '+t('bed'):t('any'))+'</button>'}).join('')}
+function renderList(){
+ var res=LS.filter(function(l){return l.t===F.t&&(F.a==='all'||l.a===F.a)&&(!F.max||l.p<=F.max)&&l.bd>=F.bd});
+ $('#list').innerHTML=res.length?res.map(function(l){return '<article class="lc" data-id="'+l.id+'"><div class="ph"><img loading="lazy" src="'+U(l.img,600)+'" alt="'+esc(tx(l.n))+'"><div class="bdg"><span class="'+(l.t==='rent'?'r':'')+'">'+(l.t==='rent'?t('forRent'):t('forSale'))+'</span><span>'+tx(l.ty)+'</span></div><span class="smp">'+t('smpL')+'</span></div><div class="lc-b"><div class="pr">'+fmt(l.p)+(l.t==='rent'?' <small>'+t('perMo')+'</small>':'')+'</div><h3>'+esc(tx(l.n))+'</h3><span class="ar">'+AREA[l.a]+', Kuala Lumpur</span><div class="specs"><span><b>'+l.bd+'</b> '+t('bed')+'</span><span><b>'+l.ba+'</b> '+t('bath')+'</span><span><b>'+l.sf.toLocaleString('en-MY')+'</b> '+t('sqft')+'</span></div><button type="button" class="btn btn-g" data-view="'+l.id+'"><svg><use href="#wa"/></svg>'+t('reqV')+'</button></div></article>'}).join(''):'<p class="nores">'+t('noRes')+'</p>';
+ $('#count').textContent=res.length+' '+(res.length===1?t('home'):t('homes'));
+ var ids=res.map(function(l){return l.id});
+ $('#pins').innerHTML=LS.map(function(l){return '<button type="button" class="pin'+(ids.indexOf(l.id)<0?' off':'')+'" data-id="'+l.id+'" style="left:'+l.x+'%;top:'+l.y+'%" aria-label="'+esc(tx(l.n))+', '+price(l)+'">'+short(l)+'</button>'}).join('');
+ reveal();
+}
+function hl(id,on){$$('[data-id="'+id+'"]').forEach(function(el){el.classList.toggle('on',on)})}
+$('#list').addEventListener('mouseover',function(e){var c=e.target.closest('.lc');$$('.lc.on,.pin.on').forEach(function(x){x.classList.remove('on')});if(c)hl(c.dataset.id,true)});
+$('#list').addEventListener('mouseleave',function(){$$('.lc.on,.pin.on').forEach(function(x){x.classList.remove('on')})});
+$('#pins').addEventListener('mouseover',function(e){var p=e.target.closest('.pin');$$('.lc.on,.pin.on').forEach(function(x){x.classList.remove('on')});if(p)hl(p.dataset.id,true)});
+$('#pins').addEventListener('click',function(e){var p=e.target.closest('.pin');if(!p)return;var c=$('.lc[data-id="'+p.dataset.id+'"]');if(!c)return;$$('.lc.on,.pin.on').forEach(function(x){x.classList.remove('on')});hl(p.dataset.id,true);var lst=$('#list');if(lst.scrollHeight>lst.clientHeight+4){lst.scrollTo({top:c.offsetTop-lst.offsetTop-8,behavior:'smooth'})}else{c.scrollIntoView({behavior:'smooth',block:'center'})}});
+$('#fType').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;F.t=b.dataset.t;F.max=0;$$('#fType button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});renderPrice();renderList()});
+$('#fArea').addEventListener('change',function(e){F.a=e.target.value;renderList()});
+$('#fPrice').addEventListener('change',function(e){F.max=+e.target.value;renderList()});
+$('#fBeds').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;F.bd=+b.dataset.b;renderBeds();renderList()});
+/* hero search */
+var hs='buy';
+$('#search .seg2').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;hs=b.dataset.t;$$('#search .seg2 button').forEach(function(x){x.setAttribute('aria-pressed',x===b)})});
+$('#search').addEventListener('submit',function(e){e.preventDefault();F.t=hs;F.a=$('#sArea').value;F.bd=+$('#sBeds').value;F.max=0;$('#fArea').value=F.a;$$('#fType button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.t===F.t)});renderPrice();renderBeds();renderList();$('#listings').scrollIntoView({behavior:'smooth'})});
+
+/* ---------- viewing modal ---------- */
+var MD={l:null,d:0,tm:0};
+function mdRender(){var l=MD.l;if(!l)return;$('#mdImg').src=U(l.img,200);$('#mdImg').alt='';$('#mdName').textContent=tx(l.n);$('#mdSub').textContent=price(l)+' · '+AREA[l.a];
+ var ds=['dToday','dTmr','dWknd','dNext'],ts=['tMorn','tAft','tEve'];
+ $('#mdDays').innerHTML=ds.map(function(k,i){return '<button type="button" class="chip" data-d="'+i+'" aria-pressed="'+(MD.d===i)+'">'+t(k)+'</button>'}).join('');
+ $('#mdTimes').innerHTML=ts.map(function(k,i){return '<button type="button" class="chip" data-t="'+i+'" aria-pressed="'+(MD.tm===i)+'">'+t(k)+'</button>'}).join('');
+ $('#mdMsg').textContent=t('mdMsg').replace('{n}',bizName()).replace('{l}',tx(l.n)).replace('{p}',price(l)).replace('{d}',t(ds[MD.d])).replace('{t}',t(ts[MD.tm]).toLowerCase());
+}
+var lastFocus=null;
+function openM(el){lastFocus=document.activeElement;el.classList.add('open');el.setAttribute('aria-hidden','false');$('#scrim').classList.add('on');var f=el.querySelector('.x');if(f)f.focus()}
+function closeAll(){$$('.modal.open,.drawer.open').forEach(function(m){m.classList.remove('open');m.setAttribute('aria-hidden','true')});$('#scrim').classList.remove('on');if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+document.addEventListener('click',function(e){var v=e.target.closest('[data-view]');if(v){MD.l=LS.filter(function(l){return l.id==v.dataset.view})[0];MD.d=0;MD.tm=0;mdRender();openM($('#modal'))}
+ if(e.target.closest('[data-close]')||e.target===$('#scrim'))closeAll();
+ var w=e.target.closest('.demo-wa');if(w){e.preventDefault();window.afDemo&&window.afDemo()}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+$('#mdDays').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b){MD.d=+b.dataset.d;mdRender()}});
+$('#mdTimes').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b){MD.tm=+b.dataset.t;mdRender()}});
+function bizName(){var n=document.querySelector('.logo [data-af-name]');return n?n.textContent:'Laman Realty'}
+
+/* ---------- enquiry ---------- */
+var EQ={w:'buy'};
+var BUD={buy:['< RM 700k','RM 700k – 1M','RM 1M – 1.5M','RM 1.5M +'],rent:['< RM 2,500','RM 2,500 – 3,500','RM 3,500 – 5,000','RM 5,000 +'],sell:['< RM 700k','RM 700k – 1M','RM 1M – 1.5M','RM 1.5M +']};
+function eqRender(keep){
+ $('#eWant').innerHTML=[['buy','wBuy'],['rent','wRent'],['sell','wSell']].map(function(o){return '<button type="button" class="chip" data-w="'+o[0]+'" aria-pressed="'+(EQ.w===o[0])+'">'+t(o[1])+'</button>'}).join('');
+ var s=$('#eBud'),v=s.selectedIndex;s.innerHTML=BUD[EQ.w].map(function(b){return '<option>'+b+'</option>'}).join('');s.selectedIndex=keep&&v>=0?v:1;eqMsg();
+}
+function eqMsg(){var a=$('#eArea'),nm=$('#eName').value.trim()||$('#eName').placeholder;var ar=a.value==='any'?t('msgAny'):a.value;
+ var lines=[t('msgHi').replace('{n}',bizName()).replace('{name}',nm),t('msgWant')[EQ.w]+(L==='zh'?'，':' ')+t('msgIn')+' '+ar+(L==='zh'?'。':'.'),t('msgBud')+': '+$('#eBud').value,t('msgEnd')];
+ $('#eMsg').innerHTML=esc(lines.join('\n'))+'<time>'+new Date().toTimeString().slice(0,5)+' ✓✓</time>';}
+$('#eWant').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b){EQ.w=b.dataset.w;eqRender()}});
+['eArea','eBud'].forEach(function(id){$('#'+id).addEventListener('change',eqMsg)});$('#eName').addEventListener('input',eqMsg);
+
+/* ---------- booking ---------- */
+var BK={l:1,d:1,s:-1};var SL=['10:00','11:30','14:00','15:30','17:00','19:00'];
+var DN={en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],ms:['Ahd','Isn','Sel','Rab','Kha','Jum','Sab'],zh:['周日','周一','周二','周三','周四','周五','周六']};
+var MN={en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],ms:['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogo','Sep','Okt','Nov','Dis'],zh:null};
+var day=function(i){var d=new Date();d.setDate(d.getDate()+i);return d};
+var dLabel=function(d){return L==='zh'?(d.getMonth()+1)+'月'+d.getDate()+'日 '+DN.zh[d.getDay()]:DN[L][d.getDay()]+', '+d.getDate()+' '+MN[L][d.getMonth()]};
+function bkRender(){
+ $('#bList').innerHTML=LS.filter(function(l,i){return i%2===0}).map(function(l){return '<button type="button" class="lp" data-l="'+l.id+'" aria-pressed="'+(BK.l===l.id)+'"><img src="'+U(l.img,160)+'" alt="" loading="lazy"><span><b>'+esc(tx(l.n).split(',')[0])+'</b><small>'+short(l)+(l.t==='rent'?t('perMo'):'')+' · '+AREA[l.a]+'</small></span></button>'}).join('');
+ var h='';for(var i=0;i<10;i++){var d=day(i);h+='<button type="button" class="dt" data-d="'+i+'" aria-pressed="'+(BK.d===i)+'"><small>'+(i===0?t('today'):DN[L][d.getDay()])+'</small><b>'+d.getDate()+'</b></button>'}$('#bDates').innerHTML=h;
+ $('#bSlots').innerHTML=SL.map(function(s,i){var off=(BK.d*7+i*3+BK.l)%5===0;return '<button type="button" class="chip" data-s="'+i+'"'+(off?' disabled':'')+' aria-pressed="'+(BK.s===i)+'">'+s+'</button>'}).join('');
+ var l=LS.filter(function(x){return x.id===BK.l})[0];
+ $('#sImg').src=U(l.img,700);$('#sImg').alt=tx(l.n);$('#sName').textContent=tx(l.n);$('#sPrice').textContent=price(l);$('#sAgent').textContent=AG[l.ag].n;$('#sMeet').textContent=t('meetL');
+ $('#sWhen').textContent=BK.s<0?t('pickTime'):dLabel(day(BK.d))+' · '+SL[BK.s];
+}
+$('#bList').addEventListener('click',function(e){var b=e.target.closest('.lp');if(b){BK.l=+b.dataset.l;BK.s=-1;bkRender()}});
+$('#bDates').addEventListener('click',function(e){var b=e.target.closest('.dt');if(b){BK.d=+b.dataset.d;BK.s=-1;bkRender()}});
+$('#bSlots').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b&&!b.disabled){BK.s=+b.dataset.s;bkRender()}});
+$('#bConfirm').addEventListener('click',function(){if(BK.s<0){$('#bSlots .chip:not([disabled])').focus();$('#sWhen').textContent='⚠ '+t('pickTime');return}window.afDemo&&window.afDemo(t('bDemo'))});
+
+/* ---------- calculator ---------- */
+function calc(){var P=+$('#rPrice').value,dp=+$('#rDown').value,r=+$('#rRate').value,n=+$('#rTen').value;
+ var loan=P*(1-dp/100),i=r/1200,m=n*12,M=loan*i*Math.pow(1+i,m)/(Math.pow(1+i,m)-1),tot=M*m-loan;
+ $('#oPrice').textContent=fmt(P);$('#oDown').textContent=dp+'% · '+fmt(P*dp/100);$('#oRate').textContent=r.toFixed(2)+'%';$('#oTen').textContent=n+' '+t('yrs');
+ $('#oMo').innerHTML=fmt(M)+'<small>'+t('perMo')+'</small>';$('#oLoan').textContent=fmt(loan);$('#oInt').textContent=fmt(tot);$('#oInc').textContent=fmt(M*3)+t('perMo');
+ var C=2*Math.PI*48,f=tot/(tot+loan);$('#dArc').setAttribute('stroke-dasharray',(C*f).toFixed(1)+' '+C.toFixed(1));
+ $$('#calculator input[type=range]').forEach(function(x){x.style.setProperty('--p',((x.value-x.min)/(x.max-x.min)*100)+'%')});}
+$$('#calculator input[type=range]').forEach(function(x){x.addEventListener('input',calc)});
+
+/* ---------- areas, agents, shop, deals, process, faq ---------- */
+var AR=[
+ {k:'mk',img:'1545324418-cc1a3fa10c00',d:{en:'High-rise living with international schools, expat-friendly condos and Sunday brunch culture.',ms:'Kediaman tinggi dengan sekolah antarabangsa, kondo mesra ekspatriat dan budaya brunch hujung minggu.',zh:'高楼住宅区，国际学校林立，适合外籍人士的公寓，周末早午餐文化浓厚。'},li:{en:['Several international schools nearby','No rail; most residents drive or Grab','Popular with relocating families'],ms:['Beberapa sekolah antarabangsa berdekatan','Tiada rel; kebanyakan penduduk memandu atau guna Grab','Popular dalam kalangan keluarga yang berpindah'],zh:['附近有多所国际学校','没有轨道交通，居民多开车或用 Grab','深受搬迁家庭欢迎']},b:'RM 750k–1.4M',r:'RM 4–6k'},
+ {k:'bs',img:'1600596542815-ffad4c1539a9',d:{en:'Leafy landed streets, Telawi cafés and an easy run into KL Sentral and Mid Valley.',ms:'Jalan berpokok dengan rumah bertanah, kafe di Telawi dan mudah ke KL Sentral serta Mid Valley.',zh:'绿树成荫的有地住宅区，Telawi 咖啡馆林立，往返 KL Sentral 和 Mid Valley 都方便。'},li:{en:['Bangsar LRT on the Kelana Jaya line','Bangsar Village and Telawi for food','Landed homes rarely come up'],ms:['LRT Bangsar di laluan Kelana Jaya','Bangsar Village dan Telawi untuk makan','Rumah bertanah jarang dijual'],zh:['孟沙 LRT 位于格拉那再也线','Bangsar Village 和 Telawi 吃喝方便','有地住宅很少放盘']},b:'RM 900k–1.8M',r:'RM 4.5–7k'},
+ {k:'ch',img:'1460317442991-0ec209397118',d:{en:'Value for families, with the MRT Kajang line, big malls and some of KL’s best hawker food.',ms:'Nilai terbaik untuk keluarga, dengan MRT laluan Kajang, pusat beli-belah besar dan makanan gerai terbaik KL.',zh:'性价比高，适合家庭，有地铁加影线、大型商场，还有吉隆坡数一数二的小贩美食。'},li:{en:['MRT Kajang line stations along Jalan Cheras','Strong demand from first-home buyers','Freehold terraces still within reach'],ms:['Stesen MRT laluan Kajang di sepanjang Jalan Cheras','Permintaan tinggi daripada pembeli rumah pertama','Teres pegangan bebas masih mampu milik'],zh:['蕉赖路沿线有地铁加影线车站','首购族需求旺盛','永久地契排屋仍负担得起']},b:'RM 420–700k',r:'RM 1.8–2.6k'}
+];
+var PR=[
+ {id:'ph',img:'1600607687920-4e2a09cf159d',p:450,n:{en:'Listing photography',ms:'Fotografi senarai',zh:'房源摄影'},d:{en:'Wide-angle photos, twilight shot and floor plan sketch, ready in 48 hours.',ms:'Foto sudut lebar, gambar senja dan lakaran pelan lantai, siap dalam 48 jam.',zh:'广角照片、黄昏外景和平面图草图，48 小时内交付。'}},
+ {id:'ta',img:'1450101499163-c8848c66ca85',p:380,f:1,n:{en:'Tenancy agreement + stamping',ms:'Perjanjian sewa + setem',zh:'租约 + 盖印花'},d:{en:'Standard tenancy agreement, reviewed, with LHDN stamping arranged.',ms:'Perjanjian sewa standard, disemak, dengan setem LHDN diuruskan.',zh:'标准租约经审阅，并代办 LHDN 印花。'}},
+ {id:'in',img:'1556909114-f6e7ad7d3136',p:250,n:{en:'Inventory & handover check',ms:'Semakan inventori & serahan',zh:'物品清单与交屋检查'},d:{en:'Room-by-room checklist with photos, signed by both parties.',ms:'Senarai semak setiap bilik dengan foto, ditandatangani kedua-dua pihak.',zh:'逐间房拍照记录清单，双方签字确认。'}},
+ {id:'va',img:'1600566753190-17f0baa2a6c3',p:800,f:1,n:{en:'Valuation report',ms:'Laporan penilaian',zh:'估价报告'},d:{en:'Arranged with a registered valuer for refinancing or pricing.',ms:'Diatur dengan penilai berdaftar untuk pembiayaan semula atau penetapan harga.',zh:'由注册估价师出具，用于转贷或定价。'}},
+ {id:'st',img:'1616594039964-ae9021a400a0',p:300,n:{en:'Home staging consult',ms:'Konsultasi penggayaan rumah',zh:'房屋布置咨询'},d:{en:'A two-hour visit with a stylist and a shopping list to sell faster.',ms:'Lawatan dua jam bersama penggaya dan senarai belian untuk jual lebih cepat.',zh:'造型师上门两小时，附采购清单，帮助更快售出。'}},
+ {id:'cl',img:'1484154218962-a197022b5858',p:420,n:{en:'Move-in deep clean',ms:'Pembersihan menyeluruh',zh:'入住前深度清洁'},d:{en:'Three cleaners, about five hours, including kitchen degreasing.',ms:'Tiga pembersih, kira-kira lima jam, termasuk nyahgris dapur.',zh:'三位清洁员约五小时，包括厨房去油。'}}
+];
+var DE=[
+ {img:'1600047509807-ba8f99d2cdde',s:{en:'Sold in 26 days',ms:'Dijual dalam 26 hari',zh:'26 天售出'},n:{en:'Bangsar terrace, 4 bed',ms:'Teres Bangsar, 4 bilik',zh:'孟沙排屋，4 房'},d:{en:'Repriced on market data, staged in a weekend, three offers by week three.',ms:'Harga diselaras ikut data pasaran, digayakan dalam hujung minggu, tiga tawaran menjelang minggu ketiga.',zh:'按市场数据重新定价，一个周末完成布置，第三周收到三份报价。'},k:[['3','offers'],['26','days'],['2.1M','RM']]},
+ {img:'1502672260266-1c1ef2d93688',s:{en:'Let in 9 days',ms:'Disewa dalam 9 hari',zh:'9 天租出'},n:{en:'Mont Kiara condo, 3 bed',ms:'Kondo Mont Kiara, 3 bilik',zh:'满家乐公寓，3 房'},d:{en:'Matched to a relocating family through our school-run shortlist.',ms:'Dipadankan dengan keluarga yang berpindah melalui senarai pendek berhampiran sekolah.',zh:'通过学校路线筛选，配对给一户搬迁家庭。'},k:[['9','days'],['2','yrs'],['5.2k','RM/mo']]},
+ {img:'1586023492125-27b2c045efd7',s:{en:'First home, keys in hand',ms:'Rumah pertama, kunci di tangan',zh:'首套房，已交钥匙'},n:{en:'Cheras condo, 3 bed',ms:'Kondo Cheras, 3 bilik',zh:'蕉赖公寓，3 房'},d:{en:'Loan approved on the second bank after we restructured the paperwork.',ms:'Pinjaman diluluskan oleh bank kedua selepas dokumen disusun semula.',zh:'重新整理文件后，第二家银行批准了贷款。'},k:[['2','banks'],['90%','loan'],['560k','RM']]}
+];
+var KL={offers:{en:'offers',ms:'tawaran',zh:'份报价'},days:{en:'days',ms:'hari',zh:'天'},RM:{en:'RM',ms:'RM',zh:'令吉'},yrs:{en:'yr lease',ms:'thn sewa',zh:'年租约'},'RM/mo':{en:'RM / mo',ms:'RM / bln',zh:'令吉/月'},banks:{en:'banks tried',ms:'bank dicuba',zh:'家银行'},loan:{en:'margin',ms:'margin',zh:'贷款成数'}};
+var PC={en:[['Brief','A 15-minute call or WhatsApp about budget, must-haves and timing.'],['Shortlist','Five to eight homes with honest notes, not 40 links.'],['View','Back-to-back viewings in one trip, with a map and parking notes.'],['Offer & SPA','We negotiate, then coordinate the lawyer, bank and handover.']],ms:[['Taklimat','Panggilan 15 minit atau WhatsApp tentang bajet, keperluan dan masa.'],['Senarai pendek','Lima hingga lapan rumah dengan nota jujur, bukan 40 pautan.'],['Lawatan','Lawatan berturut-turut dalam satu perjalanan, dengan peta dan nota parkir.'],['Tawaran & SPA','Kami berunding, kemudian selaras peguam, bank dan serahan.']],zh:[['了解需求','15 分钟电话或 WhatsApp，聊预算、必备条件和时间。'],['精选清单','5 到 8 间房，附上真实点评，而不是 40 个链接。'],['看房','一次行程连续看房，附地图和停车提示。'],['出价与买卖合约','我们负责议价，再协调律师、银行和交屋。']]};
+var FQ={en:[['Who pays the agent fee?','For most sales, the seller pays our fee. Buyers usually pay us nothing. For rentals, the landlord normally pays. We confirm this in writing before any viewing.'],['How much do I need upfront to buy?','Plan for the down payment (usually 10%), plus legal fees, stamp duty and loan costs. Ask us for a cost sheet for the exact unit.'],['What is the usual rental deposit?','Most KL rentals ask for two months’ security deposit, plus half to one month for utilities, and the first month’s rent.'],['Can foreigners buy here?','Yes, above a minimum price that each state sets. We will check the current threshold and any developer restrictions for the unit you like.'],['Are your agents registered?','Yes. Every agent carries a REN tag from the Board. Ask to see it at the viewing.']],
+ms:[['Siapa bayar yuran ejen?','Untuk kebanyakan jualan, penjual membayar yuran kami. Pembeli biasanya tidak membayar apa-apa. Untuk sewaan, tuan rumah biasanya membayar. Kami sahkan secara bertulis sebelum lawatan.'],['Berapa wang pendahuluan diperlukan untuk membeli?','Sediakan bayaran pendahuluan (biasanya 10%), serta yuran guaman, duti setem dan kos pinjaman. Minta helaian kos untuk unit tersebut daripada kami.'],['Berapa deposit sewa biasa?','Kebanyakan sewaan di KL meminta deposit keselamatan dua bulan, serta setengah hingga satu bulan untuk utiliti, dan sewa bulan pertama.'],['Bolehkah warga asing membeli?','Boleh, melebihi harga minimum yang ditetapkan setiap negeri. Kami akan semak had semasa dan sekatan pemaju untuk unit pilihan anda.'],['Adakah ejen anda berdaftar?','Ya. Setiap ejen membawa tag REN daripada Lembaga. Minta lihat semasa lawatan.']],
+zh:[['中介费由谁付？','大部分买卖由卖家支付我们的佣金，买家通常无需付费。租房一般由房东支付。看房前我们会以书面确认。'],['买房需要准备多少首付？','需准备首付（通常 10%），以及律师费、印花税和贷款相关费用。可向我们索取该单位的费用明细。'],['租房押金一般多少？','吉隆坡大部分租约需两个月押金，加半个月到一个月的水电押金，以及首月租金。'],['外国人可以买房吗？','可以，但须高于各州规定的最低价格。我们会帮你核实目前的门槛和开发商限制。'],['你们的经纪人有注册吗？','有。每位经纪人都持有局方颁发的 REN 名牌，看房时可以要求查看。']]};
+function renderStatic(){
+ $('#areaGrid').innerHTML=AR.map(function(a){return '<article class="area rv"><img loading="lazy" src="'+U(a.img,800)+'" alt="'+AREA[a.k]+'"><div class="area-b"><h3>'+AREA[a.k]+'</h3><p>'+tx(a.d)+'</p><ul>'+tx(a.li).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><div class="from"><span><b>'+a.b+'</b>'+t('typBuy')+'</span><span><b>'+a.r+'</b>'+t('typRent')+'</span><span style="align-self:end">('+t('smpF')+')</span></div></div></article>'}).join('');
+ $('#agentGrid').innerHTML=AG.map(function(g){return '<article class="card ag rv"><div class="ph"><img loading="lazy" src="'+U(g.img,600)+'" alt="'+g.n+'"></div><div class="ag-b"><h3>'+g.n+'</h3><p class="ren">'+g.ren+' ('+t('sample').toLowerCase()+') · '+AREA[g.area]+'</p><p>'+tx(g.b)+'</p><div class="langs">'+g.langs.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div><button type="button" class="btn btn-g demo-wa" style="width:100%"><svg><use href="#wa"/></svg>'+t('chat')+' '+g.n.split(' ')[0]+'</button></div></article>'}).join('');
+ $('#shopGrid').innerHTML=PR.map(function(p){var inC=CART[p.id];return '<article class="card prod rv"><div class="ph"><img loading="lazy" src="'+U(p.img,600)+'" alt=""></div><div class="prod-b"><h3>'+tx(p.n)+'</h3><p>'+tx(p.d)+'</p><div class="prod-f"><div>'+(p.f?'<small>'+t('from')+'</small>':'')+'<b>RM '+p.p+'</b></div><button type="button" class="btn '+(inC?'btn-d':'btn-a')+' btn-s" data-add="'+p.id+'">'+(inC?'✓ '+t('added'):'+ '+t('add'))+'</button></div></div></article>'}).join('');
+ $('#deals').innerHTML=DE.map(function(d){return '<article class="card deal rv"><div class="ph"><img loading="lazy" src="'+U(d.img,700)+'" alt=""><span class="st">'+tx(d.s)+'</span></div><div class="deal-b"><h3>'+tx(d.n)+'</h3><p>'+tx(d.d)+'</p><div class="kpis">'+d.k.map(function(k){return '<div><b>'+k[0]+'</b><span>'+tx(KL[k[1]])+'</span></div>'}).join('')+'</div></div></article>'}).join('');
+ $('#proc').innerHTML=PC[L].map(function(p){return '<div><b>'+p[0]+'</b><p>'+p[1]+'</p></div>'}).join('');
+ var open=$$('#faqList .qa.open').map(function(q){return q.dataset.i});
+ $('#faqList').innerHTML=FQ[L].map(function(q,i){var o=open.indexOf(String(i))>=0||(!open.length&&i===0);return '<div class="qa'+(o?' open':'')+'" data-i="'+i+'"><button type="button" aria-expanded="'+o+'">'+q[0]+'<i aria-hidden="true"></i></button><div class="qa-a"><div><p>'+q[1]+'</p></div></div></div>'}).join('');
+}
+$('#faqList').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var q=b.parentNode,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
+
+/* ---------- cart ---------- */
+var CART={};
+function cartRender(){var ids=Object.keys(CART),n=0,tot=0;
+ $('#cartL').innerHTML=ids.length?ids.map(function(id){var p=PR.filter(function(x){return x.id===id})[0],q=CART[id];n+=q;tot+=q*p.p;return '<div class="ci"><img src="'+U(p.img,120)+'" alt=""><div><b>'+tx(p.n)+'</b><small>RM '+p.p+'</small></div><div class="qty"><button type="button" data-q="'+id+'" data-v="-1" aria-label="-">−</button><span>'+q+'</span><button type="button" data-q="'+id+'" data-v="1" aria-label="+">+</button></div></div>'}).join(''):'<p class="empty">'+t('emptyC')+'</p>';
+ $('#cartN').textContent=n;$('#cartT').textContent=fmt(tot);$('#cartBtn').classList.toggle('show',n>0);}
+document.addEventListener('click',function(e){var a=e.target.closest('[data-add]');if(a){var id=a.dataset.add;CART[id]=(CART[id]||0)+1;cartRender();renderShopBtns();openM($('#drawer'))}
+ var q=e.target.closest('[data-q]');if(q){var k=q.dataset.q;CART[k]+= +q.dataset.v;if(CART[k]<=0)delete CART[k];cartRender();renderShopBtns()}});
+function renderShopBtns(){$$('[data-add]').forEach(function(b){var c=CART[b.dataset.add];b.className='btn '+(c?'btn-d':'btn-a')+' btn-s';b.textContent=c?'✓ '+t('added'):'+ '+t('add')})}
+$('#cartBtn').addEventListener('click',function(){openM($('#drawer'))});
+$('#checkout').addEventListener('click',function(){window.afDemo&&window.afDemo(t('coDemo'))});
+
+/* ---------- language ---------- */
+function setLang(l){L=T[l]?l:'en';H.lang=L==='zh'?'zh-Hans':L;try{localStorage.setItem('af-lang',L)}catch(e){}
+ $$('[data-i]').forEach(function(el){var k=el.dataset.i;if(T[L][k]!=null&&typeof T[L][k]==='string')el.textContent=T[L][k]});
+ $$('[data-ih]').forEach(function(el){var k=el.dataset.ih;if(T[L][k]!=null)el.innerHTML=T[L][k]});
+ $$('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===L)});
+ renderPrice();renderBeds();renderList();eqRender(true);bkRender();calc();renderStatic();cartRender();if(MD.l)mdRender();
+ if(window.afFill)window.afFill();eqMsg();reveal();}
+$$('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+
+/* ---------- nav ---------- */
+var bg=$('#burger'),lk=$('#links');
+bg.addEventListener('click',function(){var o=bg.getAttribute('aria-expanded')!=='true';bg.setAttribute('aria-expanded',o);lk.classList.toggle('open',o)});
+lk.addEventListener('click',function(e){if(e.target.closest('a')){bg.setAttribute('aria-expanded','false');lk.classList.remove('open')}});
+
+var saved=null;try{saved=localStorage.getItem('af-lang')}catch(e){}
+setLang(K.l||saved||'en');
+})();
+</script>
+</body>
+</html>

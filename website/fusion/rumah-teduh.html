@@ -1,460 +1,550 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-goal-default="book">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Rumah Teduh | Aurelion fusion concept</title>
-<meta name="description" content="Rumah Teduh: a six-room heritage shophouse stay in George Town, Penang. Batik editorial meets a crisp booking app. A fusion concept by Aurelion.">
+<title>Rumah Teduh Heritage Stay · Aurelion industry sample</title>
+<meta name="description" content="Rumah Teduh Heritage Stay: a six-room restored shophouse in George Town, Penang. Pick your room, see nightly rates and book direct. An Aurelion industry sample.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/website/fusion/af-kit.js"></script>
 <style>
-:root{--ind:#1d2b57;--ind2:#2b3c72;--teal:#1f6e6a;--jade:#a6cfbe;--terra:#c25e36;--rose:#ecc7b4;--gold:#d8a443;--cream:#f8f2e6;--paper:#efe4cf;--ink:#151b2f;--mut:#5d6379;--line:rgba(21,27,47,.14);--serif:"Gloock",Georgia,"Songti SC","Noto Serif SC",serif;--ed:"Newsreader",Georgia,"Songti SC",serif;--sans:"Manrope",system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+:root{--ind:#1d2b57;--ind2:#2b3c72;--teal:#1f6e6a;--jade:#a6cfbe;--terra:#c25e36;--rose:#ecc7b4;--gold:#d8a443;--cream:#f8f2e6;--paper:#efe4cf;--card:#fff;--ink:#151b2f;--mut:#5d6379;--line:rgba(21,27,47,.14);--onT:#fff;--serif:"Gloock",Georgia,"Songti SC","Noto Serif SC",serif;--ed:"Newsreader",Georgia,"Songti SC",serif;--sans:"Manrope",system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+html[data-vibe=warm]{--ind:#4a2a1a;--ind2:#6b3f27;--teal:#7a5a2e;--jade:#e3c9a0;--terra:#c0552c;--rose:#efd3bf;--gold:#d9a04a;--cream:#f7eee1;--paper:#eedfc9;--card:#fffaf3;--ink:#2e1c12;--mut:#76604f;--line:rgba(46,28,18,.15)}
+html[data-vibe=bold]{--ind:#000;--ind2:#16161b;--teal:#14d9b5;--jade:#14d9b5;--terra:#ff5533;--rose:#26262d;--gold:#ffd23d;--cream:#0e0e11;--paper:#18181d;--card:#1e1e24;--ink:#f4f1ea;--mut:#a9a5b2;--line:rgba(255,255,255,.13);--onT:#0e0e11}
+html[data-vibe=minimal]{--ind:#111;--ind2:#222;--teal:#0f7a6c;--jade:#cfe7e2;--terra:#0f7a6c;--rose:#eef3f2;--gold:#0f7a6c;--cream:#fff;--paper:#f4f4f2;--card:#fff;--ink:#111;--mut:#5f5f5f;--line:rgba(0,0,0,.1)}
+html[data-vibe=luxe]{--ind:#0c2219;--ind2:#143327;--teal:#7fb59f;--jade:#7fb59f;--terra:#c9a24e;--rose:#1b3a2d;--gold:#e0c27a;--cream:#0f241b;--paper:#143026;--card:#173729;--ink:#f1e9d4;--mut:#b8ae94;--line:rgba(241,233,212,.15);--onT:#0f241b}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh,36px) + 80px)}
 body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:96px}
-a{color:inherit}button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+img{display:block;max-width:100%}a{color:inherit}button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
 input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
 .exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
-.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
-.exh-bar a:hover{color:#f5a524}
-.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.exh-bar .exh-cta{color:#f5a524}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
 @media(max-width:720px){.exh-bar .exh-mid{display:none}}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* nav */
-.nav{position:fixed;top:36px;left:0;right:0;z-index:900;background:rgba(248,242,230,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1320px;margin:0 auto;height:62px;padding:0 24px;display:flex;align-items:center;gap:18px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 22px/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.nav{position:fixed;top:var(--exh,36px);left:0;right:0;z-index:900;background:color-mix(in srgb,var(--cream) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1320px;margin:0 auto;height:62px;padding:0 24px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 21px/1 var(--serif);letter-spacing:-.01em;white-space:nowrap;min-width:0}
 .logo svg{width:30px;height:30px;flex:none}
-.links{display:flex;gap:4px;margin-left:auto}
-.links a{padding:8px 13px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;transition:background .2s}
+.links{display:flex;gap:2px;margin-left:auto}
+.links a{padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;transition:background .2s}
 .links a:hover{background:var(--paper)}
 .lang{display:flex;background:var(--paper);border-radius:999px;padding:3px;flex:none}
-.lang button{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em;transition:background .2s,color .2s}
-.lang button[aria-pressed="true"]{background:var(--ind);color:var(--cream)}
-.nbook{background:var(--terra);color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;transition:background .2s}
-.nbook:hover{background:var(--ind)}
-.burger{display:none;border:1px solid var(--ink);border-radius:999px;padding:7px 13px;font-weight:700;font-size:13px}
+.lang button{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em}
+.lang button[aria-pressed=true]{background:var(--ind);color:var(--cream)}
+html[data-vibe=bold] .lang button[aria-pressed=true],html[data-vibe=luxe] .lang button[aria-pressed=true]{background:var(--terra);color:var(--onT)}
+.nbook{background:var(--terra);color:var(--onT);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap}
+.nbook:hover{filter:brightness(1.08)}
+.burger{display:none;border:1px solid var(--ink);border-radius:999px;padding:7px 13px;font-weight:700;font-size:13px;white-space:nowrap}
 /* shared */
 .wrap{max-width:1320px;margin:0 auto;padding:0 24px}
-section{padding:110px 0}
+main{display:flex;flex-direction:column}
+main>section{order:3;padding:110px 0;position:relative}
+main>.hero{order:-2}#direct{order:1}#area{order:2}#faq{order:5}
+html[data-goal=book] #stay,html[data-goal=enq] #ask,html[data-goal=sell] #shop,html[data-goal=cred] #proof{order:-1}
 .kick{display:flex;align-items:center;gap:12px;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra)}
 .kick::before{content:"";width:28px;height:2px;background:currentColor}
 h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
-h2{font-size:clamp(38px,5.4vw,76px);line-height:.98;margin:16px 0 14px}
+h2{font-size:clamp(38px,5.2vw,74px);line-height:.98;margin:16px 0 14px}
 h2 em,h1 em{font-family:var(--ed);font-style:italic;font-weight:500;color:var(--terra)}
+html[lang^=zh] h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.15}html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-style:normal}
 .deck{font:400 clamp(18px,1.6vw,21px)/1.5 var(--ed);color:var(--mut);max-width:56ch}
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
-.pill.p{background:var(--terra);color:#fff}
-.pill.p:hover{background:var(--ind);transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(29,43,87,.6)}
-.pill.o{border:1.5px solid currentColor}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s,filter .2s,box-shadow .2s;cursor:pointer}
+.pill.p{background:var(--terra);color:var(--onT)}
+.pill.p:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--terra)}
+.pill.o{box-shadow:inset 0 0 0 1.5px currentColor}
 .pill.o:hover{background:var(--ink);color:var(--cream)}
+.smp{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:5px 10px;border-radius:999px}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
+.hin{animation:hin .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes hin{from{opacity:0;transform:translateY(22px)}}
 .band{display:block;width:100%;height:44px;overflow:hidden}
 .band rect.mv{animation:drift 6s linear infinite}
 @keyframes drift{to{transform:translateX(48px)}}
+.box{background:var(--card);border-radius:28px;box-shadow:0 0 0 1px var(--line)}
 /* hero */
-.hero{padding:136px 0 70px;position:relative;overflow:clip}
-.hero-g{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.hero .issue{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:9px 0;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:34px}
-.hero h1{font-size:clamp(46px,7.2vw,108px);line-height:.92;letter-spacing:-.035em}
-.hero .lede{font:400 clamp(18px,1.7vw,22px)/1.5 var(--ed);color:#3c4258;max-width:40ch;margin:24px 0 30px}
-.hero .lede::first-letter{float:left;font:400 64px/.82 var(--serif);color:var(--teal);padding:6px 10px 0 0}
-.search{display:grid;grid-template-columns:1fr 1fr auto auto;align-items:center;background:#fff;border-radius:999px;padding:6px;box-shadow:0 18px 40px -22px rgba(21,27,47,.45),0 0 0 1px var(--line);max-width:640px}
+.hero{padding:calc(var(--exh,36px) + 100px) 0 70px!important;overflow:clip}
+.hero-g{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero-g>*{min-width:0}
+.issue{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:9px 0;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:32px}
+.hero h1{font-size:clamp(46px,6.6vw,100px);line-height:.93;letter-spacing:-.035em}
+.lede{font:400 clamp(18px,1.6vw,21px)/1.5 var(--ed);color:var(--mut);max-width:42ch;margin:22px 0 28px}
+.lede::first-letter{float:left;font:400 62px/.82 var(--serif);color:var(--teal);padding:6px 10px 0 0}
+html[lang^=zh] .lede::first-letter{float:none;font:inherit;color:inherit;padding:0}
+.search{display:grid;grid-template-columns:1fr 1fr auto auto;align-items:center;background:var(--card);border-radius:999px;padding:6px;box-shadow:0 18px 40px -22px rgba(21,27,47,.45),0 0 0 1px var(--line);max-width:640px}
+html:not([data-goal=book]) .search{display:none}
+.hcta{display:none;gap:12px;flex-wrap:wrap}
+html:not([data-goal=book]) .hcta{display:flex}
 .sf{display:flex;flex-direction:column;padding:6px 18px;border-right:1px solid var(--line);min-width:0}
 .sf label,.sf .lb{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-.sf input{border:0;background:none;font-weight:600;font-size:15px;padding:2px 0;min-width:0;width:100%;outline:none}
+.sf input{border:0;background:none;font-weight:600;font-size:15px;padding:2px 0;min-width:0;width:100%;outline:none;color-scheme:light dark}
 .step{display:flex;align-items:center;gap:8px;padding-top:2px}
-.step button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);font-weight:700;line-height:1;transition:border-color .2s}
-.step button:hover{border-color:var(--ink)}
+.step button{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--line);font-weight:700;line-height:1}
 .step output{min-width:18px;text-align:center;font-weight:700}
-.search .pill{padding:15px 22px}
-.hero-art{position:relative;width:100%;max-width:520px;justify-self:center}
-.house{width:100%;height:auto;display:block;overflow:visible}
-.sh{transform-box:fill-box;transition:transform 1.2s cubic-bezier(.6,.05,.2,1)}
-.sh.l,.pp.l{transform-origin:left center}.sh.r,.pp.r{transform-origin:right center}
-.house.open .sh{transform:scaleX(.14)}
-.pp{transform-box:fill-box;transition:transform 1.4s cubic-bezier(.6,.05,.2,1) .9s}
-.house.open .pp{transform:scaleX(.5)}
-.glow{opacity:.25;transition:opacity 1.4s}
-.house.open .glow{opacity:1}
-.lan{transform-box:fill-box;transform-origin:50% 0;animation:swing 3.4s ease-in-out infinite alternate}
-@keyframes swing{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
-.stamp{position:absolute;left:-14px;bottom:8%;width:112px;height:112px;animation:spin 26s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;font-size:13px;color:var(--mut)}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px;font-size:13px;color:var(--mut)}
 .facts b{display:block;font:400 26px/1 var(--serif);color:var(--ink);margin-bottom:4px}
-/* rooms */
-.rooms-h{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:40px}
-.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.room{position:relative;text-align:left;background:#fff;border-radius:26px;padding:12px 12px 18px;box-shadow:0 0 0 1px var(--line);transition:transform .3s,box-shadow .3s}
+.art{position:relative;max-width:540px;justify-self:center;width:100%}
+.arch{border-radius:300px 300px 26px 26px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 0 0 10px var(--card),0 0 0 11px var(--line),0 40px 70px -30px rgba(21,27,47,.6)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:100% 100%;transform:scale(1.55);transform-origin:96% 92%}
+.inset{position:absolute;left:-34px;bottom:12%;width:38%;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px var(--cream),0 20px 40px -18px rgba(0,0,0,.5)}
+.inset img{width:100%;height:100%;object-fit:cover}
+.stamp{position:absolute;right:-18px;top:6%;width:118px;height:118px;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tonight{position:absolute;right:-10px;bottom:-18px;background:var(--card);border-radius:20px;padding:14px 18px;box-shadow:0 0 0 1px var(--line),0 24px 40px -20px rgba(0,0,0,.45);display:flex;gap:12px;align-items:center;font-size:13px;color:var(--mut)}
+.tonight b{display:block;font:400 24px/1.05 var(--serif);color:var(--ink)}
+.tonight i{width:10px;height:10px;border-radius:50%;background:#3aa76d;box-shadow:0 0 0 4px rgba(58,167,109,.2);flex:none}
+/* stay */
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.room{position:relative;text-align:left;background:var(--card);border-radius:26px;padding:10px 10px 18px;box-shadow:0 0 0 1px var(--line);transition:transform .3s,box-shadow .3s}
 .room:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--line),0 24px 40px -26px rgba(21,27,47,.5)}
-.room[aria-pressed="true"]{box-shadow:0 0 0 2.5px var(--terra),0 24px 40px -26px rgba(194,94,54,.55)}
-.room svg{width:100%;height:auto;display:block;border-radius:18px}
+.room[aria-pressed=true]{box-shadow:0 0 0 2.5px var(--terra),0 24px 40px -26px rgba(194,94,54,.55)}
+.room .ph{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/2}
+.room .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.room:hover .ph img{transform:scale(1.05)}
+.room .no{position:absolute;left:12px;top:12px;background:var(--cream);color:var(--ink);font:italic 500 14px var(--ed);padding:4px 10px;border-radius:999px}
 .room .rn{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 8px 4px}
 .room h3{font-size:24px;line-height:1.1}
-.room .no{font:italic 500 15px var(--ed);color:var(--terra)}
 .room .spec{display:flex;flex-wrap:wrap;gap:6px;padding:6px 8px 0}
-.room .spec span{font-size:12px;font-weight:700;background:var(--cream);border-radius:999px;padding:5px 10px}
+.room .spec span{font-size:12px;font-weight:700;background:var(--paper);border-radius:999px;padding:5px 10px}
 .room .pr{display:flex;justify-content:space-between;align-items:center;padding:14px 8px 0}
 .room .pr b{font-size:18px}.room .pr small{color:var(--mut);font-size:12px}
 .room .chip{font-size:12px;font-weight:800;border-radius:999px;padding:7px 12px;background:var(--ind);color:var(--cream)}
-.room[aria-pressed="true"] .chip{background:var(--terra)}
+html[data-vibe=bold] .room .chip,html[data-vibe=luxe] .room .chip{background:var(--paper);color:var(--ink)}
+.room[aria-pressed=true] .chip{background:var(--terra);color:var(--onT)}
 .room.small{opacity:.5}
-.room .tag{position:absolute;top:22px;left:22px;background:var(--cream);font-size:11px;font-weight:800;padding:5px 10px;border-radius:999px;display:none}
+.room .tag{position:absolute;right:20px;top:20px;background:var(--ink);color:var(--cream);font-size:11px;font-weight:800;padding:5px 10px;border-radius:999px;display:none}
 .room.small .tag{display:block}
-/* calendar */
-.cal-s{background:var(--paper);position:relative}
-.calcard{background:var(--cream);border-radius:30px;padding:28px;box-shadow:0 0 0 1px var(--line);margin-top:36px}
-.cal-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-.rsel{display:flex;gap:6px;flex-wrap:wrap}
-.rsel button{padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700;box-shadow:inset 0 0 0 1.5px var(--line);transition:.2s}
-.rsel button[aria-pressed="true"]{background:var(--ind);color:var(--cream);box-shadow:none}
-.months{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.mo h3{font-size:26px;margin-bottom:12px}
-.wd,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.wd span{text-align:center;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--mut);padding:6px 0;text-transform:uppercase}
-.d{position:relative;aspect-ratio:1/1.02;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;transition:background .15s,color .15s;min-width:0}
-.d b{font-weight:700;font-size:15px;line-height:1}
-.d small{font-size:10.5px;font-weight:600;color:var(--mut);line-height:1.1}
+.bk-g{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:24px;align-items:start}
+.bk-g>*{min-width:0}
+.calcard{padding:26px}
+.cal-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.cal-top h3{font-size:26px}
+.months{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.mo h4{font:400 22px var(--serif);margin-bottom:10px}
+.wd,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.wd span{text-align:center;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--mut);padding:6px 0;text-transform:uppercase}
+.d{position:relative;aspect-ratio:1/1.05;border-radius:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;transition:background .15s;min-width:0}
+.d b{font-weight:700;font-size:14.5px;line-height:1}
+.d small{font-size:10px;font-weight:600;color:var(--mut);line-height:1.1}
 .d.wk small{color:var(--terra);font-weight:800}
 .d:not(:disabled):hover{background:var(--paper)}
 .d:disabled{opacity:.28;cursor:default}
-.d.so{background:repeating-linear-gradient(135deg,transparent 0 5px,rgba(21,27,47,.07) 5px 7px)}
-.d.so b{text-decoration:line-through;opacity:.5}.d.so small{color:var(--mut)}
-.d.in,.d.pv{background:rgba(31,110,106,.14);border-radius:4px}
-.d.st,.d.en{background:var(--ind)!important;color:var(--cream);border-radius:12px}
-.d.st small,.d.en small{color:var(--jade)}
-.d.en b{text-decoration:none;opacity:1}
+.d.so{background:repeating-linear-gradient(135deg,transparent 0 5px,var(--line) 5px 7px)}
+.d.so b{text-decoration:line-through;opacity:.5}
+.d.in,.d.pv{background:color-mix(in srgb,var(--teal) 16%,transparent);border-radius:4px}
+.d.st,.d.en{background:var(--ind)!important;color:var(--cream);border-radius:11px}
+html[data-vibe=bold] .d.st,html[data-vibe=bold] .d.en,html[data-vibe=luxe] .d.st,html[data-vibe=luxe] .d.en{background:var(--terra)!important;color:var(--onT)}
+.d.st small,.d.en small{color:inherit;opacity:.8}
 .d.td::after{content:"";position:absolute;bottom:4px;width:4px;height:4px;border-radius:50%;background:var(--terra)}
-.cal-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px dashed var(--line)}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;font-weight:600;color:var(--mut)}
+.cal-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;font-weight:600;color:var(--mut)}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
 .hint{font-weight:700;font-size:14px}.hint.bad{color:var(--terra)}
 .clear{font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-/* direct */
-.direct{background:var(--ind);color:var(--cream);position:relative;overflow:hidden}
-.direct .bg{position:absolute;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none}
-.direct .wrap{position:relative}
-.direct .deck{color:rgba(248,242,230,.75)}
-.direct h2 em{color:var(--gold)}
-.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
-.perk{background:rgba(248,242,230,.06);border:1px solid rgba(248,242,230,.16);border-radius:24px;padding:24px;transition:background .3s,transform .3s}
-.perk:hover{background:rgba(248,242,230,.11);transform:translateY(-3px)}
-.perk svg{width:52px;height:52px;margin-bottom:16px}
-.perk h3{font-size:24px;line-height:1.1;margin-bottom:8px}
-.perk p{color:rgba(248,242,230,.72);font-size:15px}
-.fine{font-size:12px;opacity:.65;margin-top:22px}
-/* book */
-.book-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;margin-top:40px;align-items:start}
-.sum{background:#fff;border-radius:28px;padding:26px;box-shadow:0 0 0 1px var(--line);position:sticky;top:120px}
-.sum h3{font-size:28px;margin-bottom:4px}
-.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.sum{padding:24px;position:sticky;top:calc(var(--exh,36px) + 80px)}
+.sum h3{font-size:26px;margin-bottom:4px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
 .row span{color:var(--mut)}.row b{text-align:right}
-.row.tot{border:0;font-size:19px}.row.tot b{font-family:var(--serif);font-weight:400;font-size:28px}
-.form{background:#fff;border-radius:28px;padding:28px;box-shadow:0 0 0 1px var(--line)}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fld{display:flex;flex-direction:column;gap:6px}.fld.w{grid-column:1/-1}
-.fld label{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-.fld input,.fld select,.fld textarea{border:1.5px solid var(--line);border-radius:14px;padding:13px 14px;background:var(--cream);outline:none;transition:border-color .2s;width:100%}
+.row.tot{border:0;font-size:17px}.row.tot b{font-family:var(--serif);font-weight:400;font-size:28px}
+.save{display:flex;gap:10px;align-items:center;background:color-mix(in srgb,var(--teal) 14%,transparent);border-radius:14px;padding:10px 12px;font-size:13.5px;font-weight:600;margin:10px 0}
+.save b{color:var(--teal)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.fld{display:flex;flex-direction:column;gap:5px}.fld.w{grid-column:1/-1}
+.fld label{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.fld input,.fld select,.fld textarea{border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;background:var(--cream);outline:none;width:100%}
 .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--teal)}
-.form .pill{margin-top:20px;width:100%}
-.err{color:var(--terra);font-weight:700;font-size:14px;min-height:22px;margin-top:10px}
-.conf{text-align:center;padding:16px 4px;animation:pop .5s cubic-bezier(.2,.9,.3,1.3)}
+.sum .pill{width:100%;margin-top:14px}
+.err{color:var(--terra);font-weight:700;font-size:13.5px;min-height:20px;margin-top:8px}
+.conf{text-align:center;padding:6px 0;animation:pop .5s cubic-bezier(.2,.9,.3,1.3)}
 @keyframes pop{from{transform:scale(.94);opacity:0}}
-.conf .seal{width:96px;height:96px;margin:0 auto 14px}
-.conf h3{font-size:34px}
-.ref{display:inline-block;margin:14px 0;font:800 20px/1 var(--sans);letter-spacing:.12em;border:2px dashed var(--terra);color:var(--terra);border-radius:14px;padding:12px 18px}
+.conf svg{width:84px;height:84px;margin:0 auto 10px}
+.conf h3{font-size:30px}
+.ref{display:inline-block;margin:12px 0;font:800 16px/1 var(--sans);letter-spacing:.12em;border:2px dashed var(--terra);color:var(--terra);border-radius:12px;padding:10px 14px}
 .conf .row{text-align:left}
-.demo{font:italic 500 16px var(--ed);color:var(--mut);margin:16px 0}
+.demo{font:italic 500 15px var(--ed);color:var(--mut);margin:12px 0}
+/* direct */
+.direct{background:var(--ind);color:var(--cream)}
+html[data-vibe=bold] .direct,html[data-vibe=luxe] .direct{background:var(--paper);color:var(--ink)}
+.direct .bg{position:absolute;inset:0;width:100%;height:100%;opacity:.1;pointer-events:none}
+.direct .wrap{position:relative}
+.direct .deck{color:color-mix(in srgb,currentColor 72%,transparent)}
+.direct h2 em{color:var(--gold)}
+.dir-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px}
+.dir-g>*{min-width:0}
+.cmp{background:var(--cream);color:var(--ink);border-radius:28px;padding:26px}
+.cmp h3{font-size:26px;margin-bottom:14px}
+.cmpr{display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--line)}
+.cmpr span{font-weight:700}
+.cmpr small{grid-column:1/-1;color:var(--mut);font-size:13px}
+.cmpr b{font:400 26px var(--serif)}
+.cmpr.us b{color:var(--teal)}
+.cmpr.ota b{text-decoration:line-through;text-decoration-color:var(--terra);opacity:.7}
+.bigsave{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:14px}
+.bigsave b{font:400 44px/1 var(--serif);color:var(--terra)}
+.perks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.perk{background:color-mix(in srgb,currentColor 6%,transparent);border:1px solid color-mix(in srgb,currentColor 16%,transparent);border-radius:22px;padding:20px}
+.perk svg{width:40px;height:40px;margin-bottom:10px}
+.perk h3{font-size:21px;line-height:1.15;margin-bottom:6px}
+.perk p{opacity:.75;font-size:14.5px}
+.morning{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-top:40px}
+.morning figure{position:relative;border-radius:26px;overflow:hidden;height:300px}
+.morning img{width:100%;height:100%;object-fit:cover}
+.morning figcaption{position:absolute;left:16px;bottom:16px;background:var(--cream);color:var(--ink);font:italic 500 16px var(--ed);padding:8px 14px;border-radius:999px}
+.fine{font-size:12px;opacity:.65;margin-top:18px}
+/* ask */
+.ask-g{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:36px}
+.ask-g>*{min-width:0}
+.askf{padding:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.chips button[aria-pressed=true]{background:var(--teal);color:#fff;box-shadow:none}
+.askf .pill{width:100%;margin-top:16px;background:#1f8a5b;color:#fff}
+.wa{border-radius:26px;overflow:hidden;background:#efe7dc;color:#111;box-shadow:0 0 0 1px var(--line);max-width:440px;width:100%;justify-self:center}
+.wa-h{background:#1f5e54;color:#fff;display:flex;align-items:center;gap:12px;padding:12px 16px}
+.wa-h i{width:38px;height:38px;border-radius:50%;background:#d8a443;display:grid;place-items:center;font:400 18px var(--serif);font-style:normal;color:#1d2b57}
+.wa-h b{display:block;font-size:15px}.wa-h small{opacity:.8;font-size:12px}
+.wa-b{padding:18px 14px;min-height:240px;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:12px 12px;display:flex;flex-direction:column;gap:8px}
+.bub{background:#fff;border-radius:2px 12px 12px 12px;padding:9px 12px;max-width:86%;font-size:14px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.bub.me{background:#d9fdd3;border-radius:12px 2px 12px 12px;align-self:flex-end;white-space:pre-line}
+.bub small{display:block;text-align:right;font-size:10.5px;color:#667;margin-top:3px}
+/* shop */
+.shop-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.cartbtn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:var(--ink);color:var(--cream);font-weight:700}
+.cartbtn b{min-width:24px;height:24px;border-radius:99px;background:var(--gold);color:#151b2f;display:inline-grid;place-items:center;font-size:13px;padding:0 6px}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.prod{background:var(--card);border-radius:26px;overflow:hidden;box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;transition:transform .3s}
+.prod:hover{transform:translateY(-4px)}
+.pimg{aspect-ratio:16/10;position:relative;overflow:hidden;display:grid;place-items:center}
+.pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pimg svg.pat{position:absolute;inset:0;width:100%;height:100%}
+.pimg .ic{position:relative;width:38%;height:auto}
+.pb{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb h3{font-size:22px;line-height:1.15}
+.pb p{font-size:14px;color:var(--mut)}
+.pb .r{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px}
+.pb .r b{font-size:18px}
+.add{padding:9px 16px;border-radius:999px;background:var(--terra);color:var(--onT);font-weight:700;font-size:14px}
+.add.ok{background:var(--teal);color:#fff}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:1100;background:var(--cream);transform:translateX(105%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none;box-shadow:-24px 0 60px -20px rgba(0,0,0,.5)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h3{font-size:26px}.dh button{font-size:28px;line-height:1;padding:2px 8px}
+.dl{flex:1;overflow:auto;padding:8px 22px;list-style:none}
+.dl li{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.dl .nm{flex:1;min-width:0;font-weight:700;font-size:14.5px;line-height:1.3}
+.dl .nm small{display:block;font-weight:600;color:var(--mut)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--line);font-weight:800}
+.df{padding:20px 22px;border-top:1px solid var(--line)}
+.df .t{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-bottom:12px}
+.pays{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pays span{font-size:11.5px;font-weight:800;padding:6px 10px;border-radius:8px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.df .pill{width:100%}
+.scrim{position:fixed;inset:0;background:rgba(21,27,47,.5);z-index:1050;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+/* proof */
+.pr-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:start}
+.pr-g>*{min-width:0}
+.tl{list-style:none;position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 22px}
+.tl li::before{content:"";position:absolute;left:-28px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 3px var(--terra)}
+.tl b{font:400 26px/1 var(--serif);color:var(--terra)}
+.tl h4{font-size:17px;margin:4px 0 2px}
+.tl p{color:var(--mut);font-size:14.5px}
+.revs{display:grid;gap:14px}
+.rev{padding:22px}
+.rev .st{color:var(--gold);letter-spacing:2px;font-size:15px}
+.rev blockquote{font:italic 400 19px/1.45 var(--ed);margin:8px 0}
+.rev small{color:var(--mut);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.badge{display:flex;gap:14px;align-items:center;padding:18px}
+.badge svg{width:52px;height:52px;flex:none}
+.badge b{display:block;font-size:15px}.badge small{color:var(--mut);font-size:12.5px}
+.press{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;padding:24px 0;margin-top:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.press span{font:italic 500 21px var(--ed);opacity:.6}
+.press span:nth-child(2n){font:400 19px var(--serif);font-style:normal}
+.press small{width:100%;text-align:center;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 /* area */
-.area-g{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;margin-top:40px;align-items:start}
-.map{background:#fff;border-radius:30px;padding:10px;box-shadow:0 0 0 1px var(--line)}
-.map svg{width:100%;height:auto;display:block;border-radius:22px}
+.area{background:var(--paper)}
+.area-g{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;margin-top:40px;align-items:start}
+.area-g>*{min-width:0}
+.map{padding:10px}
+.map svg{width:100%;height:auto;display:block;border-radius:20px}
 .pin{cursor:pointer;outline:none}
 .pin .pc{transition:transform .25s;transform-box:fill-box;transform-origin:50% 100%}
 .pin:hover .pc,.pin:focus-visible .pc,.pin.on .pc{transform:scale(1.18)}
 .pin .pulse{transform-box:fill-box;transform-origin:center;animation:pl 2.2s ease-out infinite}
 @keyframes pl{from{transform:scale(.6);opacity:.7}to{transform:scale(2.2);opacity:0}}
-#route{stroke-dasharray:6 7;transition:none}
+#route{stroke-dasharray:6 7}
 #route.go{animation:dash 1.2s ease forwards}
 @keyframes dash{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.chips button{padding:9px 14px;border-radius:999px;font-weight:700;font-size:13px;box-shadow:inset 0 0 0 1.5px var(--line)}
-.chips button[aria-pressed="true"]{background:var(--teal);color:#fff;box-shadow:none}
-.pcard{background:var(--ind);color:var(--cream);border-radius:26px;padding:26px;min-height:220px}
-.pcard .min{font:400 64px/1 var(--serif);color:var(--gold)}
-.pcard .min small{font:700 14px var(--sans);color:var(--cream);margin-left:8px;letter-spacing:.04em}
-.pcard h3{font-size:28px;margin:12px 0 8px}
-.pcard p{color:rgba(248,242,230,.78)}
+.pchips{margin-bottom:14px}
+.pcard{background:var(--ind);color:var(--cream);border-radius:26px;overflow:hidden}
+html[data-vibe=bold] .pcard,html[data-vibe=luxe] .pcard{background:var(--card);color:var(--ink)}
+.pcard .pp{height:190px;position:relative;overflow:hidden;background:var(--teal)}
+.pcard .pp img{width:100%;height:100%;object-fit:cover;animation:fi .6s ease}
+@keyframes fi{from{opacity:0}}
+.pcard .pp svg{position:absolute;inset:0;width:100%;height:100%}
+.pcard .pb2{padding:22px}
+.pcard .min{font:400 52px/1 var(--serif);color:var(--gold)}
+.pcard .min small{font:700 14px var(--sans);color:inherit;margin-left:8px}
+.pcard h3{font-size:26px;margin:10px 0 6px}
+.pcard p{opacity:.8;font-size:15px}
 /* faq */
 .faq-g{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;margin-top:40px;align-items:start}
+.faq-g>*{min-width:0}
 details{border-top:1px solid var(--ink)}
 details:last-of-type{border-bottom:1px solid var(--ink)}
-summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 2px;font:400 22px/1.2 var(--serif)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 2px;font:400 21px/1.2 var(--serif)}
 summary::-webkit-details-marker{display:none}
-summary i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--paper);position:relative;transition:transform .3s,background .3s}
+summary i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--paper);position:relative;transition:transform .3s}
 summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
 summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
 details[open] summary i{transform:rotate(45deg);background:var(--jade)}
-details p{padding:0 2px 22px;color:var(--mut);max-width:62ch}
+details p{padding:0 2px 20px;color:var(--mut);max-width:62ch}
 .note{background:var(--rose);border-radius:28px;padding:30px;position:relative;overflow:hidden}
-.note .lbl{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:6px 10px;border-radius:999px}
-.note blockquote{font:italic 400 clamp(22px,2.2vw,28px)/1.35 var(--ed);margin:20px 0 16px}
-.note small{display:block;color:#6b4a3c;font-size:13px}
+.note blockquote{font:italic 400 clamp(21px,2vw,26px)/1.35 var(--ed);margin:18px 0 14px}
+.note small{display:block;opacity:.7;font-size:13px}
 .note svg{position:absolute;right:-30px;bottom:-30px;width:150px;opacity:.35}
 /* footer */
 footer{background:var(--ink);color:var(--cream)}
+html[data-vibe=bold] footer,html[data-vibe=luxe] footer{background:#000;color:#f1e9d4}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding:70px 24px 40px;max-width:1320px;margin:0 auto}
-.foot h3{font-size:clamp(34px,4vw,54px);line-height:1}
+.foot h3{font-size:clamp(32px,3.6vw,50px);line-height:1}
 .foot h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.foot p,.foot li{color:rgba(248,242,230,.75);font-size:15px;list-style:none;margin-bottom:6px}
-.wa{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--teal);color:#fff;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:800;transition:background .2s}
-.wa:hover{background:var(--terra)}.wa svg{width:20px;height:20px}
-.legal{border-top:1px solid rgba(248,242,230,.14);max-width:1320px;margin:0 auto;padding:20px 24px;font-size:12px;color:rgba(248,242,230,.55);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot p,.foot li{opacity:.75;font-size:15px;list-style:none;margin-bottom:6px}
+.wabtn{display:inline-flex;align-items:center;gap:10px;margin-top:20px;background:#1f8a5b;color:#fff;padding:13px 20px;border-radius:999px;font-weight:800}
+.legal{border-top:1px solid rgba(248,242,230,.14);max-width:1320px;margin:0 auto;padding:20px 24px;font-size:12px;opacity:.55;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 /* price bar + sheet */
 .pbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:950;max-width:900px;margin:0 auto;background:var(--ink);color:var(--cream);border-radius:22px;padding:10px 10px 10px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 20px 50px -18px rgba(0,0,0,.6);transform:translateY(150%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+html[data-vibe=bold] .pbar,html[data-vibe=luxe] .pbar{background:var(--paper);color:var(--ink);box-shadow:0 0 0 1px var(--line),0 20px 50px -18px #000}
 .pbar.show{transform:none}
 .pb-i{flex:1;min-width:0;text-align:left}
-.pb-i small{display:block;font-size:12px;color:rgba(248,242,230,.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pb-i b{font-size:18px;white-space:nowrap}
-.pbar .det{padding:12px 16px;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(248,242,230,.3);font-weight:700;font-size:14px}
+.pb-i small{display:block;font-size:12px;opacity:.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pb-i b{font-size:17px;white-space:nowrap}
+.pbar .det{padding:12px 16px;border-radius:999px;box-shadow:inset 0 0 0 1.5px color-mix(in srgb,currentColor 30%,transparent);font-weight:700;font-size:14px}
 .pbar .pill{padding:13px 20px;font-size:14px}
-.scrim{position:fixed;inset:0;background:rgba(21,27,47,.5);z-index:965;opacity:0;pointer-events:none;transition:opacity .3s}
-.scrim.on{opacity:1;pointer-events:auto}
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:970;max-width:560px;margin:0 auto;background:var(--cream);border-radius:28px 28px 0 0;padding:12px 24px 26px;transform:translateY(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);max-height:82vh;overflow:auto}
 .sheet.on{transform:none}
 .grab{width:44px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 16px}
-.sheet h3{font-size:30px;margin-bottom:6px}
-.nl{max-height:170px;overflow:auto;margin:8px 0;padding-right:4px}
+.sheet h3{font-size:28px;margin-bottom:6px}
+.nl{max-height:170px;overflow:auto;margin:8px 0}
 .nl .row{font-size:14px;padding:7px 0}
 .sheet .pill{width:100%;margin-top:14px}
-.toast{position:fixed;left:50%;top:110px;transform:translate(-50%,-20px);z-index:990;background:var(--ink);color:var(--cream);padding:12px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.3s;max-width:calc(100% - 32px);text-align:center}
-.toast.on{opacity:1;transform:translate(-50%,0)}
-/* responsive */
-@media(max-width:1060px){.links a{padding:8px 9px;font-size:13px}.rgrid{grid-template-columns:repeat(2,1fr)}.perks{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1100px){.links a{padding:8px 9px;font-size:13px}.bk-g{grid-template-columns:1fr}.sum{position:static}.rgrid,.prods{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
- .burger{display:block}
+ .burger{display:block}.lang{margin-left:auto}
  .links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:6px 24px 16px;display:none}
  .nav.open .links{display:flex}
  .links a{font:400 24px var(--serif);padding:14px 0;border-radius:0;border-bottom:1px solid var(--line)}
- .lang{margin-left:auto}
- .hero-g,.book-g,.area-g,.faq-g,.months{grid-template-columns:1fr}
- .hero-art{max-width:400px}
- .sum{position:static}
- .rooms-h{grid-template-columns:1fr}
+ .hero-g,.dir-g,.area-g,.faq-g,.ask-g,.pr-g,.months,.morning{grid-template-columns:1fr}
+ .art{max-width:440px}
+ .badges{grid-template-columns:1fr}
  .foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}
 }
 @media(max-width:640px){
- section{padding:76px 0}.wrap{padding:0 16px}.nav-in{padding:0 16px;gap:10px}
- .nbook{display:none}.logo{font-size:19px}.logo svg{width:26px;height:26px}
- .hero{padding:112px 0 56px}.hero .issue{margin-bottom:22px}
- .search{grid-template-columns:1fr 1fr;border-radius:24px;gap:0}
+ main>section{padding:76px 0}.wrap{padding:0 16px}.nav-in{padding:0 16px;gap:10px}
+ .nbook{display:none}.logo{font-size:18px}.logo svg{width:26px;height:26px}
+ .hero{padding-top:calc(var(--exh,36px) + 84px)!important;padding-bottom:60px!important}.issue{margin-bottom:22px}
+ .search{grid-template-columns:1fr 1fr;border-radius:24px}
  .sf{border-right:0;border-bottom:1px solid var(--line);padding:10px 12px}
  .sf:first-child{border-right:1px solid var(--line)}
  .sf.g{border-bottom:0}
  .search .pill{margin:4px}
- .rgrid{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 18px;margin:0 -16px;scrollbar-width:none}
- .rgrid::-webkit-scrollbar{display:none}
- .room{scroll-snap-align:center}
+ .hcta .pill{flex:1 1 100%}
+ .inset{left:-6px;width:34%}.stamp{right:-4px;width:86px;height:86px}.tonight{right:6px;bottom:-14px;padding:10px 14px}
+ .rgrid,.prods{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 18px;margin:30px -16px 0;scrollbar-width:none}
+ .rgrid::-webkit-scrollbar,.prods::-webkit-scrollbar{display:none}
+ .room,.prod{scroll-snap-align:center}
  .calcard{padding:16px 10px;border-radius:22px}
  .cal-top,.cal-foot{padding:0 6px}
- .wd,.days{gap:2px}
- .d b{font-size:14px}.d small{font-size:9.5px}
+ .wd,.days{gap:2px}.d b{font-size:13.5px}.d small{font-size:9px}
  .perks{grid-template-columns:1fr}
  .fg{grid-template-columns:1fr}
- .form,.sum{padding:20px;border-radius:22px}
- .foot{grid-template-columns:1fr;padding:56px 16px 30px}
- .legal{padding:18px 16px}
+ .sum,.askf,.cmp{padding:20px;border-radius:22px}
+ .morning figure{height:220px}
+ .foot{grid-template-columns:1fr;padding:56px 16px 30px}.legal{padding:18px 16px}
  .pbar{left:8px;right:8px;bottom:8px;padding:8px 8px 8px 16px;gap:6px}
- .pbar .det{display:none}.pb-i b{font-size:16px}
- .stamp{width:84px;height:84px;left:0}
- summary{font-size:19px}
+ .pbar .det{display:none}.pb-i b{font-size:15px}
+ summary{font-size:18px}
 }
-@media(max-width:420px){
- .logo svg{display:none}.lang button{padding:6px 8px}.burger{padding:7px 10px}.nav-in{gap:8px}
-}
+@media(max-width:420px){.logo svg{display:none}.lang button{padding:6px 8px}.nav-in{gap:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-15 · Batik editorial × Booking app</span><a class="exh-cta" href="/website/?t=rumah-teduh#finder">Build one like this →</a></div>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Heritage stay with direct booking</span><a class="exh-cta" href="/website/?t=rumah-teduh#finder">Build one like this →</a></div>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
- <defs>
-  <pattern id="kawung" width="48" height="48" patternUnits="userSpaceOnUse">
-   <rect width="48" height="48" fill="#1d2b57"/>
-   <g fill="none" stroke="#d8a443" stroke-width="1.6"><ellipse cx="24" cy="12" rx="6.5" ry="10"/><ellipse cx="24" cy="36" rx="6.5" ry="10"/><ellipse cx="12" cy="24" rx="10" ry="6.5"/><ellipse cx="36" cy="24" rx="10" ry="6.5"/></g>
-   <g fill="#c25e36"><circle cx="24" cy="24" r="2.6"/><circle cx="0" cy="0" r="3"/><circle cx="48" cy="0" r="3"/><circle cx="0" cy="48" r="3"/><circle cx="48" cy="48" r="3"/></g>
-   <g fill="#a6cfbe"><circle cx="24" cy="12" r="1.5"/><circle cx="24" cy="36" r="1.5"/><circle cx="12" cy="24" r="1.5"/><circle cx="36" cy="24" r="1.5"/></g>
-  </pattern>
-  <pattern id="tile" width="22" height="22" patternUnits="userSpaceOnUse">
-   <rect width="22" height="22" fill="#f8f2e6"/>
-   <path d="M11 3c3 4 3 4 0 8-3-4-3-4 0-8zM11 19c3-4 3-4 0-8-3 4-3 4 0 8zM3 11c4-3 4-3 8 0-4 3-4 3-8 0zM19 11c-4-3-4-3-8 0 4 3 4 3 8 0z" fill="#1f6e6a"/>
-   <circle cx="11" cy="11" r="1.8" fill="#c25e36"/>
-   <g fill="#1d2b57"><path d="M0 0h5a5 5 0 0 1-5 5z"/><path d="M22 0h-5a5 5 0 0 0 5 5z"/><path d="M0 22h5a5 5 0 0 0-5-5z"/><path d="M22 22h-5a5 5 0 0 1 5-5z"/></g>
-  </pattern>
-  <pattern id="louv" width="10" height="6" patternUnits="userSpaceOnUse"><rect width="10" height="6" fill="#1f6e6a"/><rect y="4" width="10" height="2" fill="#154e4b"/></pattern>
-  <pattern id="bars" width="8" height="10" patternUnits="userSpaceOnUse"><rect width="8" height="10" fill="#2b3c72"/><rect x="3" width="2" height="10" fill="#d8a443"/></pattern>
- </defs>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <pattern id="kawung" width="48" height="48" patternUnits="userSpaceOnUse"><rect width="48" height="48" fill="#1d2b57"/><g fill="none" stroke="#d8a443" stroke-width="1.6"><ellipse cx="24" cy="12" rx="6.5" ry="10"/><ellipse cx="24" cy="36" rx="6.5" ry="10"/><ellipse cx="12" cy="24" rx="10" ry="6.5"/><ellipse cx="36" cy="24" rx="10" ry="6.5"/></g><g fill="#c25e36"><circle cx="24" cy="24" r="2.6"/><circle cx="0" cy="0" r="3"/><circle cx="48" cy="0" r="3"/><circle cx="0" cy="48" r="3"/><circle cx="48" cy="48" r="3"/></g><g fill="#a6cfbe"><circle cx="24" cy="12" r="1.5"/><circle cx="24" cy="36" r="1.5"/><circle cx="12" cy="24" r="1.5"/><circle cx="36" cy="24" r="1.5"/></g></pattern>
+ <pattern id="tile" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#f8f2e6"/><path d="M11 3c3 4 3 4 0 8-3-4-3-4 0-8zM11 19c3-4 3-4 0-8-3 4-3 4 0 8zM3 11c4-3 4-3 8 0-4 3-4 3-8 0zM19 11c-4-3-4-3-8 0 4 3 4 3 8 0z" fill="#1f6e6a"/><circle cx="11" cy="11" r="1.8" fill="#c25e36"/><g fill="#1d2b57"><path d="M0 0h5a5 5 0 0 1-5 5z"/><path d="M22 0h-5a5 5 0 0 0 5 5z"/><path d="M0 22h5a5 5 0 0 0-5-5z"/><path d="M22 22h-5a5 5 0 0 1 5-5z"/></g></pattern>
+</defs></svg>
 
 <header class="nav" id="nav">
  <div class="nav-in">
-  <a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="9" fill="#1d2b57"/><path d="M20 7c5 6 5 6 0 13-5-7-5-7 0-13zM20 33c5-6 5-6 0-13-5 7-5 7 0 13zM7 20c6-5 6-5 13 0-7 5-7 5-13 0zM33 20c-6-5-6-5-13 0 7 5 7 5 13 0z" fill="#d8a443"/><circle cx="20" cy="20" r="3" fill="#c25e36"/></svg>Rumah Teduh</a>
+  <a class="logo" href="#top" aria-label="Home"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="9" fill="#1d2b57"/><path d="M20 7c5 6 5 6 0 13-5-7-5-7 0-13zM20 33c5-6 5-6 0-13-5 7-5 7 0 13zM7 20c6-5 6-5 13 0-7 5-7 5-13 0zM33 20c-6-5-6-5-13 0 7 5 7 5 13 0z" fill="#d8a443"/><circle cx="20" cy="20" r="3" fill="#c25e36"/></svg><span data-af-name>Rumah Teduh</span></a>
   <nav class="links" id="links" aria-label="Main">
-   <a href="#rooms" data-i="n_rooms">Rooms</a><a href="#dates" data-i="n_dates">Dates</a><a href="#direct" data-i="n_direct">Book direct</a><a href="#area" data-i="n_area">Neighbourhood</a><a href="#faq" data-i="n_faq">FAQ</a>
+   <a href="#stay" data-i="n1">Rooms</a><a href="#direct" data-i="n2">Book direct</a><a href="#area" data-i="n3">Neighbourhood</a><a href="#proof" data-i="n4">The house</a><a href="#faq" data-i="n5">FAQ</a>
   </nav>
   <div class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button data-l="ms" aria-pressed="false">BM</button><button data-l="zh" aria-pressed="false">中文</button></div>
-  <a class="nbook" href="#dates" data-i="n_book">Book a room</a>
+  <a class="nbook" id="nbook" href="#stay"></a>
   <button class="burger" id="burger" aria-expanded="false" aria-controls="links" data-i="menu">Menu</button>
  </div>
 </header>
 
 <main id="top">
 <section class="hero">
- <div class="wrap">
-  <div class="issue"><span data-i="issue1">Vol. 06 · George Town, Penang</span><span data-i="issue2">Six rooms · one shophouse</span></div>
-  <div class="hero-g">
-   <div class="rv">
-    <h1 data-ih="h1">Six rooms behind <em>old shutters.</em></h1>
-    <p class="lede" data-i="lede">A restored heritage shophouse in the heart of George Town. Tiled floors, an open airwell, kopi at dawn. Book with the house, not a middleman.</p>
-    <form class="search" id="search" novalidate>
-     <div class="sf"><label for="ci" data-i="ci">Check-in</label><input type="date" id="ci"></div>
-     <div class="sf"><label for="co" data-i="co">Check-out</label><input type="date" id="co"></div>
-     <div class="sf g"><span class="lb" data-i="guests">Guests</span><div class="step"><button type="button" id="gm" aria-label="Fewer guests">−</button><output id="gv" aria-live="polite">2</output><button type="button" id="gp" aria-label="More guests">+</button></div></div>
-     <button class="pill p" data-i="search">Check availability</button>
-    </form>
-    <div class="facts"><div><b>6</b><span data-i="f1">rooms, each different</span></div><div><b>3 pm</b><span data-i="f2">check-in, kopi ready</span></div><div><b>RM</b><span data-i="f3">sample prices shown</span></div></div>
-   </div>
-   <div class="hero-art">
-    <svg class="house" id="house" viewBox="0 0 420 480" role="img" aria-label="Illustrated shophouse façade with opening shutters">
-     <circle id="sun" cx="336" cy="86" r="56" fill="#c25e36" opacity=".92"/>
-     <path d="M40 112Q40 72 92 66H168Q186 30 210 30T252 66H328Q380 72 380 112Z" fill="#1d2b57"/>
-     <path d="M178 66Q192 42 210 42T242 66" fill="none" stroke="#d8a443" stroke-width="3"/>
-     <circle cx="210" cy="56" r="5" fill="#d8a443"/>
-     <rect x="40" y="110" width="340" height="352" fill="#ecc7b4"/>
-     <rect x="30" y="104" width="360" height="12" rx="3" fill="#1f6e6a"/>
-     <rect x="30" y="116" width="360" height="5" fill="#d8a443"/>
-     <g id="wins"></g>
-     <rect x="60" y="254" width="300" height="10" rx="2" fill="#1d2b57"/>
-     <rect x="128" y="270" width="164" height="30" rx="4" fill="#1d2b57"/>
-     <text x="210" y="291" text-anchor="middle" fill="#d8a443" font-family="Gloock,Georgia,serif" font-size="15" letter-spacing="3">RUMAH TEDUH</text>
-     <rect x="40" y="306" width="340" height="156" fill="#2b3c72"/>
-     <path d="M52 462V340Q52 316 94 316Q136 316 136 340V462M284 462V340Q284 316 326 316Q368 316 368 340V462" fill="#1d2b57"/>
-     <path d="M150 462V334Q150 318 210 318Q270 318 270 334V462Z" fill="#151b2f"/>
-     <rect x="62" y="346" width="64" height="66" fill="url(#bars)"/><rect x="294" y="346" width="64" height="66" fill="url(#bars)"/>
-     <rect x="160" y="336" width="100" height="126" fill="#1f6e6a"/>
-     <path d="M210 336V462" stroke="#151b2f" stroke-width="2"/>
-     <g class="pp l"><rect x="160" y="372" width="50" height="62" fill="#c25e36"/><path d="M167 380h36M167 392h36M167 404h36M167 416h36" stroke="#f8f2e6" stroke-width="1.5" opacity=".6"/></g>
-     <g class="pp r"><rect x="210" y="372" width="50" height="62" fill="#c25e36"/><path d="M217 380h36M217 392h36M217 404h36M217 416h36" stroke="#f8f2e6" stroke-width="1.5" opacity=".6"/></g>
-     <rect x="40" y="430" width="340" height="32" fill="url(#tile)"/>
-     <rect x="20" y="460" width="380" height="8" rx="3" fill="#151b2f"/>
-     <g class="lan"><path d="M104 306v14" stroke="#151b2f" stroke-width="2"/><ellipse cx="104" cy="334" rx="13" ry="16" fill="#c25e36"/><rect x="97" y="316" width="14" height="4" fill="#d8a443"/><rect x="97" y="348" width="14" height="4" fill="#d8a443"/><path d="M104 352v12" stroke="#d8a443" stroke-width="2"/></g>
-     <g class="lan" style="animation-delay:-1.7s"><path d="M316 306v14" stroke="#151b2f" stroke-width="2"/><ellipse cx="316" cy="334" rx="13" ry="16" fill="#c25e36"/><rect x="309" y="316" width="14" height="4" fill="#d8a443"/><rect x="309" y="348" width="14" height="4" fill="#d8a443"/><path d="M316 352v12" stroke="#d8a443" stroke-width="2"/></g>
-     <g><path d="M14 460l6-30h28l6 30z" fill="#c25e36"/><path d="M34 430c-14-20-18-36-6-46M34 430c6-24 18-34 30-30M34 430c-2-26 4-44 14-50" fill="none" stroke="#1f6e6a" stroke-width="5" stroke-linecap="round"/></g>
-     <g><path d="M366 460l6-30h28l6 30z" fill="#c25e36"/><path d="M386 430c14-20 18-36 6-46M386 430c-6-24-18-34-30-30M386 430c2-26-4-44-14-50" fill="none" stroke="#1f6e6a" stroke-width="5" stroke-linecap="round"/></g>
-    </svg>
-    <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="58" fill="#f8f2e6" stroke="#1d2b57" stroke-width="2"/><text font-family="Manrope,sans-serif" font-size="10.5" font-weight="800" letter-spacing="3.2" fill="#1d2b57"><textPath href="#cp">BOOK DIRECT · TEDUH · PENANG · </textPath></text><circle cx="60" cy="60" r="22" fill="url(#kawung)"/></svg>
-   </div>
+ <div class="wrap hero-g">
+  <div class="hin">
+   <div class="issue"><span><span data-i="iss1">Heritage stay ·</span> <span data-af-area>George Town</span></span><span data-i="iss2">Six rooms · one shophouse</span></div>
+   <h1 data-i="h1">Wake up behind <em>old shutters.</em></h1>
+   <p class="lede" data-i="lede">A restored 1920s shophouse with six rooms, tiled floors and an open airwell. Kopi at dawn, hawkers at dusk. Book with the house and keep the savings.</p>
+   <form class="search" id="search" novalidate>
+    <div class="sf"><label for="ci" data-i="ci">Check-in</label><input type="date" id="ci"></div>
+    <div class="sf"><label for="co" data-i="co">Check-out</label><input type="date" id="co"></div>
+    <div class="sf g"><span class="lb" data-i="guests">Guests</span><div class="step"><button type="button" id="gm" aria-label="Fewer guests">−</button><output id="gv" aria-live="polite">2</output><button type="button" id="gp" aria-label="More guests">+</button></div></div>
+    <button class="pill p" data-i="search">Check availability</button>
+   </form>
+   <div class="hcta"><a class="pill p" id="heroCta" href="#ask"></a><a class="pill o" href="#stay" data-i="seeRooms">See the rooms</a></div>
+   <div class="facts"><div><b>6</b><span data-i="f1">rooms, each different</span></div><div><b>3 pm</b><span data-i="f2">check-in, kopi ready</span></div><div><b>−10%</b><span data-i="f3">when you book direct (sample)</span></div></div>
+  </div>
+  <div class="art hin" style="animation-delay:.12s">
+   <div class="arch"><img src="https://images.unsplash.com/photo-1762055529261-08e4c546e57b?auto=format&fit=crop&w=900&h=1125&q=80" alt="A row of white heritage shophouses with wooden shutters in George Town" width="900" height="1125" fetchpriority="high"></div>
+   <div class="inset"><img src="https://images.unsplash.com/photo-1747564880682-19dadaeb5d42?auto=format&fit=crop&w=400&h=400&q=80" alt="Weathered blue timber shutters on an old building" width="400" height="400"></div>
+   <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="58" fill="#f8f2e6" stroke="#1d2b57" stroke-width="2"/><text font-family="Manrope,sans-serif" font-size="10.5" font-weight="800" letter-spacing="3.2" fill="#1d2b57"><textPath href="#cp">BOOK DIRECT · SAVE · PENANG · </textPath></text><circle cx="60" cy="60" r="22" fill="url(#kawung)"/></svg>
+   <div class="tonight"><i></i><div><span data-i="tonight">Tonight · 3 rooms free</span><b id="tonightP">from RM 260</b></div></div>
   </div>
  </div>
 </section>
 
 <svg class="band" aria-hidden="true"><rect class="mv" x="-48" width="4000" height="44" fill="url(#kawung)"/></svg>
 
-<section id="rooms">
+<!-- BOOK: rooms + calendar + request -->
+<section id="stay" class="goal-book">
  <div class="wrap">
-  <div class="rooms-h rv">
-   <div><div class="kick" data-i="k_rooms">No. 01 · The rooms</div><h2 data-ih="h_rooms">Six rooms, <em>six moods.</em></h2><p class="deck" data-i="d_rooms">Each room has its own tiles, its own light and its own story. Choose one and the prices below follow you.</p></div>
-  </div>
+  <div class="rv"><div class="kick" data-i="kR">No. 01 · Rooms &amp; dates</div><h2 data-i="hR">Six rooms, <em>six moods.</em></h2><p class="deck" data-i="dR">Pick a room, tap your nights on the calendar and see the full price before you ask. Sample nightly rates in RM.</p></div>
   <div class="rgrid" id="rgrid"></div>
- </div>
-</section>
-
-<section class="cal-s" id="dates">
- <div class="wrap">
-  <div class="rv"><div class="kick" data-i="k_dates">No. 02 · Availability</div><h2 data-ih="h_dates">Choose your <em>nights.</em></h2><p class="deck" data-i="d_dates">Sample nightly prices in RM. Weekends cost more; striped dates are sold out.</p></div>
-  <div class="calcard rv">
-   <div class="cal-top"><div class="rsel" id="rsel" role="group" aria-label="Room"></div><button class="clear" id="clear" data-i="clear">Clear dates</button></div>
-   <div class="months" id="months"></div>
-   <div class="cal-foot">
-    <p class="hint" id="hint" aria-live="polite"></p>
-    <div class="legend"><span><i style="background:#c25e36;opacity:.25"></i><span data-i="lg_wk">Weekend rate</span></span><span><i style="background:repeating-linear-gradient(135deg,#fff 0 3px,#bbb 3px 5px)"></i><span data-i="lg_so">Sold out</span></span><span><i style="background:#1d2b57"></i><span data-i="lg_sel">Your stay</span></span></div>
+  <div class="bk-g">
+   <div class="box calcard rv">
+    <div class="cal-top"><h3 id="calT"></h3><button class="clear" id="clear" data-i="clear">Clear dates</button></div>
+    <div class="months" id="months"></div>
+    <div class="cal-foot"><p class="hint" id="hint" aria-live="polite"></p><div class="legend"><span><i style="background:var(--terra);opacity:.3"></i><span data-i="lgWk">Weekend rate</span></span><span><i style="background:repeating-linear-gradient(135deg,transparent 0 3px,#999 3px 5px)"></i><span data-i="lgSo">Sold out</span></span><span><i style="background:var(--ind)"></i><span data-i="lgSel">Your stay</span></span></div></div>
    </div>
+   <aside class="box sum rv" id="sum" aria-live="polite"></aside>
   </div>
  </div>
 </section>
 
+<!-- ENQ -->
+<section id="ask" class="goal-enq" style="background:var(--paper)">
+ <div class="wrap">
+  <div class="rv"><div class="kick" data-i="kA">No. 01 · Ask the house</div><h2 data-i="hA">Questions? <em>WhatsApp the house.</em></h2><p class="deck" data-i="dA">Tell us roughly when and who’s coming. The people who run the house reply, usually within the hour.</p></div>
+  <div class="ask-g">
+   <form class="box askf rv" id="askF" novalidate>
+    <div class="fld"><label data-i="aT">I’m asking about</label><div class="chips" id="aTop" role="group"></div></div>
+    <div class="fg"><div class="fld"><label for="aMo" data-i="aMo">When</label><select id="aMo"></select></div><div class="fld"><label for="aG" data-i="guests">Guests</label><select id="aG"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option></select></div><div class="fld w"><label for="aN" data-i="aN">Your name</label><input id="aN" autocomplete="given-name"></div></div>
+    <button class="pill"><span data-i="aGo">Open WhatsApp with this message</span></button>
+   </form>
+   <div class="wa rv"><div class="wa-h"><i data-af-initial>R</i><div><b data-af-name>Rumah Teduh</b><small data-i="waS">The house · replies within the hour</small></div></div><div class="wa-b"><div class="bub" data-i="waHi">Selamat datang! 👋 Ask us anything about the rooms, dates or getting here.<small>8:41</small></div><div class="bub me" id="waMsg"></div></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- SELL -->
+<section id="shop" class="goal-sell">
+ <div class="wrap">
+  <div class="shop-top rv"><div><div class="kick" data-i="kS">No. 01 · The house shop</div><h2 data-i="hS">Take a piece of <em>the house home.</em></h2><p class="deck" data-i="dS">Stay vouchers, our kopi, batik and tours with our host. Collect at check-in or get it posted anywhere in Malaysia.</p></div><button class="cartbtn" id="cartOpen"><span data-i="cart">Cart</span><b id="cartN">0</b></button></div>
+  <div class="prods" id="prods"></div>
+ </div>
+</section>
+
+<!-- CRED -->
+<section id="proof" class="goal-cred" style="background:var(--paper)">
+ <div class="wrap">
+  <div class="rv"><div class="kick" data-i="kP">No. 01 · The house</div><h2 data-i="hP">A hundred years old. <em>Loved back to life.</em></h2><p class="deck" data-i="dP">How the house came back, what guests say, and who we answer to. Story, reviews and badges are samples for this concept.</p></div>
+  <div class="pr-g">
+   <ol class="tl rv">
+    <li><b>1926</b><h4 data-i="t1">Built for a spice trader</h4><p data-i="t1p">Two storeys, an airwell, and a five-foot way facing the street.</p></li>
+    <li><b>1970s</b><h4 data-i="t2">Rooms for rent</h4><p data-i="t2p">Divided into small rooms for workers from the port.</p></li>
+    <li><b>2018</b><h4 data-i="t3">Restored by local craftsmen</h4><p data-i="t3p">Lime plaster, the original tiles re-laid, shutters rebuilt by hand.</p></li>
+    <li><b>2020</b><h4 data-i="t4">Doors open again</h4><p data-i="t4p">Six rooms, a family who lives on site, and kopi every morning.</p></li>
+   </ol>
+   <div class="revs" id="revs"></div>
+  </div>
+  <div class="badges">
+   <div class="box badge rv"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="url(#kawung)"/><circle cx="26" cy="26" r="15" fill="#f8f2e6"/><path d="M19 26l5 5 9-10" stroke="#1f6e6a" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg><div><b data-i="b1">MOTAC-registered stay</b><small data-i="b1s">Licence no. sample</small></div></div>
+   <div class="box badge rv"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" rx="14" fill="url(#tile)"/><rect x="12" y="12" width="28" height="28" rx="8" fill="#1d2b57"/><path d="M26 18v16M18 26h16" stroke="#d8a443" stroke-width="3"/></svg><div><b data-i="b2">Heritage-zone restoration</b><small data-i="b2s">Approved works · sample</small></div></div>
+   <div class="box badge rv"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#c25e36"/><path d="M26 13l4 8.5 9 1.2-6.6 6.2 1.7 9-8.1-4.4-8.1 4.4 1.7-9L13 22.7l9-1.2z" fill="#f8f2e6"/></svg><div><b data-i="b3">Guest rating 4.9 / 5</b><small data-i="b3s">Sample figure</small></div></div>
+  </div>
+  <div class="press rv"><small data-i="pressK">As seen in (fictional titles)</small><span>The Straits Weekender</span><span>Slow Travel Asia</span><span>Kopi &amp; Kampung</span><span>Nanyang Living</span></div>
+ </div>
+</section>
+
+<!-- direct -->
 <section class="direct" id="direct">
  <svg class="bg" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kawung)"/></svg>
  <div class="wrap">
-  <div class="rv"><div class="kick" style="color:var(--gold)" data-i="k_direct">No. 03 · Book direct</div><h2 data-ih="h_direct">Why book <em>with the house.</em></h2><p class="deck" data-i="d_direct">Small things we can only offer when you book with us. Sample perks for this concept.</p></div>
-  <div class="perks" id="perks"></div>
-  <p class="fine" data-i="fine">Perks are subject to availability on the day. Prices are samples for this concept only.</p>
- </div>
-</section>
-
-<section id="book">
- <div class="wrap">
-  <div class="rv"><div class="kick" data-i="k_book">No. 04 · Request</div><h2 data-ih="h_book">Request your <em>stay.</em></h2><p class="deck" data-i="d_book">No payment now. The house confirms by WhatsApp or email within the day.</p></div>
-  <div class="book-g">
-   <aside class="sum rv" id="sum"></aside>
-   <div class="form rv" id="formbox"></div>
+  <div class="rv"><div class="kick" style="color:var(--gold)" data-i="kD">No. 02 · Book direct and save</div><h2 data-i="hD">Same room. <em>Less to pay.</em> More to enjoy.</h2><p class="deck" data-i="dD">Booking sites take a cut from every night. Book with us and we pass it back to you, plus a few things only the house can give.</p></div>
+  <div class="dir-g">
+   <div class="cmp rv" id="cmp" aria-live="polite"></div>
+   <div class="perks rv" id="perks"></div>
   </div>
+  <div class="morning rv">
+   <figure><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1000&h=600&q=80" alt="A breakfast table spread with fruit, waffles, eggs and juice" loading="lazy" width="1000" height="600"><figcaption data-i="cap1">Breakfast in the airwell</figcaption></figure>
+   <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&h=600&q=80" alt="Hands holding cups of coffee" loading="lazy" width="700" height="600"><figcaption data-i="cap2">Kopi at 7 am</figcaption></figure>
+  </div>
+  <p class="fine" data-i="fine">Comparison, perks and prices are samples for this concept.</p>
  </div>
 </section>
 
-<section class="cal-s" id="area">
+<!-- area -->
+<section class="area" id="area">
  <div class="wrap">
-  <div class="rv"><div class="kick" data-i="k_area">No. 05 · Neighbourhood</div><h2 data-ih="h_area">Step out <em>the front door.</em></h2><p class="deck" data-i="d_area">Tap a pin. Illustrated map, not to scale; walking times are sample estimates.</p></div>
+  <div class="rv"><div class="kick" data-i="kN">No. 03 · Neighbourhood guide</div><h2 data-i="hN">Step out <em>the front door.</em></h2><p class="deck" data-i="dN">Tap a pin for our host’s tip. Illustrated map, not to scale; walking times are sample estimates.</p></div>
   <div class="area-g">
-   <div class="map rv">
+   <div class="box map rv">
     <svg viewBox="0 0 600 420" id="map" role="group" aria-label="Neighbourhood map">
-     <rect width="600" height="420" fill="#f8f2e6"/>
+     <rect width="600" height="420" fill="var(--cream)"/>
      <path d="M470 0Q440 120 480 210T452 420H600V0Z" fill="#a6cfbe"/>
      <g fill="none" stroke="#1f6e6a" stroke-width="1.5" opacity=".5"><path d="M520 60q8-6 16 0t16 0M540 150q8-6 16 0t16 0M515 260q8-6 16 0t16 0M545 350q8-6 16 0t16 0"/></g>
-     <g stroke="#efe4cf" stroke-width="18" stroke-linecap="round" fill="none"><path d="M40 90H470M30 230H480M50 340H455M120 30V400M300 20V410M210 60V380M390 40V400"/></g>
-     <g stroke="#fff" stroke-width="2" stroke-dasharray="4 6" fill="none"><path d="M40 90H470M30 230H480M50 340H455M120 30V400M300 20V410M210 60V380M390 40V400"/></g>
+     <g stroke="var(--paper)" stroke-width="18" stroke-linecap="round" fill="none"><path d="M40 90H470M30 230H480M50 340H455M120 30V400M300 20V410M210 60V380M390 40V400"/></g>
+     <g stroke="var(--card)" stroke-width="2" stroke-dasharray="4 6" fill="none"><path d="M40 90H470M30 230H480M50 340H455M120 30V400M300 20V410M210 60V380M390 40V400"/></g>
      <g fill="#ecc7b4" opacity=".75"><rect x="135" y="104" width="62" height="112" rx="6"/><rect x="225" y="104" width="62" height="112" rx="6"/><rect x="315" y="104" width="62" height="112" rx="6"/><rect x="135" y="244" width="62" height="84" rx="6"/><rect x="315" y="244" width="62" height="84" rx="6"/><rect x="40" y="104" width="66" height="112" rx="6"/><rect x="40" y="244" width="66" height="84" rx="6"/></g>
      <g fill="#1f6e6a"><circle cx="346" cy="282" r="16"/><circle cx="362" cy="298" r="11"/><circle cx="332" cy="302" r="10"/></g>
      <g stroke="#7a5a3a" stroke-width="5"><path d="M480 300H560M470 160H545"/></g>
-     <g fill="#7a5a3a"><rect x="540" y="290" width="22" height="20" rx="3"/><rect x="530" y="150" width="22" height="20" rx="3"/></g>
-     <g font-family="Manrope,sans-serif" font-size="11" font-weight="800" fill="#5d6379" letter-spacing="1.5"><text x="44" y="82">LEBUH CHULIA</text><text x="44" y="222">LEBUH ARMENIAN</text><text x="500" y="404" fill="#1f6e6a">SELAT</text></g>
+     <g font-family="Manrope,sans-serif" font-size="11" font-weight="800" fill="var(--mut)" letter-spacing="1.5"><text x="44" y="82">LEBUH CHULIA</text><text x="44" y="222">LEBUH ARMENIAN</text><text x="500" y="404" fill="#1f6e6a">SELAT</text></g>
      <path id="route" d="" fill="none" stroke="#c25e36" stroke-width="4" stroke-linecap="round"/>
-     <g id="me"><circle cx="210" cy="230" r="22" fill="#1d2b57"/><circle cx="210" cy="230" r="13" fill="url(#tile)"/><text x="210" y="198" text-anchor="middle" font-family="Gloock,serif" font-size="15" fill="#1d2b57" stroke="#f8f2e6" stroke-width="5" paint-order="stroke">Rumah Teduh</text></g>
+     <g><circle cx="210" cy="230" r="22" fill="#1d2b57"/><circle cx="210" cy="230" r="13" fill="url(#tile)"/><text x="210" y="198" text-anchor="middle" font-family="Gloock,serif" font-size="15" fill="#1d2b57" stroke="#f8f2e6" stroke-width="5" paint-order="stroke" data-af-name>Rumah Teduh</text></g>
      <g id="pins"></g>
     </svg>
    </div>
-   <div class="rv">
-    <div class="chips" id="chips" role="group" aria-label="Places"></div>
-    <div class="pcard" id="pcard" aria-live="polite"></div>
-   </div>
+   <div class="rv"><div class="chips pchips" id="pchips" role="group" aria-label="Places"></div><div class="pcard" id="pcard" aria-live="polite"></div></div>
   </div>
  </div>
 </section>
 
+<!-- faq -->
 <section id="faq">
  <div class="wrap">
-  <div class="rv"><div class="kick" data-i="k_faq">No. 06 · House notes</div><h2 data-ih="h_faq">House rules &amp; <em>questions.</em></h2></div>
+  <div class="rv"><div class="kick" data-i="kF">No. 04 · House notes</div><h2 data-i="hF">House rules &amp; <em>questions.</em></h2></div>
   <div class="faq-g">
    <div class="rv">
-    <details open><summary>Check-in and check-out times<i></i></summary><p>Check-in from 3 pm, check-out by 11 am. If you booked direct and the room is free that day, stay until 2 pm at no charge.</p></details>
-    <details><summary>Shoes off inside<i></i></summary><p>Our floor tiles are old and loved, so shoes stay at the door. House slippers are waiting for you.</p></details>
-    <details><summary>Stairs and access<i></i></summary><p>Upstairs rooms use a steep traditional staircase and there is no lift. The Kopi Room is on the ground floor for guests who prefer no stairs.</p></details>
-    <details><summary>Quiet hours<i></i></summary><p>10 pm to 7 am. The airwell carries sound beautifully, which also means it carries voices.</p></details>
-    <details><summary>Children, smoking and pets<i></i></summary><p>Children are welcome; the Airwell Suite and Rooftop Garden suit families. No smoking indoors. No pets, apart from the house cat.</p></details>
-    <details><summary>Parking and getting around<i></i></summary><p>There is no on-site parking; public car parks are a short walk away. Bicycles are free to borrow for the day.</p></details>
-    <details><summary>Cancellation (sample policy)<i></i></summary><p>Free cancellation up to 7 days before arrival. After that, the first night is charged. This is a sample policy for the concept.</p></details>
+    <details open><summary><span data-i="q1">Check-in and check-out times</span><i></i></summary><p data-i="a1">Check-in from 3 pm, check-out by 11 am. Book direct and, if the room is free that day, stay until 2 pm at no charge.</p></details>
+    <details><summary><span data-i="q2">Shoes off inside</span><i></i></summary><p data-i="a2">Our floor tiles are old and loved, so shoes stay at the door. House slippers are waiting for you.</p></details>
+    <details><summary><span data-i="q3">Stairs and access</span><i></i></summary><p data-i="a3">Upstairs rooms use a steep traditional staircase and there is no lift. The Kopi Room is on the ground floor for guests who prefer no stairs.</p></details>
+    <details><summary><span data-i="q4">Quiet hours</span><i></i></summary><p data-i="a4">10 pm to 7 am. The airwell carries sound beautifully, which also means it carries voices.</p></details>
+    <details><summary><span data-i="q5">Children, smoking and pets</span><i></i></summary><p data-i="a5">Children are welcome; the Airwell Suite and Rooftop Garden suit families. No smoking indoors. No pets, apart from the house cat.</p></details>
+    <details><summary><span data-i="q6">Parking and getting here</span><i></i></summary><p data-i="a6">No on-site parking; public car parks are a short walk away. Grab from Penang airport takes about 30 minutes. Bicycles are free to borrow.</p></details>
+    <details><summary><span data-i="q7">Cancellation (sample policy)</span><i></i></summary><p data-i="a7">Free cancellation up to 7 days before arrival. After that, the first night is charged.</p></details>
    </div>
-   <aside class="note rv">
-    <span class="lbl" data-i="sample">Sample guest note</span>
-    <blockquote>"We woke to the sound of the kopi pot and the shutters letting in the morning. Breakfast was a short walk to the hawker street, and we never once needed a taxi."</blockquote>
-    <small data-i="sample2">Written for this concept to show the layout. Not a real review.</small>
-    <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" fill="url(#kawung)"/></svg>
-   </aside>
+   <aside class="note rv"><span class="smp" data-i="smpRev">Sample guest note</span><blockquote data-i="noteQ">“We woke to the sound of the kopi pot and the shutters letting in the morning. We never once needed a taxi.”</blockquote><small data-i="noteS">Written for this concept to show the layout. Not a real review.</small><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" fill="url(#kawung)"/></svg></aside>
   </div>
  </div>
 </section>
@@ -463,108 +553,103 @@ footer{background:var(--ink);color:var(--cream)}
 <footer>
  <svg class="band" aria-hidden="true"><rect class="mv" x="-48" width="4000" height="44" fill="url(#kawung)"/></svg>
  <div class="foot">
-  <div><h3>Rumah Teduh</h3><p style="margin-top:14px" data-i="ft1">A six-room heritage shophouse stay in George Town, Penang. A fictional property built to show what a direct-booking site can feel like.</p><a class="wa" href="#" id="wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 8.5 19z"/><path d="M9 10c.5 2 2.5 4 5 5"/></svg><span data-i="wa">WhatsApp the concierge</span></a></div>
-  <div><h4 data-i="ft_visit">Visit</h4><ul><li>Lebuh Teduh (fictional)</li><li>George Town, Penang</li><li data-i="ft_hours">Front desk 8 am to 10 pm</li></ul></div>
-  <div><h4 data-i="ft_explore">Explore</h4><ul><li><a href="#rooms" data-i="n_rooms">Rooms</a></li><li><a href="#dates" data-i="n_dates">Dates</a></li><li><a href="#area" data-i="n_area">Neighbourhood</a></li><li><a href="#faq" data-i="n_faq">FAQ</a></li></ul></div>
+  <div><h3 data-af-name>Rumah Teduh</h3><p style="margin-top:14px" data-i="ft1">A six-room heritage shophouse stay. A fictional property built to show what a direct-booking site can feel like.</p><button class="wabtn" id="wa"><span data-i="waBtn">WhatsApp the house</span></button></div>
+  <div><h4 data-i="ftV">Visit</h4><ul><li>Lebuh Teduh (sample)</li><li><span data-af-area>George Town</span>, Penang</li><li data-i="ftH">Front desk 8 am to 10 pm</li></ul></div>
+  <div><h4 data-i="ftE">Explore</h4><ul><li><a href="#stay" data-i="n1">Rooms</a></li><li><a href="#direct" data-i="n2">Book direct</a></li><li><a href="#area" data-i="n3">Neighbourhood</a></li><li><a href="#faq" data-i="n5">FAQ</a></li></ul></div>
  </div>
- <div class="legal"><span>© Rumah Teduh · Aurelion fusion concept</span><span data-i="legal">All prices, perks and policies are samples.</span></div>
+ <div class="legal"><span>© <span data-af-name>Rumah Teduh</span> · Aurelion industry sample</span><span data-i="legal">All prices, perks, reviews and policies are samples.</span></div>
 </footer>
 
-<div class="pbar" id="pbar" role="region" aria-label="Price summary">
- <button class="pb-i" id="pbi"><small id="pbs"></small><b id="pbt"></b></button>
- <button class="det" id="det" data-i="details">Details</button>
- <a class="pill p" href="#book" id="pbgo"></a>
-</div>
+<div class="pbar" id="pbar" role="region" aria-label="Price summary"><button class="pb-i" id="pbi"><small id="pbs"></small><b id="pbt"></b></button><button class="det" id="det" data-i="details">Details</button><a class="pill p" href="#stay" id="pbgo"></a></div>
 <div class="scrim" id="scrim"></div>
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="grab"></div><h3 id="shT" data-i="yourstay">Your stay</h3><div id="shBody"></div><a class="pill p" href="#book" id="shGo" data-i="request">Request to book</a></div>
-<div class="toast" id="toast" role="status"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shT"><div class="grab"></div><h3 id="shT" data-i="yourStay">Your stay</h3><div id="shBody"></div><a class="pill p" href="#stay" id="shGo"></a></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dT"><div class="dh"><h3 id="dT" data-i="yourCart">Your cart</h3><button id="cartClose" aria-label="Close">×</button></div><ul class="dl" id="dl"></ul><div class="df"><div class="t"><span data-i="total">Total</span><span id="dTot">RM 0</span></div><div class="pays"><span>Card</span><span>FPX</span><span>GrabPay</span><span>Touch ’n Go</span></div><button class="pill p" id="checkout" data-i="checkout">Checkout</button></div></aside>
 
 <script>
 (()=>{
 const RMo=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
-const T={
-en:{n_rooms:'Rooms',n_dates:'Dates',n_direct:'Book direct',n_area:'Neighbourhood',n_faq:'FAQ',n_book:'Book a room',menu:'Menu',close:'Close',
-issue1:'Vol. 06 · George Town, Penang',issue2:'Six rooms · one shophouse',h1:'Six rooms behind <em>old shutters.</em>',
-lede:'A restored heritage shophouse in the heart of George Town. Tiled floors, an open airwell, kopi at dawn. Book with the house, not a middleman.',
-ci:'Check-in',co:'Check-out',guests:'Guests',search:'Check availability',f1:'rooms, each different',f2:'check-in, kopi ready',f3:'sample prices shown',
-k_rooms:'No. 01 · The rooms',h_rooms:'Six rooms, <em>six moods.</em>',d_rooms:'Each room has its own tiles, its own light and its own story. Choose one and the prices below follow you.',
-k_dates:'No. 02 · Availability',h_dates:'Choose your <em>nights.</em>',d_dates:'Sample nightly prices in RM. Weekends cost more; striped dates are sold out.',
-clear:'Clear dates',lg_wk:'Weekend rate',lg_so:'Sold out',lg_sel:'Your stay',pickIn:'Tap your check-in date.',pickOut:'Now tap your check-out date.',
-soldMsg:'A night in that range is sold out for this room. Try other dates or another room.',soldIn:'That night is sold out for this room.',
-nights:n=>n+(n>1?' nights':' night'),pn:'/ night',upto:'Up to {n} guests',from:'from',choose:'Choose',chosen:'Selected',small:'Sleeps {n} max',
-king:'King bed',queen:'Queen bed',twin:'Twin beds',kingday:'King + daybed',
-fitMsg:'{room} sleeps {n}. Pick a larger room for {g} guests.',
-k_direct:'No. 03 · Book direct',h_direct:'Why book <em>with the house.</em>',d_direct:'Small things we can only offer when you book with us. Sample perks for this concept.',fine:'Perks are subject to availability on the day. Prices are samples for this concept only.',
-p1:'Late checkout to 2 pm',p1d:'Free when your room is not needed that day.',p2:'Welcome kopi & kuih',p2d:'A pot of kopi and nyonya kuih waiting in the airwell.',p3:'Flexible date change',p3d:'Move your dates once, free, up to 7 days before arrival.',
-p4:'Your exact room',p4d:'You pick the room you stay in. No "or similar".',p5:'Talk to the house',p5d:'WhatsApp the people who run the place for tips and early check-in.',p6:'Bicycles for the day',p6d:'Borrow a bike and ride the heritage lanes.',
-k_book:'No. 04 · Request',h_book:'Request your <em>stay.</em>',d_book:'No payment now. The house confirms by WhatsApp or email within the day.',
-summary:'Your stay',room:'Room',dates:'Dates',guestsL:'Guests',subtotal:'Subtotal',fees:'Taxes & fees (sample 8%)',total:'Total',noDates:'Pick dates in the calendar',
-name:'Full name',email:'Email',phone:'WhatsApp number',arrive:'Arrival time',note:'Anything we should know?',send:'Send booking request',arrOpts:['Not sure yet','Before 3 pm','3 pm to 6 pm','6 pm to 10 pm','After 10 pm'],
-errDates:'Please pick your dates in the calendar first.',errForm:'Please add your name and a valid email.',
-okT:'Request received',okP:'Thank you, {name}. The house will confirm {room} by WhatsApp or email.',ref:'Reference',demo:'Demo: nothing was sent.',again:'Start a new request',
-k_area:'No. 05 · Neighbourhood',h_area:'Step out <em>the front door.</em>',d_area:'Tap a pin. Illustrated map, not to scale; walking times are sample estimates.',walk:'min walk',
-k_faq:'No. 06 · House notes',h_faq:'House rules &amp; <em>questions.</em>',sample:'Sample guest note',sample2:'Written for this concept to show the layout. Not a real review.',
-ft1:'A six-room heritage shophouse stay in George Town, Penang. A fictional property built to show what a direct-booking site can feel like.',wa:'WhatsApp the concierge',ft_visit:'Visit',ft_hours:'Front desk 8 am to 10 pm',ft_explore:'Explore',legal:'All prices, perks and policies are samples.',
-details:'Details',request:'Request to book',selDates:'Select dates',yourstay:'Your stay',fromN:'From {p} / night',waToast:'Demo link: on the real site this opens WhatsApp.'},
-ms:{n_rooms:'Bilik',n_dates:'Tarikh',n_direct:'Tempah terus',n_area:'Kejiranan',n_faq:'Soalan lazim',n_book:'Tempah bilik',menu:'Menu',close:'Tutup',
-issue1:'Jil. 06 · George Town, Pulau Pinang',issue2:'Enam bilik · satu rumah kedai',h1:'Enam bilik di sebalik <em>tingkap lama.</em>',
-lede:'Rumah kedai warisan yang dipulihara di tengah George Town. Lantai berjubin, telaga udara terbuka, kopi ketika fajar. Tempah terus dengan rumah ini, bukan orang tengah.',
-ci:'Daftar masuk',co:'Daftar keluar',guests:'Tetamu',search:'Semak kekosongan',f1:'bilik, setiap satu berbeza',f2:'daftar masuk, kopi sedia',f3:'contoh harga dipaparkan',
-k_rooms:'No. 01 · Bilik',h_rooms:'Enam bilik, <em>enam suasana.</em>',d_rooms:'Setiap bilik ada jubin, cahaya dan ceritanya sendiri. Pilih satu dan harga di bawah akan ikut pilihan anda.',
-k_dates:'No. 02 · Kekosongan',h_dates:'Pilih <em>malam anda.</em>',d_dates:'Contoh harga semalam dalam RM. Hujung minggu lebih tinggi; tarikh berjalur sudah penuh.',
-clear:'Kosongkan tarikh',lg_wk:'Kadar hujung minggu',lg_so:'Penuh',lg_sel:'Penginapan anda',pickIn:'Ketik tarikh daftar masuk.',pickOut:'Sekarang ketik tarikh daftar keluar.',
-soldMsg:'Satu malam dalam julat itu sudah penuh untuk bilik ini. Cuba tarikh atau bilik lain.',soldIn:'Malam itu sudah penuh untuk bilik ini.',
-nights:n=>n+' malam',pn:'/ malam',upto:'Hingga {n} tetamu',from:'dari',choose:'Pilih',chosen:'Dipilih',small:'Maks. {n} tetamu',
-king:'Katil king',queen:'Katil queen',twin:'Dua katil bujang',kingday:'Katil king + katil sofa',
-fitMsg:'{room} memuatkan {n} orang. Pilih bilik lebih besar untuk {g} tetamu.',
-k_direct:'No. 03 · Tempah terus',h_direct:'Kenapa tempah <em>terus dengan kami.</em>',d_direct:'Perkara kecil yang hanya boleh kami tawarkan bila anda tempah terus. Contoh keistimewaan untuk konsep ini.',fine:'Keistimewaan tertakluk kepada kekosongan pada hari tersebut. Harga ialah contoh untuk konsep ini sahaja.',
-p1:'Daftar keluar lewat hingga 2 petang',p1d:'Percuma jika bilik anda tidak diperlukan pada hari itu.',p2:'Kopi & kuih sambutan',p2d:'Seteko kopi dan kuih nyonya menanti di telaga udara.',p3:'Tukar tarikh dengan mudah',p3d:'Tukar tarikh sekali secara percuma, sehingga 7 hari sebelum tiba.',
-p4:'Bilik pilihan anda',p4d:'Anda pilih bilik yang anda diami. Bukan "atau yang serupa".',p5:'Berhubung terus dengan kami',p5d:'WhatsApp pengurus rumah untuk tip dan daftar masuk awal.',p6:'Basikal untuk sehari',p6d:'Pinjam basikal dan susuri lorong warisan.',
-k_book:'No. 04 · Permohonan',h_book:'Mohon <em>penginapan anda.</em>',d_book:'Tiada bayaran sekarang. Pihak rumah akan mengesahkan melalui WhatsApp atau e-mel pada hari yang sama.',
-summary:'Penginapan anda',room:'Bilik',dates:'Tarikh',guestsL:'Tetamu',subtotal:'Jumlah kecil',fees:'Cukai & caj (contoh 8%)',total:'Jumlah',noDates:'Pilih tarikh dalam kalendar',
-name:'Nama penuh',email:'E-mel',phone:'Nombor WhatsApp',arrive:'Waktu ketibaan',note:'Ada apa-apa yang perlu kami tahu?',send:'Hantar permohonan tempahan',arrOpts:['Belum pasti','Sebelum 3 petang','3 hingga 6 petang','6 hingga 10 malam','Selepas 10 malam'],
-errDates:'Sila pilih tarikh dalam kalendar dahulu.',errForm:'Sila isi nama dan e-mel yang sah.',
-okT:'Permohonan diterima',okP:'Terima kasih, {name}. Pihak rumah akan mengesahkan {room} melalui WhatsApp atau e-mel.',ref:'Rujukan',demo:'Demo: tiada apa-apa dihantar.',again:'Mulakan permohonan baharu',
-k_area:'No. 05 · Kejiranan',h_area:'Melangkah keluar <em>pintu depan.</em>',d_area:'Ketik pin. Peta ilustrasi, bukan mengikut skala; masa berjalan ialah anggaran contoh.',walk:'minit berjalan',
-k_faq:'No. 06 · Nota rumah',h_faq:'Peraturan rumah &amp; <em>soalan.</em>',sample:'Contoh nota tetamu',sample2:'Ditulis untuk konsep ini bagi menunjukkan susun atur. Bukan ulasan sebenar.',
-ft1:'Penginapan rumah kedai warisan enam bilik di George Town, Pulau Pinang. Hartanah rekaan untuk menunjukkan rupa laman tempahan terus.',wa:'WhatsApp penyambut tetamu',ft_visit:'Lawati',ft_hours:'Kaunter 8 pagi hingga 10 malam',ft_explore:'Terokai',legal:'Semua harga, keistimewaan dan polisi ialah contoh.',
-details:'Butiran',request:'Mohon tempahan',selDates:'Pilih tarikh',yourstay:'Penginapan anda',fromN:'Dari {p} / malam',waToast:'Pautan demo: di laman sebenar, ini membuka WhatsApp.'},
-zh:{n_rooms:'客房',n_dates:'日期',n_direct:'直接预订',n_area:'周边',n_faq:'常见问题',n_book:'预订客房',menu:'菜单',close:'关闭',
-issue1:'第06期 · 槟城乔治市',issue2:'六间客房 · 一座店屋',h1:'老百叶窗后的<em>六间客房。</em>',
-lede:'乔治市中心一座修复的老店屋。花砖地板、露天天井、清晨的咖啡。直接向我们预订，无需中间商。',
-ci:'入住',co:'退房',guests:'人数',search:'查看空房',f1:'间客房，各不相同',f2:'入住，咖啡已备好',f3:'显示示例价格',
-k_rooms:'01 · 客房',h_rooms:'六间客房，<em>六种心情。</em>',d_rooms:'每间房都有自己的花砖、光线与故事。选一间，下方价格随之更新。',
-k_dates:'02 · 空房',h_dates:'选择<em>入住日期。</em>',d_dates:'每晚示例价格（马币）。周末较贵；斜纹日期已售罄。',
-clear:'清除日期',lg_wk:'周末价',lg_so:'售罄',lg_sel:'您的行程',pickIn:'请点选入住日期。',pickOut:'现在点选退房日期。',
-soldMsg:'所选日期中有一晚此房型已售罄，请换日期或房型。',soldIn:'此房型当晚已售罄。',
-nights:n=>n+' 晚',pn:'/ 晚',upto:'最多 {n} 人',from:'起',choose:'选择',chosen:'已选',small:'最多 {n} 人',
-king:'特大床',queen:'大床',twin:'两张单人床',kingday:'特大床 + 沙发床',
-fitMsg:'{room}最多住 {n} 人。{g} 位客人请选更大的房间。',
-k_direct:'03 · 直接预订',h_direct:'为何<em>直接向我们预订。</em>',d_direct:'只有直接预订才能提供的小心意。本概念的示例礼遇。',fine:'礼遇视当天情况而定。价格仅为本概念示例。',
-p1:'延迟至下午2点退房',p1d:'当天房间无人入住时免费。',p2:'欢迎咖啡与糕点',p2d:'天井里为您备好一壶咖啡和娘惹糕。',p3:'灵活改期',p3d:'抵达前7天或更早，可免费改期一次。',
-p4:'指定房间',p4d:'您选的房间就是您住的房间，不是"同类房型"。',p5:'直接联系主人',p5d:'通过WhatsApp向我们询问攻略或提前入住。',p6:'免费借用单车',p6d:'借一辆单车，骑游老街小巷。',
-k_book:'04 · 申请',h_book:'提交<em>预订申请。</em>',d_book:'现在无需付款。我们会在当天通过WhatsApp或电邮确认。',
-summary:'您的行程',room:'房间',dates:'日期',guestsL:'人数',subtotal:'小计',fees:'税费（示例 8%）',total:'总计',noDates:'请在日历中选择日期',
-name:'姓名',email:'电邮',phone:'WhatsApp号码',arrive:'预计抵达时间',note:'有什么需要我们知道的吗？',send:'发送预订申请',arrOpts:['还不确定','下午3点前','下午3点至6点','晚上6点至10点','晚上10点后'],
-errDates:'请先在日历中选择日期。',errForm:'请填写姓名和有效电邮。',
-okT:'申请已收到',okP:'谢谢您，{name}。我们会通过WhatsApp或电邮确认{room}。',ref:'参考编号',demo:'演示：未发送任何内容。',again:'重新申请',
-k_area:'05 · 周边',h_area:'走出<em>家门。</em>',d_area:'点选图钉。插画地图，非按比例；步行时间为示例估计。',walk:'分钟步行',
-k_faq:'06 · 住宿须知',h_faq:'住宿规则与<em>常见问题。</em>',sample:'示例住客留言',sample2:'为展示版面而撰写，并非真实评价。',
-ft1:'槟城乔治市一座六间客房的老店屋民宿。虚构物业，用来展示直接预订网站的样子。',wa:'WhatsApp 礼宾服务',ft_visit:'地址',ft_hours:'前台 早上8点至晚上10点',ft_explore:'浏览',legal:'所有价格、礼遇与政策均为示例。',
-details:'明细',request:'申请预订',selDates:'选择日期',yourstay:'您的行程',fromN:'{p} / 晚起',waToast:'演示链接：正式网站会在此打开WhatsApp。'}};
-const LOC={en:'en-GB',ms:'ms-MY',zh:'zh-CN'},LX={en:0,ms:1,zh:2},WD={en:['Mo','Tu','We','Th','Fr','Sa','Su'],ms:['Isn','Sel','Rab','Kha','Jum','Sab','Ahd'],zh:['一','二','三','四','五','六','日']};
-let L='en';try{const s=localStorage.getItem('rt-lang');if(T[s])L=s}catch(e){}
-const t=k=>T[L][k]!==undefined?T[L][k]:T.en[k];
+const H=document.documentElement,K=window.AFK||{};
+let L=K.l;if(!L){try{L=localStorage.getItem('af-lang')}catch(e){}}if(!['en','ms','zh'].includes(L))L='en';
+const LX={en:0,ms:1,zh:2},LOC={en:'en-GB',ms:'ms-MY',zh:'zh-CN'},WD={en:['Mo','Tu','We','Th','Fr','Sa','Su'],ms:['Isn','Sel','Rab','Kha','Jum','Sab','Ahd'],zh:['一','二','三','四','五','六','日']};
+const EN={};$$('[data-i]').forEach(e=>{if(!(e.dataset.i in EN))EN[e.dataset.i]=e.innerHTML});
+const D={en:{menu:'Menu',close:'Close',cta_book:'Book a room',cta_enq:'WhatsApp the house',cta_sell:'Visit the house shop',cta_cred:'Read our story',
+calT:'Choose your nights',pickIn:'Tap your check-in date.',pickOut:'Now tap your check-out date.',soldMsg:'A night in that range is sold out for this room. Try other dates or another room.',soldIn:'That night is sold out for this room.',
+nights:n=>n+(n>1?' nights':' night'),pn:'/ night',upto:'Up to {n}',from:'from',choose:'Choose',chosen:'Selected',small:'Sleeps {n} max',king:'King bed',queen:'Queen bed',twin:'Twin beds',kingday:'King + daybed',fitMsg:'{room} sleeps {n}. Pick a larger room for {g} guests.',
+summary:'Your stay',room:'Room',dates:'Dates',guestsL:'Guests',subtotal:'Subtotal',fees:'Tourism tax & fees (sample)',total:'Total',noDates:'Pick dates on the calendar',saveL:'You save <b>{s}</b> vs booking sites (sample)',
+name:'Full name',email:'Email',phone:'WhatsApp',arrive:'Arrival',arrOpts:['Not sure yet','Before 3 pm','3 – 6 pm','6 – 10 pm','After 10 pm'],send:'Request to book',errDates:'Please pick your dates on the calendar first.',errForm:'Please add your name and a valid email.',
+okT:'Request received',okP:'Thank you, {name}. The house will confirm {room} by WhatsApp within the hour.',ref:'Ref',demo:'Demo: nothing was sent.',again:'Start a new request',bDemo:'Demo: on your site this sends the booking request to the house and opens a secure payment link.',
+tonight:'Tonight · {n} rooms free',fromP:'from {p}',selDates:'Select dates',fromN:'From {p} / night',
+cmpH:'Your stay, compared',cmpUs:'Book direct',cmpUsS:'Late checkout, welcome kopi, your exact room',cmpOta:'Typical booking site',cmpOtaS:'Same room, plus service fees, no perks',cmpSave:'You keep',cmpNo:'Pick dates to see your own numbers. Showing 2 nights in the {r}.',
+perks:[['Late checkout to 2 pm','Free when your room is not needed that day.'],['Welcome kopi & kuih','A pot of kopi and nyonya kuih waiting in the airwell.'],['Your exact room','You pick the room you stay in. No “or similar”.'],['Talk to the house','WhatsApp the people who run the place for tips.']],
+topics:['Availability','Airport transfer','Early check-in','Group or family','Something else'],months:m=>m,anyM:'Flexible dates',
+waTxt:(tp,n,m,g)=>'Hi'+(n?', this is '+n:'')+'! I’m asking about: '+tp+'.\nWhen: '+m+'\nGuests: '+g+'\nCould you let me know? Thank you.',
+prods:[['Two-night stay voucher','For any room, valid 12 months. A gift they will remember.',null],['House kopi, 250 g','Roasted with butter and sugar the old way, by a Penang roaster.',null],['Batik tote','Hand-stamped kawung batik on heavy cotton.',null],['Nyonya kuih box','Twelve pieces, made that morning. Pre-order for check-in.',null],['Heritage walk with our host','Two hours of lanes, clan houses and stories. Per person.',null],['Airport transfer','Private car from Penang airport, up to 4 guests.',null]],
+add:'Add',added:'Added ✓',empty:'Your cart is empty.',each:'each',coDemo:'Demo: on your site this opens checkout with card, FPX, GrabPay or Touch ’n Go.',
+revs:[['“The tiles, the light in the airwell, the kopi at seven. We extended a night on the spot.”','Mei & Daniel, Singapore','Jade Courtyard'],['“Booked direct, got the room I actually wanted and a late checkout. Staff felt like family.”','Aishah R., Kuala Lumpur','Kopi Room'],['“Perfect base for the jetties and hawker food. The family suite fit all four of us.”','The Tan family, Ipoh','Airwell Suite']],smpR:'Sample review',
+walk:'min walk',hostTip:'Host’s tip',waToast:'Demo: on your site this opens WhatsApp with the house.'},
+ms:{menu:'Menu',close:'Tutup',cta_book:'Tempah bilik',cta_enq:'WhatsApp pihak rumah',cta_sell:'Lawati kedai rumah',cta_cred:'Baca kisah kami',
+calT:'Pilih malam anda',pickIn:'Ketik tarikh daftar masuk.',pickOut:'Sekarang ketik tarikh daftar keluar.',soldMsg:'Satu malam dalam julat itu sudah penuh untuk bilik ini. Cuba tarikh atau bilik lain.',soldIn:'Malam itu sudah penuh untuk bilik ini.',
+nights:n=>n+' malam',pn:'/ malam',upto:'Hingga {n}',from:'dari',choose:'Pilih',chosen:'Dipilih',small:'Maks. {n} orang',king:'Katil king',queen:'Katil queen',twin:'Dua katil bujang',kingday:'King + katil sofa',fitMsg:'{room} memuatkan {n} orang. Pilih bilik lebih besar untuk {g} tetamu.',
+summary:'Penginapan anda',room:'Bilik',dates:'Tarikh',guestsL:'Tetamu',subtotal:'Jumlah kecil',fees:'Cukai pelancongan & caj (contoh)',total:'Jumlah',noDates:'Pilih tarikh di kalendar',saveL:'Anda jimat <b>{s}</b> berbanding laman tempahan (contoh)',
+name:'Nama penuh',email:'E-mel',phone:'WhatsApp',arrive:'Ketibaan',arrOpts:['Belum pasti','Sebelum 3 ptg','3 – 6 ptg','6 – 10 mlm','Selepas 10 mlm'],send:'Mohon tempahan',errDates:'Sila pilih tarikh di kalendar dahulu.',errForm:'Sila isi nama dan e-mel yang sah.',
+okT:'Permohonan diterima',okP:'Terima kasih, {name}. Pihak rumah akan mengesahkan {room} melalui WhatsApp dalam masa sejam.',ref:'Ruj',demo:'Demo: tiada apa-apa dihantar.',again:'Mulakan permohonan baharu',bDemo:'Demo: di laman anda, ini menghantar permohonan tempahan kepada pihak rumah dan membuka pautan pembayaran selamat.',
+tonight:'Malam ini · {n} bilik kosong',fromP:'dari {p}',selDates:'Pilih tarikh',fromN:'Dari {p} / malam',
+cmpH:'Perbandingan penginapan anda',cmpUs:'Tempah terus',cmpUsS:'Daftar keluar lewat, kopi sambutan, bilik pilihan anda',cmpOta:'Laman tempahan biasa',cmpOtaS:'Bilik sama, tambah caj perkhidmatan, tiada keistimewaan',cmpSave:'Anda simpan',cmpNo:'Pilih tarikh untuk lihat angka anda. Menunjukkan 2 malam di {r}.',
+perks:[['Daftar keluar lewat hingga 2 ptg','Percuma jika bilik tidak diperlukan pada hari itu.'],['Kopi & kuih sambutan','Seteko kopi dan kuih nyonya menanti di telaga udara.'],['Bilik pilihan anda','Anda pilih bilik yang anda diami. Bukan “atau yang serupa”.'],['Berhubung terus','WhatsApp pengurus rumah untuk tip.']],
+topics:['Kekosongan','Pengangkutan lapangan terbang','Daftar masuk awal','Kumpulan atau keluarga','Lain-lain'],anyM:'Tarikh fleksibel',
+waTxt:(tp,n,m,g)=>'Hai'+(n?', saya '+n:'')+'! Saya ingin bertanya tentang: '+tp+'.\nBila: '+m+'\nTetamu: '+g+'\nBoleh maklumkan? Terima kasih.',
+prods:[['Baucar penginapan dua malam','Untuk mana-mana bilik, sah 12 bulan. Hadiah yang tak dilupakan.'],['Kopi rumah, 250 g','Dibakar dengan mentega dan gula cara lama, oleh pemanggang Pulau Pinang.'],['Beg tote batik','Batik kawung cap tangan pada kapas tebal.'],['Kotak kuih nyonya','Dua belas biji, dibuat pagi itu. Tempah awal untuk daftar masuk.'],['Jalan warisan bersama tuan rumah','Dua jam menyusuri lorong, rumah suku dan cerita. Seorang.'],['Pengangkutan lapangan terbang','Kereta persendirian dari lapangan terbang Pulau Pinang, hingga 4 orang.']],
+add:'Tambah',added:'Ditambah ✓',empty:'Troli anda kosong.',each:'seunit',coDemo:'Demo: di laman anda, ini membuka pembayaran dengan kad, FPX, GrabPay atau Touch ’n Go.',
+revs:[['“Jubinnya, cahaya di telaga udara, kopi pukul tujuh. Kami terus tambah semalam lagi.”','Mei & Daniel, Singapura','Laman Jed'],['“Tempah terus, dapat bilik yang memang saya mahu dan daftar keluar lewat. Staf macam keluarga.”','Aishah R., Kuala Lumpur','Bilik Kopi'],['“Lokasi terbaik untuk ke jeti dan makanan penjaja. Suite keluarga muat kami berempat.”','Keluarga Tan, Ipoh','Suite Telaga Udara']],smpR:'Ulasan contoh',
+walk:'minit berjalan',hostTip:'Tip tuan rumah',waToast:'Demo: di laman anda, ini membuka WhatsApp dengan pihak rumah.',
+n1:'Bilik',n2:'Tempah terus',n3:'Kejiranan',n4:'Kisah rumah',n5:'Soalan',iss1:'Penginapan warisan ·',iss2:'Enam bilik · satu rumah kedai',h1:'Bangun di sebalik <em>tingkap lama.</em>',lede:'Rumah kedai 1920-an yang dipulihara, dengan enam bilik, lantai berjubin dan telaga udara terbuka. Kopi waktu subuh, penjaja waktu senja. Tempah terus dan simpan jimatnya.',ci:'Daftar masuk',co:'Daftar keluar',guests:'Tetamu',search:'Semak kekosongan',seeRooms:'Lihat bilik',f1:'bilik, setiap satu berbeza',f2:'daftar masuk, kopi sedia',f3:'bila tempah terus (contoh)',
+kR:'No. 01 · Bilik &amp; tarikh',hR:'Enam bilik, <em>enam suasana.</em>',dR:'Pilih bilik, ketik malam anda di kalendar dan lihat harga penuh sebelum bertanya. Contoh kadar semalam dalam RM.',clear:'Kosongkan tarikh',lgWk:'Kadar hujung minggu',lgSo:'Penuh',lgSel:'Penginapan anda',
+kA:'No. 01 · Tanya pihak rumah',hA:'Ada soalan? <em>WhatsApp kami.</em>',dA:'Beritahu anggaran tarikh dan siapa yang datang. Pengurus rumah sendiri akan membalas, biasanya dalam masa sejam.',aT:'Saya bertanya tentang',aMo:'Bila',aN:'Nama anda',aGo:'Buka WhatsApp dengan mesej ini',waS:'Pihak rumah · balas dalam masa sejam',waHi:'Selamat datang! 👋 Tanya apa saja tentang bilik, tarikh atau cara ke sini.<small>8:41</small>',
+kS:'No. 01 · Kedai rumah',hS:'Bawa pulang <em>sebahagian rumah ini.</em>',dS:'Baucar penginapan, kopi kami, batik dan lawatan bersama tuan rumah. Ambil semasa daftar masuk atau pos ke seluruh Malaysia.',cart:'Troli',
+kP:'No. 01 · Kisah rumah',hP:'Berusia seratus tahun. <em>Dihidupkan semula dengan kasih.</em>',dP:'Bagaimana rumah ini kembali, apa kata tetamu dan kepada siapa kami bertanggungjawab. Kisah, ulasan dan lencana ialah contoh.',t1:'Dibina untuk pedagang rempah',t1p:'Dua tingkat, telaga udara dan kaki lima menghadap jalan.',t2:'Bilik untuk disewa',t2p:'Dibahagi kepada bilik kecil untuk pekerja pelabuhan.',t3:'Dipulihara tukang tempatan',t3p:'Plaster kapur, jubin asal dipasang semula, tingkap dibina semula dengan tangan.',t4:'Pintu dibuka semula',t4p:'Enam bilik, keluarga yang tinggal di sini dan kopi setiap pagi.',b1:'Penginapan berdaftar MOTAC',b1s:'No. lesen contoh',b2:'Pemuliharaan zon warisan',b2s:'Kerja diluluskan · contoh',b3:'Penilaian tetamu 4.9 / 5',b3s:'Angka contoh',pressK:'Pernah disiarkan (tajuk rekaan)',
+kD:'No. 02 · Tempah terus dan jimat',hD:'Bilik sama. <em>Bayar kurang.</em> Nikmati lebih.',dD:'Laman tempahan mengambil potongan setiap malam. Tempah dengan kami dan kami pulangkan kepada anda, berserta beberapa perkara yang hanya rumah ini boleh beri.',cap1:'Sarapan di telaga udara',cap2:'Kopi pukul 7 pagi',fine:'Perbandingan, keistimewaan dan harga ialah contoh untuk konsep ini.',
+kN:'No. 03 · Panduan kejiranan',hN:'Melangkah keluar <em>pintu depan.</em>',dN:'Ketik pin untuk tip tuan rumah. Peta ilustrasi, bukan mengikut skala; masa berjalan ialah anggaran contoh.',
+kF:'No. 04 · Nota rumah',hF:'Peraturan rumah &amp; <em>soalan.</em>',q1:'Waktu daftar masuk dan keluar',a1:'Daftar masuk dari 3 petang, daftar keluar sebelum 11 pagi. Tempah terus dan, jika bilik kosong pada hari itu, tinggal hingga 2 petang tanpa caj.',q2:'Tanggalkan kasut',a2:'Jubin lantai kami sudah tua dan disayangi, jadi kasut ditinggalkan di pintu. Selipar rumah disediakan.',q3:'Tangga dan akses',a3:'Bilik di tingkat atas menggunakan tangga tradisional yang curam dan tiada lif. Bilik Kopi di tingkat bawah untuk tetamu yang tidak mahu naik tangga.',q4:'Waktu senyap',a4:'10 malam hingga 7 pagi. Telaga udara membawa bunyi dengan indah, termasuk suara.',q5:'Kanak-kanak, merokok dan haiwan',a5:'Kanak-kanak dialu-alukan; Suite Telaga Udara dan Taman Bumbung sesuai untuk keluarga. Dilarang merokok di dalam. Tiada haiwan peliharaan, kecuali kucing rumah.',q6:'Parkir dan cara ke sini',a6:'Tiada parkir di premis; tempat letak kereta awam berdekatan. Grab dari lapangan terbang Pulau Pinang kira-kira 30 minit. Basikal boleh dipinjam percuma.',q7:'Pembatalan (polisi contoh)',a7:'Pembatalan percuma sehingga 7 hari sebelum tiba. Selepas itu, malam pertama dicaj.',smpRev:'Contoh nota tetamu',noteQ:'“Kami terjaga dengan bunyi teko kopi dan tingkap yang membiarkan cahaya pagi masuk. Kami langsung tak perlukan teksi.”',noteS:'Ditulis untuk konsep ini bagi menunjukkan susun atur. Bukan ulasan sebenar.',
+ft1:'Penginapan rumah kedai warisan enam bilik. Hartanah rekaan untuk menunjukkan rupa laman tempahan terus.',waBtn:'WhatsApp pihak rumah',ftV:'Lawati',ftH:'Kaunter 8 pagi hingga 10 malam',ftE:'Terokai',legal:'Semua harga, keistimewaan, ulasan dan polisi ialah contoh.',details:'Butiran',yourStay:'Penginapan anda',yourCart:'Troli anda',checkout:'Bayar'},
+zh:{menu:'菜单',close:'关闭',cta_book:'预订客房',cta_enq:'WhatsApp 联系民宿',cta_sell:'逛逛民宿小店',cta_cred:'看看老屋故事',
+calT:'选择入住日期',pickIn:'请点选入住日期。',pickOut:'现在点选退房日期。',soldMsg:'所选日期中有一晚此房型已售罄，请换日期或房型。',soldIn:'此房型当晚已售罄。',
+nights:n=>n+' 晚',pn:'/ 晚',upto:'最多 {n} 人',from:'起',choose:'选择',chosen:'已选',small:'最多 {n} 人',king:'特大床',queen:'大床',twin:'两张单人床',kingday:'特大床 + 沙发床',fitMsg:'{room}最多住 {n} 人，{g} 位客人请选更大的房间。',
+summary:'你的行程',room:'房间',dates:'日期',guestsL:'人数',subtotal:'小计',fees:'旅游税及杂费（示例）',total:'总计',noDates:'请在日历上选择日期',saveL:'比订房网站省 <b>{s}</b>（示例）',
+name:'姓名',email:'电邮',phone:'WhatsApp',arrive:'抵达时间',arrOpts:['还不确定','下午3点前','下午3点至6点','晚上6点至10点','晚上10点后'],send:'申请预订',errDates:'请先在日历上选择日期。',errForm:'请填写姓名和有效电邮。',
+okT:'申请已收到',okP:'谢谢你，{name}。我们会在一小时内通过 WhatsApp 确认{room}。',ref:'编号',demo:'演示：未发送任何内容。',again:'重新申请',bDemo:'演示：在你的网站上，这会把预订申请发给民宿，并打开安全付款链接。',
+tonight:'今晚 · 尚有 {n} 间空房',fromP:'{p} 起',selDates:'选择日期',fromN:'{p} / 晚起',
+cmpH:'价格比一比',cmpUs:'直接预订',cmpUsS:'延迟退房、欢迎咖啡、指定房间',cmpOta:'一般订房网站',cmpOtaS:'同一间房，另加服务费，没有礼遇',cmpSave:'你省下',cmpNo:'选好日期就能看到你的价格。目前显示{r}住 2 晚。',
+perks:[['延迟至下午2点退房','当天房间无人入住时免费。'],['欢迎咖啡与糕点','天井里为你备好一壶咖啡和娘惹糕。'],['指定房间','你选的房间就是你住的房间，不是“同类房型”。'],['直接联系主人','通过 WhatsApp 向我们问攻略。']],
+topics:['空房情况','机场接送','提前入住','团体或家庭','其他'],anyM:'日期灵活',
+waTxt:(tp,n,m,g)=>'你好'+(n?'，我是'+n:'')+'！我想咨询：'+tp+'。\n时间：'+m+'\n人数：'+g+'\n麻烦告知，谢谢。',
+prods:[['两晚住宿礼券','任选房型，12 个月内有效，是难忘的礼物。'],['民宿咖啡 250 克','槟城烘焙师用牛油和糖古法炒制。'],['蜡染帆布袋','厚棉布上手工盖印的卡翁纹蜡染。'],['娘惹糕礼盒','当天早上做的 12 件，可预订入住时取。'],['与主人同游老城','两小时走老巷、看宗祠、听故事。每人。'],['机场接送','槟城机场私人专车，最多 4 人。']],
+add:'加入',added:'已加入 ✓',empty:'购物车是空的。',each:'每件',coDemo:'演示：在你的网站上，这会打开结账页面，可用刷卡、FPX、GrabPay 或 Touch ’n Go。',
+revs:[['“花砖、天井的光、七点的咖啡。我们当场多住了一晚。”','Mei 与 Daniel，新加坡','翡翠庭院房'],['“直接预订，住到真正想要的房间，还能延迟退房。员工像家人一样。”','Aishah R.，吉隆坡','咖啡房'],['“去姓氏桥和吃小贩美食的最佳据点。家庭套房刚好住下我们四个。”','陈氏一家，怡保','天井套房']],smpR:'示例评价',
+walk:'分钟步行',hostTip:'主人推荐',waToast:'演示：在你的网站上，这会打开与民宿的 WhatsApp 对话。',
+n1:'客房',n2:'直接预订',n3:'周边',n4:'老屋故事',n5:'常见问题',iss1:'老屋民宿 ·',iss2:'六间客房 · 一座店屋',h1:'在<em>老百叶窗</em>后醒来。',lede:'一座修复的 1920 年代店屋，六间客房、花砖地板和露天天井。清晨喝咖啡，傍晚逛小贩。直接向我们预订，省下的都归你。',ci:'入住',co:'退房',guests:'人数',search:'查看空房',seeRooms:'看看客房',f1:'间客房，各不相同',f2:'入住，咖啡已备好',f3:'直接预订优惠（示例）',
+kR:'01 · 客房与日期',hR:'六间客房，<em>六种心情。</em>',dR:'选一间房，在日历上点选入住晚数，询问前就能看到完整价格。每晚示例价格（马币）。',clear:'清除日期',lgWk:'周末价',lgSo:'售罄',lgSel:'你的行程',
+kA:'01 · 问问民宿',hA:'有问题？<em>WhatsApp 我们。</em>',dA:'告诉我们大概日期和人数，民宿主人亲自回复，通常一小时内。',aT:'我想咨询',aMo:'时间',aN:'你的名字',aGo:'用这条讯息打开 WhatsApp',waS:'民宿 · 一小时内回复',waHi:'欢迎！👋 关于房间、日期或交通，尽管问我们。<small>8:41</small>',
+kS:'01 · 民宿小店',hS:'把老屋的一部分<em>带回家。</em>',dS:'住宿礼券、我们的咖啡、蜡染和主人带路的导览。入住时领取，或寄送至全马。',cart:'购物车',
+kP:'01 · 老屋故事',hP:'百年老屋，<em>用心重生。</em>',dP:'老屋如何重生、住客怎么说，以及我们的资质。故事、评价与标志均为示例。',t1:'为香料商人而建',t1p:'两层楼、一口天井，五脚基面向街道。',t2:'分租小房',t2p:'隔成小房间，租给港口工人。',t3:'本地工匠修复',t3p:'石灰灰泥、原有花砖重新铺设、百叶窗手工重做。',t4:'重新开门',t4p:'六间客房，一家人住在这里，每天早上都有咖啡。',b1:'MOTAC 注册住宿',b1s:'执照号码（示例）',b2:'遗产区修复',b2s:'工程已获批 · 示例',b3:'住客评分 4.9 / 5',b3s:'示例数据',pressK:'媒体报道（虚构刊物）',
+kD:'02 · 直接预订更划算',hD:'同一间房，<em>花得更少，</em>享受更多。',dD:'订房网站每晚都抽佣。直接向我们预订，这笔钱就回到你手上，还有只有民宿才能给的心意。',cap1:'天井早餐',cap2:'早上七点的咖啡',fine:'比较、礼遇与价格均为本概念示例。',
+kN:'03 · 周边指南',hN:'走出<em>家门。</em>',dN:'点选图钉看主人推荐。插画地图，非按比例；步行时间为示例估计。',
+kF:'04 · 住宿须知',hF:'住宿规则与<em>常见问题。</em>',q1:'入住与退房时间',a1:'下午3点起入住，上午11点前退房。直接预订且当天房间空出时，可免费延迟至下午2点。',q2:'进屋请脱鞋',a2:'地上的老花砖很珍贵，鞋子请留在门口，我们备有室内拖鞋。',q3:'楼梯与通行',a3:'楼上客房需走陡峭的传统楼梯，没有电梯。不想爬楼梯的客人可选一楼的咖啡房。',q4:'安静时段',a4:'晚上10点至早上7点。天井传声很好，说话声也一样。',q5:'儿童、吸烟与宠物',a5:'欢迎儿童入住，天井套房和屋顶花园房适合家庭。室内禁烟。除了民宿的猫，不接待宠物。',q6:'停车与交通',a6:'没有专属停车位，附近有公共停车场。从槟城机场搭 Grab 约 30 分钟。可免费借单车。',q7:'取消政策（示例）',a7:'抵达前 7 天可免费取消，之后收取首晚房费。',smpRev:'示例住客留言',noteQ:'“我们在咖啡壶的声音中醒来，百叶窗透进晨光。整个行程都不需要搭出租车。”',noteS:'为展示版面而撰写，并非真实评价。',
+ft1:'六间客房的老店屋民宿。虚构物业，用来展示直接预订网站的样子。',waBtn:'WhatsApp 民宿',ftV:'地址',ftH:'前台 早上8点至晚上10点',ftE:'浏览',legal:'所有价格、礼遇、评价与政策均为示例。',details:'明细',yourStay:'你的行程',yourCart:'购物车',checkout:'结账'}};
+const t=k=>{const v=D[L][k];if(v!==undefined)return v;return D.en[k]!==undefined?D.en[k]:EN[k]};
+const st=k=>L==='en'?EN[k]:(typeof D[L][k]==='string'?D[L][k]:EN[k]);
 const fill=(s,o)=>s.replace(/\{(\w+)\}/g,(m,k)=>o[k]);
 const money=n=>'RM '+Math.round(n).toLocaleString('en-MY');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const demo=m=>window.afDemo&&window.afDemo(m);
+const U=(id,w,h)=>'https://images.unsplash.com/photo-'+id+'?auto=format&fit=crop&w='+w+'&h='+h+'&q=80';
 const R=[
-{n:['Kopi Room','Bilik Kopi','咖啡房'],bed:'queen',size:16,max:2,base:260,wall:'#c25e36',acc:'#1d2b57',x:'fan'},
-{n:['Jade Courtyard','Laman Jed','翡翠庭院房'],bed:'king',size:22,max:2,base:340,wall:'#a6cfbe',acc:'#1f6e6a',x:'plant'},
-{n:['Lantern Loft','Loteng Tanglung','灯笼阁楼'],bed:'queen',size:18,max:2,base:300,wall:'#d8a443',acc:'#c25e36',x:'lantern'},
-{n:['Tile Room','Bilik Jubin','花砖房'],bed:'twin',size:20,max:2,base:290,wall:'#ecc7b4',acc:'#1d2b57',x:'tile'},
-{n:['Airwell Suite','Suite Telaga Udara','天井套房'],bed:'kingday',size:32,max:4,base:480,wall:'#2b3c72',acc:'#d8a443',x:'well'},
-{n:['Rooftop Garden','Taman Bumbung','屋顶花园房'],bed:'kingday',size:28,max:3,base:420,wall:'#1f6e6a',acc:'#ecc7b4',x:'plant'}];
+{n:['Kopi Room','Bilik Kopi','咖啡房'],bed:'queen',size:16,max:2,base:260,img:'1582719478250-c89cae4dc85b',alt:'Warm bedroom with timber floors and tall windows'},
+{n:['Jade Courtyard','Laman Jed','翡翠庭院房'],bed:'king',size:22,max:2,base:340,img:'1615874959474-d609969a20ed',alt:'Bright bedroom with plants and woven lamps'},
+{n:['Lantern Loft','Loteng Tanglung','灯笼阁楼'],bed:'queen',size:18,max:2,base:300,img:'1611892440504-42a792e24d32',alt:'Cosy timber-panelled bedroom with warm lighting'},
+{n:['Tile Room','Bilik Jubin','花砖房'],bed:'twin',size:20,max:2,base:290,img:'1595576508898-0ad5c879a061',alt:'Twin room with two beds and teal accents'},
+{n:['Airwell Suite','Suite Telaga Udara','天井套房'],bed:'kingday',size:32,max:4,base:480,img:'1590490360182-c33d57733427',alt:'Large suite with a sofa and classic furnishings'},
+{n:['Rooftop Garden','Taman Bumbung','屋顶花园房'],bed:'kingday',size:28,max:3,base:420,img:'1540518614846-7eded433c457',alt:'Bedroom with art on the wall and orange benches'}];
 const rn=r=>r.n[LX[L]];
 const S={r:0,g:2,ci:null,co:null};
 const today=new Date();today.setHours(0,0,0,0);
@@ -577,158 +662,142 @@ const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+Stri
 const parse=v=>{if(!v)return null;const d=new Date(v+'T00:00:00');return isNaN(d)?null:d};
 const fmt=(d,o)=>new Intl.DateTimeFormat(LOC[L],o||{day:'numeric',month:'short'}).format(d);
 const lastDay=new Date(today.getFullYear(),today.getMonth()+2,0);
-function quote(){const n=nightsOf();let sub=0;const list=[];for(let i=0;i<n;i++){const d=addD(S.ci,i),p=price(d,S.r);sub+=p;list.push([d,p])}const fee=Math.round(sub*.08);return{n,sub,fee,tot:sub+fee,list}}
+function quote(){const n=nightsOf();let sub=0;const list=[];for(let i=0;i<n;i++){const d=addD(S.ci,i),p=price(d,S.r);sub+=p;list.push([d,p])}const fee=Math.round(sub*.06)+10*n;return{n,sub,fee,tot:sub+fee,list}}
+const ota=q=>Math.round(q.tot*1.12);
 function rangeOk(a,b,ri){for(let d=new Date(a);d<b;d=addD(d,1))if(sold(d,ri))return false;return true}
-
-/* house windows */
-let w='';[74,180,286].forEach((x,i)=>{const dl=`style="transition-delay:${.25+i*.22}s"`;w+=`<path d="M${x} 176a30 30 0 0 1 60 0v74h-60z" fill="#1d2b57"/><path class="glow" ${dl} d="M${x+5} 176a25 25 0 0 1 50 0v69h-50z" fill="#f6c66b"/><path d="M${x+30} 152v24M${x+13} 160l17 16M${x+47} 160l-17 16M${x+6} 176h48" stroke="#1d2b57" stroke-width="2.5"/><rect class="sh l" ${dl} x="${x+5}" y="178" width="25" height="67" fill="url(#louv)"/><rect class="sh r" ${dl} x="${x+30}" y="178" width="25" height="67" fill="url(#louv)"/><rect x="${x-6}" y="248" width="72" height="6" rx="2" fill="#1f6e6a"/>`});
-$('#wins').innerHTML=w;
-const house=$('#house');
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setTimeout(()=>house.classList.add('open'),RMo?0:450);else house.classList.remove('open')}),{threshold:.35}).observe(house);
-if(!RMo){const sun=$('#sun');let tk=false;addEventListener('scroll',()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{const y=Math.min(scrollY,700);sun.setAttribute('cy',86+y*.12);tk=false})},{passive:true})}
-
-/* room svg */
-function roomSVG(r,i){const twin=r.bed==='twin';let bed='';
- const one=(x,wd)=>`<rect x="${x}" y="78" width="${wd}" height="14" rx="4" fill="${r.acc}"/><rect x="${x+4}" y="88" width="${wd-8}" height="20" rx="5" fill="#fff"/><rect x="${x+4}" y="98" width="${wd-8}" height="12" rx="3" fill="${r.acc}" opacity=".35"/><rect x="${x+8}" y="83" width="${wd/2-12}" height="9" rx="4" fill="#f8f2e6"/><rect x="${x+wd/2+4}" y="83" width="${wd/2-12}" height="9" rx="4" fill="#f8f2e6"/>`;
- bed=twin?one(44,52)+one(104,52):one(60,80);
- if(r.bed==='kingday')bed+=`<rect x="150" y="92" width="38" height="18" rx="6" fill="${r.acc}"/><rect x="152" y="86" width="34" height="8" rx="4" fill="#f8f2e6"/>`;
- const ex={fan:`<path d="M100 6v10M78 18h44" stroke="#151b2f" stroke-width="3" stroke-linecap="round"/>`,
- plant:`<path d="M20 112l3-16h14l3 16z" fill="#c25e36"/><path d="M30 96c-8-12-8-22 0-28M30 96c4-14 12-20 20-18M30 96c-6-10-14-14-20-10" stroke="#1f6e6a" stroke-width="4" fill="none" stroke-linecap="round"/>`,
- lantern:`<path d="M30 0v14M170 0v14" stroke="#151b2f" stroke-width="1.5"/><ellipse cx="30" cy="24" rx="8" ry="10" fill="#c25e36"/><ellipse cx="170" cy="24" rx="8" ry="10" fill="#c25e36"/>`,
- tile:`<rect x="20" y="40" width="22" height="22" fill="url(#tile)"/><rect x="158" y="40" width="22" height="22" fill="url(#tile)"/>`,
- well:`<rect x="78" y="0" width="44" height="8" fill="#a6cfbe"/><path d="M84 8l-8 30M116 8l8 30" stroke="#f6c66b" stroke-width="2" opacity=".7"/>`}[r.x];
- return `<svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="${r.wall}"/><rect y="112" width="200" height="28" fill="url(#tile)"/><rect y="110" width="200" height="3" fill="#151b2f" opacity=".3"/><path d="M84 66V40a16 16 0 0 1 32 0v26z" fill="#f6c66b"/><path d="M84 66V40a16 16 0 0 1 32 0v26z" fill="none" stroke="#151b2f" stroke-width="2.5"/><rect x="72" y="36" width="12" height="30" fill="url(#louv)"/><rect x="116" y="36" width="12" height="30" fill="url(#louv)"/>${ex}${bed}<text x="186" y="20" text-anchor="end" font-family="Gloock,serif" font-size="14" fill="#f8f2e6" opacity=".85">0${i+1}</text></svg>`}
 
 /* rooms */
 const rgrid=$('#rgrid');
-function renderRooms(){rgrid.innerHTML=R.map((r,i)=>{const sm=r.max<S.g;return `<button class="room${sm?' small':''}" data-r="${i}" aria-pressed="${i===S.r}"><span class="tag">${fill(t('small'),{n:r.max})}</span>${roomSVG(r,i)}<div class="rn"><h3>${rn(r)}</h3><span class="no">No. 0${i+1}</span></div><div class="spec"><span>${t(r.bed)}</span><span>${r.size} m²</span><span>${fill(t('upto'),{n:r.max})}</span></div><div class="pr"><div><small>${t('from')} </small><b>${money(r.base)}</b><small> ${t('pn')}</small></div><span class="chip">${i===S.r?t('chosen'):t('choose')}</span></div></button>`}).join('');
- $('#rsel').innerHTML=R.map((r,i)=>`<button data-r="${i}" aria-pressed="${i===S.r}">${rn(r)}</button>`).join('')}
+function renderRooms(){rgrid.innerHTML=R.map((r,i)=>{const sm=r.max<S.g;return `<button class="room rv in${sm?' small':''}" data-r="${i}" aria-pressed="${i===S.r}"><div class="ph"><img src="${U(r.img,720,480)}" alt="${r.alt}" loading="lazy" width="720" height="480"><span class="no">No. 0${i+1}</span></div><span class="tag">${fill(t('small'),{n:r.max})}</span><div class="rn"><h3>${rn(r)}</h3></div><div class="spec"><span>${t(r.bed)}</span><span>${r.size} m²</span><span>${fill(t('upto'),{n:r.max})}</span></div><div class="pr"><div><small>${t('from')} </small><b>${money(r.base)}</b><small> ${t('pn')}</small></div><span class="chip">${i===S.r?t('chosen'):t('choose')}</span></div></button>`}).join('')}
 function pickRoom(i){S.r=i;let msg='';if(S.ci&&S.co&&!rangeOk(S.ci,S.co,i)){S.co=null;msg=t('soldMsg')}else if(S.ci&&!S.co&&sold(S.ci,i)){S.ci=null;msg=t('soldIn')}
  if(R[i].max<S.g)msg=fill(t('fitMsg'),{room:rn(R[i]),n:R[i].max,g:S.g});renderRooms();update(msg)}
 rgrid.addEventListener('click',e=>{const b=e.target.closest('.room');if(b)pickRoom(+b.dataset.r)});
-$('#rsel').addEventListener('click',e=>{const b=e.target.closest('button');if(b)pickRoom(+b.dataset.r)});
 
 /* calendar */
 const months=$('#months'),hint=$('#hint');
-function renderCal(){let h='';for(let m=0;m<2;m++){const f=new Date(today.getFullYear(),today.getMonth()+m,1),dim=new Date(f.getFullYear(),f.getMonth()+1,0).getDate();
- h+=`<div class="mo"><h3>${fmt(f,{month:'long',year:'numeric'})}</h3><div class="wd">${WD[L].map(x=>`<span>${x}</span>`).join('')}</div><div class="days">`+'<span></span>'.repeat((f.getDay()+6)%7);
+function renderCal(){$('#calT').textContent=t('calT')+' · '+rn(R[S.r]);let h='';for(let m=0;m<2;m++){const f=new Date(today.getFullYear(),today.getMonth()+m,1),dim=new Date(f.getFullYear(),f.getMonth()+1,0).getDate();
+ h+=`<div class="mo"><h4>${fmt(f,{month:'long',year:'numeric'})}</h4><div class="wd">${WD[L].map(x=>`<span>${x}</span>`).join('')}</div><div class="days">`+'<span></span>'.repeat((f.getDay()+6)%7);
  for(let d=1;d<=dim;d++){const dt=new Date(f.getFullYear(),f.getMonth(),d),past=dt<today,so=!past&&sold(dt,S.r),ts=+dt;let c='d';
   if(isWk(dt))c+=' wk';if(so)c+=' so';if(+dt===+today)c+=' td';
   if(S.ci&&ts===+S.ci)c+=' st';if(S.co&&ts===+S.co)c+=' en';if(S.ci&&S.co&&dt>S.ci&&dt<S.co)c+=' in';
-  const lab=fmt(dt,{weekday:'long',day:'numeric',month:'long'})+(past?'':so?' · '+t('lg_so'):' · '+money(price(dt,S.r)));
+  const lab=fmt(dt,{weekday:'long',day:'numeric',month:'long'})+(past?'':so?' · '+t('lgSo'):' · '+money(price(dt,S.r)));
   h+=`<button class="${c}" data-t="${ts}" ${past?'disabled':''} aria-label="${lab}"><b>${d}</b><small>${past?'&nbsp;':so?'—':price(dt,S.r)}</small></button>`}
  h+='</div></div>'}months.innerHTML=h}
 months.addEventListener('click',e=>{const b=e.target.closest('.d');if(!b||b.disabled)return;const d=new Date(+b.dataset.t);let msg='';
  if(!S.ci||S.co||d<=S.ci){if(sold(d,S.r)){S.ci=null;S.co=null;msg=t('soldIn')}else{S.ci=d;S.co=null}}
- else if(rangeOk(S.ci,d,S.r))S.co=d;else{S.co=null;msg=t('soldMsg')}
- update(msg)});
-months.addEventListener('mouseover',e=>{if(!S.ci||S.co)return;const b=e.target.closest('.d');$$('.d.pv',months).forEach(x=>x.classList.remove('pv'));if(!b)return;const end=+b.dataset.t;
- $$('.d',months).forEach(x=>{const v=+x.dataset.t;if(v>+S.ci&&v<end)x.classList.add('pv')})});
+ else if(rangeOk(S.ci,d,S.r))S.co=d;else{S.co=null;msg=t('soldMsg')}update(msg)});
+months.addEventListener('mouseover',e=>{if(!S.ci||S.co)return;const b=e.target.closest('.d');$$('.d.pv',months).forEach(x=>x.classList.remove('pv'));if(!b)return;const end=+b.dataset.t;$$('.d',months).forEach(x=>{const v=+x.dataset.t;if(v>+S.ci&&v<end)x.classList.add('pv')})});
 months.addEventListener('mouseleave',()=>$$('.d.pv',months).forEach(x=>x.classList.remove('pv')));
 $('#clear').addEventListener('click',()=>{S.ci=S.co=null;update()});
 
 /* hero search */
-const ciIn=$('#ci'),coIn=$('#co'),gv=$('#gv');
-ciIn.min=coIn.min=iso(today);ciIn.max=coIn.max=iso(lastDay);
+const ciIn=$('#ci'),coIn=$('#co'),gv=$('#gv');ciIn.min=coIn.min=iso(today);ciIn.max=coIn.max=iso(lastDay);
 function setG(n){S.g=Math.max(1,Math.min(4,n));gv.value=gv.textContent=S.g;renderRooms();update(R[S.r].max<S.g?fill(t('fitMsg'),{room:rn(R[S.r]),n:R[S.r].max,g:S.g}):'')}
 $('#gm').addEventListener('click',()=>setG(S.g-1));$('#gp').addEventListener('click',()=>setG(S.g+1));
 ciIn.addEventListener('change',()=>{const d=parse(ciIn.value);if(d)coIn.min=iso(addD(d,1))});
 $('#search').addEventListener('submit',e=>{e.preventDefault();const a=parse(ciIn.value),b=parse(coIn.value);let msg='';
  if(a&&a>=today&&a<=lastDay){if(b&&b>a&&b<=lastDay){if(rangeOk(a,b,S.r)){S.ci=a;S.co=b}else{S.ci=a;S.co=null;msg=t('soldMsg');if(sold(a,S.r))S.ci=null}}else if(!sold(a,S.r)){S.ci=a;S.co=null}}
- update(msg);$('#dates').scrollIntoView({behavior:RMo?'auto':'smooth'})});
+ update(msg);$('#stay').scrollIntoView({behavior:RMo?'auto':'smooth'})});
 
-/* summary + bar + sheet */
+/* summary, form, bar, sheet, compare */
+function rows(q,list){const r=R[S.r];let h=`<div class="row"><span>${t('room')}</span><b>${rn(r)}</b></div><div class="row"><span>${t('dates')}</span><b>${q.n?fmt(S.ci)+' → '+fmt(S.co)+' · '+t('nights')(q.n):t('noDates')}</b></div><div class="row"><span>${t('guestsL')}</span><b>${S.g}</b></div>`;
+ if(list&&q.n)h+=`<div class="nl">${q.list.map(([d,p])=>`<div class="row"><span>${fmt(d,{weekday:'short',day:'numeric',month:'short'})}</span><b>${money(p)}</b></div>`).join('')}</div>`;
+ if(q.n)h+=`<div class="row"><span>${t('subtotal')}</span><b>${money(q.sub)}</b></div><div class="row"><span>${t('fees')}</span><b>${money(q.fee)}</b></div><div class="row tot"><span>${t('total')}</span><b>${money(q.tot)}</b></div>`;return h}
+let form={n:'',e:'',p:'',a:0},done=null;
+function renderSum(){const q=quote(),sum=$('#sum');
+ if(done){sum.innerHTML=`<div class="conf" tabindex="-1"><svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="46" fill="url(#kawung)"/><circle cx="48" cy="48" r="30" fill="#f8f2e6"/><path d="M34 49l9 9 19-20" stroke="#1f6e6a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>${t('okT')}</h3><p class="deck" style="margin:8px auto 0;font-size:17px">${fill(t('okP'),{name:esc(done.n),room:rn(R[S.r])})}</p><div class="ref">${t('ref')} · ${done.ref}</div>${rows(q,false)}<p class="demo">${t('demo')}</p><button class="pill o" id="again">${t('again')}</button></div>`;
+  $('#again').onclick=()=>{done=null;S.ci=S.co=null;update()};return}
+ sum.innerHTML=`<h3>${t('summary')}</h3>${rows(q,false)}${q.n?`<div class="save">🎁 <span>${fill(t('saveL'),{s:money(ota(q)-q.tot)})}</span></div>`:''}<form id="bf" novalidate><div class="fg"><div class="fld w"><label for="fn">${t('name')}</label><input id="fn" autocomplete="name" value="${esc(form.n)}"></div><div class="fld"><label for="fe">${t('email')}</label><input id="fe" type="email" autocomplete="email" value="${esc(form.e)}"></div><div class="fld"><label for="fp">${t('phone')}</label><input id="fp" type="tel" autocomplete="tel" placeholder="+60" value="${esc(form.p)}"></div><div class="fld w"><label for="fa">${t('arrive')}</label><select id="fa">${t('arrOpts').map((o,i)=>`<option value="${i}"${i==form.a?' selected':''}>${o}</option>`).join('')}</select></div></div><button class="pill p">${t('send')}</button><p class="err" id="ferr" aria-live="polite"></p></form>`;
+ const sv=()=>{form={n:$('#fn').value,e:$('#fe').value,p:$('#fp').value,a:$('#fa').value}};$('#bf').addEventListener('input',sv);
+ $('#bf').addEventListener('submit',e=>{e.preventDefault();sv();const err=$('#ferr');if(!nightsOf()){err.textContent=t('errDates');return}if(!form.n.trim()||!/^\S+@\S+\.\S+$/.test(form.e.trim())){err.textContent=t('errForm');return}
+  const ab='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let r='';for(let i=0;i<4;i++)r+=ab[Math.floor(Math.random()*ab.length)];done={n:form.n.trim().split(' ')[0],ref:'RT-'+iso(S.ci).slice(2).split('-').join('')+'-'+r};renderSum();demo(t('bDemo'));$('.conf').focus({preventScroll:true})})}
+function renderCmp(){let q=quote(),note='';if(!q.n){const s0=S.ci,s1=S.co;const d=addD(today,7);S.ci=d;S.co=addD(d,2);q=quote();S.ci=s0;S.co=s1;note=`<p style="font-size:13px;color:var(--mut);margin-top:10px">${fill(t('cmpNo'),{r:rn(R[S.r])})}</p>`}
+ const o=ota(q);$('#cmp').innerHTML=`<h3>${t('cmpH')}</h3><div class="cmpr us"><span>${t('cmpUs')}</span><b>${money(q.tot)}</b><small>${t('cmpUsS')}</small></div><div class="cmpr ota"><span>${t('cmpOta')}</span><b>${money(o)}</b><small>${t('cmpOtaS')}</small></div><div class="bigsave"><span style="font-weight:800">${t('cmpSave')}</span><b>${money(o-q.tot)}</b></div>${note}<a class="pill p" href="#stay" style="width:100%;margin-top:16px">${t('cta_book')}</a>`}
 const pbar=$('#pbar');
-function rows(q,withList){const r=R[S.r];let h=`<div class="row"><span>${t('room')}</span><b>${rn(r)}</b></div><div class="row"><span>${t('dates')}</span><b>${q.n?fmt(S.ci)+' → '+fmt(S.co)+' · '+t('nights')(q.n):t('noDates')}</b></div><div class="row"><span>${t('guestsL')}</span><b>${S.g}</b></div>`;
- if(withList&&q.n)h+=`<div class="nl">${q.list.map(([d,p])=>`<div class="row"><span>${fmt(d,{weekday:'short',day:'numeric',month:'short'})}</span><b>${money(p)}</b></div>`).join('')}</div>`;
- if(q.n)h+=`<div class="row"><span>${t('subtotal')}</span><b>${money(q.sub)}</b></div><div class="row"><span>${t('fees')}</span><b>${money(q.fee)}</b></div><div class="row tot"><span>${t('total')}</span><b>${money(q.tot)}</b></div>`;
- return h}
-function update(msg){renderCal();const q=quote(),r=R[S.r];
- hint.textContent=msg||(!S.ci?t('pickIn'):!S.co?t('pickOut'):fmt(S.ci)+' → '+fmt(S.co)+' · '+t('nights')(q.n)+' · '+money(q.tot));
- hint.className='hint'+(msg?' bad':'');
- if(S.ci)ciIn.value=iso(S.ci);if(S.co)coIn.value=iso(S.co);if(!S.ci)ciIn.value='';if(!S.co)coIn.value='';
- $('#pbs').textContent=rn(r)+' · '+(q.n?fmt(S.ci)+' → '+fmt(S.co)+' · '+t('nights')(q.n):S.g+' × '+t('guests'));
+function update(msg){renderCal();const q=quote(),r=R[S.r],g=H.dataset.goal;
+ hint.textContent=msg||(!S.ci?t('pickIn'):!S.co?t('pickOut'):fmt(S.ci)+' → '+fmt(S.co)+' · '+t('nights')(q.n)+' · '+money(q.tot));hint.className='hint'+(msg?' bad':'');
+ ciIn.value=S.ci?iso(S.ci):'';coIn.value=S.co?iso(S.co):'';
+ $('#pbs').textContent=rn(r)+' · '+(q.n?fmt(S.ci)+' → '+fmt(S.co)+' · '+t('nights')(q.n):S.g+' × '+st('guests'));
  $('#pbt').textContent=q.n?money(q.tot)+' · '+t('total'):fill(t('fromN'),{p:money(r.base)});
- const go=$('#pbgo');go.textContent=q.n?t('request'):t('selDates');go.setAttribute('href',q.n?'#book':'#dates');
- $('#shBody').innerHTML=rows(q,true);$('#shGo').setAttribute('href',q.n?'#book':'#dates');$('#shGo').textContent=q.n?t('request'):t('selDates');
- const sum=$('#sum');if(sum)sum.innerHTML=`<h3>${t('summary')}</h3>`+rows(q,false)}
-const sheet=$('#sheet'),scrim=$('#scrim');
-const openSheet=o=>{sheet.classList.toggle('on',o);scrim.classList.toggle('on',o);if(o)$('#shGo').focus()};
-$('#pbi').addEventListener('click',()=>openSheet(true));$('#det').addEventListener('click',()=>openSheet(true));
-scrim.addEventListener('click',()=>openSheet(false));$('#shGo').addEventListener('click',()=>openSheet(false));
-addEventListener('keydown',e=>{if(e.key==='Escape')openSheet(false)});
+ const go=$('#pbgo');if(g==='book'||!g){go.textContent=q.n?t('send'):t('selDates');go.href='#stay'}else{go.textContent=t('cta_'+g);go.href={enq:'#ask',sell:'#shop',cred:'#proof'}[g]}
+ $('#shBody').innerHTML=rows(q,true);$('#shGo').textContent=q.n?t('send'):t('selDates');
+ renderSum();renderCmp()}
+const sheet=$('#sheet'),scrim=$('#scrim'),drawer=$('#drawer');
+const openSheet=o=>{sheet.classList.toggle('on',o);scrim.classList.toggle('on',o)};
+const openCart=o=>{drawer.classList.toggle('on',o);scrim.classList.toggle('on',o);if(o)$('#cartClose').focus()};
+$('#pbi').onclick=()=>openSheet(true);$('#det').onclick=()=>openSheet(true);
+scrim.onclick=()=>{openSheet(false);openCart(false)};$('#shGo').onclick=()=>openSheet(false);
+addEventListener('keydown',e=>{if(e.key==='Escape'){openSheet(false);openCart(false)}});
 let sy=null;sheet.addEventListener('touchstart',e=>{sy=e.touches[0].clientY},{passive:true});sheet.addEventListener('touchend',e=>{if(sy!==null&&e.changedTouches[0].clientY-sy>70)openSheet(false);sy=null});
 const heroEl=$('.hero'),footEl=$('footer');let heroIn=true,footIn=false;
-const barIo=new IntersectionObserver(es=>{es.forEach(e=>{if(e.target===heroEl)heroIn=e.isIntersecting;else footIn=e.isIntersecting});pbar.classList.toggle('show',!heroIn&&!footIn)},{threshold:0});
-barIo.observe(heroEl);barIo.observe(footEl);
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.target===heroEl)heroIn=e.isIntersecting;else footIn=e.isIntersecting});pbar.classList.toggle('show',!heroIn&&!footIn)},{threshold:0}).observe(heroEl);
+new IntersectionObserver(es=>{es.forEach(e=>{footIn=e.isIntersecting});pbar.classList.toggle('show',!heroIn&&!footIn)},{threshold:0}).observe(footEl);
 
 /* perks */
-const ico=[`<circle cx="26" cy="26" r="22" fill="#d8a443"/><path d="M26 12v14l9 6" stroke="#1d2b57" stroke-width="3.5" fill="none" stroke-linecap="round"/>`,
-`<path d="M10 22h28v10a12 12 0 0 1-12 12h-4a12 12 0 0 1-12-12z" fill="#c25e36"/><path d="M38 26h4a5 5 0 0 1 0 10h-5" stroke="#c25e36" stroke-width="3.5" fill="none"/><path d="M18 8c-3 4 3 6 0 10M26 6c-3 4 3 6 0 10" stroke="#a6cfbe" stroke-width="3" fill="none" stroke-linecap="round"/>`,
-`<rect x="6" y="10" width="40" height="36" rx="6" fill="#a6cfbe"/><rect x="6" y="10" width="40" height="10" rx="4" fill="#1f6e6a"/><path d="M16 32h20m-6-6 6 6-6 6" stroke="#1d2b57" stroke-width="3.5" fill="none" stroke-linecap="round"/>`,
-`<rect x="4" y="4" width="44" height="44" rx="8" fill="url(#tile)"/>`,
-`<path d="M8 40l3-9A18 18 0 1 1 18 44z" fill="#1f6e6a"/><circle cx="18" cy="26" r="2.5" fill="#f8f2e6"/><circle cx="26" cy="26" r="2.5" fill="#f8f2e6"/><circle cx="34" cy="26" r="2.5" fill="#f8f2e6"/>`,
-`<circle cx="13" cy="34" r="9" stroke="#d8a443" stroke-width="3.5" fill="none"/><circle cx="39" cy="34" r="9" stroke="#d8a443" stroke-width="3.5" fill="none"/><path d="M13 34l9-16h12l5 16M22 18l7 16" stroke="#ecc7b4" stroke-width="3.5" fill="none" stroke-linejoin="round"/>`];
-function renderPerks(){$('#perks').innerHTML=ico.map((s,i)=>`<div class="perk rv in"><svg viewBox="0 0 52 52" aria-hidden="true">${s}</svg><h3>${t('p'+(i+1))}</h3><p>${t('p'+(i+1)+'d')}</p></div>`).join('')}
+const ico=[`<circle cx="20" cy="20" r="18" fill="#d8a443"/><path d="M20 9v11l7 5" stroke="#1d2b57" stroke-width="3" fill="none" stroke-linecap="round"/>`,`<path d="M7 17h22v8a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z" fill="#c25e36"/><path d="M29 20h3a4 4 0 0 1 0 8h-4" stroke="#c25e36" stroke-width="3" fill="none"/><path d="M14 6c-2 3 2 5 0 8M20 5c-2 3 2 5 0 8" stroke="#a6cfbe" stroke-width="2.5" fill="none" stroke-linecap="round"/>`,`<rect x="3" y="3" width="34" height="34" rx="8" fill="url(#tile)"/>`,`<path d="M6 31l2.4-7A14 14 0 1 1 14 34z" fill="#1f6e6a"/><circle cx="14" cy="20" r="2" fill="#f8f2e6"/><circle cx="20" cy="20" r="2" fill="#f8f2e6"/><circle cx="26" cy="20" r="2" fill="#f8f2e6"/>`];
+function renderPerks(){$('#perks').innerHTML=t('perks').map((p,i)=>`<div class="perk"><svg viewBox="0 0 40 40" aria-hidden="true">${ico[i]}</svg><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join('')}
 
-/* booking form */
-const fb=$('#formbox');
-function renderForm(){fb.innerHTML=`<form id="bf" novalidate><div class="fg">
-<div class="fld"><label for="fn">${t('name')}</label><input id="fn" autocomplete="name" required></div>
-<div class="fld"><label for="fe">${t('email')}</label><input id="fe" type="email" autocomplete="email" required></div>
-<div class="fld"><label for="fp">${t('phone')}</label><input id="fp" type="tel" autocomplete="tel" placeholder="+60"></div>
-<div class="fld"><label for="fa">${t('arrive')}</label><select id="fa">${t('arrOpts').map(o=>`<option>${o}</option>`).join('')}</select></div>
-<div class="fld w"><label for="fx">${t('note')}</label><textarea id="fx" rows="3"></textarea></div></div>
-<button class="pill p">${t('send')}</button><p class="err" id="ferr" aria-live="polite"></p></form>`;
- $('#bf').addEventListener('submit',e=>{e.preventDefault();const err=$('#ferr'),n=$('#fn').value.trim(),em=$('#fe').value.trim();
-  if(!nightsOf()){err.textContent=t('errDates');return}
-  if(!n||!/^\S+@\S+\.\S+$/.test(em)){err.textContent=t('errForm');return}
-  const q=quote(),ab='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let rnd='';for(let i=0;i<4;i++)rnd+=ab[Math.floor(Math.random()*ab.length)];
-  const ref='RT-'+iso(S.ci).slice(2).split('-').join('')+'-'+rnd;
-  fb.innerHTML=`<div class="conf" tabindex="-1"><svg class="seal" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="46" fill="url(#kawung)"/><circle cx="48" cy="48" r="30" fill="#f8f2e6"/><path d="M34 49l9 9 19-20" stroke="#1f6e6a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>${t('okT')}</h3><p class="deck" style="margin:8px auto 0">${fill(t('okP'),{name:esc(n.split(' ')[0]),room:rn(R[S.r])})}</p><div class="ref">${t('ref')} · ${ref}</div>${rows(q,false)}<p class="demo">${t('demo')}</p><button class="pill o" id="again">${t('again')}</button></div>`;
-  const c=$('.conf',fb);c.focus({preventScroll:true});
-  $('#again').addEventListener('click',()=>{S.ci=S.co=null;renderForm();update();$('#dates').scrollIntoView({behavior:RMo?'auto':'smooth'})})})}
-const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* ask */
+const A={tp:0};
+function renderAsk(){$('#aTop').innerHTML=t('topics').map((x,i)=>`<button type="button" data-t="${i}" aria-pressed="${A.tp===i}">${x}</button>`).join('');
+ const m=$('#aMo'),mi=m.selectedIndex;m.innerHTML=`<option>${t('anyM')}</option>`+[0,1,2,3].map(k=>`<option>${fmt(new Date(today.getFullYear(),today.getMonth()+k,1),{month:'long',year:'numeric'})}</option>`).join('');m.selectedIndex=Math.max(0,mi);waPrev()}
+function waPrev(){const m=$('#aMo');$('#waMsg').innerHTML=esc(t('waTxt')(t('topics')[A.tp],$('#aN').value.trim(),m.options[m.selectedIndex].text,$('#aG').value))+'<small>8:42 ✓✓</small>'}
+$('#aTop').addEventListener('click',e=>{const b=e.target.closest('button');if(b){A.tp=+b.dataset.t;renderAsk()}});
+['#aMo','#aG','#aN'].forEach(s=>$(s).addEventListener('input',waPrev));$('#askF').addEventListener('submit',e=>{e.preventDefault();demo()});
+
+/* shop */
+const PR=[{p:620,bg:'#1d2b57',ic:'<rect x="6" y="18" width="68" height="44" rx="6" fill="#f8f2e6"/><path d="M52 18v44" stroke="#c25e36" stroke-width="3" stroke-dasharray="4 4"/><text x="29" y="44" text-anchor="middle" font-family="Gloock,serif" font-size="20" fill="#1d2b57">2</text><text x="29" y="54" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="6.5" letter-spacing="1" fill="#c25e36">NIGHTS</text><text x="63" y="43" text-anchor="middle" font-family="Gloock,serif" font-size="9" fill="#1d2b57">RT</text>'},
+{p:38,img:'1509042239860-f550ce710b93'},
+{p:85,bg:'#c25e36',ic:'<path d="M16 28h48l-5 44H21z" fill="url(#kawung)" stroke="#f8f2e6" stroke-width="2"/><path d="M28 28c0-16 24-16 24 0" fill="none" stroke="#f8f2e6" stroke-width="4"/>'},
+{p:32,bg:'#a6cfbe',ic:'<rect x="10" y="26" width="60" height="38" rx="6" fill="#f8f2e6"/><g><circle cx="24" cy="40" r="6" fill="#1f6e6a"/><circle cx="40" cy="40" r="6" fill="#c25e36"/><circle cx="56" cy="40" r="6" fill="#d8a443"/><rect x="18" y="50" width="12" height="8" rx="2" fill="#2b3c72"/><rect x="34" y="50" width="12" height="8" rx="2" fill="#ecc7b4"/><rect x="50" y="50" width="12" height="8" rx="2" fill="#1f6e6a"/></g>'},
+{p:60,img:'1585644198914-0ac3616037c3'},
+{p:70,bg:'#d8a443',ic:'<path d="M10 50l8-18h44l8 18v10H10z" fill="#1d2b57"/><path d="M22 34h36l5 12H17z" fill="#a6cfbe"/><circle cx="22" cy="60" r="7" fill="#151b2f"/><circle cx="58" cy="60" r="7" fill="#151b2f"/>'}];
+const CART={};
+function renderShop(){const pr=t('prods');$('#prods').innerHTML=PR.map((x,i)=>`<article class="prod rv in"><div class="pimg" style="background:${x.bg||'#000'}">${x.img?`<img src="${U(x.img,640,400)}" alt="" loading="lazy" width="640" height="400">`:`<svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kawung)" opacity=".18"/></svg><svg class="ic" viewBox="0 0 80 80" aria-hidden="true">${x.ic}</svg>`}</div><div class="pb"><h3>${pr[i][0]}</h3><p>${pr[i][1]}</p><div class="r"><b>${money(x.p)}</b><button class="add" data-p="${i}">${t('add')}</button></div></div></article>`).join('');renderCart()}
+function renderCart(){const ids=Object.keys(CART).filter(k=>CART[k]>0),pr=t('prods');let tot=0,n=0;
+ $('#dl').innerHTML=ids.length?ids.map(k=>{const x=PR[k];tot+=x.p*CART[k];n+=CART[k];return `<li><span class="nm">${pr[k][0]}<small>${money(x.p)} ${t('each')}</small></span><span class="qty"><button data-q="${k}" data-v="-1" aria-label="−">−</button><b>${CART[k]}</b><button data-q="${k}" data-v="1" aria-label="+">+</button></span></li>`}).join(''):`<li style="justify-content:center;color:var(--mut)">${t('empty')}</li>`;
+ $('#dTot').textContent=money(tot);$('#cartN').textContent=n}
+$('#prods').addEventListener('click',e=>{const b=e.target.closest('.add');if(!b)return;const i=b.dataset.p;CART[i]=(CART[i]||0)+1;renderCart();b.textContent=t('added');b.classList.add('ok');setTimeout(()=>{b.textContent=t('add');b.classList.remove('ok')},1200);if(!RMo)openCart(true)});
+$('#dl').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(b){CART[b.dataset.q]=Math.max(0,CART[b.dataset.q]+ +b.dataset.v);renderCart()}});
+$('#cartOpen').onclick=()=>openCart(true);$('#cartClose').onclick=()=>openCart(false);$('#checkout').onclick=()=>demo(t('coDemo'));
+
+/* reviews */
+function renderRevs(){$('#revs').innerHTML=t('revs').map(r=>`<div class="box rev rv in"><span class="smp">${t('smpR')}</span><div class="st" aria-label="5 / 5" style="margin-top:10px">★★★★★</div><blockquote>${r[0]}</blockquote><small><span>${r[1]}</span><span>${r[2]}</span></small></div>`).join('')}
 
 /* map */
 const P=[
-{n:['Street art lanes','Lorong seni jalanan','街头壁画巷'],d:['Murals and iron caricatures tucked into the old lanes. Best before the midday heat.','Mural dan karikatur besi tersorok di lorong lama. Paling baik sebelum panas tengah hari.','老巷里的壁画与铁艺漫画。最好在中午炎热前去。'],min:4,x:120,y:150,r:'210,230 210,230 120,230 120,150'},
-{n:['Hawker street','Jalan penjaja','小贩街'],d:['Char kway teow, wonton mee and cendol come out after dark. Bring cash.','Char kway teow, mi wantan dan cendol muncul selepas gelap. Bawa wang tunai.','入夜后有炒粿条、云吞面和煎蕊。记得带现金。'],min:6,x:300,y:90,r:'210,230 210,90 300,90'},
-{n:['Clan jetties','Jeti puak','姓氏桥'],d:['Wooden homes on stilts over the water. Go at sunset, and walk quietly: people live here.','Rumah kayu bertiang di atas air. Pergi ketika senja dan berjalan perlahan: ada penduduk di sini.','建在水上的高脚木屋。傍晚去最美，请安静行走：这里有人居住。'],min:12,x:545,y:300,r:'210,230 210,340 455,340 480,300 545,300'},
-{n:['Goddess of Mercy temple','Tokong Dewi Kuan Yin','观音亭'],d:['Incense, lanterns and a steady flow of visitors from early morning.','Colok, tanglung dan pengunjung yang tidak putus sejak awal pagi.','清晨起便香火缭绕，灯笼高挂，香客不断。'],min:7,x:390,y:230,r:'210,230 390,230'}];
-let pi=0;
-const pinsG=$('#pins');
+{n:['Street art lanes','Lorong seni jalanan','街头壁画巷'],d:['Murals tucked into the old lanes. Go before the midday heat and look up as well as around.','Mural tersorok di lorong lama. Pergi sebelum panas tengah hari, dan lihat ke atas juga.','老巷里的壁画。中午炎热前去，记得也抬头看看。'],min:4,x:120,y:150,r:'210,230 120,230 120,150',img:'1585644198914-0ac3616037c3'},
+{n:['Hawker street','Jalan penjaja','小贩街'],d:['Char kway teow, wonton mee and cendol come out after dark. Bring cash and patience.','Char kway teow, mi wantan dan cendol muncul selepas gelap. Bawa wang tunai dan sabar.','入夜后有炒粿条、云吞面和煎蕊。记得带现金和耐心。'],min:6,x:300,y:90,r:'210,230 210,90 300,90',img:'1593001939801-44e75fa40d86'},
+{n:['Clan jetties','Jeti puak','姓氏桥'],d:['Wooden homes on stilts over the water. Go at sunset and walk quietly: people live here.','Rumah kayu bertiang di atas air. Pergi ketika senja dan berjalan perlahan: ada penduduk di sini.','建在水上的高脚木屋。傍晚去最美，请安静行走：这里有人居住。'],min:12,x:545,y:300,r:'210,230 210,340 455,340 480,300 545,300',img:''},
+{n:['Clan house','Rumah suku','宗祠'],d:['Carved roofs, gilded halls and red lanterns. Small entry fee; dress modestly.','Bumbung berukir, dewan bersalut emas dan tanglung merah. Bayaran masuk kecil; berpakaian sopan.','雕梁画栋、金碧辉煌、红灯笼高挂。门票不贵，请穿着得体。'],min:7,x:390,y:230,r:'210,230 390,230',img:'1708396823996-2c09acdb2317'}];
+let pi=0;const pinsG=$('#pins');
 pinsG.innerHTML=P.map((p,i)=>`<g class="pin" data-p="${i}" tabindex="0" role="button" aria-label="${p.n[0]}, ${p.min} min"><circle class="pulse" cx="${p.x}" cy="${p.y}" r="10" fill="#c25e36"/><g class="pc"><path d="M${p.x} ${p.y}c-12-14-16-20-16-28a16 16 0 0 1 32 0c0 8-4 14-16 28z" fill="#c25e36" stroke="#f8f2e6" stroke-width="2.5"/><text x="${p.x}" y="${p.y-22}" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="12" fill="#fff">${p.min}′</text></g></g>`).join('');
 const route=$('#route');
-function pickPin(i){pi=i;const p=P[i];route.setAttribute('d','M'+p.r.split(' ').join(' L'));route.classList.remove('go');void route.getBoundingClientRect();if(!RMo)route.classList.add('go');
- $$('.pin').forEach(g=>g.classList.toggle('on',+g.dataset.p===i));renderPinUI()}
-function renderPinUI(){const p=P[pi];$('#chips').innerHTML=P.map((x,i)=>`<button data-p="${i}" aria-pressed="${i===pi}">${x.n[LX[L]]}</button>`).join('');
- $('#pcard').innerHTML=`<div class="min">${p.min}<small>${t('walk')}</small></div><h3>${p.n[LX[L]]}</h3><p>${p.d[LX[L]]}</p>`}
+function pickPin(i){pi=i;const p=P[i];route.setAttribute('d','M'+p.r.split(' ').join(' L'));route.classList.remove('go');void route.getBoundingClientRect();if(!RMo)route.classList.add('go');$$('.pin').forEach(g=>g.classList.toggle('on',+g.dataset.p===i));renderPin()}
+function renderPin(){const p=P[pi];$('#pchips').innerHTML=P.map((x,i)=>`<button data-p="${i}" aria-pressed="${i===pi}">${x.n[LX[L]]}</button>`).join('');
+ $('#pcard').innerHTML=`<div class="pp">${p.img?`<img src="${U(p.img,700,380)}" alt="${p.n[0]}" loading="lazy" width="700" height="380">`:`<svg aria-hidden="true"><rect width="100%" height="100%" fill="url(#kawung)"/></svg>`}</div><div class="pb2"><div class="min">${p.min}<small>${t('walk')}</small></div><h3>${p.n[LX[L]]}</h3><p><b>${t('hostTip')}:</b> ${p.d[LX[L]]}</p></div>`}
 pinsG.addEventListener('click',e=>{const g=e.target.closest('.pin');if(g)pickPin(+g.dataset.p)});
 pinsG.addEventListener('keydown',e=>{const g=e.target.closest('.pin');if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();pickPin(+g.dataset.p)}});
-$('#chips').addEventListener('click',e=>{const b=e.target.closest('button');if(b)pickPin(+b.dataset.p)});
+$('#pchips').addEventListener('click',e=>{const b=e.target.closest('button');if(b)pickPin(+b.dataset.p)});
+
+/* tonight */
+function renderTonight(){const free=R.filter((r,i)=>!sold(today,i)).length,min=Math.min(...R.map((r,i)=>sold(today,i)?1e9:price(today,i)));$('[data-i=tonight]').textContent=fill(t('tonight'),{n:free});$('#tonightP').textContent=fill(t('fromP'),{p:money(min)})}
+
+/* goal CTAs */
+function goalCta(){const g=H.dataset.goal||'book',map={book:'#stay',enq:'#ask',sell:'#shop',cred:'#proof'};$('#heroCta').textContent=t('cta_'+g);$('#heroCta').href=map[g];$('#nbook').textContent=t('cta_'+g);$('#nbook').href=map[g]}
 
 /* language */
-function applyLang(){document.documentElement.lang=L==='zh'?'zh-Hans':L==='ms'?'ms':'en';
- $$('[data-i]').forEach(el=>{const v=t(el.dataset.i);if(typeof v==='string')el.textContent=v});
- $$('[data-ih]').forEach(el=>{el.innerHTML=t(el.dataset.ih)});
- $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===L));
- const bur=$('#burger');bur.textContent=nav.classList.contains('open')?t('close'):t('menu');
- renderRooms();renderPerks();if($('#bf'))renderForm();renderPinUI();update()}
-$('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;L=b.dataset.l;try{localStorage.setItem('rt-lang',L)}catch(er){}applyLang()});
+const nav=$('#nav');
+function applyLang(){H.lang=L==='zh'?'zh-Hans':L;$$('[data-i]').forEach(e=>{const v=st(e.dataset.i);if(typeof v==='string')e.innerHTML=v});
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===L));$('#burger').textContent=nav.classList.contains('open')?t('close'):t('menu');
+ goalCta();renderRooms();renderPerks();renderAsk();renderShop();renderRevs();renderPin();renderTonight();update();if(window.afFill)window.afFill()}
+$('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;L=b.dataset.l;try{localStorage.setItem('af-lang',L)}catch(er){}applyLang()});
+$('#burger').addEventListener('click',()=>{const o=nav.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o);$('#burger').textContent=o?t('close'):t('menu')});
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');$('#burger').setAttribute('aria-expanded','false');$('#burger').textContent=t('menu')}));
+$('#wa').onclick=()=>demo(t('waToast'));
 
-/* nav */
-const nav=$('#nav'),bur=$('#burger');
-bur.addEventListener('click',()=>{const o=nav.classList.toggle('open');bur.setAttribute('aria-expanded',o);bur.textContent=o?t('close'):t('menu')});
-$$('#links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');bur.setAttribute('aria-expanded','false');bur.textContent=t('menu')}));
-
-/* toast + whatsapp demo */
-const toast=$('#toast');let tt;
-$('#wa').addEventListener('click',e=>{e.preventDefault();toast.textContent=t('waToast');toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),2800)});
-
-/* init */
-renderForm();applyLang();pickPin(0);
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+applyLang();pickPin(0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 $$('.rv').forEach(el=>io.observe(el));
 })();
 </script>

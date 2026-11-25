@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en" data-goal-default="enq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ember &amp; Salt Kitchen · Wood-fire grill &amp; café</title>
+<meta name="description" content="Ember &amp; Salt Kitchen: a wood-fire grill and café in Bangsar. Live menu board, WhatsApp ordering, table booking and catering trays. A fictional sample by Aurelion.">
+<script src="/website/fusion/af-kit.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Fraunces:ital,wght@0,600;1,400;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--exh:36px;--bg:#120f0d;--bg2:#1a1613;--surf:#231e1a;--surf2:#2c2621;--ink:#f5ede0;--mut:#b4a797;--line:rgba(245,237,224,.13);--acc:#ff6a2b;--acc2:#ffb44a;--accInk:#1b0c04;--ok:#5fd38d;--paper:#fbf6ec;--pInk:#1d1712;--disp:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;--ser:"Fraunces",Georgia,serif;--sans:"Figtree",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;--r:18px;--glow:rgba(255,106,43,.35)}
+html[data-vibe=warm]{--bg:#f6ede0;--bg2:#efe2cf;--surf:#fffaf2;--surf2:#f3e7d6;--ink:#2b1c13;--mut:#7b6555;--line:rgba(43,28,19,.14);--acc:#c4532d;--acc2:#d9822f;--accInk:#fff;--glow:rgba(196,83,45,.22)}
+html[data-vibe=bold]{--bg:#050505;--bg2:#0d0d0d;--surf:#161616;--surf2:#1f1f1f;--ink:#fff;--mut:#a6a6a6;--line:rgba(255,255,255,.2);--acc:#d6ff2e;--acc2:#7dffb0;--accInk:#080808;--glow:rgba(214,255,46,.3);--r:4px}
+html[data-vibe=minimal]{--bg:#fff;--bg2:#f6f5f3;--surf:#fff;--surf2:#f2f1ee;--ink:#141414;--mut:#666;--line:rgba(0,0,0,.1);--acc:#e3401b;--acc2:#e3401b;--accInk:#fff;--glow:rgba(227,64,27,.15);--disp:"Figtree",system-ui,sans-serif;--r:10px}
+html[data-vibe=luxe]{--bg:#0d2620;--bg2:#113028;--surf:#163a30;--surf2:#1c4639;--ink:#f3ead5;--mut:#b8b198;--line:rgba(243,234,213,.15);--acc:#cfa64e;--acc2:#e9cd85;--accInk:#13241e;--glow:rgba(207,166,78,.25);--disp:"Fraunces",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh,36px) + 84px)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* NAV */
+.nav{position:fixed;top:var(--exh,36px);left:0;right:0;z-index:900;height:68px;display:flex;align-items:center;gap:18px;padding:0 28px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.brand svg{width:30px;height:30px;flex:none}
+.brand span{font:800 25px/1 var(--disp);letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.links{display:flex;align-items:center;gap:4px}
+.links>a{text-decoration:none;font-weight:600;font-size:14.5px;padding:9px 13px;border-radius:99px;transition:background .2s}
+.links>a:hover{background:var(--surf)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;margin:0 6px}
+.lang button{border:0;background:none;padding:5px 10px;border-radius:99px;font-size:12.5px;font-weight:600;color:var(--mut)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.nav-cta{background:var(--acc)!important;color:var(--accInk)!important;padding:10px 18px!important}
+.nav-cta:hover{filter:brightness(1.08)}
+.cartbtn{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surf);display:grid;place-items:center}
+.cartbtn svg{width:20px;height:20px}
+.cartbtn b{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:99px;background:var(--acc);color:var(--accInk);font-size:11.5px;display:grid;place-items:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.cartbtn b.on{transform:scale(1)}
+.cartbtn.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.18)}}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surf)}
+.burger i{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;transition:transform .3s}
+.burger[aria-expanded=true] i:first-child{transform:translateY(3px) rotate(45deg)}.burger[aria-expanded=true] i:last-child{transform:translateY(-3px) rotate(-45deg)}
+.g-enq,.g-book,.g-sell,.g-cred{display:none!important}
+html[data-goal=enq] .g-enq,html[data-goal=book] .g-book,html[data-goal=sell] .g-sell,html[data-goal=cred] .g-cred{display:inline-flex!important}
+
+/* COMMON */
+main{display:flex;flex-direction:column}
+.bk>*,.two>*,.cq>*,.board>*,.board>*>*,.visit>*,.faq>*,.hero>*{min-width:0}
+main>*{order:5}
+.hero{order:0}.s-menu{order:2}.s-cat{order:3}.goal{order:4}.s-story{order:6}.s-rev{order:7}.s-faq{order:8}.s-visit{order:9}
+html[data-goal=enq] .goal-enq,html[data-goal=book] .goal-book,html[data-goal=sell] .goal-sell,html[data-goal=cred] .goal-cred{order:1}
+.sec{padding:104px 28px;position:relative}
+.wrap{max-width:1280px;margin:0 auto}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.kick::before{content:"";width:22px;height:2px;background:currentColor}
+h2{font:900 clamp(42px,5.6vw,84px)/.92 var(--disp);text-transform:uppercase;letter-spacing:-.005em;margin:14px 0 18px}
+h2 em,h1 em{font:italic 500 .8em/1 var(--ser);text-transform:none;color:var(--acc2);letter-spacing:-.01em}
+html[data-vibe=luxe] h2,html[data-vibe=luxe] h1{text-transform:none;font-weight:600;letter-spacing:-.02em}
+html[data-vibe=minimal] h2,html[data-vibe=minimal] h1{text-transform:none;font-weight:700;letter-spacing:-.035em}
+html[lang^=zh] h1,html[lang^=zh] h2{letter-spacing:.02em;line-height:1.08}
+html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-style:normal;font-family:inherit;font-size:1em}
+.sub{font-size:18px;color:var(--mut);max-width:560px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:99px;border:1px solid transparent;font-weight:700;font-size:15.5px;text-decoration:none;transition:transform .2s,box-shadow .25s,background .2s,filter .2s;white-space:nowrap}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.pri{background:var(--acc);color:var(--accInk);box-shadow:0 10px 30px -8px var(--glow)}
+.btn.pri:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px var(--glow);filter:brightness(1.06)}
+.btn.ghost{border-color:var(--line);background:color-mix(in srgb,var(--surf) 60%,transparent)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.wa{background:#1fae5b;color:#fff}
+.btn.full{width:100%}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+.pill.hf{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+.sample{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);opacity:.8}
+
+/* HERO */
+.hero{position:relative;min-height:max(680px,100svh);padding:calc(var(--exh,36px) + 68px) 0 54px;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr)}
+.hero-txt{padding:clamp(20px,3vh,48px) 48px 40px max(28px,calc((100vw - 1280px)/2));display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.status{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;padding:8px 14px 8px 12px;border-radius:99px;background:var(--surf);border:1px solid var(--line);font-size:13.5px;font-weight:600}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:ping 2s infinite}
+.status.amber i{background:var(--acc2);--ok:var(--acc2)}.status.off i{background:#e0533d;animation:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}80%,100%{box-shadow:0 0 0 10px transparent}}
+.eyebrow{margin-top:22px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.hero h1{font:900 clamp(52px,5.9vw,94px)/.88 var(--disp);text-transform:uppercase;margin:14px 0 22px;letter-spacing:-.01em}
+.hero h1 em{display:inline-block;color:var(--acc);font-size:.74em;margin-right:.06em}
+.lead{font-size:clamp(16.5px,1.35vw,19px);color:var(--mut);max-width:520px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
+.facts div{padding-right:28px;margin-right:28px;border-right:1px solid var(--line)}
+.facts div:last-child{border:0;margin:0;padding:0}
+.facts dt{font:800 34px/1 var(--disp);color:var(--ink)}
+.facts dd{font-size:13px;color:var(--mut);margin-top:6px}
+.hero-img{position:relative;margin:0 0 0 0;overflow:hidden;border-radius:0 0 0 28px;min-height:420px}
+.hero-img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 65%;transform:scale(1.06);animation:slowzoom 18s ease-out forwards}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,9,7,.55),transparent 35%),linear-gradient(0deg,rgba(12,9,7,.6),transparent 40%)}
+.smoke{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 40% at 70% 110%,rgba(255,120,40,.35),transparent 70%);mix-blend-mode:screen;animation:flick 3.5s ease-in-out infinite alternate}
+@keyframes flick{0%{opacity:.55}50%{opacity:.9}100%{opacity:.65}}
+.docket{position:absolute;z-index:3;left:32px;bottom:44px;width:250px;background:var(--paper);color:var(--pInk);padding:18px 18px 22px;font:500 13px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transform:rotate(-3deg);transform-origin:top left;-webkit-mask:radial-gradient(circle 6px at 50% 100%,transparent 98%,#000) 0 0/16px 100% repeat-x}
+.docket::before{content:"";position:absolute;top:-14px;left:50%;width:46px;height:20px;transform:translateX(-50%);background:rgba(200,190,170,.75);border-radius:3px}
+.docket h4{font:800 22px/1 var(--disp);letter-spacing:.04em;display:flex;justify-content:space-between;border-bottom:1px dashed #9b8f80;padding-bottom:8px;margin-bottom:8px}
+.docket li{list-style:none;display:flex;justify-content:space-between;gap:8px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .4s}
+.docket li.in{opacity:1;transform:none}
+.docket .fire{margin-top:10px;border-top:1px dashed #9b8f80;padding-top:8px;display:flex;justify-content:space-between;font-weight:700}
+.docket .bar{height:5px;background:#e6dccb;margin-top:6px;border-radius:9px;overflow:hidden}
+.docket .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff6a2b,#ffb44a);transition:width 1.2s linear}
+.hero-tag{position:absolute;z-index:3;right:24px;top:24px;background:rgba(15,11,9,.72);backdrop-filter:blur(8px);color:#f5ede0;padding:10px 14px;border-radius:12px;font-size:13px;border:1px solid rgba(255,255,255,.14)}
+.hero-tag b{display:block;font:italic 500 17px/1.2 var(--ser);color:#ffb44a}
+.ticker{position:absolute;left:0;right:0;bottom:0;height:54px;background:var(--acc);color:var(--accInk);overflow:hidden;display:flex;align-items:center;z-index:4}
+.tk-track{display:flex;gap:44px;white-space:nowrap;animation:tick 40s linear infinite;padding-left:44px}
+.tk-track span{font:800 19px/1 var(--disp);letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.tk-track span::before{content:"";width:8px;height:8px;background:currentColor;transform:rotate(45deg)}
+.ticker:hover .tk-track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* GOAL: ENQUIRE */
+.goal-enq{background:var(--bg2)}
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.eform{display:grid;gap:22px;margin-top:30px}
+.eform legend,.eform .lbl{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:10px;display:block}
+.eform fieldset{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surf);padding:11px 16px;border-radius:99px;font-weight:600;font-size:14.5px;transition:all .2s}
+.chip:hover{border-color:var(--mut)}
+.chip[aria-pressed=true],.chip[aria-checked=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:14px;background:var(--surf);height:54px;overflow:hidden}
+.stepper button{width:54px;height:100%;border:0;background:none;font-size:22px}
+.stepper button:hover{background:var(--surf2)}
+.stepper output{flex:1;text-align:center;font:800 26px/1 var(--disp)}
+.field{width:100%;height:54px;border:1px solid var(--line);border-radius:14px;background:var(--surf);padding:0 16px;font-size:16px;color-scheme:dark}
+html[data-vibe=warm] .field,html[data-vibe=minimal] .field{color-scheme:light}
+.phone{width:min(360px,100%);margin:0 auto;border-radius:44px;padding:12px;background:#0b0b0b;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 2px #2a2a2a}
+.ph-in{border-radius:34px;overflow:hidden;background:#ece5dd;color:#111}
+.ph-top{background:#075e54;color:#fff;display:flex;align-items:center;gap:10px;padding:34px 16px 12px}
+.ph-top .av{width:38px;height:38px;border-radius:50%;background:var(--acc);color:var(--accInk);display:grid;place-items:center;font:900 19px/1 var(--disp)}
+.ph-top b{display:block;font-size:15px;line-height:1.2;max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ph-top small{font-size:12px;opacity:.85}
+.ph-body{padding:16px 12px;min-height:330px;display:flex;flex-direction:column;gap:8px;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:14px 14px}
+.bub{max-width:88%;padding:9px 11px 6px;border-radius:10px;font-size:14px;line-height:1.45;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.12)}
+.bub.in{background:#fff;border-top-left-radius:2px}
+.bub.out{background:#d9fdd3;margin-left:auto;border-top-right-radius:2px}
+.bub small{display:block;text-align:right;font-size:10.5px;color:#667;margin-top:2px}
+.typing{display:inline-flex;gap:4px;padding:12px 14px;background:#fff;border-radius:10px;align-self:flex-start}
+.typing i{width:6px;height:6px;border-radius:50%;background:#999;animation:dot 1.2s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{30%{transform:translateY(-4px);opacity:.5}}
+.ph-foot{display:flex;gap:8px;align-items:center;padding:10px;background:#f0f0f0}
+.ph-foot span{flex:1;background:#fff;border-radius:99px;padding:9px 14px;font-size:13px;color:#888}
+.ph-foot i{width:38px;height:38px;border-radius:50%;background:#1fae5b;display:grid;place-items:center}
+
+/* GOAL: BOOK */
+.bk{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.bk h3,.card h3{font:800 22px/1 var(--disp);letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.bk h3 small{font:500 13px/1 var(--sans);letter-spacing:0;text-transform:none;color:var(--mut)}
+.dates{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:thin;margin-bottom:22px}
+.date{flex:none;width:72px;padding:12px 0;border-radius:14px;border:1px solid var(--line);background:var(--bg2);text-align:center;transition:all .2s}
+.date b{display:block;font:800 28px/1 var(--disp);margin:4px 0 2px}
+.date small{font-size:11.5px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.date:hover:not(:disabled){border-color:var(--mut)}
+.date[aria-pressed=true]{background:var(--acc);color:var(--accInk);border-color:var(--acc)}
+.date[aria-pressed=true] small{color:inherit}
+.date:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.seats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}
+.seat{border:1px solid var(--line);background:var(--bg2);border-radius:14px;padding:14px;text-align:left;transition:all .2s}
+.seat b{display:block;font-weight:700;font-size:15px}.seat small{font-size:12.5px;color:var(--mut)}
+.seat svg{width:26px;height:26px;margin-bottom:8px;color:var(--acc)}
+.seat[aria-pressed=true]{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc);background:color-mix(in srgb,var(--acc) 10%,var(--bg2))}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin-bottom:18px}
+.slot{padding:11px 0;border-radius:12px;border:1px solid var(--line);background:var(--bg2);font-weight:700;font-size:14.5px;transition:all .2s}
+.slot:hover:not(:disabled){border-color:var(--mut)}
+.slot[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.slot:disabled{opacity:.3;text-decoration:line-through;cursor:not-allowed}
+.slab{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:4px 0 8px}
+.ticket{background:var(--paper);color:var(--pInk);border-radius:14px;padding:26px;position:sticky;top:calc(var(--exh,36px) + 90px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.ticket h3{font:900 30px/1 var(--disp);text-transform:uppercase}
+.ticket dl{margin:16px 0;border-top:1px dashed #a89b8a}
+.ticket dl div{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px dashed #a89b8a;font-size:15px}
+.ticket dt{color:#6f6253}.ticket dd{font-weight:700;text-align:right}
+.ticket .note{font-size:12.5px;color:#6f6253;margin:12px 0 0}
+.ticket .btn.pri{color:#fff;background:#d4501d}
+html[data-vibe=bold] .ticket .btn.pri{background:#111;color:#d6ff2e}
+html[data-vibe=luxe] .ticket .btn.pri{background:#13241e;color:#e9cd85}
+
+/* GOAL: SELL */
+.goal-sell{background:var(--bg2)}
+.mode{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:4px;background:var(--surf)}
+.mode button{border:0;background:none;padding:10px 18px;border-radius:99px;font-weight:700;font-size:14.5px;color:var(--mut)}
+.mode button[aria-pressed=true]{background:var(--acc);color:var(--accInk)}
+.shop{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.pimg{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surf2)}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .pimg img{transform:scale(1.06)}
+.pimg .pill{position:absolute;left:12px;top:12px;background:rgba(12,9,7,.7);color:#fff;border:0;backdrop-filter:blur(6px)}
+.pbody{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pbody h3{font:800 23px/1.05 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+html[data-vibe=luxe] .pbody h3,html[data-vibe=minimal] .pbody h3{text-transform:none}
+.pbody p{font-size:14px;color:var(--mut);line-height:1.5}
+.pfoot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px}
+.price{font:800 28px/1 var(--disp);color:var(--acc)}
+.price small{font-size:.55em;margin-right:2px;color:var(--mut)}
+.add{display:inline-flex;align-items:center;gap:8px;border:0;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:700;font-size:14px;transition:transform .2s,background .2s}
+.add:hover{transform:scale(1.04)}
+.add.done{background:var(--ok);color:#06210f}
+.paybadges{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pb{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:7px;font:700 12px/1 var(--sans);letter-spacing:.02em;background:#fff;color:#1a1a1a;border:1px solid rgba(0,0,0,.08)}
+.pb i{width:16px;height:11px;border-radius:2px;background:linear-gradient(135deg,#f5a524,#e0533d)}
+.pb.fpx{color:#0b3a7a}.pb.grab{background:#00b14f;color:#fff}.pb.tng{background:#0a4ea3;color:#fff}
+.shopnote{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px;padding:18px 22px;border:1px dashed var(--line);border-radius:var(--r);color:var(--mut);font-size:14.5px}
+
+/* GOAL: CRED */
+.marks{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center;justify-content:space-between;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:44px}
+.marks span{font-size:21px;color:var(--mut);opacity:.85;letter-spacing:.02em}
+.marks span:nth-child(1){font:800 22px/1 var(--disp);letter-spacing:.14em}
+.marks span:nth-child(2){font:italic 500 24px/1 var(--ser)}
+.marks span:nth-child(3){font-weight:700;letter-spacing:-.04em}
+.marks span:nth-child(4){font:600 20px/1 var(--ser);letter-spacing:.2em;text-transform:uppercase}
+.marks span:nth-child(5){font-weight:500;font-family:ui-monospace,monospace;font-size:18px}
+.marks span:nth-child(6){font:900 22px/1 var(--disp);text-transform:uppercase}
+.cases{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:22px}
+.case{position:relative;border-radius:var(--r);overflow:hidden;min-height:380px;display:flex;align-items:flex-end;color:#fff}
+.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.case:hover img{transform:scale(1.05)}
+.case::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,8,6,.92),rgba(10,8,6,.1) 65%)}
+.case div{position:relative;z-index:1;padding:24px}
+.case h3{font:800 28px/1 var(--disp);text-transform:uppercase;margin:8px 0}
+.case p{font-size:14.5px;opacity:.85}
+.case .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.case .meta span{font-size:12px;font-weight:700;padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.14)}
+.creds{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.cred{padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surf)}
+.cred svg{width:28px;height:28px;color:var(--acc);margin-bottom:10px}
+.cred b{display:block;font-size:16px}.cred span{font-size:13.5px;color:var(--mut)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px;counter-reset:s;list-style:none}
+.steps li{padding:22px;border-top:2px solid var(--acc);background:linear-gradient(var(--surf),transparent)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font:900 40px/1 var(--disp);color:var(--acc);display:block;margin-bottom:8px}
+.steps b{display:block;font-size:17px}.steps span{font-size:14px;color:var(--mut)}
+
+/* MENU BOARD */
+.s-menu{background:var(--bg);overflow:hidden}
+.s-menu::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 40% at 85% 0%,var(--glow),transparent 70%);pointer-events:none;opacity:.6}
+.board{display:grid;grid-template-columns:260px 1fr;gap:40px;position:relative}
+.tabs{display:flex;flex-direction:column;gap:6px;position:sticky;top:calc(var(--exh,36px) + 96px);align-self:start}
+.tab{text-align:left;border:1px solid transparent;background:none;padding:16px 18px;border-radius:16px;transition:all .25s}
+.tab b{display:block;font:900 32px/1 var(--disp);text-transform:uppercase;letter-spacing:.01em;color:var(--mut);transition:color .25s}
+html[data-vibe=luxe] .tab b,html[data-vibe=minimal] .tab b{text-transform:none;font-size:28px}
+.tab small{display:block;font-size:13px;color:var(--mut);margin-top:4px}
+.tab .now{display:none;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ok)}
+.tab.live .now{display:inline-flex;gap:6px;align-items:center}
+.tab.live .now::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.tab:hover b{color:var(--ink)}
+.tab[aria-selected=true]{background:var(--surf);border-color:var(--line)}
+.tab[aria-selected=true] b{color:var(--acc)}
+.hfnote{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;background:color-mix(in srgb,var(--ok) 10%,var(--surf));border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);font-size:13.5px;margin-top:14px}
+.hfnote svg{width:26px;height:26px;flex:none;color:var(--ok)}
+.mtools{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.mcount{font:800 18px/1 var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mi{display:grid;grid-template-rows:auto 1fr;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;animation:mIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes mIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.mi .pimg{aspect-ratio:16/11}
+.mi .pbody h3{font-size:22px}
+.mi .loc{font:italic 400 15px/1.2 var(--ser);color:var(--acc2)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--mut);border:1px dashed var(--line);border-radius:var(--r)}
+
+/* CATERING */
+.s-cat{background:var(--bg2)}
+.cq{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tier{text-align:left;padding:16px;border-radius:16px;border:1px solid var(--line);background:var(--bg2);transition:all .2s}
+.tier b{display:block;font:800 20px/1.05 var(--disp);text-transform:uppercase}
+.tier em{font-style:normal;display:block;font:800 26px/1 var(--disp);color:var(--acc);margin:8px 0 6px}
+.tier small{font-size:12.5px;color:var(--mut);line-height:1.4;display:block}
+.tier[aria-pressed=true]{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.paxrow{display:flex;align-items:center;gap:18px;margin:6px 0 4px}
+.paxrow output{font:900 54px/1 var(--disp);min-width:110px;color:var(--acc)}
+.paxrow output small{font-size:15px;color:var(--mut);margin-left:4px;font-family:var(--sans);font-weight:600}
+input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:30px;background:transparent;min-width:0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:9px;background:linear-gradient(90deg,var(--acc) var(--p,10%),var(--surf2) var(--p,10%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border-radius:50%;background:var(--ink);border:4px solid var(--acc);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+input[type=range]::-moz-range-track{height:6px;border-radius:9px;background:var(--surf2)}
+input[type=range]::-moz-range-progress{height:6px;border-radius:9px;background:var(--acc)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--ink);border:4px solid var(--acc)}
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:14px;cursor:pointer;background:var(--bg2);font-size:15px}
+.opt input{width:20px;height:20px;accent-color:var(--acc);flex:none}
+.opt em{margin-left:auto;font-style:normal;font-weight:700;color:var(--mut);font-size:14px;white-space:nowrap}
+.opt:has(input:checked){border-color:var(--acc)}
+.qsel{display:flex;flex-wrap:wrap;gap:8px}
+.fs{margin-bottom:26px;border:0}
+.fs>legend,.fs>.lbl{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:12px;display:block}
+.quote{position:sticky;top:calc(var(--exh,36px) + 90px);background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.q-top{padding:26px;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 22%,var(--surf)),var(--surf))}
+.q-top small{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.q-total{font:900 clamp(48px,5vw,72px)/1 var(--disp);margin:8px 0 4px}
+.q-pp{font-size:15px;color:var(--mut)}
+.trays{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-top:18px}
+.trays i{aspect-ratio:1.5;border-radius:3px;background:var(--surf2);border:1px solid var(--line);transition:background .3s}
+.trays i.on{background:var(--acc);border-color:var(--acc)}
+.q-lines{padding:20px 26px;display:grid;gap:10px;font-size:14.5px}
+.q-lines div{display:flex;justify-content:space-between;gap:12px}
+.q-lines span{color:var(--mut)}
+.q-act{padding:0 26px 26px;display:grid;gap:10px}
+.q-act p{font-size:12.5px;color:var(--mut)}
+
+/* STORY */
+.mosaic{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:280px 280px;gap:14px}
+.mosaic figure{position:relative;border-radius:var(--r);overflow:hidden;background:var(--surf)}
+.mosaic figure:first-child{grid-row:span 2}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.mosaic figure:hover img{transform:scale(1.05)}
+.mosaic figcaption{position:absolute;left:12px;bottom:12px;background:rgba(12,9,7,.7);backdrop-filter:blur(6px);color:#fff;font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:99px}
+.mosaic .quoteblk{grid-column:span 2;background:var(--acc);color:var(--accInk);padding:30px;display:flex;flex-direction:column;justify-content:center}
+.quoteblk p{font:italic 500 clamp(22px,2.4vw,32px)/1.2 var(--ser)}
+.quoteblk span{margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.story-txt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:40px}
+.story-txt b{display:block;font:800 22px/1.1 var(--disp);text-transform:uppercase;margin-bottom:6px;color:var(--acc2)}
+.story-txt p{color:var(--mut);font-size:15px}
+
+/* REVIEWS */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{padding:28px;border-radius:var(--r);background:var(--surf);border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.rev .stars{color:var(--acc2);letter-spacing:3px}
+.rev p{font:italic 400 20px/1.35 var(--ser)}
+.rev footer{margin-top:auto;font-size:13.5px;color:var(--mut)}
+.rev footer b{color:var(--ink);display:block}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;display:flex;justify-content:space-between;gap:18px;align-items:center;text-align:left;border:0;background:none;padding:22px 0;font-weight:600;font-size:18px}
+.q button i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .3s,background .3s}
+.q button i::before,.q button i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.q button i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.q.open button i{transform:rotate(45deg);background:var(--acc);color:var(--accInk);border-color:var(--acc)}
+.qa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.qa>div{overflow:hidden}.qa p{padding-bottom:22px;color:var(--mut);max-width:640px}
+.q.open .qa{grid-template-rows:1fr}
+
+/* VISIT */
+.s-visit{background:var(--bg2)}
+.visit{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:stretch}
+.hours{list-style:none;margin:18px 0 24px}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.hours li.today{color:var(--acc);font-weight:700}
+.hours li.today span:first-child::after{content:" ·  " attr(data-today);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.contact{display:grid;gap:10px;font-size:15.5px}
+.contact a{text-decoration:none;display:flex;gap:10px;align-items:center}
+.contact svg{width:18px;height:18px;color:var(--acc)}
+.map{position:relative;border-radius:var(--r);overflow:hidden;background:var(--surf);border:1px solid var(--line);min-height:420px}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .rd{stroke:var(--surf2);fill:none;stroke-linecap:round}
+.map .rd2{stroke:var(--line);fill:none}
+.map text{fill:var(--mut);font:600 11px var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.map .pk{fill:color-mix(in srgb,var(--ok) 18%,var(--surf))}
+.pin{position:absolute;left:54%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin b{background:var(--acc);color:var(--accInk);padding:8px 12px;border-radius:12px;font:800 16px/1 var(--disp);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;box-shadow:0 10px 24px -6px var(--glow)}
+.pin i{width:16px;height:16px;border-radius:50%;background:var(--acc);border:4px solid var(--ink);margin-top:6px;box-shadow:0 0 0 0 var(--glow);animation:ping 2s infinite}
+.map-cap{position:absolute;left:16px;right:16px;bottom:16px;display:flex;gap:8px;flex-wrap:wrap}
+.map-cap span{background:var(--bg);border:1px solid var(--line);padding:7px 11px;border-radius:99px;font-size:12.5px;font-weight:600}
+
+footer.ft{background:var(--bg);border-top:1px solid var(--line);padding:70px 28px 110px}
+.ft-big{font:900 clamp(56px,11vw,170px)/.85 var(--disp);text-transform:uppercase;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1.5px var(--line);margin-bottom:40px;white-space:nowrap;overflow:hidden;text-overflow:clip}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;font-size:14.5px;color:var(--mut)}
+.ft-grid h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+.ft-grid a{display:block;text-decoration:none;padding:3px 0}.ft-grid a:hover{color:var(--acc)}
+.ft-base{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--mut)}
+
+/* CART DRAWER */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);z-index:1101;background:var(--paper);color:var(--pInk);transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none;box-shadow:-30px 0 60px -20px rgba(0,0,0,.6)}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px dashed #b3a694}
+.dr-h h3{font:900 30px/1 var(--disp);text-transform:uppercase}
+.dr-h small{display:block;font:500 12.5px/1.4 ui-monospace,Menlo,monospace;color:#7a6c5c;text-transform:none;letter-spacing:0;margin-top:4px}
+.dr-x{width:40px;height:40px;border-radius:50%;border:1px solid #cdbfac;background:none;font-size:22px;line-height:1;color:var(--pInk)}
+.dr-body{flex:1;overflow:auto;padding:12px 24px}
+.dr-mode{display:flex;gap:6px;margin:8px 0 14px}
+.dr-mode button{flex:1;border:1px solid #cdbfac;background:none;border-radius:10px;padding:9px;font-weight:700;font-size:13.5px;color:var(--pInk)}
+.dr-mode button[aria-pressed=true]{background:var(--pInk);color:var(--paper)}
+.ci{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed #cdbfac}
+.ci img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.ci b{display:block;font-size:14.5px;line-height:1.25}
+.ci span{font:500 13px/1 ui-monospace,Menlo,monospace;color:#7a6c5c}
+.qty{display:flex;align-items:center;border:1px solid #cdbfac;border-radius:99px}
+.qty button{width:30px;height:30px;border:0;background:none;font-size:16px;color:var(--pInk)}
+.qty output{min-width:18px;text-align:center;font-weight:700;font-size:14px}
+.dr-empty{text-align:center;padding:50px 10px;color:#7a6c5c}
+.dr-empty b{display:block;font:900 26px/1 var(--disp);text-transform:uppercase;color:var(--pInk);margin-bottom:8px}
+.dr-f{padding:18px 24px 24px;border-top:1px dashed #b3a694;display:grid;gap:10px;font:500 14px/1.4 ui-monospace,Menlo,monospace}
+.dr-f .ln{display:flex;justify-content:space-between}
+.dr-f .tot{font:900 30px/1 var(--disp);display:flex;justify-content:space-between;align-items:baseline;margin:4px 0}
+.dr-f .btn{font-family:var(--sans)}
+.dr-f .btn.pri{background:#d4501d;color:#fff;box-shadow:none}
+.dr-f .btn.ghost{border-color:#cdbfac;color:var(--pInk);background:none}
+.dr-f .paybadges{justify-content:center}
+.dr-f .fine{font-size:11.5px;color:#7a6c5c;text-align:center;font-family:var(--sans)}
+
+/* MOBILE BAR */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:950;gap:8px;padding:8px;border-radius:99px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 18px 40px -12px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .4s}
+.mbar.on{transform:none}
+.mbar .btn{flex:1;padding:13px 14px;font-size:14.5px}
+.mbar .btn.wa{flex:none;width:50px;padding:0}
+
+@media(max-width:1100px){
+ .links{position:fixed;top:calc(var(--exh,36px) + 68px);left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;padding:14px 20px 22px;background:var(--bg);border-bottom:1px solid var(--line);transform:translateY(-10px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-height:calc(100svh - 110px);overflow:auto}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links>a{padding:14px 10px;border-radius:12px;font-size:17px}
+ .lang{align-self:flex-start;margin:10px 0}
+ .nav-cta{justify-content:center}
+ .burger{display:block}
+ .hero{grid-template-columns:1fr;min-height:0;padding-bottom:54px}
+ .hero-txt{padding:36px 28px 32px}
+ .hero-img{min-height:min(62vw,520px);margin:0 28px 28px;border-radius:24px}
+ .two,.bk,.cq,.faq,.visit{grid-template-columns:1fr}
+ .board{grid-template-columns:1fr}
+ .tabs{position:static;flex-direction:row;overflow-x:auto;gap:8px}
+ .tab{flex:none;padding:12px 16px}.tab b{font-size:24px}
+ .hfnote{display:none}
+ .mgrid,.shop{grid-template-columns:1fr 1fr}
+ .cases{grid-template-columns:1fr 1fr}.cases .case:first-child{grid-column:1/-1}
+ .creds,.steps{grid-template-columns:1fr 1fr}
+ .ticket,.quote{position:relative;top:0}
+ .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .nav{padding:0 14px;gap:8px}
+ .brand span{font-size:21px}
+ .sec{padding:76px 18px}
+ .hero-txt{padding:28px 18px 24px}
+ .hero h1{font-size:clamp(50px,14.5vw,72px)}
+ .facts{grid-template-columns:repeat(3,1fr);gap:10px}
+ .facts div{padding-right:10px;margin-right:0}
+ .facts dt{font-size:26px}.facts dd{font-size:12px}
+ .ctas .btn{flex:1 1 auto}
+ .hero-img{order:-1;margin:14px 14px 0;min-height:250px;border-radius:20px}
+ .hero-txt{padding-top:22px}
+ .status{font-size:12.5px}
+ .eyebrow{margin-top:16px}
+ .docket{width:178px;left:12px;bottom:14px;font-size:10.5px;padding:12px 12px 16px;transform:rotate(-3deg) scale(.92)}
+ .docket li:nth-child(3){display:none}
+ .docket h4{font-size:18px}
+ .hero-tag{right:10px;top:10px;font-size:11px;padding:7px 9px}.hero-tag b{font-size:14px}
+ .ticker{height:46px}.tk-track span{font-size:16px}
+ .row2,.seats{grid-template-columns:1fr}
+ .seats{grid-template-columns:1fr 1fr 1fr;gap:6px}.seat{padding:10px}.seat small{display:none}
+ .card,.ticket{padding:20px}
+ .mgrid,.shop,.cases,.creds,.steps,.revs,.story-txt{grid-template-columns:1fr}
+ .tiers{grid-template-columns:1fr}
+ .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:240px 170px 170px auto}
+ .mosaic figure:first-child{grid-column:1/-1;grid-row:auto}
+ .mosaic .quoteblk{grid-column:1/-1}
+ .head{margin-bottom:30px}
+ .mbar{display:flex}
+ .ft-grid{grid-template-columns:1fr}
+ .q button{font-size:16.5px}
+ .phone{border-radius:36px}
+ .paxrow output{font-size:44px;min-width:90px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.docket li{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · F&amp;B · Live menu board &amp; kitchen ticker</span><a class="exh-cta" href="/website/?t=ember-salt#finder">Build one like this →</a></div>
+
+<header class="nav" id="nav">
+ <a class="brand" href="#top" aria-label="Home">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="var(--acc)"/><path d="M16 6c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 2-4.5 2-7 2 1.5 2.5 3 2.5 5 1.5-1.5 1.5-5 1.5-10z" fill="var(--accInk)"/></svg>
+  <span data-af-name>Ember &amp; Salt Kitchen</span>
+ </a>
+ <nav class="links" id="links" aria-label="Main">
+  <a href="#menu" data-t="n1">Menu</a>
+  <a href="#catering" data-t="n2">Catering</a>
+  <a href="#story" data-t="n3">Our fire</a>
+  <a href="#visit" data-t="n4">Visit</a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+  <a class="nav-cta g-enq" href="#enquire" data-t="ncE">WhatsApp us</a>
+  <a class="nav-cta g-book" href="#book" data-t="ncB">Book a table</a>
+  <a class="nav-cta g-sell" href="#order" data-t="ncS">Order now</a>
+  <a class="nav-cta g-cred" href="#proof" data-t="ncC">Our events</a>
+ </nav>
+ <button class="cartbtn" id="cartBtn" type="button" aria-label="Open your order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="cartN">0</b></button>
+ <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" aria-label="Menu"><i></i><i></i></button>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div class="hero-txt">
+  <p class="status" id="status" role="status"><i></i><span id="statusTxt">Kitchen open now · closes 10:30pm</span></p>
+  <p class="eyebrow"><span data-t="hk">Wood-fire grill &amp; café</span> · <span data-af-area>Bangsar</span></p>
+  <h1 id="h1" data-t="hh">Off the fire,<br><em>on your table</em><br>in 15 min.</h1>
+  <p class="lead" data-t="hp">Set lunch from RM 18.90, dinner till 10:30pm and catering trays for 10 to 300 guests. Pork-free kitchen, halal-sourced meat.</p>
+  <div class="ctas">
+   <a class="btn pri g-enq" href="#enquire"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.5z"/></svg><span data-t="hcE">Ask us on WhatsApp</span></a>
+   <a class="btn pri g-book" href="#book"><span data-t="hcB">Book a table</span> →</a>
+   <a class="btn pri g-sell" href="#order"><span data-t="hcS">Order for pickup</span> →</a>
+   <a class="btn pri g-cred" href="#proof"><span data-t="hcC">See events we've fed</span> →</a>
+   <a class="btn ghost" href="#menu" data-t="hc2">Today's menu</a>
+  </div>
+  <dl class="facts">
+   <div><dt>RM 18.90</dt><dd data-t="f1">Set lunch + drink</dd></div>
+   <div><dt data-t="f2v">15 min</dt><dd data-t="f2">Lunch, door to plate</dd></div>
+   <div><dt>10–300</dt><dd data-t="f3">Catering, guests</dd></div>
+  </dl>
+ </div>
+ <div class="hero-img">
+  <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1400&q=80" alt="Sliced wood-fired beef resting on a board" fetchpriority="high">
+  <div class="smoke"></div>
+  <p class="hero-tag"><span data-t="htg">On the fire today</span><b data-t="htb">12-hour smoked brisket</b></p>
+  <div class="docket" aria-hidden="true">
+   <h4><span data-t="dk1">Table 7</span><span id="dkTime">12:41</span></h4>
+   <ul id="dkList"><li><span>1× Ayam percik set</span><span>18.90</span></li><li><span>1× Brisket bowl</span><span>24.90</span></li><li><span>2× Iced lemongrass</span><span>9.00</span></li></ul>
+   <div class="fire"><span data-t="dk2">ON THE FIRE</span><span id="dkMin">14 min</span></div>
+   <div class="bar"><i id="dkBar"></i></div>
+  </div>
+ </div>
+ <div class="ticker" aria-hidden="true"><div class="tk-track" id="tk"></div></div>
+</section>
+
+<!-- GOAL: ENQUIRE -->
+<section class="sec goal goal-enq" id="enquire" aria-labelledby="eH">
+ <div class="wrap two">
+  <div class="reveal">
+   <span class="kick" data-t="eK">Quick enquiry · we reply in minutes</span>
+   <h2 id="eH" data-t="eH">Feeding a group? <em>Tell us three things.</em></h2>
+   <p class="sub" data-t="eP">We'll WhatsApp back with a menu and a price. No forms to print, no calls to chase.</p>
+   <form class="eform" id="eForm">
+    <fieldset><legend data-t="eL1">What's it for?</legend>
+     <div class="chips" id="eWhat" role="radiogroup"></div>
+    </fieldset>
+    <div class="row2">
+     <div><span class="lbl" id="ePaxL" data-t="eL2">How many people?</span><div class="stepper" role="group" aria-labelledby="ePaxL"><button type="button" data-d="-5" aria-label="Fewer">−</button><output id="ePax">20</output><button type="button" data-d="5" aria-label="More">+</button></div></div>
+     <label><span class="lbl" data-t="eL3">When?</span><input class="field" type="date" id="eDate"></label>
+    </div>
+    <button class="btn wa" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-t="eSend">Send on WhatsApp</span></button>
+   </form>
+  </div>
+  <div class="phone reveal" aria-label="WhatsApp message preview">
+   <div class="ph-in">
+    <div class="ph-top"><span class="av" data-af-initial>E</span><div><b data-af-name>Ember &amp; Salt Kitchen</b><small data-t="eOn">online · replies in ~5 min</small></div></div>
+    <div class="ph-body"><div class="bub in" id="eHi"></div><div class="bub out" id="eMsg"></div><div class="typing" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    <div class="ph-foot"><span data-t="eType">Message</span><i><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M3 20l18-8L3 4v6l12 2-12 2z"/></svg></i></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: BOOK -->
+<section class="sec goal goal-book" id="book" aria-labelledby="bH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="bK">Reservations</span><h2 id="bH" data-t="bH">Grab a seat <em>by the fire.</em></h2></div>
+   <p class="sub" data-t="bP">Walk-ins are welcome, but Friday and Saturday nights fill up. Pick a day, a seat and a time. It takes 20 seconds.</p>
+  </div>
+  <div class="bk">
+   <div class="card reveal">
+    <h3><span data-t="b1">1 · Day</span><small data-t="bMon">Closed Mondays</small></h3>
+    <div class="dates" id="dates" role="group" aria-label="Date"></div>
+    <h3><span data-t="b2">2 · Guests &amp; seat</span></h3>
+    <div class="row2" style="margin-bottom:16px">
+     <div class="stepper" role="group" aria-label="Guests"><button type="button" id="gMinus" aria-label="Fewer guests">−</button><output id="gN">2</output><button type="button" id="gPlus" aria-label="More guests">+</button></div>
+     <p class="sample" id="gNote" style="align-self:center;text-transform:none;letter-spacing:0;font-size:13.5px" data-t="bG">Groups of 13+? Use the catering enquiry.</p>
+    </div>
+    <div class="seats" id="seats"></div>
+    <h3><span data-t="b3">3 · Time</span><small id="slotNote"></small></h3>
+    <div id="slotWrap"></div>
+   </div>
+   <aside class="ticket reveal" aria-live="polite">
+    <span class="sample" style="color:#7a6c5c" data-t="bT0">Your table</span>
+    <h3 data-af-name>Ember &amp; Salt Kitchen</h3>
+    <dl id="bSum"></dl>
+    <button class="btn pri full" type="button" id="bGo"><span data-t="bGo">Confirm booking</span> →</button>
+    <p class="note" data-t="bNote">We hold tables for 15 minutes. Free cancellation by WhatsApp.</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: SELL -->
+<section class="sec goal goal-sell" id="order" aria-labelledby="sH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="sK">Order online</span><h2 id="sH" data-t="sH">Skip the queue. <em>Eat at your desk.</em></h2><p class="sub" data-t="sP">Order now, pay with FPX or e-wallet, and we'll have it hot and packed when you arrive.</p></div>
+   <div class="mode" role="group" aria-label="Pickup or delivery" id="sMode"><button type="button" data-m="pick" aria-pressed="true" data-t="mPick">Pickup · 20 min</button><button type="button" data-m="del" aria-pressed="false" data-t="mDel">Delivery · 40 min</button></div>
+  </div>
+  <div class="shop" id="shop"></div>
+  <div class="shopnote reveal"><span data-t="sNote">Delivery within 5 km of <span data-af-area>Bangsar</span>, RM 6. Free above RM 80. Bigger orders? See catering trays.</span><div class="paybadges"><span class="pb"><i></i>Card</span><span class="pb fpx">FPX</span><span class="pb grab">GrabPay</span><span class="pb tng">Touch 'n Go</span></div></div>
+ </div>
+</section>
+
+<!-- GOAL: CRED -->
+<section class="sec goal goal-cred" id="proof" aria-labelledby="cH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="cK">Events we've fed</span><h2 id="cH" data-t="cH">Office lunches to <em>garden weddings.</em></h2></div>
+   <p class="sub" data-t="cP">The same fire, scaled up. Every event below is a sample to show how your work would appear here.</p>
+  </div>
+  <div class="marks reveal" aria-label="Sample client names (fictional)"><span>NORTHWIND</span><span>Studio Kopi</span><span>klx.tech</span><span>Petal &amp; Pine</span><span>bangsar_run</span><span>Rumah Biru</span></div>
+  <div class="cases">
+   <article class="case reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1530062845289-9109b2c9c868?auto=format&fit=crop&w=1000&q=80" alt="Long outdoor table set with shared plates"><div><span class="pill" style="color:#fff;border-color:rgba(255,255,255,.3)" data-t="cs">Sample event</span><h3 data-t="c1h">Product launch, rooftop</h3><p data-t="c1p">Live grill station, six trays, ulam bar and mocktails. Set up in 90 minutes, cleared by 11pm.</p><div class="meta"><span>180 pax</span><span>Bangsar South</span><span data-t="c1m">Feast tier</span></div></div></article>
+   <article class="case reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" alt="Buffet trays of food laid out for an office lunch"><div><span class="pill" style="color:#fff;border-color:rgba(255,255,255,.3)" data-t="cs">Sample event</span><h3 data-t="c2h">Friday office lunch</h3><p data-t="c2p">A rotating menu, delivered every Friday at 12:15.</p><div class="meta"><span>40 pax</span><span>Mont Kiara</span></div></div></article>
+   <article class="case reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Overhead view of grilled meat and salad plates"><div><span class="pill" style="color:#fff;border-color:rgba(255,255,255,.3)" data-t="cs">Sample event</span><h3 data-t="c3h">Garden kenduri</h3><p data-t="c3p">Nasi minyak, ayam percik and a fire pit.</p><div class="meta"><span>250 pax</span><span>Shah Alam</span></div></div></article>
+  </div>
+  <div class="creds">
+   <div class="cred reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><b data-t="k1">Halal status</b><span data-t="k1s">Certificate shown here (sample)</span></div>
+   <div class="cred reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 21V9l8-6 8 6v12z"/><path d="M9 21v-6h6v6"/></svg><b data-t="k2">DBKL kitchen grade</b><span data-t="k2s">Grade A (sample)</span></div>
+   <div class="cred reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><b data-t="k3">Trained food handlers</b><span data-t="k3s">Typhoid jab &amp; course (sample)</span></div>
+   <div class="cred reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17h13V6H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><b data-t="k4">Own delivery van</b><span data-t="k4s">Hot boxes, on time (sample)</span></div>
+  </div>
+  <ol class="steps">
+   <li class="reveal"><b data-t="p1">WhatsApp the brief</b><span data-t="p1s">Date, headcount, venue. We reply with a menu the same day.</span></li>
+   <li class="reveal"><b data-t="p2">Tasting</b><span data-t="p2s">Free tasting for two for events of 100+ guests.</span></li>
+   <li class="reveal"><b data-t="p3">Lock the menu</b><span data-t="p3s">50% deposit by FPX. Final headcount 3 days before.</span></li>
+   <li class="reveal"><b data-t="p4">We feed, you host</b><span data-t="p4s">Delivered, set up, topped up and cleared.</span></li>
+  </ol>
+ </div>
+</section>
+
+<!-- MENU BOARD -->
+<section class="sec s-menu" id="menu" aria-labelledby="mH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="mK">The menu board</span><h2 id="mH" data-t="mH">What's <em>on the fire.</em></h2></div>
+   <p class="sub" data-t="mP">Prices in ringgit, updated live from the kitchen. Tap + to build your order, then send it on WhatsApp or pay online.</p>
+  </div>
+  <div class="board">
+   <div>
+    <div class="tabs" role="tablist" aria-label="Menu" id="tabs">
+     <button class="tab" role="tab" data-c="l" aria-selected="true"><b data-t="tl">Set lunch</b><small data-t="tlS">Tue–Fri · 11:30am–3pm</small><span class="now" data-t="now">Serving now</span></button>
+     <button class="tab" role="tab" data-c="d" aria-selected="false"><b data-t="td">Dinner</b><small data-t="tdS">Tue–Sun · 6pm–10:30pm</small><span class="now" data-t="now">Serving now</span></button>
+     <button class="tab" role="tab" data-c="t" aria-selected="false"><b data-t="tt">Catering trays</b><small data-t="ttS">Serves 10 · 3 days' notice</small></button>
+    </div>
+    <p class="hfnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-t="hfn">No pork, no lard. Meat from halal-certified suppliers. No alcohol served.</span></p>
+   </div>
+   <div>
+    <div class="mtools"><div class="chips" id="mf" role="group" aria-label="Filter"></div><span class="mcount" id="mcount"></span></div>
+    <div class="mgrid" id="mgrid" role="tabpanel" aria-live="polite"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- CATERING QUOTE -->
+<section class="sec s-cat" id="catering" aria-labelledby="qH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="qK">Catering tray quote</span><h2 id="qH" data-t="qH">Price your event <em>in 30 seconds.</em></h2></div>
+   <p class="sub" data-t="qP">Slide the headcount, pick a tier and see the number before you message us. Trays arrive hot, labelled and halal-friendly.</p>
+  </div>
+  <div class="cq">
+   <form class="card reveal" id="qForm" onsubmit="return false">
+    <div class="fs"><span class="lbl" id="qPaxL" data-t="q1">Guests</span>
+     <div class="paxrow"><output id="qPaxO">50<small>pax</small></output><input type="range" id="qPax" min="10" max="300" step="5" value="50" aria-labelledby="qPaxL"></div>
+    </div>
+    <fieldset class="fs"><legend data-t="q2">Menu tier</legend><div class="tiers" id="tiers"></div></fieldset>
+    <fieldset class="fs"><legend data-t="q3">Extras</legend><div class="opts" id="extras"></div></fieldset>
+    <fieldset class="fs" style="margin:0"><legend data-t="q4">Deliver to</legend><div class="qsel" id="zones"></div></fieldset>
+   </form>
+   <aside class="quote reveal" aria-live="polite">
+    <div class="q-top"><small data-t="qEst">Estimated total</small><div class="q-total" id="qTot">RM 0</div><div class="q-pp" id="qPP"></div><div class="trays" id="trays" aria-hidden="true"></div></div>
+    <div class="q-lines" id="qLines"></div>
+    <div class="q-act"><button class="btn wa full" type="button" id="qGo"><span data-t="qGo">Get this quote on WhatsApp</span></button><p data-t="qFine">Sample prices for this demo. Book at least 3 days ahead, 7 days for 100+ guests.</p></div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- STORY -->
+<section class="sec s-story" id="story" aria-labelledby="stH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="stK">Our fire</span><h2 id="stH" data-t="stH">Mangrove charcoal, <em>rambutan wood,</em> patience.</h2></div>
+   <p class="sub" data-t="stP">The grill is lit at 7am. By lunch the coals are just right, and the brisket has been smoking since the night before.</p>
+  </div>
+  <div class="mosaic">
+   <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=80" alt="Chef plating a dish under warm pendant lights"><figcaption data-t="fg1">The pass, 12:30pm</figcaption></figure>
+   <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=700&q=80" alt="Charred lamb skewers with tomatoes and fries"><figcaption data-t="fg2">Lamb skewers</figcaption></figure>
+   <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Two lattes with latte art on a café table"><figcaption data-t="fg3">Café from 9am</figcaption></figure>
+   <div class="quoteblk reveal"><p data-t="sq">"Lunch shouldn't be the sad part of your day."</p><span data-t="sqb">Head chef · sample quote</span></div>
+  </div>
+  <div class="story-txt">
+   <div class="reveal"><b data-t="st1">Slow fire</b><p data-t="st1p">Arang bakau from Kuala Sepetang burns hot and clean. Rambutan wood adds the smoke.</p></div>
+   <div class="reveal"><b data-t="st2">Local first</b><p data-t="st2p">Ulam from Cameron Highlands growers, rice from Sekinchan, coffee roasted in KL.</p></div>
+   <div class="reveal"><b data-t="st3">Fast lunch</b><p data-t="st3p">Set lunches are fired to order but planned for office hours. In and out in 40 minutes.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec s-rev" aria-labelledby="rH" style="padding-top:20px">
+ <div class="wrap">
+  <div class="head reveal"><div><span class="kick" data-t="rK">Regulars say</span><h2 id="rH" data-t="rH">Worth the <em>walk from the LRT.</em></h2></div></div>
+  <div class="revs">
+   <figure class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><p data-t="r1">"The ayam percik set is my Tuesday ritual. Out in 35 minutes, back at my desk smelling like a barbecue."</p><footer><b>Farah N.</b><span data-t="rs">Sample review</span> · Google</footer></figure>
+   <figure class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><p data-t="r2">"Ordered 8 trays for our team offsite. Arrived hot, labelled, and the uncle even set up the chafing dishes."</p><footer><b>Jason L.</b><span data-t="rs">Sample review</span> · Google</footer></figure>
+   <figure class="rev reveal"><span class="stars" aria-label="5 stars">★★★★★</span><p data-t="r3">"Finally a grill place I can bring my parents to. Pork-free, no alcohol, and the brisket is unreal."</p><footer><b>Aiman R.</b><span data-t="rs">Sample review</span> · Instagram</footer></figure>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec s-faq" id="faq" aria-labelledby="fH" style="padding-top:20px">
+ <div class="wrap faq">
+  <div class="reveal"><span class="kick" data-t="fK">Good to know</span><h2 id="fH" data-t="fH">Before you <em>come hungry.</em></h2></div>
+  <div class="reveal" id="faqList"></div>
+ </div>
+</section>
+
+<!-- VISIT -->
+<section class="sec s-visit" id="visit" aria-labelledby="vH">
+ <div class="wrap visit">
+  <div class="card reveal">
+   <span class="kick" data-t="vK">Visit</span>
+   <h2 id="vH" style="font-size:clamp(40px,4.4vw,64px)"><span data-t="vH">Find the smoke in</span> <em data-af-area>Bangsar</em></h2>
+   <ul class="hours" id="hours"></ul>
+   <div class="contact">
+    <a href="#visit" onclick="afDemo();return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span><span data-t="vA">No. 18, ground floor,</span> <span data-af-area>Bangsar</span> <span class="sample">(sample)</span></span></a>
+    <a href="#visit" onclick="afDemo();return false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span>+60 12-000 0000 <span class="sample">(sample)</span></span></a>
+    <a href="#visit" onclick="afDemo();return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17h13V6H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><span data-t="vG">Also on GrabFood &amp; foodpanda</span></a>
+   </div>
+  </div>
+  <div class="map reveal" role="img" aria-label="Stylised map of the restaurant location">
+   <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect class="pk" x="380" y="40" width="160" height="110" rx="14"/>
+    <path class="rd" stroke-width="26" d="M-20 300C120 280 220 250 330 250S520 270 640 240"/>
+    <path class="rd" stroke-width="16" d="M300 -20L330 250 350 470"/>
+    <path class="rd" stroke-width="12" d="M60 -20C90 120 110 220 120 470M-20 120H640M480 -20 470 470"/>
+    <path class="rd2" stroke-width="1.5" stroke-dasharray="4 6" d="M-20 380C160 360 300 390 640 350"/>
+    <text x="120" y="288" transform="rotate(-4 120 288)">Jalan Utama</text>
+    <text x="318" y="40" transform="rotate(86 318 40)">Lorong Bara</text>
+    <text x="400" y="100">Taman</text>
+    <text x="90" y="368">LRT · <tspan data-af-area>Bangsar</tspan></text>
+   </svg>
+   <div class="pin"><b data-af-name>Ember &amp; Salt Kitchen</b><i></i></div>
+   <div class="map-cap"><span data-t="mc1">🚶 8 min from LRT</span><span data-t="mc2">🅿 Parking behind the row</span><span data-t="mc3">🛵 Grab drop-off point</span></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="ft">
+ <div class="wrap">
+  <p class="ft-big" aria-hidden="true" data-af-name>Ember &amp; Salt Kitchen</p>
+  <div class="ft-grid">
+   <div><p style="font-weight:700;color:var(--ink);font-size:17px" data-af-name>Ember &amp; Salt Kitchen</p><p style="margin-top:8px;max-width:320px"><span data-t="ft1">Wood-fire grill &amp; café ·</span> <span data-af-area>Bangsar</span>. <span data-t="ft2">Pork-free kitchen, halal-sourced meat.</span></p></div>
+   <div><h4 data-t="ftE">Eat</h4><a href="#menu" data-t="n1">Menu</a><a href="#book" data-t="ncB">Book a table</a><a href="#order" data-t="ncS">Order now</a></div>
+   <div><h4 data-t="ftC">Events</h4><a href="#catering" data-t="n2">Catering</a><a href="#proof" data-t="ncC">Our events</a><a href="#enquire" data-t="ncE">WhatsApp us</a></div>
+   <div><h4 data-t="ftF">Follow</h4><a href="#top" onclick="afDemo();return false">Instagram</a><a href="#top" onclick="afDemo();return false">TikTok</a><a href="#top" onclick="afDemo();return false">Google Maps</a></div>
+  </div>
+  <div class="ft-base"><span data-t="ftB">Fictional brand · sample website designed by Aurelion</span><span data-t="ftP">Prices, reviews and figures on this page are samples.</span></div>
+ </div>
+</footer>
+
+<div class="mbar" id="mbar">
+ <a class="btn pri g-enq" href="#enquire" data-t="ncE">WhatsApp us</a>
+ <a class="btn pri g-book" href="#book" data-t="ncB">Book a table</a>
+ <a class="btn pri g-sell" href="#order" data-t="ncS">Order now</a>
+ <a class="btn pri g-cred" href="#proof" data-t="ncC">Our events</a>
+ <a class="btn ghost" href="#menu" data-t="n1">Menu</a>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drH" aria-hidden="true">
+ <div class="dr-h"><div><h3 id="drH" data-t="drH">Your order</h3><small id="drSub"></small></div><button class="dr-x" id="drX" type="button" aria-label="Close">×</button></div>
+ <div class="dr-body"><div class="dr-mode" id="drMode"><button type="button" data-m="pick" aria-pressed="true" data-t="mPick">Pickup · 20 min</button><button type="button" data-m="del" aria-pressed="false" data-t="mDel">Delivery · 40 min</button></div><div id="drItems"></div></div>
+ <div class="dr-f" id="drF"></div>
+</aside>
+
+<script>
+(()=>{
+const K=window.AFK||{},H=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const IMG=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||800}&q=80`;
+const NAME=()=>K.n||'Ember & Salt Kitchen', AREA=()=>K.a||'Bangsar';
+const L3=a=>Array.isArray(a)?(a[{en:0,ms:1,zh:2}[lang]]||a[0]):a;
+const rm=n=>'RM '+(Math.round(n*100)/100).toLocaleString('en-MY',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
+
+/* ---------- static translations (English lives in the HTML) ---------- */
+const T={ms:{n1:"Menu",n2:"Katering",n3:"Api kami",n4:"Lokasi",ncE:"WhatsApp kami",ncB:"Tempah meja",ncS:"Pesan sekarang",ncC:"Acara kami",
+hk:"Gril kayu api & kafe",hh:'Terus dari bara,<br><em>siap dihidang</em><br>dalam 15 minit.',hp:"Set makan tengah hari dari RM 18.90, makan malam hingga 10:30 malam dan dulang katering untuk 10 hingga 300 tetamu. Dapur bebas babi, daging sumber halal.",hcE:"Tanya kami di WhatsApp",hcB:"Tempah meja",hcS:"Pesan untuk ambil",hcC:"Lihat acara kami",hc2:"Menu hari ini",f1:"Set tengah hari + minuman",f2v:"15 min",f2:"Dari pintu ke pinggan",f3:"Katering, tetamu",htg:"Atas bara hari ini",htb:"Brisket salai 12 jam",dk1:"Meja 7",dk2:"ATAS BARA",
+eK:"Pertanyaan pantas · kami balas dalam minit",eH:'Nak jamu ramai? <em>Beritahu tiga perkara.</em>',eP:"Kami balas di WhatsApp dengan menu dan harga. Tiada borang, tiada panggilan yang perlu dikejar.",eL1:"Untuk apa?",eL2:"Berapa orang?",eL3:"Bila?",eSend:"Hantar di WhatsApp",eOn:"dalam talian · balas dalam ~5 min",eType:"Mesej",
+bK:"Tempahan",bH:'Duduk <em>dekat bara.</em>',bP:"Walk-in dialu-alukan, tetapi malam Jumaat dan Sabtu cepat penuh. Pilih hari, tempat duduk dan masa. Siap dalam 20 saat.",b1:"1 · Hari",bMon:"Tutup setiap Isnin",b2:"2 · Tetamu & tempat",bG:"Kumpulan 13 orang ke atas? Guna pertanyaan katering.",b3:"3 · Masa",bT0:"Meja anda",bGo:"Sahkan tempahan",bNote:"Meja disimpan 15 minit. Batal percuma melalui WhatsApp.",
+sK:"Pesan dalam talian",sH:'Langkau barisan. <em>Makan di meja kerja.</em>',sP:"Pesan sekarang, bayar dengan FPX atau e-dompet, dan makanan siap panas dan berbungkus bila anda tiba.",mPick:"Ambil sendiri · 20 min",mDel:"Penghantaran · 40 min",sNote:"Penghantaran dalam 5 km dari <span data-af-area>Bangsar</span>, RM 6. Percuma melebihi RM 80. Pesanan besar? Lihat dulang katering.",
+cK:"Acara yang kami jamu",cH:'Makan tengah hari pejabat hingga <em>majlis kahwin di taman.</em>',cP:"Api yang sama, skala lebih besar. Setiap acara di bawah ialah contoh untuk menunjukkan rupa kerja anda di sini.",cs:"Acara contoh",c1h:"Pelancaran produk, bumbung",c1p:"Stesen gril langsung, enam dulang, bar ulam dan mocktail. Siap dalam 90 minit, dikemas sebelum 11 malam.",c1m:"Tahap Kenduri",c2h:"Makan tengah hari Jumaat",c2p:"Menu bergilir, dihantar setiap Jumaat jam 12:15.",c3h:"Kenduri di taman",c3p:"Nasi minyak, ayam percik dan unggun api.",k1:"Status halal",k1s:"Sijil dipaparkan di sini (contoh)",k2:"Gred dapur DBKL",k2s:"Gred A (contoh)",k3:"Pengendali makanan terlatih",k3s:"Suntikan tifoid & kursus (contoh)",k4:"Van penghantaran sendiri",k4s:"Kotak panas, tepat masa (contoh)",p1:"WhatsApp butiran",p1s:"Tarikh, jumlah tetamu, tempat. Kami balas dengan menu pada hari yang sama.",p2:"Sesi rasa",p2s:"Sesi rasa percuma untuk dua orang bagi acara 100 tetamu ke atas.",p3:"Muktamadkan menu",p3s:"Deposit 50% melalui FPX. Jumlah akhir tetamu 3 hari sebelum.",p4:"Kami jamu, anda jadi tuan rumah",p4s:"Dihantar, disusun, ditambah dan dikemas.",
+mK:"Papan menu",mH:'Apa yang <em>atas bara.</em>',mP:"Harga dalam ringgit, dikemas kini terus dari dapur. Tekan + untuk susun pesanan, kemudian hantar di WhatsApp atau bayar dalam talian.",tl:"Set tengah hari",tlS:"Sel–Jum · 11:30 pg–3 ptg",td:"Makan malam",tdS:"Sel–Ahd · 6 ptg–10:30 mlm",tt:"Dulang katering",ttS:"Untuk 10 orang · notis 3 hari",now:"Sedang dihidang",hfn:"Tiada babi, tiada lemak babi. Daging daripada pembekal bersijil halal. Tiada arak dihidangkan.",
+qK:"Sebut harga dulang katering",qH:'Kira kos majlis <em>dalam 30 saat.</em>',qP:"Gelongsor jumlah tetamu, pilih tahap menu dan lihat harganya sebelum menghantar mesej. Dulang tiba panas, berlabel dan mesra halal.",q1:"Tetamu",q2:"Tahap menu",q3:"Tambahan",q4:"Hantar ke",qEst:"Anggaran jumlah",qGo:"Dapatkan sebut harga di WhatsApp",qFine:"Harga contoh untuk demo ini. Tempah sekurang-kurangnya 3 hari awal, 7 hari untuk 100 tetamu ke atas.",
+stK:"Api kami",stH:'Arang bakau, <em>kayu rambutan,</em> sabar.',stP:"Gril dinyalakan jam 7 pagi. Menjelang tengah hari bara sudah sempurna, dan brisket telah disalai sejak malam sebelumnya.",fg1:"Kaunter, 12:30 tengah hari",fg2:"Sate kambing",fg3:"Kafe dari 9 pagi",sq:"“Makan tengah hari tak patut jadi bahagian paling sedih hari anda.”",sqb:"Ketua chef · petikan contoh",st1:"Api perlahan",st1p:"Arang bakau dari Kuala Sepetang menyala panas dan bersih. Kayu rambutan memberi aroma asap.",st2:"Tempatan dahulu",st2p:"Ulam dari petani Cameron Highlands, beras dari Sekinchan, kopi dibancuh di KL.",st3:"Makan pantas",st3p:"Set tengah hari dimasak ikut pesanan tetapi dirancang untuk waktu pejabat. Masuk dan keluar dalam 40 minit.",
+rK:"Kata pelanggan tetap",rH:'Berbaloi <em>berjalan dari LRT.</em>',r1:"“Set ayam percik ialah rutin Selasa saya. Siap dalam 35 minit, balik ke pejabat berbau macam barbeku.”",r2:"“Pesan 8 dulang untuk offsite pasukan. Sampai panas, berlabel, dan pakcik siap susun bekas pemanas.”",r3:"“Akhirnya kedai gril yang saya boleh bawa ibu bapa. Bebas babi, tiada arak, dan brisketnya luar biasa.”",rs:"Ulasan contoh",
+fK:"Perlu tahu",fH:'Sebelum anda <em>datang lapar.</em>',vK:"Lokasi",vH:"Cari asapnya di",vA:"No. 18, tingkat bawah,",vG:"Juga di GrabFood & foodpanda",mc1:"🚶 8 min dari LRT",mc2:"🅿 Parkir di belakang deretan",mc3:"🛵 Tempat turun Grab",
+ft1:"Gril kayu api & kafe ·",ft2:"Dapur bebas babi, daging sumber halal.",ftE:"Makan",ftC:"Acara",ftF:"Ikuti",ftB:"Jenama rekaan · laman contoh direka oleh Aurelion",ftP:"Harga, ulasan dan angka di halaman ini adalah contoh.",drH:"Pesanan anda"},
+zh:{n1:"菜单",n2:"外烩",n3:"我们的炭火",n4:"地址",ncE:"WhatsApp 联系",ncB:"预订座位",ncS:"立即下单",ncC:"活动案例",
+hk:"柴火烧烤 · 咖啡馆",hh:'炭火现烤，<br><em>15 分钟</em>上桌。',hp:"午餐套餐 RM 18.90 起，晚餐营业到晚上 10:30，外烩托盘适合 10 至 300 位宾客。厨房无猪肉，肉类来自清真认证供应商。",hcE:"WhatsApp 咨询",hcB:"预订座位",hcS:"线上点餐自取",hcC:"看看我们办过的活动",hc2:"今日菜单",f1:"午餐套餐含饮料",f2v:"15 分钟",f2:"进门到上桌",f3:"外烩宾客人数",htg:"今日炭火",htb:"12 小时烟熏牛胸",dk1:"7 号桌",dk2:"炭火中",
+eK:"快速咨询 · 几分钟内回复",eH:'要请一群人吃饭？<em>告诉我们三件事。</em>',eP:"我们会在 WhatsApp 回复菜单和价格。不用填表，也不用等电话。",eL1:"什么场合？",eL2:"多少人？",eL3:"哪一天？",eSend:"用 WhatsApp 发送",eOn:"在线 · 约 5 分钟回复",eType:"输入消息",
+bK:"订位",bH:'坐在<em>炭火旁边。</em>',bP:"欢迎直接来，但周五、周六晚上很快就满。选好日期、座位和时间，20 秒搞定。",b1:"1 · 日期",bMon:"逢星期一休息",b2:"2 · 人数和座位",bG:"13 人以上？请用外烩咨询。",b3:"3 · 时间",bT0:"你的座位",bGo:"确认订位",bNote:"座位保留 15 分钟。可通过 WhatsApp 免费取消。",
+sK:"线上点餐",sH:'不用排队，<em>在办公桌吃热饭。</em>',sP:"现在下单，用 FPX 或电子钱包付款，你到店时餐点已经热腾腾打包好。",mPick:"自取 · 20 分钟",mDel:"外送 · 40 分钟",sNote:"<span data-af-area>Bangsar</span> 5 公里内外送 RM 6，满 RM 80 免运费。订单较大？请看外烩托盘。",
+cK:"我们办过的活动",cH:'从公司午餐到<em>花园婚礼。</em>',cP:"同一团炭火，规模放大。以下活动均为示例，展示你的作品在这里会是什么样子。",cs:"示例活动",c1h:"天台新品发布会",c1p:"现场烧烤台、六个托盘、ulam 沙拉吧和无酒精饮品。90 分钟布置完成，11 点前收拾干净。",c1m:"盛宴档",c2h:"每周五公司午餐",c2p:"轮换菜单，每周五 12:15 送到。",c3h:"花园 kenduri 喜宴",c3p:"Nasi minyak、香料烤鸡和篝火。",k1:"清真状态",k1s:"证书展示在这里（示例）",k2:"DBKL 厨房评级",k2s:"A 级（示例）",k3:"受训食品从业员",k3s:"伤寒疫苗与课程（示例）",k4:"自有送餐车",k4s:"保温箱，准时送达（示例）",p1:"WhatsApp 发需求",p1s:"日期、人数、场地。当天回复菜单。",p2:"试吃",p2s:"100 位以上活动可免费两人试吃。",p3:"确认菜单",p3s:"用 FPX 付 50% 订金，活动前 3 天确认人数。",p4:"我们上菜，你当主人",p4s:"送达、摆设、补菜、收拾。",
+mK:"菜单板",mH:'今天<em>炭火上有什么。</em>',mP:"价格以令吉计，由厨房实时更新。点 + 组合你的订单，然后用 WhatsApp 发送或在线付款。",tl:"午餐套餐",tlS:"周二至周五 · 11:30–15:00",td:"晚餐",tdS:"周二至周日 · 18:00–22:30",tt:"外烩托盘",ttS:"每盘 10 人份 · 提前 3 天",now:"供应中",hfn:"无猪肉、无猪油，肉类来自清真认证供应商，不供应酒精。",
+qK:"外烩托盘报价",qH:'30 秒算出<em>活动预算。</em>',qP:"拖动人数、选择档次，发信息前就能看到价格。托盘热腾腾送达，贴好标签，清真友好。",q1:"宾客人数",q2:"菜单档次",q3:"附加项目",q4:"送到",qEst:"预计总价",qGo:"用 WhatsApp 获取报价",qFine:"本演示为示例价格。请至少提前 3 天预订，100 位以上提前 7 天。",
+stK:"我们的炭火",stH:'红树林木炭、<em>红毛丹木，</em>还有耐心。',stP:"每天早上 7 点生火。到午餐时炭火刚刚好，牛胸肉从前一晚就开始烟熏。",fg1:"出菜口，中午 12:30",fg2:"烤羊肉串",fg3:"咖啡馆早上 9 点开门",sq:"「午餐不该是一天里最无聊的时刻。」",sqb:"主厨 · 示例引语",st1:"慢火",st1p:"来自瓜拉十八丁的红树林木炭火力猛、烟少，再加红毛丹木增添烟熏香。",st2:"本地优先",st2p:"金马仑农友的 ulam，适耕庄的白米，吉隆坡烘焙的咖啡。",st3:"午餐要快",st3p:"午餐套餐现点现烤，但按上班族时间设计，40 分钟吃完离开。",
+rK:"熟客怎么说",rH:'值得从<em>轻快铁站走过来。</em>',r1:"「香料烤鸡套餐是我每周二的固定午餐。35 分钟吃完，回到办公室一身烧烤香。」",r2:"「团队活动订了 8 个托盘，送到还是热的，有标签，安哥还帮忙摆好保温炉。」",r3:"「终于有一家可以带爸妈来的烧烤店。无猪肉、不卖酒，牛胸肉好吃到不行。」",rs:"示例评价",
+fK:"实用信息",fH:'<em>饿着肚子</em>来之前。',vK:"地址",vH:"循着炭香来到",vA:"18 号，底楼，",vG:"GrabFood 和 foodpanda 也有",mc1:"🚶 轻快铁站步行 8 分钟",mc2:"🅿 店后有停车位",mc3:"🛵 Grab 下车点",
+ft1:"柴火烧烤 · 咖啡馆 ·",ft2:"厨房无猪肉，肉类来自清真认证供应商。",ftE:"用餐",ftC:"活动",ftF:"关注",ftB:"虚构品牌 · Aurelion 设计的示例网站",ftP:"本页价格、评价与数字均为示例。",drH:"你的订单"}};
+/* JS-only strings */
+const S={
+en:{open:"Kitchen open now · closes 10:30pm",last:"Last orders · closes in {m} min",opens:"Opens today at 11:30am",closed:"Closed now · opens {d} 11:30am",tomorrow:"tomorrow",tue:"Tuesday",add:"Add",added:"Added",all:"All",sig:"Chef's pick",veg:"Vegetarian",spicy:"Spicy",share:"For sharing",hf:"Halal-friendly",dishes:"{n} dishes",none:"Nothing here with that filter. Try another.",
+what:["Office lunch","Birthday or party","Kenduri or wedding","Big group table"],hi:"Hi! 👋 What are you planning? Tell us and we'll send a menu and price.",msgE:"Hi {b}, I'd like to ask about: {w}\n• Guests: {p}\n• Date: {d}\n\nCould you send me a menu and price?",anyDate:"flexible",
+closedD:"Closed",lunch:"Lunch",dinner:"Dinner",seatC:["By the fire","Counter seats, watch the grill"],seatI:["Indoor","Air-conditioned dining room"],seatA:["Alfresco","Under the fans, by the street"],pickT:"Pick a time",full:"full",left:"{n} slots left",
+sDate:"Date",sTime:"Time",sGuests:"Guests",sSeat:"Seat",pickFirst:"Choose a time to continue",bConf:"Demo: on your site this confirms the table and sends {b} a WhatsApp booking for {g} on {d} at {t}.",
+emptyH:"Your docket is empty",emptyP:"Add something hot from the menu board.",sub:"Subtotal",dfee:"Delivery",free:"Free",sst:"Service tax 6% (sample)",total:"Total",pay:"Pay & place order",wa:"Send order on WhatsApp instead",fine:"Demo checkout · no payment is taken",items:"{n} items",payDemo:"Demo: on your site this opens a secure Card / FPX / GrabPay / Touch 'n Go checkout.",msgO:"Hi {b}, I'd like to order ({m}):\n{l}\nTotal: {t}",pickM:"pickup",delM:"delivery",
+tiers:[["Office set","2 mains, rice, veg, drink"],["Signature","3 mains incl. mixed grill, 2 sides, dessert"],["Feast","Grill station menu, 4 mains, dessert bar"]],
+extras:[["Live grill station + chef","flat"],["Chafing dishes & setup","/pax"],["2 service crew, 4 hours","flat"]],zones:["Bangsar & KL city","PJ & Damansara","Shah Alam · Subang · Puchong"],
+pp:"{p} per guest · ≈ {t} trays",qMenu:"Menu ({n} × {p})",qDel:"Delivery",qDep:"50% deposit to confirm",msgQ:"Hi {b}, I'd like a catering quote:\n• Guests: {n}\n• Tier: {t}\n• Extras: {x}\n• Deliver to: {z}\n• Estimate on your site: {tot}\n\nIs this date available?",noX:"none",
+faq:[["Is the food halal?","We are a pork-free, lard-free kitchen and all our meat comes from halal-certified suppliers. We don't serve alcohol. Our own certification status would be shown here (sample)."],["Do I need to book?","Walk-ins are welcome. For groups of 6 or more, and Friday or Saturday nights, booking is safer."],["How early should I order catering?","At least 3 days ahead, and 7 days for 100 guests or more. Small office orders can sometimes be done next day, just WhatsApp us."],["Where do I park?","There is paid parking behind the row and in the mall basement nearby. The LRT is an 8-minute walk."],["Can I pay by e-wallet?","Yes: card, FPX, GrabPay and Touch 'n Go eWallet, in store and online."],["Are you open on public holidays?","Yes, including Mondays that fall on a public holiday. We close for the first two days of Hari Raya Aidilfitri and Chinese New Year."]],
+days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],hrs:"11:30am – 10:30pm",clsd:"Closed",today:"today",dk:["1× Ayam percik set","1× Brisket bowl","2× Iced lemongrass"]},
+ms:{open:"Dapur dibuka sekarang · tutup 10:30 malam",last:"Pesanan akhir · tutup dalam {m} min",opens:"Dibuka hari ini jam 11:30 pagi",closed:"Tutup sekarang · buka {d} 11:30 pagi",tomorrow:"esok",tue:"Selasa",add:"Tambah",added:"Ditambah",all:"Semua",sig:"Pilihan chef",veg:"Vegetarian",spicy:"Pedas",share:"Untuk dikongsi",hf:"Mesra halal",dishes:"{n} hidangan",none:"Tiada hidangan untuk tapisan ini. Cuba yang lain.",
+what:["Makan tengah hari pejabat","Hari jadi atau parti","Kenduri atau kahwin","Meja kumpulan besar"],hi:"Hai! 👋 Apa yang anda rancang? Beritahu kami, kami hantar menu dan harga.",msgE:"Hai {b}, saya ingin bertanya tentang: {w}\n• Tetamu: {p}\n• Tarikh: {d}\n\nBoleh hantar menu dan harga?",anyDate:"fleksibel",
+closedD:"Tutup",lunch:"Tengah hari",dinner:"Malam",seatC:["Dekat bara","Kerusi kaunter, tengok gril"],seatI:["Dalam","Ruang makan berhawa dingin"],seatA:["Luar","Bawah kipas, tepi jalan"],pickT:"Pilih masa",full:"penuh",left:"{n} slot lagi",
+sDate:"Tarikh",sTime:"Masa",sGuests:"Tetamu",sSeat:"Tempat",pickFirst:"Pilih masa untuk teruskan",bConf:"Demo: di laman anda, ini mengesahkan meja dan menghantar tempahan WhatsApp kepada {b} untuk {g} pada {d} jam {t}.",
+emptyH:"Pesanan masih kosong",emptyP:"Tambah sesuatu yang panas dari papan menu.",sub:"Jumlah kecil",dfee:"Penghantaran",free:"Percuma",sst:"Cukai perkhidmatan 6% (contoh)",total:"Jumlah",pay:"Bayar & buat pesanan",wa:"Hantar pesanan di WhatsApp",fine:"Demo pembayaran · tiada bayaran diambil",items:"{n} item",payDemo:"Demo: di laman anda, ini membuka pembayaran selamat Kad / FPX / GrabPay / Touch 'n Go.",msgO:"Hai {b}, saya nak pesan ({m}):\n{l}\nJumlah: {t}",pickM:"ambil sendiri",delM:"penghantaran",
+tiers:[["Set pejabat","2 lauk, nasi, sayur, minuman"],["Signature","3 lauk termasuk gril campur, 2 sampingan, pencuci mulut"],["Kenduri","Menu stesen gril, 4 lauk, bar pencuci mulut"]],
+extras:[["Stesen gril langsung + chef","rata"],["Bekas pemanas & susunan","/orang"],["2 krew servis, 4 jam","rata"]],zones:["Bangsar & pusat KL","PJ & Damansara","Shah Alam · Subang · Puchong"],
+pp:"{p} seorang · ≈ {t} dulang",qMenu:"Menu ({n} × {p})",qDel:"Penghantaran",qDep:"Deposit 50% untuk sahkan",msgQ:"Hai {b}, saya ingin sebut harga katering:\n• Tetamu: {n}\n• Tahap: {t}\n• Tambahan: {x}\n• Hantar ke: {z}\n• Anggaran di laman: {tot}\n\nAdakah tarikh ini kosong?",noX:"tiada",
+faq:[["Adakah makanan halal?","Dapur kami bebas babi dan lemak babi, dan semua daging dari pembekal bersijil halal. Kami tidak menghidang arak. Status pensijilan kami sendiri akan dipaparkan di sini (contoh)."],["Perlu tempah?","Walk-in dialu-alukan. Untuk kumpulan 6 orang ke atas, serta malam Jumaat atau Sabtu, lebih baik tempah."],["Berapa awal perlu pesan katering?","Sekurang-kurangnya 3 hari awal, dan 7 hari untuk 100 tetamu ke atas. Pesanan pejabat kecil kadang-kadang boleh esoknya, WhatsApp sahaja kami."],["Di mana nak parkir?","Ada parkir berbayar di belakang deretan kedai dan di bawah pusat beli-belah berdekatan. LRT 8 minit berjalan kaki."],["Boleh bayar dengan e-dompet?","Boleh: kad, FPX, GrabPay dan Touch 'n Go eWallet, di kedai dan dalam talian."],["Buka pada cuti umum?","Ya, termasuk hari Isnin yang jatuh pada cuti umum. Kami tutup dua hari pertama Hari Raya Aidilfitri dan Tahun Baru Cina."]],
+days:["Ahad","Isnin","Selasa","Rabu","Khamis","Jumaat","Sabtu"],hrs:"11:30 pg – 10:30 mlm",clsd:"Tutup",today:"hari ini",dk:["1× Set ayam percik","1× Mangkuk brisket","2× Teh serai ais"]},
+zh:{open:"厨房营业中 · 晚上 10:30 打烊",last:"最后点单 · {m} 分钟后打烊",opens:"今天早上 11:30 开门",closed:"休息中 · {d} 11:30 开门",tomorrow:"明天",tue:"周二",add:"加入",added:"已加入",all:"全部",sig:"主厨推荐",veg:"素食",spicy:"辣",share:"适合分享",hf:"清真友好",dishes:"{n} 道菜",none:"这个筛选下没有菜品，换一个试试。",
+what:["公司午餐","生日或派对","Kenduri 或婚宴","大桌聚餐"],hi:"你好！👋 你在筹备什么？告诉我们，我们会发菜单和价格给你。",msgE:"你好 {b}，我想咨询：{w}\n• 人数：{p}\n• 日期：{d}\n\n可以发菜单和价格给我吗？",anyDate:"可商量",
+closedD:"休息",lunch:"午餐",dinner:"晚餐",seatC:["炭火旁","吧台座，看着烤炉"],seatI:["室内","冷气用餐区"],seatA:["户外","风扇下，临街"],pickT:"选择时间",full:"已满",left:"剩 {n} 个时段",
+sDate:"日期",sTime:"时间",sGuests:"人数",sSeat:"座位",pickFirst:"请先选择时间",bConf:"演示：在你的网站上，这会确认座位，并把 {d} {t}、{g} 位的订位通过 WhatsApp 发给 {b}。",
+emptyH:"订单还是空的",emptyP:"从菜单板加点热的吧。",sub:"小计",dfee:"运费",free:"免费",sst:"6% 服务税（示例）",total:"合计",pay:"付款并下单",wa:"改用 WhatsApp 发送订单",fine:"演示结账 · 不会扣款",items:"{n} 件",payDemo:"演示：在你的网站上，这会打开安全的 银行卡 / FPX / GrabPay / Touch 'n Go 付款页面。",msgO:"你好 {b}，我想下单（{m}）：\n{l}\n合计：{t}",pickM:"自取",delM:"外送",
+tiers:[["办公套餐","2 道主菜、米饭、蔬菜、饮料"],["招牌档","3 道主菜含综合烧烤、2 道配菜、甜点"],["盛宴档","烧烤台菜单、4 道主菜、甜点吧"]],
+extras:[["现场烧烤台 + 厨师","固定"],["保温炉与摆设","/人"],["2 位服务员，4 小时","固定"]],zones:["Bangsar 与吉隆坡市中心","八打灵再也与白沙罗","莎阿南 · 梳邦 · 蒲种"],
+pp:"每人 {p} · 约 {t} 盘",qMenu:"菜单（{n} × {p}）",qDel:"运费",qDep:"确认需付 50% 订金",msgQ:"你好 {b}，我想要外烩报价：\n• 人数：{n}\n• 档次：{t}\n• 附加：{x}\n• 送到：{z}\n• 网站估价：{tot}\n\n这个日期还有空吗？",noX:"无",
+faq:[["食物是清真的吗？","我们的厨房无猪肉、无猪油，所有肉类来自清真认证供应商，也不供应酒精。我们自己的认证状态会展示在这里（示例）。"],["需要订位吗？","欢迎直接来。6 人以上，或周五、周六晚上，建议先订位。"],["外烩要提前多久？","至少提前 3 天，100 位以上提前 7 天。小型公司订单有时隔天也可以，WhatsApp 问我们就好。"],["在哪里停车？","店后和附近商场地下都有收费停车位，轻快铁站步行 8 分钟。"],["可以用电子钱包吗？","可以：银行卡、FPX、GrabPay 和 Touch 'n Go 电子钱包，店内和线上都行。"],["公共假期营业吗？","营业，包括遇上公共假期的星期一。开斋节和农历新年头两天休息。"]],
+days:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],hrs:"11:30 – 22:30",clsd:"休息",today:"今天",dk:["1× 香料烤鸡套餐","1× 烟熏牛胸饭","2× 冰香茅茶"]}};
+let lang='en';
+const s=(k,v)=>{let x=(S[lang][k]!==undefined?S[lang]:S.en)[k];if(v&&typeof x==='string')Object.keys(v).forEach(n=>x=x.split('{'+n+'}').join(v[n]));return x;};
+const LOC={en:'en-MY',ms:'ms-MY',zh:'zh-CN'};
+
+/* ---------- KL time + status ---------- */
+function klNow(){const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuala_Lumpur',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',weekday:'short',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+ const wd=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday);return {y:+p.year,mo:+p.month,d:+p.day,h:+p.hour,mi:+p.minute,wd,min:+p.hour*60+ +p.minute};}
+function status(){const n=klNow(),el=$('#status');let txt,cls='';
+ const openDay=n.wd!==1;
+ if(openDay&&n.min>=690&&n.min<1350){if(1350-n.min<=30){txt=s('last',{m:1350-n.min});cls='amber';}else txt=s('open');}
+ else if(openDay&&n.min<690){txt=s('opens');cls='amber';}
+ else{const nextMon=(n.wd===0&&n.min>=1350);const d=(n.wd===1||nextMon)?s('tue'):s('tomorrow');txt=s('closed',{d:(n.wd===1&&n.min<0)?s('tue'):d});cls='off';}
+ el.className='status '+cls;$('#statusTxt').textContent=txt;
+ $$('.tab').forEach(t=>t.classList.toggle('live',openDay&&((t.dataset.c==='l'&&n.min>=690&&n.min<900&&n.wd>1&&n.wd<6)||(t.dataset.c==='d'&&n.min>=1080&&n.min<1350))));
+ return {n,txt};}
+function ticker(){const st=status().txt;
+ const items={en:[st,'Set lunch from RM 18.90','Brisket smoking since 11pm','Catering trays for 10–300','GrabFood · foodpanda','No pork · no lard · no alcohol'],ms:[st,'Set tengah hari dari RM 18.90','Brisket disalai sejak 11 malam','Dulang katering 10–300 orang','GrabFood · foodpanda','Tiada babi · tiada lemak babi · tiada arak'],zh:[st,'午餐套餐 RM 18.90 起','牛胸肉从晚上 11 点开始烟熏','外烩托盘 10–300 人','GrabFood · foodpanda','无猪肉 · 无猪油 · 无酒精']}[lang];
+ const h=items.map(x=>`<span>${x}</span>`).join('');$('#tk').innerHTML=h+h;}
+
+/* ---------- docket animation ---------- */
+(function docket(){const li=$$('#dkList li'),bar=$('#dkBar'),n=klNow();$('#dkTime').textContent=String(n.h).padStart(2,'0')+':'+String(n.mi).padStart(2,'0');
+ if(reduce){li.forEach(x=>x.classList.add('in'));bar.style.width='70%';return;}
+ li.forEach((x,i)=>setTimeout(()=>x.classList.add('in'),300+i*350));
+ let m=14;setTimeout(()=>{bar.style.width='35%';},2200);
+ setInterval(()=>{m=m>1?m-1:14;$('#dkMin').textContent=m+' min';bar.style.width=Math.min(100,(14-m)/14*100+8)+'%';},2600);})();
+
+/* ---------- menu data ---------- */
+const M=[
+{id:'ap',c:'l',img:'1598515214211-89d3c73ae83b',p:18.9,tg:['sig','spicy'],best:1,n:['Ayam Percik Set','Set Ayam Percik','香料烤鸡套餐'],loc:'ayam percik',d:['Wood-fired chicken leg, percik glaze, turmeric rice, ulam and iced lemongrass tea.','Peha ayam bakar kayu, kuah percik, nasi kunyit, ulam dan teh serai ais.','柴火烤鸡腿淋 percik 酱，配黄姜饭、ulam 和冰香茅茶。']},
+{id:'bb',c:'l',img:'1529692236671-f1f6cf9683ba',p:24.9,tg:['sig'],best:1,n:['Smoked Brisket Bowl','Mangkuk Brisket Salai','烟熏牛胸饭'],loc:'nasi daging salai',d:['12-hour smoked beef brisket, garlic rice, sambal matah, soft egg.','Brisket daging salai 12 jam, nasi bawang putih, sambal matah, telur separuh masak.','烟熏 12 小时牛胸肉，配蒜香饭、sambal matah 和溏心蛋。']},
+{id:'sb',c:'l',img:'1519708227418-c8fd9a32b7a2',p:26.9,tg:[],best:1,n:['Charred Salmon Grain Bowl','Mangkuk Salmon Bakar','炭烤三文鱼谷物碗'],loc:'salmon bakar',d:['Fire-kissed salmon, red rice, pickled cucumber, miso-lime dressing.','Salmon bakar, nasi merah, timun jeruk, sos miso limau.','炭烤三文鱼配红米、腌黄瓜和味噌青柠酱。']},
+{id:'vb',c:'l',img:'1512621776951-a57141f2eefd',p:16.9,tg:['veg'],n:['Roasted Veg & Tempeh Bowl','Mangkuk Sayur Panggang & Tempe','烤蔬菜天贝碗'],loc:'tempe bakar',d:['Charred pumpkin, tempeh, chickpeas, avocado, kerisik dressing.','Labu bakar, tempe, kacang kuda, avokado, sos kerisik.','炭烤南瓜、天贝、鹰嘴豆、牛油果配 kerisik 椰丝酱。']},
+{id:'ls',c:'l',img:'1603360946369-dc9bb6258143',p:22.9,tg:['spicy'],best:1,n:['Lamb Skewer Set','Set Sate Kambing','烤羊肉串套餐'],loc:'sate kambing',d:['Six cumin lamb skewers, flatbread, fries, tomato and chilli salsa.','Enam cucuk kambing jintan, roti leper, kentang goreng, salsa tomato cili.','六串孜然羊肉，配烤饼、薯条和番茄辣椒莎莎。']},
+{id:'ri',c:'d',img:'1594041680534-e8c8cdebd659',p:89,tg:['sig','share'],best:1,n:['Ribeye on the Fire, 300g','Ribeye Atas Bara, 300g','炭火肋眼牛排 300g'],loc:'daging panggang',d:['Grass-fed Australian ribeye, rambutan-wood smoke, crushed potatoes, black pepper sauce.','Ribeye Australia, asap kayu rambutan, kentang hancur, sos lada hitam.','澳洲草饲肋眼，红毛丹木烟熏，配压碎土豆和黑椒酱。']},
+{id:'wc',c:'d',img:'1606728035253-49e8a23146de',p:58,tg:['share'],n:['Whole Spatchcock Chicken','Ayam Panggang Sekor','炭火整鸡'],loc:'ayam panggang',d:['For two. Brined overnight, flattened and fired. Comes with two sides.','Untuk dua orang. Diperap semalaman dan dipanggang. Dengan dua sampingan.','两人份。隔夜腌制，压平炭烤，附两道配菜。']},
+{id:'as',c:'d',img:'1574484284002-952d92456975',p:42,tg:['spicy'],n:['Fire-finished Asam Pedas','Asam Pedas Ikan Bakar','炭火亚参辣鱼'],loc:'asam pedas',d:['Snapper fillet seared on the grill, finished in asam pedas gravy, white rice.','Isi ikan merah dibakar, disiram kuah asam pedas, nasi putih.','红鲷鱼片先上烤炉，再淋亚参辣汁，配白饭。']},
+{id:'sf',c:'d',img:'1600891964092-4316c288032e',p:52,tg:[],best:1,n:['Ember Steak Frites','Stik & Kentang Ember','招牌牛排薯条'],loc:'stik',d:['Flank steak, beef-fat fries, green chilli butter.','Stik flank, kentang goreng lemak lembu, mentega cili hijau.','牛腹排配牛油炸薯条和青辣椒黄油。']},
+{id:'ul',c:'d',img:'1540189549336-e6e99c3679fe',p:18,tg:['veg'],n:['Charred Greens & Ulam','Sayur Bakar & Ulam','炭烤青菜与 Ulam'],loc:'kerabu',d:['Smoky long beans, pegaga, kacang botol, lime-coconut dressing.','Kacang panjang berasap, pegaga, kacang botol, sos kelapa limau.','烟熏长豆、积雪草、四棱豆，淋青柠椰浆汁。']},
+{id:'mg',c:'t',img:'1555939594-58d7cb561ad1',p:320,tg:['sig','share'],n:['Mixed Grill Tray','Dulang Gril Campur','综合烧烤托盘'],loc:'serves 10',d:['Chicken, lamb and beef skewers, grilled aubergine, potatoes, two sauces.','Sate ayam, kambing dan daging, terung bakar, kentang, dua sos.','鸡肉、羊肉、牛肉串，烤茄子、土豆和两款酱料。']},
+{id:'pt',c:'t',img:'1532550907401-a500c9a57435',p:240,tg:['spicy'],n:['Ayam Percik Tray, 20 pcs','Dulang Ayam Percik, 20 ketul','香料烤鸡托盘 20 件'],loc:'serves 10',d:['Our bestseller, by the tray. Percik sauce on the side.','Paling laris, satu dulang. Kuah percik diasingkan.','招牌畅销款整盘上，percik 酱另附。']},
+{id:'fr',c:'t',img:'1512058564366-18510be2db19',p:90,tg:[],n:['Kampung Fried Rice Tray','Dulang Nasi Goreng Kampung','乡村炒饭托盘'],loc:'serves 10',d:['Wok-fried with anchovies, long beans and smoky chilli.','Digoreng dengan ikan bilis, kacang panjang dan cili berasap.','江鱼仔、长豆和烟熏辣椒大火快炒。']},
+{id:'vt',c:'t',img:'1546069901-ba9599a7e63c',p:160,tg:['veg'],n:['Roasted Veg & Grain Tray','Dulang Sayur & Bijirin','烤蔬菜谷物托盘'],loc:'serves 10',d:['Charred vegetables, quinoa, chickpeas, herb yoghurt.','Sayur bakar, quinoa, kacang kuda, yogurt herba.','炭烤蔬菜、藜麦、鹰嘴豆配香草酸奶。']},
+{id:'ck',c:'t',img:'1565958011703-44f9829ba187',p:110,tg:['share'],n:['Berry Sponge Cake, 12 slices','Kek Span Beri, 12 potong','莓果海绵蛋糕 12 片'],loc:'whole cake',d:['Light sponge, cream, fresh berries. Pre-cut for buffets.','Kek span ringan, krim, beri segar. Siap dipotong untuk bufet.','轻盈海绵蛋糕、奶油和新鲜莓果，已切好方便自助。']}];
+const byId=Object.fromEntries(M.map(x=>[x.id,x]));
+
+/* ---------- cart ---------- */
+const cart={};let mode='pick';
+const cnt=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+function addItem(id,btn){cart[id]=(cart[id]||0)+1;renderCart();const cb=$('#cartBtn');cb.classList.remove('bump');void cb.offsetWidth;cb.classList.add('bump');
+ if(btn){btn.classList.add('done');btn.querySelector('span').textContent=s('added');setTimeout(()=>{btn.classList.remove('done');btn.querySelector('span').textContent=s('add');},1200);}}
+const addBtn=id=>`<button class="add" type="button" data-add="${id}" aria-label="${s('add')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>${s('add')}</span></button>`;
+function totals(){const sub=Object.entries(cart).reduce((a,[id,q])=>a+byId[id].p*q,0);const fee=mode==='del'&&sub>0?(sub>=80?0:6):0;const tax=sub*.06;return {sub,fee,tax,tot:sub+fee+tax};}
+function renderCart(){const n=cnt();const b=$('#cartN');b.textContent=n;b.classList.toggle('on',n>0);
+ const ids=Object.keys(cart).filter(k=>cart[k]>0);
+ $('#drSub').textContent=s('items',{n})+' · '+(mode==='pick'?s('pickM'):s('delM'));
+ $('#drItems').innerHTML=ids.length?ids.map(id=>{const it=byId[id];return `<div class="ci"><img src="${IMG(it.img,160)}" alt=""><div><b>${L3(it.n)}</b><span>${rm(it.p)}</span></div><div class="qty"><button type="button" data-q="${id}" data-d="-1" aria-label="−">−</button><output>${cart[id]}</output><button type="button" data-q="${id}" data-d="1" aria-label="+">+</button></div></div>`;}).join(''):`<div class="dr-empty"><b>${s('emptyH')}</b>${s('emptyP')}</div>`;
+ const t=totals();
+ $('#drF').innerHTML=ids.length?`<div class="ln"><span>${s('sub')}</span><span>${rm(t.sub)}</span></div>${mode==='del'?`<div class="ln"><span>${s('dfee')}</span><span>${t.fee?rm(t.fee):s('free')}</span></div>`:''}<div class="ln"><span>${s('sst')}</span><span>${rm(t.tax)}</span></div><div class="tot"><span>${s('total')}</span><span>${rm(t.tot)}</span></div><button class="btn pri full" type="button" id="payGo">${s('pay')} →</button><div class="paybadges"><span class="pb"><i></i>Card</span><span class="pb fpx">FPX</span><span class="pb grab">GrabPay</span><span class="pb tng">Touch 'n Go</span></div><button class="btn ghost full" type="button" id="waGo">${s('wa')}</button><p class="fine">${s('fine')}</p>`:'';
+ $$('[data-m]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.m===mode)));}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-add]');if(a){addItem(a.dataset.add,a);return;}
+ const q=e.target.closest('[data-q]');if(q){cart[q.dataset.q]=Math.max(0,(cart[q.dataset.q]||0)+ +q.dataset.d);if(!cart[q.dataset.q])delete cart[q.dataset.q];renderCart();return;}
+ const m=e.target.closest('[data-m]');if(m){mode=m.dataset.m;renderCart();return;}
+ if(e.target.closest('#payGo'))afDemo(s('payDemo'));
+ if(e.target.closest('#waGo')){const t=totals();const l=Object.entries(cart).map(([id,q])=>`• ${q}× ${L3(byId[id].n)}`).join('\n');console.info(s('msgO',{b:NAME(),m:mode==='pick'?s('pickM'):s('delM'),l,t:rm(t.tot)}));afDemo();}});
+const drawer=$('#drawer'),scrim=$('#scrim');let lastFocus;
+function openCart(){lastFocus=document.activeElement;drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');setTimeout(()=>$('#drX').focus(),50);}
+function closeCart(){drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus();}
+$('#cartBtn').addEventListener('click',openCart);$('#drX').addEventListener('click',closeCart);scrim.addEventListener('click',closeCart);
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();closeNav();}});
+
+/* ---------- shop (sell goal) ---------- */
+function renderShop(){$('#shop').innerHTML=M.filter(x=>x.best).map(it=>`<article class="pcard reveal in"><div class="pimg"><img loading="lazy" src="${IMG(it.img,800)}" alt="${L3(it.n)}"><span class="pill">${it.c==='l'?s('lunch'):s('dinner')}</span></div><div class="pbody"><h3>${L3(it.n)}</h3><p>${L3(it.d)}</p><div class="pfoot"><span class="price"><small>RM</small>${it.p.toFixed(2).replace('.00','')}</span>${addBtn(it.id)}</div></div></article>`).join('');}
+
+/* ---------- menu board ---------- */
+let mc='l',mt='all';
+function renderMenu(){const tags=['all','sig','veg','spicy','share'];
+ $('#mf').innerHTML=tags.map(t=>`<button type="button" class="chip" data-mt="${t}" aria-pressed="${t===mt}">${s(t)}</button>`).join('');
+ const list=M.filter(x=>x.c===mc&&(mt==='all'||x.tg.includes(mt)));
+ $('#mcount').textContent=s('dishes',{n:list.length});
+ $('#mgrid').innerHTML=list.length?list.map((it,i)=>`<article class="mi" style="animation-delay:${i*60}ms"><div class="pimg"><img loading="lazy" src="${IMG(it.img,700)}" alt="${L3(it.n)}"></div><div class="pbody"><span class="loc">${it.loc}</span><h3>${L3(it.n)}</h3><p>${L3(it.d)}</p><div class="tags"><span class="pill hf">✓ ${s('hf')}</span>${it.tg.map(t=>`<span class="pill">${s(t)}</span>`).join('')}</div><div class="pfoot"><span class="price"><small>RM</small>${it.p.toFixed(2).replace('.00','')}</span>${addBtn(it.id)}</div></div></article>`).join(''):`<p class="empty">${s('none')}</p>`;
+ $$('.tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.c===mc)));}
+$('#tabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(!t)return;mc=t.dataset.c;mt='all';renderMenu();});
+$('#mf').addEventListener('click',e=>{const c=e.target.closest('[data-mt]');if(!c)return;mt=c.dataset.mt;renderMenu();});
+{const n=klNow();mc=(n.min>=900&&n.min<1350)||n.wd===0||n.wd===6?'d':'l';}
+
+/* ---------- enquiry ---------- */
+let eW=0,eP=20;
+function renderEnq(){$('#eWhat').innerHTML=s('what').map((w,i)=>`<button type="button" class="chip" role="radio" aria-checked="${i===eW}" data-w="${i}">${w}</button>`).join('');
+ $('#ePax').textContent=eP;$('#eHi').innerHTML=s('hi')+'<small>10:02</small>';
+ const dv=$('#eDate').value;const d=dv?new Date(dv+'T12:00:00').toLocaleDateString(LOC[lang],{weekday:'short',day:'numeric',month:'short'}):s('anyDate');
+ const msg=s('msgE',{b:NAME(),w:s('what')[eW],p:eP,d});const b=$('#eMsg');b.textContent=msg;const sm=document.createElement('small');sm.textContent='10:03 ✓✓';b.appendChild(sm);return msg;}
+$('#eWhat').addEventListener('click',e=>{const c=e.target.closest('[data-w]');if(!c)return;eW=+c.dataset.w;renderEnq();});
+$$('#eForm .stepper button').forEach(b=>b.addEventListener('click',()=>{eP=Math.min(500,Math.max(5,eP+ +b.dataset.d));renderEnq();}));
+$('#eDate').addEventListener('input',renderEnq);
+$('#eForm').addEventListener('submit',e=>{e.preventDefault();renderEnq();afDemo();});
+{const n=klNow();const d=new Date(Date.UTC(n.y,n.mo-1,n.d+7));$('#eDate').min=new Date(Date.UTC(n.y,n.mo-1,n.d)).toISOString().slice(0,10);$('#eDate').value=d.toISOString().slice(0,10);}
+
+/* ---------- booking ---------- */
+let bDate=null,bSeat=0,bTime=null,bG=2;
+const LUNCH=['12:00','12:30','13:00','13:30','14:00'],DIN=['18:30','19:00','19:30','20:00','20:30','21:00'];
+const days=(()=>{const n=klNow(),a=[],o=n.min>1230?1:0;for(let i=o;i<12+o;i++){const d=new Date(Date.UTC(n.y,n.mo-1,n.d+i,12));a.push(d);}return a;})();
+const seed=(d,t)=>{let h=d.getUTCDate()*31+d.getUTCDay()*7;for(const c of t)h=(h*33+c.charCodeAt(0))%997;return h;};
+function isFull(d,t){const wd=d.getUTCDay(),busy=(wd===5||wd===6)&&t>='19:00'&&t<='20:30';return busy?seed(d,t)%3!==0:seed(d,t)%5===0;}
+function renderBook(){const loc=LOC[lang];
+ if(!bDate)bDate=days.find(d=>d.getUTCDay()!==1);
+ $('#dates').innerHTML=days.map((d,i)=>{const cl=d.getUTCDay()===1;return `<button type="button" class="date" data-i="${i}" ${cl?'disabled':''} aria-pressed="${!cl&&+d===+bDate}"><small>${cl?s('closedD'):d.toLocaleDateString(loc,{weekday:'short',timeZone:'UTC'})}</small><b>${d.getUTCDate()}</b><small>${d.toLocaleDateString(loc,{month:'short',timeZone:'UTC'})}</small></button>`;}).join('');
+ const SE=[['seatC','<path d="M12 3c1 3 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1.5-3.5 1.5-5.5C10 8 10.5 9 10.5 10.5 11.5 9.5 12 7 12 3z"/>'],['seatI','<path d="M4 20V10l8-6 8 6v10z"/><path d="M10 20v-5h4v5"/>'],['seatA','<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>']];
+ $('#seats').innerHTML=SE.map((x,i)=>`<button type="button" class="seat" data-s="${i}" aria-pressed="${i===bSeat}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">${x[1]}</svg><b>${s(x[0])[0]}</b><small>${s(x[0])[1]}</small></button>`).join('');
+ const isWeekday=bDate.getUTCDay()>1&&bDate.getUTCDay()<6;
+ const grp=[[s('lunch'),isWeekday?LUNCH:LUNCH.slice(0,4)],[s('dinner'),DIN]];let free=0;
+ $('#slotWrap').innerHTML=grp.map(g=>`<p class="slab">${g[0]}</p><div class="slots">${g[1].map(t=>{const f=isFull(bDate,t)||(bSeat===0&&bG>4&&t.endsWith('30'));if(!f)free++;return `<button type="button" class="slot" data-t="${t}" ${f?'disabled':''} aria-pressed="${t===bTime}" aria-label="${t}${f?' '+s('full'):''}">${t}</button>`;}).join('')}</div>`).join('');
+ if(bTime&&$(`.slot[data-t="${bTime}"]`)?.disabled)bTime=null;
+ $('#slotNote').textContent=s('left',{n:free});
+ $('#gN').textContent=bG;
+ const dl=bDate.toLocaleDateString(loc,{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'});
+ $('#bSum').innerHTML=`<div><dt>${s('sDate')}</dt><dd>${dl}</dd></div><div><dt>${s('sTime')}</dt><dd>${bTime||'—'}</dd></div><div><dt>${s('sGuests')}</dt><dd>${bG}</dd></div><div><dt>${s('sSeat')}</dt><dd>${s(SE[bSeat][0])[0]}</dd></div>`;
+ const go=$('#bGo');go.disabled=!bTime;go.style.opacity=bTime?1:.55;go.querySelector('span').textContent=bTime?T_(go.querySelector('span')):s('pickFirst');}
+const T_=el=>lang==='en'?el._en:((T[lang]||{})[el.dataset.t]||el._en);
+$('#dates').addEventListener('click',e=>{const b=e.target.closest('.date');if(!b||b.disabled)return;bDate=days[+b.dataset.i];renderBook();});
+$('#seats').addEventListener('click',e=>{const b=e.target.closest('.seat');if(!b)return;bSeat=+b.dataset.s;renderBook();});
+$('#slotWrap').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;bTime=b.dataset.t;renderBook();});
+$('#gMinus').addEventListener('click',()=>{bG=Math.max(1,bG-1);renderBook();});
+$('#gPlus').addEventListener('click',()=>{bG=Math.min(12,bG+1);renderBook();});
+$('#bGo').addEventListener('click',()=>{if(!bTime)return;afDemo(s('bConf',{b:NAME(),g:bG,d:bDate.toLocaleDateString(LOC[lang],{day:'numeric',month:'short',timeZone:'UTC'}),t:bTime}));});
+
+/* ---------- catering quote ---------- */
+const TIER=[28,42,58],EX=[[650,'f'],[4,'p'],[300,'f']],ZONE=[0,40,80];let qT=1,qZ=0;const qX=[false,true,false];
+function renderQuote(){const pax=+$('#qPax').value;
+ $('#qPax').style.setProperty('--p',((pax-10)/290*100)+'%');$('#qPaxO').innerHTML=pax+'<small>pax</small>';
+ $('#tiers').innerHTML=s('tiers').map((t,i)=>`<button type="button" class="tier" data-ti="${i}" aria-pressed="${i===qT}"><b>${t[0]}</b><em>RM ${TIER[i]}</em><small>${t[1]}</small></button>`).join('');
+ if(!$('#extras').children.length||$('#extras').dataset.l!==lang){$('#extras').dataset.l=lang;$('#extras').innerHTML=s('extras').map((x,i)=>`<label class="opt"><input type="checkbox" data-x="${i}" ${qX[i]?'checked':''}><span>${x[0]}</span><em>+RM ${EX[i][0]}${EX[i][1]==='p'?' '+x[1]:''}</em></label>`).join('');}
+ $('#zones').innerHTML=s('zones').map((z,i)=>`<button type="button" class="chip" data-z="${i}" aria-pressed="${i===qZ}">${z}${ZONE[i]?' · +RM '+ZONE[i]:''}</button>`).join('');
+ const menu=pax*TIER[qT];let ex=0;qX.forEach((on,i)=>{if(on)ex+=EX[i][1]==='p'?EX[i][0]*pax:EX[i][0];});
+ const del=qZ===0&&pax>=30?0:(ZONE[qZ]||30);const tot=menu+ex+del;const trays=Math.ceil(pax/10)*(qT+2);
+ $('#qTot').textContent=rm(tot);$('#qPP').textContent=s('pp',{p:rm(Math.round(tot/pax*100)/100),t:trays});
+ const cap=Math.min(40,trays);$('#trays').innerHTML=Array.from({length:40},(_,i)=>`<i class="${i<cap?'on':''}"></i>`).join('');
+ const xs=s('extras').filter((_,i)=>qX[i]).map(x=>x[0]);
+ $('#qLines').innerHTML=`<div><span>${s('qMenu',{n:pax,p:'RM '+TIER[qT]})}</span><b>${rm(menu)}</b></div>${xs.map((x,i)=>'').join('')}${qX.map((on,i)=>on?`<div><span>${s('extras')[i][0]}</span><b>${rm(EX[i][1]==='p'?EX[i][0]*pax:EX[i][0])}</b></div>`:'').join('')}<div><span>${s('qDel')}</span><b>${del?rm(del):s('free')}</b></div><div style="border-top:1px solid var(--line);padding-top:10px"><span>${s('qDep')}</span><b>${rm(tot/2)}</b></div>`;
+ return {pax,tot,xs};}
+$('#qPax').addEventListener('input',renderQuote);
+$('#tiers').addEventListener('click',e=>{const b=e.target.closest('.tier');if(!b)return;qT=+b.dataset.ti;renderQuote();});
+$('#extras').addEventListener('change',e=>{const c=e.target.closest('[data-x]');if(!c)return;qX[+c.dataset.x]=c.checked;renderQuote();});
+$('#zones').addEventListener('click',e=>{const b=e.target.closest('[data-z]');if(!b)return;qZ=+b.dataset.z;renderQuote();});
+$('#qGo').addEventListener('click',()=>{const q=renderQuote();console.info(s('msgQ',{b:NAME(),n:q.pax,t:s('tiers')[qT][0],x:q.xs.join(', ')||s('noX'),z:s('zones')[qZ],tot:rm(q.tot)}));afDemo();});
+
+/* ---------- FAQ + hours ---------- */
+function renderFaq(){$('#faqList').innerHTML=s('faq').map((q,i)=>`<div class="q${i===0?' open':''}"><button type="button" aria-expanded="${i===0}" aria-controls="qa${i}" id="qb${i}">${q[0]}<i aria-hidden="true"></i></button><div class="qa" id="qa${i}" role="region" aria-labelledby="qb${i}"><div><p>${q[1]}</p></div></div></div>`).join('');}
+$('#faqList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const q=b.parentElement,o=!q.classList.contains('open');$$('.q').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});if(o){q.classList.add('open');b.setAttribute('aria-expanded','true');}});
+function renderHours(){const wd=klNow().wd,order=[2,3,4,5,6,0,1];$('#hours').innerHTML=order.map(d=>`<li class="${d===wd?'today':''}"><span data-today="${s('today')}">${s('days')[d]}</span><span>${d===1?s('clsd'):s('hrs')}</span></li>`).join('');}
+
+/* ---------- language ---------- */
+const tEls=$$('[data-t]');tEls.forEach(el=>el._en=el.innerHTML);
+function setLang(l){lang=S[l]?l:'en';H.lang=lang==='zh'?'zh-Hans':lang;try{localStorage.setItem('af-lang',lang);}catch(e){}
+ tEls.forEach(el=>{el.innerHTML=lang==='en'?el._en:((T[lang]||{})[el.dataset.t]??el._en);});
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===lang)));
+ if(S[lang].dk)document.querySelectorAll('#dkList li').forEach((li,i)=>{li.firstElementChild.textContent=S[lang].dk[i];});
+ ticker();renderMenu();renderShop();renderCart();renderEnq();renderBook();renderQuote();renderFaq();renderHours();
+ if(window.afFill)window.afFill();}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+
+/* ---------- nav, reveal, mobile bar ---------- */
+const links=$('#links'),burger=$('#burger');
+function closeNav(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+links.addEventListener('click',e=>{if(e.target.closest('a'))closeNav();});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+$$('.reveal').forEach(el=>io.observe(el));
+const mbar=$('#mbar');addEventListener('scroll',()=>mbar.classList.toggle('on',scrollY>innerHeight*.6),{passive:true});
+
+let saved=null;try{saved=localStorage.getItem('af-lang');}catch(e){}
+setLang(K.l||saved||'en');
+setInterval(status,60000);
+})();
+</script>
+</body>
+</html>

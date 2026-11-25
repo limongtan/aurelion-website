@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en" data-goal-default="sell">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Loom &amp; Lantern · Batik-inspired homeware</title>
+<meta name="description" content="Loom &amp; Lantern: batik-inspired textiles, handmade ceramics and rattan lighting from George Town, shipped across Malaysia. A fictional sample by Aurelion.">
+<script src="/website/fusion/af-kit.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--exh:36px;--bg:#f3ede2;--bg2:#ebe2d2;--surf:#fbf8f2;--ink:#1d1c2c;--mut:#6b6573;--line:rgba(29,28,44,.14);--acc:#24306a;--acc2:#a5572a;--accInk:#fff;--gold:#d39b34;--band:#1c254f;--bandInk:#f3ede2;--bandMut:rgba(243,237,226,.68);--disp:"Gloock",Georgia,serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;--r:22px}
+html[data-vibe=warm]{--bg:#f7eadb;--bg2:#f0dcc6;--surf:#fff8ef;--ink:#2e1c14;--mut:#7c6253;--line:rgba(46,28,20,.14);--acc:#b4512d;--acc2:#7a3f1f;--gold:#d98b3a;--band:#3b2219}
+html[data-vibe=bold]{--bg:#0b0b0b;--bg2:#141414;--surf:#1a1a1a;--ink:#fff;--mut:#a5a5a5;--line:rgba(255,255,255,.18);--acc:#ff4fa3;--acc2:#ffd23f;--accInk:#0b0b0b;--gold:#ffd23f;--band:#000;--r:6px}
+html[data-vibe=minimal]{--bg:#fff;--bg2:#f5f5f3;--surf:#fff;--ink:#121212;--mut:#666;--line:rgba(0,0,0,.1);--acc:#1f45ff;--acc2:#1f45ff;--gold:#1f45ff;--band:#121212;--disp:"Hanken Grotesk",system-ui,sans-serif;--r:12px}
+html[data-vibe=luxe]{--bg:#0f2923;--bg2:#13332b;--surf:#173a31;--ink:#f1e8d4;--mut:#b5ae97;--line:rgba(241,232,212,.15);--acc:#c9a14a;--acc2:#e3c27a;--accInk:#10241e;--gold:#c9a14a;--band:#0a1d18}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh,36px) + 84px)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:4px}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.defs .pa{fill:var(--pa,#1f2a5e)}.defs .pb{fill:var(--pb,#efe4cf)}.defs .ps{stroke:var(--pb,#efe4cf)}.defs .pg{stroke:var(--pd,#d39b34)}
+html[data-vibe=warm]{--pa:#6b3a1f;--pb:#f4e2c8;--pd:#e0a35a}
+html[data-vibe=bold]{--pa:#111;--pb:#ff4fa3;--pd:#ffd23f}
+html[data-vibe=minimal]{--pa:#1f45ff;--pb:#fff;--pd:#9fb2ff}
+html[data-vibe=luxe]{--pa:#0a1d18;--pb:#c9a14a;--pd:#e3c27a}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* NAV */
+.nav{position:fixed;top:var(--exh,36px);left:0;right:0;z-index:900;height:72px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:0 32px;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.links{display:flex;gap:2px;align-items:center}
+.links a{text-decoration:none;font-size:14.5px;font-weight:500;padding:8px 12px;border-radius:99px;transition:background .2s}
+.links a:hover{background:var(--bg2)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;justify-self:center;min-width:0}
+.brand svg{width:30px;height:34px;flex:none;color:var(--acc)}
+.brand span{font:400 27px/1 var(--disp);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nright{display:flex;align-items:center;gap:10px;justify-self:end}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;padding:5px 10px;border-radius:99px;font-size:12.5px;font-weight:600;color:var(--mut)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.nav-cta{display:none;text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:99px;background:var(--acc);color:var(--accInk)}
+.bagbtn{position:relative;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:99px;border:1px solid var(--line);background:var(--surf);font-weight:600;font-size:14px}
+.bagbtn svg{width:19px;height:19px}
+.bagbtn b{min-width:22px;height:22px;border-radius:99px;background:var(--acc);color:var(--accInk);font-size:12px;display:grid;place-items:center;padding:0 6px}
+.bagbtn.bump{animation:bump .5s}
+@keyframes bump{40%{transform:scale(1.12)}}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surf)}
+.burger i{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;transition:transform .3s}
+.burger[aria-expanded=true] i:first-child{transform:translateY(3px) rotate(45deg)}.burger[aria-expanded=true] i:last-child{transform:translateY(-3px) rotate(-45deg)}
+.g-enq,.g-book,.g-sell,.g-cred{display:none!important}
+html[data-goal=enq] .g-enq,html[data-goal=book] .g-book,html[data-goal=sell] .g-sell,html[data-goal=cred] .g-cred{display:inline-flex!important}
+
+/* COMMON */
+main{display:flex;flex-direction:column}
+main>*{order:5;min-width:0}
+.hero{order:0}.s-look{order:2}.s-gift{order:3}.goal{order:4}.s-rev{order:6}.s-faq{order:7}.s-visit{order:8}
+html[data-goal=enq] .goal-enq,html[data-goal=book] .goal-book,html[data-goal=sell] .goal-sell,html[data-goal=cred] .goal-cred{order:1}
+.sec{padding:110px 32px;position:relative}
+.wrap{max-width:1280px;margin:0 auto}
+.wrap>*,.grid2>*{min-width:0}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc2)}
+.kick svg{width:16px;height:16px}
+h2{font:400 clamp(40px,4.8vw,70px)/1.02 var(--disp);letter-spacing:-.02em;margin:14px 0 16px}
+h2 em,h1 em{font-style:italic;color:var(--acc)}
+html[data-vibe=minimal] h1,html[data-vibe=minimal] h2{font-weight:700;letter-spacing:-.04em}
+html[lang^=zh] h1,html[lang^=zh] h2{letter-spacing:.02em;line-height:1.15}html[lang^=zh] .hero h1{font-size:clamp(40px,5vw,78px)}html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-style:normal}
+.sub{font-size:18px;color:var(--mut);max-width:560px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:46px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:99px;border:1px solid transparent;font-weight:600;font-size:15.5px;text-decoration:none;transition:transform .2s,box-shadow .25s,background .2s,filter .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.pri{background:var(--acc);color:var(--accInk);box-shadow:0 14px 30px -14px var(--acc)}
+.btn.pri:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.ghost{border-color:var(--line);background:var(--surf)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.wa{background:#1fae5b;color:#fff}
+.btn.full{width:100%}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surf);padding:10px 16px;border-radius:99px;font-weight:600;font-size:14.5px;transition:all .2s}
+.chip:hover{border-color:var(--mut)}
+.chip[aria-pressed=true],.chip[aria-checked=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sample{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.paybadges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pb{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:7px;font:700 11.5px/1 var(--sans);background:#fff;color:#1a1a1a;border:1px solid rgba(0,0,0,.1)}
+.pb i{width:15px;height:10px;border-radius:2px;background:linear-gradient(135deg,#f5a524,#e0533d)}
+.pb.fpx{color:#0b3a7a}.pb.grab{background:#00b14f;color:#fff;border-color:#00b14f}.pb.tng{background:#0a4ea3;color:#fff;border-color:#0a4ea3}
+
+/* HERO */
+.hero{position:relative;padding:calc(var(--exh,36px) + 72px + 40px) 32px 70px;min-height:max(720px,100svh);display:flex;align-items:center;overflow:hidden}
+.hero .wrap{width:100%;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero-band{position:absolute;right:0;top:0;bottom:0;width:22%;background:var(--band);opacity:.96}
+.hero-band svg{width:100%;height:100%;opacity:.5}
+.ann{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:99px;background:var(--surf);border:1px solid var(--line);font-size:13.5px;font-weight:500}
+.ann b{background:var(--acc2);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:99px}
+.hero h1{font:400 clamp(50px,5.6vw,90px)/.98 var(--disp);letter-spacing:-.03em;margin:24px 0 22px}
+.hero h1 em{display:inline}
+.lead{font-size:clamp(16.5px,1.3vw,19px);color:var(--mut);max-width:520px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--mut)}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:18px;height:18px;color:var(--acc2)}
+.arch-wrap{position:relative;justify-self:center;width:min(100%,520px)}
+.arch{position:relative;aspect-ratio:.8;border-radius:999px 999px 26px 26px;overflow:hidden;background:var(--bg2);box-shadow:0 50px 90px -40px rgba(20,18,40,.55);border:8px solid var(--surf)}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:-46px;top:40px;width:128px;height:128px;z-index:3;animation:spin 26s linear infinite}
+.badge circle.bg{fill:var(--acc2)}
+.badge text{font:700 10.5px var(--sans);letter-spacing:.24em;fill:#fff;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mini{position:absolute;right:-30px;bottom:44px;z-index:3;width:230px;display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:center;padding:10px;border-radius:18px;background:var(--surf);box-shadow:0 30px 60px -24px rgba(20,18,40,.45);border:1px solid var(--line)}
+.mini img{width:70px;height:70px;border-radius:12px;object-fit:cover}
+.mini small{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2)}
+.mini b{display:block;font-size:14.5px;line-height:1.25}
+.mini span{font-size:13.5px;color:var(--mut)}
+.mini button{grid-column:1/-1;border:0;border-radius:99px;background:var(--ink);color:var(--bg);padding:9px;font-weight:600;font-size:13.5px}
+
+/* HOTSPOTS */
+.hs-layer{position:absolute;inset:0;z-index:2}
+.hs{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:0;background:rgba(255,255,255,.95);box-shadow:0 6px 18px rgba(0,0,0,.3);display:grid;place-items:center;transition:transform .25s}
+.hs::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(255,255,255,.85);animation:hsp 2.2s infinite}
+.hs i{width:12px;height:12px;border-radius:50%;background:var(--acc2);transition:transform .25s}
+.hs:hover,.hs[aria-expanded=true]{transform:scale(1.12)}
+.hs[aria-expanded=true] i{transform:scale(1.3);background:var(--acc)}
+.hs.added i{background:#1fae5b}
+@keyframes hsp{0%{transform:scale(.8);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.pop{position:absolute;z-index:5;width:250px;padding:12px;border-radius:18px;background:var(--surf);color:var(--ink);box-shadow:0 30px 60px -20px rgba(0,0,0,.5);display:none;grid-template-columns:64px 1fr;gap:12px;align-items:center;border:1px solid var(--line)}
+.pop.on{display:grid;animation:popin .3s cubic-bezier(.3,1.4,.5,1)}
+@keyframes popin{from{opacity:0;transform:translateY(8px) scale(.96)}}
+.pop .th{width:64px;height:76px;border-radius:12px;overflow:hidden;background:var(--bg2)}
+.pop .th img,.pop .th svg{width:100%;height:100%;object-fit:cover;display:block}
+.pop b{display:block;font-size:14.5px;line-height:1.25}
+.pop span{font-size:13.5px;color:var(--mut)}
+.pop button{grid-column:1/-1;border:0;border-radius:99px;background:var(--acc);color:var(--accInk);padding:10px;font-weight:600;font-size:14px}
+
+/* SHOP (sell) */
+.goal-sell{background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pc{display:flex;flex-direction:column;gap:12px;animation:pin .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pin{from{opacity:0;transform:translateY(14px)}}
+.pimg{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--bg2)}
+.pimg img,.pimg svg{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.pc:hover .pimg img,.pc:hover .pimg svg{transform:scale(1.05)}
+.pimg .tag{position:absolute;left:12px;top:12px;background:var(--surf);color:var(--ink);font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:5px 10px;border-radius:99px}
+.pimg .qa{position:absolute;left:12px;right:12px;bottom:12px;border:0;border-radius:99px;padding:12px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14.5px;transform:translateY(10px);opacity:0;transition:all .3s}
+.pc:hover .qa,.pc:focus-within .qa{transform:none;opacity:1}
+.qa.done{background:#1fae5b!important;color:#fff!important}
+.pc h3{font:400 21px/1.15 var(--disp);letter-spacing:-.01em}
+html[data-vibe=minimal] .pc h3{font-weight:600;font-size:18px}
+.pc .mk{font-size:13px;color:var(--mut)}
+.pc .pr{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px}
+.pc .pr button{display:none;border:1px solid var(--line);background:var(--surf);border-radius:99px;padding:7px 12px;font-size:13px;font-weight:600}
+.shipbar{margin-top:40px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:20px 24px;border-radius:var(--r);background:var(--surf);border:1px solid var(--line)}
+.shipbar svg{width:30px;height:30px;color:var(--acc2)}
+.shipbar b{display:block;font-size:15.5px}.shipbar span{font-size:14px;color:var(--mut)}
+
+/* ENQUIRE */
+.goal-enq{background:var(--bg2)}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.eform{display:grid;gap:22px;margin-top:28px}
+.lbl,.eform legend{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:10px;display:block}
+fieldset{border:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{width:100%;height:52px;border:1px solid var(--line);border-radius:14px;background:var(--surf);padding:0 14px;font-size:16px}
+.tagcard{position:relative;max-width:440px;margin:0 auto;background:#d9c3a0;background-image:radial-gradient(rgba(90,60,30,.12) 1px,transparent 1.4px);background-size:7px 7px;color:#2c1f12;border-radius:16px 16px 16px 16px;padding:30px 30px 26px;box-shadow:0 40px 70px -30px rgba(40,25,10,.55);transform:rotate(1.5deg)}
+.tagcard::before{content:"";position:absolute;top:18px;right:22px;width:18px;height:18px;border-radius:50%;background:var(--bg2);box-shadow:inset 0 0 0 3px #b89d74}
+.tagcard .st{position:absolute;right:56px;top:14px;width:62px;height:72px;background:var(--surf);border:3px dashed #b89d74;display:grid;place-items:center;transform:rotate(6deg)}
+.tagcard .st svg{width:46px;height:52px}
+.tagcard h4{font:400 26px/1.1 var(--disp);margin-bottom:4px;max-width:65%}
+.tagcard .to{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.wamsg{margin-top:18px;background:#fff;border-radius:12px;padding:12px 14px;font-size:14.5px;line-height:1.5;white-space:pre-line;color:#1b1b1b;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.wahd{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:#0b6b3a;margin-top:18px}
+.wahd i{width:22px;height:22px;border-radius:50%;background:#1fae5b;display:grid;place-items:center}
+
+/* BOOK */
+.goal-book{background:var(--bg)}
+.bk{display:grid;grid-template-columns:1.45fr 1fr;gap:28px;align-items:start}
+.bk>*{min-width:0}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.card h3{font:400 24px/1.1 var(--disp);margin-bottom:14px;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.card h3 small{font:500 13px/1 var(--sans);color:var(--mut)}
+.exps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+.exp{text-align:left;border:1px solid var(--line);border-radius:18px;background:var(--bg);padding:0;overflow:hidden;transition:all .2s}
+.exp .ei{height:92px;overflow:hidden;background:var(--bg2)}
+.exp .ei img,.exp .ei svg{width:100%;height:100%;object-fit:cover;display:block}
+.exp div{padding:12px 14px 14px}
+.exp b{display:block;font-size:15px;line-height:1.25}
+.exp small{display:block;font-size:12.5px;color:var(--mut);margin-top:4px}
+.exp em{display:block;font-style:normal;font-weight:700;color:var(--acc2);margin-top:6px;font-size:14px}
+.exp[aria-pressed=true]{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.dates{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin-bottom:22px;scrollbar-width:thin}
+.date{flex:none;width:68px;padding:10px 0;border-radius:16px;border:1px solid var(--line);background:var(--bg);text-align:center;transition:all .2s}
+.date b{display:block;font:400 26px/1.1 var(--disp)}
+.date small{font-size:11.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.date[aria-pressed=true]{background:var(--acc);color:var(--accInk);border-color:var(--acc)}
+.date[aria-pressed=true] small{color:inherit}
+.date:disabled{opacity:.35;cursor:not-allowed}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{padding:11px 18px;border-radius:99px;border:1px solid var(--line);background:var(--bg);font-weight:600;font-size:14.5px}
+.slot[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.slot:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.pax{display:flex;align-items:center;gap:14px;margin-top:22px}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:99px;background:var(--bg);height:48px}
+.stepper button{width:48px;height:48px;border:0;background:none;font-size:20px}
+.stepper output{min-width:40px;text-align:center;font:400 24px/1 var(--disp)}
+.summary{position:sticky;top:calc(var(--exh,36px) + 96px);background:var(--band);color:var(--bandInk);border-radius:var(--r);padding:30px;overflow:hidden}
+.summary .pat{position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;opacity:.35}
+.summary h3{font:400 30px/1.1 var(--disp);position:relative}
+.summary dl{margin:18px 0;position:relative}
+.summary dl div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+.summary dt{color:var(--bandMut)}.summary dd{font-weight:600;text-align:right}
+.summary .tot{display:flex;justify-content:space-between;align-items:baseline;font:400 30px/1 var(--disp);margin:6px 0 18px}
+.summary .btn.pri{background:var(--gold);color:#1d1c2c;box-shadow:none}
+.summary p{font-size:13px;color:var(--bandMut);margin-top:12px}
+
+/* PROOF */
+.goal-cred{background:var(--bg2)}
+.press{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 36px;align-items:center;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:46px;color:var(--mut)}
+.press small{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.press span:nth-of-type(1){font:italic 400 26px/1 var(--disp)}
+.press span:nth-of-type(2){font-weight:700;letter-spacing:.3em;font-size:16px}
+.press span:nth-of-type(3){font:400 24px/1 var(--disp);letter-spacing:-.03em}
+.press span:nth-of-type(4){font-weight:500;font-size:20px;letter-spacing:-.04em}
+.press span:nth-of-type(5){font:600 15px/1 ui-monospace,monospace;letter-spacing:.06em}
+.makers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.maker{background:var(--surf);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.maker .mi{aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+.maker .mi img,.maker .mi svg{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s}
+.maker:hover .mi img,.maker:hover .mi svg{transform:scale(1.05)}
+.maker div.mb{padding:20px 22px 24px}
+.maker h3{font:400 24px/1.15 var(--disp);margin:6px 0}
+.maker p{font-size:14.5px;color:var(--mut)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.num{padding:22px;border-radius:var(--r);border:1px solid var(--line);background:var(--surf)}
+.num b{display:block;font:400 44px/1 var(--disp);color:var(--acc)}
+.num span{font-size:14px;color:var(--mut)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;list-style:none;counter-reset:f}
+.flow li{padding:22px;border-right:1px solid var(--line);background:var(--surf)}
+.flow li:last-child{border:0}
+.flow li::before{counter-increment:f;content:counter(f,decimal-leading-zero);font:400 15px/1 var(--disp);color:var(--acc2);display:block;margin-bottom:10px}
+.flow b{display:block;font-size:16.5px}.flow span{font-size:14px;color:var(--mut)}
+
+/* LOOKBOOK */
+.s-look{background:var(--band);color:var(--bandInk);overflow:hidden}
+.s-look .kick{color:var(--gold)}
+.s-look h2 em{color:var(--gold)}
+.s-look .sub{color:var(--bandMut)}
+.rooms{display:flex;gap:8px;flex-wrap:wrap}
+.room-t{border:1px solid rgba(255,255,255,.2);background:none;color:var(--bandInk);padding:11px 18px;border-radius:99px;font-weight:600;font-size:14.5px}
+.room-t[aria-selected=true]{background:var(--bandInk);color:var(--band)}
+.look{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:stretch}
+.look>*{min-width:0}
+.stage{position:relative;aspect-ratio:3/2;border-radius:var(--r);overflow:hidden;background:#000}
+.stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.stage .hint{position:absolute;left:16px;bottom:16px;z-index:3;background:rgba(15,14,30,.7);backdrop-filter:blur(8px);color:#fff;font-size:13px;font-weight:600;padding:8px 12px;border-radius:99px}
+.inroom{display:flex;flex-direction:column;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:20px}
+.inroom h3{font:400 24px/1.15 var(--disp)}
+.inroom>small{font-size:13px;color:var(--bandMut)}
+.il{list-style:none;margin:14px 0;display:grid;gap:4px;flex:1;align-content:start}
+.il li{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:8px;border-radius:14px;transition:background .2s;cursor:pointer}
+.il li:hover,.il li.on{background:rgba(255,255,255,.08)}
+.il .th{width:48px;height:56px;border-radius:10px;overflow:hidden}
+.il .th img,.il .th svg{width:100%;height:100%;object-fit:cover;display:block}
+.il b{display:block;font-weight:600;font-size:14px;line-height:1.25}
+.il span{font-size:13px;color:var(--bandMut)}
+.il button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:none;color:var(--bandInk);font-size:18px;line-height:1}
+.il button.done{background:#1fae5b;border-color:#1fae5b}
+.inroom .btn.pri{background:var(--gold);color:#1d1c2c;box-shadow:none}
+
+/* GIFT BUILDER */
+.s-gift{background:var(--bg)}
+.gift{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.gift>*{min-width:0}
+.box-stage{position:sticky;top:calc(var(--exh,36px) + 96px)}
+.box{position:relative;aspect-ratio:1.25;border-radius:18px;background:#c9a77a;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.03) 0 2px,transparent 2px 6px);padding:22px;box-shadow:inset 0 0 0 10px #b8925f,0 40px 70px -35px rgba(60,40,20,.6);display:grid;gap:12px;transition:background .4s}
+.box.batik{background:var(--band);box-shadow:inset 0 0 0 10px var(--acc2),0 40px 70px -35px rgba(20,20,40,.6)}
+.box.batik::before{content:"";position:absolute;inset:10px;border-radius:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='%23f3ede2' opacity='.22'%3E%3Cellipse cx='20' cy='9' rx='5' ry='8'/%3E%3Cellipse cx='31' cy='20' rx='8' ry='5'/%3E%3Cellipse cx='20' cy='31' rx='5' ry='8'/%3E%3Cellipse cx='9' cy='20' rx='8' ry='5'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.box.s3{grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr}.box.s3 .slot2:first-child{grid-row:span 2}
+.box.s5{grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr}.box.s5 .slot2:first-child{grid-row:span 2}
+.slot2{position:relative;border-radius:12px;background:rgba(255,255,255,.28);border:2px dashed rgba(255,255,255,.6);display:grid;place-items:center;overflow:hidden;color:rgba(40,25,10,.55);font-size:13px;font-weight:600;z-index:1}
+.slot2 img,.slot2 svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:drop .45s cubic-bezier(.3,1.5,.5,1)}
+@keyframes drop{from{transform:translateY(-14px) scale(.9);opacity:0}}
+.slot2.full{border-style:solid;border-color:rgba(255,255,255,.9)}
+.gtag{position:absolute;right:-14px;bottom:-30px;width:210px;z-index:3;background:#fffaf0;color:#2c1f12;padding:16px 18px 18px 26px;border-radius:6px 14px 14px 6px;box-shadow:0 20px 40px -16px rgba(0,0,0,.4);transform:rotate(-4deg)}
+.gtag::before{content:"";position:absolute;left:9px;top:50%;width:9px;height:9px;margin-top:-4px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px #c9a77a}
+.gtag p{font:500 22px/1.15 "Caveat",cursive;min-height:2.3em;word-wrap:break-word}
+.gtag small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+.gsteps{display:grid;gap:26px}
+.gs h3{font:400 22px/1.1 var(--disp);margin-bottom:12px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.gs h3 small{font:600 13px/1 var(--sans);color:var(--mut)}
+.gitems{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gi{position:relative;border:1px solid var(--line);background:var(--surf);border-radius:16px;padding:6px 6px 10px;text-align:left;transition:all .2s}
+.gi .th{aspect-ratio:1;border-radius:11px;overflow:hidden;background:var(--bg2);margin-bottom:8px}
+.gi .th img,.gi .th svg{width:100%;height:100%;object-fit:cover;display:block}
+.gi b{display:block;font-size:12.5px;font-weight:600;line-height:1.25;padding:0 4px}
+.gi span{font-size:12px;color:var(--mut);padding:0 4px}
+.gi[aria-pressed=true]{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.gi[aria-pressed=true]::after{content:"✓";position:absolute;top:12px;right:12px;width:24px;height:24px;border-radius:50%;background:var(--acc);color:var(--accInk);display:grid;place-items:center;font-size:13px;font-weight:700}
+.gi:disabled{opacity:.4;cursor:not-allowed}
+textarea.field{height:auto;padding:12px 14px;resize:none}
+.gtot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:20px 22px;border-radius:var(--r);background:var(--surf);border:1px solid var(--line)}
+.gtot b{font:400 34px/1 var(--disp)}
+.gtot s{color:var(--mut);margin-right:8px;font-size:16px}
+.gtot small{display:block;font-size:13px;color:var(--acc2);font-weight:600}
+
+/* REVIEWS */
+.revs{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.rev{padding:30px;border-radius:var(--r);background:var(--surf);border:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.rev:first-child{background:var(--acc);color:var(--accInk);border:0}
+.rev:first-child footer{color:inherit;opacity:.8}
+.rev .st{color:var(--gold);letter-spacing:3px}
+.rev:first-child .st{color:inherit}
+.rev p{font:400 22px/1.3 var(--disp);letter-spacing:-.01em}
+.rev:first-child p{font-size:28px}
+html[data-vibe=minimal] .rev p{font-weight:500;font-size:19px}
+.rev footer{margin-top:auto;font-size:13.5px;color:var(--mut)}
+.rev footer b{display:block;color:inherit;font-weight:700}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.faq>*{min-width:0}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;display:flex;justify-content:space-between;gap:18px;align-items:center;text-align:left;border:0;background:none;padding:22px 0;font-weight:600;font-size:18px}
+.q button i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .3s,background .3s}
+.q button i::before,.q button i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.q button i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.q.open button i{transform:rotate(45deg);background:var(--acc);color:var(--accInk);border-color:var(--acc)}
+.qa2{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.qa2>div{overflow:hidden}.qa2 p{padding-bottom:22px;color:var(--mut);max-width:640px}
+.q.open .qa2{grid-template-rows:1fr}
+
+/* VISIT */
+.s-visit{background:var(--bg2)}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.visit>*{min-width:0}
+.hours{list-style:none;margin:18px 0 22px}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.hours li.today{color:var(--acc);font-weight:700}
+.contact{display:grid;gap:10px}
+.contact a{display:flex;gap:10px;align-items:center;text-decoration:none}
+.contact svg{width:18px;height:18px;color:var(--acc2);flex:none}
+.shopfront{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;background:var(--band)}
+.shopfront svg{position:absolute;inset:0;width:100%;height:100%}
+.shopfront .cap{position:absolute;left:20px;right:20px;bottom:20px;background:var(--surf);color:var(--ink);border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.shopfront .cap b{font:400 21px/1.1 var(--disp)}
+.shopfront .cap span{font-size:13.5px;color:var(--mut)}
+
+footer.ft{background:var(--band);color:var(--bandMut);padding:80px 32px 110px}
+.ft-top{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.14)}
+.ft-top h3{font:400 clamp(34px,4vw,54px)/1.05 var(--disp);color:var(--bandInk)}
+.ft-top h3 em{color:var(--gold)}
+.news{display:flex;gap:8px}
+.news input{flex:1;min-width:0;height:54px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--bandInk);padding:0 20px;font-size:16px}
+.news input::placeholder{color:var(--bandMut)}
+.news .btn{background:var(--gold);color:#1d1c2c}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-top:44px;font-size:14.5px}
+.ft-grid h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bandInk);margin-bottom:12px}
+.ft-grid a{display:block;text-decoration:none;padding:3px 0}.ft-grid a:hover{color:var(--gold)}
+.ft-name{font:400 30px/1 var(--disp);color:var(--bandInk);margin-bottom:10px}
+.ft-base{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px}
+
+/* DRAWER */
+.scrim{position:fixed;inset:0;background:rgba(15,14,30,.5);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);z-index:1101;background:var(--surf);color:var(--ink);transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none;box-shadow:-30px 0 60px -20px rgba(0,0,0,.4)}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:22px 24px 16px}
+.dr-h h3{font:400 30px/1 var(--disp)}
+.dr-x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:none;font-size:22px;line-height:1}
+.freebar{margin:0 24px;padding:14px 16px;border-radius:16px;background:var(--bg2)}
+.freebar p{font-size:14px;font-weight:600;margin-bottom:10px}
+.freebar .tr{height:8px;border-radius:9px;background:rgba(0,0,0,.08);overflow:hidden;position:relative}
+html[data-vibe=bold] .freebar .tr,html[data-vibe=luxe] .freebar .tr{background:rgba(255,255,255,.12)}
+.freebar .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:9px;background:linear-gradient(90deg,var(--acc2),var(--gold));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.freebar .rg{display:flex;gap:6px;margin-top:12px}
+.freebar .rg button{flex:1;border:1px solid var(--line);background:var(--surf);border-radius:10px;padding:7px;font-size:12.5px;font-weight:600}
+.freebar .rg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.dr-body{flex:1;overflow:auto;padding:8px 24px}
+.ci{display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.ci .th{width:60px;height:72px;border-radius:10px;overflow:hidden;background:var(--bg2)}
+.ci .th img,.ci .th svg{width:100%;height:100%;object-fit:cover;display:block}
+.ci b{display:block;font-size:14.5px;line-height:1.25;font-weight:600}
+.ci span{font-size:13.5px;color:var(--mut)}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:99px}
+.qty button{width:30px;height:30px;border:0;background:none;font-size:16px}
+.qty output{min-width:18px;text-align:center;font-weight:700;font-size:14px}
+.dr-empty{text-align:center;padding:40px 10px;color:var(--mut)}
+.dr-empty b{display:block;font:400 26px/1.1 var(--disp);color:var(--ink);margin-bottom:8px}
+.dr-f{padding:18px 24px 24px;border-top:1px solid var(--line);display:grid;gap:10px}
+.dr-f .ln{display:flex;justify-content:space-between;font-size:14.5px}
+.dr-f .tot{display:flex;justify-content:space-between;align-items:baseline;font:400 30px/1 var(--disp);margin:4px 0}
+.dr-f .paybadges{justify-content:center}
+.dr-f .fine{font-size:12px;color:var(--mut);text-align:center}
+
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:950;gap:8px;padding:8px;border-radius:99px;background:color-mix(in srgb,var(--surf) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 18px 40px -12px rgba(20,18,40,.4);transform:translateY(140%);transition:transform .4s}
+.mbar.on{transform:none}
+.mbar .btn{flex:1;padding:13px 14px;font-size:14.5px}
+.mbar .bagbtn{flex:none}
+
+@media(max-width:1120px){
+ .nav{grid-template-columns:auto 1fr auto;padding:0 18px}
+ .brand{justify-self:start;order:-1}
+ .links{position:fixed;top:calc(var(--exh,36px) + 72px);left:0;right:0;flex-direction:column;align-items:stretch;padding:12px 18px 20px;background:var(--bg);border-bottom:1px solid var(--line);transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .25s}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links a{padding:14px 10px;font-size:17px}
+ .links .lang{display:inline-flex;align-self:flex-start;margin-top:10px}
+ .nright .lang{display:none}
+ .burger{display:block}
+ .hero .wrap,.grid2,.bk,.look,.gift,.faq,.visit,.ft-top{grid-template-columns:1fr}
+ .hero-band{width:100%;height:42%;top:auto}
+ .arch-wrap{width:min(100%,460px)}
+ .pgrid{grid-template-columns:repeat(3,1fr)}
+ .makers,.revs{grid-template-columns:1fr 1fr}.revs .rev:first-child{grid-column:1/-1}
+ .nums,.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2){border-right:0}.flow li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .summary,.box-stage{position:relative;top:0}
+ .box-stage{max-width:520px;margin-bottom:40px}
+ .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(min-width:1121px){.links .lang{display:none}}
+@media(max-width:760px){
+ .sec{padding:76px 18px}
+ .hero{padding:calc(var(--exh,36px) + 72px + 18px) 18px 56px;min-height:0}
+ .hero .wrap{gap:26px}
+ .arch-wrap{order:-1;width:100%}
+ .arch{aspect-ratio:1.3;border-radius:200px 200px 22px 22px;border-width:6px}
+ .ann{display:none}
+ .hero-band{height:250px;top:calc(var(--exh,36px) + 72px);bottom:auto}
+ .hero h1{font-size:clamp(42px,11.6vw,58px);margin:18px 0 16px}
+ .ctas .btn{flex:1 1 auto}
+ .trust{gap:8px 18px;font-size:13px}
+ .badge{left:-10px;top:-14px;width:96px;height:96px}
+ .mini{right:8px;bottom:-18px;width:190px;grid-template-columns:44px 1fr;gap:8px;padding:8px}
+ .mini img{width:44px;height:44px}
+ .mini button{display:none}
+ .mini b{font-size:13px}
+ .brand span{font-size:21px}
+ .nav{gap:8px}
+ .bagbtn{padding:0 10px;gap:6px}
+ .bagbtn span{display:none}
+ .pgrid{grid-template-columns:1fr 1fr;gap:14px}
+ .pc h3{font-size:17px}.pc .mk{display:none}
+ .pc .pr{flex-direction:column;align-items:flex-start;gap:8px}
+ .pc .pr button{display:inline-block}
+ .pimg .qa{display:none}
+ .shipbar{grid-template-columns:1fr;gap:12px}
+ .row2,.exps{grid-template-columns:1fr}
+ .exp{display:grid;grid-template-columns:90px 1fr}.exp .ei{height:100%}
+ .card,.summary{padding:20px}
+ .makers,.revs,.nums,.flow{grid-template-columns:1fr}
+ .flow li{border-right:0!important;border-bottom:1px solid var(--line)}
+ .stage{aspect-ratio:1}
+ .gitems{grid-template-columns:repeat(3,1fr)}
+ .gtag{width:170px;right:-4px;bottom:-24px}.gtag p{font-size:19px}
+ .mbar{display:flex}
+ .ft-grid{grid-template-columns:1fr}
+ .news{flex-direction:column}
+ .q button{font-size:16.5px}
+ .tagcard{padding:24px 20px 20px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Retail · Shoppable lookbook &amp; gift-box builder</span><a class="exh-cta" href="/website/?t=loom-lantern#finder">Build one like this →</a></div>
+
+<svg class="defs" aria-hidden="true" focusable="false">
+ <defs>
+  <pattern id="kawung" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="40" height="40" fill="#1f2a5e" class="pa"/><g fill="#efe4cf" class="pb"><ellipse cx="20" cy="9" rx="5.5" ry="8.5"/><ellipse cx="31" cy="20" rx="8.5" ry="5.5"/><ellipse cx="20" cy="31" rx="5.5" ry="8.5"/><ellipse cx="9" cy="20" rx="8.5" ry="5.5"/></g><g fill="#a5572a"><circle cx="20" cy="9" r="1.8"/><circle cx="31" cy="20" r="1.8"/><circle cx="20" cy="31" r="1.8"/><circle cx="9" cy="20" r="1.8"/></g><circle cx="20" cy="20" r="2.2" fill="#d39b34"/><circle cx="0" cy="0" r="3" fill="#d39b34"/><circle cx="40" cy="0" r="3" fill="#d39b34"/><circle cx="0" cy="40" r="3" fill="#d39b34"/><circle cx="40" cy="40" r="3" fill="#d39b34"/></pattern>
+  <pattern id="bunga" width="64" height="64" patternUnits="userSpaceOnUse"><rect width="64" height="64" fill="#9a5226"/><g id="fl"><g fill="#f3e6cc"><ellipse cx="16" cy="9" rx="4.5" ry="7"/><ellipse cx="16" cy="9" rx="4.5" ry="7" transform="rotate(72 16 16)"/><ellipse cx="16" cy="9" rx="4.5" ry="7" transform="rotate(144 16 16)"/><ellipse cx="16" cy="9" rx="4.5" ry="7" transform="rotate(216 16 16)"/><ellipse cx="16" cy="9" rx="4.5" ry="7" transform="rotate(288 16 16)"/></g><circle cx="16" cy="16" r="3" fill="#d39b34"/></g><use href="#fl" x="32" y="32"/><path d="M40 6c6 2 8 8 6 12M6 40c2 6 8 8 12 6" stroke="#5d7a4a" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="50" cy="12" r="1.6" fill="#f3e6cc"/><circle cx="12" cy="50" r="1.6" fill="#f3e6cc"/></pattern>
+  <pattern id="parang" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="30" height="30" fill="#1f2a5e" class="pa"/><path d="M0 8c5-6 10 6 15 0s10 6 15 0" stroke="#efe4cf" stroke-width="3" fill="none" class="ps"/><path d="M0 22c5-6 10 6 15 0s10 6 15 0" stroke="#d39b34" stroke-width="1.6" fill="none" class="pg"/></pattern>
+ </defs>
+</svg>
+
+<header class="nav" id="nav">
+ <nav class="links" id="links" aria-label="Main">
+  <a href="#shop" data-t="n1">Shop</a>
+  <a href="#lookbook" data-t="n2">Lookbook</a>
+  <a href="#gifts" data-t="n3">Gift boxes</a>
+  <a href="#book" data-t="n4">Workshops</a>
+  <a href="#visit" data-t="n5">Visit</a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+ </nav>
+ <a class="brand" href="#top" aria-label="Home">
+  <svg viewBox="0 0 30 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 1v4"/><path d="M9 7h12"/><path d="M8 8c-3 4-3 14 0 18h14c3-4 3-14 0-18z"/><path d="M15 8v18M11 8c-1.5 4-1.5 14 0 18M19 8c1.5 4 1.5 14 0 18"/><path d="M10 29h10M13 32h4"/></svg>
+  <span data-af-name>Loom &amp; Lantern</span>
+ </a>
+ <div class="nright">
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+  <button class="bagbtn" type="button" data-bag aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-t="bag">Bag</span><b class="bagN">0</b></button>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" aria-label="Menu"><i></i><i></i></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div class="hero-band" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#parang)"/></svg></div>
+ <div class="wrap">
+  <div>
+   <p class="ann"><b data-t="annB">New</b><span data-t="ann">Kawung Indigo collection, hand-drawn in Kelantan</span></p>
+   <h1 id="h1" data-t="hh">Finish the room you keep <em>meaning to fix.</em></h1>
+   <p class="lead" data-t="hp">Batik-inspired textiles, handmade ceramics and rattan lighting from Malaysian makers. Styled in our shophouse in <span data-af-area>George Town</span>, shipped to your door anywhere in Malaysia.</p>
+   <div class="ctas">
+    <a class="btn pri g-sell" href="#shop"><span data-t="hcS">Shop bestsellers</span> →</a>
+    <a class="btn pri g-enq" href="#enquire"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-t="hcE">Ask about bulk gifts</span></a>
+    <a class="btn pri g-book" href="#book"><span data-t="hcB">Book a batik workshop</span> →</a>
+    <a class="btn pri g-cred" href="#proof"><span data-t="hcC">Meet our makers</span> →</a>
+    <a class="btn ghost" href="#lookbook" data-t="hc2">Shop the lookbook</a>
+   </div>
+   <div class="trust">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span data-t="t1">Free shipping over RM 150</span></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg><span data-t="t2">14-day easy returns</span></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>FPX · GrabPay · TNG</span>
+   </div>
+  </div>
+  <div class="arch-wrap">
+   <svg class="badge" viewBox="0 0 128 128" aria-hidden="true"><circle class="bg" cx="64" cy="64" r="62"/><path id="circ" d="M64 64m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0" fill="none"/><text><textPath href="#circ" id="badgeTxt">Shop the room · Shop the room · </textPath></text><circle cx="64" cy="64" r="22" fill="url(#kawung)"/></svg>
+   <div class="arch" id="heroStage" data-room="1">
+    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=max&w=1100&q=80" alt="Living room with an ochre armchair, cane sideboard, knitted pouf and brass planter" fetchpriority="high">
+    <div class="hs-layer"></div>
+   </div>
+   <div class="mini">
+    <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=200&h=200&q=80" alt="Four speckled stoneware cups">
+    <div><small data-t="miniK">Just in</small><b data-t="miniN">Kopi Cup Set of 4</b><span>RM 68</span></div>
+    <button type="button" data-add="cups" data-t="addBag">Add to bag</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: SELL -->
+<section class="sec goal goal-sell" id="shop" aria-labelledby="sH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="sK">Bestsellers this week</span><h2 id="sH" data-t="sH">Small things that make a home <em>feel finished.</em></h2></div>
+   <div class="chips" id="cats" role="group" aria-label="Category"></div>
+  </div>
+  <div class="pgrid" id="pgrid"></div>
+  <div class="shipbar reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><div><b data-t="shipB">Ships from <span data-af-area>George Town</span> in 1–2 working days</b><span data-t="shipS">Free over RM 150 in West Malaysia, RM 250 to Sabah &amp; Sarawak. Tracked by J&amp;T or Pos Laju.</span></div><div class="paybadges"><span class="pb"><i></i>Card</span><span class="pb fpx">FPX</span><span class="pb grab">GrabPay</span><span class="pb tng">Touch 'n Go</span></div></div>
+ </div>
+</section>
+
+<!-- GOAL: ENQUIRE -->
+<section class="sec goal goal-enq" id="enquire" aria-labelledby="eH">
+ <div class="wrap grid2">
+  <div class="reveal">
+   <span class="kick" data-t="eK">Corporate &amp; wedding gifts</span>
+   <h2 id="eH" data-t="eH">Door gifts and client gifts, <em>wrapped in batik.</em></h2>
+   <p class="sub" data-t="eP">From 30 to 3,000 pieces. Tell us three things and we'll WhatsApp you a mood board and a price within one working day.</p>
+   <form class="eform" id="eForm">
+    <fieldset><legend data-t="eL1">What do you need?</legend><div class="chips" id="eWhat" role="radiogroup"></div></fieldset>
+    <div class="row2">
+     <label><span class="lbl" data-t="eL2">How many?</span><select class="field" id="eQty"><option>30–50</option><option selected>50–100</option><option>100–300</option><option>300+</option></select></label>
+     <label><span class="lbl" data-t="eL3">Needed by</span><select class="field" id="eWhen"></select></label>
+    </div>
+    <button class="btn wa" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-t="eSend">Send on WhatsApp</span></button>
+   </form>
+  </div>
+  <div class="tagcard reveal" aria-live="polite">
+   <span class="st" aria-hidden="true"><svg viewBox="0 0 46 52"><rect width="46" height="52" fill="url(#kawung)"/></svg></span>
+   <span class="to" data-t="eTo">To</span>
+   <h4 data-af-name>Loom &amp; Lantern</h4>
+   <span class="to" data-t="eVia">via WhatsApp · replies in 1 working day</span>
+   <p class="wahd"><i><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></i><span data-t="ePrev">Your message, ready to send</span></p>
+   <div class="wamsg" id="eMsg"></div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: BOOK -->
+<section class="sec goal goal-book" id="book" aria-labelledby="bH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="bK">At the shophouse</span><h2 id="bH" data-t="bH">Make your own batik, <em>or let us style your room.</em></h2></div>
+   <p class="sub" data-t="bP">Weekend canting workshops, free styling consults and after-hours private shopping. All in our <span data-af-area>George Town</span> shop, closed Wednesdays.</p>
+  </div>
+  <div class="bk">
+   <div class="card reveal">
+    <h3 data-t="b1">1 · Choose an experience</h3>
+    <div class="exps" id="exps"></div>
+    <h3><span data-t="b2">2 · Pick a day</span><small data-t="bWed">Closed Wednesdays</small></h3>
+    <div class="dates" id="dates" role="group" aria-label="Date"></div>
+    <h3><span data-t="b3">3 · Pick a time</span><small id="slotNote"></small></h3>
+    <div class="slots" id="slots"></div>
+    <div class="pax"><span class="lbl" style="margin:0" data-t="bPax">People</span><div class="stepper" role="group" aria-label="People"><button type="button" id="pMinus" aria-label="Fewer">−</button><output id="pN">2</output><button type="button" id="pPlus" aria-label="More">+</button></div><span class="sample" id="pMax"></span></div>
+   </div>
+   <aside class="summary reveal" aria-live="polite">
+    <svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kawung)"/></svg>
+    <span class="sample" style="color:var(--bandMut)" data-t="bT0">Your booking</span>
+    <h3 id="bName"></h3>
+    <dl id="bSum"></dl>
+    <div class="tot"><span data-t="bTot">Total</span><span id="bTot">RM 0</span></div>
+    <button class="btn pri full" type="button" id="bGo"><span data-t="bGo">Confirm booking</span> →</button>
+    <p data-t="bNote">Pay at the shop or by FPX. Free reschedule up to 24 hours before.</p>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: CRED -->
+<section class="sec goal goal-cred" id="proof" aria-labelledby="cH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="cK">Our makers</span><h2 id="cH" data-t="cH">Every piece has a name <em>behind it.</em></h2></div>
+   <p class="sub" data-t="cP">We work directly with small studios across Malaysia and pay on order, not on sale. Makers, press and numbers below are samples.</p>
+  </div>
+  <div class="press reveal" aria-label="Sample press mentions (fictional)"><small data-t="cPress">As featured in (sample)</small><span>Rumah &amp; Co.</span><span>KAKI</span><span>The Shophouse</span><span>weekend.my</span><span>LIVING/ASIA</span></div>
+  <div class="makers">
+   <article class="maker reveal"><div class="mi"><img loading="lazy" src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=800&h=600&q=80" alt="Potter's hands shaping clay on a wheel"></div><div class="mb"><span class="sample" data-t="mS1">Ceramics · Ipoh · sample maker</span><h3 data-t="m1">Studio Tanah Liat</h3><p data-t="m1p">Two sisters throwing stoneware in a converted kopitiam. Every cup is signed underneath.</p></div></article>
+   <article class="maker reveal"><div class="mi"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Kawung batik pattern"><rect width="400" height="300" fill="url(#kawung)"/></svg></div><div class="mb"><span class="sample" data-t="mS2">Batik · Kota Bharu · sample maker</span><h3 data-t="m2">Kak Ani's canting table</h3><p data-t="m2p">Hand-drawn batik with natural dyes. One runner takes three days, wax to wash.</p></div></article>
+   <article class="maker reveal"><div class="mi"><img loading="lazy" src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&crop=focalpoint&fp-x=.5&fp-y=.27&fp-z=2.4&w=800&h=600&q=80" alt="Woven rattan lantern pendant hanging in a bedroom"></div><div class="mb"><span class="sample" data-t="mS3">Rattan · Kuching · sample maker</span><h3 data-t="m3">Anyam Collective</h3><p data-t="m3p">Twelve weavers from longhouse families. Our lantern pendant is their design.</p></div></article>
+  </div>
+  <div class="nums">
+   <div class="num reveal"><b>38</b><span data-t="u1">makers in 7 states (sample)</span></div>
+   <div class="num reveal"><b>4.9★</b><span data-t="u2">average review (sample)</span></div>
+   <div class="num reveal"><b>0</b><span data-t="u3">plastic in our parcels</span></div>
+   <div class="num reveal"><b>1–2</b><span data-t="u4">working days to ship</span></div>
+  </div>
+  <ol class="flow reveal">
+   <li><b data-t="w1">Made by hand</b><span data-t="w1s">In small batches, so colours shift a little. That's the point.</span></li>
+   <li><b data-t="w2">Checked in <span data-af-area>George Town</span></b><span data-t="w2s">Every piece is unpacked, checked and photographed.</span></li>
+   <li><b data-t="w3">Wrapped in paper</b><span data-t="w3s">Recycled kraft and cornstarch tape. Batik wrap if it's a gift.</span></li>
+   <li><b data-t="w4">Shipped tracked</b><span data-t="w4s">J&amp;T or Pos Laju, with a WhatsApp update when it leaves.</span></li>
+  </ol>
+ </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section class="sec s-look" id="lookbook" aria-labelledby="lH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="lK">The lookbook</span><h2 id="lH" data-t="lH">Tap anything. <em>Take it home.</em></h2><p class="sub" data-t="lP">Three rooms styled in our shophouse. Tap a dot to see the piece and add it to your bag.</p></div>
+   <div class="rooms" role="tablist" id="rooms"></div>
+  </div>
+  <div class="look reveal">
+   <div class="stage" id="stage"><img id="roomImg" src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=max&w=1600&q=80" alt="" loading="lazy"><div class="hs-layer"></div><span class="hint" data-t="lHint">Tap the dots</span></div>
+   <aside class="inroom"><h3 id="roomName"></h3><small id="roomCount"></small><ul class="il" id="il"></ul><button class="btn pri full" type="button" id="addAll"></button></aside>
+  </div>
+ </div>
+</section>
+
+<!-- GIFT BUILDER -->
+<section class="sec s-gift" id="gifts" aria-labelledby="gH">
+ <div class="wrap">
+  <div class="head reveal">
+   <div><span class="kick" data-t="gK">Gift box builder</span><h2 id="gH" data-t="gH">Build a gift <em>they'll actually use.</em></h2></div>
+   <p class="sub" data-t="gP">Pick a box, fill it, write the card. We wrap it by hand and you save 10% on everything inside.</p>
+  </div>
+  <div class="gift">
+   <div class="box-stage reveal"><div class="box s3" id="box"></div><div class="gtag"><small data-t="gTo">A note from you</small><p id="gNote"></p></div></div>
+   <div class="gsteps reveal">
+    <div class="gs"><h3 data-t="g1">1 · Box size</h3><div class="chips" id="gSize"></div></div>
+    <div class="gs"><h3><span data-t="g2">2 · Fill it</span><small id="gCount"></small></h3><div class="gitems" id="gItems"></div></div>
+    <div class="gs"><h3 data-t="g3">3 · Wrapping</h3><div class="chips" id="gWrap"></div></div>
+    <div class="gs"><h3 data-t="g4">4 · Card message</h3><textarea class="field" id="gMsg" rows="2" maxlength="90" data-tp="gPh" placeholder="Selamat pindah rumah! Love, Mei"></textarea></div>
+    <div class="gtot"><div><small id="gSave"></small><s id="gWas"></s><b id="gTotal">RM 0</b></div><button class="btn pri" type="button" id="gAdd"><span data-t="gAdd">Add gift box to bag</span></button></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec s-rev" aria-labelledby="rH">
+ <div class="wrap">
+  <div class="head reveal"><div><span class="kick" data-t="rK">From our customers</span><h2 id="rH" data-t="rH">Arrived in Kuching <em>without a chip.</em></h2></div></div>
+  <div class="revs">
+   <figure class="rev reveal"><span class="st" aria-label="5 stars">★★★★★</span><p data-t="r1">"The lantern pendant changed our whole condo. Packed like it was going to the moon, and the WhatsApp updates were so reassuring."</p><footer><b>Nurul A., Kuching</b><span data-t="rs">Sample review</span></footer></figure>
+   <figure class="rev reveal"><span class="st" aria-label="5 stars">★★★★★</span><p data-t="r2">"Ordered 120 batik pouches as wedding door gifts. Guests are still asking where we got them."</p><footer><b>Daniel &amp; Hui Min, Ipoh</b><span data-t="rs">Sample review</span></footer></figure>
+   <figure class="rev reveal"><span class="st" aria-label="5 stars">★★★★★</span><p data-t="r3">"The canting workshop was the best Saturday we've had in months."</p><footer><b>Priya S., Penang</b><span data-t="rs">Sample review</span></footer></figure>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec s-faq" id="faq" aria-labelledby="fH" style="padding-top:20px">
+ <div class="wrap faq">
+  <div class="reveal"><span class="kick" data-t="fK">Good to know</span><h2 id="fH" data-t="fH">Shipping, returns <em>and batik care.</em></h2></div>
+  <div class="reveal" id="faqList"></div>
+ </div>
+</section>
+
+<!-- VISIT -->
+<section class="sec s-visit" id="visit" aria-labelledby="vH">
+ <div class="wrap visit">
+  <div class="card reveal">
+   <span class="kick" data-t="vK">Visit the shophouse</span>
+   <h2 id="vH" style="font-size:clamp(36px,3.8vw,56px)"><span data-t="vH">Come and touch the fabrics in</span> <em data-af-area>George Town</em></h2>
+   <ul class="hours" id="hours"></ul>
+   <div class="contact">
+    <a href="#visit" onclick="afDemo();return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span><span data-t="vA">No. 21, heritage shophouse,</span> <span data-af-area>George Town</span> <span class="sample">(sample)</span></span></a>
+    <a href="#visit" onclick="afDemo();return false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span>+60 12-000 0000 <span class="sample">(sample)</span></span></a>
+    <a href="#visit" onclick="afDemo();return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>@loomandlantern <span class="sample">(sample)</span></span></a>
+   </div>
+  </div>
+  <div class="shopfront reveal" role="img" aria-label="Illustration of the shophouse front">
+   <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="600" height="460" fill="url(#parang)" opacity=".35"/>
+    <rect x="90" y="40" width="420" height="380" fill="#efe4cf"/>
+    <rect x="90" y="40" width="420" height="34" fill="#a5572a"/>
+    <path d="M90 200h420" stroke="#1f2a5e" stroke-width="10"/>
+    <g fill="#1f2a5e"><path d="M140 180v-70a40 40 0 0 1 80 0v70z"/><path d="M260 180v-70a40 40 0 0 1 80 0v70z"/><path d="M380 180v-70a40 40 0 0 1 80 0v70z"/></g>
+    <g stroke="#efe4cf" stroke-width="3"><path d="M180 72v108M140 130h80M300 72v108M260 130h80M420 72v108M380 130h80"/></g>
+    <path d="M200 420V280a100 100 0 0 1 200 0v140z" fill="#1f2a5e"/>
+    <path d="M200 420V280a100 100 0 0 1 200 0v140z" fill="url(#kawung)" opacity=".5"/>
+    <rect x="110" y="250" width="70" height="170" fill="#d39b34" opacity=".9"/><rect x="420" y="250" width="70" height="170" fill="#d39b34" opacity=".9"/>
+    <g fill="#a5572a"><circle cx="145" cy="226" r="14"/><circle cx="455" cy="226" r="14"/></g>
+    <path d="M145 212v-10M455 212v-10" stroke="#1f2a5e" stroke-width="2"/>
+   </svg>
+   <div class="cap"><div><b data-t="vCap">Workshops every Saturday &amp; Sunday</b><br><span data-t="vCap2">Street parking and a Grab drop-off right outside.</span></div><a class="btn pri" href="#book" data-t="hcB">Book a batik workshop</a></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="ft">
+ <div class="wrap">
+  <div class="ft-top"><h3 data-t="ftH">Get first dibs on <em>new batik drops.</em></h3><form class="news" id="news"><input type="email" data-tp="ftPh" placeholder="Your email" aria-label="Email"><button class="btn" type="submit" data-t="ftJ">Join, get 10% off</button></form></div>
+  <div class="ft-grid">
+   <div><p class="ft-name" data-af-name>Loom &amp; Lantern</p><p><span data-t="ft1">Batik-inspired homeware ·</span> <span data-af-area>George Town</span>. <span data-t="ft2">Shipping across Malaysia.</span></p></div>
+   <div><h4 data-t="n1">Shop</h4><a href="#shop" data-t="fA">Bestsellers</a><a href="#lookbook" data-t="n2">Lookbook</a><a href="#gifts" data-t="n3">Gift boxes</a></div>
+   <div><h4 data-t="fB">Help</h4><a href="#faq" data-t="fC">Shipping &amp; returns</a><a href="#enquire" data-t="fD">Corporate gifts</a><a href="#book" data-t="n4">Workshops</a></div>
+   <div><h4 data-t="fE">Follow</h4><a href="#top" onclick="afDemo();return false">Instagram</a><a href="#top" onclick="afDemo();return false">TikTok</a><a href="#top" onclick="afDemo();return false">Shopee</a></div>
+  </div>
+  <div class="ft-base"><span data-t="ftB">Fictional brand · sample website designed by Aurelion</span><span data-t="ftP">Prices, makers, reviews and figures on this page are samples.</span></div>
+ </div>
+</footer>
+
+<div class="mbar" id="mbar">
+ <a class="btn pri g-sell" href="#shop" data-t="mS">Shop now</a>
+ <a class="btn pri g-enq" href="#enquire" data-t="mE">Ask on WhatsApp</a>
+ <a class="btn pri g-book" href="#book" data-t="mB">Book workshop</a>
+ <a class="btn pri g-cred" href="#proof" data-t="mC">Our makers</a>
+ <button class="bagbtn" type="button" data-bag aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b class="bagN">0</b></button>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drH" aria-hidden="true">
+ <div class="dr-h"><h3 id="drH" data-t="drH">Your bag</h3><button class="dr-x" id="drX" type="button" aria-label="Close">×</button></div>
+ <div class="freebar" id="freebar"></div>
+ <div class="dr-body" id="drItems"></div>
+ <div class="dr-f" id="drF"></div>
+</aside>
+
+<script>
+(()=>{
+const K=window.AFK||{},H=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const NAME=()=>K.n||'Loom & Lantern';
+let lang='en';
+const L3=a=>(Array.isArray(a)?(a[{en:0,ms:1,zh:2}[lang]]||a[0]):a).split('{A}').join(K.a||'George Town');
+const rm=n=>'RM '+Math.round(n).toLocaleString('en-MY');
+const A='1616046229478-9901c5536a45',B='1618220179428-22790b461013',C='1615874959474-d609969a20ed';
+
+/* ---------- products ---------- */
+const P=[
+{id:'runner',c:'tex',p:89,art:'kawung',best:1,gift:1,n:['Kawung Indigo Table Runner','Alas Meja Batik Kawung Indigo','卡翁靛蓝蜡染桌旗'],m:['Hand-drawn batik · Kelantan','Batik tulis · Kelantan','手绘蜡染 · 吉兰丹']},
+{id:'cups',c:'cer',p:68,img:'1610701596007-11502861dcfa',best:1,gift:1,n:['Kopi Cup Set of 4','Set Cawan Kopi, 4 biji','咖啡杯四件组'],m:['Stoneware · Ipoh','Tembikar · Ipoh','炻器 · 怡保']},
+{id:'lantern',c:'lit',p:189,img:C,crop:[.5,.273,4],best:1,n:['Rattan Lantern Pendant','Lampu Gantung Tanglung Rotan','藤编灯笼吊灯'],m:['Woven rattan · Sarawak','Anyaman rotan · Sarawak','藤编 · 砂拉越']},
+{id:'candle',c:'lit',p:55,img:'1602874801007-bd458bb1b8b6',best:1,gift:1,n:['Hujan Petang Soy Candle','Lilin Soya Hujan Petang','「午后雨」大豆蜡烛'],m:['Poured in {A}','Dituang di {A}','{A} 手工灌制']},
+{id:'cushion',c:'tex',p:69,img:A,crop:[.77,.607,4],best:1,n:['Tasselled Woven Cushion','Kusyen Tenun Berjumbai','流苏编织抱枕'],m:['Handwoven · Penang','Tenunan tangan · Pulau Pinang','手工编织 · 槟城']},
+{id:'moon',c:'cer',p:129,img:'1612196808214-b8e1d6145a8c',best:1,n:['Moon Jar Vase','Pasu Bulan','月亮罐花瓶'],m:['Stoneware · Ipoh','Tembikar · Ipoh','炻器 · 怡保']},
+{id:'napkins',c:'tex',p:49,art:'bunga',best:1,gift:1,n:['Bunga Raya Napkins, set of 4','Napkin Batik Bunga Raya, set 4','大红花蜡染餐巾 4 条'],m:['Block-printed · Terengganu','Batik cop · Terengganu','木刻印染 · 登嘉楼']},
+{id:'mirror',c:'liv',p:199,img:A,crop:[.5,.367,2.7],best:1,n:['Round Wall Mirror, 80 cm','Cermin Dinding Bulat, 80 cm','圆形挂镜 80 cm'],m:['Iron frame · Johor','Bingkai besi · Johor','铁框 · 柔佛']},
+{id:'trio',c:'lit',p:89,img:'1572726729207-a78d6feb18d7',gift:1,n:['Candle Trio: Pandan, Kopi, Melur','Trio Lilin: Pandan, Kopi, Melur','香氛蜡烛三件组：香兰、咖啡、茉莉'],m:['Poured in {A}','Dituang di {A}','{A} 手工灌制']},
+{id:'bud',c:'cer',p:45,img:'1490312278390-ab64016e0aa9',gift:1,n:['Bud Vase Duo','Pasu Kecil Berdua','迷你花瓶两件组'],m:['Porcelain · Melaka','Porselin · Melaka','瓷器 · 马六甲']},
+{id:'pampas',c:'liv',p:69,img:B,crop:[.65,.53,5],gift:1,n:['Dried Pampas in Stoneware','Pampas Kering dalam Pasu','陶罐干芦苇'],m:['Arranged in-store','Digubah di kedai','店内手工插制']},
+{id:'kcushion',c:'tex',p:59,img:C,crop:[.39,.62,3],gift:1,n:['Kunyit Linen Cushion','Kusyen Linen Kunyit','姜黄亚麻抱枕'],m:['Plant-dyed linen','Linen celup tumbuhan','植物染亚麻']},
+{id:'throw',c:'tex',p:129,img:C,crop:[.77,.747,3],n:['Cotton Waffle Throw','Selimut Kapas Waffle','华夫格棉盖毯'],m:['Handloomed · Kedah','Tenunan tangan · Kedah','手织 · 吉打']},
+{id:'rug',c:'tex',p:289,img:'1600166898405-da9535204843',n:['Handloomed Cotton Rug, 5×7 ft','Permaidani Kapas Tenunan, 5×7 kaki','手织棉地毯 5×7 尺'],m:['Handloomed · Kedah','Tenunan tangan · Kedah','手织 · 吉打']},
+{id:'brass',c:'lit',p:259,img:'1540932239986-30128078f3c5',n:['Brass Dome Pendant','Lampu Gantung Kubah Loyang','黄铜圆顶吊灯'],m:['Spun brass · Selangor','Loyang · Selangor','旋压黄铜 · 雪兰莪']},
+{id:'lamp',c:'lit',p:179,img:B,crop:[.33,.5,6],n:['Ceramic Table Lamp','Lampu Meja Seramik','陶瓷台灯'],m:['Stoneware · Ipoh','Tembikar · Ipoh','炻器 · 怡保']},
+{id:'sconce',c:'lit',p:149,img:A,crop:[.25,.387,6],n:['Sage Wall Sconce','Lampu Dinding Sage','鼠尾草绿壁灯'],m:['Powder-coated steel','Keluli bersalut','喷涂钢材']},
+{id:'side',c:'liv',p:349,img:'1611486212557-88be5ff6f941',n:['Reclaimed Teak Side Table','Meja Sisi Jati Kitar Semula','回收柚木边桌'],m:['Reclaimed teak · Kelantan','Jati terpakai · Kelantan','回收柚木 · 吉兰丹']},
+{id:'sideboard',c:'liv',p:1890,img:A,crop:[.44,.6,2],n:['Cane & Teak Sideboard','Almari Sisi Rotan & Jati','藤编柚木矮柜'],m:['Made to order · 6 weeks','Tempahan · 6 minggu','订制 · 6 周']},
+{id:'basket',c:'liv',p:79,img:A,crop:[.1,.72,4],n:['Mengkuang Planter Basket','Bakul Pasu Mengkuang','露兜草编花盆篮'],m:['Woven pandan leaf · Pahang','Anyaman mengkuang · Pahang','露兜叶编织 · 彭亨']},
+{id:'pouf',c:'liv',p:159,img:B,crop:[.45,.653,4],n:['Knitted Pouf','Pouf Rajut','针织坐墩'],m:['Cotton knit','Rajutan kapas','棉线针织']},
+{id:'chair',c:'liv',p:1290,img:B,crop:[.74,.601,2.5],n:['Ochre Armchair','Kerusi Berlengan Oker','赭橙扶手椅'],m:['Made to order · 4 weeks','Tempahan · 4 minggu','订制 · 4 周']},
+{id:'gold',c:'liv',p:139,img:B,crop:[.15,.642,4],n:['Hammered Brass Planter','Pasu Loyang Ketuk','锤纹黄铜花盆'],m:['Hand-hammered · Terengganu','Diketuk tangan · Terengganu','手工锤纹 · 登嘉楼']}];
+const byId=Object.fromEntries(P.map(x=>[x.id,x]));
+const ROOMS=[{img:A,ar:1,n:['The Sage Living Room','Ruang Tamu Sage','鼠尾草绿客厅'],hs:[['mirror',.5,.367],['sconce',.25,.387],['sideboard',.44,.6],['basket',.1,.72],['cushion',.77,.607]]},
+{img:B,ar:.5625,n:['The Saturday Corner','Sudut Hari Sabtu','周六角落'],hs:[['lamp',.33,.5],['pampas',.65,.53],['chair',.74,.601],['pouf',.45,.653],['gold',.15,.642]]},
+{img:C,ar:1,n:['The Slow Bedroom','Bilik Tidur Santai','慢活卧室'],hs:[['lantern',.5,.273],['kcushion',.39,.62],['throw',.77,.747],['candle',.06,.64]]}];
+const art=k=>`<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${k==='kawung'?`<rect width="400" height="500" fill="#e8dcc7"/><rect width="400" height="500" fill="url(#bunga)" opacity=".08"/><g transform="rotate(-14 200 250)"><rect x="-60" y="180" width="520" height="150" fill="url(#kawung)"/><path d="M-60 180h520M-60 330h520" stroke="#a5572a" stroke-width="6"/></g><ellipse cx="290" cy="392" rx="62" ry="16" fill="#000" opacity=".14"/><path d="M232 330a58 58 0 0 0 116 0z" fill="#f6efe2"/><ellipse cx="290" cy="330" rx="58" ry="12" fill="#e2d5bf"/><path d="M240 346h100" stroke="#a5572a" stroke-width="4"/><ellipse cx="110" cy="132" rx="46" ry="12" fill="#000" opacity=".1"/><ellipse cx="110" cy="118" rx="40" ry="14" fill="#fbf6ec"/><ellipse cx="110" cy="116" rx="26" ry="8" fill="#e8dcc7"/>`:`<rect width="400" height="500" fill="#efe6d6"/><g transform="rotate(-8 200 250)"><rect x="70" y="120" width="250" height="250" fill="url(#bunga)" rx="6"/></g><g transform="rotate(6 200 250)"><rect x="100" y="150" width="230" height="230" fill="url(#bunga)" rx="6" stroke="#efe6d6" stroke-width="6"/></g><path d="M100 150l230 230" stroke="#efe6d6" stroke-width="2" opacity=".5" transform="rotate(6 200 250)"/><path d="M300 90c-20 40-30 70-28 120" stroke="#5d7a4a" stroke-width="4" fill="none"/><ellipse cx="292" cy="120" rx="14" ry="7" fill="#5d7a4a" transform="rotate(-50 292 120)"/>`}</svg>`;
+const img=(p,w,alt)=>{if(p.art)return art(p.art);const h=Math.round(w*1.2);const u=p.crop?`https://images.unsplash.com/photo-${p.img}?auto=format&fit=crop&crop=focalpoint&fp-x=${p.crop[0]}&fp-y=${p.crop[1]}&fp-z=${p.crop[2]}&w=${w}&h=${h}&q=75`:`https://images.unsplash.com/photo-${p.img}?auto=format&fit=crop&w=${w}&h=${h}&q=78`;return `<img loading="lazy" src="${u}" alt="${alt===''?'':L3(p.n)}">`;};
+
+/* ---------- translations ---------- */
+const T={ms:{n1:"Kedai",n2:"Lookbook",n3:"Kotak hadiah",n4:"Bengkel",n5:"Lawati",bag:"Beg",annB:"Baru",ann:"Koleksi Kawung Indigo, batik tulis dari Kelantan",hh:'Siapkan bilik yang anda <em>asyik tangguhkan.</em>',hp:"Tekstil berinspirasikan batik, seramik buatan tangan dan lampu rotan daripada pembuat tempatan. Digaya di rumah kedai kami di <span data-af-area>George Town</span>, dihantar ke seluruh Malaysia.",hcS:"Beli produk terlaris",hcE:"Tanya tentang hadiah pukal",hcB:"Tempah bengkel batik",hcC:"Kenali pembuat kami",hc2:"Beli dari lookbook",t1:"Penghantaran percuma melebihi RM 150",t2:"Pemulangan mudah 14 hari",miniK:"Baru tiba",miniN:"Set Cawan Kopi, 4 biji",addBag:"Masuk beg",
+sK:"Terlaris minggu ini",sH:'Barang kecil yang buat rumah <em>terasa lengkap.</em>',shipB:"Dihantar dari <span data-af-area>George Town</span> dalam 1–2 hari bekerja",shipS:"Percuma melebihi RM 150 di Semenanjung, RM 250 ke Sabah & Sarawak. Dijejak melalui J&T atau Pos Laju.",
+eK:"Hadiah korporat & perkahwinan",eH:'Cenderahati kahwin dan hadiah klien, <em>berbalut batik.</em>',eP:"Dari 30 hingga 3,000 unit. Beritahu tiga perkara dan kami WhatsApp papan idea serta harga dalam satu hari bekerja.",eL1:"Apa yang anda perlukan?",eL2:"Berapa banyak?",eL3:"Perlu sebelum",eSend:"Hantar di WhatsApp",eTo:"Kepada",eVia:"melalui WhatsApp · balas dalam 1 hari bekerja",ePrev:"Mesej anda, sedia dihantar",
+bK:"Di rumah kedai",bH:'Buat batik sendiri, <em>atau biar kami gayakan bilik anda.</em>',bP:"Bengkel canting hujung minggu, konsultasi gaya percuma dan sesi membeli-belah selepas waktu kedai. Semua di kedai kami di <span data-af-area>George Town</span>, tutup hari Rabu.",b1:"1 · Pilih pengalaman",b2:"2 · Pilih hari",bWed:"Tutup setiap Rabu",b3:"3 · Pilih masa",bPax:"Orang",bT0:"Tempahan anda",bTot:"Jumlah",bGo:"Sahkan tempahan",bNote:"Bayar di kedai atau melalui FPX. Tukar tarikh percuma sehingga 24 jam sebelum.",
+cK:"Pembuat kami",cH:'Setiap barang ada nama <em>di belakangnya.</em>',cP:"Kami bekerja terus dengan studio kecil di seluruh Malaysia dan bayar semasa tempahan, bukan selepas jualan. Pembuat, media dan angka di bawah ialah contoh.",cPress:"Pernah disiarkan di (contoh)",mS1:"Seramik · Ipoh · pembuat contoh",m1:"Studio Tanah Liat",m1p:"Dua beradik membentuk tembikar di bekas kopitiam. Setiap cawan ditandatangani di bawahnya.",mS2:"Batik · Kota Bharu · pembuat contoh",m2:"Meja canting Kak Ani",m2p:"Batik tulis dengan pewarna semula jadi. Satu alas meja ambil tiga hari, dari lilin hingga dibasuh.",mS3:"Rotan · Kuching · pembuat contoh",m3:"Kolektif Anyam",m3p:"Dua belas penganyam daripada keluarga rumah panjang. Lampu tanglung kami ialah reka bentuk mereka.",u1:"pembuat di 7 negeri (contoh)",u2:"purata ulasan (contoh)",u3:"plastik dalam bungkusan kami",u4:"hari bekerja untuk dihantar",w1:"Buatan tangan",w1s:"Dalam kelompok kecil, jadi warna sedikit berbeza. Itulah keistimewaannya.",w2:"Diperiksa di <span data-af-area>George Town</span>",w2s:"Setiap barang dibuka, diperiksa dan diambil gambar.",w3:"Dibalut kertas",w3s:"Kertas kraf kitar semula dan pita kanji jagung. Balutan batik jika untuk hadiah.",w4:"Dihantar berjejak",w4s:"J&T atau Pos Laju, dengan kemas kini WhatsApp bila ia keluar.",
+lK:"Lookbook",lH:'Tekan apa saja. <em>Bawa pulang.</em>',lP:"Tiga bilik digaya di rumah kedai kami. Tekan titik untuk lihat barang dan masukkan ke beg.",lHint:"Tekan titik-titik",
+gK:"Pembina kotak hadiah",gH:'Bina hadiah yang <em>betul-betul dipakai.</em>',gP:"Pilih kotak, isi, tulis kad. Kami balut dengan tangan dan anda jimat 10% untuk semua di dalamnya.",gTo:"Nota daripada anda",g1:"1 · Saiz kotak",g2:"2 · Isikan",g3:"3 · Pembalut",g4:"4 · Mesej kad",gPh:"Selamat pindah rumah! Sayang, Mei",gAdd:"Masukkan kotak hadiah ke beg",
+rK:"Kata pelanggan",rH:'Sampai di Kuching <em>tanpa sebarang sumbing.</em>',r1:"“Lampu tanglung itu ubah seluruh kondo kami. Dibungkus macam nak ke bulan, dan kemas kini WhatsApp buat kami tenang.”",r2:"“Pesan 120 kantung batik sebagai cenderahati kahwin. Tetamu masih tanya di mana kami beli.”",r3:"“Bengkel canting itu hari Sabtu terbaik kami sejak berbulan-bulan.”",rs:"Ulasan contoh",
+fK:"Perlu tahu",fH:'Penghantaran, pemulangan <em>dan penjagaan batik.</em>',vK:"Lawati rumah kedai",vH:"Datang sentuh fabriknya di",vA:"No. 21, rumah kedai warisan,",vCap:"Bengkel setiap Sabtu & Ahad",vCap2:"Parkir tepi jalan dan tempat turun Grab betul-betul di depan.",
+ftH:'Jadi yang pertama dapat <em>batik terbaru.</em>',ftPh:"E-mel anda",ftJ:"Sertai, dapat 10% diskaun",ft1:"Barangan rumah berinspirasikan batik ·",ft2:"Penghantaran ke seluruh Malaysia.",fA:"Terlaris",fB:"Bantuan",fC:"Penghantaran & pemulangan",fD:"Hadiah korporat",fE:"Ikuti",ftB:"Jenama rekaan · laman contoh direka oleh Aurelion",ftP:"Harga, pembuat, ulasan dan angka di halaman ini adalah contoh.",mS:"Beli sekarang",mE:"Tanya di WhatsApp",mB:"Tempah bengkel",mC:"Pembuat kami",drH:"Beg anda"},
+zh:{n1:"商店",n2:"灵感图册",n3:"礼盒",n4:"工作坊",n5:"到店",bag:"购物袋",annB:"新品",ann:"卡翁靛蓝系列，吉兰丹手绘蜡染",hh:'那个一直想<br>收拾的角落，<br><em>这次搞定它。</em>',hp:"蜡染灵感布艺、手工陶瓷和藤编灯具，全部来自马来西亚手作人。在我们<span data-af-area>George Town</span>的老店屋里布置，寄送全马。",hcS:"选购畅销品",hcE:"咨询批量礼品",hcB:"预约蜡染工作坊",hcC:"认识我们的手作人",hc2:"从图册选购",t1:"满 RM 150 免运费",t2:"14 天轻松退货",miniK:"新到",miniN:"咖啡杯四件组",addBag:"加入购物袋",
+sK:"本周畅销",sH:'让家<em>有完成感</em>的小东西。',shipB:"1–2 个工作日内从<span data-af-area>George Town</span>寄出",shipS:"西马满 RM 150、沙巴砂拉越满 RM 250 免运费。J&T 或 Pos Laju 全程追踪。",
+eK:"企业与婚礼礼品",eH:'婚礼回礼和客户礼品，<em>用蜡染布包好。</em>',eP:"30 至 3,000 份都可以。告诉我们三件事，一个工作日内用 WhatsApp 发你情绪板和报价。",eL1:"需要什么？",eL2:"数量？",eL3:"什么时候要？",eSend:"用 WhatsApp 发送",eTo:"致",eVia:"通过 WhatsApp · 1 个工作日内回复",ePrev:"你的信息，已准备好发送",
+bK:"在店屋里",bH:'亲手做蜡染，<em>或让我们帮你布置房间。</em>',bP:"周末蜡染工作坊、免费软装咨询，以及打烊后私人购物。都在我们<span data-af-area>George Town</span>的店里，逢星期三休息。",b1:"1 · 选择体验",b2:"2 · 选择日期",bWed:"逢星期三休息",b3:"3 · 选择时间",bPax:"人数",bT0:"你的预约",bTot:"合计",bGo:"确认预约",bNote:"可在店里或用 FPX 付款。24 小时前可免费改期。",
+cK:"我们的手作人",cH:'每一件作品背后，<em>都有一个名字。</em>',cP:"我们直接与全马小型工作室合作，下单即付款，不等卖出。以下手作人、媒体和数字均为示例。",cPress:"媒体报道（示例）",mS1:"陶瓷 · 怡保 · 示例手作人",m1:"Studio Tanah Liat",m1p:"两姐妹在一间旧咖啡店里拉坯做炻器，每个杯底都有签名。",mS2:"蜡染 · 哥打巴鲁 · 示例手作人",m2:"Kak Ani 的蜡染桌",m2p:"用天然染料手绘蜡染。一条桌旗从上蜡到洗布要三天。",mS3:"藤编 · 古晋 · 示例手作人",m3:"Anyam 编织合作社",m3p:"十二位来自长屋家庭的编织者。我们的灯笼吊灯就是她们设计的。",u1:"位手作人，遍布 7 个州（示例）",u2:"平均评分（示例）",u3:"包裹里的塑料",u4:"个工作日内寄出",w1:"手工制作",w1s:"小批量制作，颜色会略有不同，这正是它的魅力。",w2:"在<span data-af-area>George Town</span>检查",w2s:"每件都拆箱、检查、拍照。",w3:"纸张包装",w3s:"再生牛皮纸和玉米淀粉胶带。送礼可选蜡染布包装。",w4:"追踪寄送",w4s:"J&T 或 Pos Laju，寄出时 WhatsApp 通知你。",
+lK:"灵感图册",lH:'点哪里，<em>就带走哪里。</em>',lP:"在我们店屋里布置的三个房间。点圆点查看单品，加入购物袋。",lHint:"点一点圆点",
+gK:"礼盒组合",gH:'送一份<em>真的会用上</em>的礼物。',gP:"选盒子、放礼物、写卡片。我们手工包装，盒内所有商品享 9 折。",gTo:"你的留言",g1:"1 · 礼盒大小",g2:"2 · 放入礼物",g3:"3 · 包装",g4:"4 · 卡片留言",gPh:"乔迁之喜！爱你的 Mei",gAdd:"把礼盒加入购物袋",
+rK:"顾客怎么说",rH:'寄到古晋，<em>一点磕碰都没有。</em>',r1:"「灯笼吊灯让整间公寓都不一样了。包得像要寄上月球，WhatsApp 的寄送通知也让人很安心。」",r2:"「订了 120 个蜡染小袋当婚礼回礼，宾客到现在还在问哪里买的。」",r3:"「蜡染工作坊是我们这几个月最棒的一个星期六。」",rs:"示例评价",
+fK:"实用信息",fH:'运送、退货<em>和蜡染保养。</em>',vK:"到店看看",vH:"来摸摸布料，就在",vA:"21 号，传统店屋，",vCap:"每周六、日都有工作坊",vCap2:"门口可路边停车，也有 Grab 下车点。",
+ftH:'第一时间收到<em>蜡染新品。</em>',ftPh:"你的电邮",ftJ:"订阅，享 9 折",ft1:"蜡染灵感家居 ·",ft2:"寄送全马。",fA:"畅销品",fB:"帮助",fC:"运送与退货",fD:"企业礼品",fE:"关注",ftB:"虚构品牌 · Aurelion 设计的示例网站",ftP:"本页价格、手作人、评价与数字均为示例。",mS:"立即选购",mE:"WhatsApp 咨询",mB:"预约工作坊",mC:"认识手作人",drH:"你的购物袋"}};
+const S={
+en:{all:"All",tex:"Textiles",cer:"Ceramics",lit:"Lighting",liv:"Living",add:"Add to bag",added:"Added ✓",best:"Bestseller",inroom:"{n} pieces in this room",addAll:"Add all {n} · save 10%",addedAll:"Added to bag ✓",
+what:["Wedding door gifts","Corporate gifts","Custom batik print","Hotel or café styling"],msgE:"Hi {b}! I'm looking for: {w}\n• Quantity: {q}\n• Needed by: {d}\n\nCould you send ideas and a price?",
+exps:[["Batik canting workshop","2.5 hrs · take home your scarf","RM 120 / person"],["Home styling consult","45 min · bring photos of your room","Free"],["After-hours private shopping","60 min · up to 6 people","Free"]],
+closed:"Closed",left:"{n} slots left",full:"full",max:"max {n}",sExp:"Experience",sDate:"Date",sTime:"Time",sPax:"People",pick:"Choose a time",bConf:"Demo: on your site this confirms the booking and sends {b} a WhatsApp with the details: {e}, {d} at {t}, {p} people.",
+sizes:[["Kotak Kecil · 3 items",3],["Kotak Besar · 5 items",5]],wraps:[["Kraft paper & twine",0],["Batik cloth wrap",15]],slotE:"Empty",chosen:"{a} of {b} chosen",save:"You save {s}",gNeed:"Fill the box first ({a} of {b})",gName:"Gift box",gAdded:"Gift box added ✓",defNote:"Selamat pindah rumah! Love, Mei",
+freeLeft:"Add {r} more for free shipping",freeOk:"You've unlocked free shipping 🎉",west:"West Malaysia",east:"Sabah & Sarawak",empty:"Your bag is empty",emptyP:"Start with the lookbook, it's the fun part.",sub:"Subtotal",ship:"Shipping",free:"Free",total:"Total",checkout:"Checkout",fine:"Demo checkout · no payment is taken",payDemo:"Demo: on your site this opens a secure Card / FPX / GrabPay / Touch 'n Go checkout.",
+faq:[["How long does shipping take?","We ship from {A} in 1–2 working days. West Malaysia usually arrives in 2–4 working days, Sabah and Sarawak in 4–7, tracked by J&T or Pos Laju (sample)."],["What if something arrives broken?","WhatsApp us a photo within 48 hours and we'll send a replacement or refund, no need to return the broken piece."],["Can I return something?","Yes, within 14 days if it's unused and in its packaging. Made-to-order furniture can't be returned."],["How do I wash batik?","Hand wash in cold water with mild soap and dry in the shade. Natural dyes may bleed a little on the first wash, so wash it alone."],["Do you do wedding door gifts?","Yes, from 30 pieces, with your names on a batik tag. Use the WhatsApp enquiry and we'll send a mood board."],["Which payments do you accept?","Card, FPX online banking, GrabPay and Touch 'n Go eWallet. Atome instalments are available above RM 300 (sample)."]],
+days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],hrs:"10am – 7pm",hrsW:"10am – 8pm"},
+ms:{all:"Semua",tex:"Tekstil",cer:"Seramik",lit:"Lampu",liv:"Ruang tamu",add:"Masuk beg",added:"Ditambah ✓",best:"Terlaris",inroom:"{n} barang dalam bilik ini",addAll:"Tambah semua {n} · jimat 10%",addedAll:"Dimasukkan ke beg ✓",
+what:["Cenderahati kahwin","Hadiah korporat","Cetakan batik khas","Hiasan hotel atau kafe"],msgE:"Hai {b}! Saya sedang cari: {w}\n• Kuantiti: {q}\n• Perlu sebelum: {d}\n\nBoleh kongsi idea dan harga?",
+exps:[["Bengkel batik canting","2.5 jam · bawa pulang selendang anda","RM 120 / orang"],["Konsultasi gaya rumah","45 min · bawa gambar bilik anda","Percuma"],["Beli-belah peribadi selepas waktu kedai","60 min · sehingga 6 orang","Percuma"]],
+closed:"Tutup",left:"{n} slot lagi",full:"penuh",max:"maks {n}",sExp:"Pengalaman",sDate:"Tarikh",sTime:"Masa",sPax:"Orang",pick:"Pilih masa",bConf:"Demo: di laman anda, ini mengesahkan tempahan dan menghantar WhatsApp kepada {b}: {e}, {d} jam {t}, {p} orang.",
+sizes:[["Kotak Kecil · 3 barang",3],["Kotak Besar · 5 barang",5]],wraps:[["Kertas kraf & tali",0],["Balutan kain batik",15]],slotE:"Kosong",chosen:"{a} daripada {b} dipilih",save:"Anda jimat {s}",gNeed:"Isi kotak dahulu ({a} daripada {b})",gName:"Kotak hadiah",gAdded:"Kotak hadiah ditambah ✓",defNote:"Selamat pindah rumah! Sayang, Mei",
+freeLeft:"Tambah {r} lagi untuk penghantaran percuma",freeOk:"Penghantaran percuma dibuka 🎉",west:"Semenanjung",east:"Sabah & Sarawak",empty:"Beg anda kosong",emptyP:"Mula dengan lookbook, itu bahagian paling seronok.",sub:"Jumlah kecil",ship:"Penghantaran",free:"Percuma",total:"Jumlah",checkout:"Bayar",fine:"Demo pembayaran · tiada bayaran diambil",payDemo:"Demo: di laman anda, ini membuka pembayaran selamat Kad / FPX / GrabPay / Touch 'n Go.",
+faq:[["Berapa lama penghantaran?","Kami hantar dari {A} dalam 1–2 hari bekerja. Semenanjung biasanya 2–4 hari bekerja, Sabah dan Sarawak 4–7 hari, dijejak melalui J&T atau Pos Laju (contoh)."],["Kalau barang sampai pecah?","WhatsApp gambar dalam 48 jam dan kami hantar ganti atau pulangkan wang, tak perlu pulangkan barang yang pecah."],["Boleh pulangkan barang?","Boleh, dalam 14 hari jika belum digunakan dan masih berbungkus. Perabot tempahan tidak boleh dipulangkan."],["Macam mana nak basuh batik?","Basuh tangan dengan air sejuk dan sabun lembut, jemur di tempat teduh. Pewarna semula jadi mungkin luntur sedikit pada basuhan pertama, jadi basuh berasingan."],["Ada cenderahati kahwin?","Ada, dari 30 unit, dengan nama anda pada tag batik. Guna pertanyaan WhatsApp dan kami hantar papan idea."],["Bayaran apa yang diterima?","Kad, perbankan dalam talian FPX, GrabPay dan Touch 'n Go eWallet. Ansuran Atome untuk pembelian melebihi RM 300 (contoh)."]],
+days:["Ahad","Isnin","Selasa","Rabu","Khamis","Jumaat","Sabtu"],hrs:"10 pg – 7 mlm",hrsW:"10 pg – 8 mlm"},
+zh:{all:"全部",tex:"布艺",cer:"陶瓷",lit:"灯具",liv:"家具摆设",add:"加入购物袋",added:"已加入 ✓",best:"畅销",inroom:"这个房间有 {n} 件单品",addAll:"全部 {n} 件加入 · 省 10%",addedAll:"已加入购物袋 ✓",
+what:["婚礼回礼","企业礼品","定制蜡染印花","酒店或咖啡馆布置"],msgE:"你好 {b}！我在找：{w}\n• 数量：{q}\n• 需要日期：{d}\n\n可以发一些建议和报价吗？",
+exps:[["蜡染上蜡工作坊","2.5 小时 · 作品围巾带回家","每人 RM 120"],["居家软装咨询","45 分钟 · 带上房间照片","免费"],["打烊后私人购物","60 分钟 · 最多 6 人","免费"]],
+closed:"休息",left:"剩 {n} 个时段",full:"已满",max:"最多 {n} 人",sExp:"体验",sDate:"日期",sTime:"时间",sPax:"人数",pick:"请选择时间",bConf:"演示：在你的网站上，这会确认预约，并把详情通过 WhatsApp 发给 {b}：{e}，{d} {t}，{p} 人。",
+sizes:[["小礼盒 · 3 件",3],["大礼盒 · 5 件",5]],wraps:[["牛皮纸与麻绳",0],["蜡染布包装",15]],slotE:"空位",chosen:"已选 {a} / {b}",save:"为你省下 {s}",gNeed:"请先放满礼盒（{a} / {b}）",gName:"礼盒",gAdded:"礼盒已加入 ✓",defNote:"乔迁之喜！爱你的 Mei",
+freeLeft:"再买 {r} 即可免运费",freeOk:"已享免运费 🎉",west:"西马",east:"沙巴与砂拉越",empty:"购物袋是空的",emptyP:"从灵感图册开始吧，那是最好玩的部分。",sub:"小计",ship:"运费",free:"免费",total:"合计",checkout:"结账",fine:"演示结账 · 不会扣款",payDemo:"演示：在你的网站上，这会打开安全的 银行卡 / FPX / GrabPay / Touch 'n Go 付款页面。",
+faq:[["运送要多久？","我们在 1–2 个工作日内从 {A} 寄出。西马通常 2–4 个工作日送达，沙巴和砂拉越 4–7 个工作日，J&T 或 Pos Laju 全程追踪（示例）。"],["收到时破损怎么办？","48 小时内用 WhatsApp 发照片给我们，我们会补寄或退款，破损品不用寄回。"],["可以退货吗？","可以，14 天内未使用且包装完整即可退货。订制家具不接受退货。"],["蜡染怎么洗？","用冷水加温和肥皂手洗，阴凉处晾干。天然染料第一次洗可能会轻微褪色，请单独清洗。"],["有做婚礼回礼吗？","有，30 份起，可在蜡染吊牌印上你们的名字。用 WhatsApp 咨询，我们会发情绪板给你。"],["接受哪些付款方式？","银行卡、FPX 网银、GrabPay 和 Touch 'n Go 电子钱包。满 RM 300 可用 Atome 分期（示例）。"]],
+days:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],hrs:"10:00 – 19:00",hrsW:"10:00 – 20:00"}};
+const s=(k,v)=>{let x=(S[lang][k]!==undefined?S[lang]:S.en)[k];if(v&&typeof x==='string')Object.keys(v).forEach(n=>x=x.split('{'+n+'}').join(v[n]));return x;};
+const LOC={en:'en-MY',ms:'ms-MY',zh:'zh-CN'};
+function myNow(){const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuala_Lumpur',year:'numeric',month:'2-digit',day:'2-digit',weekday:'short'}).formatToParts(new Date()).map(x=>[x.type,x.value]));return {y:+p.year,mo:+p.month,d:+p.day,wd:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday)};}
+
+/* ---------- bag ---------- */
+const bag={};let region='w',gifts=[];
+const lineP=id=>id.startsWith('gift')?gifts[+id.slice(4)].price:byId[id].p;
+function totals(){let sub=0;Object.entries(bag).forEach(([id,q])=>sub+=lineP(id)*q);const th=region==='w'?150:250,fee=region==='w'?8:15;return {sub,th,ship:sub===0||sub>=th?0:fee};}
+function bump(){$$('.bagbtn').forEach(b=>{b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump');});}
+function add(id,q){bag[id]=(bag[id]||0)+(q||1);renderBag();bump();}
+const thumb=id=>{if(id.startsWith('gift')){const g=gifts[+id.slice(4)];return byId[g.items[0]]?img(byId[g.items[0]],120,''):'';}return img(byId[id],120,'');};
+const lname=id=>id.startsWith('gift')?`${s('gName')} · ${gifts[+id.slice(4)].items.length}`:L3(byId[id].n);
+function renderBag(){const n=Object.values(bag).reduce((a,b)=>a+b,0);$$('.bagN').forEach(b=>b.textContent=n);
+ const t=totals(),ids=Object.keys(bag);const pct=Math.min(100,t.sub/t.th*100);
+ $('#freebar').innerHTML=`<p>${t.sub>=t.th?s('freeOk'):s('freeLeft',{r:rm(t.th-t.sub)})}</p><div class="tr"><i style="width:${pct}%"></i></div><div class="rg"><button type="button" data-rg="w" aria-pressed="${region==='w'}">${s('west')}</button><button type="button" data-rg="e" aria-pressed="${region==='e'}">${s('east')}</button></div>`;
+ $('#drItems').innerHTML=ids.length?ids.map(id=>`<div class="ci"><div class="th">${thumb(id)}</div><div><b>${lname(id)}</b><span>${rm(lineP(id))}</span></div><div class="qty"><button type="button" data-q="${id}" data-d="-1" aria-label="−">−</button><output>${bag[id]}</output><button type="button" data-q="${id}" data-d="1" aria-label="+">+</button></div></div>`).join(''):`<div class="dr-empty"><b>${s('empty')}</b>${s('emptyP')}</div>`;
+ $('#drF').innerHTML=ids.length?`<div class="ln"><span>${s('sub')}</span><span>${rm(t.sub)}</span></div><div class="ln"><span>${s('ship')} · ${region==='w'?s('west'):s('east')}</span><span>${t.ship?rm(t.ship):s('free')}</span></div><div class="tot"><span>${s('total')}</span><span>${rm(t.sub+t.ship)}</span></div><button class="btn pri full" type="button" id="payGo">${s('checkout')} →</button><div class="paybadges"><span class="pb"><i></i>Card</span><span class="pb fpx">FPX</span><span class="pb grab">GrabPay</span><span class="pb tng">Touch 'n Go</span></div><p class="fine">${s('fine')}</p>`:'';}
+const drawer=$('#drawer'),scrim=$('#scrim');let lastF;
+const openBag=()=>{lastF=document.activeElement;drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');setTimeout(()=>$('#drX').focus(),60);};
+const closeBag=()=>{drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');if(lastF)lastF.focus();};
+$('#drX').addEventListener('click',closeBag);scrim.addEventListener('click',closeBag);
+document.addEventListener('click',e=>{
+ if(e.target.closest('[data-bag]')){openBag();return;}
+ const a=e.target.closest('[data-add]');if(a){add(a.dataset.add);const o=a.innerHTML;a.classList.add('done');a.textContent=s('added');setTimeout(()=>{a.classList.remove('done');a.innerHTML=o;},1200);return;}
+ const q=e.target.closest('[data-q]');if(q){bag[q.dataset.q]=(bag[q.dataset.q]||0)+ +q.dataset.d;if(bag[q.dataset.q]<=0)delete bag[q.dataset.q];renderBag();return;}
+ const r=e.target.closest('[data-rg]');if(r){region=r.dataset.rg;renderBag();return;}
+ if(e.target.closest('#payGo'))afDemo(s('payDemo'));});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeBag();closeNav();closePops();}});
+
+/* ---------- shop grid ---------- */
+let cat='all';
+function renderShop(){$('#cats').innerHTML=['all','tex','cer','lit','liv'].map(c=>`<button type="button" class="chip" data-cat="${c}" aria-pressed="${c===cat}">${s(c)}</button>`).join('');
+ const list=(cat==='all'?P.filter(p=>p.best):P.filter(p=>p.c===cat)).slice(0,8);
+ $('#pgrid').innerHTML=list.map((p,i)=>`<article class="pc" style="animation-delay:${i*50}ms"><div class="pimg">${img(p,520)}${p.best?`<span class="tag">${s('best')}</span>`:''}<button class="qa" type="button" data-add="${p.id}">${s('add')}</button></div><div><h3>${L3(p.n)}</h3><p class="mk">${L3(p.m)}</p></div><div class="pr"><span>${rm(p.p)}</span><button type="button" data-add="${p.id}">${s('add')}</button></div></article>`).join('');}
+$('#cats').addEventListener('click',e=>{const c=e.target.closest('[data-cat]');if(!c)return;cat=c.dataset.cat;renderShop();});
+
+/* ---------- hotspots ---------- */
+function placeHs(stage,room,small){const layer=stage.querySelector('.hs-layer');const W=stage.clientWidth,H=stage.clientHeight;if(!W)return;
+ let iw,ih,ox,oy;if(W/H>room.ar){iw=W;ih=W/room.ar;ox=0;oy=(H-ih)/2;}else{ih=H;iw=H*room.ar;oy=0;ox=(W-iw)/2;}
+ layer.innerHTML=room.hs.map(([id,x,y],i)=>{const L=ox+x*iw,T=oy+y*ih;if(L<20||L>W-20||T<20||T>H-20)return '';return `<button type="button" class="hs${bag[id]?' added':''}" style="left:${L}px;top:${T}px" data-hs="${id}" aria-expanded="false" aria-label="${L3(byId[id].n)}, ${rm(byId[id].p)}"><i></i></button>`;}).join('')+`<div class="pop" role="dialog"></div>`;}
+function closePops(){$$('.pop').forEach(p=>p.classList.remove('on'));$$('.hs').forEach(h=>h.setAttribute('aria-expanded','false'));$$('.il li').forEach(l=>l.classList.remove('on'));}
+document.addEventListener('click',e=>{const h=e.target.closest('.hs');if(!h){if(!e.target.closest('.pop')&&!e.target.closest('.il'))closePops();return;}
+ const open=h.getAttribute('aria-expanded')==='true';closePops();if(open)return;
+ const layer=h.parentElement,pop=layer.querySelector('.pop'),p=byId[h.dataset.hs];h.setAttribute('aria-expanded','true');
+ pop.innerHTML=`<div class="th">${img(p,160,'').replace('loading="lazy" ','')}</div><div><b>${L3(p.n)}</b><span>${rm(p.p)} · ${L3(p.m)}</span></div><button type="button" data-add="${p.id}">${s('add')}</button>`;
+ const W=layer.clientWidth,Hh=layer.clientHeight,x=parseFloat(h.style.left),y=parseFloat(h.style.top),pw=Math.min(250,W-24);pop.style.width=pw+'px';
+ pop.style.left=Math.max(12,Math.min(W-pw-12,x-pw/2))+'px';pop.style.top=(y>Hh*.55?y-170:y+28)+'px';pop.classList.add('on');
+ $$('.il li').forEach(l=>l.classList.toggle('on',l.dataset.id===p.id));});
+
+/* ---------- lookbook ---------- */
+let room=0;const stage=$('#stage'),hero=$('#heroStage');
+function renderLook(){const r=ROOMS[room];
+ $('#rooms').innerHTML=ROOMS.map((x,i)=>`<button type="button" class="room-t" role="tab" aria-selected="${i===room}" data-room="${i}">${L3(x.n)}</button>`).join('');
+ const im=$('#roomImg'),src=`https://images.unsplash.com/photo-${r.img}?auto=format&fit=max&w=1600&q=80`;if(im.getAttribute('src')!==src){im.style.opacity=0;im.onload=()=>{im.style.opacity=1;};im.src=src;}im.alt=L3(r.n);
+ $('#roomName').textContent=L3(r.n);$('#roomCount').textContent=s('inroom',{n:r.hs.length});
+ $('#il').innerHTML=r.hs.map(([id])=>{const p=byId[id];return `<li data-id="${id}"><div class="th">${img(p,120,'')}</div><div><b>${L3(p.n)}</b><span>${rm(p.p)}</span></div><button type="button" data-add="${id}" aria-label="${s('add')}">+</button></li>`;}).join('');
+ $('#addAll').textContent=s('addAll',{n:r.hs.length});placeHs(stage,r);}
+$('#rooms').addEventListener('click',e=>{const b=e.target.closest('[data-room]');if(!b)return;room=+b.dataset.room;closePops();renderLook();});
+$('#il').addEventListener('click',e=>{const li=e.target.closest('li');if(!li||e.target.closest('button'))return;const h=[...$$('#stage .hs')].find(x=>x.dataset.hs===li.dataset.id);if(h){e.stopPropagation();h.click();}});
+$('#il').addEventListener('mouseover',e=>{const li=e.target.closest('li');if(!li)return;$$('#stage .hs').forEach(h=>h.style.transform=h.dataset.hs===li.dataset.id?'scale(1.3)':'');});
+$('#il').addEventListener('mouseleave',()=>$$('#stage .hs').forEach(h=>h.style.transform=''));
+$('#addAll').addEventListener('click',()=>{ROOMS[room].hs.forEach(([id])=>{bag[id]=(bag[id]||0)+1;});renderBag();bump();const b=$('#addAll');b.textContent=s('addedAll');setTimeout(()=>b.textContent=s('addAll',{n:ROOMS[room].hs.length}),1500);});
+const HERO={ar:.5625,hs:[['chair',.74,.601],['pouf',.45,.653],['pampas',.65,.53],['gold',.15,.642]]};
+let rT;addEventListener('resize',()=>{clearTimeout(rT);rT=setTimeout(()=>{placeHs(stage,ROOMS[room]);placeHs(hero,HERO);},120);});
+
+/* ---------- gift builder ---------- */
+let gSize=0,gWrap=1,gSel=['candle','cups'];
+function renderGift(){const max=s('sizes')[gSize][1];gSel=gSel.slice(0,max);const gi=P.filter(p=>p.gift);
+ $('#gSize').innerHTML=s('sizes').map((x,i)=>`<button type="button" class="chip" data-gs="${i}" aria-pressed="${i===gSize}">${x[0]}</button>`).join('');
+ $('#gWrap').innerHTML=s('wraps').map((x,i)=>`<button type="button" class="chip" data-gw="${i}" aria-pressed="${i===gWrap}">${x[0]}${x[1]?' · +RM '+x[1]:''}</button>`).join('');
+ $('#gItems').innerHTML=gi.map(p=>{const on=gSel.includes(p.id);return `<button type="button" class="gi" data-gi="${p.id}" aria-pressed="${on}" ${!on&&gSel.length>=max?'disabled':''}><div class="th">${img(p,200,'')}</div><b>${L3(p.n)}</b><span>${rm(p.p)}</span></button>`;}).join('');
+ const box=$('#box');box.className='box s'+max+(gWrap?' batik':'');
+ box.innerHTML=Array.from({length:max},(_,i)=>{const id=gSel[i];return `<div class="slot2${id?' full':''}">${id?img(byId[id],300,''):s('slotE')}</div>`;}).join('');
+ $('#gCount').textContent=s('chosen',{a:gSel.length,b:max});
+ const raw=gSel.reduce((a,id)=>a+byId[id].p,0),wrap=s('wraps')[gWrap][1],tot=raw*.9+wrap;
+ $('#gWas').textContent=raw?rm(raw+wrap):'';$('#gTotal').textContent=rm(tot);$('#gSave').textContent=raw?s('save',{s:rm(raw*.1)}):'';
+ const ga=$('#gAdd'),ok=gSel.length===max;ga.disabled=!ok;ga.style.opacity=ok?1:.55;ga.querySelector('span').textContent=ok?(lang==='en'?ga.querySelector('span')._en:(T[lang].gAdd)):s('gNeed',{a:gSel.length,b:max});
+ $('#gNote').textContent=$('#gMsg').value.trim()||s('defNote');return {raw,tot,max};}
+$('#gSize').addEventListener('click',e=>{const b=e.target.closest('[data-gs]');if(!b)return;gSize=+b.dataset.gs;renderGift();});
+$('#gWrap').addEventListener('click',e=>{const b=e.target.closest('[data-gw]');if(!b)return;gWrap=+b.dataset.gw;renderGift();});
+$('#gItems').addEventListener('click',e=>{const b=e.target.closest('[data-gi]');if(!b||b.disabled)return;const id=b.dataset.gi;gSel=gSel.includes(id)?gSel.filter(x=>x!==id):[...gSel,id];renderGift();});
+$('#gMsg').addEventListener('input',()=>{$('#gNote').textContent=$('#gMsg').value.trim()||s('defNote');});
+$('#gAdd').addEventListener('click',()=>{const g=renderGift();if(gSel.length!==g.max)return;gifts.push({items:[...gSel],price:Math.round(g.tot)});add('gift'+(gifts.length-1));const sp=$('#gAdd span');sp.textContent=s('gAdded');setTimeout(renderGift,1400);});
+
+/* ---------- enquiry ---------- */
+let eW=0;
+function renderEnq(){$('#eWhat').innerHTML=s('what').map((w,i)=>`<button type="button" class="chip" role="radio" aria-checked="${i===eW}" data-w="${i}">${w}</button>`).join('');
+ const sel=$('#eWhen'),cur=sel.selectedIndex<0?1:sel.selectedIndex,n=myNow();sel.innerHTML=Array.from({length:6},(_,i)=>`<option>${new Date(Date.UTC(n.y,n.mo-1+i+1,1)).toLocaleDateString(LOC[lang],{month:'long',year:'numeric',timeZone:'UTC'})}</option>`).join('');sel.selectedIndex=cur;
+ $('#eMsg').textContent=s('msgE',{b:NAME(),w:s('what')[eW],q:$('#eQty').value,d:sel.value});}
+$('#eWhat').addEventListener('click',e=>{const c=e.target.closest('[data-w]');if(!c)return;eW=+c.dataset.w;renderEnq();});
+['#eQty','#eWhen'].forEach(x=>$(x).addEventListener('change',renderEnq));
+$('#eForm').addEventListener('submit',e=>{e.preventDefault();afDemo();});
+
+/* ---------- booking ---------- */
+const EXP=[{p:120,max:8,img:null,times:{we:['10:00','14:30'],wd:['15:00']}},{p:0,max:4,img:'1618219908412-a29a1bb7b86e',times:{we:['11:00','14:00','16:00'],wd:['11:00','14:00','16:00']}},{p:0,max:6,img:'1540932239986-30128078f3c5',times:{we:['19:30'],wd:['19:30']}}];
+let bx=0,bd=null,bt=null,bp=2;
+const bdays=(()=>{const n=myNow(),a=[];for(let i=1;i<=14;i++)a.push(new Date(Date.UTC(n.y,n.mo-1,n.d+i,12)));return a;})();
+const fullSeed=(d,t)=>((d.getUTCDate()*7+t.charCodeAt(1)*3+t.charCodeAt(3))%5)===0;
+function renderBook(){const loc=LOC[lang],ex=EXP[bx];if(!bd)bd=bdays.find(d=>d.getUTCDay()!==3);
+ $('#exps').innerHTML=s('exps').map((x,i)=>`<button type="button" class="exp" data-x="${i}" aria-pressed="${i===bx}"><span class="ei">${EXP[i].img?`<img loading="lazy" src="https://images.unsplash.com/photo-${EXP[i].img}?auto=format&fit=crop&w=400&h=200&q=75" alt="">`:`<svg viewBox="0 0 200 92" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="92" fill="url(#bunga)"/></svg>`}</span><div><b>${x[0]}</b><small>${x[1]}</small><em>${x[2]}</em></div></button>`).join('');
+ $('#dates').innerHTML=bdays.map((d,i)=>{const cl=d.getUTCDay()===3;return `<button type="button" class="date" data-i="${i}" ${cl?'disabled':''} aria-pressed="${!cl&&+d===+bd}"><small>${cl?s('closed'):d.toLocaleDateString(loc,{weekday:'short',timeZone:'UTC'})}</small><b>${d.getUTCDate()}</b><small>${d.toLocaleDateString(loc,{month:'short',timeZone:'UTC'})}</small></button>`;}).join('');
+ const wk=bd.getUTCDay()===0||bd.getUTCDay()===6;let ts=wk?ex.times.we:ex.times.wd;if(bx===2&&!(bd.getUTCDay()>=4&&bd.getUTCDay()<=6))ts=[];
+ let free=0;$('#slots').innerHTML=ts.length?ts.map(t=>{const f=fullSeed(bd,t);if(!f)free++;return `<button type="button" class="slot" data-t="${t}" ${f?'disabled':''} aria-pressed="${t===bt}">${t}${f?' · '+s('full'):''}</button>`;}).join(''):`<span class="sample">—</span>`;
+ if(bt&&!ts.includes(bt))bt=null;if(bt&&fullSeed(bd,bt))bt=null;
+ $('#slotNote').textContent=s('left',{n:free});bp=Math.min(bp,ex.max);$('#pN').textContent=bp;$('#pMax').textContent=s('max',{n:ex.max});
+ $('#bName').textContent=s('exps')[bx][0];
+ $('#bSum').innerHTML=`<div><dt>${s('sDate')}</dt><dd>${bd.toLocaleDateString(loc,{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'})}</dd></div><div><dt>${s('sTime')}</dt><dd>${bt||'—'}</dd></div><div><dt>${s('sPax')}</dt><dd>${bp}</dd></div>`;
+ $('#bTot').textContent=ex.p?rm(ex.p*bp):s('exps')[bx][2];
+ const go=$('#bGo');go.disabled=!bt;go.style.opacity=bt?1:.6;go.querySelector('span').textContent=bt?(lang==='en'?go.querySelector('span')._en:T[lang].bGo):s('pick');}
+$('#exps').addEventListener('click',e=>{const b=e.target.closest('[data-x]');if(!b)return;bx=+b.dataset.x;bt=null;renderBook();});
+$('#dates').addEventListener('click',e=>{const b=e.target.closest('.date');if(!b||b.disabled)return;bd=bdays[+b.dataset.i];renderBook();});
+$('#slots').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;bt=b.dataset.t;renderBook();});
+$('#pMinus').addEventListener('click',()=>{bp=Math.max(1,bp-1);renderBook();});
+$('#pPlus').addEventListener('click',()=>{bp=Math.min(EXP[bx].max,bp+1);renderBook();});
+$('#bGo').addEventListener('click',()=>{if(!bt)return;afDemo(s('bConf',{b:NAME(),e:s('exps')[bx][0],d:bd.toLocaleDateString(LOC[lang],{day:'numeric',month:'short',timeZone:'UTC'}),t:bt,p:bp}));});
+
+/* ---------- faq, hours ---------- */
+function renderFaq(){$('#faqList').innerHTML=s('faq').map((q,i)=>`<div class="q${i===0?' open':''}"><button type="button" aria-expanded="${i===0}" aria-controls="fa${i}" id="fb${i}">${q[0]}<i aria-hidden="true"></i></button><div class="qa2" id="fa${i}" role="region" aria-labelledby="fb${i}"><div><p>${L3(q[1])}</p></div></div></div>`).join('');}
+$('#faqList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const q=b.parentElement,o=!q.classList.contains('open');$$('#faqList .q').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});if(o){q.classList.add('open');b.setAttribute('aria-expanded','true');}});
+function renderHours(){const wd=myNow().wd;$('#hours').innerHTML=[4,5,6,0,1,2,3].map(d=>`<li class="${d===wd?'today':''}"><span>${s('days')[d]}</span><span>${d===3?s('closed'):(d===5||d===6?s('hrsW'):s('hrs'))}</span></li>`).join('');}
+
+/* ---------- language ---------- */
+const tEls=$$('[data-t]');tEls.forEach(el=>el._en=el.innerHTML);const pEls=$$('[data-tp]');pEls.forEach(el=>el._en=el.placeholder);
+function setLang(l){lang=S[l]?l:'en';H.lang=lang==='zh'?'zh-Hans':lang;try{localStorage.setItem('af-lang',lang);}catch(e){}
+ tEls.forEach(el=>{el.innerHTML=lang==='en'?el._en:((T[lang]||{})[el.dataset.t]??el._en);});
+ pEls.forEach(el=>{el.placeholder=lang==='en'?el._en:((T[lang]||{})[el.dataset.tp]??el._en);});
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===lang)));
+ $('#badgeTxt').textContent={en:'Shop the room · Shop the room · ',ms:'Beli dari bilik · Beli dari bilik · ',zh:'点选即购 · 点选即购 · 点选即购 · '}[lang];
+ renderShop();renderBag();renderLook();placeHs(hero,HERO);renderGift();renderEnq();renderBook();renderFaq();renderHours();
+ if(window.afFill)window.afFill();}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+
+/* ---------- nav, reveal, mobile bar ---------- */
+const links=$('#links'),burger=$('#burger');
+function closeNav(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
+links.addEventListener('click',e=>{if(e.target.closest('a'))closeNav();});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('look'))placeHs(stage,ROOMS[room]);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+$$('.reveal').forEach(el=>io.observe(el));
+const mbar=$('#mbar');addEventListener('scroll',()=>mbar.classList.toggle('on',scrollY>innerHeight*.6),{passive:true});
+$('#news').addEventListener('submit',e=>{e.preventDefault();afDemo({en:'Demo: on your site this adds the email to your mailing list and sends the 10% code.',ms:'Demo: di laman anda, ini menambah e-mel ke senarai mel dan menghantar kod 10%.',zh:'演示：在你的网站上，这会把电邮加入名单并发送 9 折优惠码。'}[lang]);});
+
+let saved=null;try{saved=localStorage.getItem('af-lang');}catch(e){}
+setLang(K.l||saved||'en');
+addEventListener('load',()=>{placeHs(hero,HERO);placeHs(stage,ROOMS[room]);});
+})();
+</script>
+</body>
+</html>
