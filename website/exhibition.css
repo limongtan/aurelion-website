@@ -707,3 +707,6 @@ html.has-bar .ps-stage{top:calc(var(--nav) + var(--bar) + 24px)}
 .w2-num{flex-direction:column;align-items:center;gap:4px;line-height:1}
 .w2-num span{font-size:10px;letter-spacing:.12em}
 .w2[data-p="3"] .w2-num b{color:#25d366}
+
+.tier-split{margin-top:8px;font-size:13px;color:var(--txt);display:flex;gap:6px;align-items:center}
+.tier-split::before{content:"½";font-family:var(--mono);font-size:11px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#000;flex:none}

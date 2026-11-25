@@ -371,10 +371,11 @@ const renderPricing = () => {
     <div><span class="sub">${esc(L(x.sub))}</span><h3>${esc(L(x.name))}</h3></div>
     <div class="tier-price"><b><small>RM</small>${fmt(x.now)}</b><s>${esc(t('price.was'))} RM${fmt(x.was)}</s></div>
     <div class="tier-save"><span>${esc(t('price.save', {x: fmt(x.was - x.now)}))}</span><small>${esc(t('price.day', {d: Math.round(x.now / 365)}))}</small></div>
+    <div class="tier-split">${esc(t('price.split', {x: fmt(x.now / 2)}))}</div>
     <ul>${L(x.feats).map(f => `<li>${esc(f)}</li>`).join('')}</ul>
     <a class="ex-btn ${x.feat ? 'wa' : 'solid'}" href="${waLink(t('price.msg', {t: L(x.name), p: 'RM' + fmt(x.now)}))}" target="_blank" rel="noopener">${WA_SVG}${esc(t('price.cta'))}</a></article>`).join('');
   const cny = $('.price-cny'); if (cny) cny.textContent = t('price.cny');
-  $('.inc-chips').innerHTML = [1,2,3,4,5,6,7,8].map(i => `<span>${esc(t('price.inc' + i))}</span>`).join('');
+  $('.inc-chips').innerHTML = [9,1,2,3,4,5,6,7,8].map(i => `<span>${esc(t('price.inc' + i))}</span>`).join('');
 };
 const END = new Date('2026-12-31T23:59:59+08:00').getTime();
 const cd = $('.cd'), barCd = $('.bar-cd');
