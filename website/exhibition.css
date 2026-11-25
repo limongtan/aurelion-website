@@ -146,10 +146,7 @@ iframe.live.ready{opacity:1}
 
 /* FAQ / objections */
 .faq-t{margin:clamp(70px,9vw,130px) 0 22px;color:var(--mut)}
-.faq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
-.faq div{padding:28px 26px 34px 0;border-bottom:1px solid var(--line)}
-.faq div:not(:nth-child(3n)){border-right:1px solid var(--line)}
-.faq div:nth-child(3n+2),.faq div:nth-child(3n){padding-left:26px}
+.faq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .faq h3{margin:0 0 12px;font-weight:500;font-size:clamp(20px,1.7vw,25px);letter-spacing:-.025em;line-height:1.2}
 .faq h3::before{content:"“";color:var(--acc);margin-right:2px}
 .faq p{margin:0;color:var(--mut);font-size:15px;line-height:1.55;max-width:36ch}
@@ -424,8 +421,6 @@ body.vw-open .wa-fab,body.vw-open .wa-bub{opacity:0;pointer-events:none}
   .cmp-wrap{max-width:720px}
   .calc{grid-template-columns:1fr}.calc-out{border-left:0;border-top:1px solid var(--line)}
   .faq{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .faq div{padding:24px 22px 30px!important;border-right:0!important}
-  .faq div:nth-child(odd){border-right:1px solid var(--line)!important}
   .tiers{grid-template-columns:1fr;max-width:620px}
   .inc,.price-foot{grid-template-columns:1fr}
   .ps{grid-template-columns:1fr}.ps-stage{position:relative;top:0}
@@ -445,7 +440,6 @@ body.vw-open .wa-fab,body.vw-open .wa-bub{opacity:0;pointer-events:none}
   .ex-zoom{height:190vh}
   .zm-copy{flex-direction:column;align-items:flex-start}
   .faq{grid-template-columns:1fr}
-  .faq div{padding:22px 0 24px!important;border-right:0!important}
   .sme-panel{grid-template-columns:1fr}
   .sme-ex{gap:8px}
   .how{grid-template-columns:1fr 1fr;gap:26px 0}
@@ -583,3 +577,62 @@ html.has-bar .ps-stage{top:calc(var(--nav) + var(--bar) + 24px)}
 .cmp input{pointer-events:none}
 .cmp{cursor:ew-resize}
 @media(max-width:1100px){.ps-stage{order:-1}}
+
+/* ---------- FAQ bento: glow field, icons, mini visuals ---------- */
+:root{--fq-card:#ffffff07;--fq-card2:#ffffff0d;--fq-dot:#ffffff2a;--fq-glow:.7}
+:root[data-theme="light"]{--fq-card:#ffffffa6;--fq-card2:#ffffff;--fq-dot:#0000001f;--fq-glow:.32}
+.faq-zone{position:relative;isolation:isolate}
+.faq-zone::before{content:"";position:absolute;z-index:-1;inset:-40px calc(-1 * var(--gut)) -60px;background-image:radial-gradient(var(--fq-dot) 1px,transparent 1.4px);background-size:22px 22px;-webkit-mask:radial-gradient(70% 75% at 50% 55%,#000 30%,transparent 78%);mask:radial-gradient(70% 75% at 50% 55%,#000 30%,transparent 78%);pointer-events:none}
+.faq-zone::after{content:"";position:absolute;z-index:-2;inset:10% 5% 0;background:radial-gradient(40% 50% at 18% 30%,#f7a531 0%,transparent 70%),radial-gradient(35% 45% at 85% 75%,#25d366 0%,transparent 70%),radial-gradient(30% 40% at 55% 10%,#7c6cff 0%,transparent 70%);filter:blur(70px);opacity:calc(var(--fq-glow) * .55);animation:fqDrift 18s ease-in-out infinite alternate;pointer-events:none}
+@keyframes fqDrift{to{transform:translate3d(3%,-4%,0) scale(1.08) rotate(4deg)}}
+.faq-c{--mx:50%;--my:0%;position:relative;padding:24px 24px 28px;border:1px solid var(--line);border-radius:20px;background:var(--fq-card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden;transition:border-color .35s,transform .45s var(--ease),background .35s,opacity .8s var(--ease)}
+.faq-c::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(320px circle at var(--mx) var(--my),#f7a53124,transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none}
+.faq-c::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:radial-gradient(220px circle at var(--mx) var(--my),#f7a531,transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s;pointer-events:none}
+.faq-c:hover{background:var(--fq-card2);transform:translateY(-4px)}
+.faq-c:hover::before,.faq-c:hover::after{opacity:1}
+.faq-c h3,.faq-c p{position:relative}
+.faq-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px;height:52px}
+.faq-ic{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;color:var(--acc-t);background:linear-gradient(145deg,#f7a5312b,#f7a5310a);border:1px solid #f7a53140;box-shadow:inset 0 1px 0 #ffffff14,0 8px 24px -10px #f7a53166}
+.faq-ic svg{width:22px;height:22px}
+.faq-c:hover .faq-ic svg{animation:fqWiggle .6s var(--ease)}
+@keyframes fqWiggle{30%{transform:rotate(-10deg) scale(1.1)}60%{transform:rotate(6deg)}}
+.v{display:flex;align-items:center;font-family:var(--mono);font-size:10.5px;color:var(--mut)}
+/* 1 search result rises to #1 */
+.v-serp{flex-direction:column;align-items:flex-end;gap:5px;width:118px}
+.v-serp i{display:block;height:9px;width:100%;border-radius:5px;background:var(--line2)}
+.v-serp i:first-child{width:78%}.v-serp i:last-child{width:64%}
+.v-serp .hit{height:16px;display:flex;align-items:center;gap:6px;padding:0 6px;background:#f7a53122;border:1px solid #f7a53155;animation:fqRise 3.2s var(--ease) infinite}
+.v-serp .hit b{font-weight:500;color:var(--acc-t);font-size:9.5px}
+.v-serp .hit s{flex:1;height:4px;border-radius:3px;background:#f7a53166}
+@keyframes fqRise{0%,15%{transform:translateY(10px);opacity:.5}35%,100%{transform:none;opacity:1}}
+/* 2 WhatsApp chat lands */
+.v-chat{position:relative;flex-direction:column;align-items:flex-end;gap:5px;width:112px}
+.v-chat i{display:block;height:15px;border-radius:9px 9px 9px 3px;background:var(--line2);width:62%;align-self:flex-start}
+.v-chat .me{width:72%;align-self:flex-end;border-radius:9px 9px 3px 9px;background:#25d36633;border:1px solid #25d36666;color:#25d366;font-style:normal;font-size:8.5px;text-align:right;padding-right:6px;line-height:13px;animation:fqPop 3s var(--ease) infinite}
+.v-chat b{position:absolute;top:-3px;right:-3px;width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 0 0 #25d36699;animation:fqPing 3s infinite}
+@keyframes fqPop{0%,20%{transform:translateY(6px) scale(.9);opacity:0}38%,100%{transform:none;opacity:1}}
+@keyframes fqPing{0%,35%{box-shadow:0 0 0 0 #25d36699}70%,100%{box-shadow:0 0 0 9px #25d36600}}
+/* 3 language chips take turns */
+.v-lang{gap:5px}
+.v-lang i{font-style:normal;padding:5px 9px;border-radius:99px;border:1px solid var(--line2);color:var(--mut);animation:fqLang 4.5s infinite}
+.v-lang i:nth-child(2){animation-delay:1.5s}.v-lang i:nth-child(3){animation-delay:3s}
+@keyframes fqLang{0%,30%{background:var(--txt);color:var(--bg);border-color:var(--txt)}36%,100%{background:transparent;color:var(--mut);border-color:var(--line2)}}
+/* 4 phone with thumb arc and tap target */
+.v-phone{position:relative;width:30px;height:52px;border:1.5px solid var(--line2);border-radius:8px;margin-right:30px;justify-content:center}
+.v-phone i{position:absolute;inset:6px 5px 16px;border-radius:3px;background:repeating-linear-gradient(var(--line2) 0 3px,transparent 3px 7px)}
+.v-phone b{position:absolute;left:5px;right:5px;bottom:5px;height:7px;border-radius:4px;background:#25d366;animation:fqTap 2.4s infinite}
+.v-phone::after{content:"";position:absolute;width:30px;height:30px;right:-26px;bottom:-12px;border:1.5px dashed transparent;border-top-color:#f7a53199;border-left-color:#f7a53199;border-radius:50%;transform:rotate(-20deg)}
+@keyframes fqTap{0%,55%,100%{box-shadow:0 0 0 0 #25d36680}75%{box-shadow:0 0 0 6px #25d36600}}
+/* 5 holiday price */
+.v-price{flex-direction:column;align-items:flex-end;gap:1px;line-height:1.1}
+.v-price s{color:var(--dim);font-size:11px}
+.v-price b{font-family:var(--sans);font-weight:600;font-size:22px;letter-spacing:-.03em;color:var(--acc-t);animation:fqGlow 3s ease-in-out infinite}
+@keyframes fqGlow{50%{text-shadow:0 0 18px #f7a53199}}
+/* 6 growth bars */
+.v-bars{align-items:flex-end;gap:5px;height:44px}
+.v-bars i{width:9px;border-radius:3px 3px 1px 1px;background:var(--line2);height:var(--h);animation:fqGrow 3.6s var(--ease) infinite;transform-origin:bottom}
+.v-bars i:nth-child(1){--h:30%}.v-bars i:nth-child(2){--h:45%;animation-delay:.12s}.v-bars i:nth-child(3){--h:58%;animation-delay:.24s}.v-bars i:nth-child(4){--h:76%;animation-delay:.36s}
+.v-bars i:nth-child(5){--h:100%;animation-delay:.48s;background:linear-gradient(#f7a531,#f7a53155)}
+@keyframes fqGrow{0%,8%{transform:scaleY(.15)}40%,100%{transform:none}}
+@media(max-width:800px){.faq{gap:10px}.faq-c{padding:20px 20px 22px}.faq-top{margin-bottom:18px}.faq-zone::before{inset:-30px calc(-1 * var(--gut)) -40px}}
+@media(prefers-reduced-motion:reduce){.faq-zone::after,.faq-c *{animation:none!important}}
