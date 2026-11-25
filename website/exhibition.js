@@ -280,6 +280,9 @@ addEventListener('resize', () => { clearTimeout(sizePin._t); sizePin._t = setTim
 addEventListener('load', sizePin);
 track.addEventListener('scroll', () => { if (!pinOn) fcount.textContent = String(clamp(Math.round(track.scrollLeft / fxEls[0].offsetWidth) + 1, 1, FUSION.length)).padStart(2, '0'); }, {passive:true});
 
+/* ---------- FAQ card spotlight ---------- */
+if (fine) $('.faq-c').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
+
 /* ---------- Calculator ---------- */
 const calc = $('.calc');
 let lift = 1;
