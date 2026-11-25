@@ -283,6 +283,28 @@ track.addEventListener('scroll', () => { if (!pinOn) fcount.textContent = String
 /* ---------- FAQ card spotlight ---------- */
 if (fine) $$('.faq-c').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
 
+/* ---------- Why: who's building it? ---------- */
+const w2 = $('.w2'), W2_OWN = {1: Array(8).fill('you'), 2: ['them', 'you', 'you', 'extra', 'maybe', 'them', 'extra', 'busy'], 3: Array(8).fill('us')};
+let w2p = 1, w2auto = true;
+function renderWhy(p = w2p, anim = false) {
+  if (!w2) return;
+  const prev = w2p; w2p = p; w2.dataset.p = p;
+  $$('.w2-tabs button', w2).forEach(b => b.setAttribute('aria-selected', +b.dataset.p === p));
+  const own = W2_OWN[p], left = own.filter(o => o !== 'us' && o !== 'them').length;
+  $$('.w2-own', w2).forEach((el, n) => { el.className = 'w2-own own-' + own[n]; el.textContent = t('why2.o.' + own[n]); if (anim && W2_OWN[prev][n] !== own[n]) { void el.offsetWidth; el.classList.add('flip'); } });
+  const arc = $('.w2-arc', w2); arc.style.strokeDashoffset = (326.7 * (1 - left / 8)).toFixed(1); arc.style.opacity = left ? 1 : 0;
+  $('.w2-sub', w2).textContent = t('why2.sub' + p);
+  $$('.w2-stats dd', w2).forEach(dd => { dd.textContent = t('why2.v' + p + '.' + dd.dataset.k); if (anim) { dd.classList.remove('swap'); void dd.offsetWidth; dd.classList.add('swap'); } });
+  const num = $('.w2-num b', w2), from = +num.textContent || 0;
+  if (!anim || reduce) num.textContent = left;
+  else { const t0 = performance.now(); const step = now => { const k = Math.min(1, (now - t0) / 700); num.textContent = Math.round(from + (left - from) * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
+}
+if (w2) {
+  $$('.w2-tabs button', w2).forEach(b => b.addEventListener('click', () => { w2auto = false; renderWhy(+b.dataset.p, true); }));
+  $('.w2-tabs', w2).addEventListener('keydown', e => { if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return; w2auto = false; const p = (w2p + (e.key === 'ArrowRight' ? 1 : 2)) % 3 + 1; renderWhy(p, true); $('.w2-tabs button[data-p="' + p + '"]', w2).focus(); });
+  if (!reduce) { const io = new IntersectionObserver(([e]) => { if (!e.isIntersecting) return; io.disconnect(); setTimeout(() => { if (w2auto) renderWhy(2, true); }, 1800); setTimeout(() => { if (w2auto) renderWhy(3, true); }, 4200); }, {threshold: .45}); io.observe(w2); }
+}
+
 /* ---------- Calculator ---------- */
 const calc = $('.calc');
 let lift = 1;
@@ -457,7 +479,19 @@ function showV(i) {
   vIfr.src = it.href;
   history.replaceState(null, '', location.pathname + location.search + '#view=' + encodeURIComponent(it.href));
 }
-vIfr.addEventListener('load', () => { vStage.classList.remove('busy'); vFrame.classList.remove('loading'); });
+vIfr.addEventListener('load', () => {
+  vStage.classList.remove('busy'); vFrame.classList.remove('loading');
+  let doc; try { doc = vIfr.contentDocument; } catch (_) { return; }
+  if (!doc || !vw.classList.contains('open')) return;
+  const isShowcase = u => u.origin === location.origin && /^\/website\/?(index\.html)?$/.test(u.pathname);
+  if (isShowcase(new URL(doc.location.href))) { closeViewer(); return; }
+  doc.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    const u = new URL(a.getAttribute('href'), doc.baseURI);
+    if (isShowcase(u)) { e.preventDefault(); closeViewer(); }
+    else if (u.origin === location.origin && /^\/contact(\.html)?$/.test(u.pathname)) { e.preventDefault(); window.open(waLink(t('vw.like', {n: vList[vI]?.name || ''})), '_blank', 'noopener'); }
+  }, true);
+});
 function closeViewer() {
   vw.classList.remove('open'); vw.setAttribute('aria-hidden', 'true'); document.documentElement.style.overflow = ''; document.body.classList.remove('vw-open');
   setTimeout(() => { if (!vw.classList.contains('open')) vIfr.src = 'about:blank'; }, 400);
@@ -550,7 +584,7 @@ function applyLang(l) {
   buttons.forEach(b => { b.firstChild.textContent = filterLabel(b) + ' '; });
   burger.textContent = t(menu.classList.contains('open') ? 'nav.close' : 'nav.menu');
   setTheme(document.documentElement.dataset.theme || 'dark');
-  renderFusion(); showSme(curSme, false); renderPricing(); renderPersonas(); renderIndex(); calcUpd(); tick(); filterDesigns(false);
+  renderFusion(); renderWhy(); showSme(curSme, false); renderPricing(); renderPersonas(); renderIndex(); calcUpd(); tick(); filterDesigns(false);
   if (pal.classList.contains('open')) renderPal();
   requestAnimationFrame(sizePin);
 }
