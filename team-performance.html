@@ -356,6 +356,18 @@ body.locked { overflow:hidden; }
 :root[data-theme="light"] .steps > li > b { background:#e6c287; color:#192832; }
 :root[data-theme="light"] .track-no { -webkit-text-stroke-color:#7a5414aa; }
 
+/* ---- obvious tap / click hints (one style, site-wide) ---- */
+.tap-hint { display:inline-flex; align-items:center; gap:8px; margin:14px 0 0; padding:7px 14px 7px 10px; border-radius:999px; border:1px dashed #e4be8099; background:#e4be8014; color:#f3d19b; font-size:.82rem; font-weight:800; line-height:1.3; }
+.tap-hint .hand { display:inline-block; font-size:1rem; animation:tapbob 1.5s ease-in-out infinite; }
+@keyframes tapbob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px) scale(.92); } }
+.w-m { display:none; }
+@media (hover:hover) and (pointer:fine) { .w-m { display:inline; } .w-t { display:none; } }
+@media (prefers-reduced-motion:reduce) { .tap-hint .hand { animation:none; } }
+:root[data-theme="light"] .tap-hint { color:#7a5414; border-color:#7a541488; background:#7a541410; }
+
+.p-swipe { display:none; color:#9fb0b3; font-size:.74rem; font-weight:700; }
+@media (hover:none) { .p-swipe { display:block; } .p-count { display:none; } }
+
 /* ================= team performance / LPI page ================= */
 :root { --fO:#e8b64c; --fN:#5b9bd5; --fA:#4fae7b; --fR:#e05a6d; --fD:#9b7be0; }
 .f-O { --f:var(--fO); } .f-N { --f:var(--fN); } .f-A { --f:var(--fA); } .f-R { --f:var(--fR); } .f-D { --f:var(--fD); }
@@ -588,6 +600,12 @@ body.locked { overflow:hidden; }
 .fam p { font-size:1.02rem; color:var(--ink); opacity:.82; }
 .sc-agree p { color:#dbe2e1; }
 
+.sc-picks button[aria-pressed=false] { animation:invite 2s ease-out infinite; }
+.sc-picks button[aria-pressed=false]:nth-child(2) { animation-delay:.3s; } .sc-picks button[aria-pressed=false]:nth-child(3) { animation-delay:.6s; } .sc-picks button[aria-pressed=false]:nth-child(4) { animation-delay:.9s; } .sc-picks button[aria-pressed=false]:nth-child(5) { animation-delay:1.2s; }
+@keyframes invite { 0% { box-shadow:0 0 0 0 #ffffff55; } 70% { box-shadow:0 0 0 10px #ffffff00; } 100% { box-shadow:0 0 0 0 #ffffff00; } }
+.mix-row .step button { background:#ffffff0d; }
+@media (prefers-reduced-motion:reduce) { .sc-picks button { animation:none !important; } }
+
   </style>
 </head>
 <body class="team-page">
@@ -613,7 +631,7 @@ body.locked { overflow:hidden; }
         <p class="deck">Every meeting has them: the one with the new idea, the one keeping the peace, the one asking for data, the one rallying people, the one who wants a decision now. The LPI shows which force is running your team, and where they collide.</p>
         <div class="hero-actions"><a class="btn btn-gold" href="#offer"><span>Map my team</span><span aria-hidden="true">↓</span></a><a class="btn btn-ghost" href="#forces"><span>Meet the five forces</span><span aria-hidden="true">↓</span></a></div>
         <div class="cast" aria-label="The five LPI forces"><button type="button" class="member f-O" data-force="O" aria-label="Open the Openness force"><span class="pic"><img src="assets/images/lpi-openness.webp" alt="" width="289" height="666" decoding="async"><span class="letter" aria-hidden="true">O</span><span class="fname">Openness</span></span><span class="bubble">“What if we did it completely differently?”</span></button><button type="button" class="member f-N" data-force="N" aria-label="Open the Neutral force"><span class="pic"><img src="assets/images/lpi-neutral.webp" alt="" width="289" height="666" decoding="async"><span class="letter" aria-hidden="true">N</span><span class="fname">Neutral</span></span><span class="bubble">“Can we all agree before we move?”</span></button><button type="button" class="member f-A" data-force="A" aria-label="Open the Analytical force"><span class="pic"><img src="assets/images/lpi-analytical.webp" alt="" width="289" height="666" decoding="async"><span class="letter" aria-hidden="true">A</span><span class="fname">Analytical</span></span><span class="bubble">“We need more data first.”</span></button><button type="button" class="member f-R" data-force="R" aria-label="Open the Relational force"><span class="pic"><img src="assets/images/lpi-relational.webp" alt="" width="289" height="666" decoding="async"><span class="letter" aria-hidden="true">R</span><span class="fname">Relational</span></span><span class="bubble">“Let me get everyone on board.”</span></button><button type="button" class="member f-D" data-force="D" aria-label="Open the Decisive force"><span class="pic"><img src="assets/images/lpi-decisive.webp" alt="" width="289" height="666" decoding="async"><span class="letter" aria-hidden="true">D</span><span class="fname">Decisive</span></span><span class="bubble">“Let’s decide now.”</span></button></div>
-        <p class="cast-note">Everyone carries all five. Tap a force to see how it shows up at work.</p>
+        <p class="tap-hint"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> a face to meet that force</span></p>
       </div>
     </section>
 
@@ -626,6 +644,7 @@ body.locked { overflow:hidden; }
     <section class="sec" id="forces" aria-labelledby="forces-title">
       <div class="shell">
         <div class="sec-head rv"><p class="eyebrow">The five LPI forces</p><h2 id="forces-title">Which one is running your meetings?</h2><p class="muted">Each has a core need. Miss it, and you get the behaviour that drives everyone up the wall.</p></div>
+        <p class="tap-hint" style="margin:0 0 14px"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> a name to switch</span></p>
         <div class="forces-tabs" role="tablist" aria-label="The five forces"><button type="button" role="tab" class="f-O" id="tab-O" aria-controls="force-O" aria-selected="true" tabindex="0"><i>O</i>Openness</button><button type="button" role="tab" class="f-N" id="tab-N" aria-controls="force-N" aria-selected="false" tabindex="-1"><i>N</i>Neutral</button><button type="button" role="tab" class="f-A" id="tab-A" aria-controls="force-A" aria-selected="false" tabindex="-1"><i>A</i>Analytical</button><button type="button" role="tab" class="f-R" id="tab-R" aria-controls="force-R" aria-selected="false" tabindex="-1"><i>R</i>Relational</button><button type="button" role="tab" class="f-D" id="tab-D" aria-controls="force-D" aria-selected="false" tabindex="-1"><i>D</i>Decisive</button></div>
         <article class="force f-O" id="force-O" role="tabpanel" aria-labelledby="tab-O">
           <div class="pic"><img src="assets/images/lpi-openness.webp" alt="" width="289" height="666" loading="lazy" decoding="async"></div>
@@ -710,7 +729,7 @@ body.locked { overflow:hidden; }
 
     <section class="sec" id="mixer" aria-labelledby="mixer-title" style="padding-top:0">
       <div class="shell">
-        <div class="sec-head rv"><span class="ftag f-O"><b>O</b>For the Openness in you</span><h2 id="mixer-title">Team Mixer: guess your team’s mix.</h2><p class="muted">Add a dot per person. Get the questions your team should be asking.</p></div>
+        <div class="sec-head rv"><span class="ftag f-O"><b>O</b>For the Openness in you</span><h2 id="mixer-title">Team Mixer: guess your team’s mix.</h2><p class="muted">Add a dot per person. Get the questions your team should be asking.</p><p class="tap-hint"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> + or − next to each force</span></p></div>
         <div class="mixer">
           <div><div class="mix-rows"><div class="mix-row f-O" data-k="O"><span class="ml"><i>O</i><span>Openness</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Openness">−</button><button type="button" data-d="1" aria-label="One more Openness">+</button></span></div><div class="mix-row f-N" data-k="N"><span class="ml"><i>N</i><span>Neutral</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Neutral">−</button><button type="button" data-d="1" aria-label="One more Neutral">+</button></span></div><div class="mix-row f-A" data-k="A"><span class="ml"><i>A</i><span>Analytical</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Analytical">−</button><button type="button" data-d="1" aria-label="One more Analytical">+</button></span></div><div class="mix-row f-R" data-k="R"><span class="ml"><i>R</i><span>Relational</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Relational">−</button><button type="button" data-d="1" aria-label="One more Relational">+</button></span></div><div class="mix-row f-D" data-k="D"><span class="ml"><i>D</i><span>Decisive</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Decisive">−</button><button type="button" data-d="1" aria-label="One more Decisive">+</button></span></div></div><p class="mix-total" aria-live="polite"></p></div>
           <div class="mix-out" aria-live="polite">
@@ -728,7 +747,7 @@ body.locked { overflow:hidden; }
       <div class="shell">
         <div class="sec-head rv"><span class="ftag f-R"><b>R</b>For the Relational in you</span><h2 id="meeting-title">Same meeting. Five different instincts.</h2></div>
         <div class="scenario">
-          <div class="sc-brief"><h3>One decision. Is the new process ready?</h3><p>Tap each force to hear it.</p><div class="sc-picks"><button type="button" class="f-O" data-k="O" aria-pressed="false" aria-label="Hear Openness">O</button><button type="button" class="f-N" data-k="N" aria-pressed="false" aria-label="Hear Neutral">N</button><button type="button" class="f-A" data-k="A" aria-pressed="false" aria-label="Hear Analytical">A</button><button type="button" class="f-R" data-k="R" aria-pressed="false" aria-label="Hear Relational">R</button><button type="button" class="f-D" data-k="D" aria-pressed="false" aria-label="Hear Decisive">D</button></div></div>
+          <div class="sc-brief"><h3>One decision. Is the new process ready?</h3><p class="tap-hint" style="margin-top:4px"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> each letter to hear that voice</span></p><div class="sc-picks"><button type="button" class="f-O" data-k="O" aria-pressed="false" aria-label="Hear Openness">O</button><button type="button" class="f-N" data-k="N" aria-pressed="false" aria-label="Hear Neutral">N</button><button type="button" class="f-A" data-k="A" aria-pressed="false" aria-label="Hear Analytical">A</button><button type="button" class="f-R" data-k="R" aria-pressed="false" aria-label="Hear Relational">R</button><button type="button" class="f-D" data-k="D" aria-pressed="false" aria-label="Hear Decisive">D</button></div></div>
           <div class="sc-said"><div class="sc-line f-O" data-k="O"><i>O</i><div><q>Could we run a smaller pilot first?</q></div></div><div class="sc-line f-N" data-k="N"><i>N</i><div><q>Whose concerns have we missed?</q></div></div><div class="sc-line f-A" data-k="A"><i>A</i><div><q>What would tell us the pilot is safe to expand?</q></div></div><div class="sc-line f-R" data-k="R"><i>R</i><div><q>Who needs to be brought into this?</q></div></div><div class="sc-line f-D" data-k="D"><i>D</i><div><q>Who will make the call, and by when?</q></div></div><div class="sc-agree" hidden><h4>All five heard</h4><p>Most teams only hear two or three. Which voices is yours missing?</p><a class="btn btn-gold" href="#offer" style="margin-top:12px"><span>Find out in the Lab</span><span aria-hidden="true">↓</span></a></div></div>
         </div>
       </div>

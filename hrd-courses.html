@@ -357,6 +357,18 @@ body.locked { overflow:hidden; }
 :root[data-theme="light"] .steps > li > b { background:#e6c287; color:#192832; }
 :root[data-theme="light"] .track-no { -webkit-text-stroke-color:#7a5414aa; }
 
+/* ---- obvious tap / click hints (one style, site-wide) ---- */
+.tap-hint { display:inline-flex; align-items:center; gap:8px; margin:14px 0 0; padding:7px 14px 7px 10px; border-radius:999px; border:1px dashed #e4be8099; background:#e4be8014; color:#f3d19b; font-size:.82rem; font-weight:800; line-height:1.3; }
+.tap-hint .hand { display:inline-block; font-size:1rem; animation:tapbob 1.5s ease-in-out infinite; }
+@keyframes tapbob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px) scale(.92); } }
+.w-m { display:none; }
+@media (hover:hover) and (pointer:fine) { .w-m { display:inline; } .w-t { display:none; } }
+@media (prefers-reduced-motion:reduce) { .tap-hint .hand { animation:none; } }
+:root[data-theme="light"] .tap-hint { color:#7a5414; border-color:#7a541488; background:#7a541410; }
+
+.p-swipe { display:none; color:#9fb0b3; font-size:.74rem; font-weight:700; }
+@media (hover:none) { .p-swipe { display:block; } .p-count { display:none; } }
+
   </style>
 </head>
 <body class="hrd-courses-page">
@@ -388,6 +400,7 @@ body.locked { overflow:hidden; }
         <div class="finder" id="finder" aria-labelledby="finder-title">
           <p class="eyebrow">Course finder</p>
           <h2 id="finder-title">What needs fixing first?</h2>
+          <p class="tap-hint" style="margin:0 0 14px"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> the one that sounds like your team</span></p>
           <ul class="f-list"><li><button type="button" data-open="space-summit"><span class="f-q">Our teams pull in different directions</span><span class="f-a">S.P.A.C.E. Summit <span aria-hidden="true">→</span></span></button></li><li><button type="button" data-open="space-bridge"><span class="f-q">Work gets lost between departments</span><span class="f-a">S.P.A.C.E. Bridge <span aria-hidden="true">→</span></span></button></li><li><button type="button" data-open="leadership-heart"><span class="f-q">Managers avoid hard conversations</span><span class="f-a">The Leadership Heart <span aria-hidden="true">→</span></span></button></li><li><button type="button" data-open="steady-under-fire"><span class="f-q">Decisions wobble under pressure</span><span class="f-a">Steady Under Fire <span aria-hidden="true">→</span></span></button></li><li><button type="button" data-open="ai-admin"><span class="f-q">Too much repeated admin work</span><span class="f-a">Build with AI <span aria-hidden="true">→</span></span></button></li><li><button type="button" data-open="ai-media"><span class="f-q">We need content and reach</span><span class="f-a">Presence in the New Era <span aria-hidden="true">→</span></span></button></li></ul>
           <a class="f-more" href="#start">Not sure yet? Start with a half-day Team Mapping Lab <span aria-hidden="true">→</span></a>
         </div>
@@ -554,7 +567,7 @@ body.locked { overflow:hidden; }
 
   <dialog class="panel" id="panel" aria-labelledby="p-title">
     <div class="p-in">
-      <div class="p-top"><p class="p-count"></p><div class="p-nav"><button type="button" class="p-prev" aria-label="Previous course">‹</button><button type="button" class="p-next" aria-label="Next course">›</button><button type="button" class="p-x" aria-label="Close">×</button></div></div>
+      <div class="p-top"><p class="p-count"></p><p class="p-swipe" aria-hidden="true">Swipe or use › for the next course</p><div class="p-nav"><button type="button" class="p-prev" aria-label="Previous course">‹</button><button type="button" class="p-next" aria-label="Next course">›</button><button type="button" class="p-x" aria-label="Close">×</button></div></div>
       <div class="p-img"><img alt="" width="1600" height="900"></div>
       <p class="tags p-tags"></p>
       <h2 id="p-title" class="p-hook"></h2>

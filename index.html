@@ -3178,6 +3178,82 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
   .levy-cta { justify-content: center; }
 }
 </style>
+<style>
+
+/* ---- obvious tap / click hints (one style, site-wide) ---- */
+.tap-hint { display:inline-flex; align-items:center; gap:8px; margin:14px 0 0; padding:7px 14px 7px 10px; border-radius:999px; border:1px dashed #e4be8099; background:#e4be8014; color:#f3d19b; font-size:.82rem; font-weight:800; line-height:1.3; }
+.tap-hint .hand { display:inline-block; font-size:1rem; animation:tapbob 1.5s ease-in-out infinite; }
+@keyframes tapbob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px) scale(.92); } }
+.w-m { display:none; }
+@media (hover:hover) and (pointer:fine) { .w-m { display:inline; } .w-t { display:none; } }
+@media (prefers-reduced-motion:reduce) { .tap-hint .hand { animation:none; } }
+:root[data-theme="light"] .tap-hint { color:#7a5414; border-color:#7a541488; background:#7a541410; }
+
+/* ==== AI for Business: living background + illustrated steps (2026-11-25) ==== */
+.grow { position: relative; isolation: isolate; background: #0b141d; }
+.grow > .shell { position: relative; z-index: 1; }
+.grow-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.grow-bg .aur { position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; filter: blur(80px); opacity: .32; mix-blend-mode: screen; }
+.grow-bg .a1 { left: -18vmax; top: -22vmax; background: radial-gradient(circle, #e4be80 0%, transparent 62%); animation: aurA 34s ease-in-out infinite alternate; }
+.grow-bg .a2 { right: -20vmax; top: 18%; background: radial-gradient(circle, #3fa7a0 0%, transparent 62%); animation: aurB 41s ease-in-out infinite alternate; }
+.grow-bg .a3 { left: 25%; bottom: -30vmax; background: radial-gradient(circle, #6d5bd0 0%, transparent 62%); opacity: .22; animation: aurA 47s ease-in-out infinite alternate-reverse; }
+@keyframes aurA { from { transform: translate(0, 0) scale(1); } to { transform: translate(8vmax, 6vmax) scale(1.15); } }
+@keyframes aurB { from { transform: translate(0, 0) scale(1.1); } to { transform: translate(-7vmax, -5vmax) scale(.95); } }
+.grow-net { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .9; }
+.grow-grid { position: absolute; inset: 0; background-image: radial-gradient(#ffffff14 1px, transparent 1.2px); background-size: 26px 26px; -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%); mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%); }
+.grow .ai-stage { background: #0e1924d9; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+/* steps as illustrated glass cards joined by a flowing line */
+.ai-steps { padding-top: 0; gap: clamp(14px, 2vw, 24px); }
+.grow .ai-steps::before { display: none; }
+.ai-steps li.ai-card:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; top: 50%; right: calc(-1 * clamp(14px, 2vw, 24px) / 2 - 16px); display: grid; place-items: center; width: 32px; height: 32px; margin-top: -16px; border-radius: 50%; background: #e4be80; color: #111b24; font-weight: 800; box-shadow: 0 0 0 5px #0b141d; animation: nudge 2.2s ease-in-out infinite; }
+@keyframes nudge { 50% { transform: translateX(3px); } }
+@media (max-width: 900px) { .ai-steps li.ai-card:not(:last-child)::after { content: "↓"; top: auto; bottom: -26px; right: 50%; margin: 0 -16px 0 0; } }
+.ai-steps li.ai-card { position: relative; z-index: 1; padding: 20px 24px 26px; border-radius: 22px; background: linear-gradient(160deg, #15253399, #0d1822cc); border: 1px solid #ffffff1f; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform .35s, border-color .35s, box-shadow .35s; }
+.ai-steps li.ai-card:hover { transform: translateY(-6px); border-color: #e4be8088; box-shadow: 0 30px 60px #0008, 0 0 50px #e4be8022; }
+.ai-card .ai-dot { display: none; }
+.ai-num { position: absolute; right: 20px; top: 16px; font-family: var(--display); font-size: 2.4rem; font-weight: 700; line-height: 1; color: transparent; -webkit-text-stroke: 1px #e4be8077; }
+.ai-art { display: block; width: 100%; max-width: 190px; height: auto; margin: 0 0 14px; overflow: visible; }
+.ai-art * { fill: none; stroke: #e4be80; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.ai-art .win { stroke: #ffffff40; fill: #ffffff06; }
+.ai-art .wd { fill: #ffffff30; stroke: none; }
+.ai-art .blk { fill: #e4be8026; animation: build 6s ease-in-out infinite; transform-box: fill-box; }
+.ai-art .b2 { fill: #3fa7a033; stroke: #5fc4bb; animation-delay: .4s; } .ai-art .b3 { animation-delay: .8s; }
+@keyframes build { 0%, 8% { opacity: 0; transform: translateY(10px); } 20%, 85% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-4px); } }
+.ai-art .spark { fill: #f3d19b; stroke: none; transform-box: fill-box; transform-origin: center; animation: twinkle 2.4s ease-in-out infinite; }
+@keyframes twinkle { 50% { transform: scale(.55) rotate(45deg); opacity: .5; } }
+.ai-art .bulb circle { fill: #e4be8022; animation: glow 3s ease-in-out infinite; }
+@keyframes glow { 50% { fill: #e4be8066; filter: drop-shadow(0 0 8px #e4be80); } }
+.ai-art .rays { stroke: #f3d19b; animation: rays 3s ease-in-out infinite; } @keyframes rays { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+.ai-art .ppl * { stroke: #ffffff80; } .ai-art .ppl .mid { stroke: #5fc4bb; }
+.ai-art .axis { stroke: #ffffff33; }
+.ai-art .trend { stroke-dasharray: 220; stroke-dashoffset: 220; animation: draw 5s ease-in-out infinite; }
+@keyframes draw { 10% { stroke-dashoffset: 220; } 55%, 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+.ai-art .pt { fill: #0b141d; stroke: #5fc4bb; } .ai-art .p3 { fill: #e4be80; stroke: #e4be80; }
+.ai-art .flag { fill: #e4be8055; }
+.chapter-link.is-active > span { opacity: 1; color: #111b24; background: #e9bf7e; border-color: #e9bf7e; font-weight: 800; font-size: .74rem; border-radius: 999px; padding: 6px 12px; box-shadow: 0 6px 18px #0006; transition: opacity .25s; }
+.chapter-link > span { border-radius: 999px; }
+.ai-together { text-align: center; font-family: var(--display); font-size: 1.05rem; color: #e9e3d6; }
+/* levy box with a slow glowing edge */
+.grow-why { position: relative; grid-template-columns: auto minmax(0, 1fr) auto; overflow: hidden; border: 1px solid #e4be8055; background: linear-gradient(120deg, #e4be801c, #0e1924e6 45%, #3fa7a014); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.grow-why::before { content: ""; position: absolute; inset: 0; z-index: 0; padding: 1.5px; border-radius: inherit; background: conic-gradient(from var(--ang, 0deg), transparent 0 70%, #f3d19b 80%, transparent 90%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; animation: spinEdge 8s linear infinite; }
+.grow-why > * { position: relative; z-index: 1; }
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes spinEdge { to { --ang: 360deg; } }
+.grow-why-badge { width: 64px; height: 64px; object-fit: contain; border-radius: 12px; background: #fff; padding: 4px; }
+.grow-links a { padding: 9px 16px; border: 1px solid #e4be8066; border-radius: 999px; background: #e4be8010; }
+.grow-links a:hover { background: var(--gold); color: #111b24; text-decoration: none; }
+@media (max-width: 900px) {
+  .ai-steps::before { display: none; }
+  .ai-steps { padding-left: 0; }
+  .ai-art { max-width: 150px; }
+  .grow-why { grid-template-columns: minmax(0, 1fr); }
+}
+:root[data-theme="light"] .grow { background: #102030; color: #f7f3e9; --text: #f7f3e9; --muted: #c1ccce; }
+@media (prefers-reduced-motion: reduce) {
+  .grow-bg .aur, .ai-steps::before, .ai-art *, .grow-why::before { animation: none !important; }
+  .ai-art .blk, .ai-art .trend { opacity: 1; transform: none; stroke-dashoffset: 0; }
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main"><span data-i18n="skip" >Skip to content</span></a>
@@ -3333,6 +3409,7 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
       </div>
     </section>
     <section class="grow section-space" id="grow" aria-labelledby="grow-title">
+      <div class="grow-bg" aria-hidden="true"><span class="aur a1"></span><span class="aur a2"></span><span class="aur a3"></span><canvas class="grow-net"></canvas><span class="grow-grid"></span></div>
       <div class="shell">
         <div class="grow-head" data-reveal>
           <p class="eyebrow" data-i18n="grow-kicker">AI FOR BUSINESS · ONE TEAM, START TO FINISH</p>
@@ -3341,7 +3418,7 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
         </div>
         <div class="ai-stage" data-reveal>
           <div class="ai-picker">
-            <div class="ai-pick-head"><h3 data-i18n="grow-pick-title">Take your team to the next level.</h3><p class="ai-pick-sub" data-i18n="grow-pick-sub">Pick what you want them doing next.</p></div>
+            <div class="ai-pick-head"><h3 data-i18n="grow-pick-title">Take your team to the next level.</h3><p class="ai-pick-sub" data-i18n="grow-pick-sub">Pick what you want them doing next.</p><p class="tap-hint"><span class="hand" aria-hidden="true">👆</span><span class="w-t" data-i18n="hint-grow-t">Tap an option to see the before and after</span><span class="w-m" data-i18n="hint-grow-m">Click an option to see the before and after</span></p></div>
             <div class="ai-pains" role="group" aria-label="Pick a goal">
               <button type="button" class="ai-pain is-flagship" aria-pressed="true" data-pain="media" data-kind="reels"><span data-i18n="grow-opt-media">Make a week of reels in-house</span><em data-i18n="grow-flagship">Flagship</em></button>
               <button type="button" class="ai-pain" aria-pressed="false" data-pain="service" data-kind="demo" data-video="assets/ai-demo-service.mp4" data-poster="assets/ai-demo-service-poster.jpg"><span data-i18n="grow-opt-service">Answer customer questions after hours</span></button>
@@ -3394,19 +3471,22 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
           </div>
         </div>
         <ol class="ai-steps" data-reveal>
-          <li>
+          <li class="ai-card">
+            <span class="ai-num" aria-hidden="true">01</span><svg class="ai-art" viewBox="0 0 160 110" aria-hidden="true"><rect class="win" x="14" y="10" width="132" height="90" rx="10"/><circle class="wd" cx="27" cy="22" r="3"/><circle class="wd" cx="37" cy="22" r="3"/><circle class="wd" cx="47" cy="22" r="3"/><rect class="blk b1" x="26" y="36" width="52" height="24" rx="5"/><rect class="blk b2" x="84" y="36" width="50" height="52" rx="5"/><rect class="blk b3" x="26" y="66" width="52" height="22" rx="5"/><path class="spark" d="M126 14l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
             <span class="ai-dot" aria-hidden="true"></span>
             <p class="ai-tag" data-i18n="grow-build-tag">Build</p>
             <h3 data-i18n="grow-build-title">We set it up for you.</h3>
             <p data-i18n="grow-build-copy">Websites, reports, customer replies, HR tools. Whatever your team does by hand.</p>
           </li>
-          <li>
+          <li class="ai-card">
+            <span class="ai-num" aria-hidden="true">02</span><svg class="ai-art" viewBox="0 0 160 110" aria-hidden="true"><g class="bulb"><circle cx="80" cy="30" r="15"/><rect x="74" y="45" width="12" height="7" rx="2"/></g><g class="rays"><path d="M80 6v-4M58 14l-3-3M102 14l3-3M52 32h-4M108 32h4"/></g><g class="ppl"><circle cx="40" cy="70" r="9"/><path d="M24 100c2-12 9-18 16-18s14 6 16 18"/><circle class="mid" cx="80" cy="74" r="9"/><path class="mid" d="M64 104c2-12 9-18 16-18s14 6 16 18"/><circle cx="120" cy="70" r="9"/><path d="M104 100c2-12 9-18 16-18s14 6 16 18"/></g></svg>
             <span class="ai-dot" aria-hidden="true"></span>
             <p class="ai-tag"><span data-i18n="grow-train-tag">Train</span><span class="ai-badge" data-i18n="grow-train-badge">HRD Corp claimable training</span></p>
             <h3 data-i18n="grow-train-title">Your team learns to use it.</h3>
             <p data-i18n="grow-train-copy">Or to build their own tools. No coding needed.</p>
           </li>
-          <li>
+          <li class="ai-card">
+            <span class="ai-num" aria-hidden="true">03</span><svg class="ai-art" viewBox="0 0 160 110" aria-hidden="true"><path class="axis" d="M18 96h126M18 96V14"/><polyline class="trend" points="22,86 50,74 72,80 98,52 122,44 142,22"/><circle class="pt p1" cx="50" cy="74" r="4"/><circle class="pt p2" cx="98" cy="52" r="4"/><circle class="pt p3" cx="142" cy="22" r="5"/><path class="flag" d="M142 22v-14l12 5-12 5"/></svg>
             <span class="ai-dot" aria-hidden="true"></span>
             <p class="ai-tag" data-i18n="grow-coach-tag">Coach</p>
             <h3 data-i18n="grow-coach-title">We help it stick.</h3>
@@ -3415,6 +3495,7 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
         </ol>
         <p class="ai-together" data-i18n="grow-together">Use one, or all three together.</p>
         <div class="grow-why" data-reveal>
+          <img class="grow-why-badge" src="assets/images/hrdcorp-claimable.png" alt="" width="64" height="64" loading="lazy">
           <p class="grow-why-line" data-i18n="grow-levy">Paying the HRD Corp levy? The training can be claimed against it.</p>
           <a class="button button-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20show%20me%20what%20AI%20can%20take%20off%20my%20team's%20plate." target="_blank" rel="noopener noreferrer"><span data-i18n="grow-cta">Show me what AI can take off my team’s plate</span><span aria-hidden="true">↗</span></a>
         </div>
@@ -4157,6 +4238,8 @@ window.AURELION_TRANSLATIONS = {
     "grow-deck": "Tell us one job your team does by hand every week. We’ll show you what AI could take off their plate.",
     "grow-pick-title": "Take your team to the next level.",
     "grow-pick-sub": "Pick what you want them doing next.",
+    "hint-grow-t": "Tap an option to see the before and after",
+    "hint-grow-m": "Click an option to see the before and after",
     "grow-flagship": "Flagship",
     "grow-opt-media": "Make a week of reels in-house",
     "grow-pay-media": "Your team plans, makes and batches a week of reels in one sitting.",
@@ -4657,6 +4740,8 @@ window.AURELION_TRANSLATIONS = {
     "grow-deck": "告诉我们一项团队每周都在手动做的工作，我们让你看看 AI 能帮他们分担多少。",
     "grow-pick-title": "带你的团队更上一层楼。",
     "grow-pick-sub": "选一项你希望团队接下来做到的事。",
+    "hint-grow-t": "点选一项，看看前后对比",
+    "hint-grow-m": "点击一项，看看前后对比",
     "grow-flagship": "旗舰",
     "grow-opt-media": "团队自己做出一周的短视频",
     "grow-pay-media": "团队一次坐下来，就能规划、制作并排好一周的短视频。",
@@ -5157,6 +5242,8 @@ window.AURELION_TRANSLATIONS = {
     "grow-deck": "告訴我們一項團隊每週都在手動做的工作，我們讓你看看 AI 能幫他們分擔多少。",
     "grow-pick-title": "帶你的團隊更上一層樓。",
     "grow-pick-sub": "選一項你希望團隊接下來做到的事。",
+    "hint-grow-t": "點選一項，看看前後對比",
+    "hint-grow-m": "點擊一項，看看前後對比",
     "grow-flagship": "旗艦",
     "grow-opt-media": "團隊自己做出一週的短影音",
     "grow-pay-media": "團隊一次坐下來，就能規劃、製作並排好一週的短影音。",
@@ -6195,7 +6282,10 @@ window.AURELION_TRANSLATIONS = {
     });
   }
 
-  trackList.replaceWith(tabs, panels);
+  const tabHint = element("p", "tap-hint");
+  const tabHand = element("span", "hand"); tabHand.textContent = "👆"; tabHand.setAttribute("aria-hidden", "true");
+  tabHint.append(tabHand, element("span", "", words("Choose a goal to see the matching courses", "选择一个目标，查看对应课程", "選擇一個目標，查看對應課程")));
+  trackList.replaceWith(tabHint, tabs, panels);
   inquiry.classList.add("catalogue-inquiry");
   const chooseAgain = element("button", "text-link catalogue-choose", words("Change training goal ↑", "更换培训目标 ↑", "更換培訓目標 ↑"));
   chooseAgain.type = "button";
@@ -7243,6 +7333,43 @@ if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: re
     clearInterval(timer);
     try { localStorage.setItem(KEY, "closed"); } catch {}
   });
+})();
+</script>
+<script>
+(() => {
+  const cv = document.querySelector(".grow-net");
+  if (!cv || !cv.getContext) return;
+  const ctx = cv.getContext("2d"), host = cv.closest(".grow");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w = 0, h = 0, dpr = 1, nodes = [], on = false, raf = 0, last = 0;
+  function size() {
+    dpr = Math.min(2, devicePixelRatio || 1);
+    w = host.clientWidth; h = host.clientHeight;
+    cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(70, Math.max(26, w * h / 26000)));
+    nodes = Array.from({ length: n }, (_, i) => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22, t: i % 4 === 0 }));
+  }
+  function frame(ts) {
+    if (ts - last < 33) { raf = requestAnimationFrame(frame); return; }   // about 30 fps is plenty
+    last = ts;
+    ctx.clearRect(0, 0, w, h);
+    const D = 150;
+    for (const p of nodes) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > w) p.vx *= -1; if (p.y < 0 || p.y > h) p.vy *= -1; }
+    for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+      const a = nodes[i], b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, dd = dx * dx + dy * dy;
+      if (dd < D * D) { const k = 1 - Math.sqrt(dd) / D; ctx.strokeStyle = (a.t || b.t ? "rgba(95,196,187," : "rgba(228,190,128,") + (k * .22).toFixed(3) + ")"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+    }
+    for (const p of nodes) { ctx.fillStyle = p.t ? "rgba(95,196,187,.8)" : "rgba(243,209,155,.75)"; ctx.beginPath(); ctx.arc(p.x, p.y, p.t ? 2.2 : 1.6, 0, 6.283); ctx.fill(); }
+    if (on && !still) raf = requestAnimationFrame(frame);
+  }
+  size();
+  addEventListener("resize", () => { size(); if (still) frame(1e9); });
+  new IntersectionObserver(es => {
+    on = es[0].isIntersecting;
+    cancelAnimationFrame(raf);
+    if (on) raf = requestAnimationFrame(frame);
+  }, { rootMargin: "100px" }).observe(host);
+  if (still) frame(1e9);
 })();
 </script>
 </body>
