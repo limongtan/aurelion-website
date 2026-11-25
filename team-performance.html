@@ -579,6 +579,15 @@ body.locked { overflow:hidden; }
 .guides b { color:var(--ink); font-size:.88rem; }
 @media (max-width:700px) { .guides ul { grid-template-columns:minmax(0,1fr); } }
 
+.fcell.lock { position:relative; display:block; text-decoration:none; color:inherit; border-style:dashed; transition:border-color .2s,background .2s; }
+.fcell.lock:hover { border-color:var(--f); background:color-mix(in srgb,var(--f) 8%,transparent); }
+.lock-lines { display:grid; gap:8px; margin:6px 0 12px; filter:blur(3px); opacity:.7; }
+.lock-lines i { display:block; height:10px; border-radius:6px; background:linear-gradient(90deg,#ffffff30,#ffffff12); }
+.lock-lines i:nth-child(2) { width:80%; } .lock-lines i:nth-child(3) { width:60%; }
+.lock-cta { color:var(--f); font-size:.86rem; font-weight:800; }
+.fam p { font-size:1.02rem; color:var(--ink); opacity:.82; }
+.sc-agree p { color:#dbe2e1; }
+
   </style>
 </head>
 <body class="team-page">
@@ -616,7 +625,7 @@ body.locked { overflow:hidden; }
 
     <section class="sec" id="forces" aria-labelledby="forces-title">
       <div class="shell">
-        <div class="sec-head rv"><p class="eyebrow">The five LPI forces</p><h2 id="forces-title">Which one is running your meetings?</h2><p class="muted">Each force has a core need. When it’s met, you get its best. When it isn’t, you get the behaviour that drives everyone else up the wall.</p></div>
+        <div class="sec-head rv"><p class="eyebrow">The five LPI forces</p><h2 id="forces-title">Which one is running your meetings?</h2><p class="muted">Each has a core need. Miss it, and you get the behaviour that drives everyone up the wall.</p></div>
         <div class="forces-tabs" role="tablist" aria-label="The five forces"><button type="button" role="tab" class="f-O" id="tab-O" aria-controls="force-O" aria-selected="true" tabindex="0"><i>O</i>Openness</button><button type="button" role="tab" class="f-N" id="tab-N" aria-controls="force-N" aria-selected="false" tabindex="-1"><i>N</i>Neutral</button><button type="button" role="tab" class="f-A" id="tab-A" aria-controls="force-A" aria-selected="false" tabindex="-1"><i>A</i>Analytical</button><button type="button" role="tab" class="f-R" id="tab-R" aria-controls="force-R" aria-selected="false" tabindex="-1"><i>R</i>Relational</button><button type="button" role="tab" class="f-D" id="tab-D" aria-controls="force-D" aria-selected="false" tabindex="-1"><i>D</i>Decisive</button></div>
         <article class="force f-O" id="force-O" role="tabpanel" aria-labelledby="tab-O">
           <div class="pic"><img src="assets/images/lpi-openness.webp" alt="" width="289" height="666" loading="lazy" decoding="async"></div>
@@ -626,11 +635,9 @@ body.locked { overflow:hidden; }
             <p class="quote-line">“What if we did it completely differently?”</p>
             <p class="need">Core need: <b>Creativity and novelty</b></p>
             <div class="fgrid">
-              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Says “what if we did it completely differently?” right after the plan was settled.</li><li>Gets bored the moment a task turns routine.</li><li>Brings ideas that sound wild the first time you hear them.</li></ul></div>
-              <div class="fcell"><h4>Under pressure</h4><ul><li>Grows restless and impatient with other people’s ideas.</li><li>Chases the big picture and drops the details.</li></ul></div>
-              <div class="fcell"><h4>How to get their best</h4><ul><li>Let them try new approaches.</li><li>Don’t take their frank opinions as a threat.</li><li>Use their knack for seeing problems differently.</li></ul></div>
-              <div class="fcell"><h4>How they lead</h4><p>Leads with vision: paints a fresh picture of the future and gives the team permission to experiment.</p></div>
-              <div class="fcell wide"><h4>Their growth move</h4><p>Turn each big idea into one clear next step, and build it with the team.</p></div>
+              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Pitches a new idea after the plan is settled.</li><li>Bored the moment it turns routine.</li><li>Ideas sound wild at first.</li></ul></div>
+              <a class="fcell lock" href="#offer"><h4>What they need from you</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="lock-cta">🔒 In their LPI report</span></a>
+              <a class="fcell lock wide" href="#offer"><h4>How they react under pressure · their growth move</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i></span><span class="lock-cta">🔒 Unlocked in the Team Mapping Lab →</span></a>
             </div>
           </div>
         </article>
@@ -642,11 +649,9 @@ body.locked { overflow:hidden; }
             <p class="quote-line">“Can we all agree before we move?”</p>
             <p class="need">Core need: <b>Stability and security</b></p>
             <div class="fgrid">
-              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Says yes in the meeting to keep the peace, then feels quietly hurt.</li><li>Looks fine and never tells you there’s a problem.</li><li>Thrown by sudden changes and vague instructions.</li></ul></div>
-              <div class="fcell"><h4>Under pressure</h4><ul><li>Avoids conflict and puts off difficult decisions.</li><li>Goes slower, more careful and more sentimental.</li></ul></div>
-              <div class="fcell"><h4>How to get their best</h4><ul><li>Give them time to prepare for change.</li><li>Be clear and detailed with instructions.</li><li>Thank them for their support and loyalty.</li></ul></div>
-              <div class="fcell"><h4>How they lead</h4><p>Leads with steadiness: creates calm and trust, listens deeply and builds agreement before the team moves.</p></div>
-              <div class="fcell wide"><h4>Their growth move</h4><p>Say no kindly and clearly, and voice disagreement early, while it is still small.</p></div>
+              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Says yes, then feels quietly hurt.</li><li>Never tells you there’s a problem.</li><li>Thrown by sudden change.</li></ul></div>
+              <a class="fcell lock" href="#offer"><h4>What they need from you</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="lock-cta">🔒 In their LPI report</span></a>
+              <a class="fcell lock wide" href="#offer"><h4>How they react under pressure · their growth move</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i></span><span class="lock-cta">🔒 Unlocked in the Team Mapping Lab →</span></a>
             </div>
           </div>
         </article>
@@ -658,11 +663,9 @@ body.locked { overflow:hidden; }
             <p class="quote-line">“We need more data first.”</p>
             <p class="need">Core need: <b>Accuracy</b></p>
             <div class="fgrid">
-              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Takes back a task they delegated and finishes it, because sloppy work is unbearable.</li><li>Wants facts, laid out logically, before anything else.</li><li>Flattery gets you nowhere with them.</li></ul></div>
-              <div class="fcell"><h4>Under pressure</h4><ul><li>Over-analyses, worries and delays the decision.</li><li>Withdraws and keeps feelings to themselves.</li></ul></div>
-              <div class="fcell"><h4>How to get their best</h4><ul><li>Don’t rush them for a decision.</li><li>Give them enough accurate information.</li><li>Keep them out of the spotlight.</li></ul></div>
-              <div class="fcell"><h4>How they lead</h4><p>Leads with standards: decides on evidence, not noise, and spots the risks everyone else missed.</p></div>
-              <div class="fcell wide"><h4>Their growth move</h4><p>Decide with “good enough” data and a review date, and say appreciation out loud.</p></div>
+              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Takes delegated work back to redo it.</li><li>Wants the facts first.</li><li>Immune to flattery.</li></ul></div>
+              <a class="fcell lock" href="#offer"><h4>What they need from you</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="lock-cta">🔒 In their LPI report</span></a>
+              <a class="fcell lock wide" href="#offer"><h4>How they react under pressure · their growth move</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i></span><span class="lock-cta">🔒 Unlocked in the Team Mapping Lab →</span></a>
             </div>
           </div>
         </article>
@@ -674,11 +677,9 @@ body.locked { overflow:hidden; }
             <p class="quote-line">“Let me get everyone on board.”</p>
             <p class="need">Core need: <b>Recognition and approval</b></p>
             <div class="fgrid">
-              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Runs the whole meeting and talks over the quiet ones.</li><li>Promises with real warmth, then forgets what they agreed.</li><li>Wilts in slow, formal, detail-heavy meetings.</li></ul></div>
-              <div class="fcell"><h4>Under pressure</h4><ul><li>Takes criticism personally.</li><li>Says yes when they mean no, to avoid upsetting anyone.</li></ul></div>
-              <div class="fcell"><h4>How to get their best</h4><ul><li>Give them room to talk, and listen.</li><li>Recognise their work out loud.</li><li>Criticise the issue, never the person.</li></ul></div>
-              <div class="fcell"><h4>How they lead</h4><p>Leads with inspiration: energises people around a shared goal and builds buy-in across groups.</p></div>
-              <div class="fcell wide"><h4>Their growth move</h4><p>Write it down and follow through on every promise. Honest feedback is a form of care.</p></div>
+              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Runs the meeting. Talks over the quiet ones.</li><li>Promises warmly, forgets later.</li><li>Wilts in slow, detailed meetings.</li></ul></div>
+              <a class="fcell lock" href="#offer"><h4>What they need from you</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="lock-cta">🔒 In their LPI report</span></a>
+              <a class="fcell lock wide" href="#offer"><h4>How they react under pressure · their growth move</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i></span><span class="lock-cta">🔒 Unlocked in the Team Mapping Lab →</span></a>
             </div>
           </div>
         </article>
@@ -690,11 +691,9 @@ body.locked { overflow:hidden; }
             <p class="quote-line">“Let’s decide now.”</p>
             <p class="need">Core need: <b>Achievement and freedom</b></p>
             <div class="fgrid">
-              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Finds everyone else too slow.</li><li>Wants the bottom line first and the details never.</li><li>Overrides other views to get it done, and bruises people without noticing.</li></ul></div>
-              <div class="fcell"><h4>Under pressure</h4><ul><li>Gets forceful and impatient.</li><li>Takes bigger risks and gets careless.</li></ul></div>
-              <div class="fcell"><h4>How to get their best</h4><ul><li>Give them a goal and room to act.</li><li>Keep it brief and factual.</li><li>Let them make the call where it fits.</li></ul></div>
-              <div class="fcell"><h4>How they lead</h4><p>Leads from the front: decides fast, keeps momentum when others stall, takes the hard challenges.</p></div>
-              <div class="fcell wide"><h4>Their growth move</h4><p>Pause, ask one more question, then decide. Faster alone, further together.</p></div>
+              <div class="fcell"><h4>You’ll know them when they…</h4><ul><li>Finds everyone else too slow.</li><li>Wants the bottom line, never the details.</li><li>Overrides people to get it done.</li></ul></div>
+              <a class="fcell lock" href="#offer"><h4>What they need from you</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="lock-cta">🔒 In their LPI report</span></a>
+              <a class="fcell lock wide" href="#offer"><h4>How they react under pressure · their growth move</h4><span class="lock-lines" aria-hidden="true"><i></i><i></i></span><span class="lock-cta">🔒 Unlocked in the Team Mapping Lab →</span></a>
             </div>
           </div>
         </article>
@@ -703,23 +702,22 @@ body.locked { overflow:hidden; }
 
     <section class="sec" id="familiar" aria-labelledby="familiar-title" style="padding-top:0">
       <div class="shell">
-        <div class="sec-head rv"><p class="eyebrow">Sound familiar?</p><h2 id="familiar-title">It isn’t a people problem. It’s a pattern.</h2><p class="muted">These collisions are predictable once you can see the forces. That’s the point of mapping a team.</p></div>
-        <div class="familiar"><article class="fam"><div class="vs"><span class="f-N">N</span><span class="f-A">A</span><em>vs</em><span class="f-R">R</span><span class="f-D">D</span></div><h3>The fast ones think the quiet ones are slow.</h3><p>And the quiet ones think the fast ones are reckless. Dr Yong calls it pacing conflict. It replays in every meeting until someone names it.</p><small>Pacing conflict · Dr Leonard Yong</small></article><article class="fam"><div class="vs"><span class="f-N">N</span><span class="f-R">R</span><em>vs</em><span class="f-A">A</span><span class="f-D">D</span></div><h3>People-first vs task-first.</h3><p>One side protects the relationships, the other protects the deadline. Both think they are protecting the team. That is priority conflict.</p><small>Priority conflict · Dr Leonard Yong</small></article><article class="fam"><div class="vs"><span class="f-N">N</span></div><h3>“Smile and let you die.”</h3><p>The colleague who nods along, never pushes back, and quietly disengages. You find out when it is too late to fix cheaply.</p><small>From the LPI course on low-EQ Neutral</small></article><article class="fam"><div class="vs"><span class="f-D">D</span><em>vs</em><span class="f-N">N</span></div><h3>One goal. One person thrilled, one person scared.</h3><p>A big goal with no clear steps energises a Decisive teammate and threatens a Neutral one. Same words, opposite effect.</p><small>Dr Leonard Yong on leading mixed teams</small></article><article class="fam"><div class="vs"><span class="f-A">A</span></div><h3>The manager who takes the work back.</h3><p>They delegate, then quietly redo it because sloppy work is unbearable. The team stops learning, and the manager ends up carrying it all.</p><small>Analytical under pressure</small></article><article class="fam"><div class="vs"><span class="f-O">O</span><span class="f-N">N</span><span class="f-A">A</span><span class="f-R">R</span><span class="f-D">D</span></div><h3>Trained in EQ. Nothing changed.</h3><p>Dr Yong’s observation: many teams have done the training, but it never transferred to the workplace. Knowing your own type, and each other’s, is where it starts to stick.</p><small>Emotional Excellence in the Workplace</small></article></div>
+        <div class="sec-head rv"><p class="eyebrow">Sound familiar?</p><h2 id="familiar-title">It isn’t a people problem. It’s a pattern.</h2><p class="muted">Recognise one? There’s a reason it keeps happening.</p></div>
+        <div class="familiar"><article class="fam"><div class="vs"><span class="f-N">N</span><span class="f-A">A</span><em>vs</em><span class="f-R">R</span><span class="f-D">D</span></div><h3>The fast ones think the quiet ones are slow.</h3><p>The quiet ones think the fast ones are reckless. Both are right.</p></article><article class="fam"><div class="vs"><span class="f-N">N</span><span class="f-R">R</span><em>vs</em><span class="f-A">A</span><span class="f-D">D</span></div><h3>People-first vs task-first.</h3><p>Same team. Opposite priorities. Every week.</p></article><article class="fam"><div class="vs"><span class="f-N">N</span></div><h3>“Smile and let you die.”</h3><p>They nod. They agree. They’re already gone.</p></article><article class="fam"><div class="vs"><span class="f-D">D</span><em>vs</em><span class="f-N">N</span></div><h3>One goal. One thrilled, one scared.</h3><p>Same words. Opposite effect.</p></article><article class="fam"><div class="vs"><span class="f-A">A</span></div><h3>The manager who takes the work back.</h3><p>Delegates on Monday. Redoes it on Friday.</p></article><article class="fam"><div class="vs"><span class="f-O">O</span><span class="f-N">N</span><span class="f-A">A</span><span class="f-R">R</span><span class="f-D">D</span></div><h3>Trained in EQ. Nothing changed.</h3><p>Knowing about people isn’t knowing each other.</p></article></div>
+        <div class="actions" style="margin-top:22px"><a class="btn btn-gold" href="#offer"><span>Find out why in the Lab</span><span aria-hidden="true">↓</span></a></div>
       </div>
     </section>
 
     <section class="sec" id="mixer" aria-labelledby="mixer-title" style="padding-top:0">
       <div class="shell">
-        <div class="sec-head rv"><span class="ftag f-O"><b>O</b>For the Openness in you</span><h2 id="mixer-title">Team Mixer: guess your team’s mix.</h2><p class="muted">Add a dot for each person, by the force you think they lean on most. You’ll get questions worth asking your team, not a verdict.</p></div>
+        <div class="sec-head rv"><span class="ftag f-O"><b>O</b>For the Openness in you</span><h2 id="mixer-title">Team Mixer: guess your team’s mix.</h2><p class="muted">Add a dot per person. Get the questions your team should be asking.</p></div>
         <div class="mixer">
           <div><div class="mix-rows"><div class="mix-row f-O" data-k="O"><span class="ml"><i>O</i><span>Openness</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Openness">−</button><button type="button" data-d="1" aria-label="One more Openness">+</button></span></div><div class="mix-row f-N" data-k="N"><span class="ml"><i>N</i><span>Neutral</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Neutral">−</button><button type="button" data-d="1" aria-label="One more Neutral">+</button></span></div><div class="mix-row f-A" data-k="A"><span class="ml"><i>A</i><span>Analytical</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Analytical">−</button><button type="button" data-d="1" aria-label="One more Analytical">+</button></span></div><div class="mix-row f-R" data-k="R"><span class="ml"><i>R</i><span>Relational</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Relational">−</button><button type="button" data-d="1" aria-label="One more Relational">+</button></span></div><div class="mix-row f-D" data-k="D"><span class="ml"><i>D</i><span>Decisive</span></span><span class="dots" aria-hidden="true"></span><span class="step"><button type="button" data-d="-1" aria-label="One less Decisive">−</button><button type="button" data-d="1" aria-label="One more Decisive">+</button></span></div></div><p class="mix-total" aria-live="polite"></p></div>
           <div class="mix-out" aria-live="polite">
             <div class="mix-bar" aria-hidden="true"><span class="f-O" data-k="O"></span><span class="f-N" data-k="N"></span><span class="f-A" data-k="A"></span><span class="f-R" data-k="R"></span><span class="f-D" data-k="D"></span></div>
             <h3 class="mix-title"></h3>
             <ul class="mix-list"></ul>
-            <p class="eyebrow" style="margin:6px 0 0">Who owns each step? Dr Yong’s SEEK model</p>
-            <div class="seek"><div data-seek="OD"><b>Search</b><small>O + D · new ideas, taking the risk</small></div><div data-seek="R"><b>Excite</b><small>R · getting buy-in</small></div><div data-seek="A"><b>Exact</b><small>A · making it work</small></div><div data-seek="N"><b>Keep</b><small>N · seeing it through</small></div></div>
-            <p class="mix-note">A rough guess from your own entries, not an assessment. Everyone carries all five forces, and the LPI measures the real mix.</p>
+            <p class="mix-note">Just your guess. The LPI shows the real mix, in 5 minutes per person.</p>
             <div class="actions" style="margin-top:4px"><a class="btn btn-gold" href="#offer"><span>See your real mix</span><span aria-hidden="true">↓</span></a></div>
           </div>
         </div>
@@ -730,8 +728,8 @@ body.locked { overflow:hidden; }
       <div class="shell">
         <div class="sec-head rv"><span class="ftag f-R"><b>R</b>For the Relational in you</span><h2 id="meeting-title">Same meeting. Five different instincts.</h2></div>
         <div class="scenario">
-          <div class="sc-brief"><h3>A cross-functional team has to decide if a new process is ready to roll out.</h3><p>Tap each force to hear what it adds. A good decision needs all five voices.</p><div class="sc-picks"><button type="button" class="f-O" data-k="O" aria-pressed="false" aria-label="Hear Openness">O</button><button type="button" class="f-N" data-k="N" aria-pressed="false" aria-label="Hear Neutral">N</button><button type="button" class="f-A" data-k="A" aria-pressed="false" aria-label="Hear Analytical">A</button><button type="button" class="f-R" data-k="R" aria-pressed="false" aria-label="Hear Relational">R</button><button type="button" class="f-D" data-k="D" aria-pressed="false" aria-label="Hear Decisive">D</button></div><p class="small" style="margin-top:14px">An illustrative exercise. A real LPI report shows each person’s blend across all five.</p></div>
-          <div class="sc-said"><div class="sc-line f-O" data-k="O"><i>O</i><div><q>Could we run a smaller pilot first?</q><p>A fresh route keeps momentum while the team learns what works.</p><small>Try it: Ask for one alternative before the meeting moves to a decision.</small></div></div><div class="sc-line f-N" data-k="N"><i>N</i><div><q>Whose concerns have we missed?</q><p>People may agree in the room and still have doubts about what happens next.</p><small>Try it: Give each function a moment to name a concern, or say they have none.</small></div></div><div class="sc-line f-A" data-k="A"><i>A</i><div><q>What would tell us the pilot is safe to expand?</q><p>A clear threshold separates evidence from assumptions.</p><small>Try it: Agree the minimum evidence and send it early enough to read.</small></div></div><div class="sc-line f-R" data-k="R"><i>R</i><div><q>Who needs to be brought into this?</q><p>The people who will use the new process can help make it workable.</p><small>Try it: Invite one person from an affected team to review the plan.</small></div></div><div class="sc-line f-D" data-k="D"><i>D</i><div><q>Who will make the call, and by when?</q><p>A named owner and a deadline give the discussion a clear finish.</p><small>Try it: Name an owner now and put the review date in the calendar.</small></div></div><div class="sc-agree" hidden><h4>The working agreement</h4><ul><li>Send the evidence and remaining risks before the meeting.</li><li>Hear a concern from each affected function and agree the smallest safe pilot.</li><li>Name a decision owner and set a date to review the result.</li></ul></div></div>
+          <div class="sc-brief"><h3>One decision. Is the new process ready?</h3><p>Tap each force to hear it.</p><div class="sc-picks"><button type="button" class="f-O" data-k="O" aria-pressed="false" aria-label="Hear Openness">O</button><button type="button" class="f-N" data-k="N" aria-pressed="false" aria-label="Hear Neutral">N</button><button type="button" class="f-A" data-k="A" aria-pressed="false" aria-label="Hear Analytical">A</button><button type="button" class="f-R" data-k="R" aria-pressed="false" aria-label="Hear Relational">R</button><button type="button" class="f-D" data-k="D" aria-pressed="false" aria-label="Hear Decisive">D</button></div></div>
+          <div class="sc-said"><div class="sc-line f-O" data-k="O"><i>O</i><div><q>Could we run a smaller pilot first?</q></div></div><div class="sc-line f-N" data-k="N"><i>N</i><div><q>Whose concerns have we missed?</q></div></div><div class="sc-line f-A" data-k="A"><i>A</i><div><q>What would tell us the pilot is safe to expand?</q></div></div><div class="sc-line f-R" data-k="R"><i>R</i><div><q>Who needs to be brought into this?</q></div></div><div class="sc-line f-D" data-k="D"><i>D</i><div><q>Who will make the call, and by when?</q></div></div><div class="sc-agree" hidden><h4>All five heard</h4><p>Most teams only hear two or three. Which voices is yours missing?</p><a class="btn btn-gold" href="#offer" style="margin-top:12px"><span>Find out in the Lab</span><span aria-hidden="true">↓</span></a></div></div>
         </div>
       </div>
     </section>
@@ -742,9 +740,9 @@ body.locked { overflow:hidden; }
         <h2 id="urgency-title">Find out where your team gets stuck, before you set goals it can’t agree on.</h2>
         <div class="clock" data-target="2027-01-01T00:00:00+08:00" aria-label="Time until 1 January 2027"><div><b data-u="d">--</b><span>days</span></div><div><b data-u="h">--</b><span>hours</span></div><div><b data-u="m">--</b><span>minutes</span></div><div style="align-self:center;border:0;background:none;min-width:0"><span style="letter-spacing:.06em">until 1 January 2027</span></div></div>
         <div class="why-now">
-          <div><h3>The clash replays every week</h3><p>An unnamed pacing or priority conflict doesn’t fade. It comes back at every meeting, and under pressure people fall back on their default behaviour.</p></div>
-          <div><h3>HRD Corp needs approval first</h3><p>The grant must be approved before training. Planning a January Lab? Start the application in December so there’s time.</p></div>
-          <div><h3>Map first, then plan</h3><p>A team that knows its forces sets goals everyone can carry. Fixing it after the plan breaks means fixing it mid-year.</p></div>
+          <div><h3>The clash replays every week</h3><p>Unnamed, the same clash comes back every meeting.</p></div>
+          <div><h3>HRD Corp needs approval first</h3><p>January Lab? Apply in December.</p></div>
+          <div><h3>Map first, then plan</h3><p>Or fix it mid-year, after the plan breaks.</p></div>
         </div>
         <div class="actions"><a class="btn btn-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I'd%20like%20to%20book%20a%20Team%20Mapping%20Lab%20(HRD%20Corp%20claimable).%20Team%20size%3A%20.%20Preferred%20month%3A%20" target="_blank" rel="noopener"><span>Hold a Lab date on WhatsApp</span><span aria-hidden="true">↗</span></a></div>
       </div></div>
@@ -755,7 +753,7 @@ body.locked { overflow:hidden; }
         <div>
           <span class="ftag f-D"><b>D</b>For the Decisive in you</span>
           <h2 id="offer-title">The Team Mapping Lab. Half a day. Your team, mapped.</h2>
-          <p class="muted" style="margin-top:12px">Bring one real challenge. Everyone answers the 50-question LPI and gets the official LPI report, then we turn the results into a conversation about how your team actually works, and leave you with one agreement to try next.</p>
+          <p class="muted" style="margin-top:12px">Bring one real challenge. Everyone takes the LPI. You leave knowing how your team really works, and one agreement to try next.</p>
           <div class="offer-facts"><div><b>½ day</b><span>hands-on workshop</span></div><div><b>10</b><span>individual LPI reports included</span></div><div><b>HRD</b><span>Corp claimable</span></div></div>
           <div class="actions"><a class="btn btn-gold" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I'd%20like%20to%20book%20a%20Team%20Mapping%20Lab%20(HRD%20Corp%20claimable).%20Team%20size%3A%20.%20Preferred%20month%3A%20" target="_blank" rel="noopener"><span>Book a Team Mapping Lab</span><span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="index.html#inquiry"><span>Use the enquiry form</span><span aria-hidden="true">↗</span></a></div>
         </div>
@@ -791,7 +789,7 @@ body.locked { overflow:hidden; }
             <div class="clients"><span>PETRONAS</span><span>Saudi Aramco</span><span>BP</span><span>Microsoft Thailand</span><span>Cathay Pacific</span><span>Reuters</span><span>B. Braun</span></div>
           </div>
           <div>
-            <div class="facts-grid"><div><b>50</b><span>questions, about 5 minutes, for the official LPI report</span></div><div><b>5</b><span>forces scored for every person, each from 20 to 100</span></div><div><b>26</b><span>named profiles, from single to blended styles</span></div><div><b>4</b><span>steps every new idea needs (SEEK), each owned by different forces</span></div></div>
+            <div class="facts-grid"><div><b>50</b><span>questions, about 5 minutes, for the official LPI report</span></div><div><b>26</b><span>possible profiles. Which one leads your team?</span></div><div><b>1</b><span>personal report for every participant</span></div><div><b>1999</b><span>the year Dr Yong introduced the model</span></div></div>
             <p class="pullq">“Like-mindedness will help you reach consensus quickly, but it won’t give you much creativity and innovation.”<small>Dr Leonard Yong, Emotional Excellence in the Workplace (2007)</small></p>
           </div>
         </div>
@@ -893,22 +891,17 @@ body.locked { overflow:hidden; }
       var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }), lead = top[0];
       var present = Object.keys(counts).filter(function (x) { return counts[x] > 0; });
       title.textContent = counts[lead] / n < 0.35 && present.length >= 4 ? "A spread-out mix. Good raw material." : "Your entries lean " + NAMES[lead] + ".";
-      if (counts[lead] / n > 0.5 && n >= 3) items.push(["risk", "<b>More than half your entries lean " + NAMES[lead] + ".</b> Dr Yong notes that like-minded teams reach agreement fast but innovate less. Ask: whose view is missing when we decide?"]);
+      if (counts[lead] / n > 0.5 && n >= 3) items.push(["risk", "<b>Mostly " + NAMES[lead] + ".</b> Easy agreement. Whose view is missing?"]);
       var quiet = counts.N + counts.A, fast = counts.R + counts.D, people = counts.N + counts.R, task = counts.A + counts.D;
-      if (quiet && fast) items.push(["gap", "<b>Quiet (N, A) and fast (R, D) entries.</b> Ask: who wants more time before we decide, and who feels held back by the wait?"]);
-      else if (fast && !quiet) items.push(["gap", "<b>No quiet (N, A) entries.</b> Ask: who checks the detail and the risk before we commit?"]);
-      else if (quiet && !fast) items.push(["gap", "<b>No fast (R, D) entries.</b> Ask: who pushes for the decision and gets people moving?"]);
-      if (people && task) items.push(["gap", "<b>People-first (N, R) and task-first (A, D) entries.</b> Ask: when a deadline and a relationship clash, how do we choose?"]);
-      var steps = [["Search", "brings the new idea and takes the risk", counts.O + counts.D], ["Excite", "gets people to buy in", counts.R], ["Exact", "makes the idea actually work", counts.A], ["Keep", "sees it through the boring middle", counts.N]];
-      steps.forEach(function (s) { if (!s[2]) items.push(["gap", "<b>Nobody on your list owns " + s[0] + ".</b> Ask: who " + s[1] + "?"]); });
-      if (present.length === 5) items.push(["good", "<b>All five forces show up in your guess.</b> Dr Yong’s SEEK model says a new idea needs every one of them."]);
+      if (quiet && fast) items.push(["gap", "<b>Fast and careful voices in one room.</b> Who feels rushed? Who feels held back?"]);
+      else if (fast && !quiet) items.push(["gap", "<b>All speed, no brakes?</b> Who checks the risk before you commit?"]);
+      else if (quiet && !fast) items.push(["gap", "<b>All brakes, no speed?</b> Who pushes for the decision?"]);
+      if (people && task) items.push(["gap", "<b>Deadline or relationship?</b> When they clash, who wins in your team?"]);
+      [["O", "brings the new idea"], ["N", "keeps the peace and sees it through"], ["A", "checks the detail"], ["R", "gets people on board"], ["D", "makes the call"]].forEach(function (s) { if (!counts[s[0]]) items.push(["gap", "<b>No " + NAMES[s[0]] + " on your list.</b> Who " + s[1] + "?"]); });
+      if (present.length === 5) items.push(["good", "<b>All five forces show up in your guess.</b> Now see the real mix."]);
       list.innerHTML = items.map(function (it) { return '<li class="' + it[0] + '">' + it[1] + "</li>"; }).join("");
     }
-    $$(".seek div", mixer).forEach(function (d) {
-      var own = d.dataset.seek.split(""), ok = own.some(function (x) { return counts[x] > 0; });
-      d.classList.toggle("ok", ok && n > 0); d.classList.toggle("miss", !ok && n > 0);
-    });
-  }
+    }
   $$(".mix-row", mixer).forEach(function (row) {
     $$("button", row).forEach(function (b) {
       b.addEventListener("click", function () {
