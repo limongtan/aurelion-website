@@ -14,8 +14,8 @@ const T = {
    prom:['Free preview, instantly','Price shown upfront','No sign-up, no card'],
    q1:'What kind of business is it?', s1:'Pick the closest one.', q2:'What should the website do first?', s2:'You can have all of them. This decides the layout.',
    back:'← Back', match:'Your match', seeTpl:'See the full sample site', rec:'Recommended package', save:'Save RM{x}', normal:'normally RM{x}',
-   cd:'Holiday price ends in {d}d {h}h {m}m', cdOff:'Live in 1 week to 1 month',
-   hooks:['We design your homepage first. You see it before we build the rest.','Domain, hosting and SSL for year one included','English, BM and 中文 included','Domain registered in your business name','Live in 1 week to 1 month · a real team on WhatsApp'],
+   split:'Pay RM{x} to start, RM{x} at launch', cd:'Holiday price ends in {d}d {h}h {m}m', cdOff:'Live in 1 week to 1 month',
+   hooks:['We design your homepage first. You see it before we build the rest.','Pay 50% to start, 50% at launch','Domain, hosting and SSL for year one included','English, BM and 中文 included','Domain registered in your business name','Live in 1 week to 1 month · a real team on WhatsApp'],
    perso:'Personalise your preview (optional)', fName:'Business name', fArea:'Area / city', fLang:'Language', fVibe:'Style',
    wa:'Get my quote on WhatsApp', open:'Open my full preview', copy:'Copy preview link', copied:'Preview link copied',
    start:'Just starting out? A Landing Page is RM{p}.', other:'Need something bigger (booking system, member area, app)? <a href="{wa}" target="_blank" rel="noopener">Ask us</a>.',
@@ -26,8 +26,8 @@ const T = {
    prom:['即时免费预览','价格先说清楚','无需注册、无需信用卡'],
    q1:'你做什么生意？', s1:'选最接近的一个。', q2:'网站首先要帮你做到什么？', s2:'全部都可以做到，这个决定版面重点。',
    back:'← 返回', match:'为你配对', seeTpl:'看完整样本网站', rec:'推荐配套', save:'省 RM{x}', normal:'原价 RM{x}',
-   cd:'假期优惠还剩 {d} 天 {h} 小时 {m} 分', cdOff:'1 周至 1 个月上线',
-   hooks:['先设计首页给你看，满意了才做其余部分','包含第一年域名、主机和 SSL','包含英文、马来文和中文','域名以你的公司名义注册','1 周至 1 个月上线 · 真人团队 WhatsApp 支援'],
+   split:'先付 RM{x} 开工，上线时再付 RM{x}', cd:'假期优惠还剩 {d} 天 {h} 小时 {m} 分', cdOff:'1 周至 1 个月上线',
+   hooks:['先设计首页给你看，满意了才做其余部分','先付 50% 开工，上线时再付 50%','包含第一年域名、主机和 SSL','包含英文、马来文和中文','域名以你的公司名义注册','1 周至 1 个月上线 · 真人团队 WhatsApp 支援'],
    perso:'个性化你的预览（可选）', fName:'商家名称', fArea:'地区 / 城市', fLang:'语言', fVibe:'风格',
    wa:'WhatsApp 获取报价', open:'打开完整预览', copy:'复制预览链接', copied:'已复制预览链接',
    start:'刚起步？单页网站只需 RM{p}。', other:'需要更大的系统（预约系统、会员区、应用）？<a href="{wa}" target="_blank" rel="noopener">问我们</a>。',
@@ -38,8 +38,8 @@ const T = {
    prom:['Pratonton percuma serta-merta','Harga ditunjuk awal','Tanpa daftar, tanpa kad'],
    q1:'Apakah jenis perniagaan anda?', s1:'Pilih yang paling hampir.', q2:'Apa yang laman web perlu buat dahulu?', s2:'Semuanya boleh. Ini menentukan susun atur.',
    back:'← Kembali', match:'Padanan anda', seeTpl:'Lihat laman sampel penuh', rec:'Pakej disyorkan', save:'Jimat RM{x}', normal:'biasa RM{x}',
-   cd:'Harga cuti tamat dalam {d}h {h}j {m}m', cdOff:'Siap dalam 1 minggu hingga 1 bulan',
-   hooks:['Kami reka laman utama dahulu. Anda lihat sebelum kami bina selebihnya.','Domain, hosting dan SSL tahun pertama termasuk','English, BM dan 中文 termasuk','Domain didaftarkan atas nama perniagaan anda','Siap dalam 1 minggu hingga 1 bulan · pasukan sebenar di WhatsApp'],
+   split:'Bayar RM{x} untuk mula, RM{x} semasa pelancaran', cd:'Harga cuti tamat dalam {d}h {h}j {m}m', cdOff:'Siap dalam 1 minggu hingga 1 bulan',
+   hooks:['Kami reka laman utama dahulu. Anda lihat sebelum kami bina selebihnya.','Bayar 50% untuk mula, 50% semasa pelancaran','Domain, hosting dan SSL tahun pertama termasuk','English, BM dan 中文 termasuk','Domain didaftarkan atas nama perniagaan anda','Siap dalam 1 minggu hingga 1 bulan · pasukan sebenar di WhatsApp'],
    perso:'Peribadikan pratonton anda (pilihan)', fName:'Nama perniagaan', fArea:'Kawasan / bandar', fLang:'Bahasa', fVibe:'Gaya',
    wa:'Dapatkan sebut harga di WhatsApp', open:'Buka pratonton penuh', copy:'Salin pautan pratonton', copied:'Pautan pratonton disalin',
    start:'Baru bermula? Halaman Pendaratan hanya RM{p}.', other:'Perlukan sistem lebih besar (tempahan, ruang ahli, aplikasi)? <a href="{wa}" target="_blank" rel="noopener">Tanya kami</a>.',
@@ -126,6 +126,7 @@ const render = () => {
       <div class="fd-match"><span class="mono">${esc(t.match)}</span><span>${esc(A.L(I.label, l))} · ${esc(A.L(A.GOALS[c.g], l))}</span><a href="${esc(I.tpl)}" target="_blank" rel="noopener">${esc(t.seeTpl)} ↗</a></div>
       <p class="fd-q">${esc(t.rec)}: ${esc(A.L(tier.name, l))} <span style="color:var(--mut);font-weight:400;font-size:.6em">${esc(A.L(tier.sub, l))}</span></p>
       <div class="fd-price">${priceHtml}</div>
+      <p class="fd-split">${esc(t.split.split('{x}').join(A.fmt(A.price(tk) / 2)))}</p>
       <div class="fd-cd">${esc(countdown(t))}</div>
       <ul class="fd-hooks">${t.hooks.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
       <details class="fd-perso"${st.n || st.a ? ' open' : ''}><summary>${esc(t.perso)}</summary><div class="fd-fields">

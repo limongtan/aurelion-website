@@ -79,3 +79,4 @@
   .fd-view{aspect-ratio:3/4}
 }
 @media(prefers-reduced-motion:reduce){.fd-pane{animation:none}.fd-opt:hover{transform:none}}
+.fd-split{margin:0 0 8px;font-size:14px;font-weight:500;color:var(--txt)}
