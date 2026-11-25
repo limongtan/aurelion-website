@@ -357,6 +357,18 @@ body.locked { overflow:hidden; }
 :root[data-theme="light"] .steps > li > b { background:#e6c287; color:#192832; }
 :root[data-theme="light"] .track-no { -webkit-text-stroke-color:#7a5414aa; }
 
+/* ---- obvious tap / click hints (one style, site-wide) ---- */
+.tap-hint { display:inline-flex; align-items:center; gap:8px; margin:14px 0 0; padding:7px 14px 7px 10px; border-radius:999px; border:1px dashed #e4be8099; background:#e4be8014; color:#f3d19b; font-size:.82rem; font-weight:800; line-height:1.3; }
+.tap-hint .hand { display:inline-block; font-size:1rem; animation:tapbob 1.5s ease-in-out infinite; }
+@keyframes tapbob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px) scale(.92); } }
+.w-m { display:none; }
+@media (hover:hover) and (pointer:fine) { .w-m { display:inline; } .w-t { display:none; } }
+@media (prefers-reduced-motion:reduce) { .tap-hint .hand { animation:none; } }
+:root[data-theme="light"] .tap-hint { color:#7a5414; border-color:#7a541488; background:#7a541410; }
+
+.p-swipe { display:none; color:#9fb0b3; font-size:.74rem; font-weight:700; }
+@media (hover:none) { .p-swipe { display:block; } .p-count { display:none; } }
+
 /* ================= about page ================= */
 .sec { padding:clamp(64px,8vw,120px) 0; }
 .sec.tight { padding-top:0; }
@@ -389,7 +401,7 @@ body.locked { overflow:hidden; }
 .cap .more p { color:#dbe2e1; font-size:.95rem; }
 .cap .more .chips-s { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
 .cap .more .chips-s span { padding:5px 11px; border-radius:999px; background:#e4be8018; border:1px solid #e4be8055; color:var(--gold-2); font-size:.78rem; font-weight:700; }
-.cap .toggle { margin-top:auto; padding-top:18px; color:var(--gold-2); font-size:.85rem; font-weight:800; }
+.cap .toggle { display:none; }
 
 /* handover stepper */
 .stepper { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:clamp(20px,4vw,56px); align-items:center; padding:clamp(22px,3.4vw,44px); border-radius:30px; background:radial-gradient(ellipse at 100% 0%,#e4be801f,transparent 50%),var(--panel); border:1px solid var(--edge); }
@@ -546,6 +558,27 @@ body.locked { overflow:hidden; }
 }
 @media (max-width:640px) { .scene[data-step="3"] .ball { opacity:0; } .owner { bottom:16%; } }
 
+/* capacities: all closed, equal height, obvious toggle, real background */
+.caps { align-items:stretch; }
+.caps.has-open { align-items:start; }
+.cap-toggle { display:inline-flex; align-self:flex-start; align-items:center; gap:10px; margin-top:auto; padding:9px 16px 9px 9px; border-radius:999px; background:#e4be801c; border:1px solid #e4be8077; color:var(--gold-2); font-size:.86rem; font-weight:800; transition:background .2s,color .2s; }
+.cap .lead { margin-bottom:20px; }
+.cap-toggle i { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--gold); color:#111b24; font-style:normal; font-size:1.1rem; line-height:1; transition:transform .3s; }
+.cap:hover .cap-toggle { background:var(--gold); color:#111b24; }
+.cap:hover .cap-toggle i { background:#111b24; color:var(--gold); }
+.cap[aria-expanded=true] .cap-toggle i { transform:rotate(45deg); }
+.cap[aria-expanded=true] .more { margin-bottom:18px; }
+.cap.invite .cap-toggle i { animation:invite 1.8s ease-out infinite; }
+@keyframes invite { 0% { box-shadow:0 0 0 0 #e4be80aa; } 70% { box-shadow:0 0 0 12px #e4be8000; } 100% { box-shadow:0 0 0 0 #e4be8000; } }
+.sec.visual { position:relative; isolation:isolate; background:linear-gradient(180deg,var(--bg) 0%,#08111ab3 18%,#08111a99 50%,#08111ab3 82%,var(--bg) 100%),url(assets/images/first-light-ridges.webp) center 40%/cover no-repeat; }
+.sec.visual .sec-head h2,.sec.visual .sec-head p { text-shadow:0 2px 24px #000a; }
+.sec.visual .cap { background:linear-gradient(160deg,#142230d9,#0d1720e6); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-color:#ffffff2e; }
+.fd summary { display:inline-flex; align-items:center; gap:8px; padding:7px 14px 7px 7px; border-radius:999px; border:1px solid #e4be8066; background:#e4be8012; }
+.fd summary::after { content:none !important; }
+.fd summary i { display:grid; place-items:center; width:22px; height:22px; border-radius:50%; background:var(--gold); color:#111b24; font-style:normal; transition:transform .3s; }
+.fd details[open] summary i { transform:rotate(45deg); }
+@media (prefers-reduced-motion:reduce) { .cap.invite .cap-toggle i { animation:none; } }
+
   </style>
 </head>
 <body class="about-page">
@@ -577,10 +610,10 @@ body.locked { overflow:hidden; }
 
     <nav class="trackbar" aria-label="On this page"><div class="trackbar-in"><a href="#capacities">What we build</a><a href="#how">How we work</a><a href="#work">Ways in</a><a href="#proof">Proof</a><a href="#founders">Founders</a><a href="#collab">Collaborate</a></div></nav>
 
-    <section class="sec" id="capacities" aria-labelledby="cap-title">
+    <section class="sec visual" id="capacities" aria-labelledby="cap-title">
       <div class="shell">
-        <div class="sec-head rv"><p class="eyebrow">What we build</p><h2 id="cap-title">Three capacities that matter most when things change.</h2><p class="muted">Contemplative science, technology and years of connecting people across departments, focused on three things. Tap one to see it at work.</p></div>
-        <div class="caps"><button type="button" class="cap" aria-expanded="true"><span class="num" aria-hidden="true">01</span><h3>Clarity under pressure</h3><p class="lead">The pause between what happens and what you do next.</p><span class="more"><span><span style="display:block"><h4>What it looks like at work</h4><p>A manager hears the urgent call, notices the first reaction, weighs the options, and makes a decision they can explain to the team.</p><h4>Where we build it</h4><span class="chips-s"><span>Steady Under Fire</span><span>The Leadership Heart</span></span></span></span></span><span class="toggle">Show less</span></button><button type="button" class="cap" aria-expanded="false"><span class="num" aria-hidden="true">02</span><h3>Trust across boundaries</h3><p class="lead">Departments, branches and head office working as one.</p><span class="more"><span><span style="display:block"><h4>What it looks like at work</h4><p>Two departments stop passing a handover back and forth. They agree who decides, what each side needs, and when to check it worked.</p><h4>Where we build it</h4><span class="chips-s"><span>S.P.A.C.E. Bridge</span><span>Team Build X</span><span>Team Mapping Lab</span></span></span></span></span><span class="toggle">See how it shows up</span></button><button type="button" class="cap" aria-expanded="false"><span class="num" aria-hidden="true">03</span><h3>Confidence to explore and act</h3><p class="lead">Learning fast, together, including with AI.</p><span class="more"><span><span style="display:block"><h4>What it looks like at work</h4><p>A team tries AI on a workflow it knows, builds a first tool, and decides together what is worth building next.</p><h4>Where we build it</h4><span class="chips-s"><span>S.P.A.C.E. Summit</span><span>Build with AI</span><span>Lead with AI</span></span></span></span></span><span class="toggle">See how it shows up</span></button></div>
+        <div class="sec-head rv"><p class="eyebrow">What we build</p><h2 id="cap-title">Three capacities that matter most when things change.</h2><p class="muted">Three things we strengthen in every team we work with.</p><p class="tap-hint"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> a card to see it at work</span></p></div>
+        <div class="caps"><button type="button" class="cap invite" aria-expanded="false"><span class="num" aria-hidden="true">01</span><h3>Clarity under pressure</h3><p class="lead">The pause between what happens and what you do next.</p><span class="more"><span><span style="display:block"><h4>What it looks like at work</h4><p>A manager hears the urgent call, notices the first reaction, weighs the options, and makes a decision they can explain to the team.</p><h4>Where we build it</h4><span class="chips-s"><span>Steady Under Fire</span><span>The Leadership Heart</span></span></span></span></span><span class="cap-toggle"><i aria-hidden="true">+</i><span>See it at work</span></span></button><button type="button" class="cap" aria-expanded="false"><span class="num" aria-hidden="true">02</span><h3>Trust across boundaries</h3><p class="lead">Departments, branches and head office working as one.</p><span class="more"><span><span style="display:block"><h4>What it looks like at work</h4><p>Two departments stop passing a handover back and forth. They agree who decides, what each side needs, and when to check it worked.</p><h4>Where we build it</h4><span class="chips-s"><span>S.P.A.C.E. Bridge</span><span>Team Build X</span><span>Team Mapping Lab</span></span></span></span></span><span class="cap-toggle"><i aria-hidden="true">+</i><span>See it at work</span></span></button><button type="button" class="cap" aria-expanded="false"><span class="num" aria-hidden="true">03</span><h3>Confidence to explore and act</h3><p class="lead">Learning fast, together, including with AI.</p><span class="more"><span><span style="display:block"><h4>What it looks like at work</h4><p>A team tries AI on a workflow it knows, builds a first tool, and decides together what is worth building next.</p><h4>Where we build it</h4><span class="chips-s"><span>S.P.A.C.E. Summit</span><span>Build with AI</span><span>Lead with AI</span></span></span></span></span><span class="cap-toggle"><i aria-hidden="true">+</i><span>See it at work</span></span></button></div>
       </div>
     </section>
 
@@ -590,6 +623,7 @@ body.locked { overflow:hidden; }
           <p class="eyebrow">How we work</p>
           <h2 id="how-title" style="font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.08;letter-spacing:-.05em">Growth begins with people. Then it moves the organisation.</h2>
           <p class="muted" style="margin-top:12px">An example: a handover keeps getting stuck between two departments. Step through what changes.</p>
+          <p class="tap-hint"><span class="hand" aria-hidden="true">👆</span><span><span class="w-t">Tap</span><span class="w-m">Click</span> a step to see what changes</span></p>
         </div>
         <div class="st-tabs"><button type="button" class="st-tab" data-step="1" aria-pressed="false"><b>1</b><span><small>Individual</small><strong>Check your assumption</strong><em>Each side asks what the other department actually understood.</em></span></button><button type="button" class="st-tab" data-step="2" aria-pressed="false"><b>2</b><span><small>Team</small><strong>Agree who needs a say</strong><em>Name who should be involved and what information they need.</em></span></button><button type="button" class="st-tab" data-step="3" aria-pressed="false"><b>3</b><span><small>Organisation</small><strong>Set an owner and a review date</strong><em>Try the new handover on the next project, then review what changed.</em></span></button></div>
         <div class="scene" data-step="0" aria-hidden="true">
@@ -624,7 +658,7 @@ body.locked { overflow:hidden; }
     <section class="sec" id="founders" aria-labelledby="founders-title">
       <div class="shell">
         <div class="sec-head rv"><p class="eyebrow">The people behind Aurelion</p><h2 id="founders-title">Different paths. A shared purpose.</h2><p class="muted">Contemplative science, technology and years of guiding organisations through change. All three founders are HRD Corp accredited trainers and certified LPI consultants, and they lead the sessions themselves.</p></div>
-        <div class="founders"><article class="fd"><div class="ph"><img src="assets/images/founder-zhi-harn-wang.jpg" alt="Zhi-Harn Wang leading a session" width="1600" height="900" loading="lazy" decoding="async" style="object-position:center 30%"></div><div class="b"><p class="role">Principal Founder &amp; Director</p><h3>Zhi-Harn Wang</h3><p>Business experience from a U.S. education technology startup, and 17 years of intensive contemplative training, brought into work with leaders and teams.</p><div class="creds"><span>HRD Corp Accredited Trainer</span><span>Certified LPI Consultant</span></div><details><summary>His journey</summary><p>His first venture into the unknown began at university, helping build an education technology startup as Vice President of Development. Seventeen years of intensive contemplative training across Asia deepened his understanding of attention, resilience and human behaviour.</p><ul><li>B.Sc. Business, Finance · Carlson School of Management, University of Minnesota</li><li>Speaker and facilitator in Malaysia, Taiwan and the United States</li></ul></details></div></article><article class="fd"><div class="ph"><img src="assets/images/founder-andy-tan.jpg" alt="Andy Tan leading a session" width="1600" height="900" loading="lazy" decoding="async" style="object-position:55% 30%"></div><div class="b"><p class="role">Founding Director &amp; Chief Strategy Officer</p><h3>Andy Tan</h3><p>More than a decade in banking technology, now applied to learning and the decisions people make under pressure. Co-creator of Aurelion’s Growth Intelligence Engine.</p><div class="creds"><span>HRD Corp Accredited Trainer</span><span>Certified LPI Consultant</span></div><details><summary>His journey</summary><p>Andy spent more than a decade delivering critical banking systems and leading technology teams. Today he applies that analytical discipline to learning, financial well-being and team decisions.</p><ul><li>Banking technology delivery with Alliance Bank and Bank Muamalat</li><li>Financial well-being, behavioural finance and team decisions</li></ul></details></div></article><article class="fd"><div class="ph"><img src="assets/images/founder-zong-yuan.jpg" alt="Zong Yuan leading a session" width="1600" height="900" loading="lazy" decoding="async" style="object-position:70% 25%"></div><div class="b"><p class="role">Founding Director &amp; Chief Growth Officer</p><h3>Zong Yuan</h3><p>Helps people pause, think clearly and decide well under pressure. Leads Aurelion’s growth, partnerships and client experience.</p><div class="creds"><span>HRD Corp Accredited Trainer</span><span>Certified LPI Consultant</span></div><details><summary>His journey</summary><p>Zong Yuan works with leaders and teams on decision making, trust and shared responsibility, through stories, practical challenges and LPI team mapping.</p><ul><li>Lead facilitator for Team Build X with Walihin Petroleum</li><li>Delivered S.P.A.C.E. Bridge for BIG Pasaraya’s head office and branch leaders</li></ul></details></div></article></div>
+        <div class="founders"><article class="fd"><div class="ph"><img src="assets/images/founder-zhi-harn-wang.jpg" alt="Zhi-Harn Wang leading a session" width="1600" height="900" loading="lazy" decoding="async" style="object-position:center 30%"></div><div class="b"><p class="role">Principal Founder &amp; Director</p><h3>Zhi-Harn Wang</h3><p>Business experience from a U.S. education technology startup, and 17 years of intensive contemplative training, brought into work with leaders and teams.</p><div class="creds"><span>HRD Corp Accredited Trainer</span><span>Certified LPI Consultant</span></div><details><summary><i aria-hidden="true">+</i> Read his journey</summary><p>His first venture into the unknown began at university, helping build an education technology startup as Vice President of Development. Seventeen years of intensive contemplative training across Asia deepened his understanding of attention, resilience and human behaviour.</p><ul><li>B.Sc. Business, Finance · Carlson School of Management, University of Minnesota</li><li>Speaker and facilitator in Malaysia, Taiwan and the United States</li></ul></details></div></article><article class="fd"><div class="ph"><img src="assets/images/founder-andy-tan.jpg" alt="Andy Tan leading a session" width="1600" height="900" loading="lazy" decoding="async" style="object-position:55% 30%"></div><div class="b"><p class="role">Founding Director &amp; Chief Strategy Officer</p><h3>Andy Tan</h3><p>More than a decade in banking technology, now applied to learning and the decisions people make under pressure. Co-creator of Aurelion’s Growth Intelligence Engine.</p><div class="creds"><span>HRD Corp Accredited Trainer</span><span>Certified LPI Consultant</span></div><details><summary><i aria-hidden="true">+</i> Read his journey</summary><p>Andy spent more than a decade delivering critical banking systems and leading technology teams. Today he applies that analytical discipline to learning, financial well-being and team decisions.</p><ul><li>Banking technology delivery with Alliance Bank and Bank Muamalat</li><li>Financial well-being, behavioural finance and team decisions</li></ul></details></div></article><article class="fd"><div class="ph"><img src="assets/images/founder-zong-yuan.jpg" alt="Zong Yuan leading a session" width="1600" height="900" loading="lazy" decoding="async" style="object-position:70% 25%"></div><div class="b"><p class="role">Founding Director &amp; Chief Growth Officer</p><h3>Zong Yuan</h3><p>Helps people pause, think clearly and decide well under pressure. Leads Aurelion’s growth, partnerships and client experience.</p><div class="creds"><span>HRD Corp Accredited Trainer</span><span>Certified LPI Consultant</span></div><details><summary><i aria-hidden="true">+</i> Read his journey</summary><p>Zong Yuan works with leaders and teams on decision making, trust and shared responsibility, through stories, practical challenges and LPI team mapping.</p><ul><li>Lead facilitator for Team Build X with Walihin Petroleum</li><li>Delivered S.P.A.C.E. Bridge for BIG Pasaraya’s head office and branch leaders</li></ul></details></div></article></div>
       </div>
     </section>
 
@@ -685,8 +719,9 @@ body.locked { overflow:hidden; }
   caps.forEach(function (c) {
     c.addEventListener("click", function () {
       var open = c.getAttribute("aria-expanded") !== "true";
-      caps.forEach(function (x) { x.setAttribute("aria-expanded", "false"); $(".toggle", x).textContent = "See how it shows up"; });
-      if (open) { c.setAttribute("aria-expanded", "true"); $(".toggle", c).textContent = "Show less"; }
+      caps.forEach(function (x) { x.setAttribute("aria-expanded", "false"); x.classList.remove("invite"); $(".cap-toggle span", x).textContent = "See it at work"; });
+      if (open) { c.setAttribute("aria-expanded", "true"); $(".cap-toggle span", c).textContent = "Close"; }
+      c.parentNode.classList.toggle("has-open", open);
     });
   });
 
