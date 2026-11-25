@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Little Orbit | Aurelion fusion concept</title>
+<meta name="description" content="Little Orbit: tuition and enrichment for ages 4 to 17 in Subang Jaya and Puchong. Sticker-book play meets a strict school timetable. A fusion concept by Aurelion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbf7ef;--ink:#1d1b33;--mute:#625f76;--rule:rgba(74,124,240,.13);--ph:#ff8c5a;--mn:#ef5b70;--ma:#4a7cf0;--sc:#1fa97a;--co:#8d6cf0;--sp:#f2b330;--disp:"Bricolage Grotesque","Noto Sans SC",system-ui,sans-serif;--mono:"JetBrains Mono","Noto Sans SC",ui-monospace,monospace;--sh:0 0 0 1px rgba(29,27,51,.07),0 10px 20px -10px rgba(29,27,51,.45)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+body{background:var(--paper) repeating-linear-gradient(180deg,transparent 0 31px,var(--rule) 31px 32px);color:var(--ink);font-family:var(--disp);line-height:1.45;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;top:0;bottom:0;left:44px;width:2px;background:rgba(239,91,112,.28);pointer-events:none;z-index:0}
+a{color:inherit}button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
+.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+
+/* nav */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;gap:12px;padding:0 24px;background:rgba(251,247,239,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.045em;margin-right:auto;white-space:nowrap}
+.logo svg{width:40px;height:40px;filter:drop-shadow(0 3px 3px rgba(29,27,51,.3));transition:transform .5s}
+.logo:hover svg{transform:rotate(-25deg)}
+.links{display:flex;gap:2px}
+.links a{text-decoration:none;font:500 12px var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:9px 11px;border-radius:999px;white-space:nowrap}
+.links a:hover{background:#fff;box-shadow:var(--sh)}
+.links .mob{display:none}
+.lang{display:flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff;flex:none}
+.lang button{border:0;background:none;padding:6px 9px;font:700 11px var(--mono)}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff}
+.burger{display:none;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:6px 12px;font:700 11px var(--mono);text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border:3px solid #fff;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:var(--sh);transition:transform .35s cubic-bezier(.3,1.6,.5,1),background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px) rotate(-1.5deg)}
+.btn.y{background:var(--sp);color:var(--ink)}.btn.w{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn.sm{padding:9px 15px;font-size:13px}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* stickers */
+.stk{position:relative;border:4px solid #fff;border-radius:16px;box-shadow:var(--sh);transform:rotate(var(--r,0deg));transition:transform .4s cubic-bezier(.3,1.6,.5,1),box-shadow .3s,opacity .3s,filter .3s}
+.stk::after{content:"";position:absolute;right:-4px;bottom:-4px;width:0;height:0;border-radius:0 0 12px 0;background:linear-gradient(135deg,transparent 50%,#ece6da 50%,#fff 80%);box-shadow:-3px -3px 5px rgba(29,27,51,.14);transition:width .3s,height .3s;pointer-events:none}
+.stk:hover{transform:rotate(0) translateY(-4px) scale(1.02);box-shadow:0 0 0 1px rgba(29,27,51,.07),0 18px 26px -12px rgba(29,27,51,.5);z-index:5}
+.stk:hover::after{width:28px;height:28px}
+
+/* hero */
+.hero{position:relative;overflow-x:clip;max-width:1320px;margin:0 auto;padding:134px 24px 70px;display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:start}
+.tag{display:inline-flex;gap:8px;align-items:center;font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;background:#fff;padding:8px 12px;border-radius:999px;box-shadow:var(--sh)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--sc);animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.8);opacity:.4}}
+h1{font-size:clamp(44px,6.6vw,98px);line-height:.93;letter-spacing:-.05em;font-weight:800;margin:22px 0 22px}
+.hl{display:inline-block;background:var(--c,var(--sp));padding:0 .14em;border:5px solid #fff;border-radius:.28em;transform:rotate(-2.5deg);box-shadow:var(--sh)}
+.lede{font-size:18px;max-width:520px;color:#3b3953}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.sheet-art{position:relative;height:230px;margin-top:30px}
+.hs{position:absolute;width:var(--w,96px);height:auto;transform:translate(var(--x,0),var(--y,0)) rotate(var(--r,0deg));filter:drop-shadow(0 6px 6px rgba(29,27,51,.28));transition:filter .3s;overflow:visible}
+.hs:hover{filter:drop-shadow(0 14px 10px rgba(29,27,51,.32))}
+.hs text{font-family:var(--disp);font-weight:800}
+
+/* finder */
+.finder{background:#fff;border:2px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);overflow:hidden;position:relative}
+.f-head{display:flex;justify-content:space-between;gap:10px;padding:11px 16px;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--ink);background:var(--sp)}
+.f-row{padding:14px 16px;border-bottom:1px dashed rgba(29,27,51,.25)}
+.f-lab{display:flex;justify-content:space-between;align-items:baseline;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;color:var(--mute)}
+.age{display:flex;align-items:center;gap:16px}
+.age-num{flex:none;width:72px;height:60px;display:grid;place-items:center;background:var(--ma);color:#fff;font-weight:800;font-size:32px;line-height:1;border:4px solid #fff;border-radius:16px;box-shadow:var(--sh);transform:rotate(-4deg)}
+.age-num.pop{animation:pop .35s}
+@keyframes pop{40%{transform:rotate(3deg) scale(1.12)}}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:99px;background:linear-gradient(90deg,var(--ma) var(--p,30%),#e7e2d6 var(--p,30%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid var(--ink);box-shadow:0 3px 0 var(--ink);cursor:grab}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--ink);cursor:grab}
+input[type=range]:focus-visible::-webkit-slider-thumb{outline:3px solid var(--sp)}
+.ticks{display:flex;justify-content:space-between;font:500 10px var(--mono);color:var(--mute);margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:6px 11px;font-weight:600;font-size:13px;display:inline-flex;gap:6px;align-items:center;transition:transform .25s cubic-bezier(.3,1.6,.5,1),background .2s}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px #fff}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;transform:rotate(-2deg)}
+.chip.d{font:700 12px var(--mono);min-width:46px;justify-content:center}
+.res-head{display:flex;justify-content:space-between;gap:10px;padding:11px 16px;background:#f6f2e8;border-bottom:2px solid var(--ink);font:700 12px var(--mono)}
+.res{list-style:none;min-height:262px}
+.res li{display:grid;grid-template-columns:6px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 14px 10px 0;border-bottom:1px solid rgba(29,27,51,.1);animation:slide .4s both}
+.res li::before{content:"";align-self:stretch;background:var(--c);border-radius:0 4px 4px 0}
+@keyframes slide{from{opacity:0;transform:translateX(-10px)}}
+.nm{background:none;border:0;text-align:left;min-width:0}
+.nm b{display:block;font-size:15px;line-height:1.2}
+.nm>span{display:block;font:500 11px var(--mono);color:var(--mute);margin-top:2px}
+.seat{font:700 10px var(--mono);padding:2px 6px;border-radius:99px;background:#e3f5ed;color:#0d7050;margin-left:4px;white-space:nowrap}
+.seat.low{background:#fde6e9;color:#b02a40}.seat.wl{background:#ece9f2;color:var(--mute)}
+.mini{border:2px solid var(--ink);background:var(--sp);border-radius:999px;padding:6px 10px;font:700 11px var(--mono);white-space:nowrap}
+.mini:hover{background:var(--ink);color:#fff}
+.empty{padding:28px 18px;text-align:center;color:var(--mute)}
+.empty b{display:block;font-size:40px}
+.res-foot{padding:12px 16px;font:500 12px var(--mono);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.res-foot a{font-weight:700}
+
+/* ticker */
+.tickw{overflow:hidden;padding:14px 0;position:relative;z-index:1}
+.ticker{position:relative;z-index:1;background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;border-block:2px solid var(--ink);transform:rotate(-1deg);margin:0 -10px}
+.ticker div{display:inline-flex;gap:14px;padding:12px 0;animation:mq 36s linear infinite}
+.ticker span{font-weight:800;font-size:20px;padding:4px 14px;border-radius:999px;border:3px solid #fff;background:var(--c);color:var(--ink)}
+.ticker em{font-style:normal;color:var(--sp);font-size:20px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+.sec{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:96px 24px}
+.slab{display:flex;justify-content:space-between;gap:12px;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:9px 0;margin-bottom:34px}
+h2{font-size:clamp(36px,5vw,68px);line-height:.98;letter-spacing:-.045em;font-weight:800}
+h2 .hl{border-width:4px;transform:rotate(-1.5deg)}
+.intro{font-size:17px;color:#3b3953;max-width:520px;margin-top:14px}
+
+/* timetable */
+.tt-top{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.tt{display:grid;grid-template-columns:64px repeat(7,minmax(0,1fr));grid-template-rows:46px repeat(6,minmax(116px,auto));background:#fff;border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+.tt-day{grid-row:1;display:flex;align-items:center;justify-content:center;gap:6px;font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--ink);border-left:1px solid rgba(29,27,51,.14);background:#f6f2e8}
+.tt-day.today{background:var(--sp)}
+.tt-day small{font-size:10px;opacity:.7}
+.tt-corner{grid-row:1;grid-column:1;border-bottom:2px solid var(--ink);background:#f6f2e8}
+.tt-time{grid-column:1;padding:12px 4px;font:700 11px var(--mono);color:var(--mute);text-align:center;border-top:1px dashed rgba(29,27,51,.2)}
+.tt-rule{grid-column:2/-1;border-top:1px dashed rgba(29,27,51,.2);pointer-events:none}
+.tt-vr{grid-row:2/-1;border-left:1px solid rgba(29,27,51,.1);pointer-events:none}
+.tt-c{margin:9px 6px;text-align:left;display:flex;flex-direction:column;gap:3px;padding:12px 9px 9px;background:linear-gradient(var(--c) 0 6px,color-mix(in srgb,var(--c) 17%,#fff) 6px);border-radius:14px;z-index:2;min-width:0}
+.tt-c b{font-size:14px;line-height:1.12;font-weight:700;overflow-wrap:anywhere}
+.tt-c .m{font:500 10.5px var(--mono);color:#4b4862}
+.tt-c .seat{align-self:flex-start;margin:3px 0 0}
+.tt-c.off{opacity:.13;filter:grayscale(1);transform:scale(.94);pointer-events:none}
+.tt-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;font:500 12px var(--mono);color:var(--mute)}
+
+/* detail sheet */
+.sheet{position:fixed;inset:0;z-index:1100;display:grid;place-items:center;padding:16px}
+.sheet[hidden]{display:none}
+.sheet-bg{position:absolute;inset:0;background:rgba(29,27,51,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.sheet-card{position:relative;width:min(440px,100%);max-height:calc(100vh - 60px);overflow:auto;background:#fff;border-radius:24px;border:5px solid #fff;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);animation:stickOn .5s cubic-bezier(.3,1.5,.5,1)}
+@keyframes stickOn{from{opacity:0;transform:scale(.7) rotate(-8deg)}}
+.sh-top{background:color-mix(in srgb,var(--c) 30%,#fff);padding:22px 22px 18px;border-radius:18px 18px 0 0;border-top:8px solid var(--c)}
+.sh-top small{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.sh-top h3{font-size:30px;letter-spacing:-.04em;line-height:1;margin-top:6px}
+.sh-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:2px solid var(--ink);background:#fff;font-weight:800}
+.dl{display:grid;grid-template-columns:auto 1fr;padding:6px 22px}
+.dl dt,.dl dd{padding:10px 0;border-bottom:1px dashed rgba(29,27,51,.2)}
+.dl dt{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-right:18px}
+.dl dd{font-weight:600}
+.sh-act{padding:16px 22px 22px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* trial */
+.trial{background:color-mix(in srgb,var(--sc) 12%,var(--paper));border-block:2px solid var(--ink);position:relative;z-index:1}
+.trial-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+.perks{list-style:none;display:grid;gap:10px;margin-top:24px}
+.perks li{display:flex;gap:10px;align-items:center;font-weight:600}
+.perks li::before{content:"✓";flex:none;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--sc);color:#fff;border:3px solid #fff;box-shadow:var(--sh);font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink);border-radius:14px;overflow:hidden;background:#fff;margin-bottom:16px;list-style:none}
+.steps li{padding:10px 8px;font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.05em;border-right:1px solid rgba(29,27,51,.2);display:flex;gap:6px;align-items:center;min-width:0}
+.steps li:last-child{border-right:0}
+.steps li b{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#ece8de;font-size:11px}
+.steps li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.steps li.on{background:var(--sp)}.steps li.done b{background:var(--sc);color:#fff}
+.panel{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:22px;box-shadow:8px 8px 0 var(--ink);min-height:340px}
+.pane{display:none}.pane.on{display:block;animation:fadeUp .4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}}
+.pane h3{font-size:22px;letter-spacing:-.03em;margin-bottom:14px}
+.fld{display:grid;gap:6px;margin-bottom:12px}
+.fld label{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.fld input,.fld select{width:100%;padding:13px 14px;border:2px solid var(--ink);border-radius:12px;background:#fff;font-size:16px;outline:none}
+.fld input:focus,.fld select:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--sp) 60%,transparent)}
+.picked{margin-top:6px;padding:14px;background:linear-gradient(90deg,var(--c) 0 6px,color-mix(in srgb,var(--c) 15%,#fff) 6px);border-radius:14px;--r:-1deg}
+.picked b{display:block;font-size:17px}.picked span{font:500 12px var(--mono);color:#4b4862}
+.dates{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.date{padding:14px;border:2px solid var(--ink);border-radius:14px;background:#fff;text-align:left;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.date b{display:block;font-size:20px;letter-spacing:-.02em}.date span{font:500 12px var(--mono)}
+.date[aria-pressed=true]{background:var(--ink);color:#fff;transform:rotate(-1.5deg)}
+.err{color:#b02a40;font:600 12px var(--mono);min-height:1.3em;margin-top:4px}
+.pnav{display:flex;justify-content:space-between;gap:10px;margin-top:16px;flex-wrap:wrap}
+.free{font:500 12px var(--mono);color:var(--mute);margin-top:12px}
+.ticket{position:relative;background:color-mix(in srgb,var(--sp) 28%,#fff);border-radius:18px;padding:22px;--r:-1.5deg;animation:stickOn .6s cubic-bezier(.3,1.5,.5,1)}
+.ticket h3{font-size:28px;margin-bottom:6px}
+.ticket .row{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;border-top:2px dashed rgba(29,27,51,.3);margin-top:14px;padding-top:14px;font-size:15px}
+.ticket .row span{font:700 11px var(--mono);text-transform:uppercase;color:var(--mute);padding-top:3px}
+.demo{display:inline-block;font:700 12px var(--mono);background:var(--ink);color:#fff;padding:6px 10px;border-radius:8px;margin-top:14px}
+
+/* teachers */
+.tgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.tcard{background:#fff;border-radius:20px;overflow:hidden}
+.av{aspect-ratio:1/.9;background:color-mix(in srgb,var(--c) 26%,#fff);display:grid;place-items:end center;border-bottom:3px dashed color-mix(in srgb,var(--c) 50%,#fff)}
+.av svg{width:78%;height:auto;display:block}
+.tb{padding:14px 14px 16px}
+.tb h3{font-size:18px;letter-spacing:-.03em;line-height:1.1}
+.tb .role{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--c);filter:brightness(.75);margin:4px 0 10px}
+.tb ul{list-style:none;font-size:13px;display:grid;gap:4px;border-top:1px solid rgba(29,27,51,.15);padding-top:8px}
+.tb ul li::before{content:"✶ ";color:var(--c)}
+.lg{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.lg span{font:700 10px var(--mono);border:1.5px solid var(--ink);border-radius:99px;padding:2px 7px}
+.tb .yr{font:500 11px var(--mono);color:var(--mute);margin-top:10px;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.tb .yr button{white-space:nowrap;border:0;background:none;font:700 11px var(--mono);text-decoration:underline}
+.note{font:500 12px var(--mono);color:var(--mute);margin-top:18px}
+
+/* progress */
+.prog{display:grid;grid-template-columns:1.45fr 1fr;gap:28px;align-items:start}
+.chart{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:18px}
+.ch-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.ch-top b{font-size:18px}.ch-top small{display:block;font:500 11px var(--mono);color:var(--mute)}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff}
+.seg button{border:0;background:none;padding:7px 13px;font:700 12px var(--mono)}
+.seg button[aria-pressed=true]{background:var(--ink);color:#fff}
+#chart{width:100%;height:auto;display:block}
+#chart text{font-family:var(--mono);font-size:11px;fill:var(--mute)}
+#chart .pt{cursor:pointer;outline:none}
+#chart .pt circle{transition:r .2s}
+#chart .pt:hover circle,#chart .pt:focus circle,#chart .pt.sel circle{r:10}
+.cnote{background:color-mix(in srgb,var(--sp) 30%,#fff);border-radius:18px;padding:20px;--r:1.5deg}
+.cnote small{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.cnote b{display:block;font-size:44px;letter-spacing:-.04em;line-height:1;margin:6px 0}
+.cnote p{font-size:16px}
+.how{list-style:none;display:grid;gap:12px;margin-top:22px}
+.how li{background:#fff;border-radius:14px;padding:12px 14px;font-size:15px}
+.how li b{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;display:block;color:var(--mute)}
+.honest{margin-top:16px;padding:12px 14px;border:2px dashed var(--ink);border-radius:14px;font-size:14px}
+
+/* fees */
+.fees{display:grid;grid-template-columns:1.55fr 1fr;gap:28px;align-items:start}
+.tbl{background:#fff;border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+th{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:12px 14px;background:#f6f2e8;border-bottom:2px solid var(--ink)}
+td{padding:12px 14px;border-bottom:1px dashed rgba(29,27,51,.2);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.p,th.p{text-align:right}td.p{white-space:nowrap}
+td.p{font-weight:800;font-size:17px}
+td .dt{display:block;font:500 11px var(--mono);color:var(--mute)}
+td .dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--c);margin-right:7px;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--c)}
+.sib{display:none}.sibon .sib{display:table-cell}
+td.sib{color:var(--sc)}
+td.sib s{display:block;font-size:11px;color:var(--mute);font-weight:500}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--ink);cursor:pointer}
+.fside{display:grid;gap:16px}
+.switch{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:14px;text-align:left;width:100%}
+.switch i{flex:none;width:52px;height:30px;border-radius:99px;background:#ddd8cc;position:relative;transition:background .25s}
+.switch i::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 0 rgba(0,0,0,.2);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.switch[aria-checked=true] i{background:var(--sc)}.switch[aria-checked=true] i::after{transform:translateX(22px)}
+.switch b{display:block}.switch span{font:500 12px var(--mono);color:var(--mute)}
+.est{background:var(--ink);color:#fff;border-radius:20px;padding:20px;border:4px solid #fff;--r:-1deg}
+.est small{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.est .tot{font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:6px 0}
+.est p{font:500 12px var(--mono);opacity:.8}
+.kids{display:none;margin-top:12px;align-items:center;gap:10px;font:700 11px var(--mono);text-transform:uppercase}
+.kids.on{display:flex}
+.kids .seg{border-color:#fff;background:transparent}.kids .seg button{color:#fff}.kids .seg button[aria-pressed=true]{background:#fff;color:var(--ink)}
+
+/* calendar */
+.cal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 4px 18px;scrollbar-width:thin}
+.wk{flex:0 0 118px;scroll-snap-align:start;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:10px;text-align:left;position:relative;min-height:112px;display:flex;flex-direction:column;gap:4px}
+.wk small{font:700 10px var(--mono);color:var(--mute);letter-spacing:.06em}
+.wk b{font-size:17px;letter-spacing:-.02em}
+.wk span{font-size:12px;line-height:1.25;margin-top:auto}
+.wk.hol{background:repeating-linear-gradient(45deg,#fff 0 8px,color-mix(in srgb,var(--mn) 16%,#fff) 8px 16px)}
+.wk.chk{background:color-mix(in srgb,var(--ma) 12%,#fff)}.wk.spm{background:color-mix(in srgb,var(--sp) 22%,#fff)}.wk.ph{background:color-mix(in srgb,var(--ph) 18%,#fff)}
+.wk.now{box-shadow:0 0 0 4px var(--sp)}
+.wk.now::before{content:attr(data-now);position:absolute;top:-12px;right:8px;background:var(--sp);border:3px solid #fff;border-radius:99px;padding:1px 8px;font:700 10px var(--mono);box-shadow:var(--sh);transform:rotate(4deg)}
+.wk[aria-pressed=true]{outline:3px solid var(--ink);outline-offset:2px}
+.cal-note{font-size:15px;min-height:1.5em;padding:12px 14px;background:#fff;border-radius:14px;border:2px solid var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font:500 12px var(--mono);margin-top:12px;color:var(--mute)}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:4px;border:1.5px solid var(--ink);background:var(--b);vertical-align:-2px;margin-right:6px}
+
+/* faq + location */
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:start}
+.faq{border-top:2px solid var(--ink);margin-top:24px}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;text-align:left;padding:18px 0;border:0;background:none;font-weight:700;font-size:18px;letter-spacing:-.02em}
+.q button i{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-style:normal;transition:transform .3s,background .2s}
+.q.open button i{transform:rotate(45deg);background:var(--sp)}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+.ans>div{overflow:hidden}.ans p{padding:0 40px 18px 0;color:#3b3953}
+.q.open .ans{grid-template-rows:1fr}
+.q{border-bottom:1px solid rgba(29,27,51,.25)}
+.loc{background:#fff;border-radius:22px;overflow:hidden}
+.loc .seg{margin:16px 16px 0}
+.map{display:block;width:100%;height:auto;margin-top:14px;background:#eef1e6;border-block:2px solid var(--ink)}
+.map .pin{transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
+.locb{padding:16px 18px 20px;display:grid;gap:10px}
+.locb h3{font-size:24px;letter-spacing:-.03em}
+.locb p{font-size:15px}.locb small{font:700 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);display:block}
+.locmsg{font:600 12px var(--mono);color:var(--sc);min-height:1.2em}
+
+footer{position:relative;z-index:1;background:var(--ink);color:#fbf7ef;margin-top:40px}
+.foot{max-width:1320px;margin:0 auto;padding:60px 24px 30px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+.big{font-size:clamp(54px,9vw,128px);font-weight:800;letter-spacing:-.06em;line-height:.85}
+.big span{display:inline-block;background:var(--sp);color:var(--ink);padding:0 .12em;border:5px solid #fff;border-radius:.2em;transform:rotate(-3deg)}
+.foot h5{font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:10px}
+.foot a{display:block;text-decoration:none;line-height:2}
+.foot a:hover{color:var(--sp)}
+.fine{text-align:center;font:500 11px var(--mono);letter-spacing:.06em;padding:16px;border-top:1px solid rgba(251,247,239,.2);opacity:.65}
+
+.mcta{display:none}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1180px){.links a{padding:9px 7px;font-size:11px}.tgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1020px){
+ .hero,.trial-wrap,.prog,.fees,.two{grid-template-columns:1fr}
+ .hero{gap:34px}
+ .sheet-art{height:170px;margin-top:20px}
+ .tt{display:block}
+ .tt-time,.tt-rule,.tt-vr,.tt-corner{display:none}
+ .tt-day{justify-content:space-between;padding:11px 14px;border-left:0;border-top:2px solid var(--ink)}
+ .tt{border-top:0}
+ .tt-day.hide{display:none}
+ .tt-c{margin:10px 12px;width:calc(100% - 24px)}
+ .hero>div:first-child{display:contents}
+ .hero{gap:0}
+ .hero .finder{order:1;margin-top:28px}
+ .sheet-art{order:2}
+ .tt-c.off{display:none}
+}
+@media(max-width:900px){
+ body::before{display:none}
+ .burger{display:block}
+ .links{position:fixed;top:100px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:2px solid var(--ink);padding:6px 0;opacity:0;transform:translateY(-8px);pointer-events:none;transition:.25s}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links a{padding:15px 20px;font-size:13px;border-radius:0;border-top:1px dashed rgba(29,27,51,.2)}
+ .links .mob{display:block;font-weight:700}
+ .nav .ncta{display:none}
+ .mcta{display:flex;position:fixed;left:16px;right:16px;bottom:14px;z-index:950;transform:translateY(160%);transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
+ .mcta.show{transform:none}
+ .tgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .nav{padding:0 16px;gap:8px}
+ .logo{font-size:19px}.logo svg{width:34px;height:34px}
+ .hero{padding:124px 16px 56px}
+ .sec{padding:72px 16px}
+ .lede{font-size:16px}
+ .hero-cta .btn{flex:1}
+ .f-row,.f-head,.res-head{padding-left:14px;padding-right:14px}
+ .sheet{place-items:end center;padding:0}
+ .sheet-card{width:100%;border-radius:24px 24px 0 0;max-height:88vh}
+ .panel{padding:16px;box-shadow:5px 5px 0 var(--ink)}
+ .finder{box-shadow:5px 5px 0 var(--ink)}
+ .steps li{flex-direction:column;gap:3px;padding:8px 2px;font-size:9px;text-align:center}
+ .steps li span{max-width:100%}
+ .dates{grid-template-columns:1fr 1fr}.date{padding:11px}.date b{font-size:17px}
+ .tgrid{grid-template-columns:1fr;gap:16px}
+ .tcard{display:grid;grid-template-columns:104px 1fr}
+ .av{aspect-ratio:auto;border-bottom:0;border-right:3px dashed color-mix(in srgb,var(--c) 50%,#fff);place-items:end center}
+ .av svg{width:96%}
+ th,td{padding:10px 8px}td.p{font-size:15px}
+ .est .tot{font-size:38px}
+ .foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}
+ .ticker span,.ticker em{font-size:16px}
+ .hs{width:calc(var(--w,96px)*.7)}
+ .sheet-art{height:150px}
+ .q button{font-size:16px}
+ .ans p{padding-right:10px}
+}
+@media(max-width:400px){.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:30px}.lang button{padding:5px 6px}.burger{padding:6px 9px}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ html{scroll-behavior:auto}
+ .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-14 · Sticker-book play × School timetable</span><a class="exh-cta" href="/website/?t=little-orbit#finder">Build one like this →</a></div>
+
+<header class="nav">
+ <a class="logo" href="#top" aria-label="Little Orbit home"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#fff"/><circle cx="24" cy="24" r="13" fill="#4a7cf0"/><ellipse cx="24" cy="24" rx="21" ry="7" fill="none" stroke="#fff" stroke-width="7" transform="rotate(-24 24 24)"/><ellipse cx="24" cy="24" rx="21" ry="7" fill="none" stroke="#f2b330" stroke-width="3.5" transform="rotate(-24 24 24)"/><circle cx="19" cy="20" r="3" fill="#fff" opacity=".7"/></svg>Little Orbit</a>
+ <nav class="links" id="links" aria-label="Main">
+  <a href="#top" data-i="nav_find">Finder</a><a href="#timetable" data-i="nav_tt">Timetable</a><a href="#teachers" data-i="nav_te">Teachers</a><a href="#progress" data-i="nav_pr">Progress</a><a href="#fees" data-i="nav_fee">Fees</a><a href="#faq" data-i="nav_faq">FAQ</a><a class="mob" href="#trial" data-i="cta_trial">Free trial class</a>
+ </nav>
+ <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="bm" aria-pressed="false">BM</button><button type="button" data-lang="zh" aria-pressed="false">中文</button></div>
+ <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" data-i="menu">Menu</button>
+ <a class="btn y sm ncta" href="#trial" data-i="cta_trial">Free trial class</a>
+</header>
+
+<main id="top">
+<section class="hero" id="finder">
+ <div class="rv">
+  <span class="tag"><i></i><span data-i="h_tag">Subang Jaya · Puchong · Ages 4–17</span></span>
+  <h1 data-i="h_title">Find the right class in <span class="hl">30 seconds.</span></h1>
+  <p class="lede" data-i="h_lede">Phonics, Mandarin, maths, science, coding and SPM prep in small groups of 8 to 14. Tell us your child's age and free days, and we'll show you what fits.</p>
+  <div class="hero-cta"><a class="btn y" href="#trial" data-i="cta_trial">Free trial class</a><a class="btn w" href="#timetable" data-i="h_cta2">See the full timetable</a></div>
+  <div class="sheet-art" id="art" aria-hidden="true">
+   <svg class="hs" data-d="1.4" style="left:0;top:18px;--w:104px;--r:-10deg" viewBox="0 0 100 100"><path d="M50 6l12.6 26.4 28.9 3.6-21.2 20 5.4 28.6L50 70.6 24.3 84.6l5.4-28.6-21.2-20 28.9-3.6z" fill="#f2b330" stroke="#fff" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/><circle cx="41" cy="46" r="4" fill="#1d1b33"/><circle cx="59" cy="46" r="4" fill="#1d1b33"/><path d="M42 57q8 7 16 0" stroke="#1d1b33" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+   <svg class="hs" data-d=".8" style="left:19%;top:96px;--w:96px;--r:7deg" viewBox="0 0 100 100"><rect x="8" y="14" width="84" height="72" rx="14" fill="#ff8c5a" stroke="#fff" stroke-width="8" paint-order="stroke"/><text x="50" y="62" text-anchor="middle" font-size="30" fill="#1d1b33">ABC</text></svg>
+   <svg class="hs" data-d="1.8" style="left:36%;top:6px;--w:110px;--r:-6deg" viewBox="0 0 110 100"><path d="M12 10h86a10 10 0 0 1 10 10v44a10 10 0 0 1-10 10H48L28 92l4-18H12A10 10 0 0 1 2 64V20a10 10 0 0 1 10-10z" fill="#ef5b70" stroke="#fff" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/><text x="55" y="54" text-anchor="middle" font-size="28" fill="#fff">你好!</text></svg>
+   <svg class="hs" data-d="1.1" style="left:56%;top:104px;--w:98px;--r:9deg" viewBox="0 0 100 100"><rect x="14" y="26" width="72" height="56" rx="14" fill="#fff" stroke="#fff" stroke-width="16"/><line x1="50" y1="8" x2="50" y2="26" stroke="#fff" stroke-width="12"/><line x1="50" y1="10" x2="50" y2="26" stroke="#1d1b33" stroke-width="4"/><circle cx="50" cy="10" r="6" fill="#f2b330"/><rect x="14" y="26" width="72" height="56" rx="14" fill="#8d6cf0"/><rect x="24" y="38" width="52" height="24" rx="10" fill="#1d1b33"/><circle cx="38" cy="50" r="5" fill="#6ff0c4"/><circle cx="62" cy="50" r="5" fill="#6ff0c4"/><rect x="38" y="68" width="24" height="5" rx="2.5" fill="#fff" opacity=".8"/></svg>
+   <svg class="hs" data-d="1.5" style="left:74%;top:0;--w:92px;--r:-12deg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#1fa97a" stroke="#fff" stroke-width="8" paint-order="stroke"/><g fill="none" stroke="#fff" stroke-width="3.5"><ellipse cx="50" cy="50" rx="30" ry="11"/><ellipse cx="50" cy="50" rx="30" ry="11" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="30" ry="11" transform="rotate(-60 50 50)"/></g><circle cx="50" cy="50" r="6" fill="#f2b330"/></svg>
+   <svg class="hs" data-d=".6" style="left:86%;top:110px;--w:84px;--r:14deg" viewBox="0 0 100 100"><path d="M50 4l9 8 12-2 4 11 11 5-2 12 8 9-8 9 2 12-11 5-4 11-12-2-9 8-9-8-12 2-4-11-11-5 2-12-8-9 8-9-2-12 11-5 4-11 12 2z" fill="#4a7cf0" stroke="#fff" stroke-width="7" stroke-linejoin="round" paint-order="stroke"/><text x="50" y="47" text-anchor="middle" font-size="14" fill="#fff">GREAT</text><text x="50" y="64" text-anchor="middle" font-size="12" fill="#fff">QUESTION!</text></svg>
+  </div>
+ </div>
+
+ <div class="finder rv" role="region" aria-labelledby="fT">
+  <div class="f-head"><span id="fT" data-i="f_head">Class finder</span><span data-i="f_sample">Sample timetable</span></div>
+  <div class="f-row">
+   <div class="f-lab"><label for="age" data-i="f_age">Child's age</label><span data-i="f_drag">Drag me</span></div>
+   <div class="age"><div class="age-num" id="ageNum" aria-hidden="true">8</div><div style="flex:1"><input id="age" type="range" min="4" max="17" value="8" aria-describedby="ageTxt"><div class="ticks"><span>4</span><span>8</span><span>12</span><span>17</span></div><span class="sr" id="ageTxt"></span></div></div>
+  </div>
+  <div class="f-row"><div class="f-lab"><span data-i="f_sub">Subjects</span><span data-i="f_any">Any</span></div><div class="chips" id="fSub" role="group" aria-label="Subjects"></div></div>
+  <div class="f-row"><div class="f-lab"><span data-i="f_days">Preferred days</span><span data-i="f_any">Any</span></div><div class="chips" id="fDay" role="group" aria-label="Days"></div></div>
+  <div class="res-head"><span id="fCount" aria-live="polite">0</span><span>↓</span></div>
+  <ul class="res" id="fRes"></ul>
+  <div class="res-foot"><span id="fMore"></span><a href="#timetable" data-i="h_cta2">See the full timetable</a></div>
+ </div>
+</section>
+
+<div class="tickw"><div class="ticker" aria-hidden="true"><div id="tick"></div></div></div>
+
+<section class="sec" id="timetable">
+ <div class="slab"><span>01 — Weekly timetable</span><span>Term 4 · 2026 · sample</span></div>
+ <div class="tt-top rv">
+  <div><h2 data-i="tt_h">The whole week, one <span class="hl" style="--c:var(--ph)">sticker sheet.</span></h2><p class="intro" data-i="tt_hint">Tap any class for details, seats and a free trial.</p></div>
+  <div class="chips" id="ttF" role="group" aria-label="Filter by subject"></div>
+ </div>
+ <div class="tt rv" id="tt"></div>
+ <div class="tt-foot"><span id="ttN"></span><span>Rooms: Moon · Comet · Saturn · Lab · Rover</span></div>
+</section>
+
+<section class="trial" id="trial">
+ <div class="sec">
+  <div class="slab"><span>02 — Free trial</span><span>About 1 minute</span></div>
+  <div class="trial-wrap">
+   <div class="rv">
+    <h2 data-i="tr_h">Book a free <span class="hl" style="--c:var(--sc)">trial class.</span></h2>
+    <p class="intro" data-i="tr_p">One free class per child. Sit in, meet the teacher, see if it clicks. No payment details, no pressure.</p>
+    <ul class="perks"><li data-i="pk1">Small groups: 8 to 14 per class</li><li data-i="pk2">Parent chat with the teacher after class</li><li data-i="pk3">WhatsApp reminder the day before</li></ul>
+   </div>
+   <div class="rv">
+    <ol class="steps" id="steps"><li><b>1</b><span data-i="st1">Class</span></li><li><b>2</b><span data-i="st2">Date</span></li><li><b>3</b><span data-i="st3">Details</span></li><li><b>4</b><span data-i="st4">Done</span></li></ol>
+    <div class="panel">
+     <div class="pane on" data-p="1">
+      <h3 data-i="tr_pick">Pick a class</h3>
+      <div class="fld"><label for="trSel" data-i="st1">Class</label><select id="trSel"></select></div>
+      <div id="trPicked"></div>
+      <p class="err" id="e1" role="alert"></p>
+      <div class="pnav"><span></span><button class="btn" type="button" data-go="2" data-i="next">Next →</button></div>
+     </div>
+     <div class="pane" data-p="2">
+      <h3 data-i="tr_pickd">Pick a date</h3>
+      <div class="dates" id="trDates" role="group"></div>
+      <p class="err" id="e2" role="alert"></p>
+      <div class="pnav"><button class="btn w" type="button" data-go="1" data-i="back">← Back</button><button class="btn" type="button" data-go="3" data-i="next">Next →</button></div>
+     </div>
+     <form class="pane" data-p="3" id="trForm" novalidate>
+      <h3 data-i="st3">Your details</h3>
+      <div class="fld"><label for="pName" data-i="tr_name">Parent's name</label><input id="pName" autocomplete="name" placeholder="e.g. Nurul Huda"></div>
+      <div class="fld"><label for="pPhone" data-i="tr_phone">Phone (WhatsApp)</label><input id="pPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="012-345 6789"></div>
+      <div class="fld"><label for="kName" data-i="tr_kid">Child's first name (optional)</label><input id="kName" autocomplete="off"></div>
+      <p class="err" id="e3" role="alert"></p>
+      <div class="pnav"><button class="btn w" type="button" data-go="2" data-i="back">← Back</button><button class="btn y" type="submit" data-i="confirm">Confirm trial ✓</button></div>
+      <p class="free" data-i="tr_free">The trial is free, one per child. No payment details needed.</p>
+     </form>
+     <div class="pane" data-p="4"><div id="ticket"></div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="teachers">
+ <div class="slab"><span>03 — Teachers</span><span>Sample profiles</span></div>
+ <h2 class="rv" data-i="te_h">Teachers your kids will <span class="hl" style="--c:var(--co)">actually like.</span></h2>
+ <p class="intro rv" style="margin-bottom:34px">Every teacher is background-checked and observed in class each term. Ask any of them about your child: they answer in the language you're most comfortable in.</p>
+ <div class="tgrid" id="tgrid"></div>
+ <p class="note">Names, qualifications and photos are fictional placeholders for this concept.</p>
+</section>
+
+<section class="sec" id="progress">
+ <div class="slab"><span>04 — How we track progress</span><span>Fictional student · sample data</span></div>
+ <h2 class="rv" data-i="pr_h">Progress you can <span class="hl" style="--c:var(--ma)">see</span>, not promises.</h2>
+ <div class="prog" style="margin-top:34px">
+  <div class="chart rv">
+   <div class="ch-top"><div><b>Aiden, 10</b><small>Topic checks out of 100 · two per term</small></div><div class="seg" id="pSeg" role="group" aria-label="Subject"><button type="button" data-k="ma" aria-pressed="true">Maths</button><button type="button" data-k="en" aria-pressed="false">English</button></div></div>
+   <svg id="chart" viewBox="0 0 640 290" role="img" aria-label="Sample progress chart"></svg>
+  </div>
+  <div class="rv">
+   <div class="cnote stk" id="cnote" aria-live="polite"></div>
+   <ul class="how">
+    <li class="stk" style="--r:-1deg"><b>Every 4–6 weeks</b>A 30-minute topic check in class, marked by the teacher.</li>
+    <li class="stk" style="--r:1deg"><b>After each check</b>A short WhatsApp note: what clicked, what's next.</li>
+    <li class="stk" style="--r:-.5deg"><b>Every term</b>A 15-minute parent chat, in person or on a call.</li>
+   </ul>
+   <p class="honest">Honest bit: these scores come from our own topic checks, not school exams. Progress goes up and down, and we will never promise a grade. We promise to tell you what we see.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="fees" style="padding-top:20px">
+ <div class="slab"><span>05 — Fees per term</span><span>12 weeks · sample prices in RM</span></div>
+ <h2 class="rv" data-i="fee_h">Clear fees, <span class="hl">per term.</span></h2>
+ <div class="fees" style="margin-top:34px">
+  <div class="tbl rv" id="tblw"><table><thead><tr><th><span class="sr">Add</span></th><th data-i="fee_sub">Subject</th><th class="p" data-i="fee_term">Per term</th><th class="p sib" data-i="fee_sibcol">Sibling −10%</th></tr></thead><tbody id="fBody"></tbody></table></div>
+  <div class="fside rv">
+   <button class="switch" id="sib" type="button" role="switch" aria-checked="false"><i></i><div><b data-i="fee_sib">Enrolling siblings</b><span data-i="fee_sibp">2nd child −10%, 3rd onwards −15% (sample policy)</span></div></button>
+   <div class="est stk" aria-live="polite">
+    <small data-i="fee_est">Your estimate per term</small>
+    <div class="tot" id="tot">RM 0</div>
+    <p id="totP"></p>
+    <div class="kids" id="kids"><span data-i="fee_kids">Children</span><div class="seg" id="kSeg" role="group" aria-label="Children"><button type="button" data-n="2" aria-pressed="true">2</button><button type="button" data-n="3" aria-pressed="false">3</button><button type="button" data-n="4" aria-pressed="false">4</button></div></div>
+   </div>
+   <p class="note" style="margin:0">One-off registration RM 60 (waived if you sign up after a trial). Coding fee includes robot kit use. Sample figures only.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="calendar" style="padding-top:20px">
+ <div class="slab"><span>06 — Term calendar</span><span>Oct 2026 → Jan 2027 · sample</span></div>
+ <h2 class="rv" data-i="cal_h">Plan around <span class="hl" style="--c:var(--mn)">the holidays.</span></h2>
+ <div class="cal" id="cal" role="group" aria-label="Term weeks"></div>
+ <p class="cal-note" id="calNote" aria-live="polite"></p>
+ <div class="legend"><span style="--b:#fff">Classes</span><span style="--b:#dfe7fb">Topic check</span><span style="--b:#ffe6d9">Public holiday</span><span style="--b:#fcefd0">SPM clinics</span><span style="--b:#fbdfe3">School holidays (closed)</span></div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:20px">
+ <div class="slab"><span>07 — Parents ask</span><span>Two branches</span></div>
+ <div class="two">
+  <div>
+   <h2 class="rv" data-i="faq_h">Questions parents ask <span class="hl">at 11pm.</span></h2>
+   <div class="faq" id="faqL"></div>
+  </div>
+  <div class="loc stk rv" style="--r:1deg">
+   <div class="seg" id="locSeg" role="group" aria-label="Branch"><button type="button" data-b="sj" aria-pressed="true">Subang Jaya</button><button type="button" data-b="pc" aria-pressed="false">Puchong</button></div>
+   <svg class="map" viewBox="0 0 400 200" aria-hidden="true">
+    <g stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-10 140 C80 120 160 160 410 90"/><path d="M120 -10 L170 210"/><path d="M260 -10 C250 80 300 140 290 210"/><path d="M-10 50 L410 40"/></g>
+    <g stroke="#d9dccf" stroke-width="2" fill="none"><path d="M-10 140 C80 120 160 160 410 90"/><path d="M120 -10 L170 210"/><path d="M260 -10 C250 80 300 140 290 210"/><path d="M-10 50 L410 40"/></g>
+    <rect x="20" y="70" width="70" height="44" rx="8" fill="#cfe5d3"/><rect x="300" y="130" width="80" height="54" rx="8" fill="#cfe5d3"/><circle cx="345" cy="64" r="14" fill="#cfdcf5"/>
+    <g class="pin" id="pin"><circle cx="0" cy="0" r="26" fill="#4a7cf0" opacity=".18"/><path d="M0 -6 C-14 -36 -26 -40 -26 -52 a26 26 0 0 1 52 0 C26 -40 14 -36 0 -6z" fill="#f2b330" stroke="#fff" stroke-width="5" paint-order="stroke"/><circle cx="0" cy="-52" r="9" fill="#1d1b33"/></g>
+   </svg>
+   <div class="locb"><h3 id="locN"></h3><div><small>Address</small><p id="locA"></p></div><div><small>Hours</small><p id="locH"></p></div><div><small>Parking & pick-up</small><p id="locP"></p></div><button class="btn sm" type="button" id="waBtn" data-i="wa">WhatsApp the front desk</button><p class="locmsg" id="locMsg" role="status"></p></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="foot">
+  <div><div class="big">little <span>orbit.</span></div><p style="margin-top:18px;max-width:420px;opacity:.8">Tuition and enrichment for ages 4 to 17. Small groups, patient teachers, honest progress notes.</p></div>
+  <div><h5>Explore</h5><a href="#top" data-i="nav_find">Finder</a><a href="#timetable" data-i="nav_tt">Timetable</a><a href="#teachers" data-i="nav_te">Teachers</a><a href="#fees" data-i="nav_fee">Fees</a></div>
+  <div><h5>Parents</h5><a href="#trial" data-i="cta_trial">Free trial class</a><a href="#calendar">Term calendar</a><a href="#faq" data-i="nav_faq">FAQ</a><a href="#top">Back to top ↑</a></div>
+ </div>
+ <p class="fine">Fictional brand · All timetables, fees, people and data are samples · Design concept by Aurelion</p>
+</footer>
+
+<a class="btn y mcta" id="mcta" href="#trial" data-i="cta_trial">Free trial class</a>
+
+<div class="sheet" id="sheet" hidden><div class="sheet-bg" data-close></div><div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="shT" id="shC"></div></div>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fill=(s,o)=>String(s).replace(/\{(\w+)\}/g,(m,k)=>(k in o?o[k]:m));
+
+const D={
+en:{nav_find:"Finder",nav_tt:"Timetable",nav_te:"Teachers",nav_pr:"Progress",nav_fee:"Fees",nav_faq:"FAQ",cta_trial:"Free trial class",menu:"Menu",close:"Close",
+h_tag:"Subang Jaya · Puchong · Ages 4–17",h_title:"Find the right class in <span class=hl>30 seconds.</span>",h_lede:"Phonics, Mandarin, maths, science, coding and SPM prep in small groups of 8 to 14. Tell us your child's age and free days, and we'll show you what fits.",h_cta2:"See the full timetable",
+f_head:"Class finder",f_sample:"Sample timetable",f_age:"Child's age",f_drag:"Drag me",f_yrs:"{n} years old",f_sub:"Subjects",f_days:"Preferred days",f_any:"Optional",f_count:"{n} classes match",f_one:"1 class matches",f_empty:"No class fits yet. Try another day, or WhatsApp us and we'll put you on the waitlist.",f_more:"+{n} more in the timetable",seats:"{n} left",wait:"Waitlist",trial_btn:"Trial",ages:"Ages {a}",
+s_ph:"Phonics",s_mn:"Mandarin",s_ma:"Maths",s_sc:"Science",s_co:"Coding & Robotics",s_sp:"SPM prep",all:"All",
+d:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],dl:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+tt_h:"The whole week, one <span class=hl style=--c:var(--ph)>sticker sheet.</span>",tt_hint:"Tap any class for details, seats and a free trial.",tt_n:"{n} classes shown",today:"Today",
+sh_when:"When",sh_teacher:"Teacher",sh_ages:"Ages",sh_level:"Level",sh_room:"Room",sh_fee:"Fee / term",sh_seats:"Seats",sh_book:"Book a free trial",
+tr_h:"Book a free <span class=hl style=--c:var(--sc)>trial class.</span>",tr_p:"One free class per child. Sit in, meet the teacher, see if it clicks. No payment details, no pressure.",pk1:"Small groups: 8 to 14 per class",pk2:"Parent chat with the teacher after class",pk3:"WhatsApp reminder the day before",
+st1:"Class",st2:"Date",st3:"Your details",st4:"Done",tr_pick:"Pick a class",tr_pickd:"Pick a date",tr_choose:"Choose a class…",tr_name:"Parent's name",tr_phone:"Phone (WhatsApp)",tr_kid:"Child's first name (optional)",next:"Next →",back:"← Back",confirm:"Confirm trial ✓",
+tr_ok:"You're booked in!",tr_okp:"We'll WhatsApp {name} the day before to confirm. Please arrive 10 minutes early.",demo:"Demo: nothing was sent.",again:"Book another",tr_free:"The trial is free, one per child. No payment details needed.",
+e_cls:"Please choose a class first.",e_date:"Please pick a date.",e_name:"Please enter your name.",e_phone:"Please enter a Malaysian mobile number, e.g. 012-345 6789.",
+te_h:"Teachers your kids will <span class=hl style=--c:var(--co)>actually like.</span>",pr_h:"Progress you can <span class=hl style=--c:var(--ma)>see</span>, not promises.",fee_h:"Clear fees, <span class=hl>per term.</span>",fee_sub:"Subject",fee_term:"Per term",fee_sibcol:"Sibling −10%",fee_sib:"Enrolling siblings",fee_sibp:"2nd child −10%, 3rd onwards −15% (sample policy)",fee_est:"Your estimate per term",fee_kids:"Children",fee_none:"Tick subjects in the table to estimate.",fee_one:"{n} subject(s), one child",fee_many:"{n} subject(s) each, {k} children",
+cal_h:"Plan around <span class=hl style=--c:var(--mn)>the holidays.</span>",faq_h:"Questions parents ask <span class=hl>at 11pm.</span>",wa:"WhatsApp the front desk",wa_msg:"Demo: nothing was sent. The real site opens WhatsApp here."},
+bm:{nav_find:"Pencari Kelas",nav_tt:"Jadual",nav_te:"Guru",nav_pr:"Kemajuan",nav_fee:"Yuran",nav_faq:"Soalan Lazim",cta_trial:"Kelas percubaan percuma",menu:"Menu",close:"Tutup",
+h_tag:"Subang Jaya · Puchong · Umur 4–17",h_title:"Cari kelas yang sesuai dalam <span class=hl>30 saat.</span>",h_lede:"Fonik, Mandarin, matematik, sains, pengekodan dan persediaan SPM dalam kumpulan kecil 8 hingga 14 orang. Beritahu kami umur anak dan hari lapang anda, kami tunjukkan kelas yang sesuai.",h_cta2:"Lihat jadual penuh",
+f_head:"Pencari kelas",f_sample:"Jadual contoh",f_age:"Umur anak",f_drag:"Seret",f_yrs:"{n} tahun",f_sub:"Subjek",f_days:"Hari pilihan",f_any:"Pilihan",f_count:"{n} kelas sepadan",f_one:"1 kelas sepadan",f_empty:"Belum ada kelas yang sesuai. Cuba hari lain, atau WhatsApp kami untuk masuk senarai menunggu.",f_more:"+{n} lagi dalam jadual",seats:"{n} tempat",wait:"Senarai menunggu",trial_btn:"Cuba",ages:"Umur {a}",
+s_ph:"Fonik",s_mn:"Mandarin",s_ma:"Matematik",s_sc:"Sains",s_co:"Pengekodan & Robotik",s_sp:"Persediaan SPM",all:"Semua",
+d:["Isn","Sel","Rab","Kha","Jum","Sab","Ahd"],dl:["Isnin","Selasa","Rabu","Khamis","Jumaat","Sabtu","Ahad"],
+tt_h:"Seminggu penuh, satu <span class=hl style=--c:var(--ph)>helaian pelekat.</span>",tt_hint:"Ketik mana-mana kelas untuk butiran, tempat kosong dan percubaan percuma.",tt_n:"{n} kelas dipaparkan",today:"Hari ini",
+sh_when:"Masa",sh_teacher:"Guru",sh_ages:"Umur",sh_level:"Tahap",sh_room:"Bilik",sh_fee:"Yuran / penggal",sh_seats:"Tempat",sh_book:"Tempah percubaan percuma",
+tr_h:"Tempah <span class=hl style=--c:var(--sc)>kelas percubaan</span> percuma.",tr_p:"Satu kelas percuma bagi setiap anak. Duduk bersama, kenali guru, lihat sama ada sesuai. Tiada butiran bayaran, tiada desakan.",pk1:"Kumpulan kecil: 8 hingga 14 orang sekelas",pk2:"Sembang bersama guru selepas kelas",pk3:"Peringatan WhatsApp sehari sebelum",
+st1:"Kelas",st2:"Tarikh",st3:"Butiran anda",st4:"Selesai",tr_pick:"Pilih kelas",tr_pickd:"Pilih tarikh",tr_choose:"Pilih satu kelas…",tr_name:"Nama ibu bapa",tr_phone:"Telefon (WhatsApp)",tr_kid:"Nama anak (pilihan)",next:"Seterusnya →",back:"← Kembali",confirm:"Sahkan percubaan ✓",
+tr_ok:"Tempahan anda diterima!",tr_okp:"Kami akan WhatsApp {name} sehari sebelum kelas untuk pengesahan. Sila tiba 10 minit awal.",demo:"Demo: tiada apa-apa dihantar.",again:"Tempah lagi",tr_free:"Percubaan adalah percuma, satu bagi setiap anak. Tiada butiran bayaran diperlukan.",
+e_cls:"Sila pilih kelas dahulu.",e_date:"Sila pilih tarikh.",e_name:"Sila masukkan nama anda.",e_phone:"Sila masukkan nombor telefon bimbit Malaysia, cth. 012-345 6789.",
+te_h:"Guru yang anak anda <span class=hl style=--c:var(--co)>pasti suka.</span>",pr_h:"Kemajuan yang boleh <span class=hl style=--c:var(--ma)>dilihat</span>, bukan janji.",fee_h:"Yuran jelas, <span class=hl>setiap penggal.</span>",fee_sub:"Subjek",fee_term:"Setiap penggal",fee_sibcol:"Adik-beradik −10%",fee_sib:"Mendaftar adik-beradik",fee_sibp:"Anak ke-2 −10%, ke-3 dan seterusnya −15% (polisi contoh)",fee_est:"Anggaran anda setiap penggal",fee_kids:"Bilangan anak",fee_none:"Tandakan subjek dalam jadual untuk anggaran.",fee_one:"{n} subjek, seorang anak",fee_many:"{n} subjek setiap seorang, {k} anak",
+cal_h:"Rancang ikut <span class=hl style=--c:var(--mn)>cuti sekolah.</span>",faq_h:"Soalan ibu bapa <span class=hl>pada jam 11 malam.</span>",wa:"WhatsApp kaunter kami",wa_msg:"Demo: tiada apa-apa dihantar. Laman sebenar akan membuka WhatsApp."},
+zh:{nav_find:"找课程",nav_tt:"课程表",nav_te:"老师",nav_pr:"学习进度",nav_fee:"学费",nav_faq:"常见问题",cta_trial:"免费试课",menu:"菜单",close:"关闭",
+h_tag:"梳邦再也 · 蒲种 · 4–17岁",h_title:"<span class=hl>30秒</span>内找到<br>合适的课程。",h_lede:"小班教学（每班8至14人）：英文拼读、华文、数学、科学、编程与SPM备考。告诉我们孩子的年龄和有空的日子，我们帮您找到合适的课程。",h_cta2:"查看完整课程表",
+f_head:"课程搜索",f_sample:"示例课程表",f_age:"孩子年龄",f_drag:"拖动",f_yrs:"{n}岁",f_sub:"科目",f_days:"方便的日子",f_any:"可不选",f_count:"找到 {n} 个课程",f_one:"找到 1 个课程",f_empty:"暂时没有合适的课程。试试其他日子，或WhatsApp我们登记候补。",f_more:"课程表里还有 {n} 个",seats:"剩 {n} 位",wait:"候补",trial_btn:"试课",ages:"{a}岁",
+s_ph:"英文拼读",s_mn:"华文",s_ma:"数学",s_sc:"科学",s_co:"编程与机器人",s_sp:"SPM备考",all:"全部",
+d:["周一","周二","周三","周四","周五","周六","周日"],dl:["星期一","星期二","星期三","星期四","星期五","星期六","星期日"],
+tt_h:"一整周，<span class=hl style=--c:var(--ph)>一张贴纸表。</span>",tt_hint:"点击任何课程，查看详情、余位并预约免费试课。",tt_n:"显示 {n} 个课程",today:"今天",
+sh_when:"时间",sh_teacher:"老师",sh_ages:"年龄",sh_level:"程度",sh_room:"教室",sh_fee:"每学期学费",sh_seats:"余位",sh_book:"预约免费试课",
+tr_h:"预约<span class=hl style=--c:var(--sc)>免费试课</span>。",tr_p:"每位孩子可免费试上一堂课。旁听上课、认识老师，看看是否适合。无需付款资料，没有压力。",pk1:"小班制：每班8至14人",pk2:"课后可与老师面谈",pk3:"课前一天WhatsApp提醒",
+st1:"课程",st2:"日期",st3:"您的资料",st4:"完成",tr_pick:"选择课程",tr_pickd:"选择日期",tr_choose:"请选择课程…",tr_name:"家长姓名",tr_phone:"电话（WhatsApp）",tr_kid:"孩子名字（可不填）",next:"下一步 →",back:"← 返回",confirm:"确认试课 ✓",
+tr_ok:"预约成功！",tr_okp:"我们会在课前一天通过WhatsApp联系{name}确认。请提前10分钟到达。",demo:"演示：未发送任何信息。",again:"再预约一堂",tr_free:"试课免费，每位孩子一次，无需付款资料。",
+e_cls:"请先选择课程。",e_date:"请选择日期。",e_name:"请输入您的姓名。",e_phone:"请输入马来西亚手机号码，例如 012-345 6789。",
+te_h:"孩子<span class=hl style=--c:var(--co)>真心喜欢</span>的老师。",pr_h:"看得见的<span class=hl style=--c:var(--ma)>进步</span>，不是空头承诺。",fee_h:"学费透明，<span class=hl>按学期计算。</span>",fee_sub:"科目",fee_term:"每学期",fee_sibcol:"兄弟姐妹 −10%",fee_sib:"兄弟姐妹同报",fee_sibp:"第二个孩子 −10%，第三个起 −15%（示例政策）",fee_est:"每学期估算",fee_kids:"孩子人数",fee_none:"在表格中勾选科目即可估算。",fee_one:"{n} 个科目，一个孩子",fee_many:"每人 {n} 个科目，{k} 个孩子",
+cal_h:"配合<span class=hl style=--c:var(--mn)>学校假期</span>安排。",faq_h:"家长<span class=hl>深夜</span>最常问的问题。",wa:"WhatsApp联系前台",wa_msg:"演示：未发送任何信息。正式网站会在此打开WhatsApp。"}};
+let lang='en';
+try{const s=localStorage.getItem('lo-lang');if(s&&D[s])lang=s;}catch(e){}
+const t=k=>(D[lang][k]!==undefined?D[lang][k]:D.en[k]);
+
+const SUB=['ph','mn','ma','sc','co','sp'];
+const COL=k=>`var(--${k})`;
+const SLOT=[['09:30','10:30'],['11:00','12:15'],['15:00','16:15'],['16:30','17:45'],['18:00','19:30'],['19:45','21:15']];
+const TE={
+a:{n:'Aisyah Rahman',sh:'Ms Aisyah',r:'Phonics & English',c:'ph',q:['B.Ed TESL','Certified phonics trainer','Storytelling club lead'],l:['EN','BM'],y:9,av:'hijab',sk:'#c99a74',hr:'#ef5b70'},
+l:{n:'Lim Wei Ling 林慧玲',sh:'Teacher Lim',r:'Mandarin',c:'mn',q:['B.A. Chinese Studies','Former SJK(C) teacher','Calligraphy hobbyist'],l:['中文','EN','BM'],y:12,av:'bun',sk:'#f0c9a4',hr:'#2b2233'},
+r:{n:'Ravi Chandran',sh:'Mr Ravi',r:'Maths & Add Maths',c:'ma',q:['B.Sc Mathematics','Former secondary teacher','SPM marking experience'],l:['EN','BM','தமிழ்'],y:15,av:'short',sk:'#9a6a4a',hr:'#1d1b33',gl:1},
+m:{n:'Dr Chen Mei',sh:'Dr Mei',r:'Science & SPM sciences',c:'sc',q:['PhD Biochemistry','Lab safety certified','Science fair judge'],l:['EN','中文','BM'],y:8,av:'bob',sk:'#f3d0ae',hr:'#3a2a2a',gl:1},
+d:{n:'Daniel Ong',sh:'Mr Daniel',r:'Coding & Robotics',c:'co',q:['B.CompSc','Robotics contest coach','Builds games with students'],l:['EN','中文'],y:6,av:'curly',sk:'#e6b98f',hr:'#2b2233'}};
+const CL=[
+['ph','Phonics Rockets','Lvl 1',4,6,0,2,'a',3,8,'Moon'],['ph','Phonics Rockets','Lvl 1',4,6,5,0,'a',1,8,'Moon'],['ph','Story Builders','Lvl 2',6,8,2,2,'a',4,8,'Moon'],['ph','Grammar Club','Lvl 3',8,11,4,3,'a',0,8,'Moon'],
+['mn','华文 Little Readers','Lvl 1',5,8,1,2,'l',2,8,'Comet'],['mn','华文 Comprehension','Lvl 2',9,12,3,3,'l',5,10,'Comet'],['mn','SPM Bahasa Cina','Form 4–5',15,17,5,1,'l',3,12,'Comet'],
+['ma','Number Ninjas','Lvl 1',6,8,0,3,'r',2,8,'Saturn'],['ma','Number Ninjas','Lvl 1',6,8,5,3,'r',5,8,'Saturn'],['ma','Maths Masters','Lvl 2',9,12,2,3,'r',6,10,'Saturn'],['ma','Form 1–3 Maths','Form 1–3',13,15,4,4,'r',4,12,'Saturn'],
+['sc','Little Scientists','Lvl 1',5,8,5,2,'m',3,8,'Lab'],['sc','Science Lab','Lvl 2',9,12,1,3,'m',3,10,'Lab'],['sc','Form 1–3 Science','Form 1–3',13,15,3,4,'m',7,12,'Lab'],
+['co','Scratch Juniors','Lvl 1',7,9,4,2,'d',2,8,'Rover'],['co','Scratch Juniors','Lvl 1',7,9,6,0,'d',4,8,'Rover'],['co','Robotics Club','Lvl 2',9,12,6,1,'d',1,8,'Rover'],['co','Python & Arduino','Lvl 3',12,15,2,4,'d',5,10,'Rover'],
+['sp','SPM Add Maths','Form 4–5',16,17,1,5,'r',4,14,'Saturn'],['sp','SPM Physics','Form 4–5',16,17,3,5,'m',6,14,'Lab'],['sp','SPM Chemistry','Form 4–5',16,17,6,2,'m',2,14,'Lab'],['sp','SPM English 1119','Form 4–5',15,17,0,5,'a',5,14,'Moon']
+].map((r,i)=>({id:i,s:r[0],n:r[1],lv:r[2],a0:r[3],a1:r[4],d:r[5],sl:r[6],te:r[7],seats:r[8],cap:r[9],room:r[10],rot:((i*37)%7-3)*.45}));
+const FEES=[['ph','Phonics','ages 4–11 · 12 × 60 min',420],['mn','Mandarin','ages 5–12 · 12 × 75 min',480],['ma','Maths, primary','ages 6–12 · 12 × 75 min',450],['ma','Maths, secondary','ages 13–15 · 12 × 90 min',540],['sc','Science','ages 5–15 · 12 × 90 min',520],['co','Coding & Robotics','ages 7–15 · kit included',690],['sp','SPM prep, per subject','ages 15–17 · 12 × 120 min + 2 mocks',750]];
+const feeOf=c=>c.s==='ma'?(c.a1<=12?450:540):FEES.find(f=>f[0]===c.s)[3];
+const ageTxt=c=>fill(t('ages'),{a:c.a0+'–'+c.a1});
+const when=c=>t('d')[c.d]+' '+SLOT[c.sl][0];
+const seatHTML=c=>c.seats?`<span class="seat${c.seats<=2?' low':''}">${fill(t('seats'),{n:c.seats})}</span>`:`<span class="seat wl">${t('wait')}</span>`;
+
+/* ---------- finder ---------- */
+const F={age:8,subs:new Set(),days:new Set()};
+const ageI=$('#age'),ageN=$('#ageNum');
+function chipsHTML(){
+ $('#fSub').innerHTML=SUB.map(k=>`<button type="button" class="chip" style="--c:${COL(k)}" data-s="${k}" aria-pressed="${F.subs.has(k)}"><i></i>${t('s_'+k)}</button>`).join('');
+ $('#fDay').innerHTML=t('d').map((d,i)=>`<button type="button" class="chip d" data-d="${i}" aria-pressed="${F.days.has(i)}">${d}</button>`).join('');
+}
+function finder(){
+ const L=CL.filter(c=>F.age>=c.a0&&F.age<=c.a1&&(!F.subs.size||F.subs.has(c.s))&&(!F.days.size||F.days.has(c.d))).sort((x,y)=>x.d-y.d||x.sl-y.sl);
+ $('#fCount').textContent=L.length===1?t('f_one'):fill(t('f_count'),{n:L.length});
+ const R=$('#fRes');
+ R.innerHTML=L.length?L.slice(0,5).map((c,i)=>`<li style="--c:${COL(c.s)};animation-delay:${i*45}ms"><button type="button" class="nm" data-open="${c.id}"><b>${c.n}</b><span>${when(c)} · ${TE[c.te].sh}${seatHTML(c)}</span></button><button type="button" class="mini" data-trial="${c.id}">${t('trial_btn')} →</button></li>`).join(''):`<li class="empty" style="display:block"><b>🪐</b>${t('f_empty')}</li>`;
+ $('#fMore').textContent=L.length>5?fill(t('f_more'),{n:L.length-5}):'';
+}
+function setAge(v,pop){F.age=+v;ageN.textContent=v;ageI.style.setProperty('--p',((v-4)/13*100)+'%');$('#ageTxt').textContent=fill(t('f_yrs'),{n:v});if(pop&&!reduce){ageN.classList.remove('pop');void ageN.offsetWidth;ageN.classList.add('pop');}finder();}
+ageI.addEventListener('input',()=>setAge(ageI.value,1));
+$('#fSub').addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;const k=b.dataset.s;F.subs.has(k)?F.subs.delete(k):F.subs.add(k);b.setAttribute('aria-pressed',F.subs.has(k));finder();});
+$('#fDay').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;const k=+b.dataset.d;F.days.has(k)?F.days.delete(k):F.days.add(k);b.setAttribute('aria-pressed',F.days.has(k));finder();});
+
+/* ---------- ticker ---------- */
+const tk=()=>{const one=SUB.map(k=>`<span style="--c:${COL(k)}">${t('s_'+k)}</span><em>✶</em>`).join('');$('#tick').innerHTML=one+one+one+one;};
+
+/* ---------- timetable ---------- */
+let TF='all';const todayIdx=(new Date().getDay()+6)%7;
+function ttFilters(){$('#ttF').innerHTML=['all',...SUB].map(k=>`<button type="button" class="chip" ${k!=='all'?`style="--c:${COL(k)}"`:''} data-f="${k}" aria-pressed="${TF===k}">${k!=='all'?'<i></i>':''}${k==='all'?t('all'):t('s_'+k)}</button>`).join('');}
+function tt(){
+ let h='<div class="tt-corner"></div>';
+ SLOT.forEach((s,i)=>{h+=`<div class="tt-time" style="grid-row:${i+2}">${s[0]}</div><div class="tt-rule" style="grid-row:${i+2}"></div>`;});
+ for(let d=0;d<7;d++){
+  h+=`<div class="tt-vr" style="grid-column:${d+2}"></div><div class="tt-day${d===todayIdx?' today':''}" data-day="${d}" style="grid-column:${d+2}"><span>${t('d')[d]}</span>${d===todayIdx?`<small>• ${t('today')}</small>`:''}</div>`;
+  CL.filter(c=>c.d===d).sort((a,b)=>a.sl-b.sl).forEach(c=>{
+   h+=`<button type="button" class="tt-c stk" data-open="${c.id}" data-s="${c.s}" style="--c:${COL(c.s)};--r:${c.rot}deg;grid-row:${c.sl+2};grid-column:${d+2}"><span class="m">${SLOT[c.sl][0]}–${SLOT[c.sl][1]}</span><b>${c.n}</b><span class="m">${ageTxt(c)} · ${TE[c.te].sh}</span>${seatHTML(c)}</button>`;});
+ }
+ $('#tt').innerHTML=h;ttApply();
+}
+function ttApply(){let n=0;$$('.tt-c').forEach(b=>{const ok=TF==='all'||b.dataset.s===TF;b.classList.toggle('off',!ok);b.tabIndex=ok?0:-1;if(ok)n++;});
+ $$('.tt-day').forEach(h=>{const d=+h.dataset.day;h.classList.toggle('hide',!CL.some(c=>c.d===d&&(TF==='all'||c.s===TF)));});
+ $('#ttN').textContent=fill(t('tt_n'),{n});}
+$('#ttF').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;TF=b.dataset.f;$$('#ttF .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));ttApply();});
+
+/* ---------- detail sheet ---------- */
+const sheet=$('#sheet'),shC=$('#shC');let lastF=null,openId=null;
+function openDetail(id){const c=CL[id];openId=id;lastF=document.activeElement;
+ shC.innerHTML=`<div class="sh-top" style="--c:${COL(c.s)}"><small>${t('s_'+c.s)} · ${c.lv}</small><h3 id="shT">${c.n}</h3></div><button class="sh-x" type="button" data-close aria-label="${t('close')}">✕</button>
+ <dl class="dl"><dt>${t('sh_when')}</dt><dd>${t('dl')[c.d]}, ${SLOT[c.sl][0]}–${SLOT[c.sl][1]}</dd><dt>${t('sh_teacher')}</dt><dd>${TE[c.te].n}</dd><dt>${t('sh_ages')}</dt><dd>${c.a0}–${c.a1}</dd><dt>${t('sh_room')}</dt><dd>${c.room}</dd><dt>${t('sh_seats')}</dt><dd>${seatHTML(c)} <small style="font-family:var(--mono);color:var(--mute)">/ ${c.cap}</small></dd><dt>${t('sh_fee')}</dt><dd>RM ${feeOf(c)} <small style="font-family:var(--mono);color:var(--mute)">(sample)</small></dd></dl>
+ <div class="sh-act"><button class="btn y" type="button" data-trial="${c.id}">${t('sh_book')} →</button></div>`;
+ sheet.hidden=false;shC.querySelector('.sh-x').focus();}
+function closeDetail(){if(sheet.hidden)return;sheet.hidden=true;openId=null;if(lastF&&lastF.focus)lastF.focus({preventScroll:true});}
+sheet.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeDetail();});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();if(e.key==='Tab'&&!sheet.hidden){const f=[...shC.querySelectorAll('button')];if(!f.length)return;const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}});
+
+/* ---------- trial ---------- */
+const TR={cls:null,date:null,step:1,done:null};
+const sel=$('#trSel');
+const HOL0=new Date(2026,11,19),HOL1=new Date(2027,0,3);
+const isHol=d=>d>=HOL0&&d<=HOL1;
+const loc=()=>lang==='bm'?'ms-MY':lang==='zh'?'zh-CN':'en-MY';
+function selHTML(){sel.innerHTML=`<option value="">${t('tr_choose')}</option>`+SUB.map(k=>`<optgroup label="${t('s_'+k)}">`+CL.filter(c=>c.s===k).map(c=>`<option value="${c.id}">${c.n} · ${when(c)} · ${c.a0}–${c.a1}</option>`).join('')+'</optgroup>').join('');sel.value=TR.cls===null?'':TR.cls;picked();}
+function picked(){const c=CL[TR.cls];$('#trPicked').innerHTML=c?`<div class="picked stk" style="--c:${COL(c.s)}"><b>${c.n}</b><span>${t('dl')[c.d]} ${SLOT[c.sl][0]} · ${TE[c.te].n} · ${ageTxt(c)}</span> ${seatHTML(c)}</div>`:'';}
+sel.addEventListener('change',()=>{TR.cls=sel.value===''?null:+sel.value;TR.date=null;picked();$('#e1').textContent='';});
+function dates(){const c=CL[TR.cls];const out=[];const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+1);const want=(c.d+1)%7;let g=0;while(out.length<4&&g++<200){if(d.getDay()===want&&!isHol(d))out.push(new Date(d));d.setDate(d.getDate()+1);}
+ $('#trDates').innerHTML=out.map(x=>{const v=x.getTime();return `<button type="button" class="date" data-v="${v}" aria-pressed="${TR.date===v}"><b>${x.toLocaleDateString(loc(),{day:'numeric',month:'short'})}</b><span>${x.toLocaleDateString(loc(),{weekday:'long'})} · ${SLOT[c.sl][0]}</span></button>`;}).join('');}
+$('#trDates').addEventListener('click',e=>{const b=e.target.closest('[data-v]');if(!b)return;TR.date=+b.dataset.v;$$('#trDates .date').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#e2').textContent='';});
+function go(n){
+ if(n>TR.step){if(TR.step===1&&TR.cls===null){$('#e1').textContent=t('e_cls');return;}if(TR.step===2&&!TR.date){$('#e2').textContent=t('e_date');return;}}
+ TR.step=n;if(n===2)dates();
+ $$('.pane').forEach(p=>p.classList.toggle('on',+p.dataset.p===n));
+ $$('#steps li').forEach((l,i)=>{l.classList.toggle('on',i+1===n);l.classList.toggle('done',i+1<n);});
+ if(n===4)ticket();
+}
+$('.panel').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)go(+b.dataset.go);if(e.target.closest('#again')){TR.cls=null;TR.date=null;TR.done=null;$('#trForm').reset();selHTML();go(1);}});
+$('#trForm').addEventListener('submit',e=>{e.preventDefault();const nm=$('#pName').value.trim(),ph=$('#pPhone').value.replace(/[\s-]/g,'');
+ if(nm.length<2){$('#e3').textContent=t('e_name');$('#pName').focus();return;}
+ if(!/^(\+?60|0)1\d{8,9}$/.test(ph)){$('#e3').textContent=t('e_phone');$('#pPhone').focus();return;}
+ $('#e3').textContent='';TR.done={nm,ph,kid:$('#kName').value.trim()};go(4);});
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function ticket(){const c=CL[TR.cls],x=new Date(TR.date),k=TR.done;if(!c||!k)return;
+ $('#ticket').innerHTML=`<div class="ticket stk" style="--c:${COL(c.s)}"><h3>🎉 ${t('tr_ok')}</h3><p>${fill(t('tr_okp'),{name:esc(k.nm)})}</p><div class="row"><span>${t('st1')}</span><b>${c.n}${k.kid?' · '+esc(k.kid):''}</b><span>${t('st2')}</span><b>${x.toLocaleDateString(loc(),{weekday:'long',day:'numeric',month:'long'})}, ${SLOT[c.sl][0]}</b><span>${t('sh_teacher')}</span><b>${TE[c.te].n}</b><span>${t('sh_room')}</span><b>${c.room} · Subang Jaya</b></div><p class="demo">${t('demo')}</p></div><div class="pnav"><span></span><button class="btn w" type="button" id="again">${t('again')}</button></div>`;}
+function startTrial(id){closeDetail();TR.cls=id;TR.date=null;sel.value=id;picked();TR.step=1;go(2);const el=$('#trial');el.scrollIntoView({behavior:reduce?'auto':'smooth'});}
+
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){openDetail(+o.dataset.open);return;}const tr=e.target.closest('[data-trial]');if(tr){e.preventDefault();startTrial(+tr.dataset.trial);}});
+
+/* ---------- teachers ---------- */
+function avatar(p){const hair={
+ hijab:`<path d="M24 120 C26 86 40 76 60 76 C80 76 94 86 96 120Z" fill="${p.hr}"/><path d="M30 62 C28 32 44 22 60 22 C76 22 92 32 90 62 C90 84 78 98 60 98 C42 98 30 84 30 62Z" fill="${p.hr}"/>`,
+ bun:`<circle cx="60" cy="22" r="11" fill="${p.hr}"/><path d="M36 58 C34 36 46 28 60 28 C74 28 86 36 84 58 C78 46 68 40 60 40 C50 40 42 46 36 58Z" fill="${p.hr}"/>`,
+ short:`<path d="M36 54 C34 34 46 28 60 28 C76 28 86 36 84 54 C80 44 70 40 58 41 C48 42 40 46 36 54Z" fill="${p.hr}"/>`,
+ bob:`<path d="M33 74 C28 40 42 27 60 27 C78 27 92 40 87 74 L79 74 C80 52 72 41 60 41 C48 41 40 52 41 74Z" fill="${p.hr}"/>`,
+ curly:`<g fill="${p.hr}"><circle cx="42" cy="40" r="10"/><circle cx="54" cy="32" r="11"/><circle cx="68" cy="33" r="11"/><circle cx="79" cy="42" r="9"/><circle cx="38" cy="52" r="7"/><circle cx="83" cy="53" r="7"/></g>`}[p.av];
+ const body=p.av==='hijab'?'':`<path d="M22 120 C26 92 42 82 60 82 C78 82 94 92 98 120Z" fill="#fff"/><path d="M50 82 L60 96 L70 82" fill="none" stroke="${COL(p.c)}" stroke-width="4"/>`;
+ const head=p.av==='hijab'?`<ellipse cx="60" cy="60" rx="19" ry="22" fill="${p.sk}"/>`:`<rect x="53" y="70" width="14" height="14" fill="${p.sk}"/><circle cx="60" cy="56" r="23" fill="${p.sk}"/>`;
+ const front=p.av==='hijab'?'':hair;const back=p.av==='hijab'?hair:'';
+ const gl=p.gl?`<g fill="none" stroke="#1d1b33" stroke-width="2.5"><circle cx="51" cy="58" r="7"/><circle cx="69" cy="58" r="7"/><path d="M58 58h4"/></g>`:'';
+ return `<svg viewBox="0 0 120 120" aria-hidden="true">${back}${body}${head}${front}<circle cx="51" cy="58" r="2.6" fill="#1d1b33"/><circle cx="69" cy="58" r="2.6" fill="#1d1b33"/><path d="M53 67 Q60 73 67 67" fill="none" stroke="#1d1b33" stroke-width="2.6" stroke-linecap="round"/><circle cx="45" cy="66" r="3.5" fill="${COL(p.c)}" opacity=".35"/><circle cx="75" cy="66" r="3.5" fill="${COL(p.c)}" opacity=".35"/>${gl}</svg>`;}
+function teachers(){$('#tgrid').innerHTML=Object.keys(TE).map((k,i)=>{const p=TE[k],n=CL.filter(c=>c.te===k).length;return `<article class="tcard stk rv in" style="--c:${COL(p.c)};--r:${[-2,1.5,-1,2,-1.5][i]}deg"><div class="av">${avatar(p)}</div><div class="tb"><h3>${p.n}</h3><p class="role">${p.r}</p><ul>${p.q.map(q=>`<li>${q}</li>`).join('')}</ul><div class="lg">${p.l.map(x=>`<span>${x}</span>`).join('')}</div><p class="yr"><span>${p.y} yrs · ${n} classes/wk</span><button type="button" data-tf="${p.c}">${t('nav_tt')} →</button></p></div></article>`;}).join('');}
+$('#tgrid').addEventListener('click',e=>{const b=e.target.closest('[data-tf]');if(!b)return;TF=b.dataset.tf;ttFilters();ttApply();$('#timetable').scrollIntoView({behavior:reduce?'auto':'smooth'});});
+
+/* ---------- progress chart ---------- */
+const PD={ma:{c:'#4a7cf0',v:[48,55,52,60,58,66,71,69],n:["Baseline check. Strong on times tables, unsure with word problems.","Word problems improving. Now reads each question twice.","Dip: fractions were new and tricky. Extra practice set sent home.","Fractions clicked after visual models. Confidence up.","Check came right after the holidays. A small dip is normal.","Decimals and measurement solid. Asked to try harder problems.","Best check so far. Working is neater and easier to follow.","Slight dip on a harder paper. Next focus: multi-step problems."]},
+en:{c:'#ff8c5a',v:[61,60,66,64,70,68,73,76],n:["Baseline. Reads fluently; spelling of long words is shaky.","Steady. Started a weekly spelling list.","Big jump in comprehension after inference practice.","Essay structure still loose. Introduced a 4-part plan.","The plan is working; paragraphs are clearer.","Rushed the last section. Practising timing.","Timing better, vocabulary richer.","Most consistent term yet. Ready for longer texts."]}};
+let pk='ma',psel=7;const X=i=>66+i*76,Y=v=>250-v*2.1,LBL=['T1·A','T1·B','T2·A','T2·B','T3·A','T3·B','T4·A','T4·B'];
+function chart(anim){const d=PD[pk];let s='';
+ for(let k=0;k<4;k++)s+=`<rect x="${X(2*k)-36}" y="28" width="152" height="222" fill="${k%2?'#f6f2e8':'#fff'}"/><text x="${X(2*k)+38}" y="22" text-anchor="middle">TERM ${k+1}</text>`;
+ [0,25,50,75,100].forEach(v=>{s+=`<line x1="30" x2="620" y1="${Y(v)}" y2="${Y(v)}" stroke="#1d1b33" stroke-opacity="${v?.12:.5}" ${v?'stroke-dasharray="3 5"':''}/><text x="24" y="${Y(v)+4}" text-anchor="end">${v}</text>`;});
+ const pts=d.v.map((v,i)=>[X(i),Y(v)]);const line='M'+pts.map(p=>p.join(' ')).join(' L');
+ s+=`<path d="${line} L${X(7)} 250 L${X(0)} 250Z" fill="${d.c}" fill-opacity=".12"/><path id="pl" d="${line}" fill="none" stroke="${d.c}" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>`;
+ pts.forEach((p,i)=>{s+=`<g class="pt${i===psel?' sel':''}" data-n="${i}" tabindex="0" role="button" aria-label="${LBL[i]}: ${d.v[i]}"><circle cx="${p[0]}" cy="${p[1]}" r="7" fill="${i===psel?'#1d1b33':'#fff'}" stroke="${d.c}" stroke-width="4"/><text x="${p[0]}" y="${p[1]-16}" text-anchor="middle" style="font-weight:700;fill:#1d1b33">${d.v[i]}</text></g><text x="${p[0]}" y="272" text-anchor="middle">${LBL[i]}</text>`;});
+ $('#chart').innerHTML=s;
+ const pl=$('#pl');if(anim&&!reduce&&pl.getTotalLength){const L=pl.getTotalLength();pl.style.strokeDasharray=L;pl.style.strokeDashoffset=L;pl.getBoundingClientRect();pl.style.transition='stroke-dashoffset 1.3s cubic-bezier(.6,0,.2,1)';pl.style.strokeDashoffset=0;}
+ note();}
+function note(){const d=PD[pk],v=d.v[psel],pv=psel?d.v[psel-1]:null,df=pv===null?'baseline':(v-pv>=0?'+':'−')+Math.abs(v-pv)+' vs last check';
+ $('#cnote').innerHTML=`<small>${pk==='ma'?'Maths':'English'} · ${LBL[psel]} · teacher's note</small><b>${v}<span style="font-size:18px;letter-spacing:0"> /100 · ${df}</span></b><p>${d.n[psel]}</p>`;}
+$('#chart').addEventListener('click',e=>{const g=e.target.closest('.pt');if(g){psel=+g.dataset.n;chart(0);}});
+$('#chart').addEventListener('keydown',e=>{const g=e.target.closest('.pt');if(!g)return;let i=+g.dataset.n;if(e.key==='Enter'||e.key===' '){e.preventDefault();psel=i;}else if(e.key==='ArrowRight')psel=Math.min(7,i+1);else if(e.key==='ArrowLeft')psel=Math.max(0,i-1);else return;e.preventDefault();chart(0);const n=$(`#chart .pt[data-n="${psel}"]`);if(n)n.focus();});
+$('#pSeg').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;pk=b.dataset.k;$$('#pSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));chart(1);});
+
+/* ---------- fees ---------- */
+const FS={on:false,kids:2,pick:new Set([1,2])};
+function feesRows(){$('#fBody').innerHTML=FEES.map((f,i)=>`<tr><td><input type="checkbox" data-r="${i}" aria-label="Add ${f[1]}" ${FS.pick.has(i)?'checked':''}></td><td><span class="dot" style="--c:${COL(f[0])}"></span><b>${f[1]}</b><span class="dt">${f[2]}</span></td><td class="p">RM ${f[3]}</td><td class="p sib"><s>RM ${f[3]}</s>RM ${Math.round(f[3]*.9)}</td></tr>`).join('');}
+function anim(el,to){const from=+(el.dataset.v||0);el.dataset.v=to;const show=v=>el.textContent='RM '+Math.round(v).toLocaleString('en-MY');if(reduce||from===to){show(to);return;}const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/600);show(from+(to-from)*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);})(st);}
+function feeCalc(){const base=[...FS.pick].reduce((a,i)=>a+FEES[i][3],0);const n=FS.on?FS.kids:1;let mult=1;for(let k=2;k<=n;k++)mult+=k===2?.9:.85;
+ anim($('#tot'),base*mult);$('#tblw').classList.toggle('sibon',FS.on);$('#kids').classList.toggle('on',FS.on);
+ $('#totP').textContent=!FS.pick.size?t('fee_none'):FS.on?fill(t('fee_many'),{n:FS.pick.size,k:n})+' · saves RM '+Math.round(base*(n-mult)).toLocaleString('en-MY'):fill(t('fee_one'),{n:FS.pick.size});}
+$('#fBody').addEventListener('change',e=>{const c=e.target.closest('[data-r]');if(!c)return;c.checked?FS.pick.add(+c.dataset.r):FS.pick.delete(+c.dataset.r);feeCalc();});
+$('#sib').addEventListener('click',()=>{FS.on=!FS.on;$('#sib').setAttribute('aria-checked',FS.on);feeCalc();});
+$('#kSeg').addEventListener('click',e=>{const b=e.target.closest('[data-n]');if(!b)return;FS.kids=+b.dataset.n;$$('#kSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));feeCalc();});
+
+/* ---------- calendar ---------- */
+const WK={3:['chk','Topic check week'],5:['ph','Public holiday on Monday. Monday classes move to Saturday.'],7:['chk','Topic check + parent chats'],8:['spm','SPM revision clinics, open to all Form 5 students'],10:['','Term 4 ends Sat 19 Dec. Report notes go out.'],11:['hol','School holidays. Centre closed.'],12:['hol','School holidays. Centre closed.'],13:['','Term 1 2027 starts. New timetable.']};
+let wsel=-1;
+function cal(){const base=new Date(2026,9,5),now=new Date();let h='',ni=-1;
+ for(let i=0;i<16;i++){const s=new Date(base);s.setDate(s.getDate()+i*7);const e=new Date(s);e.setDate(e.getDate()+7);const w=WK[i]||['','Regular classes'];const isNow=now>=s&&now<e;if(isNow)ni=i;
+  h+=`<button type="button" class="wk ${w[0]}${isNow?' now':''}" data-w="${i}" data-now="${t('today')}" aria-pressed="${wsel===i}"><small>WEEK ${i+1}</small><b>${s.toLocaleDateString(loc(),{day:'numeric',month:'short'})}</b><span>${w[1].split('.')[0]}</span></button>`;}
+ const c=$('#cal');c.innerHTML=h;if(wsel<0)wsel=ni>=0?ni:0;calNote();
+ const el=c.querySelector(`[data-w="${Math.max(0,(ni>=0?ni:0)-1)}"]`);if(el)c.scrollLeft=el.offsetLeft-c.offsetLeft;}
+function calNote(){const s=new Date(2026,9,5);s.setDate(s.getDate()+wsel*7);const w=WK[wsel]||['','Regular classes all week.'];$('#calNote').innerHTML=`<b>${s.toLocaleDateString(loc(),{weekday:'short',day:'numeric',month:'long'})}:</b> ${w[1]}`;$$('.wk').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.w===wsel));}
+$('#cal').addEventListener('click',e=>{const b=e.target.closest('[data-w]');if(!b)return;wsel=+b.dataset.w;calNote();});
+
+/* ---------- faq ---------- */
+const FAQ=[["Is the trial class really free?","Yes. One free trial per child, per subject. You only pay if you decide to enrol, and there's no deposit to hold the seat during the trial."],["How big are the classes?","8 for ages 4–8, 10 to 12 for primary and lower secondary, up to 14 for SPM prep. When a class is full we open a waitlist rather than squeeze in another chair."],["My child missed a class. Can we replace it?","Up to two replacement classes per term in any matching class that has a free seat. Tell us by WhatsApp before 12 noon on the day."],["Which language do teachers use?","Lessons run in the subject's language (English for phonics, Mandarin for 华文, and so on). Teachers can explain in English, BM or Mandarin when a child is stuck."],["How will I know if it's working?","A topic check every 4–6 weeks, a short WhatsApp note after each one, and a 15-minute chat with the teacher every term. We show you the real scores, including the dips."],["Is there parking and a safe pick-up?","Both branches have a drop-off bay and a waiting corner. Children under 12 are only released to the adults named on the enrolment form."]];
+$('#faqL').innerHTML=FAQ.map((f,i)=>`<div class="q"><button type="button" aria-expanded="false" aria-controls="a${i}" id="q${i}">${f[0]}<i aria-hidden="true">+</i></button><div class="ans" id="a${i}" role="region" aria-labelledby="q${i}"><div><p>${f[1]}</p></div></div></div>`).join('');
+$('#faqL').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const q=b.parentElement,o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o);});
+
+/* ---------- location ---------- */
+const LOC={sj:{n:'Little Orbit Subang Jaya',a:'No. 12, Jalan Orbit 3/1, SS15, 47500 Subang Jaya (sample address)',h:'Mon–Fri 2pm–9.30pm · Sat–Sun 9am–6pm',p:'Drop-off bay at the front. Free parking behind the block after 6pm.',x:150,y:118},
+pc:{n:'Little Orbit Puchong',a:'Unit 3-1, Jalan Orbit 7, Bandar Puteri, 47100 Puchong (sample address)',h:'Tue–Fri 3pm–9.30pm · Sat–Sun 9am–6pm',p:'Basement parking with 2 hours free. Waiting corner for parents on level 1.',x:282,y:150}};
+function setLoc(k){const L=LOC[k];$('#locN').textContent=L.n;$('#locA').textContent=L.a;$('#locH').textContent=L.h;$('#locP').textContent=L.p;$('#pin').setAttribute('transform',`translate(${L.x} ${L.y})`);$('#locMsg').textContent='';}
+$('#locSeg').addEventListener('click',e=>{const b=e.target.closest('[data-b]');if(!b)return;$$('#locSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));setLoc(b.dataset.b);});
+$('#waBtn').addEventListener('click',()=>{$('#locMsg').textContent=t('wa_msg');});
+
+/* ---------- language ---------- */
+function applyLang(){
+ document.documentElement.lang=lang==='bm'?'ms':lang==='zh'?'zh-Hans':'en';
+ $$('[data-i]').forEach(el=>{const v=t(el.dataset.i);if(typeof v==='string')el.innerHTML=v;});
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
+ $('#burger').textContent=t($('#links').classList.contains('open')?'close':'menu');
+ chipsHTML();setAge(F.age);tk();teachers();ttFilters();tt();selHTML();if(TR.step===2)dates();if(TR.step===4)ticket();cal();feeCalc();
+ if(openId!==null&&!sheet.hidden){const keep=lastF;openDetail(openId);lastF=keep;}
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;try{localStorage.setItem('lo-lang',lang);}catch(e){}applyLang();}));
+
+/* ---------- nav ---------- */
+const links=$('#links'),bur=$('#burger');
+bur.addEventListener('click',()=>{const o=links.classList.toggle('open');bur.setAttribute('aria-expanded',o);bur.textContent=t(o?'close':'menu');});
+links.addEventListener('click',e=>{if(e.target.closest('a')){links.classList.remove('open');bur.setAttribute('aria-expanded','false');bur.textContent=t('menu');}});
+
+/* ---------- hero parallax ---------- */
+const hs=$$('.hs');
+if(!reduce&&matchMedia('(pointer:fine)').matches){let tx=0,ty=0,cx=0,cy=0,raf=0;
+ addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5);if(!raf)raf=requestAnimationFrame(step);},{passive:true});
+ function step(){cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;hs.forEach(s=>{const d=+s.dataset.d;s.style.setProperty('--x',(cx*d*-26).toFixed(1)+'px');s.style.setProperty('--y',(cy*d*-20).toFixed(1)+'px');});raf=Math.abs(tx-cx)+Math.abs(ty-cy)>.001?requestAnimationFrame(step):0;}}
+
+/* ---------- reveal + mobile cta ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('chart'))chart(1);}}),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+const vis={hero:true,trial:false};const mc=$('#mcta');
+const io2=new IntersectionObserver(es=>{es.forEach(e=>{vis[e.target.id==='trial'?'trial':'hero']=e.isIntersecting;});mc.classList.toggle('show',!vis.hero&&!vis.trial);});
+io2.observe($('#finder'));io2.observe($('#trial'));
+
+/* ---------- init ---------- */
+teachers();feesRows();chart(0);setLoc('sj');applyLang();
+})();
+</script>
+</body>
+</html>
