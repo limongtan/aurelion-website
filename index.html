@@ -3131,10 +3131,44 @@ a.proof-item:hover .proof-v { text-decoration: underline; text-decoration-color:
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Aurelion Sdn Bhd","url":"https://www.aurelion-earth.com/","slogan":"Evolve Beyond","telephone":"+601110541499","email":"andy.tan@aurelion-earth.com","sameAs":["https://www.instagram.com/the.aurelion.earth/"],"address":{"@type":"PostalAddress","streetAddress":"Unit 773, Regus Tribeca, Residensi Tribeca, 215 Jalan Imbi, Bukit Bintang","addressLocality":"Kuala Lumpur","postalCode":"55100","addressCountry":"MY"}}</script>
 <script>window.AURELION_MEDIA = {"horizon-2026": "assets/video/horizon-2026.mp4", "milky-way": "assets/video/milky-way.mp4", "annapurna": "assets/video/annapurna.mp4", "insights-cosmos": "assets/video/insights-cosmos.mp4", "orbit": "assets/video/orbit.mp4", "team-ridge": "assets/video/team-ridge.mp4"};
 window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp", "hero-himalaya.webp": "assets/images/hero-himalaya.webp", "milky-way.webp": "assets/images/milky-way.webp", "insights-cosmos.webp": "assets/images/insights-cosmos.webp", "frame-orbit.webp": "assets/images/frame-orbit.webp", "frame-annapurna.webp": "assets/images/frame-annapurna.webp"};</script>
+<style>
+/* ---- year-end 2026 / kick-off 2027 promo bar (hidden after 31 Jan 2027 or once closed) ---- */
+.promo-bar { position: fixed; inset: 0 0 auto 0; z-index: 41; display: flex; align-items: center; justify-content: center; gap: 16px; height: 44px; padding: 0 52px 0 18px; background: linear-gradient(90deg, #d9ae6a, #f0cf94 50%, #d9ae6a); color: #15212b; font-size: .82rem; font-weight: 600; box-shadow: 0 6px 20px #0003; }
+.promo-bar[hidden] { display: none; }
+.promo-text { display: inline-flex; align-items: center; gap: 10px; min-width: 0; color: inherit; text-decoration: none; }
+.promo-long, .promo-short { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.promo-short { display: none; }
+.promo-text:hover .promo-long, .promo-text:hover .promo-short { text-decoration: underline; text-underline-offset: 3px; }
+.promo-spark { font-size: 1rem; }
+.promo-clock { flex: none; padding: 5px 12px; border-radius: 999px; background: #15212b1a; font: 600 .78rem/1 ui-monospace, "SFMono-Regular", Consolas, monospace; letter-spacing: .02em; }
+.promo-clock b { font-weight: 700; font-variant-numeric: tabular-nums; }
+.promo-cta { flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 999px; background: #15212b; color: #fff6e6; font-weight: 700; text-decoration: none; }
+.promo-cta:hover { background: #22323f; }
+.promo-x { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border: 0; border-radius: 50%; background: transparent; color: #15212b; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.promo-x:hover { background: #15212b1a; }
+body.has-promo .site-header { top: 44px; }
+body.has-promo { scroll-padding-top: 144px; }
+html:has(body.has-promo) { scroll-padding-top: 144px; }
+@media (max-width: 760px) {
+  .promo-bar { justify-content: flex-start; gap: 10px; height: 48px; padding: 0 46px 0 12px; font-size: .76rem; }
+  .promo-clock { display: none; }
+  .promo-long { display: none; }
+  .promo-short { display: inline; }
+  .promo-cta { padding: 7px 12px; }
+  body.has-promo .site-header { top: 48px; }
+}
+@media (max-width: 420px) { .promo-spark { display: none; } .promo-cta span:last-child { display: none; } }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main"><span data-i18n="skip" >Skip to content</span></a>
   <div id="scroll-progress" aria-hidden="true"></div>
+  <aside class="promo-bar" id="promo-bar" aria-label="Year-end and new year programme" hidden>
+    <a class="promo-text" href="#year-end"><span class="promo-spark" aria-hidden="true">✦</span><span class="promo-long" data-i18n="promo-text">Year-end 2026 &amp; kick-off 2027 team sessions · HRD Corp claimable</span><span class="promo-short" data-i18n="promo-short">Year-end 2026 &amp; kick-off 2027</span></a>
+    <span class="promo-clock" aria-hidden="true"><span data-i18n="promo-count">2027 in</span> <b data-promo-clock>--</b></span>
+    <a class="promo-cta" href="https://wa.me/601110541499?text=Hi%20Aurelion%2C%20I'd%20like%20to%20plan%20a%20year-end%202026%20or%20kick-off%202027%20Team%20Build%20X%20session%20(HRD%20Corp%20claimable).%20Team%20size%3A%20.%20Preferred%20date%3A%20" target="_blank" rel="noopener noreferrer"><span data-i18n="promo-cta">Plan on WhatsApp</span><span aria-hidden="true">↗</span></a>
+    <button type="button" class="promo-x" aria-label="Close">×</button>
+  </aside>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Aurelion home"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"><span class="brand-service" data-i18n="brand-service">Corporate Training &amp; Consulting</span></a>
     <nav class="primary-navigation" aria-label="Main navigation"><a href="hrd-courses.html"><span data-i18n="nav-programmes">HRD Courses</span></a><a href="team-performance.html" class="nav-priority"><span data-i18n="nav-team">Team Performance</span></a><a href="https://insights.aurelion-earth.com"><span data-i18n="nav-insights">Aurelion Insights</span></a><a href="#grow" class="nav-grow"><span data-i18n="nav-grow">AI for Business</span></a><a href="about-aurelion.html"><span data-i18n="nav-about">About Aurelion</span></a></nav>
@@ -3540,7 +3574,7 @@ window.AURELION_POSTERS = {"horizon-2026.webp": "assets/images/horizon-2026.webp
       </div>
     </section>
     <section class="event" id="year-end">
-      <div class="shell event-content"><div><p data-i18n="event-label" class="eyebrow">TEAM BUILD X · REFLECTIONS &amp; GROWTH</p><h2 data-i18n="event-title" >End the year with more than a celebration.</h2></div><div><p data-i18n="event-copy" >Bring 20–40 colleagues together for an afternoon workshop and a facilitated dinner. Reflect on the year, appreciate each other and shape a team charter with practical next steps.</p><div class="course-credentials--on-film"><div class="course-credentials"><img src="assets/images/hrdcorp-claimable.png" alt="" width="42" height="42"><div><strong data-i18n="course-claim" >HRD Corp Claimable</strong><span data-i18n="course-lpi" >LPI assessment included</span></div></div></div><a class="button button-gold" href="#inquiry" data-interest="year-end"><span data-i18n="event-cta" >Plan a year-end experience</span><span aria-hidden="true">↗</span></a></div></div>
+      <div class="shell event-content"><div><p data-i18n="event-label" class="eyebrow">TEAM BUILD X · YEAR-END 2026 &amp; KICK-OFF 2027</p><h2 data-i18n="event-title" >Close 2026 together. Start 2027 aligned.</h2></div><div><p data-i18n="event-copy" >Bring 20–40 colleagues together for an afternoon workshop and a facilitated dinner. Reflect on the year, appreciate each other and shape a team charter with practical next steps. Run it in December to close 2026, or in January to kick off 2027.</p><div class="course-credentials--on-film"><div class="course-credentials"><img src="assets/images/hrdcorp-claimable.png" alt="" width="42" height="42"><div><strong data-i18n="course-claim" >HRD Corp Claimable</strong><span data-i18n="course-lpi" >LPI assessment included</span></div></div></div><a class="button button-gold" href="#inquiry" data-interest="year-end"><span data-i18n="event-cta" >Plan a year-end 2026 or kick-off 2027 session</span><span aria-hidden="true">↗</span></a></div></div>
     </section>
     <section class="v3-about section-space" id="about" aria-labelledby="about-title">
       <div class="shell v3-about-grid">
@@ -4265,10 +4299,14 @@ window.AURELION_TRANSLATIONS = {
     "lab-map-copy": "See how different styles interact, complement each other and sometimes create friction.",
     "lab-align": "Align",
     "lab-align-copy": "Agree on better ways of working together and how the team map will be shared.",
-    "event-label": "TEAM BUILD X · REFLECTIONS & GROWTH",
-    "event-title": "End the year with more than a celebration.",
-    "event-copy": "Bring 20–40 colleagues together for an afternoon workshop and a facilitated dinner. Reflect on the year, appreciate each other and shape a team charter with practical next steps.",
-    "event-cta": "Plan a year-end experience",
+    "event-label": "TEAM BUILD X · YEAR-END 2026 & KICK-OFF 2027",
+    "event-title": "Close 2026 together. Start 2027 aligned.",
+    "event-copy": "Bring 20–40 colleagues together for an afternoon workshop and a facilitated dinner. Reflect on the year, appreciate each other and shape a team charter with practical next steps. Run it in December to close 2026, or in January to kick off 2027.",
+    "event-cta": "Plan a year-end 2026 or kick-off 2027 session",
+    "promo-text": "Year-end 2026 & kick-off 2027 team sessions · HRD Corp claimable",
+    "promo-short": "Year-end 2026 & kick-off 2027",
+    "promo-count": "2027 in",
+    "promo-cta": "Plan on WhatsApp",
     "practice-kicker": "GROWTH, IN PRACTICE",
     "practice-title": "People learning to move together.",
     "quote": "This training truly inspired our team and brought real improvement to how we think.",
@@ -4756,10 +4794,14 @@ window.AURELION_TRANSLATIONS = {
     "lab-map-copy": "看见不同风格如何互动、互补，以及可能产生的摩擦。",
     "lab-align": "共同前进",
     "lab-align-copy": "约定更好的合作方式，并确认团队图谱的分享范围。",
-    "event-label": "TEAM BUILD X · 回顾与成长",
-    "event-title": "让年终相聚，成为共同成长的起点。",
-    "event-copy": "邀请 20 至 40 位同事，通过下午工作坊与引导式晚宴，回顾一年的历程、感谢彼此，并形成包含实际行动的团队章程。",
-    "event-cta": "规划年终团队活动",
+    "event-label": "TEAM BUILD X · 2026 年终与 2027 开年",
+    "event-title": "一起告别 2026，同心迈向 2027。",
+    "event-copy": "邀请 20 至 40 位同事，通过下午工作坊与引导式晚宴，回顾一年的历程、感谢彼此，并形成包含实际行动的团队章程。可在 12 月为 2026 收尾，或在 1 月为 2027 开局。",
+    "event-cta": "规划 2026 年终或 2027 开年团队活动",
+    "promo-text": "2026 年终与 2027 开年团队活动 · 可申请 HRD Corp 培训补助",
+    "promo-short": "2026 年终 · 2027 开年",
+    "promo-count": "距离 2027",
+    "promo-cta": "WhatsApp 预约",
     "practice-kicker": "成长，发生在实践之中",
     "practice-title": "在一起，练习更好的协作。",
     "quote": "这次培训真正启发了我们的团队，也确实改善了我们的思考方式。",
@@ -5247,10 +5289,14 @@ window.AURELION_TRANSLATIONS = {
     "lab-map-copy": "看見不同風格如何互動、互補，以及可能產生的摩擦。",
     "lab-align": "共同前進",
     "lab-align-copy": "約定更好的合作方式，並確認團隊圖譜的分享範圍。",
-    "event-label": "TEAM BUILD X · 回顧與成長",
-    "event-title": "讓年終相聚，成為共同成長的起點。",
-    "event-copy": "邀請 20 至 40 位同事，透過下午工作坊與引導式晚宴，回顧一年的歷程、感謝彼此，並形成包含實際行動的團隊章程。",
-    "event-cta": "規劃年終團隊活動",
+    "event-label": "TEAM BUILD X · 2026 年終與 2027 開年",
+    "event-title": "一起告別 2026，同心邁向 2027。",
+    "event-copy": "邀請 20 至 40 位同事，透過下午工作坊與引導式晚宴，回顧一年的歷程、感謝彼此，並形成包含實際行動的團隊章程。可在 12 月為 2026 收尾，或在 1 月為 2027 開局。",
+    "event-cta": "規劃 2026 年終或 2027 開年團隊活動",
+    "promo-text": "2026 年終與 2027 開年團隊活動 · 可申請 HRD Corp 培訓補助",
+    "promo-short": "2026 年終 · 2027 開年",
+    "promo-count": "距離 2027",
+    "promo-cta": "WhatsApp 預約",
     "practice-kicker": "成長，發生在實踐之中",
     "practice-title": "在一起，練習更好的協作。",
     "quote": "這次培訓真正啟發了我們的團隊，也確實改善了我們的思考方式。",
@@ -7127,6 +7173,37 @@ if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: re
   document.querySelectorAll(".about-route-map").forEach(map => observer.observe(map));
 }
 
+</script>
+<script>
+(() => {
+  // Year-end 2026 / kick-off 2027 bar: shows until 31 Jan 2027 unless the visitor closes it.
+  const bar = document.getElementById("promo-bar");
+  if (!bar) return;
+  const KEY = "aurelion-promo-ye2026";
+  const ends = new Date("2027-02-01T00:00:00+08:00").getTime();
+  const newYear = new Date("2027-01-01T00:00:00+08:00").getTime();
+  let closed = false;
+  try { closed = localStorage.getItem(KEY) === "closed"; } catch {}
+  if (closed || Date.now() >= ends) return;
+  bar.hidden = false;
+  document.body.classList.add("has-promo");
+  const clock = bar.querySelector("[data-promo-clock]"), clockBox = bar.querySelector(".promo-clock");
+  const pad = n => String(n).padStart(2, "0");
+  const tick = () => {
+    const ms = newYear - Date.now();
+    if (ms <= 0) { clockBox.hidden = true; return; }
+    const t = Math.floor(ms / 1000);
+    clock.textContent = Math.floor(t / 86400) + "d " + pad(Math.floor(t / 3600) % 24) + ":" + pad(Math.floor(t / 60) % 60) + ":" + pad(t % 60);
+  };
+  tick();
+  const timer = setInterval(tick, 1000);
+  bar.querySelector(".promo-x").addEventListener("click", () => {
+    bar.hidden = true;
+    document.body.classList.remove("has-promo");
+    clearInterval(timer);
+    try { localStorage.setItem(KEY, "closed"); } catch {}
+  });
+})();
 </script>
 </body>
 </html>
