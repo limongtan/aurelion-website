@@ -3254,6 +3254,85 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
   .ai-art .blk, .ai-art .trend { opacity: 1; transform: none; stroke-dashoffset: 0; }
 }
 </style>
+<style>
+/* ==== "Build for the unknown": orbit visual, reach cards, live question box (2026-11-25) ==== */
+.ax { position: relative; isolation: isolate; overflow: hidden; color: #f7f3e9; background: radial-gradient(ellipse at 80% 20%, #1c2c3a 0%, #0a121a 55%), #0a121a; --muted: #c1ccce; }
+.ax > .shell { position: relative; z-index: 1; }
+.ax-paths { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; opacity: .3; }
+.ax-paths path { stroke: #e4be80; stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-dasharray: 3 9; animation: axflow 30s linear infinite; }
+.ax-paths path:nth-child(2) { animation-duration: 38s; } .ax-paths path:nth-child(3) { animation-duration: 44s; animation-direction: reverse; }
+.ax-paths circle { fill: #e4be80; animation: axpulse 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes axflow { to { stroke-dashoffset: -480; } }
+@keyframes axpulse { 50% { transform: scale(1.8); opacity: .4; } }
+.ax-glow { position: absolute; z-index: 0; right: -10%; top: -10%; width: 60vmax; height: 60vmax; border-radius: 50%; background: radial-gradient(circle, #e4be8030, transparent 60%); filter: blur(30px); animation: axbreath 12s ease-in-out infinite; }
+@keyframes axbreath { 50% { transform: scale(1.12); opacity: .7; } }
+.ax-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(30px, 5vw, 80px); align-items: center; }
+.ax h2 { margin: 0; font-family: var(--display); font-size: clamp(2.4rem, 5.2vw, 4.8rem); font-weight: 600; line-height: 1.02; letter-spacing: -.05em; text-wrap: balance; }
+.ax-mission { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 22px 0 0; padding: 10px 16px; border-radius: 999px; background: #ffffff0d; border: 1px solid #e4be8055; font-size: .95rem; }
+.ax-mission b { color: #e4be80; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+.ax-caps { display: grid; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
+.ax-caps li { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 16px; background: #ffffff07; border: 1px solid #ffffff17; }
+.ax-caps svg { flex: none; width: 34px; height: 34px; padding: 6px; border-radius: 50%; background: #e4be801f; fill: none; stroke: #e4be80; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ax-caps .c2 svg { background: #3fa7a026; stroke: #5fc4bb; } .ax-caps .c3 svg { background: #8f7be026; stroke: #b3a4f0; }
+.ax-caps b { display: block; font-family: var(--display); font-size: 1.05rem; }
+.ax-caps span { color: var(--muted); font-size: .9rem; }
+/* orbit */
+.ax-orbit { position: relative; width: min(100%, 440px); aspect-ratio: 1; justify-self: center; }
+.ax-orbit .ring { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed #e4be8044; }
+.ax-orbit .r2 { inset: 17%; border-style: solid; border-color: #ffffff14; }
+.ax-orbit .r3 { inset: 34%; border-color: #e4be8033; }
+.ax-orbit .spin { position: absolute; inset: 0; animation: axspin 60s linear infinite; }
+.ax-orbit .arm { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform: rotate(var(--a)) translate(var(--r, 210px)) rotate(calc(-1 * var(--a))); }
+.ax-orbit .sat { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 8px; border-radius: 999px; background: #0e1924e6; border: 1px solid #e4be8066; box-shadow: 0 10px 30px #0008; white-space: nowrap; font-family: var(--display); font-size: .92rem; animation: axcounter 60s linear infinite; }
+.ax-orbit .s1 { --a: -90deg; } .ax-orbit .s2 { --a: 30deg; } .ax-orbit .s3 { --a: 150deg; }
+.ax-orbit .s2 .sat { border-color: #5fc4bb88; } .ax-orbit .s3 .sat { border-color: #b3a4f088; }
+.ax-orbit .sat { transform: translate(-50%, -50%); }
+@keyframes axspin { to { transform: rotate(360deg); } }
+@keyframes axcounter { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(-360deg); } }
+.ax-orbit .sat i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #e4be80; }
+.ax-orbit .s2 i { background: #5fc4bb; } .ax-orbit .s3 i { background: #b3a4f0; }
+.ax-orbit .sat svg { width: 16px; height: 16px; fill: none; stroke: #0a121a; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ax-orbit .core { position: absolute; inset: 33%; padding: 6px; display: grid; place-content: center; text-align: center; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #f7d9a3, #e4be80 45%, #b8873e); color: #1a1206; box-shadow: 0 0 60px #e4be8066, 0 0 0 10px #e4be8014; animation: axbreath 6s ease-in-out infinite; }
+.ax-orbit .core small { font-size: .56rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+.ax-orbit .core b { font-family: var(--display); font-size: clamp(.92rem, 1.5vw, 1.15rem); line-height: 1.1; }
+/* reach cards */
+.ax-reach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: clamp(34px, 5vw, 60px); }
+.ax-card { display: flex; flex-direction: column; padding: 24px 26px; border-radius: 22px; background: linear-gradient(160deg, #15253399, #0d1822cc); border: 1px solid #ffffff1f; color: inherit; text-decoration: none; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: transform .3s, border-color .3s; }
+.ax-card:hover { transform: translateY(-4px); border-color: #e4be8088; }
+.ax-card .k { color: #e4be80; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.ax-card h3 { margin: 8px 0 6px; font-family: var(--display); font-size: clamp(1.3rem, 2vw, 1.7rem); letter-spacing: -.03em; }
+.ax-card p { margin: 0; color: var(--muted); }
+.ax-card .go { margin-top: 14px; color: #f3d19b; font-weight: 800; font-size: .9rem; }
+/* question box */
+.ax-ask { position: relative; margin-top: 14px; padding: clamp(24px, 3.4vw, 44px); border-radius: 28px; background: linear-gradient(120deg, #2b2418f5, #0e1924fa 40%, #0f2325f5); border: 1px solid #e4be8066; box-shadow: 0 40px 90px #0009; }
+.ax-ask-head h3 { margin: 0; font-family: var(--display); font-size: clamp(1.7rem, 3.2vw, 2.8rem); line-height: 1.08; letter-spacing: -.045em; }
+.ax-ask-head p { margin: 8px 0 0; color: var(--muted); }
+.ax-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin-top: 20px; }
+.ax-form textarea { width: 100%; min-height: 58px; padding: 16px 18px; border-radius: 16px; border: 1px solid #ffffff2e; background: #0a121acc; color: #f7f3e9; font: inherit; resize: vertical; }
+.ax-form textarea:focus { outline: 2px solid #e4be80; outline-offset: 2px; }
+.ax-form button { display: inline-flex; align-items: center; gap: 10px; padding: 0 22px; border: 0; border-radius: 16px; background: #e4be80; color: #111b24; font: 800 .9rem/1 var(--display); cursor: pointer; }
+.ax-form button:hover { background: #f3d19b; }
+.ax-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ax-chips button { padding: 9px 14px; border-radius: 999px; border: 1px solid #ffffff2e; background: #ffffff0a; color: #e8e2d4; font: 600 .86rem/1.2 inherit; cursor: pointer; transition: border-color .2s, background .2s; }
+.ax-chips button:hover { border-color: #e4be80; background: #e4be8018; }
+.ax-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 22px 0 0; }
+.ax-links a { color: #f3d19b; font-weight: 800; text-decoration: none; }
+.ax-links a:hover { text-decoration: underline; }
+.ax .tap-hint { margin-top: 14px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 900px) {
+  .ax-top, .ax-reach { grid-template-columns: minmax(0, 1fr); }
+  .ax-orbit { width: min(78vw, 310px); order: -1; margin: 10px auto 6px; }
+  .ax-orbit { --r: 116px; }
+  .ax-orbit .sat { font-size: .72rem; padding: 5px 10px 5px 5px; }
+  .ax-orbit .sat i { width: 24px; height: 24px; }
+  .ax-orbit .core small { display: none; }
+  .ax-mission { border-radius: 16px; }
+  .ax-form { grid-template-columns: minmax(0, 1fr); }
+  .ax-form button { justify-content: center; min-height: 52px; }
+}
+@media (prefers-reduced-motion: reduce) { .ax-paths path, .ax-paths circle, .ax-glow, .ax-orbit .spin, .ax-orbit .sat, .ax-orbit .core { animation: none !important; } }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main"><span data-i18n="skip" >Skip to content</span></a>
@@ -3682,35 +3761,53 @@ html:has(body.has-promo) { scroll-padding-top: 144px; }
     <section class="event" id="year-end">
       <div class="shell event-content"><div><p data-i18n="event-label" class="eyebrow">TEAM BUILD X · YEAR-END 2026 &amp; KICK-OFF 2027</p><h2 data-i18n="event-title" >Close 2026 together. Start 2027 aligned.</h2></div><div><p data-i18n="event-copy" >Bring 20–40 colleagues together for an afternoon workshop and a facilitated dinner. Reflect on the year, appreciate each other and shape a team charter with practical next steps. Run it in December to close 2026, or in January to kick off 2027.</p><div class="course-credentials--on-film"><div class="course-credentials"><img src="assets/images/hrdcorp-claimable.png" alt="" width="42" height="42"><div><strong data-i18n="course-claim" >HRD Corp Claimable</strong><span data-i18n="course-lpi" >LPI assessment included</span></div></div></div><a class="button button-gold" href="#inquiry" data-interest="year-end"><span data-i18n="event-cta" >Plan a year-end 2026 or kick-off 2027 session</span><span aria-hidden="true">↗</span></a></div></div>
     </section>
-    <section class="v3-about section-space" id="about" aria-labelledby="about-title">
-      <div class="shell v3-about-grid">
-        <div>
+    <section class="ax section-space" id="about" aria-labelledby="about-title">
+      <svg class="ax-paths" aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none"><path d="M-40 470C180 460 260 260 470 320S760 380 900 220 1100 120 1260 80"/><path d="M-40 340C200 350 260 500 420 420S650 230 780 270 980 400 1260 250"/><path d="M40 620C140 520 260 520 420 420S600 380 700 460 960 560 1260 440"/><path d="M200 -20C280 100 330 230 470 320S690 300 780 270 980 170 1260 130"/><circle cx="470" cy="320" r="5"/><circle cx="420" cy="420" r="5"/><circle cx="780" cy="270" r="5"/></svg>
+      <div class="ax-glow" aria-hidden="true"></div>
+      <div class="shell ax-top">
+        <div class="ax-copy">
           <p class="eyebrow" data-i18n="about-kicker">Build for the Unknown</p>
-          <h2 id="about-title" data-i18n="about-title">The future is moving faster than most organizations were built to move.</h2>
-          <svg class="about-route-map" aria-hidden="true" viewBox="0 0 640 300" fill="none">
-  <g stroke="currentColor"><path d="M-12 222C108 223 120 120 237 149S400 186 496 89 597 42 664 20"/><path d="M-18 164C108 168 138 240 218 201S337 106 411 131 525 192 658 116"/><path d="M25 293C86 245 142 248 218 201S313 183 369 225 501 270 641 216"/><path d="M116 -9C157 47 180 115 237 149S348 145 411 131 522 85 645 61"/></g>
-  <g fill="currentColor"><circle cx="237" cy="149" r="3"/><circle cx="218" cy="201" r="3"/><circle cx="411" cy="131" r="3"/></g>
-</svg>
+          <h2 id="about-title" data-i18n="ax-title">The future is moving fast. Build a team that moves with it.</h2>
+          <p class="ax-mission"><b data-i18n="ax-mission-k">Our mission</b><span data-i18n="ax-mission">Accelerate human adaptive capacity in the AI era.</span></p>
+          <ul class="ax-caps">
+            <li class="c1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div><b data-i18n="ax-c1">Clarity under pressure</b><span data-i18n="ax-c1s">The pause before the reaction.</span></div></li>
+            <li class="c2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg><div><b data-i18n="ax-c2">Trust across boundaries</b><span data-i18n="ax-c2s">Departments and branches moving as one.</span></div></li>
+            <li class="c3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l6-6 4 4 6-8"/><path d="M15 8h5v5"/></svg><div><b data-i18n="ax-c3">Confidence to act, with AI</b><span data-i18n="ax-c3s">Learn fast, try it, decide together.</span></div></li>
+          </ul>
         </div>
-        <div class="v3-about-copy">
-          <p data-i18n="about-copy-1">Aurelion’s mission is to accelerate human adaptive capacity in the AI era. We strengthen the abilities that matter through disruption—clarity under pressure, trust across boundaries, and the confidence to explore, learn, and act together. We help teams use AI to deepen insight and accelerate action. Our approach brings together contemplative science, technology expertise, and years of hands-on work connecting people across departments and organizations.</p>
-          <p data-i18n="about-copy-2">We want that opportunity for growth to reach far beyond the people we can work with in person. Aurelion Insights, our Growth Intelligence Engine, pairs an affordable personalized Growth Report with an AI Growth Guide—making self-discovery and practical next steps more accessible to people across the world.</p>
-          <a class="about-inline" href="#insights-details" data-i18n="about-explore">Explore Aurelion Insights</a>
-          <p data-i18n="about-copy-3">We’re drawn to projects where the path is still taking shape. We welcome ambitious collaborations and CSR partnerships that bring different people and organizations together to create what none could build alone.</p>
-          <div class="about-question-box" id="about-question">
-  <h3 data-i18n="about-question-title">Bring us the question you haven’t solved yet.</h3>
-  <details class="about-question-details">
-    <summary><span data-i18n="about-cta">Let’s explore it together</span><span aria-hidden="true"> ↓</span></summary>
-    <form action="https://wa.me/601110541499" method="get" target="_blank" rel="noopener noreferrer" class="about-question-form">
-      <label><span data-i18n="about-question">What’s the question you haven’t solved yet?</span><textarea name="text" rows="3" maxlength="1600" required></textarea></label>
-      <label><span data-i18n="about-outcome">What would a good outcome look like? (Optional)</span><textarea name="outcome" rows="2" maxlength="550"></textarea></label>
-      <button type="submit" data-i18n="about-wa">Continue on WhatsApp</button>
-      <small data-i18n="about-wa-note">You can review and send your draft in WhatsApp.</small>
-    </form>
-  </details>
-  <a class="about-direct" href="https://wa.me/601110541499" target="_blank" rel="noopener noreferrer" data-i18n="about-wa-direct">Chat on WhatsApp</a>
-</div>
-          <a class="about-inline about-story" href="about-aurelion.html" data-i18n="about-next">Get to know Aurelion</a>
+        <div class="ax-orbit" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+          <div class="spin">
+            <span class="arm s1"><span class="sat s1"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></i><b data-i18n="ax-o1">Clarity</b></span></span>
+            <span class="arm s2"><span class="sat s2"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg></i><b data-i18n="ax-o2">Trust</b></span></span>
+            <span class="arm s3"><span class="sat s3"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l6-6 4 4 6-8"/><path d="M15 8h5v5"/></svg></i><b data-i18n="ax-o3">Confidence + AI</b></span></span>
+          </div>
+          <span class="core"><small data-i18n="ax-core-k">At the centre</small><b data-i18n="ax-core">Your people</b></span>
+        </div>
+      </div>
+      <div class="shell ax-reach">
+        <a class="ax-card" href="hrd-courses.html"><span class="k" data-i18n="ax-r1k">In the room</span><h3 data-i18n="ax-r1t">Training & team mapping</h3><p data-i18n="ax-r1p">HRD Corp claimable courses and LPI Team Mapping Labs, run by our certified trainers.</p><span class="go"><span data-i18n="ax-r1go">See the courses</span> →</span></a>
+        <a class="ax-card" href="https://insights.aurelion-earth.com"><span class="k" data-i18n="ax-r2k">Beyond the room</span><h3>Aurelion Insights</h3><p data-i18n="ax-r2p">An affordable personal Growth Report with an AI Growth Guide, for anyone, anywhere.</p><span class="go"><span data-i18n="ax-r2go">Explore Insights</span> →</span></a>
+      </div>
+      <div class="shell">
+        <div class="ax-ask" id="about-question">
+          <div class="ax-ask-head">
+            <h3 data-i18n="about-question-title">Bring us the question you haven’t solved yet.</h3>
+            <p data-i18n="ax-ask-sub">Type it in a line. We’ll reply on WhatsApp.</p>
+          </div>
+          <form action="https://wa.me/601110541499" method="get" target="_blank" rel="noopener noreferrer" class="about-question-form ax-form">
+            <label class="sr-only" for="ax-q" data-i18n="about-question">What’s the question you haven’t solved yet?</label>
+            <textarea id="ax-q" name="text" rows="2" maxlength="1600" required data-i18n-placeholder="ax-ph" placeholder="e.g. Our teams agree in meetings, then nothing moves."></textarea>
+            <button type="submit"><span data-i18n="ax-send">Send it on WhatsApp</span><span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="tap-hint"><span class="hand" aria-hidden="true">👆</span><span class="w-t" data-i18n="ax-hint-t">Or tap one to fill it in</span><span class="w-m" data-i18n="ax-hint-m">Or click one to fill it in</span></p>
+          <div class="ax-chips">
+            <button type="button" data-i18n="ax-chip1">Our departments don’t work as one</button>
+            <button type="button" data-i18n="ax-chip2">We want AI, but where do we start?</button>
+            <button type="button" data-i18n="ax-chip3">Our managers struggle under pressure</button>
+            <button type="button" data-i18n="ax-chip4">We’d like a CSR partnership</button>
+          </div>
+          <p class="ax-links"><a href="about-aurelion.html"><span data-i18n="about-next">Get to know Aurelion</span> ↗</a><a href="about-aurelion.html#collab"><span data-i18n="ax-partner">Partner with us</span> ↗</a><a href="https://wa.me/601110541499" target="_blank" rel="noopener noreferrer"><span data-i18n="about-wa-direct">Chat on WhatsApp</span> ↗</a></p>
         </div>
       </div>
     </section>
@@ -5701,6 +5798,7 @@ window.AURELION_TRANSLATIONS = {
       "embrace-copy": "EMBRACE: Well Within & Well Beyond brought people into a shared conversation about well-being, connection and purpose at Regus Tribeca, Kuala Lumpur. Aurelion collaborated with Regus, Popomama, Pong Ent and Hello Family to make the day possible.",
       "embrace-story": "Explore the EMBRACE story & partners", "embrace-partners-label": "IN COLLABORATION WITH",
       "about-kicker": "Build for the Unknown",
+      "ax-title": "The future is moving fast. Build a team that moves with it.", "ax-mission-k": "Our mission", "ax-mission": "Accelerate human adaptive capacity in the AI era.", "ax-c1": "Clarity under pressure", "ax-c1s": "The pause before the reaction.", "ax-c2": "Trust across boundaries", "ax-c2s": "Departments and branches moving as one.", "ax-c3": "Confidence to act, with AI", "ax-c3s": "Learn fast, try it, decide together.", "ax-o1": "Clarity", "ax-o2": "Trust", "ax-o3": "Confidence + AI", "ax-core-k": "At the centre", "ax-core": "Your people", "ax-r1k": "In the room", "ax-r1t": "Training & team mapping", "ax-r1p": "HRD Corp claimable courses and LPI Team Mapping Labs, run by our certified trainers.", "ax-r1go": "See the courses", "ax-r2k": "Beyond the room", "ax-r2p": "An affordable personal Growth Report with an AI Growth Guide, for anyone, anywhere.", "ax-r2go": "Explore Insights", "ax-ask-sub": "Type it in a line. We’ll reply on WhatsApp.", "ax-ph": "e.g. Our teams agree in meetings, then nothing moves.", "ax-send": "Send it on WhatsApp", "ax-hint-t": "Or tap one to fill it in", "ax-hint-m": "Or click one to fill it in", "ax-chip1": "Our departments don’t work as one", "ax-chip2": "We want AI, but where do we start?", "ax-chip3": "Our managers struggle under pressure", "ax-chip4": "We’d like a CSR partnership", "ax-partner": "Partner with us",
       "about-title": "The future is moving faster than most organizations were built to move.",
       "about-copy-1": "Aurelion’s mission is to accelerate human adaptive capacity in the AI era. We strengthen the abilities that matter through disruption—clarity under pressure, trust across boundaries, and the confidence to explore, learn, and act together. We help teams use AI to deepen insight and accelerate action. Our approach brings together contemplative science, technology expertise, and years of hands-on work connecting people across departments and organizations.",
       "about-copy-2": "We want that opportunity for growth to reach far beyond the people we can work with in person. Aurelion Insights, our Growth Intelligence Engine, pairs an affordable personalized Growth Report with an AI Growth Guide—making self-discovery and practical next steps more accessible to people across the world.",
@@ -5741,6 +5839,7 @@ window.AURELION_TRANSLATIONS = {
       "embrace-copy": "EMBRACE：Well Within & Well Beyond 在吉隆坡 Regus Tribeca 汇聚人们，围绕身心健康、连结与人生意义展开对话。Aurelion 与 Regus、Popomama、Pong Ent 及 Hello Family 合作促成了这一天。",
       "embrace-story": "了解 EMBRACE 与合作伙伴", "embrace-partners-label": "合作伙伴",
       "about-kicker": "为未知而共创",
+      "ax-title": "未来变化飞快。打造跟得上的团队。", "ax-mission-k": "我们的使命", "ax-mission": "在 AI 时代，加速提升人的适应力。", "ax-c1": "压力下的清晰", "ax-c1s": "在反应之前，先停一停。", "ax-c2": "跨越边界的信任", "ax-c2s": "部门与分店，步调一致。", "ax-c3": "有 AI 加持的行动力", "ax-c3s": "快速学习、动手尝试、共同决定。", "ax-o1": "清晰", "ax-o2": "信任", "ax-o3": "行动力 + AI", "ax-core-k": "核心", "ax-core": "你的团队", "ax-r1k": "在现场", "ax-r1t": "培训与团队图谱", "ax-r1p": "可申请 HRD Corp 补助的课程与 LPI 团队图谱工作坊，由我们的认证培训师带领。", "ax-r1go": "查看课程", "ax-r2k": "走出会议室", "ax-r2p": "价格亲民的个人成长报告，加上 AI 成长向导，人人都能用。", "ax-r2go": "了解 Insights", "ax-ask-sub": "用一句话写下来，我们会在 WhatsApp 回复你。", "ax-ph": "例如：开会时大家都同意，会后却没有进展。", "ax-send": "通过 WhatsApp 发送", "ax-hint-t": "或点一下，直接填入", "ax-hint-m": "或点击一项，直接填入", "ax-chip1": "我们的部门无法同心协作", "ax-chip2": "想用 AI，但不知从何开始？", "ax-chip3": "我们的主管在压力下很吃力", "ax-chip4": "我们想谈 CSR 合作", "ax-partner": "与我们合作",
       "about-title": "未来的变化速度，已经超过许多组织原有的步伐。",
       "about-copy-1": "Aurelion 的使命，是在 AI 时代加速提升人的适应能力。面对变革，我们帮助人们在压力下保持清晰、跨越部门界限建立信任，也有信心一起探索、学习和行动。我们协助团队运用 AI 加深洞察、加快行动，结合观照科学、科技专长，以及多年促成跨部门与跨组织合作的实务经验。",
       "about-copy-2": "我们希望，成长的机会能跨越地域，惠及更多无法与我们面对面交流的人。我们的成长智能引擎 Aurelion Insights 结合价格亲民的个人成长报告和 AI 成长向导，让世界各地的人都更容易认识自己，找到可以实践的下一步。",
@@ -5781,6 +5880,7 @@ window.AURELION_TRANSLATIONS = {
       "embrace-copy": "EMBRACE：Well Within & Well Beyond 在吉隆坡 Regus Tribeca 匯聚人們，圍繞身心健康、連結與人生意義展開對話。Aurelion 與 Regus、Popomama、Pong Ent 及 Hello Family 合作促成了這一天。",
       "embrace-story": "了解 EMBRACE 與合作夥伴", "embrace-partners-label": "合作夥伴",
       "about-kicker": "為未知而共創",
+      "ax-title": "未來變化飛快。打造跟得上的團隊。", "ax-mission-k": "我們的使命", "ax-mission": "在 AI 時代，加速提升人的適應力。", "ax-c1": "壓力下的清晰", "ax-c1s": "在反應之前，先停一停。", "ax-c2": "跨越邊界的信任", "ax-c2s": "部門與分店，步調一致。", "ax-c3": "有 AI 加持的行動力", "ax-c3s": "快速學習、動手嘗試、共同決定。", "ax-o1": "清晰", "ax-o2": "信任", "ax-o3": "行動力 + AI", "ax-core-k": "核心", "ax-core": "你的團隊", "ax-r1k": "在現場", "ax-r1t": "培訓與團隊圖譜", "ax-r1p": "可申請 HRD Corp 補助的課程與 LPI 團隊圖譜工作坊，由我們的認證培訓師帶領。", "ax-r1go": "查看課程", "ax-r2k": "走出會議室", "ax-r2p": "價格親民的個人成長報告，加上 AI 成長嚮導，人人都能用。", "ax-r2go": "了解 Insights", "ax-ask-sub": "用一句話寫下來，我們會在 WhatsApp 回覆你。", "ax-ph": "例如：開會時大家都同意，會後卻沒有進展。", "ax-send": "透過 WhatsApp 傳送", "ax-hint-t": "或點一下，直接填入", "ax-hint-m": "或點擊一項，直接填入", "ax-chip1": "我們的部門無法同心協作", "ax-chip2": "想用 AI，但不知從何開始？", "ax-chip3": "我們的主管在壓力下很吃力", "ax-chip4": "我們想談 CSR 合作", "ax-partner": "與我們合作",
       "about-title": "未來的變化速度，已經超過許多組織原有的步伐。",
       "about-copy-1": "Aurelion 的使命，是在 AI 時代加速提升人的適應能力。面對變革，我們幫助人們在壓力下保持清晰、跨越部門界限建立信任，也有信心一起探索、學習和行動。我們協助團隊運用 AI 加深洞察、加快行動，結合觀照科學、科技專長，以及多年促成跨部門與跨組織合作的實務經驗。",
       "about-copy-2": "我們希望，成長的機會能跨越地域，惠及更多無法與我們面對面交流的人。我們的成長智慧引擎 Aurelion Insights 結合價格親民的個人成長報告和 AI 成長嚮導，讓世界各地的人都更容易認識自己，找到可以實踐的下一步。",
@@ -7271,6 +7371,20 @@ function openQuestionFromLink() {
 }
 openQuestionFromLink();
 window.addEventListener("hashchange", openQuestionFromLink);
+document.querySelectorAll(".ax-chips button").forEach(chip => chip.addEventListener("click", () => {
+  const box = document.getElementById("ax-q");
+  box.value = chip.textContent.trim();
+  box.focus();
+}));
+(() => {
+  // The page's translator swaps text, not placeholders: keep the placeholder in step with the language.
+  const box = document.getElementById("ax-q");
+  if (!box) return;
+  const ph = { en: "e.g. Our teams agree in meetings, then nothing moves.", "zh-Hans": "例如：开会时大家都同意，会后却没有进展。", "zh-Hant": "例如：開會時大家都同意，會後卻沒有進展。" };
+  const sync = () => { box.placeholder = ph[document.documentElement.lang] || ph.en; };
+  sync();
+  new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+})();
 
 // Keep the native form action so WhatsApp always receives a draft to review.
 document.querySelectorAll(".about-question-form").forEach(form => {
