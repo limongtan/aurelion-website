@@ -449,7 +449,7 @@ body.vw-open .wa-fab,body.vw-open .wa-bub{opacity:0;pointer-events:none}
   .fx-sticky{position:relative;height:auto;padding:30px 0 40px}
   .fx-top{flex-direction:column;align-items:flex-start}
   .fx-top>div:last-child{justify-items:start!important}
-  .fx-track{transform:none!important;overflow-x:auto;width:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+  .fx-free .fx-track{transform:none!important;width:auto;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-left:var(--gut);scrollbar-width:none;padding-bottom:8px;outline:0}
   .fx-track::-webkit-scrollbar{display:none}
   .fx{width:84vw;scroll-snap-align:center}
   .fx-cap .formula{grid-column:1/-1;text-align:left}
@@ -712,14 +712,12 @@ html.has-bar .ps-stage{top:calc(var(--nav) + var(--bar) + 24px)}
 .tier-split::before{content:"½";font-family:var(--mono);font-size:11px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#000;flex:none}
 
 /* ---------- Carousel: tabs, jump chips, arrows, free scroll (no pinning) ---------- */
-.fx-pin{height:auto!important}
-.fx-sticky,html.has-bar .fx-sticky{position:relative;top:auto;height:auto;overflow:visible;padding:clamp(90px,10vw,140px) 0 clamp(40px,5vw,70px)}
 .fx-track{transform:none!important;width:auto;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scroll-padding-left:var(--gut);scrollbar-width:none;padding-bottom:8px;cursor:grab;outline:0}
-.fx-track::-webkit-scrollbar{display:none}
-.fx-track.drag{scroll-snap-type:none;cursor:grabbing;user-select:none}
-.fx-track.drag .fx{pointer-events:none}
-.fx{scroll-snap-align:start;width:clamp(300px,40vw,700px)}
-.fx-screen{max-height:none}
+.fx-free .fx-track::-webkit-scrollbar{display:none}
+.fx{width:clamp(300px,34vw,600px)}
+.fx-free .fx{scroll-snap-align:start}
+.fx-screen{max-height:44vh}
+.fx-top .ex-h2{font-size:clamp(38px,4.4vw,74px)}
 .fx-tag{position:absolute;left:12px;bottom:12px;z-index:2;padding:7px 11px;border-radius:99px;background:#0a0a0acc;color:#f2f1ed;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:10.5px;border:1px solid #ffffff22}
 .fx-ctl{display:flex;align-items:center;gap:14px;padding:0 var(--gut);margin:0 0 22px}
 .fx-tabs{display:flex;gap:4px;padding:4px;border:1px solid var(--line2);border-radius:99px;flex:none}
@@ -756,3 +754,7 @@ html.has-bar .ps-stage{top:calc(var(--nav) + var(--bar) + 24px)}
 /* keep the FAQ glow inside the section (iOS counted its drifting blur as page width) */
 #smes{overflow-x:clip}
 @supports not (overflow:clip){#smes{overflow-x:hidden}}
+/* signatures: pinned scroll-through with chips/arrows under the row */
+.fx-foot{margin-top:14px}
+.fx-foot .fx-dots{flex:1}
+@media(max-width:800px){.fx-foot{flex-wrap:wrap}.fx-foot .fx-dots{order:3;flex-basis:100%}.fx-arrows{margin-left:auto}}
