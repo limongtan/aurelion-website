@@ -636,3 +636,5 @@ html.has-bar .ps-stage{top:calc(var(--nav) + var(--bar) + 24px)}
 @keyframes fqGrow{0%,8%{transform:scaleY(.15)}40%,100%{transform:none}}
 @media(max-width:800px){.faq{gap:10px}.faq-c{padding:20px 20px 22px}.faq-top{margin-bottom:18px}.faq-zone::before{inset:-30px calc(-1 * var(--gut)) -40px}}
 @media(prefers-reduced-motion:reduce){.faq-zone::after,.faq-c *{animation:none!important}}
+/* viewer: dark margin around the site, click it to close */
+@media(min-width:801px){.vw-stage{padding:22px 84px 40px;cursor:zoom-out}.vw-frame{cursor:auto}.vw-arrow{cursor:pointer}.vw-prev{left:18px}.vw-next{right:18px}}
