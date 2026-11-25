@@ -281,7 +281,7 @@ addEventListener('load', sizePin);
 track.addEventListener('scroll', () => { if (!pinOn) fcount.textContent = String(clamp(Math.round(track.scrollLeft / fxEls[0].offsetWidth) + 1, 1, FUSION.length)).padStart(2, '0'); }, {passive:true});
 
 /* ---------- FAQ card spotlight ---------- */
-if (fine) $('.faq-c').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
+if (fine) $$('.faq-c').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
 
 /* ---------- Calculator ---------- */
 const calc = $('.calc');
@@ -472,6 +472,9 @@ $$('.vw-dev button').forEach(b => b.addEventListener('click', () => {
   vFrame.className = 'vw-frame ' + (b.dataset.dev === 'desktop' ? '' : b.dataset.dev);
 }));
 let sx = null; vStage.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+/* click the dark area around the site to close */
+vStage.addEventListener('click', e => { if (e.target === vStage || e.target.classList.contains('vw-hint')) closeViewer(); });
+vw.addEventListener('click', e => { if (e.target === vw) closeViewer(); });
 vStage.addEventListener('touchend', e => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 70) showV(vI + (dx < 0 ? 1 : -1)); sx = null; });
 
 /* ---------- Command palette ---------- */

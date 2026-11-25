@@ -293,3 +293,5 @@ window.EX_I18N.en["price.msgBar"] = "Hi Aurelion! I’d like to claim your year-
 window.EX_I18N.zh["price.msgBar"] = "你好 Aurelion！我想为我的生意领取网站的年终假期优惠价。";
 window.EX_I18N.ms["price.msgBar"] = "Hai Aurelion! Saya ingin menuntut harga istimewa hujung tahun untuk laman web perniagaan saya.";
 window.EX_I18N.en["bar.short"] = "Holiday pricing"; window.EX_I18N.zh["bar.short"] = "假期优惠"; window.EX_I18N.ms["bar.short"] = "Harga cuti";
+
+window.EX_I18N.en["vw.hint"] = "← → to browse · click outside or Esc to close"; window.EX_I18N.zh["vw.hint"] = "← → 切换 · 点击外面或 Esc 关闭"; window.EX_I18N.ms["vw.hint"] = "← → semak imbas · klik di luar atau Esc untuk tutup";
