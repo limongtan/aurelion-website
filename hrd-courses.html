@@ -369,6 +369,24 @@ body.locked { overflow:hidden; }
 .p-swipe { display:none; color:#9fb0b3; font-size:.74rem; font-weight:700; }
 @media (hover:none) { .p-swipe { display:block; } .p-count { display:none; } }
 
+/* ---- compact language picker ---- */
+.lang-pick { position:relative; flex:none; }
+.lang-pick > summary { display:inline-flex; align-items:center; gap:6px; min-height:40px; padding:6px 10px; border:1px solid var(--edge); border-radius:999px; list-style:none; cursor:pointer; font-size:.74rem; font-weight:800; letter-spacing:.04em; }
+.lang-pick > summary::-webkit-details-marker { display:none; }
+.lang-pick > summary svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.6; }
+.lang-pick[open] > summary,.lang-pick > summary:hover { border-color:var(--gold); color:var(--gold); }
+.lang-caret { font-size:.62rem; opacity:.7; }
+.page-header .lang-menu { position:absolute; right:0; top:calc(100% + 10px); z-index:60; display:grid; gap:2px; min-width:220px; padding:6px; border-radius:16px; background:#0e1924f7; border:1px solid #e4be8066; box-shadow:0 24px 50px #000a; }
+.page-header .lang-menu a { display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:10px; border:0; color:#f7f3e9; font-size:.88rem; font-weight:600; }
+.page-header .lang-menu a b { display:inline-grid; place-items:center; min-width:30px; height:26px; border-radius:8px; background:#ffffff12; font-size:.72rem; }
+.page-header .lang-menu a:hover { background:#ffffff10; color:#f7f3e9; border:0; }
+.page-header .lang-menu a[aria-current] { background:#e4be801f; color:#f3d19b; border:0; }
+.page-header .lang-menu a[aria-current] b { background:#e4be80; color:#111b24; }
+.page-header .lang-menu small { padding:6px 12px 4px; color:#9fb0b3; font-size:.7rem; line-height:1.35; }
+:root[data-theme="light"] .page-header .lang-menu { background:#faf7f0f7; }
+:root[data-theme="light"] .page-header .lang-menu a { color:#192c37; }
+@media(max-width:600px) { .lang-pick { margin-left:auto; } .lang-pick > summary { padding:6px 8px; } }
+
   </style>
 </head>
 <body class="hrd-courses-page">
@@ -376,11 +394,16 @@ body.locked { overflow:hidden; }
   <header class="page-header">
     <a class="page-logo" href="index.html" aria-label="Aurelion home"><img src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion" width="136" height="76"><span class="brand-service">Corporate Training &amp; Consulting</span></a>
     <nav class="page-nav" aria-label="Main navigation"><a href="hrd-courses.html" aria-current="page">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="https://insights.aurelion-earth.com">Aurelion Insights</a><a href="index.html#grow" class="nav-grow">AI for Business</a><a href="about-aurelion.html">About Aurelion</a></nav>
-    <nav class="page-langs" aria-label="Language">
-      <a href="hrd-courses.html?lang=en" data-language="en" aria-current="true">EN</a>
-      <a href="index.html?lang=zh-Hans#programmes" data-language="zh-Hans" lang="zh-Hans" title="简体中文">简</a>
-      <a href="index.html?lang=zh-Hant#programmes" data-language="zh-Hant" lang="zh-Hant" title="繁體中文">繁</a>
-    </nav>
+    <details class="lang-pick">
+      <summary aria-label="Language / Bahasa / 语言"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>EN</span><span class="lang-caret" aria-hidden="true">▾</span></summary>
+      <nav class="page-langs lang-menu" aria-label="Language">
+        <a href="hrd-courses.html?lang=en" data-language="en" aria-current="true"><b>EN</b>English</a>
+        <a href="index.html?lang=ms#programmes" data-language="ms" lang="ms"><b>BM</b>Bahasa Malaysia</a>
+        <a href="index.html?lang=zh-Hans#programmes" data-language="zh-Hans" lang="zh-Hans"><b>简</b>简体中文</a>
+        <a href="index.html?lang=zh-Hant#programmes" data-language="zh-Hant" lang="zh-Hant"><b>繁</b>繁體中文</a>
+        <small>BM and 中文 open our homepage in that language.</small>
+      </nav>
+    </details>
     <button class="static-theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme" title="Switch to light theme"><span aria-hidden="true">☼</span></button>
     <a class="header-contact" href="index.html#inquiry">Contact us <span aria-hidden="true">↗</span></a>
     <details class="page-menu"><summary>Menu</summary><nav class="menu-links" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="hrd-courses.html" aria-current="page">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="https://insights.aurelion-earth.com">Aurelion Insights</a><a href="index.html#grow" class="nav-grow">AI for Business</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships &amp; CSR</a><a href="index.html#inquiry">Contact us</a></nav></details>
