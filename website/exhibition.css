@@ -710,3 +710,49 @@ html.has-bar .ps-stage{top:calc(var(--nav) + var(--bar) + 24px)}
 
 .tier-split{margin-top:8px;font-size:13px;color:var(--txt);display:flex;gap:6px;align-items:center}
 .tier-split::before{content:"½";font-family:var(--mono);font-size:11px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#000;flex:none}
+
+/* ---------- Carousel: tabs, jump chips, arrows, free scroll (no pinning) ---------- */
+.fx-pin{height:auto!important}
+.fx-sticky,html.has-bar .fx-sticky{position:relative;top:auto;height:auto;overflow:visible;padding:clamp(90px,10vw,140px) 0 clamp(40px,5vw,70px)}
+.fx-track{transform:none!important;width:auto;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scroll-padding-left:var(--gut);scrollbar-width:none;padding-bottom:8px;cursor:grab;outline:0}
+.fx-track::-webkit-scrollbar{display:none}
+.fx-track.drag{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.fx-track.drag .fx{pointer-events:none}
+.fx{scroll-snap-align:start;width:clamp(300px,40vw,700px)}
+.fx-screen{max-height:none}
+.fx-tag{position:absolute;left:12px;bottom:12px;z-index:2;padding:7px 11px;border-radius:99px;background:#0a0a0acc;color:#f2f1ed;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:10.5px;border:1px solid #ffffff22}
+.fx-ctl{display:flex;align-items:center;gap:14px;padding:0 var(--gut);margin:0 0 22px}
+.fx-tabs{display:flex;gap:4px;padding:4px;border:1px solid var(--line2);border-radius:99px;flex:none}
+.fx-tabs button{height:38px;padding:0 16px;border:0;border-radius:99px;background:none;color:var(--mut);font-size:13.5px;font-weight:500;white-space:nowrap;transition:background .3s,color .3s}
+.fx-tabs button i{font-style:normal;font-family:var(--mono);font-size:11px;opacity:.7;margin-left:4px}
+.fx-tabs button[aria-selected="true"]{background:var(--txt);color:var(--bg)}
+.fx-dots{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);padding:2px 14px}
+.fx-dots::-webkit-scrollbar{display:none}
+.fx-dots button{flex:none;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px;border:1px solid var(--line);border-radius:99px;background:none;color:var(--mut);font-size:12.5px;white-space:nowrap;transition:border-color .25s,color .25s,background .25s}
+.fx-dots button .mono{font-size:10px;color:var(--dim)}
+.fx-dots button:hover{color:var(--txt);border-color:var(--line2)}
+.fx-dots button[aria-current="true"]{color:var(--txt);border-color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent)}
+.fx-dots button[aria-current="true"] .mono{color:var(--acc-t)}
+.fx-arrows{display:flex;gap:8px;flex:none}
+.fx-arrows button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--txt);font-size:17px;transition:background .25s,color .25s,opacity .25s}
+.fx-arrows button:hover:not(:disabled){background:var(--txt);color:var(--bg)}
+.fx-arrows button:disabled{opacity:.3;cursor:default}
+.fx-foot{display:flex;align-items:center;gap:18px;padding:0 var(--gut);margin-top:clamp(18px,2.6vw,30px)}
+.fx-foot .fx-bar{flex:1;margin:0}
+.fx-skip{flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border:1px solid var(--line2);border-radius:99px;font-size:13px;color:var(--mut);transition:color .2s,border-color .2s}
+.fx-skip:hover{color:var(--txt);border-color:var(--txt)}
+.fx-count i{font-style:normal}
+@media(max-width:1100px){.fx-ctl{flex-wrap:wrap}.fx-dots{order:3;flex-basis:100%;padding:2px 0;mask-image:none;-webkit-mask-image:none}.fx-arrows{margin-left:auto}}
+@media(max-width:800px){
+  .fx-sticky,html.has-bar .fx-sticky{padding:50px 0 34px}
+  .fx{width:84vw}
+  .fx-tabs button{height:34px;padding:0 12px;font-size:12.5px}
+  .fx-arrows button{width:40px;height:40px}
+  .fx-foot .fx-bar{display:block}
+}
+/* fx-dots-pad */
+.fx-dots{mask-image:linear-gradient(90deg,transparent,#000 8px,#000 calc(100% - 18px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8px,#000 calc(100% - 18px),transparent);padding-left:8px}
+@media(max-width:1100px){.fx-dots{mask-image:none;-webkit-mask-image:none;padding-left:0}}
+/* keep the FAQ glow inside the section (iOS counted its drifting blur as page width) */
+#smes{overflow-x:clip}
+@supports not (overflow:clip){#smes{overflow-x:hidden}}

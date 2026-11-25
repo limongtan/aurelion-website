@@ -1,82 +1,129 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-goal-default="enq">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Batu &amp; Beam | Aurelion fusion concept</title>
-<meta name="description" content="Batu &amp; Beam: renovation and interior design across the Klang Valley. Blueprint drafting meets a material swatch board.">
+<title>Batu &amp; Beam · Renovation &amp; interior design</title>
+<meta name="description" content="Batu &amp; Beam: renovation and interior design for condos, landed homes and shoplots. Blueprint estimator, plan before/after and a material swatch board. A fictional sample by Aurelion.">
+<script src="/website/fusion/af-kit.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f3f0e8;--paper2:#e9e4d7;--card:#fbf9f4;--ink:#14213d;--ink2:#3a4663;--blue:#2b59c3;--blue-l:#cdd9f3;--grid:rgba(43,89,195,.09);--grid2:rgba(43,89,195,.16);--brass:#b08d57;--brass-d:#7d6036;--oak:#c49a6c;--sage:#9caf98;--sage-d:#56705a;--red:#c4553b;--serif:"Instrument Serif",Georgia,serif;--mono:"JetBrains Mono",ui-monospace,monospace;--sans:"Inter Tight",system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+:root{--exh:36px;--paper:#f3f0e8;--paper2:#e9e4d7;--card:#fbf9f4;--ink:#14213d;--ink2:#3a4663;--blue:#2b59c3;--blue-l:#cdd9f3;--grid:rgba(43,89,195,.09);--grid2:rgba(43,89,195,.16);--brass:#b08d57;--brass-d:#7d6036;--brassInk:#fff;--sage:#9caf98;--red:#c4553b;--dk:#14213d;--dk2:#0d1730;--dkInk:#f3f0e8;--serif:"Instrument Serif",Georgia,serif;--mono:"JetBrains Mono",ui-monospace,monospace;--sans:"Inter Tight",system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+html[data-vibe=warm]{--paper:#f6ecdf;--paper2:#efdfcc;--card:#fffaf3;--ink:#3a2418;--ink2:#6d5444;--blue:#c0573a;--blue-l:#f3d6c9;--grid:rgba(192,87,58,.07);--grid2:rgba(192,87,58,.13);--brass:#c98f4f;--brass-d:#8c5a2b;--dk:#3a2418;--dk2:#2a1910}
+html[data-vibe=bold]{--paper:#07090d;--paper2:#111620;--card:#0c1017;--ink:#e9f3ff;--ink2:#97a8c0;--blue:#2ef2ff;--blue-l:rgba(46,242,255,.2);--grid:rgba(46,242,255,.06);--grid2:rgba(46,242,255,.13);--brass:#d6ff3d;--brass-d:#d6ff3d;--brassInk:#07090d;--red:#ff5a7a;--dk:#000;--dk2:#000;--dkInk:#e9f3ff}
+html[data-vibe=minimal]{--paper:#fff;--paper2:#f4f4f2;--card:#fff;--ink:#111;--ink2:#555;--blue:#0050ff;--blue-l:#dbe6ff;--grid:rgba(0,0,0,.025);--grid2:rgba(0,0,0,.05);--brass:#0050ff;--brass-d:#0040cc;--dk:#111;--dk2:#000}
+html[data-vibe=luxe]{--paper:#0f1c33;--paper2:#16264a;--card:#132342;--ink:#f1e8d4;--ink2:#b9b39e;--blue:#d4af5f;--blue-l:rgba(212,175,95,.2);--grid:rgba(212,175,95,.05);--grid2:rgba(212,175,95,.11);--brass:#d4af5f;--brass-d:#e6c98a;--brassInk:#10192d;--dk:#0a1426;--dk2:#070f1d;--dkInk:#f1e8d4}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh,36px) + 76px)}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;background-image:linear-gradient(var(--grid2) 1px,transparent 1px),linear-gradient(90deg,var(--grid2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
-a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
-.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}
-.exh-bar a:hover{color:#f5a524}
-.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.exh-bar .exh-cta{color:#f5a524}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
 @media(max-width:720px){.exh-bar .exh-mid{display:none}}
 
 /* NAV */
-.nav{position:fixed;top:36px;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;height:64px;background:rgba(243,240,232,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--ink)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:34px;height:34px}
-.brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em}
-.brand b i{color:var(--brass-d)}
+.nav{position:fixed;top:var(--exh,36px);left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;height:64px;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:8px 12px;border:1px solid transparent;transition:border-color .2s,background .2s}
 .nav-links a:hover{border-color:var(--ink);background:var(--card)}
 .nav-links a.nav-cta{background:var(--ink);color:var(--paper);margin-left:8px}
 .nav-links a.nav-cta:hover{background:var(--blue);border-color:var(--blue)}
 .lang{display:inline-flex;border:1px solid var(--ink);margin-left:8px}
-.lang button{background:none;border:0;padding:6px 9px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.lang button{background:none;border:0;padding:6px 9px;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
 .lang button+button{border-left:1px solid var(--ink)}
-.lang button[aria-pressed="true"]{background:var(--brass);color:#fff}
-.lang button:hover:not([aria-pressed="true"]){background:var(--paper2)}
-.burger{display:none;background:var(--card);border:1px solid var(--ink);padding:8px 12px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.lang button[aria-pressed="true"]{background:var(--brass);color:var(--brassInk)}
+.burger{display:none;background:var(--card);border:1px solid var(--ink);padding:8px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.g-enq,.g-book,.g-sell,.g-cred{display:none!important}
+html[data-goal=enq] .g-enq,html[data-goal=book] .g-book,html[data-goal=sell] .g-sell,html[data-goal=cred] .g-cred{display:inline-flex!important}
+.cartbtn{display:none;align-items:center;gap:8px;background:var(--card);border:1px solid var(--ink);padding:8px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+.cartbtn b{background:var(--blue);color:var(--paper);min-width:20px;padding:2px 5px;text-align:center}
+html[data-goal=sell] .cartbtn,.cartbtn.has{display:inline-flex}
 
 /* COMMON */
+main{display:flex;flex-direction:column}
+main>*{order:5;min-width:0}
+.hero,.marq{order:0}#estimate{order:2}#projects{order:3}.goal{order:4}#materials{order:5}#process{order:6}#faq{order:8}#contact{order:9}
+html[data-goal=enq] .goal-enq,html[data-goal=book] .goal-book,html[data-goal=sell] .goal-sell,html[data-goal=cred] .goal-cred{order:1}
 section{padding:110px 24px;position:relative}
 .wrap{max-width:1320px;margin:0 auto}
+.wrap>*{min-width:0}
 .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px}
 .tag::before{content:"";width:28px;height:1px;background:currentColor}
 .sec-head{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
 h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,80px);line-height:.98;letter-spacing:-.02em;margin-top:16px}
 h2 em{color:var(--blue)}
 .sec-head p{font-size:17px;line-height:1.6;color:var(--ink2);max-width:520px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border:1px solid var(--ink);background:var(--card);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border:1px solid var(--ink);background:var(--card);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
 .btn:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--ink)}
 .btn.dark{background:var(--ink);color:var(--paper)}
 .btn.dark:hover{background:var(--blue);box-shadow:4px 4px 0 var(--brass)}
-.btn.brass{background:var(--brass);color:#fff;border-color:var(--brass-d)}
-.btn.brass:hover{box-shadow:4px 4px 0 var(--ink)}
+.btn.brass{background:var(--brass);color:var(--brassInk);border-color:var(--brass-d)}
+.btn.wab{background:#1f8f55;color:#fff;border-color:#13683c}
+.btn svg{width:16px;height:16px;flex:none}
+.btn.full{width:100%}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
+.panel{background:var(--card);border:1px solid var(--ink);padding:26px}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:12px;display:flex;justify-content:space-between;width:100%}
+fieldset{border:0}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink)}
+.seg label,.seg button{position:relative;cursor:pointer;text-align:center;padding:14px 8px;border:0;border-right:1px solid var(--ink);background:none;transition:background .2s}
+.seg>:last-child{border-right:0}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:hover,.seg button:hover{background:var(--paper2)}
+.seg label:has(input:checked),.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.seg label:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:-4px}
+.seg b{display:block;font-weight:600;font-size:15px}
+.seg small{display:block;font-family:var(--mono);font-size:10px;opacity:.7;margin-top:3px;letter-spacing:.04em}
+.field{width:100%;height:48px;border:1px solid var(--ink);background:var(--card);padding:0 12px;font-size:15px;border-radius:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--ink);background:var(--card);padding:10px 14px;font-size:14px;font-weight:500;transition:background .2s}
+.chip:hover{background:var(--paper2)}
+.chip[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:var(--paper)}
 .mono{font-family:var(--mono)}
+.paybadges{display:flex;flex-wrap:wrap;gap:6px}
+.pb{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;font:700 11px/1 var(--sans);background:#fff;color:#1a1a1a;border:1px solid rgba(0,0,0,.15)}
+.pb i{width:15px;height:10px;border-radius:2px;background:linear-gradient(135deg,#f5a524,#e0533d)}
+.pb.fpx{color:#0b3a7a}.pb.grab{background:#00b14f;color:#fff;border-color:#00b14f}.pb.tng{background:#0a4ea3;color:#fff;border-color:#0a4ea3}
 
 /* HERO */
-.hero{min-height:100svh;padding:150px 24px 60px;display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;max-width:1320px;margin:0 auto}
+.hero{min-height:100svh;padding:calc(var(--exh,36px) + 100px) 24px 60px;display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;max-width:1320px;margin:0 auto;width:100%}
+.hero>*{min-width:0}
 .hero-k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ink);padding:7px 12px;background:var(--card)}
 .hero-k i{width:8px;height:8px;background:var(--brass);display:inline-block;animation:blink 1.6s steps(2) infinite}
 @keyframes blink{50%{opacity:.2}}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em;margin:26px 0 22px}
-.hero h1 em{color:var(--blue);position:relative;white-space:nowrap}
-.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.1em;height:.055em;background:var(--brass);transform:scaleX(0);transform-origin:left;animation:under 1s 1.4s cubic-bezier(.6,0,.2,1) forwards}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:.95;letter-spacing:-.025em;margin:26px 0 22px}
+.hero h1 em{color:var(--blue);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.055em;background:var(--brass);transform:scaleX(0);transform-origin:left;animation:under 1s 1.4s cubic-bezier(.6,0,.2,1) forwards}
 @keyframes under{to{transform:scaleX(1)}}
-html[lang^=zh] .hero h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.12}html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-style:normal}html[lang^=zh] .hero h1{font-size:clamp(38px,5vw,72px)}
+html[lang^=zh] .hero h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.12}html[lang^=zh] h1 em,html[lang^=zh] h2 em{font-style:normal}html[lang^=zh] .hero h1{font-size:clamp(38px,4.8vw,70px)}
 .hero-p{font-size:18px;line-height:1.6;color:var(--ink2);max-width:540px}
 .hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
 .hero-meta{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--ink)}
 .hero-meta div{padding:14px 12px 0 0}
 .hero-meta b{display:block;font-family:var(--serif);font-weight:400;font-size:30px}
 .hero-meta span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
-.sheet{position:relative;background:var(--card);border:1px solid var(--ink);box-shadow:10px 10px 0 rgba(20,33,61,.08);padding:18px;cursor:crosshair;overflow:hidden}
+.sheet{position:relative;background:var(--card);border:1px solid var(--ink);box-shadow:10px 10px 0 color-mix(in srgb,var(--ink) 8%,transparent);padding:18px;cursor:crosshair;overflow:hidden}
+.pw{position:relative}
 .sheet svg.plan{width:100%;height:auto;display:block}
+.built{position:absolute;inset:0;overflow:hidden;clip-path:inset(0 0 0 var(--cut,100%));transition:clip-path .05s}
+.built img{width:100%;height:100%;object-fit:cover}
+.built::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--ink)}
+.cutline{position:absolute;top:0;bottom:0;left:var(--cut,100%);width:2px;margin-left:-1px;background:var(--brass);pointer-events:none;z-index:3;transition:opacity .3s}
+.cutline b{position:absolute;top:50%;left:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:var(--brass);color:var(--brassInk);display:grid;place-items:center;font:600 13px/1 var(--mono);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.cutr{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.cutlab{position:absolute;top:10px;z-index:3;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;border:1px solid var(--ink);background:var(--card);pointer-events:none}
+.cutlab.l{left:10px}.cutlab.r{right:10px;background:var(--brass);color:var(--brassInk);border-color:var(--brass-d)}
 .plan .wall{stroke:var(--ink);stroke-width:5;fill:none;stroke-linecap:square}
 .plan .iw{stroke:var(--ink);stroke-width:3;fill:none;stroke-linecap:square}
 .plan .thin{stroke:var(--ink2);stroke-width:1.1;fill:none}
@@ -86,19 +133,18 @@ html[lang^=zh] .hero h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.12}html
 .plan text.dt{fill:var(--brass-d);font-size:9px}
 .plan text.rl{font-size:10.5px;font-weight:600}
 .plan text.sub{fill:var(--ink2);font-size:8.5px}
-.plan .lbl{opacity:0;transition:opacity .6s}
-.plan.done .lbl{opacity:1}
-.cross-x,.cross-y{position:absolute;background:rgba(43,89,195,.35);pointer-events:none;opacity:0;transition:opacity .2s}
+.plan .lbl2{opacity:0;transition:opacity .6s}
+.plan.done .lbl2{opacity:1}
+.cross-x,.cross-y{position:absolute;background:color-mix(in srgb,var(--blue) 35%,transparent);pointer-events:none;opacity:0;transition:opacity .2s;z-index:2}
 .cross-x{height:1px;left:0;right:0}.cross-y{width:1px;top:0;bottom:0}
 .sheet:hover .cross-x,.sheet:hover .cross-y,.sheet:hover .coord{opacity:1}
-.coord{position:absolute;right:12px;top:10px;font-family:var(--mono);font-size:10px;color:var(--blue);background:var(--card);padding:3px 6px;border:1px solid var(--blue-l);opacity:0;transition:opacity .2s;pointer-events:none}
+.coord{position:absolute;right:12px;bottom:58px;z-index:5;font-family:var(--mono);font-size:10px;color:var(--blue);background:var(--card);padding:3px 6px;border:1px solid var(--blue-l);opacity:0;transition:opacity .2s;pointer-events:none}
 .tblock{display:grid;grid-template-columns:1.4fr 1fr 1fr;border:1px solid var(--ink);margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase}
 .tblock div{padding:7px 9px;border-right:1px solid var(--ink)}
 .tblock div:last-child{border-right:0}
 .tblock b{display:block;font-weight:600;font-size:11px;color:var(--ink);margin-top:2px}
 .tblock span{color:var(--ink2)}
-.scroll-hint{position:absolute;left:20px;top:6px;font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;transition:opacity .4s}
-.pins{position:absolute;right:-14px;top:30%;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.pins{position:absolute;right:-14px;top:30%;display:flex;flex-direction:column;gap:10px;pointer-events:none;z-index:4}
 .pin{width:54px;height:54px;box-shadow:0 6px 14px rgba(20,33,61,.18);border:1px solid rgba(0,0,0,.1);transform:rotate(var(--r,0deg))}
 
 /* SWATCH TEXTURES */
@@ -114,157 +160,102 @@ html[lang^=zh] .hero h1,html[lang^=zh] h2{letter-spacing:0;line-height:1.12}html
 .t-chrome{background:linear-gradient(135deg,#9aa0a8,#eef1f4 40%,#a7adb5 60%,#e3e7ec)}
 
 /* MARQUEE */
-.marq{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:12px 0}
+.marq{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--dk);color:var(--dkInk);overflow:hidden;white-space:nowrap;padding:12px 0}
 .marq div{display:inline-flex;gap:48px;animation:marq 38s linear infinite;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .marq span::before{content:"◇ ";color:var(--brass)}
 @keyframes marq{to{transform:translateX(-50%)}}
 
-/* ESTIMATOR */
-.est{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start}
-.panel{background:var(--card);border:1px solid var(--ink);padding:26px}
-.fld{border:0;margin-bottom:26px}
-.fld legend,.fld>label.lg{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:12px;display:flex;justify-content:space-between;width:100%}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink)}
-.seg label{position:relative;cursor:pointer;text-align:center;padding:14px 8px;border-right:1px solid var(--ink);transition:background .2s}
-.seg label:last-child{border-right:0}
-.seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label:hover{background:var(--paper2)}
-.seg label:has(input:checked){background:var(--ink);color:var(--paper)}
-.seg label:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:-4px}
-.seg b{display:block;font-weight:600;font-size:15px}
-.seg small{display:block;font-family:var(--mono);font-size:10px;opacity:.7;margin-top:3px;letter-spacing:.04em}
-.size-row{display:flex;align-items:center;gap:16px}
-.size-out{font-family:var(--serif);font-size:40px;line-height:1;min-width:150px}
-.size-out small{font-family:var(--mono);font-size:11px;margin-left:4px;color:var(--ink2)}
-input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:28px;background:transparent;cursor:pointer;min-width:0}
-input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--blue) var(--p,40%),var(--ink2) var(--p,40%))}
-input[type=range]::-moz-range-track{height:2px;background:var(--ink2)}
-input[type=range]::-moz-range-progress{height:2px;background:var(--blue)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-9px;background:var(--brass);border:2px solid var(--ink);transform:rotate(45deg)}
-input[type=range]::-moz-range-thumb{width:16px;height:16px;background:var(--brass);border:2px solid var(--ink);border-radius:0;transform:rotate(45deg)}
-.ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;color:var(--ink2);margin-top:2px}
-.scope{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.chk{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid rgba(20,33,61,.3);cursor:pointer;transition:border-color .2s,background .2s;font-size:14.5px}
-.chk:hover{border-color:var(--ink)}
-.chk input{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid var(--ink);flex:none;display:grid;place-items:center;cursor:pointer}
-.chk input:checked{background:var(--blue);border-color:var(--blue)}
-.chk input:checked::after{content:"";width:8px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
-.chk:has(input:checked){background:rgba(43,89,195,.06);border-color:var(--blue)}
-.chk input:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.fin label{padding:12px 6px}
-.result{position:sticky;top:120px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:26px;overflow:hidden}
-.result::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
-.result>*{position:relative}
-.disc{display:flex;gap:10px;align-items:flex-start;background:var(--brass);color:#fff;padding:10px 12px;font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.03em;margin-bottom:22px}
-.disc b{font-size:14px;line-height:1}
-.r-lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,240,232,.6)}
-.r-range{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);line-height:1.05;margin:6px 0 4px;letter-spacing:-.01em}
-.r-range span{color:var(--brass)}
-.r-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid rgba(243,240,232,.2);border-bottom:1px solid rgba(243,240,232,.2);padding:14px 0;margin:16px 0}
-.r-row b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;margin-top:4px}
-.bars{display:grid;gap:7px;margin-bottom:18px}
-.bar{display:grid;grid-template-columns:120px 1fr 74px;gap:10px;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em}
-.bar i{display:block;height:6px;background:rgba(243,240,232,.12);position:relative}
-.bar i::after{content:"";position:absolute;inset:0;width:var(--w,0%);background:linear-gradient(90deg,var(--blue),#7ea0ea);transition:width .5s cubic-bezier(.2,.7,.2,1)}
-.bar em{font-style:normal;text-align:right;color:rgba(243,240,232,.75)}
-.bar.off{opacity:.3}
-.r-empty{font-family:var(--mono);font-size:12px;color:var(--brass);min-height:1em}
-.notinc{font-size:13px;line-height:1.55;color:rgba(243,240,232,.75);margin:6px 0 20px;padding-left:16px}
-.notinc li::marker{content:"— "}
-.rates{font-family:var(--mono);font-size:10px;color:rgba(243,240,232,.45);margin-top:14px;letter-spacing:.03em}
-.result .btn{width:100%;justify-content:center}
+/* GOAL: ENQUIRE */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.two>*{min-width:0}
+.two.bkg{grid-template-columns:1.25fr 1fr}
+.tb dl div{min-width:0}
+.eq{display:grid;gap:24px}
+.trans{background:var(--card);border:1px solid var(--ink);box-shadow:10px 10px 0 color-mix(in srgb,var(--ink) 8%,transparent)}
+.trans-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.trans-h b{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:0;text-transform:none}
+.trans-g{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.trans-g div{padding:9px 18px;border-right:1px solid var(--ink)}.trans-g div:nth-child(2n){border-right:0}
+.trans-g div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+.trans-g span{color:var(--ink2)}.trans-g b{display:block;font-size:11.5px;margin-top:2px;text-transform:none;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trans-m{padding:18px;background-image:linear-gradient(transparent 27px,color-mix(in srgb,var(--blue) 18%,transparent) 28px);background-size:100% 28px;font:400 14px/28px var(--mono);white-space:pre-line;min-height:250px}
+.trans-f{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--ink)}
+.trans-f small{font-family:var(--mono);font-size:10.5px;color:var(--ink2)}
+.stampx{display:inline-block;border:2px solid var(--red);color:var(--red);font:600 11px/1 var(--mono);letter-spacing:.14em;padding:6px 8px;transform:rotate(-6deg)}
 
-/* WHATSAPP PREVIEW */
-.wa{display:none;margin-top:18px;background:#efe7dc;border-radius:14px;overflow:hidden;color:#111;box-shadow:0 18px 40px rgba(0,0,0,.35);transform-origin:top center}
-.wa.show{display:block;animation:pop .45s cubic-bezier(.3,1.4,.5,1)}
-@keyframes pop{from{opacity:0;transform:translateY(-10px) scale(.96)}}
-.wa-h{background:#1f5e54;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 14px}
-.wa-h .av{width:34px;height:34px;border-radius:50%;background:var(--brass);display:grid;place-items:center;font-family:var(--serif);font-size:17px}
-.wa-h b{display:block;font-size:14px;font-weight:600}
-.wa-h small{font-size:11px;opacity:.8}
-.wa-h button{margin-left:auto;background:none;border:0;color:#fff;font-size:20px;cursor:pointer;line-height:1;padding:4px}
-.wa-body{padding:14px;background-image:radial-gradient(rgba(0,0,0,.04) 1px,transparent 1px);background-size:12px 12px}
-.bub{background:#d9fdd3;border-radius:10px 2px 10px 10px;padding:10px 12px;margin-left:auto;max-width:92%;font-size:13.5px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.1)}
-.bub .tm{display:block;text-align:right;font-size:10px;color:#6b7b70;margin-top:4px}
-.wa-f{display:flex;gap:8px;align-items:center;padding:10px 14px;background:#f6f1ea;font-family:var(--mono);font-size:10.5px;color:#7a5a2a;border-top:1px solid #e2d8ca}
-.wa-f button{margin-left:auto;background:#1f5e54;color:#fff;border:0;padding:7px 10px;font-family:var(--mono);font-size:10.5px;cursor:pointer;border-radius:4px;white-space:nowrap}
+/* GOAL: BOOK */
+.days{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--ink);margin-bottom:22px}
+.day{border:0;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--card);padding:10px 4px;text-align:center;font-family:var(--mono)}
+.day:nth-child(7n){border-right:0}.day:nth-child(n+8){border-bottom:0}
+.day small{display:block;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.day b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1}
+.day[aria-pressed=true]{background:var(--blue);color:var(--paper)}.day[aria-pressed=true] small{color:inherit}
+.day:disabled{background:repeating-linear-gradient(135deg,transparent 0 6px,color-mix(in srgb,var(--ink) 10%,transparent) 6px 7px),var(--card);color:var(--ink2);cursor:not-allowed}
+.slots{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--ink);margin-bottom:22px}
+.slot{border:0;border-right:1px solid var(--ink);background:var(--card);padding:12px 4px;font:600 13px/1 var(--mono)}
+.slot:last-child{border-right:0}
+.slot[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.slot:disabled{color:var(--ink2);text-decoration:line-through;cursor:not-allowed;opacity:.5}
+.tb{background:var(--dk);color:var(--dkInk);border:1px solid var(--ink);position:sticky;top:calc(var(--exh,36px) + 84px)}
+.tb-h{padding:20px 22px;border-bottom:1px solid color-mix(in srgb,var(--dkInk) 20%,transparent)}
+.tb-h small{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.tb-h b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;margin-top:6px}
+.tb dl{display:grid;grid-template-columns:1fr 1fr}
+.tb dl div{padding:14px 22px;border-bottom:1px solid color-mix(in srgb,var(--dkInk) 20%,transparent);border-right:1px solid color-mix(in srgb,var(--dkInk) 20%,transparent)}
+.tb dl div:nth-child(2n){border-right:0}
+.tb dt{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--dkInk) 60%,transparent)}
+.tb dd{font-family:var(--serif);font-size:22px;margin-top:2px}
+.tb .act{padding:20px 22px;display:grid;gap:10px}
+.tb .act p{font-family:var(--mono);font-size:10.5px;color:color-mix(in srgb,var(--dkInk) 60%,transparent);line-height:1.5}
 
-/* GALLERY */
-.filters{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--card);width:max-content;max-width:100%;margin-bottom:28px}
-.filters button{background:none;border:0;border-right:1px solid var(--ink);padding:11px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
-.filters button:last-child{border-right:0}
-.filters button:hover{background:var(--paper2)}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.filters sup{font-size:9px;margin-left:3px;color:var(--brass)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.pcard{background:var(--card);border:1px solid var(--ink);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
-.pcard:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--blue-l)}
-.pcard.hide{display:none}
-.pc-draw{position:relative;border-bottom:1px solid var(--ink);background-color:#fff;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:12px 12px;padding:12px}
-.pc-draw svg{width:100%;height:auto;display:block}
-.pc-draw .ow{stroke:var(--ink);stroke-width:3.4;fill:none}
-.pc-draw .cw{stroke:var(--ink);stroke-width:2.2;fill:none}
-.pc-draw .bo{stroke:var(--ink);stroke-width:2.2;fill:none;transition:stroke .4s,opacity .4s}
-.pc-draw .ao{stroke:var(--blue);stroke-width:2.4;fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.2,1)}
-.pc-draw text{font-family:var(--mono);font-size:7px;fill:var(--ink);letter-spacing:.05em;text-anchor:middle;transition:opacity .4s}
-.pc-draw .la{opacity:0;fill:var(--blue)}
-.pcard.after .bo{stroke:var(--red);stroke-dasharray:3 3;opacity:.75}
-.pcard.after .ao{stroke-dashoffset:0}
-.pcard.after .lb{opacity:0}
-.pcard.after .la{opacity:1}
-.stamp{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--ink);background:var(--card)}
-.pcard.after .stamp{border-color:var(--blue);color:var(--blue)}
-.tog{position:absolute;right:12px;top:12px;display:flex;border:1px solid var(--ink);background:var(--card)}
-.tog button{background:none;border:0;padding:4px 8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.tog button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.pc-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.pc-body h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.05}
-.pc-body p{font-size:14px;line-height:1.5;color:var(--ink2)}
-.pc-meta{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid rgba(20,33,61,.25);margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2)}
-.pc-meta b{display:block;color:var(--ink);font-size:11.5px;font-weight:600;margin-top:2px;text-transform:none}
-.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--ink2)}
-.legend i{display:inline-block;width:22px;height:0;border-top:2px solid var(--ink);vertical-align:middle;margin-right:6px}
-.legend .r{border-top:2px dashed var(--red)}.legend .n{border-top-color:var(--blue)}
+/* GOAL: SELL */
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pkc{background:var(--card);border:1px solid var(--ink);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.pkc:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--blue-l)}
+.pkc .ph{position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--ink);background:var(--paper2)}
+.pkc .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.pkc:hover .ph img{transform:scale(1.05)}
+.pkc .ph .stamp{position:absolute;left:12px;top:12px}
+.pkc .bd{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pkc h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.05}
+.pkc p{font-size:14px;line-height:1.5;color:var(--ink2)}
+.pkc ul{list-style:none;font-family:var(--mono);font-size:11px;color:var(--ink2);display:grid;gap:3px}
+.pkc ul li::before{content:"+ ";color:var(--blue)}
+.pkc .ft{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--ink) 25%,transparent)}
+.pkc .pr{font-family:var(--serif);font-size:30px}
+.pkc .pr small{font-family:var(--mono);font-size:10px;color:var(--ink2);display:block}
+.swbox{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;height:100%;background:var(--paper2)}
+.swbox i{border:1px solid rgba(0,0,0,.15);box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.shopnote{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:24px;padding:16px 18px;border:1px dashed var(--ink);font-family:var(--mono);font-size:11.5px;color:var(--ink2)}
 
-/* MATERIALS */
-.mat{background:var(--paper2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
-.board{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-.room{background:var(--card);border:1px solid var(--ink);padding:14px;position:relative}
-.room svg{width:100%;height:auto;display:block}
-.room svg .sw-t{transition:opacity .35s}
-.spec{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);margin-top:12px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em}
-.spec div{padding:8px;border-right:1px solid var(--ink)}
-.spec div:last-child{border-right:0}
-.spec b{display:block;font-weight:600;color:var(--blue);margin-top:2px;font-size:10.5px}
-.cats{display:grid;gap:22px}
-.cat h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px;display:flex;justify-content:space-between}
-.chips{display:flex;gap:12px;flex-wrap:wrap}
-.chip{width:86px;background:var(--card);border:1px solid var(--ink);padding:6px 6px 8px;cursor:pointer;text-align:left;transition:transform .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s}
-.chip i{display:block;height:64px;border:1px solid rgba(0,0,0,.12)}
-.chip span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;margin-top:6px;line-height:1.3}
-.chip:hover{transform:translateY(-4px) rotate(-2deg);box-shadow:4px 6px 0 rgba(20,33,61,.15)}
-.chip[aria-pressed="true"]{outline:2px solid var(--blue);outline-offset:3px;transform:translateY(-4px)}
-
-/* PROCESS */
-.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;list-style:none;padding-top:40px}
-.track{position:absolute;left:0;right:0;top:12px;height:1px;background:rgba(20,33,61,.2)}
-.track i{position:absolute;inset:0;background:var(--blue);transform:scaleX(var(--k,0));transform-origin:left}
-.step{position:relative;background:var(--card);border:1px solid var(--ink);padding:18px;display:flex;flex-direction:column;gap:8px}
-.step::before{content:"";position:absolute;top:-34px;left:18px;width:12px;height:12px;background:var(--paper);border:1px solid var(--ink);transform:rotate(45deg);transition:background .3s}
-.step.on::before{background:var(--brass)}
-.step .n{font-family:var(--mono);font-size:10.5px;color:var(--blue);letter-spacing:.1em}
-.step h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1}
-.step p{font-size:13.5px;line-height:1.5;color:var(--ink2)}
-.step .dur{font-family:var(--mono);font-size:10.5px;color:var(--ink2)}
-.pay{margin-top:auto;font-family:var(--mono);font-size:10.5px;padding:6px 8px;border:1px dashed var(--brass-d);color:var(--brass-d);background:rgba(176,141,87,.07)}
-.paybar{display:flex;height:40px;border:1px solid var(--ink);margin-top:30px;font-family:var(--mono);font-size:10.5px}
-.paybar div{display:flex;align-items:center;justify-content:center;border-right:1px solid var(--ink);white-space:nowrap;overflow:hidden;transition:filter .2s}
-.paybar div:last-child{border-right:0}
-.paybar div:hover{filter:brightness(1.08)}
-.paynote{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-top:10px}
-
-/* CREDS */
-.creds{padding:0 24px}
+/* GOAL: CRED */
+.feat{display:grid;grid-template-columns:1.5fr 1fr;border:1px solid var(--ink);background:var(--card);margin-bottom:22px}
+.feat .ph{position:relative;min-height:440px;border-right:1px solid var(--ink);overflow:hidden}
+.feat .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat .bd{padding:28px;display:flex;flex-direction:column;gap:14px}
+.feat h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1}
+.feat p{color:var(--ink2);line-height:1.6;font-size:15px}
+.spec2{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.spec2 div{padding:10px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.spec2 div:nth-child(2n){border-right:0}.spec2 div:nth-last-child(-n+2){border-bottom:0}
+.spec2 b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:0;text-transform:none;margin-top:2px}
+.feat q{font-family:var(--serif);font-size:20px;line-height:1.3;margin-top:auto}
+.feat cite{font-family:var(--mono);font-size:10px;font-style:normal;color:var(--ink2);letter-spacing:.06em}
+.cases2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+.c2{position:relative;border:1px solid var(--ink);min-height:300px;overflow:hidden;display:flex;align-items:flex-end;color:#fff}
+.c2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.c2:hover img{transform:scale(1.04)}
+.c2::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,16,32,.88),transparent 60%)}
+.c2 div{position:relative;z-index:1;padding:20px}
+.c2 h3{font-family:var(--serif);font-weight:400;font-size:28px}
+.c2 span{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.marks{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;align-items:center;padding:20px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-bottom:22px;color:var(--ink2)}
+.marks small{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase}
+.marks span:nth-of-type(1){font-family:var(--serif);font-size:24px;font-style:italic}
+.marks span:nth-of-type(2){font-weight:700;letter-spacing:.24em;font-size:15px}
+.marks span:nth-of-type(3){font-family:var(--mono);font-size:15px}
+.marks span:nth-of-type(4){font-weight:600;font-size:19px;letter-spacing:-.03em}
+.marks span:nth-of-type(5){font-family:var(--serif);font-size:22px}
 .cred-strip{display:grid;grid-template-columns:repeat(4,1fr) 1.6fr;border:1px solid var(--ink);background:var(--card)}
 .cred-strip>div{padding:20px;border-right:1px solid var(--ink)}
 .cred-strip>div:last-child{border-right:0}
@@ -274,11 +265,148 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;background:var(--bras
 .quote{font-family:var(--serif);font-size:20px;line-height:1.3}
 .quote cite{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.06em;color:var(--ink2);margin-top:8px}
 
+/* ESTIMATOR */
+.est{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start}
+.est>*{min-width:0}
+.fld{border:0;margin-bottom:26px}
+.fld legend,.fld>label.lg{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:12px;display:flex;justify-content:space-between;width:100%}
+.size-row{display:flex;align-items:center;gap:16px}
+.size-out{font-family:var(--serif);font-size:40px;line-height:1;min-width:150px}
+.size-out small{font-family:var(--mono);font-size:11px;margin-left:4px;color:var(--ink2)}
+input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:28px;background:transparent;min-width:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--blue) var(--p,40%),var(--ink2) var(--p,40%))}
+input[type=range]::-moz-range-track{height:2px;background:var(--ink2)}
+input[type=range]::-moz-range-progress{height:2px;background:var(--blue)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-9px;background:var(--brass);border:2px solid var(--ink);transform:rotate(45deg)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;background:var(--brass);border:2px solid var(--ink);border-radius:0;transform:rotate(45deg)}
+.ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;color:var(--ink2);margin-top:2px}
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chk{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid color-mix(in srgb,var(--ink) 30%,transparent);cursor:pointer;transition:border-color .2s,background .2s;font-size:14.5px}
+.chk:hover{border-color:var(--ink)}
+.chk input{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid var(--ink);flex:none;display:grid;place-items:center;cursor:pointer}
+.chk input:checked{background:var(--blue);border-color:var(--blue)}
+.chk input:checked::after{content:"";width:8px;height:4px;border-left:2px solid var(--paper);border-bottom:2px solid var(--paper);transform:rotate(-45deg) translate(1px,-1px)}
+.chk:has(input:checked){background:color-mix(in srgb,var(--blue) 7%,transparent);border-color:var(--blue)}
+.fin label{padding:12px 6px}
+.result{position:sticky;top:calc(var(--exh,36px) + 84px);background:var(--dk);color:var(--dkInk);border:1px solid var(--ink);padding:26px;overflow:hidden}
+.result::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.result>*{position:relative}
+.disc{display:flex;gap:10px;align-items:flex-start;background:var(--brass);color:var(--brassInk);padding:10px 12px;font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.03em;margin-bottom:22px}
+.disc b{font-size:14px;line-height:1}
+.r-lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--dkInk) 60%,transparent)}
+.r-range{font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);line-height:1.05;margin:6px 0 4px;letter-spacing:-.01em}
+.r-range span{color:var(--brass)}
+.r-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid color-mix(in srgb,var(--dkInk) 20%,transparent);border-bottom:1px solid color-mix(in srgb,var(--dkInk) 20%,transparent);padding:14px 0;margin:16px 0}
+.r-row b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;margin-top:4px}
+.bars{display:grid;gap:7px;margin-bottom:18px}
+.bar{display:grid;grid-template-columns:120px 1fr 74px;gap:10px;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em}
+.bar i{display:block;height:6px;background:color-mix(in srgb,var(--dkInk) 12%,transparent);position:relative}
+.bar i::after{content:"";position:absolute;inset:0;width:var(--w,0%);background:linear-gradient(90deg,var(--blue),color-mix(in srgb,var(--blue) 50%,#fff));transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.bar em{font-style:normal;text-align:right;color:color-mix(in srgb,var(--dkInk) 75%,transparent)}
+.bar.off{opacity:.3}
+.r-empty{font-family:var(--mono);font-size:12px;color:var(--brass);min-height:1em}
+.notinc{font-size:13px;line-height:1.55;color:color-mix(in srgb,var(--dkInk) 75%,transparent);margin:6px 0 20px;padding-left:16px}
+.notinc li::marker{content:"— "}
+.rates{font-family:var(--mono);font-size:10px;color:color-mix(in srgb,var(--dkInk) 45%,transparent);margin-top:14px;letter-spacing:.03em}
+.result .btn{width:100%}
+
+/* WHATSAPP PREVIEW */
+.wa{display:none;margin-top:18px;background:#efe7dc;border-radius:14px;overflow:hidden;color:#111;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.wa.show{display:block;animation:pop .45s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{opacity:0;transform:translateY(-10px) scale(.96)}}
+.wa-h{background:#1f5e54;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 14px}
+.wa-h .av{width:34px;height:34px;border-radius:50%;background:#b08d57;display:grid;place-items:center;font-family:var(--serif);font-size:17px}
+.wa-h b{display:block;font-size:14px;font-weight:600}
+.wa-h small{font-size:11px;opacity:.8}
+.wa-h button{margin-left:auto;background:none;border:0;color:#fff;font-size:20px;line-height:1;padding:4px}
+.wa-body{padding:14px;background-image:radial-gradient(rgba(0,0,0,.04) 1px,transparent 1px);background-size:12px 12px}
+.bub{background:#d9fdd3;border-radius:10px 2px 10px 10px;padding:10px 12px;margin-left:auto;max-width:92%;font-size:13.5px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.bub .tm{display:block;text-align:right;font-size:10px;color:#6b7b70;margin-top:4px}
+.wa-f{display:flex;gap:8px;align-items:center;padding:10px 14px;background:#f6f1ea;font-family:var(--mono);font-size:10.5px;color:#7a5a2a;border-top:1px solid #e2d8ca}
+.wa-f button{margin-left:auto;background:#1f5e54;color:#fff;border:0;padding:7px 10px;font-family:var(--mono);font-size:10.5px;border-radius:4px;white-space:nowrap}
+
+/* PROJECTS */
+.filters{display:flex;flex-wrap:wrap;border:1px solid var(--ink);background:var(--card);width:max-content;max-width:100%;margin-bottom:28px}
+.filters button{background:none;border:0;border-right:1px solid var(--ink);padding:11px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;transition:background .2s}
+.filters button:last-child{border-right:0}
+.filters button:hover{background:var(--paper2)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.filters sup{font-size:9px;margin-left:3px;color:var(--brass)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:var(--card);border:1px solid var(--ink);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.pcard:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--blue-l)}
+.pcard.hide{display:none}
+.pc-draw{position:relative;border-bottom:1px solid var(--ink);background-color:var(--card);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:12px 12px;padding:12px;overflow:hidden}
+.pc-draw svg{width:100%;height:auto;display:block}
+.pc-draw .ow{stroke:var(--ink);stroke-width:3.4;fill:none}
+.pc-draw .cw{stroke:var(--ink);stroke-width:2.2;fill:none}
+.pc-draw .bo{stroke:var(--ink);stroke-width:2.2;fill:none;transition:stroke .4s,opacity .4s}
+.pc-draw .ao{stroke:var(--blue);stroke-width:2.4;fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.2,1)}
+.pc-draw text{font-family:var(--mono);font-size:7px;fill:var(--ink);letter-spacing:.05em;text-anchor:middle;transition:opacity .4s}
+.pc-draw .la{opacity:0;fill:var(--blue)}
+.pcard.after .bo,.pcard.photo .bo{stroke:var(--red);stroke-dasharray:3 3;opacity:.75}
+.pcard.after .ao,.pcard.photo .ao{stroke-dashoffset:0}
+.pcard.after .lb{opacity:0}
+.pcard.after .la{opacity:1}
+.pc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .5s,transform .8s;pointer-events:none}
+.pcard.photo .pc-photo{opacity:1;transform:none}
+.stamp{position:absolute;left:12px;top:12px;z-index:2;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--ink);background:var(--card)}
+.pcard.after .stamp,.pcard.photo .stamp{border-color:var(--blue);color:var(--blue)}
+.tog{position:absolute;right:12px;top:12px;z-index:2;display:flex;border:1px solid var(--ink);background:var(--card)}
+.tog button{background:none;border:0;padding:4px 8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase}
+.tog button+button{border-left:1px solid var(--ink)}
+.tog button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.pc-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pc-body h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.05}
+.pc-body p{font-size:14px;line-height:1.5;color:var(--ink2)}
+.pc-meta{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid color-mix(in srgb,var(--ink) 25%,transparent);margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2)}
+.pc-meta b{display:block;color:var(--ink);font-size:11.5px;font-weight:600;margin-top:2px;text-transform:none}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;color:var(--ink2)}
+.legend i{display:inline-block;width:22px;height:0;border-top:2px solid var(--ink);vertical-align:middle;margin-right:6px}
+.legend .r{border-top:2px dashed var(--red)}.legend .n{border-top-color:var(--blue)}
+
+/* MATERIALS */
+.mat{background:var(--paper2);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.board{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.board>*{min-width:0}
+.room{background:var(--card);border:1px solid var(--ink);padding:14px;position:relative}
+.room svg{width:100%;height:auto;display:block}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);margin-top:12px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+.spec div{padding:8px;border-right:1px solid var(--ink)}
+.spec div:last-child{border-right:0}
+.spec b{display:block;font-weight:600;color:var(--blue);margin-top:2px;font-size:10.5px}
+.cats{display:grid;gap:22px}
+.cat h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px;display:flex;justify-content:space-between}
+.chips2{display:flex;gap:12px;flex-wrap:wrap}
+.sw{width:86px;background:var(--card);border:1px solid var(--ink);padding:6px 6px 8px;text-align:left;transition:transform .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s}
+.sw i{display:block;height:64px;border:1px solid rgba(0,0,0,.12)}
+.sw span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;margin-top:6px;line-height:1.3}
+.sw:hover{transform:translateY(-4px) rotate(-2deg);box-shadow:4px 6px 0 color-mix(in srgb,var(--ink) 15%,transparent)}
+.sw[aria-pressed="true"]{outline:2px solid var(--blue);outline-offset:3px;transform:translateY(-4px)}
+
+/* PROCESS */
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;list-style:none;padding-top:40px}
+.track{position:absolute;left:0;right:0;top:12px;height:1px;background:color-mix(in srgb,var(--ink) 20%,transparent)}
+.track i{position:absolute;inset:0;background:var(--blue);transform:scaleX(var(--k,0));transform-origin:left}
+.step{position:relative;background:var(--card);border:1px solid var(--ink);padding:18px;display:flex;flex-direction:column;gap:8px}
+.step::before{content:"";position:absolute;top:-34px;left:18px;width:12px;height:12px;background:var(--paper);border:1px solid var(--ink);transform:rotate(45deg);transition:background .3s}
+.step.on::before{background:var(--brass)}
+.step .n{font-family:var(--mono);font-size:10.5px;color:var(--blue);letter-spacing:.1em}
+.step h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1}
+.step p{font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.step .dur{font-family:var(--mono);font-size:10.5px;color:var(--ink2)}
+.pay{margin-top:auto;font-family:var(--mono);font-size:10.5px;padding:6px 8px;border:1px dashed var(--brass-d);color:var(--brass-d);background:color-mix(in srgb,var(--brass) 7%,transparent)}
+.paybar{display:flex;height:40px;border:1px solid var(--ink);margin-top:30px;font-family:var(--mono);font-size:10.5px;color:#14213d}
+.paybar div{display:flex;align-items:center;justify-content:center;border-right:1px solid var(--ink);white-space:nowrap;overflow:hidden}
+.paybar div:last-child{border-right:0}
+.paynote{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-top:10px}
+
 /* FAQ */
 .faq-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:48px}
+.faq-wrap>*{min-width:0}
 .faq{border-top:1px solid var(--ink)}
 .q{border-bottom:1px solid var(--ink)}
-.q button{width:100%;background:none;border:0;text-align:left;padding:20px 0;display:flex;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:500}
+.q button{width:100%;background:none;border:0;text-align:left;padding:20px 0;display:flex;justify-content:space-between;gap:16px;font-size:18px;font-weight:500}
 .q button:hover{color:var(--blue)}
 .q button i{flex:none;width:22px;height:22px;position:relative}
 .q button i::before,.q button i::after{content:"";position:absolute;left:3px;right:3px;top:10px;height:1.5px;background:currentColor;transition:transform .3s}
@@ -290,38 +418,70 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;background:var(--bras
 .q.open .qa{grid-template-rows:1fr}
 
 /* CONTACT */
-.contact{background:var(--ink);color:var(--paper)}
+.contact{background:var(--dk);color:var(--dkInk)}
 .contact h2 em{color:var(--brass)}
 .contact .tag{color:var(--brass)}
-.contact .sec-head p{color:rgba(243,240,232,.75)}
+.contact .sec-head p{color:color-mix(in srgb,var(--dkInk) 75%,transparent)}
 .cform{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px}
-.cform label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,240,232,.7)}
-.cform input,.cform select,.cform textarea{background:transparent;border:0;border-bottom:1px solid rgba(243,240,232,.4);padding:10px 0;font-family:var(--sans);font-size:16px;color:var(--paper);text-transform:none;letter-spacing:0;border-radius:0}
-.cform select option{color:var(--ink)}
+.cform label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:color-mix(in srgb,var(--dkInk) 70%,transparent)}
+.cform input,.cform select,.cform textarea{background:transparent;border:0;border-bottom:1px solid color-mix(in srgb,var(--dkInk) 40%,transparent);padding:10px 0;font-family:var(--sans);font-size:16px;color:var(--dkInk);text-transform:none;letter-spacing:0;border-radius:0}
+.cform select option{color:#14213d}
 .cform input:focus,.cform select:focus,.cform textarea:focus{outline:0;border-bottom-color:var(--brass)}
 .cform .full{grid-column:1/-1}
 .cform .btn{justify-self:start}
 .okmsg{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:var(--brass);min-height:1.2em}
 
-footer{background:#0d1730;color:rgba(243,240,232,.75);padding:60px 24px 40px;font-size:14px}
+footer{background:var(--dk2);color:color-mix(in srgb,var(--dkInk) 75%,transparent);padding:60px 24px 100px;font-size:14px}
 .f-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
 footer h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:12px;font-weight:600}
 .areas{display:flex;flex-wrap:wrap;gap:6px}
-.areas span{border:1px solid rgba(243,240,232,.25);padding:5px 9px;font-family:var(--mono);font-size:11px}
-footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
-.f-base{border-top:1px solid rgba(243,240,232,.15);margin-top:40px;padding-top:18px;font-family:var(--mono);font-size:10.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.areas span{border:1px solid color-mix(in srgb,var(--dkInk) 25%,transparent);padding:5px 9px;font-family:var(--mono);font-size:11px}
+footer .fb{font-family:var(--serif);font-size:30px;color:var(--dkInk)}
+.f-base{border-top:1px solid color-mix(in srgb,var(--dkInk) 15%,transparent);margin-top:40px;padding-top:18px;font-family:var(--mono);font-size:10.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* CART DRAWER */
+.scrim{position:fixed;inset:0;background:rgba(10,16,32,.5);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);z-index:1101;background:var(--card);border-left:1px solid var(--ink);transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+.drawer.on{transform:none}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--ink)}
+.dr-h h3{font-family:var(--serif);font-weight:400;font-size:32px}
+.dr-h small{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase}
+.dr-x{width:40px;height:40px;border:1px solid var(--ink);background:var(--card);font-size:20px}
+.dr-body{flex:1;overflow:auto;padding:8px 22px}
+.ci{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 25%,transparent)}
+.ci .th{width:64px;height:48px;border:1px solid var(--ink);overflow:hidden;background:var(--paper2)}
+.ci .th img{width:100%;height:100%;object-fit:cover}
+.ci b{display:block;font-size:14px;line-height:1.25}
+.ci span{font-family:var(--mono);font-size:11px;color:var(--ink2)}
+.qty{display:flex;align-items:center;border:1px solid var(--ink)}
+.qty button{width:28px;height:28px;border:0;background:none}
+.qty output{min-width:20px;text-align:center;font-family:var(--mono);font-size:12px}
+.dr-empty{text-align:center;padding:40px 10px;color:var(--ink2);font-family:var(--mono);font-size:12px}
+.dr-empty b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--ink);margin-bottom:8px}
+.dr-f{padding:16px 22px 22px;border-top:1px solid var(--ink);display:grid;gap:10px;background:var(--card)}
+.dr-f .ln{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px}
+.dr-f .tot{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--serif);font-size:32px}
+.dr-f .fine{font-family:var(--mono);font-size:10.5px;color:var(--ink2);text-align:center}
+.dr-f .paybadges{justify-content:center}
+
+.mbar{display:none;position:fixed;left:10px;right:10px;bottom:10px;z-index:950;gap:8px;padding:8px;background:var(--card);border:1px solid var(--ink);box-shadow:6px 6px 0 color-mix(in srgb,var(--ink) 15%,transparent);transform:translateY(160%);transition:transform .4s}
+.mbar.on{transform:none}
+.mbar .btn{flex:1;padding:13px 10px;font-size:11px}
 
 @media(max-width:1080px){
- .nav-links{position:fixed;top:100px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--ink);padding:10px 16px 18px;gap:2px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+ .nav-links{position:fixed;top:calc(var(--exh,36px) + 64px);left:0;right:0;flex-direction:column;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--ink);padding:10px 16px 18px;gap:2px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
  .nav-links.open{opacity:1;transform:none;pointer-events:auto}
- .nav-links a{padding:13px 8px;border-bottom:1px solid rgba(20,33,61,.12)}
- .nav-links a.nav-cta{margin:10px 0 0;text-align:center}
+ .nav-links a{padding:13px 8px;border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+ .nav-links a.nav-cta{margin:10px 0 0;justify-content:center}
  .lang{margin:12px 0 0;align-self:flex-start}
  .burger{display:inline-block}
- .hero{grid-template-columns:1fr;padding-top:130px}
- .est,.board,.faq-wrap{grid-template-columns:1fr}
- .result{position:relative;top:0}
- .grid{grid-template-columns:1fr 1fr}
+ .nright{display:flex;gap:8px;align-items:center}
+ .hero{grid-template-columns:1fr;padding-top:calc(var(--exh,36px) + 90px)}
+ .est,.board,.faq-wrap,.two,.two.bkg,.feat{grid-template-columns:1fr}
+ .feat .ph{border-right:0;border-bottom:1px solid var(--ink);min-height:300px}
+ .result,.tb{position:relative;top:0}
+ .grid,.pk{grid-template-columns:1fr 1fr}
  .steps{grid-template-columns:1fr 1fr}
  .track{display:none}
  .step::before{display:none}
@@ -331,12 +491,18 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
  .sec-head{grid-template-columns:1fr}
  .pins{right:6px}
 }
+@media(min-width:1081px){.nright .lang{display:none}.nright{order:3}.nav-links{margin-left:auto}}
 @media(max-width:640px){
  section{padding:80px 16px}
- .creds{padding:0 16px}
- .nav{padding:0 16px}
- .brand b{font-size:22px}
- .hero{padding:124px 16px 40px;gap:30px}
+ .nav{padding:0 12px}
+ .nright .lang{display:none}
+ .brand b{font-size:21px}
+ .brand svg{width:28px;height:28px}
+ .hero{padding:calc(var(--exh,36px) + 82px) 16px 40px;gap:26px;min-height:0}
+ .hero h1{font-size:clamp(40px,11vw,54px);margin:18px 0 16px}
+ .hero-k{display:block;letter-spacing:.08em;font-size:10.5px;line-height:1.5}.hero-k i{margin-right:8px}
+ .hero-cta .btn{flex:1 1 auto}
+ .hero-meta{margin-top:26px}
  .hero-meta b{font-size:24px}
  .sheet{padding:10px}
  .tblock{grid-template-columns:1fr 1fr}.tblock div:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--ink)}
@@ -346,15 +512,20 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
  .seg b{font-size:13.5px}
  .size-out{font-size:32px;min-width:120px}
  .bar{grid-template-columns:96px 1fr 62px}
- .grid,.steps{grid-template-columns:1fr}
+ .grid,.steps,.pk,.cases2{grid-template-columns:1fr}
  .spec{grid-template-columns:1fr 1fr}.spec div:nth-child(2){border-right:0}.spec div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
- .chip{width:calc(25% - 9px);min-width:70px}
- .chip i{height:52px}
+ .sw{width:calc(25% - 9px);min-width:70px}
+ .sw i{height:52px}
  .cred-strip{grid-template-columns:1fr}
  .cform{grid-template-columns:1fr}
  .f-grid{grid-template-columns:1fr}
  .q button{font-size:16px}
  .filters button{padding:10px 12px;font-size:10.5px}
+ .slots{grid-template-columns:repeat(3,1fr)}.slot:nth-child(3){border-right:0}.slot:nth-child(-n+3){border-bottom:1px solid var(--ink)}
+ .day b{font-size:21px}
+ .trans-m{font-size:12.5px;line-height:26px;background-size:100% 26px;background-image:linear-gradient(transparent 25px,color-mix(in srgb,var(--blue) 18%,transparent) 26px)}
+ .feat h3{font-size:30px}
+ .mbar{display:flex}
 }
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -364,147 +535,256 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
 </style>
 </head>
 <body>
-<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">EXH F-12 · Blueprint drafting × Material swatch board</span><a class="exh-cta" href="/website/?t=batu-beam#finder">Build one like this →</a></div>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Renovation · Blueprint estimator &amp; swatch board</span><a class="exh-cta" href="/website/?t=batu-beam#finder">Build one like this →</a></div>
 
 <header class="nav" id="nav">
- <a class="brand" href="#top" aria-label="Batu &amp; Beam home">
-  <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" stroke="#14213d" stroke-width="1.5"/><path d="M1 22H33M12 1V33" stroke="#14213d" stroke-width="1"/><rect x="13" y="23" width="19" height="9" fill="#b08d57"/><circle cx="6.5" cy="27.5" r="3" fill="#9caf98"/><path d="M15 6h14M15 10h10M15 14h12" stroke="#2b59c3" stroke-width="1.2"/></svg>
-  <b>Batu <i>&amp;</i> Beam</b>
+ <a class="brand" href="#top" aria-label="Home">
+  <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" style="stroke:var(--ink)" stroke-width="1.5"/><path d="M1 22H33M12 1V33" style="stroke:var(--ink)" stroke-width="1"/><rect x="13" y="23" width="19" height="9" style="fill:var(--brass)"/><circle cx="6.5" cy="27.5" r="3" fill="#9caf98"/><path d="M15 6h14M15 10h10M15 14h12" style="stroke:var(--blue)" stroke-width="1.2"/></svg>
+  <b data-af-name>Batu &amp; Beam</b>
  </a>
- <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" data-i18n="menu">MENU</button>
+ <div class="nright">
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+  <button class="cartbtn" id="cartBtn" type="button" aria-label="Open order"><span data-t="cart">Order</span><b id="cartN">0</b></button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" data-t="menu">MENU</button>
+ </div>
  <nav class="nav-links" id="navlinks" aria-label="Main">
-  <a href="#estimate" data-i18n="nav1">Estimate</a>
-  <a href="#projects" data-i18n="nav2">Projects</a>
-  <a href="#materials" data-i18n="nav3">Materials</a>
-  <a href="#process" data-i18n="nav4">Process</a>
-  <a href="#faq" data-i18n="nav5">FAQ</a>
-  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ms" aria-pressed="false">BM</button><button type="button" data-lang="zh" aria-pressed="false">中文</button></div>
-  <a href="#contact" class="nav-cta" data-i18n="navCta">Book a site visit</a>
+  <a href="#estimate" data-t="nav1">Estimate</a>
+  <a href="#projects" data-t="nav2">Projects</a>
+  <a href="#materials" data-t="nav3">Materials</a>
+  <a href="#process" data-t="nav4">Process</a>
+  <a href="#faq" data-t="nav5">FAQ</a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+  <a href="#enquire" class="nav-cta g-enq" data-t="ncE">Free quote</a>
+  <a href="#book" class="nav-cta g-book" data-t="ncB">Book a site visit</a>
+  <a href="#packages" class="nav-cta g-sell" data-t="ncS">Packages</a>
+  <a href="#work" class="nav-cta g-cred" data-t="ncC">Our work</a>
  </nav>
 </header>
 
 <main id="top">
 <section class="hero" aria-labelledby="h1">
  <div>
-  <span class="hero-k"><i></i><span data-i18n="heroK">Renovation &amp; interior design · Klang Valley</span></span>
-  <h1 id="h1" data-i18n-html="heroH">Know the plan, the price range and the <em>finish date</em> before the first wall comes down.</h1>
-  <p class="hero-p" data-i18n="heroP">Condos, landed homes and shoplots across KL &amp; Selangor. One drawing set, one fixed-scope quotation and one project lead from site visit to handover.</p>
+  <span class="hero-k"><i></i><span data-t="heroK">Renovation &amp; interior design</span> · <span data-af-area>Petaling Jaya</span></span>
+  <h1 id="h1" data-t="heroH">Know the plan, the price range and the <em>finish date</em> before the first wall comes down.</h1>
+  <p class="hero-p" data-t="heroP">Condos, landed homes and shoplots across KL &amp; Selangor. One drawing set, one fixed-scope quotation and one project lead from site visit to handover.</p>
   <div class="hero-cta">
-   <a class="btn dark" href="#estimate"><span data-i18n="heroC1">Get a ballpark in 60 s</span> →</a>
-   <a class="btn" href="#projects" data-i18n="heroC2">See plan changes</a>
+   <a class="btn wab g-enq" href="#enquire"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-t="hcE">Get a free quote on WhatsApp</span></a>
+   <a class="btn dark g-book" href="#book"><span data-t="hcB">Book a free site visit</span> →</a>
+   <a class="btn dark g-sell" href="#packages"><span data-t="hcS">See fixed-price packages</span> →</a>
+   <a class="btn dark g-cred" href="#work"><span data-t="hcC">See finished projects</span> →</a>
+   <a class="btn" href="#estimate" data-t="heroC1">Get a ballpark in 60 s</a>
   </div>
   <div class="hero-meta">
-   <div><b>3</b><span data-i18n="m1">Property types</span></div>
-   <div><b>5</b><span data-i18n="m2">Fixed stages</span></div>
-   <div><b>1</b><span data-i18n="m3">Project lead</span></div>
+   <div><b>3</b><span data-t="m1">Property types</span></div>
+   <div><b>5</b><span data-t="m2">Fixed stages</span></div>
+   <div><b>1</b><span data-t="m3">Project lead</span></div>
   </div>
  </div>
  <div class="sheet" id="sheet">
-  <span class="scroll-hint" id="shint">Scroll to furnish ↓</span>
-  <svg class="plan" id="plan" viewBox="0 0 560 430" role="img" aria-label="Floor plan drawing of a three-room condo">
-   <g class="dl-w">
-    <path class="wall" d="M40 40H520V390H40Z"/>
-    <path class="iw" d="M300 40V168"/><path class="iw" d="M300 208V300"/><path class="iw" d="M300 210H520"/>
-    <path class="iw" d="M390 210V250"/><path class="iw" d="M390 290V390"/><path class="iw" d="M300 300H390"/>
-    <path class="iw" d="M40 250H140"/><path class="iw" d="M200 250V390"/>
-    <path class="thin" d="M300 208H338M338 208A38 38 0 0 0 300 170"/>
-    <path class="thin" d="M390 290V252M390 252A38 38 0 0 1 428 290"/>
-    <path class="thin" d="M110 33H230M110 47H230M360 33H470M360 47H470M527 260V350M513 260V350"/>
-   </g>
-   <g class="dl-f">
-    <path class="fur" d="M70 170h150v42H70zM70 170v-14h150v14"/>
-    <path class="fur" d="M120 80a28 28 0 1 0 56 0a28 28 0 1 0-56 0M110 56h-8M194 56h8M110 104h-8M194 104h8"/>
-    <path class="fur" d="M370 62h120v116H370zM378 70h48v22h-48zM434 70h48v22h-48z"/>
-    <path class="fur" d="M50 262h140v20M50 262v116M50 378h140"/>
-    <path class="fur" d="M210 300h70v60h-70zM230 320a10 10 0 1 0 20 0a10 10 0 1 0-20 0"/>
-    <path class="fur" d="M400 300h110v80H400zM470 220h40v80"/>
-    <path class="fur" d="M312 312h66v24h-66zM330 356a12 9 0 1 0 24 0a12 9 0 1 0-24 0"/>
-   </g>
-   <g class="dl-d">
-    <path class="dim" d="M40 16H520M40 10V22M300 10V22M520 10V22"/>
-    <path class="dim" d="M16 40V390M10 40H22M10 250H22M10 390H22"/>
-    <path class="dim" d="M40 412H200M200 412H390M390 412H520M40 406V418M200 406V418M390 406V418M520 406V418"/>
-   </g>
-   <g class="lbl">
-    <text class="dt" x="160" y="12" text-anchor="middle">7 200</text><text class="dt" x="410" y="12" text-anchor="middle">6 100</text>
-    <text class="dt" x="8" y="150" transform="rotate(-90 8 150)" text-anchor="middle">5 600</text><text class="dt" x="8" y="320" transform="rotate(-90 8 320)" text-anchor="middle">3 500</text>
-    <text class="dt" x="120" y="428" text-anchor="middle">4 000</text><text class="dt" x="295" y="428" text-anchor="middle">4 700</text><text class="dt" x="455" y="428" text-anchor="middle">3 200</text>
-    <text class="rl" x="160" y="140" text-anchor="middle">LIVING / DINING</text><text class="sub" x="160" y="153" text-anchor="middle">7.2 × 5.6 · 434 sq ft</text>
-    <text class="rl" x="430" y="196" text-anchor="middle">MASTER</text><text class="rl" x="455" y="244" text-anchor="middle">BED 2</text>
-    <text class="rl" x="120" y="316" text-anchor="middle">KITCHEN</text><text class="rl" x="245" y="290" text-anchor="middle">BED 3</text><text class="rl" x="345" y="350" text-anchor="middle">BATH</text>
-   </g>
-  </svg>
+  <div class="pw" id="pw">
+   <svg class="plan" id="plan" viewBox="0 0 560 430" role="img" aria-label="Floor plan drawing of a three-room condo">
+    <g class="dl-w">
+     <path class="wall" d="M40 40H520V390H40Z"/>
+     <path class="iw" d="M300 40V168"/><path class="iw" d="M300 208V300"/><path class="iw" d="M300 210H520"/>
+     <path class="iw" d="M390 210V250"/><path class="iw" d="M390 290V390"/><path class="iw" d="M300 300H390"/>
+     <path class="iw" d="M40 250H140"/><path class="iw" d="M200 250V390"/>
+     <path class="thin" d="M300 208H338M338 208A38 38 0 0 0 300 170"/>
+     <path class="thin" d="M390 290V252M390 252A38 38 0 0 1 428 290"/>
+     <path class="thin" d="M110 33H230M110 47H230M360 33H470M360 47H470M527 260V350M513 260V350"/>
+    </g>
+    <g class="dl-f">
+     <path class="fur" d="M70 170h150v42H70zM70 170v-14h150v14"/>
+     <path class="fur" d="M120 80a28 28 0 1 0 56 0a28 28 0 1 0-56 0M110 56h-8M194 56h8M110 104h-8M194 104h8"/>
+     <path class="fur" d="M370 62h120v116H370zM378 70h48v22h-48zM434 70h48v22h-48z"/>
+     <path class="fur" d="M50 262h140v20M50 262v116M50 378h140"/>
+     <path class="fur" d="M210 300h70v60h-70zM230 320a10 10 0 1 0 20 0a10 10 0 1 0-20 0"/>
+     <path class="fur" d="M400 300h110v80H400zM470 220h40v80"/>
+     <path class="fur" d="M312 312h66v24h-66zM330 356a12 9 0 1 0 24 0a12 9 0 1 0-24 0"/>
+    </g>
+    <g class="dl-d">
+     <path class="dim" d="M40 16H520M40 10V22M300 10V22M520 10V22"/>
+     <path class="dim" d="M16 40V390M10 40H22M10 250H22M10 390H22"/>
+     <path class="dim" d="M40 412H200M200 412H390M390 412H520M40 406V418M200 406V418M390 406V418M520 406V418"/>
+    </g>
+    <g class="lbl2">
+     <text class="dt" x="160" y="12" text-anchor="middle">7 200</text><text class="dt" x="410" y="12" text-anchor="middle">6 100</text>
+     <text class="dt" x="8" y="150" transform="rotate(-90 8 150)" text-anchor="middle">5 600</text><text class="dt" x="8" y="320" transform="rotate(-90 8 320)" text-anchor="middle">3 500</text>
+     <text class="dt" x="120" y="428" text-anchor="middle">4 000</text><text class="dt" x="295" y="428" text-anchor="middle">4 700</text><text class="dt" x="455" y="428" text-anchor="middle">3 200</text>
+     <text class="rl" x="160" y="140" text-anchor="middle" data-pl="LIVING / DINING">LIVING / DINING</text><text class="sub" x="160" y="153" text-anchor="middle">7.2 × 5.6 · 434 sq ft</text>
+     <text class="rl" x="430" y="196" text-anchor="middle" data-pl="MASTER">MASTER</text><text class="rl" x="455" y="244" text-anchor="middle" data-pl="BED 2">BED 2</text>
+     <text class="rl" x="120" y="316" text-anchor="middle" data-pl="KITCHEN">KITCHEN</text><text class="rl" x="245" y="290" text-anchor="middle" data-pl="BED 3">BED 3</text><text class="rl" x="345" y="350" text-anchor="middle" data-pl="BATH">BATH</text>
+    </g>
+   </svg>
+   <div class="built" id="built"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&h=845&q=80" alt="The finished open-plan living room with a white sofa, timber feature wall and kitchen behind"></div>
+   <span class="cutlab l" data-t="cutL">Drawing</span><span class="cutlab r" data-t="cutR">Built</span>
+   <div class="cutline" id="cutline"><b aria-hidden="true">⇆</b></div>
+   <input class="cutr" id="cutr" type="range" min="0" max="100" value="100" aria-label="Slide between the drawing and the finished room">
+  </div>
   <div class="cross-x" id="cx"></div><div class="cross-y" id="cy"></div><div class="coord" id="coord">X 000 · Y 000</div>
-  <div class="tblock"><div><span>Project</span><b>Condo · Mont Kiara (sample)</b></div><div><span>Sheet</span><b>A-101 · Rev C</b></div><div><span>Scale</span><b>1:50</b></div></div>
+  <div class="tblock"><div><span data-t="tb1">Project</span><b><span data-t="tb1v">Condo</span> · <span data-af-area>Petaling Jaya</span> <span data-t="smp">(sample)</span></b></div><div><span data-t="tb2">Sheet</span><b>A-101 · Rev C</b></div><div><span data-t="tb3">Scale</span><b>1:50</b></div></div>
   <div class="pins" aria-hidden="true"><i class="pin t-terr" style="--r:-6deg"></i><i class="pin t-oak" style="--r:4deg"></i><i class="pin t-brass" style="--r:-3deg"></i><i class="pin t-sage" style="--r:7deg"></i></div>
  </div>
 </section>
 
-<div class="marq" aria-hidden="true"><div><span>Measured drawings</span><span>Fixed-scope quotation</span><span>Weekly photo log</span><span>Condo · Landed · Shoplot</span><span>Management-office paperwork handled</span><span>One project lead</span><span>Measured drawings</span><span>Fixed-scope quotation</span><span>Weekly photo log</span><span>Condo · Landed · Shoplot</span><span>Management-office paperwork handled</span><span>One project lead</span></div></div>
+<div class="marq" aria-hidden="true"><div id="marq"></div></div>
+
+<!-- GOAL: ENQUIRE -->
+<section class="goal goal-enq" id="enquire" aria-labelledby="eH">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-t="eK">00 · Free quote</span><h2 id="eH" data-t="eH">Three answers. <em>One WhatsApp.</em></h2></div>
+   <p data-t="eP">Tell us the property, the job and the timing. We draft the message for you; a project lead replies within one working day with next steps and a site-visit slot.</p>
+  </div>
+  <div class="two">
+   <form class="panel eq reveal" id="eForm">
+    <fieldset><legend class="lbl" data-t="lblType">Property type</legend><div class="seg" id="eType"></div></fieldset>
+    <fieldset><legend class="lbl" data-t="eL2">What needs doing?</legend><div class="chips" id="eJob"></div></fieldset>
+    <label><span class="lbl" data-t="eL3">When do you want to start?</span><select class="field" id="eWhen"></select></label>
+    <button class="btn wab full" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span data-t="eSend">Send on WhatsApp</span></button>
+   </form>
+   <div class="trans reveal" aria-live="polite">
+    <div class="trans-h"><b data-t="eTr">Transmittal</b><span class="stampx" data-t="eSt">Draft</span></div>
+    <div class="trans-g"><div><span data-t="eTo">To</span><b data-af-name>Batu &amp; Beam</b></div><div><span data-t="eVia">Via</span><b>WhatsApp · +60 12-000 0000</b></div><div><span data-t="eRe">Re</span><b id="eRe">—</b></div><div><span data-t="eDt">Date</span><b id="eDt">—</b></div></div>
+    <div class="trans-m" id="eMsg"></div>
+    <div class="trans-f"><small data-t="eNote">Demo: nothing is sent until you press the button on the real site.</small></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: BOOK -->
+<section class="goal goal-book" id="book" aria-labelledby="bH">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-t="bK">00 · Site visit</span><h2 id="bH" data-t="bH">Book the <em>tape measure.</em></h2></div>
+   <p data-t="bP">A free 90-minute visit: we measure, check wiring and plumbing points, read your management rules and listen. Pick a day and a time; no obligation.</p>
+  </div>
+  <div class="two bkg">
+   <div class="panel reveal">
+    <span class="lbl"><span data-t="b1">1 · Day</span><span data-t="bSun">Sundays closed</span></span>
+    <div class="days" id="days" role="group" aria-label="Date"></div>
+    <span class="lbl"><span data-t="b2">2 · Time</span><span id="slotNote"></span></span>
+    <div class="slots" id="slots"></div>
+    <span class="lbl" data-t="lblType">Property type</span>
+    <div class="seg" id="bType" style="margin-bottom:22px"></div>
+    <label><span class="lbl" data-t="cArea">Area</span><select class="field" id="bArea"></select></label>
+   </div>
+   <aside class="tb reveal" aria-live="polite">
+    <div class="tb-h"><small data-t="bT0">Site visit · sheet SV-01</small><b data-af-name>Batu &amp; Beam</b></div>
+    <dl id="bSum"></dl>
+    <div class="act"><button class="btn brass full" type="button" id="bGo"><span data-t="bGo">Confirm site visit</span> →</button><p data-t="bNote">Free and no obligation. We'll WhatsApp a reminder the day before.</p></div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: SELL -->
+<section class="goal goal-sell" id="packages" aria-labelledby="sH">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-t="sK">00 · Fixed-price packages</span><h2 id="sH" data-t="sH">Small jobs, <em>priced upfront.</em></h2></div>
+   <p data-t="sP">Pay the package online and we lock your slot. Prices include materials, labour and site cleaning for the scope listed. Bigger jobs start with the estimator.</p>
+  </div>
+  <div class="pk" id="pk"></div>
+  <div class="shopnote reveal"><span data-t="sNote">Sample prices. Condo units in the Klang Valley. Final check on site before work starts.</span><div class="paybadges"><span class="pb"><i></i>Card</span><span class="pb fpx">FPX</span><span class="pb grab">GrabPay</span><span class="pb tng">Touch 'n Go</span></div></div>
+ </div>
+</section>
+
+<!-- GOAL: CRED -->
+<section class="goal goal-cred" id="work" aria-labelledby="cH">
+ <div class="wrap">
+  <div class="sec-head reveal">
+   <div><span class="tag" data-t="cK">00 · Finished work</span><h2 id="cH" data-t="cH">Handed over <em>on the date we said.</em></h2></div>
+   <p data-t="cP">A few finished homes and the numbers behind them. All projects, clients and figures here are samples to show how your portfolio would appear.</p>
+  </div>
+  <article class="feat reveal">
+   <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80" alt="Finished open-plan living and dining room with timber feature wall"><span class="stamp" data-t="cSm">Sample project</span></div>
+   <div class="bd">
+    <span class="tag" data-t="f1k">Landed · Damansara</span>
+    <h3 data-t="f1h">Ground floor opened up, garden brought in</h3>
+    <p data-t="f1p">Two walls out (engineer-checked), a new steel beam, full-height sliders to the garden and a timber feature wall that hides the storage.</p>
+    <div class="spec2"><div><span data-t="sz">Size</span><b>2,800 sq ft</b></div><div><span data-t="bb">Budget band</span><b>RM 320–380k</b></div><div><span data-t="du">Duration</span><b>19 <span data-t="wks">weeks</span></b></div><div><span data-t="lt">Days late</span><b>0</b></div></div>
+    <q data-t="f1q">They showed us the timeline on day one and we moved in the week they said.</q>
+    <cite data-t="f1c">Sample testimonial · homeowner, Damansara</cite>
+   </div>
+  </article>
+  <div class="cases2">
+   <article class="c2 reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=80" alt="Finished bathroom with freestanding tub and wall-mounted basin"><div><span data-t="c2k">Condo · Mont Kiara · sample</span><h3 data-t="c2h">Two bathrooms in 4 weeks</h3></div></article>
+   <article class="c2 reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Bright double-volume living room with a timber staircase"><div><span data-t="c3k">Landed · Subang Jaya · sample</span><h3 data-t="c3h">Stair moved, living room doubled</h3></div></article>
+  </div>
+  <div class="marks reveal" aria-label="Sample developer and client names (fictional)"><small data-t="mk">Worked with (sample)</small><span>Seri Kenanga</span><span>LUMA HOMES</span><span>parkview.co</span><span>Teraju Dev</span><span>Rumah Rimba</span></div>
+  <div class="cred-strip reveal">
+   <div><small data-t="cr1">Contractor licence</small><b>CIDB Grade G__</b><em data-t="smp">(sample)</em></div>
+   <div><small data-t="cr2">Company</small><b data-t="cr2v">SSM reg. no.</b><em data-t="smp">(sample)</em></div>
+   <div><small data-t="cr3">Workmanship warranty</small><b data-t="cr3v">12 months</b><em data-t="smp">(sample)</em></div>
+   <div><small data-t="cr4">Site insurance</small><b data-t="cr4v">CAR policy</b><em data-t="smp">(sample)</em></div>
+   <div><p class="quote"><span data-t="cr5">“Every variation was priced and signed before they built it.”</span><cite data-t="cr5c">Sample testimonial · condo owner, PJ</cite></p></div>
+  </div>
+ </div>
+</section>
 
 <!-- ESTIMATOR -->
 <section id="estimate">
  <div class="wrap">
   <div class="sec-head reveal">
-   <div><span class="tag" data-i18n="estK">01 · Cost estimator</span><h2 data-i18n-html="estH">A ballpark <em>before</em> you call.</h2></div>
-   <p data-i18n="estP">Pick your property, size and scope. The range updates as you go, so the first conversation starts from real numbers.</p>
+   <div><span class="tag" data-t="estK">01 · Cost estimator</span><h2 data-t="estH">A ballpark <em>before</em> you call.</h2></div>
+   <p data-t="estP">Pick your property, size and scope. The range updates as you go, so the first conversation starts from real numbers.</p>
   </div>
   <div class="est">
    <form class="panel reveal" id="estForm" onsubmit="return false">
-    <fieldset class="fld"><legend data-i18n="lblType">Property type</legend>
+    <fieldset class="fld"><legend data-t="lblType">Property type</legend>
      <div class="seg">
-      <label><input type="radio" name="ptype" value="condo" checked><b data-i18n="tCondo">Condo</b><small>400–3,000 sq ft</small></label>
-      <label><input type="radio" name="ptype" value="landed"><b data-i18n="tLanded">Landed</b><small>1,000–6,000 sq ft</small></label>
-      <label><input type="radio" name="ptype" value="shop"><b data-i18n="tShop">Shoplot</b><small>800–5,000 sq ft</small></label>
+      <label><input type="radio" name="ptype" value="condo" checked><b data-t="tCondo">Condo</b><small>400–3,000 sq ft</small></label>
+      <label><input type="radio" name="ptype" value="landed"><b data-t="tLanded">Landed</b><small>1,000–6,000 sq ft</small></label>
+      <label><input type="radio" name="ptype" value="shop"><b data-t="tShop">Shoplot</b><small>800–5,000 sq ft</small></label>
      </div>
     </fieldset>
-    <div class="fld"><label class="lg" for="size"><span data-i18n="lblSize">Built-up size</span><span id="sizeHint"></span></label>
+    <div class="fld"><label class="lg" for="size"><span data-t="lblSize">Built-up size</span><span id="sizeHint"></span></label>
      <div class="size-row"><output class="size-out" id="sizeOut" for="size">1,100<small>sq ft</small></output><input type="range" id="size" min="400" max="3000" step="50" value="1100" aria-label="Size in square feet"></div>
      <div class="ticks"><span id="tMin">400</span><span id="tMax">3,000</span></div>
     </div>
-    <fieldset class="fld"><legend data-i18n="lblScope">Scope of work</legend>
+    <fieldset class="fld"><legend data-t="lblScope">Scope of work</legend>
      <div class="scope">
-      <label class="chk"><input type="checkbox" name="scope" value="kit" checked><span data-i18n="sKit">Kitchen</span></label>
-      <label class="chk"><input type="checkbox" name="scope" value="bath" checked><span data-i18n="sBath">Bathrooms</span></label>
-      <label class="chk"><input type="checkbox" name="scope" value="floor" checked><span data-i18n="sFloor">Flooring</span></label>
-      <label class="chk"><input type="checkbox" name="scope" value="carp"><span data-i18n="sCarp">Built-in carpentry</span></label>
-      <label class="chk"><input type="checkbox" name="scope" value="elec"><span data-i18n="sElec">Electrical &amp; lighting</span></label>
-      <label class="chk"><input type="checkbox" name="scope" value="paint" checked><span data-i18n="sPaint">Painting</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="kit" checked><span data-t="sKit">Kitchen</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="bath" checked><span data-t="sBath">Bathrooms</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="floor" checked><span data-t="sFloor">Flooring</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="carp"><span data-t="sCarp">Built-in carpentry</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="elec"><span data-t="sElec">Electrical &amp; lighting</span></label>
+      <label class="chk"><input type="checkbox" name="scope" value="paint" checked><span data-t="sPaint">Painting</span></label>
      </div>
     </fieldset>
-    <fieldset class="fld" style="margin-bottom:0"><legend data-i18n="lblFinish">Finish level</legend>
+    <fieldset class="fld" style="margin-bottom:0"><legend data-t="lblFinish">Finish level</legend>
      <div class="seg fin">
-      <label><input type="radio" name="fin" value="0"><b data-i18n="fEss">Essential</b><small data-i18n="fEssD">Solid, standard</small></label>
-      <label><input type="radio" name="fin" value="1" checked><b data-i18n="fCom">Comfort</b><small data-i18n="fComD">Mid-range brands</small></label>
-      <label><input type="radio" name="fin" value="2"><b data-i18n="fSig">Signature</b><small data-i18n="fSigD">Premium, custom</small></label>
+      <label><input type="radio" name="fin" value="0"><b data-t="fEss">Essential</b><small data-t="fEssD">Solid, standard</small></label>
+      <label><input type="radio" name="fin" value="1" checked><b data-t="fCom">Comfort</b><small data-t="fComD">Mid-range brands</small></label>
+      <label><input type="radio" name="fin" value="2"><b data-t="fSig">Signature</b><small data-t="fSigD">Premium, custom</small></label>
      </div>
     </fieldset>
    </form>
-
    <aside class="result reveal" aria-live="polite">
-    <div class="disc"><b>!</b><span data-i18n="disc">Illustrative ballpark for this demo — real quotes follow a site visit.</span></div>
-    <div class="r-lbl" data-i18n="range">Estimated range</div>
+    <div class="disc"><b>!</b><span data-t="disc">Illustrative ballpark for this demo. Real quotes follow a site visit.</span></div>
+    <div class="r-lbl" data-t="range">Estimated range</div>
     <div class="r-range" id="rRange">RM 0 <span>–</span> RM 0</div>
     <div class="r-empty" id="rEmpty"></div>
     <div class="r-row">
-     <div><span class="r-lbl" data-i18n="weeks">Estimated duration</span><b id="rWeeks">0–0 <small data-i18n="wk">weeks</small></b></div>
-     <div><span class="r-lbl" data-i18n="midpt">Per sq ft (mid)</span><b id="rPsf">RM 0</b></div>
+     <div><span class="r-lbl" data-t="weeks">Estimated duration</span><b id="rWeeks">0–0</b></div>
+     <div><span class="r-lbl" data-t="midpt">Per sq ft (mid)</span><b id="rPsf">RM 0</b></div>
     </div>
     <div class="bars" id="bars"></div>
-    <div class="r-lbl" data-i18n="notInc">Not included</div>
+    <div class="r-lbl" data-t="notInc">Not included</div>
     <ul class="notinc">
-     <li data-i18n="ni1">Loose furniture, appliances and air-con units</li>
-     <li data-i18n="ni2">Structural works, hacking load-bearing walls and authority permits</li>
-     <li data-i18n="ni3">Management-office renovation deposits and fees</li>
-     <li data-i18n="ni4">3D design fee and SST, where applicable</li>
+     <li data-t="ni1">Loose furniture, appliances and air-con units</li>
+     <li data-t="ni2">Structural works, hacking load-bearing walls and authority permits</li>
+     <li data-t="ni3">Management-office renovation deposits and fees</li>
+     <li data-t="ni4">3D design fee and SST, where applicable</li>
     </ul>
-    <button class="btn brass" type="button" id="sendBtn"><span data-i18n="send">Send this estimate</span> ↗</button>
+    <button class="btn brass" type="button" id="sendBtn"><span data-t="send">Send this estimate</span> ↗</button>
     <div class="wa" id="wa" role="dialog" aria-label="WhatsApp message preview">
-     <div class="wa-h"><span class="av">B</span><div><b>Batu &amp; Beam</b><small data-i18n="waSub">+60 12-000 0000 (sample) · replies in office hours</small></div><button type="button" id="waX" aria-label="Close preview">×</button></div>
+     <div class="wa-h"><span class="av" data-af-initial>B</span><div><b data-af-name>Batu &amp; Beam</b><small data-t="waSub">+60 12-000 0000 (sample) · replies in office hours</small></div><button type="button" id="waX" aria-label="Close preview">×</button></div>
      <div class="wa-body"><div class="bub" id="bub"></div></div>
-     <div class="wa-f"><span data-i18n="waNote">Demo: WhatsApp was not opened and nothing was sent.</span><button type="button" id="waCopy" data-i18n="copy">Copy text</button></div>
+     <div class="wa-f"><span data-t="waNote">Demo: WhatsApp was not opened and nothing was sent.</span><button type="button" id="waCopy" data-t="copy">Copy text</button></div>
     </div>
-    <p class="rates" data-i18n="rates">Sample unit rates written into this demo only. Not a price list.</p>
+    <p class="rates" data-t="rates">Sample unit rates written into this demo only. Not a price list.</p>
    </aside>
   </div>
  </div>
@@ -514,17 +794,17 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
 <section id="projects" style="padding-top:40px">
  <div class="wrap">
   <div class="sec-head reveal">
-   <div><span class="tag" data-i18n="prK">02 · Selected projects</span><h2 data-i18n-html="prH">The drawing, <em>before</em> and after.</h2></div>
-   <p data-i18n="prP">Flip any sheet to see what changed on plan: walls taken out, rooms re-planned, kitchens opened. Budgets and durations shown as bands.</p>
+   <div><span class="tag" data-t="prK">02 · Selected projects</span><h2 data-t="prH">The drawing, <em>before</em> and after.</h2></div>
+   <p data-t="prP">Flip any sheet to see what changed on plan, then tap Photo to see the finished room. Budgets and durations shown as bands.</p>
   </div>
   <div class="filters reveal" role="group" aria-label="Filter projects" id="filters">
-   <button type="button" data-f="all" aria-pressed="true"><span data-i18n="fAll">All</span><sup>6</sup></button>
-   <button type="button" data-f="condo" aria-pressed="false"><span data-i18n="tCondo">Condo</span><sup>2</sup></button>
-   <button type="button" data-f="landed" aria-pressed="false"><span data-i18n="tLanded">Landed</span><sup>2</sup></button>
-   <button type="button" data-f="commercial" aria-pressed="false"><span data-i18n="fCom2">Commercial</span><sup>2</sup></button>
+   <button type="button" data-f="all" aria-pressed="true"><span data-t="fAll">All</span><sup>6</sup></button>
+   <button type="button" data-f="condo" aria-pressed="false"><span data-t="tCondo">Condo</span><sup>2</sup></button>
+   <button type="button" data-f="landed" aria-pressed="false"><span data-t="tLanded">Landed</span><sup>2</sup></button>
+   <button type="button" data-f="commercial" aria-pressed="false"><span data-t="fCom2">Commercial</span><sup>2</sup></button>
   </div>
   <div class="grid" id="grid"></div>
-  <div class="legend"><span><i></i>Kept</span><span><i class="r"></i>Removed</span><span><i class="n"></i>New</span><span>All projects on this page are fictional samples.</span></div>
+  <div class="legend"><span><i></i><span data-t="lg1">Kept</span></span><span><i class="r"></i><span data-t="lg2">Removed</span></span><span><i class="n"></i><span data-t="lg3">New</span></span><span data-t="lg4">All projects on this page are fictional samples.</span></div>
  </div>
 </section>
 
@@ -532,8 +812,8 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
 <section id="materials" class="mat">
  <div class="wrap">
   <div class="sec-head reveal">
-   <div><span class="tag" data-i18n="maK">03 · Swatch board</span><h2 data-i18n-html="maH">Touch the <em>materials</em>, see the room.</h2></div>
-   <p data-i18n="maP">Tap a swatch and the kitchen re-dresses itself. We bring the physical board to your site visit, so you can feel the oak grain and the brass weight in hand.</p>
+   <div><span class="tag" data-t="maK">03 · Swatch board</span><h2 data-t="maH">Touch the <em>materials</em>, see the room.</h2></div>
+   <p data-t="maP">Tap a swatch and the kitchen re-dresses itself. We bring the physical board to your site visit, so you can feel the oak grain and the brass weight in hand.</p>
   </div>
   <div class="board">
    <div class="room reveal">
@@ -560,7 +840,7 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
      <rect id="r-lower" x="30" y="148" width="240" height="80" fill="url(#p-oak)" stroke="#14213d" stroke-width="2"/>
      <path d="M110 148V228M190 148V228" stroke="#14213d" stroke-width="1.5"/>
      <rect x="24" y="140" width="252" height="9" fill="#ebe5d8" stroke="#14213d" stroke-width="1.5"/>
-     <g class="hw"><rect x="96" y="56" width="4" height="20" rx="2"/><rect x="120" y="56" width="4" height="20" rx="2"/><rect x="60" y="160" width="28" height="4" rx="2"/><rect x="138" y="160" width="28" height="4" rx="2"/><rect x="218" y="160" width="28" height="4" rx="2"/><path d="M226 140v-22h14v6h-4v-2h-6v18z"/><path d="M232 0v10" stroke="#14213d"/></g>
+     <g class="hw"><rect x="96" y="56" width="4" height="20" rx="2"/><rect x="120" y="56" width="4" height="20" rx="2"/><rect x="60" y="160" width="28" height="4" rx="2"/><rect x="138" y="160" width="28" height="4" rx="2"/><rect x="218" y="160" width="28" height="4" rx="2"/><path d="M226 140v-22h14v6h-4v-2h-6v18z"/></g>
      <path d="M232 0V8" stroke="#14213d" stroke-width="1.5"/>
      <g class="hw"><path d="M218 30h28l-6-22h-16z"/></g>
      <ellipse cx="232" cy="34" rx="20" ry="4" fill="#fff6d8" opacity=".8"/>
@@ -578,43 +858,19 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
 <section id="process">
  <div class="wrap">
   <div class="sec-head reveal">
-   <div><span class="tag" data-i18n="psK">04 · How a project runs</span><h2 data-i18n-html="psH">Five stages. <em>No surprises</em> in between.</h2></div>
-   <p data-i18n="psP">You pay against finished milestones, never ahead of the work. The schedule below is a sample; your contract sets the real one.</p>
+   <div><span class="tag" data-t="psK">04 · How a project runs</span><h2 data-t="psH">Five stages. <em>No surprises</em> in between.</h2></div>
+   <p data-t="psP">You pay against finished milestones, never ahead of the work. The schedule below is a sample; your contract sets the real one.</p>
   </div>
-  <ol class="steps" id="steps">
-   <li class="track" aria-hidden="true"><i id="trackI"></i></li>
-   <li class="step reveal"><span class="n">STAGE 01</span><h3>Site visit</h3><span class="dur">Day 1 · ~90 min</span><p>We measure, check wiring, plumbing points and management rules, and listen.</p><span class="pay">Sample: free, no obligation</span></li>
-   <li class="step reveal"><span class="n">STAGE 02</span><h3>3D design</h3><span class="dur">Weeks 1–3</span><p>Measured plan, 3D views and a material board you can hold. Two revision rounds.</p><span class="pay">Sample: design fee, credited if you build with us</span></li>
-   <li class="step reveal"><span class="n">STAGE 03</span><h3>Quotation</h3><span class="dur">Week 3–4</span><p>Line-by-line, fixed scope. Every brand, model and thickness written down.</p><span class="pay">Sample: 20% deposit on signing</span></li>
-   <li class="step reveal"><span class="n">STAGE 04</span><h3>Build</h3><span class="dur">6–20 weeks</span><p>Weekly photo log in a shared chat. One project lead on site, every week.</p><span class="pay">Sample: 30% after M&amp;E · 30% after carpentry</span></li>
-   <li class="step reveal"><span class="n">STAGE 05</span><h3>Handover</h3><span class="dur">Final week</span><p>Joint defects walk with a checklist. Fixes logged, dated and closed.</p><span class="pay">Sample: 15% at handover · 5% after defects period</span></li>
-  </ol>
-  <div class="paybar reveal" aria-label="Sample payment split">
-   <div style="flex:20;background:#e9e4d7" title="Deposit on signing">20% deposit</div>
-   <div style="flex:30;background:var(--blue-l)" title="After M&amp;E rough-in">30% M&amp;E</div>
-   <div style="flex:30;background:#cfdacd" title="After carpentry installed">30% carpentry</div>
-   <div style="flex:15;background:#e7d6b8" title="At handover">15%</div>
-   <div style="flex:5;background:var(--brass);color:#fff" title="Retention after defects period">5%</div>
-  </div>
-  <p class="paynote">Payment milestones shown as a sample for this demo. Real terms are agreed in writing per project.</p>
+  <ol class="steps" id="steps"></ol>
+  <div class="paybar reveal" id="paybar" aria-label="Sample payment split"></div>
+  <p class="paynote" data-t="payN">Payment milestones shown as a sample for this demo. Real terms are agreed in writing per project.</p>
  </div>
 </section>
-
-<!-- CREDENTIALS -->
-<div class="creds">
- <div class="wrap cred-strip reveal">
-  <div><small>Contractor licence</small><b>CIDB Grade G__</b><em>(sample)</em></div>
-  <div><small>Company</small><b>SSM reg. no.</b><em>(sample)</em></div>
-  <div><small>Workmanship warranty</small><b>12 months</b><em>(sample)</em></div>
-  <div><small>Site insurance</small><b>CAR policy</b><em>(sample)</em></div>
-  <div><p class="quote">“They showed us the timeline on day one and we moved in the week they said.”<cite>Sample testimonial · condo owner, PJ · placeholder text</cite></p></div>
- </div>
-</div>
 
 <!-- FAQ -->
 <section id="faq">
  <div class="wrap faq-wrap">
-  <div class="reveal"><span class="tag" data-i18n="fqK">05 · Questions</span><h2 data-i18n-html="fqH">Asked at <em>every</em> site visit.</h2></div>
+  <div class="reveal"><span class="tag" data-t="fqK">05 · Questions</span><h2 data-t="fqH">Asked at <em>every</em> site visit.</h2></div>
   <div class="faq reveal" id="faqList"></div>
  </div>
 </section>
@@ -623,16 +879,16 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
 <section id="contact" class="contact">
  <div class="wrap">
   <div class="sec-head reveal">
-   <div><span class="tag" data-i18n="ctK">06 · Site visit</span><h2 data-i18n-html="ctH">Book the <em>tape measure</em>.</h2></div>
-   <p data-i18n="ctP">Tell us where and what. A project lead calls back within one working day to set a time.</p>
+   <div><span class="tag" data-t="ctK">06 · Get in touch</span><h2 data-t="ctH">Start with a <em>conversation</em>.</h2></div>
+   <p data-t="ctP">Tell us where and what. A project lead calls back within one working day.</p>
   </div>
   <form class="cform reveal" id="cform" novalidate>
-   <label><span data-i18n="cName">Your name</span><input name="n" autocomplete="name" placeholder="Aisyah Tan"></label>
-   <label><span data-i18n="cPhone">WhatsApp number</span><input name="p" inputmode="tel" autocomplete="tel" placeholder="012-345 6789"></label>
-   <label><span data-i18n="cArea">Area</span><select name="a"><option>Kuala Lumpur</option><option>Petaling Jaya</option><option>Shah Alam</option><option>Subang Jaya</option><option>Cheras</option><option>Puchong</option><option>Other</option></select></label>
-   <label><span data-i18n="lblType">Property type</span><select name="t"><option data-i18n="tCondo">Condo</option><option data-i18n="tLanded">Landed</option><option data-i18n="tShop">Shoplot</option></select></label>
-   <label class="full"><span data-i18n="cMsg">What would you like to change?</span><textarea name="m" rows="2" placeholder="Open up the kitchen, redo both bathrooms…"></textarea></label>
-   <button class="btn brass" type="submit"><span data-i18n="cSend">Request a site visit</span> →</button>
+   <label><span data-t="cName">Your name</span><input name="n" autocomplete="name" placeholder="Aisyah Tan"></label>
+   <label><span data-t="cPhone">WhatsApp number</span><input name="p" inputmode="tel" autocomplete="tel" placeholder="012-345 6789"></label>
+   <label><span data-t="cArea">Area</span><select name="a" id="cArea"></select></label>
+   <label><span data-t="lblType">Property type</span><select name="t"><option data-t="tCondo">Condo</option><option data-t="tLanded">Landed</option><option data-t="tShop">Shoplot</option></select></label>
+   <label class="full"><span data-t="cMsg">What would you like to change?</span><textarea name="m" rows="2" data-tp="cPh" placeholder="Open up the kitchen, redo both bathrooms…"></textarea></label>
+   <button class="btn brass" type="submit"><span data-t="cSend">Request a call back</span> →</button>
    <p class="okmsg" id="okmsg" role="status"></p>
   </form>
  </div>
@@ -642,240 +898,302 @@ footer .fb{font-family:var(--serif);font-size:30px;color:var(--paper)}
 <footer>
  <div class="wrap">
   <div class="f-grid">
-   <div><p class="fb">Batu &amp; Beam</p><p style="margin-top:10px;max-width:320px;line-height:1.6">Renovation and interior design for condos, landed homes and shoplots. Studio and material library in Petaling Jaya (fictional).</p></div>
-   <div><h5>Service areas</h5><div class="areas"><span>Kuala Lumpur</span><span>Petaling Jaya</span><span>Shah Alam</span><span>Subang Jaya</span><span>Cheras</span><span>Puchong</span><span>Mont Kiara</span><span>Bangsar</span><span>Klang</span><span>Kajang</span></div></div>
-   <div><h5>Studio hours</h5><p style="line-height:1.7">Mon–Fri 9am–6pm<br>Sat 10am–4pm, by appointment<br>Site visits Mon–Sat</p></div>
+   <div><p class="fb" data-af-name>Batu &amp; Beam</p><p style="margin-top:10px;max-width:320px;line-height:1.6"><span data-t="ft1">Renovation and interior design for condos, landed homes and shoplots. Studio and material library in</span> <span data-af-area>Petaling Jaya</span>.</p></div>
+   <div><h5 data-t="ft2">Service areas</h5><div class="areas"><span data-af-area>Petaling Jaya</span><span>Kuala Lumpur</span><span>Shah Alam</span><span>Subang Jaya</span><span>Cheras</span><span>Puchong</span><span>Mont Kiara</span><span>Bangsar</span><span>Klang</span></div></div>
+   <div><h5 data-t="ft3">Studio hours</h5><p style="line-height:1.7" data-t="ft4">Mon–Fri 9am–6pm<br>Sat 10am–4pm, by appointment<br>Site visits Mon–Sat</p></div>
   </div>
-  <div class="f-base"><span data-i18n="foot">Fictional brand · Design concept by Aurelion</span><span>Sheet 1 of 1 · Rev C · Not for construction</span></div>
+  <div class="f-base"><span data-t="foot">Fictional brand · sample website designed by Aurelion</span><span data-t="foot2">Sheet 1 of 1 · Rev C · Not for construction</span></div>
  </div>
 </footer>
 
+<div class="mbar" id="mbar">
+ <a class="btn wab g-enq" href="#enquire" data-t="ncE">Free quote</a>
+ <a class="btn dark g-book" href="#book" data-t="ncB">Book a site visit</a>
+ <a class="btn dark g-sell" href="#packages" data-t="ncS">Packages</a>
+ <a class="btn dark g-cred" href="#work" data-t="ncC">Our work</a>
+ <a class="btn" href="#estimate" data-t="nav1">Estimate</a>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drH" aria-hidden="true">
+ <div class="dr-h"><div><small data-t="drK">Order sheet · OS-01</small><h3 id="drH" data-t="drH">Your packages</h3></div><button class="dr-x" id="drX" type="button" aria-label="Close">×</button></div>
+ <div class="dr-body" id="drItems"></div>
+ <div class="dr-f" id="drF"></div>
+</aside>
+
 <script>
 (()=>{
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const K=window.AFK||{},H=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-
-/* ---------- i18n ---------- */
-const T={
-en:{menu:"MENU",nav1:"Estimate",nav2:"Projects",nav3:"Materials",nav4:"Process",nav5:"FAQ",navCta:"Book a site visit",
-heroK:"Renovation & interior design · Klang Valley",heroH:'Know the plan, the price range and the <em>finish date</em> before the first wall comes down.',heroP:"Condos, landed homes and shoplots across KL & Selangor. One drawing set, one fixed-scope quotation and one project lead from site visit to handover.",heroC1:"Get a ballpark in 60 s",heroC2:"See plan changes",m1:"Property types",m2:"Fixed stages",m3:"Project lead",hint:"Scroll to furnish ↓",
-estK:"01 · Cost estimator",estH:'A ballpark <em>before</em> you call.',estP:"Pick your property, size and scope. The range updates as you go, so the first conversation starts from real numbers.",lblType:"Property type",tCondo:"Condo",tLanded:"Landed",tShop:"Shoplot",lblSize:"Built-up size",lblScope:"Scope of work",sKit:"Kitchen",sBath:"Bathrooms",sFloor:"Flooring",sCarp:"Built-in carpentry",sElec:"Electrical & lighting",sPaint:"Painting",lblFinish:"Finish level",fEss:"Essential",fCom:"Comfort",fSig:"Signature",fEssD:"Solid, standard",fComD:"Mid-range brands",fSigD:"Premium, custom",
-disc:"Illustrative ballpark for this demo — real quotes follow a site visit.",range:"Estimated range",weeks:"Estimated duration",wk:"weeks",midpt:"Per sq ft (mid)",notInc:"Not included",ni1:"Loose furniture, appliances and air-con units",ni2:"Structural works, hacking load-bearing walls and authority permits",ni3:"Management-office renovation deposits and fees",ni4:"3D design fee and SST, where applicable",send:"Send this estimate",empty:"Tick at least one scope item to see a range.",baths:"bathrooms assumed",rates:"Sample unit rates written into this demo only. Not a price list.",
-waSub:"+60 12-000 0000 (sample) · replies in office hours",waNote:"Demo: WhatsApp was not opened and nothing was sent.",copy:"Copy text",copied:"Copied",waHi:"Hi Batu & Beam, I used your estimator and would like a site visit.",waProp:"Property",waSize:"Size",waScope:"Scope",waFin:"Finish",waRange:"Ballpark",waTime:"Duration",waEnd:"Is a site visit possible this week?",
-prK:"02 · Selected projects",prH:'The drawing, <em>before</em> and after.',prP:"Flip any sheet to see what changed on plan: walls taken out, rooms re-planned, kitchens opened. Budgets and durations shown as bands.",fAll:"All",fCom2:"Commercial",before:"Before",after:"After",
-maK:"03 · Swatch board",maH:'Touch the <em>materials</em>, see the room.',maP:"Tap a swatch and the kitchen re-dresses itself. We bring the physical board to your site visit, so you can feel the oak grain and the brass weight in hand.",
-psK:"04 · How a project runs",psH:'Five stages. <em>No surprises</em> in between.',psP:"You pay against finished milestones, never ahead of the work. The schedule below is a sample; your contract sets the real one.",
-fqK:"05 · Questions",fqH:'Asked at <em>every</em> site visit.',ctK:"06 · Site visit",ctH:'Book the <em>tape measure</em>.',ctP:"Tell us where and what. A project lead calls back within one working day to set a time.",cName:"Your name",cPhone:"WhatsApp number",cArea:"Area",cMsg:"What would you like to change?",cSend:"Request a site visit",ok:"Thanks, {n}. A project lead would call you within one working day. (Demo: nothing was sent.)",okNeed:"Add your name and number first.",foot:"Fictional brand · Design concept by Aurelion"},
-ms:{menu:"MENU",nav1:"Anggaran",nav2:"Projek",nav3:"Bahan",nav4:"Proses",nav5:"Soalan Lazim",navCta:"Tempah lawatan tapak",
-heroK:"Ubah suai & reka bentuk dalaman · Lembah Klang",heroH:'Ketahui pelan, julat harga dan <em>tarikh siap</em> sebelum dinding pertama dirobohkan.',heroP:"Kondo, rumah bertanah dan rumah kedai di sekitar KL & Selangor. Satu set lukisan, satu sebut harga berskop tetap dan satu ketua projek dari lawatan tapak hingga serahan kunci.",heroC1:"Dapatkan anggaran dalam 60 saat",heroC2:"Lihat perubahan pelan",m1:"Jenis hartanah",m2:"Peringkat tetap",m3:"Ketua projek",hint:"Tatal untuk isi perabot ↓",
-estK:"01 · Kalkulator kos",estH:'Anggaran kasar <em>sebelum</em> anda menelefon.',estP:"Pilih hartanah, saiz dan skop kerja. Julat dikemas kini serta-merta, jadi perbincangan pertama bermula dengan angka sebenar.",lblType:"Jenis hartanah",tCondo:"Kondo",tLanded:"Rumah bertanah",tShop:"Rumah kedai",lblSize:"Keluasan binaan",lblScope:"Skop kerja",sKit:"Dapur",sBath:"Bilik air",sFloor:"Lantai",sCarp:"Perabot terbina dalam",sElec:"Elektrik & lampu",sPaint:"Mengecat",lblFinish:"Tahap kemasan",fEss:"Asas",fCom:"Selesa",fSig:"Premium",fEssD:"Kukuh, standard",fComD:"Jenama pertengahan",fSigD:"Premium, tempahan",
-disc:"Anggaran ilustrasi untuk demo ini — sebut harga sebenar selepas lawatan tapak.",range:"Julat anggaran",weeks:"Anggaran tempoh",wk:"minggu",midpt:"Sekaki persegi (purata)",notInc:"Tidak termasuk",ni1:"Perabot lepas, perkakas elektrik dan unit penghawa dingin",ni2:"Kerja struktur, memecah dinding galas beban dan permit pihak berkuasa",ni3:"Deposit dan yuran ubah suai pejabat pengurusan",ni4:"Yuran reka bentuk 3D dan SST, jika berkenaan",send:"Hantar anggaran ini",empty:"Tandakan sekurang-kurangnya satu skop untuk melihat julat.",baths:"bilik air dianggarkan",rates:"Kadar unit contoh dalam demo ini sahaja. Bukan senarai harga.",
-waSub:"+60 12-000 0000 (contoh) · balas waktu pejabat",waNote:"Demo: WhatsApp tidak dibuka dan tiada apa-apa dihantar.",copy:"Salin teks",copied:"Disalin",waHi:"Hai Batu & Beam, saya telah guna kalkulator anda dan ingin menempah lawatan tapak.",waProp:"Hartanah",waSize:"Saiz",waScope:"Skop",waFin:"Kemasan",waRange:"Anggaran",waTime:"Tempoh",waEnd:"Boleh buat lawatan tapak minggu ini?",
-prK:"02 · Projek pilihan",prH:'Lukisan, <em>sebelum</em> dan selepas.',prP:"Tukar mana-mana helaian untuk melihat perubahan pada pelan. Bajet dan tempoh ditunjukkan dalam julat.",fAll:"Semua",fCom2:"Komersial",before:"Sebelum",after:"Selepas",
-maK:"03 · Papan bahan",maH:'Sentuh <em>bahan</em>, lihat ruangnya.',maP:"Tekan satu sampel dan dapur bertukar serta-merta. Kami bawa papan bahan sebenar semasa lawatan tapak.",
-psK:"04 · Cara projek berjalan",psH:'Lima peringkat. <em>Tiada kejutan</em> di tengah jalan.',psP:"Anda bayar mengikut peringkat yang siap, bukan lebih awal. Jadual di bawah hanya contoh; kontrak anda menetapkan yang sebenar.",
-fqK:"05 · Soalan",fqH:'Ditanya di <em>setiap</em> lawatan tapak.',ctK:"06 · Lawatan tapak",ctH:'Tempah <em>pita pengukur</em>.',ctP:"Beritahu kami lokasi dan keperluan anda. Ketua projek akan menghubungi anda dalam satu hari bekerja.",cName:"Nama anda",cPhone:"Nombor WhatsApp",cArea:"Kawasan",cMsg:"Apa yang anda mahu ubah?",cSend:"Mohon lawatan tapak",ok:"Terima kasih, {n}. Ketua projek akan menghubungi anda dalam satu hari bekerja. (Demo: tiada apa-apa dihantar.)",okNeed:"Sila isi nama dan nombor anda dahulu.",foot:"Jenama rekaan · Konsep reka bentuk oleh Aurelion"},
-zh:{menu:"菜单",nav1:"估价",nav2:"案例",nav3:"材料",nav4:"流程",nav5:"常见问题",navCta:"预约上门勘察",
-heroK:"装修与室内设计 · 巴生谷",heroH:'动工之前，先看清图纸、预算范围和<em>完工日期</em>。',heroP:"服务吉隆坡及雪兰莪的公寓、有地住宅与店屋。一套图纸、一份固定范围报价、一位项目负责人，从上门勘察到交屋全程跟进。",heroC1:"60 秒获取预算参考",heroC2:"查看改图前后",m1:"物业类型",m2:"固定阶段",m3:"项目负责人",hint:"向下滚动，摆上家具 ↓",
-estK:"01 · 装修预算估算",estH:'打电话之前，<em>先</em>心里有数。',estP:"选择物业类型、面积和施工范围，预算区间即时更新，第一次沟通就从真实数字开始。",lblType:"物业类型",tCondo:"公寓",tLanded:"有地住宅",tShop:"店屋",lblSize:"建筑面积",lblScope:"施工范围",sKit:"厨房",sBath:"浴室",sFloor:"地板",sCarp:"定制柜体",sElec:"电路与灯光",sPaint:"油漆",lblFinish:"装修档次",fEss:"基础",fCom:"舒适",fSig:"臻选",fEssD:"扎实标准",fComD:"中端品牌",fSigD:"高端定制",
-disc:"本演示仅为示意性预算参考，正式报价以上门勘察后为准。",range:"预算区间",weeks:"预计工期",wk:"周",midpt:"每平方英尺（中位）",notInc:"不包括",ni1:"活动家具、家电及冷气机",ni2:"结构工程、拆除承重墙及政府审批",ni3:"管理处装修押金及费用",ni4:"3D 设计费及 SST（如适用）",send:"发送这份估价",empty:"请至少勾选一项施工范围。",baths:"间浴室（估算）",rates:"示例单价仅用于本演示，并非价目表。",
-waSub:"+60 12-000 0000（示例）· 办公时间回复",waNote:"演示：未打开 WhatsApp，也没有发送任何内容。",copy:"复制文字",copied:"已复制",waHi:"您好 Batu & Beam，我用过网站的估价工具，想预约上门勘察。",waProp:"物业",waSize:"面积",waScope:"范围",waFin:"档次",waRange:"预算参考",waTime:"工期",waEnd:"请问这周可以安排上门勘察吗？",
-prK:"02 · 精选案例",prH:'图纸的<em>改造</em>前后。',prP:"切换任意图纸，看看平面图上改了什么：拆墙、重新规划房间、开放式厨房。预算与工期以区间显示。",fAll:"全部",fCom2:"商业",before:"改造前",after:"改造后",
-maK:"03 · 材料板",maH:'摸得到的<em>材料</em>，看得见的空间。',maP:"点选材料样板，厨房立即换装。上门勘察时，我们会带上实体材料板。",
-psK:"04 · 项目流程",psH:'五个阶段，<em>中途不出意外</em>。',psP:"按已完成的阶段付款，绝不预付。以下为示例安排，实际以合同为准。",
-fqK:"05 · 常见问题",fqH:'<em>每次</em>勘察都会被问到。',ctK:"06 · 上门勘察",ctH:'预约<em>上门量尺</em>。',ctP:"告诉我们地点和需求，项目负责人会在一个工作日内回电约时间。",cName:"您的姓名",cPhone:"WhatsApp 号码",cArea:"地区",cMsg:"想改造哪些地方？",cSend:"预约上门勘察",ok:"谢谢，{n}。项目负责人会在一个工作日内联系您。（演示：没有发送任何内容。）",okNeed:"请先填写姓名和号码。",foot:"虚构品牌 · Aurelion 设计概念"}
-};
+const NAME=()=>K.n||'Batu & Beam';
 let lang='en';
-const t=k=>(T[lang][k]!==undefined?T[lang][k]:(T.en[k]!==undefined?T.en[k]:k));
-function fill(str,n){return str.split('{n}').join(n);}
+const L3=a=>Array.isArray(a)?(a[{en:0,ms:1,zh:2}[lang]]||a[0]):a;
+const IMG=(id,w,h)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}${h?'&h='+h:''}&q=78`;
+const fmt=n=>n.toLocaleString('en-MY');
+const rm=n=>'RM '+fmt(Math.round(n/500)*500);
+const rmx=n=>'RM '+fmt(Math.round(n));
+
+/* ---------- static translations (English lives in the HTML) ---------- */
+const T={
+ms:{menu:"MENU",cart:"Pesanan",nav1:"Anggaran",nav2:"Projek",nav3:"Bahan",nav4:"Proses",nav5:"Soalan Lazim",ncE:"Sebut harga percuma",ncB:"Tempah lawatan tapak",ncS:"Pakej",ncC:"Hasil kerja",
+heroK:"Ubah suai & reka bentuk dalaman",heroH:'Ketahui pelan, julat harga dan <em>tarikh siap</em> sebelum dinding pertama dirobohkan.',heroP:"Kondo, rumah bertanah dan rumah kedai di sekitar KL & Selangor. Satu set lukisan, satu sebut harga berskop tetap dan satu ketua projek dari lawatan tapak hingga serahan kunci.",hcE:"Dapatkan sebut harga percuma di WhatsApp",hcB:"Tempah lawatan tapak percuma",hcS:"Lihat pakej harga tetap",hcC:"Lihat projek yang siap",heroC1:"Anggaran dalam 60 saat",m1:"Jenis hartanah",m2:"Peringkat tetap",m3:"Ketua projek",cutL:"Lukisan",cutR:"Siap",tb1:"Projek",tb1v:"Kondo",smp:"(contoh)",tb2:"Helaian",tb3:"Skala",
+eK:"00 · Sebut harga percuma",eH:'Tiga jawapan. <em>Satu WhatsApp.</em>',eP:"Beritahu hartanah, kerja dan masa. Kami sediakan mesejnya; ketua projek akan membalas dalam satu hari bekerja dengan langkah seterusnya dan slot lawatan tapak.",lblType:"Jenis hartanah",eL2:"Apa yang perlu dibuat?",eL3:"Bila mahu mula?",eSend:"Hantar di WhatsApp",eTr:"Surat iringan",eSt:"Draf",eTo:"Kepada",eVia:"Melalui",eRe:"Perkara",eDt:"Tarikh",eNote:"Demo: tiada apa dihantar sehingga anda tekan butang di laman sebenar.",
+bK:"00 · Lawatan tapak",bH:'Tempah <em>pita pengukur.</em>',bP:"Lawatan percuma 90 minit: kami ukur, periksa titik elektrik dan paip, baca peraturan pengurusan dan dengar keperluan anda. Pilih hari dan masa; tiada sebarang komitmen.",b1:"1 · Hari",bSun:"Ahad tutup",b2:"2 · Masa",cArea:"Kawasan",bT0:"Lawatan tapak · helaian SV-01",bGo:"Sahkan lawatan tapak",bNote:"Percuma dan tanpa komitmen. Kami WhatsApp peringatan sehari sebelum.",
+sK:"00 · Pakej harga tetap",sH:'Kerja kecil, <em>harga jelas dari awal.</em>',sP:"Bayar pakej dalam talian dan slot anda dikunci. Harga termasuk bahan, upah dan pembersihan tapak untuk skop yang disenaraikan. Kerja besar bermula dengan kalkulator.",sNote:"Harga contoh. Unit kondo di Lembah Klang. Semakan akhir di tapak sebelum kerja bermula.",
+cK:"00 · Hasil kerja",cH:'Diserahkan <em>pada tarikh yang dijanjikan.</em>',cP:"Beberapa rumah yang siap dan angka di sebaliknya. Semua projek, klien dan angka di sini ialah contoh untuk menunjukkan rupa portfolio anda.",cSm:"Projek contoh",f1k:"Bertanah · Damansara",f1h:"Tingkat bawah dibuka, taman dibawa masuk",f1p:"Dua dinding dirobohkan (disemak jurutera), rasuk keluli baharu, pintu gelangsar penuh ke taman dan dinding kayu yang menyembunyikan ruang simpanan.",sz:"Saiz",bb:"Julat bajet",du:"Tempoh",wks:"minggu",lt:"Hari lewat",f1q:"Mereka tunjuk jadual pada hari pertama dan kami pindah pada minggu yang mereka janjikan.",f1c:"Testimoni contoh · pemilik rumah, Damansara",c2k:"Kondo · Mont Kiara · contoh",c2h:"Dua bilik air dalam 4 minggu",c3k:"Bertanah · Subang Jaya · contoh",c3h:"Tangga dialih, ruang tamu jadi dua kali ganda",mk:"Pernah bekerjasama (contoh)",cr1:"Lesen kontraktor",cr2:"Syarikat",cr2v:"No. pendaftaran SSM",cr3:"Waranti mutu kerja",cr3v:"12 bulan",cr4:"Insurans tapak",cr4v:"Polisi CAR",cr5:"“Setiap perubahan diberi harga dan ditandatangani sebelum dibina.”",cr5c:"Testimoni contoh · pemilik kondo, PJ",
+estK:"01 · Kalkulator kos",estH:'Anggaran kasar <em>sebelum</em> anda menelefon.',estP:"Pilih hartanah, saiz dan skop kerja. Julat dikemas kini serta-merta, jadi perbincangan pertama bermula dengan angka sebenar.",tCondo:"Kondo",tLanded:"Rumah bertanah",tShop:"Rumah kedai",lblSize:"Keluasan binaan",lblScope:"Skop kerja",sKit:"Dapur",sBath:"Bilik air",sFloor:"Lantai",sCarp:"Perabot terbina dalam",sElec:"Elektrik & lampu",sPaint:"Mengecat",lblFinish:"Tahap kemasan",fEss:"Asas",fCom:"Selesa",fSig:"Premium",fEssD:"Kukuh, standard",fComD:"Jenama pertengahan",fSigD:"Premium, tempahan",disc:"Anggaran ilustrasi untuk demo ini. Sebut harga sebenar selepas lawatan tapak.",range:"Julat anggaran",weeks:"Anggaran tempoh",midpt:"Sekaki persegi (purata)",notInc:"Tidak termasuk",ni1:"Perabot lepas, perkakas elektrik dan unit penghawa dingin",ni2:"Kerja struktur, memecah dinding galas beban dan permit pihak berkuasa",ni3:"Deposit dan yuran ubah suai pejabat pengurusan",ni4:"Yuran reka bentuk 3D dan SST, jika berkenaan",send:"Hantar anggaran ini",rates:"Kadar unit contoh dalam demo ini sahaja. Bukan senarai harga.",waSub:"+60 12-000 0000 (contoh) · balas waktu pejabat",waNote:"Demo: WhatsApp tidak dibuka dan tiada apa-apa dihantar.",copy:"Salin teks",
+prK:"02 · Projek pilihan",prH:'Lukisan, <em>sebelum</em> dan selepas.',prP:"Tukar mana-mana helaian untuk melihat perubahan pada pelan, kemudian tekan Foto untuk melihat bilik yang siap. Bajet dan tempoh ditunjukkan dalam julat.",fAll:"Semua",fCom2:"Komersial",lg1:"Kekal",lg2:"Dirobohkan",lg3:"Baharu",lg4:"Semua projek di halaman ini ialah contoh rekaan.",
+maK:"03 · Papan bahan",maH:'Sentuh <em>bahan</em>, lihat ruangnya.',maP:"Tekan satu sampel dan dapur bertukar serta-merta. Kami bawa papan bahan sebenar semasa lawatan tapak, supaya anda boleh rasa urat kayu oak dan berat loyang.",
+psK:"04 · Cara projek berjalan",psH:'Lima peringkat. <em>Tiada kejutan</em> di tengah jalan.',psP:"Anda bayar mengikut peringkat yang siap, bukan lebih awal. Jadual di bawah hanya contoh; kontrak anda menetapkan yang sebenar.",payN:"Peringkat bayaran ditunjukkan sebagai contoh untuk demo ini. Terma sebenar dipersetujui secara bertulis bagi setiap projek.",
+fqK:"05 · Soalan",fqH:'Ditanya di <em>setiap</em> lawatan tapak.',ctK:"06 · Hubungi kami",ctH:'Mulakan dengan <em>perbualan</em>.',ctP:"Beritahu lokasi dan keperluan anda. Ketua projek akan menghubungi anda dalam satu hari bekerja.",cName:"Nama anda",cPhone:"Nombor WhatsApp",cMsg:"Apa yang anda mahu ubah?",cPh:"Buka dapur, buat semula kedua-dua bilik air…",cSend:"Minta panggilan semula",
+ft1:"Ubah suai dan reka bentuk dalaman untuk kondo, rumah bertanah dan rumah kedai. Studio dan perpustakaan bahan di",ft2:"Kawasan servis",ft3:"Waktu studio",ft4:"Isn–Jum 9 pg–6 ptg<br>Sab 10 pg–4 ptg, dengan janji temu<br>Lawatan tapak Isn–Sab",foot:"Jenama rekaan · laman contoh direka oleh Aurelion",foot2:"Helaian 1 daripada 1 · Rev C · Bukan untuk pembinaan",drK:"Helaian pesanan · OS-01",drH:"Pakej anda"},
+zh:{menu:"菜单",cart:"订单",nav1:"估价",nav2:"案例",nav3:"材料",nav4:"流程",nav5:"常见问题",ncE:"免费报价",ncB:"预约上门勘察",ncS:"套餐",ncC:"完工作品",
+heroK:"装修与室内设计",heroH:'动工之前，先看清图纸、预算范围和<em>完工日期</em>。',heroP:"服务吉隆坡及雪兰莪的公寓、有地住宅与店屋。一套图纸、一份固定范围报价、一位项目负责人，从上门勘察到交屋全程跟进。",hcE:"WhatsApp 获取免费报价",hcB:"预约免费上门勘察",hcS:"查看固定价格套餐",hcC:"查看完工案例",heroC1:"60 秒获取预算参考",m1:"物业类型",m2:"固定阶段",m3:"项目负责人",cutL:"图纸",cutR:"完工",tb1:"项目",tb1v:"公寓",smp:"（示例）",tb2:"图号",tb3:"比例",
+eK:"00 · 免费报价",eH:'回答三题，<em>一条 WhatsApp。</em>',eP:"告诉我们物业、工程和时间，我们帮你写好信息；项目负责人会在一个工作日内回复下一步和勘察时间。",lblType:"物业类型",eL2:"需要做什么？",eL3:"想什么时候开工？",eSend:"用 WhatsApp 发送",eTr:"图纸传送单",eSt:"草稿",eTo:"致",eVia:"方式",eRe:"事由",eDt:"日期",eNote:"演示：在真实网站上按下按钮前，不会发送任何内容。",
+bK:"00 · 上门勘察",bH:'预约<em>上门量尺。</em>',bP:"免费 90 分钟上门：我们量尺寸、检查电路和水管位置、了解管理处规定，并听你的想法。选好日期和时间，没有任何义务。",b1:"1 · 日期",bSun:"星期日休息",b2:"2 · 时间",cArea:"地区",bT0:"上门勘察 · 图号 SV-01",bGo:"确认上门勘察",bNote:"免费且无义务。前一天我们会 WhatsApp 提醒你。",
+sK:"00 · 固定价格套餐",sH:'小工程，<em>价格先说清楚。</em>',sP:"在线付款即锁定施工时段。价格包含所列范围的材料、人工和清洁。大型工程请先用估价工具。",sNote:"示例价格，适用于巴生谷公寓单位。开工前会在现场做最后确认。",
+cK:"00 · 完工作品",cH:'说好哪天交屋，<em>就哪天交屋。</em>',cP:"几个完工的家，以及背后的数字。这里所有项目、客户和数字均为示例，展示你的作品集会是什么样子。",cSm:"示例项目",f1k:"有地住宅 · 白沙罗",f1h:"打通底楼，把花园引进屋里",f1p:"拆除两面墙（工程师确认）、加一根新钢梁、整面落地推拉门通往花园，再用木饰面墙把收纳藏起来。",sz:"面积",bb:"预算区间",du:"工期",wks:"周",lt:"延误天数",f1q:"他们第一天就给我们看工期表，结果我们真的在说好的那一周搬进去。",f1c:"示例评价 · 屋主，白沙罗",c2k:"公寓 · 满家乐 · 示例",c2h:"4 周完成两间浴室",c3k:"有地住宅 · 梳邦再也 · 示例",c3h:"楼梯移位，客厅扩大一倍",mk:"合作过的单位（示例）",cr1:"承包商执照",cr2:"公司",cr2v:"SSM 注册号",cr3:"工艺保修",cr3v:"12 个月",cr4:"工地保险",cr4v:"CAR 保单",cr5:"「每一项变更都先报价、签名，才开始施工。」",cr5c:"示例评价 · 公寓屋主，八打灵再也",
+estK:"01 · 装修预算估算",estH:'打电话之前，<em>先</em>心里有数。',estP:"选择物业类型、面积和施工范围，预算区间即时更新，第一次沟通就从真实数字开始。",tCondo:"公寓",tLanded:"有地住宅",tShop:"店屋",lblSize:"建筑面积",lblScope:"施工范围",sKit:"厨房",sBath:"浴室",sFloor:"地板",sCarp:"定制柜体",sElec:"电路与灯光",sPaint:"油漆",lblFinish:"装修档次",fEss:"基础",fCom:"舒适",fSig:"臻选",fEssD:"扎实标准",fComD:"中端品牌",fSigD:"高端定制",disc:"本演示仅为示意性预算参考，正式报价以上门勘察后为准。",range:"预算区间",weeks:"预计工期",midpt:"每平方英尺（中位）",notInc:"不包括",ni1:"活动家具、家电及冷气机",ni2:"结构工程、拆除承重墙及政府审批",ni3:"管理处装修押金及费用",ni4:"3D 设计费及 SST（如适用）",send:"发送这份估价",rates:"示例单价仅用于本演示，并非价目表。",waSub:"+60 12-000 0000（示例）· 办公时间回复",waNote:"演示：未打开 WhatsApp，也没有发送任何内容。",copy:"复制文字",
+prK:"02 · 精选案例",prH:'图纸的<em>改造</em>前后。',prP:"切换任意图纸，看看平面图上改了什么，再点「照片」看完工效果。预算与工期以区间显示。",fAll:"全部",fCom2:"商业",lg1:"保留",lg2:"拆除",lg3:"新建",lg4:"本页所有项目均为虚构示例。",
+maK:"03 · 材料板",maH:'摸得到的<em>材料</em>，看得见的空间。',maP:"点选材料样板，厨房立即换装。上门勘察时，我们会带上实体材料板，让你亲手感受橡木纹理和黄铜的分量。",
+psK:"04 · 项目流程",psH:'五个阶段，<em>中途不出意外</em>。',psP:"按已完成的阶段付款，绝不预付。以下为示例安排，实际以合同为准。",payN:"付款阶段为本演示的示例，实际条款按每个项目书面约定。",
+fqK:"05 · 常见问题",fqH:'<em>每次</em>勘察都会被问到。',ctK:"06 · 联系我们",ctH:'从一次<em>聊天</em>开始。',ctP:"告诉我们地点和需求，项目负责人会在一个工作日内回电。",cName:"您的姓名",cPhone:"WhatsApp 号码",cMsg:"想改造哪些地方？",cPh:"打通厨房、翻新两间浴室……",cSend:"请回电给我",
+ft1:"为公寓、有地住宅和店屋提供装修与室内设计。工作室和材料库位于",ft2:"服务地区",ft3:"工作室时间",ft4:"周一至周五 9:00–18:00<br>周六 10:00–16:00，需预约<br>上门勘察：周一至周六",foot:"虚构品牌 · Aurelion 设计的示例网站",foot2:"第 1 张，共 1 张 · Rev C · 非施工用图",drK:"订单 · OS-01",drH:"你的套餐"}};
+
+const S={
+en:{baths:"bathrooms assumed",empty:"Tick at least one scope item to see a range.",wk:"weeks",copied:"Copied",waHi:"Hi {b}, I used your estimator and would like a site visit.",waProp:"Property",waSize:"Size",waScope:"Scope",waFin:"Finish",waRange:"Ballpark",waTime:"Duration",waEnd:"Is a site visit possible this week?",
+before:"Before",after:"After",photo:"Photo",sz:"Size",bb:"Budget band",du:"Duration",
+marq:["Measured drawings","Fixed-scope quotation","Weekly photo log","Condo · Landed · Shoplot","Management-office paperwork handled","One project lead"],
+types:["Condo","Landed","Shoplot"],jobs:["Kitchen","Bathrooms","Whole unit","Built-in carpentry","Just one room"],whens:["As soon as possible","In 1–3 months","In 3–6 months","Just exploring"],
+msgE:"Hi {b}, I'd like a free quote.\n• Property: {t}\n• Job: {j}\n• Start: {w}\n• Area: {a}\n\nCould we arrange a site visit?",reE:"{t} · {j}",
+sDate:"Date",sTime:"Time",sType:"Property",sArea:"Area",pick:"Choose a time",left:"{n} slots free",closed:"Closed",bConf:"Demo: on your site this books the visit and sends {b} a WhatsApp: {t} in {a}, {d} at {h}.",
+pk:[["3D design package","Measured plan, 3D views and a material board. Credited if you build with us.",["2 revision rounds","Up to 1,500 sq ft"],"from"],["Bathroom refresh","Re-tile walls and floor, new vanity, WC and shower set in one bathroom.",["Waterproofing re-done","5 working days"],"per bathroom"],["Kitchen cabinets, 10 ft","Top and bottom cabinets with quartz top, soft-close hinges and sink.",["Hettich-grade fittings (sample)","3–4 weeks"],"set"],["Built-in wardrobe, 8 ft","Floor-to-ceiling wardrobe with sliding doors and internal lights.",["Choice of 12 finishes","2–3 weeks"],"each"],["Feature wall & lighting","Panelled or painted feature wall with LED strip and dimmer.",["Up to 12 ft wide","3 working days"],"each"],["Material sample box","Twelve real swatches posted to your home: tiles, laminates, brass.",["Credited on any package","Ships in 2 days"],"box"]],
+add:"Add",added:"Added ✓",items:"{n} items",emptyC:"No packages yet",emptyP:"Add a package to lock your slot.",sub:"Subtotal",dep:"Deposit today (30%)",bal:"Balance on completion",checkout:"Pay deposit",fine:"Demo checkout · no payment is taken",payDemo:"Demo: on your site this opens a secure Card / FPX / GrabPay / Touch 'n Go checkout for the deposit.",
+steps:[["Site visit","Day 1 · ~90 min","We measure, check wiring, plumbing points and management rules, and listen.","Sample: free, no obligation"],["3D design","Weeks 1–3","Measured plan, 3D views and a material board you can hold. Two revision rounds.","Sample: design fee, credited if you build with us"],["Quotation","Week 3–4","Line-by-line, fixed scope. Every brand, model and thickness written down.","Sample: 20% deposit on signing"],["Build","6–20 weeks","Weekly photo log in a shared chat. One project lead on site, every week.","Sample: 30% after M&E · 30% after carpentry"],["Handover","Final week","Joint defects walk with a checklist. Fixes logged, dated and closed.","Sample: 15% at handover · 5% after defects period"]],
+stage:"STAGE",pay:["20% deposit","30% M&E","30% carpentry","15%","5%"],
+cats:[["Floor",["Terrazzo","Oak plank","Micro-cement","Sage tile"]],["Cabinetry",["Oak veneer","Sage lacquer","Chalk matte","Ink blue"]],["Backsplash",["Sage tile","Zellige white","Terrazzo","Oak slat"]],["Hardware",["Brushed brass","Matte black","Polished chrome"]]],
+faq:[["Is the estimator a quotation?","No. It is a sample ballpark using rates written into this demo. A real quotation is line-by-line and only follows a site visit and measured drawings."],["Do you handle the management office and permits?","We prepare the renovation application, contractor passes and drawings for the management office. Structural changes need an engineer and council approval, quoted separately."],["Can I live in the unit during works?","For a single bathroom or painting, often yes. For kitchen or whole-unit jobs we plan a move-out window, and the schedule shows it from the start."],["What happens if the scope changes mid-build?","Every change is written as a variation order with its price and time impact. Nothing extra is built until you approve it in writing."],["How do I know what is happening on site?","Your project lead posts a weekly photo log and a short progress note in one shared chat, plus a site walk at each payment milestone."],["What is covered after handover?","Workmanship defects during the warranty period (sample: 12 months) are fixed at no charge. Brand warranties for fittings pass to you with the paperwork."]],
+ok:"Thanks, {n}. A project lead would call you within one working day. (Demo: nothing was sent.)",okNeed:"Add your name and number first.",other:"Other"},
+ms:{baths:"bilik air dianggarkan",empty:"Tandakan sekurang-kurangnya satu skop untuk melihat julat.",wk:"minggu",copied:"Disalin",waHi:"Hai {b}, saya telah guna kalkulator anda dan ingin menempah lawatan tapak.",waProp:"Hartanah",waSize:"Saiz",waScope:"Skop",waFin:"Kemasan",waRange:"Anggaran",waTime:"Tempoh",waEnd:"Boleh buat lawatan tapak minggu ini?",
+before:"Sebelum",after:"Selepas",photo:"Foto",sz:"Saiz",bb:"Julat bajet",du:"Tempoh",
+marq:["Lukisan berukuran","Sebut harga skop tetap","Log foto mingguan","Kondo · Bertanah · Rumah kedai","Urusan pejabat pengurusan diuruskan","Satu ketua projek"],
+types:["Kondo","Bertanah","Rumah kedai"],jobs:["Dapur","Bilik air","Seluruh unit","Perabot terbina dalam","Satu bilik sahaja"],whens:["Secepat mungkin","Dalam 1–3 bulan","Dalam 3–6 bulan","Sekadar meninjau"],
+msgE:"Hai {b}, saya ingin sebut harga percuma.\n• Hartanah: {t}\n• Kerja: {j}\n• Mula: {w}\n• Kawasan: {a}\n\nBoleh kita atur lawatan tapak?",reE:"{t} · {j}",
+sDate:"Tarikh",sTime:"Masa",sType:"Hartanah",sArea:"Kawasan",pick:"Pilih masa",left:"{n} slot kosong",closed:"Tutup",bConf:"Demo: di laman anda, ini menempah lawatan dan menghantar WhatsApp kepada {b}: {t} di {a}, {d} jam {h}.",
+pk:[["Pakej reka bentuk 3D","Pelan berukuran, paparan 3D dan papan bahan. Dikreditkan jika anda bina dengan kami.",["2 pusingan semakan","Sehingga 1,500 kaki persegi"],"dari"],["Bilik air baharu","Jubin semula dinding dan lantai, kabinet sinki, tandas dan set pancuran baharu untuk satu bilik air.",["Kalis air dibuat semula","5 hari bekerja"],"setiap bilik air"],["Kabinet dapur, 10 kaki","Kabinet atas dan bawah dengan permukaan kuarza, engsel tutup perlahan dan sinki.",["Kelengkapan gred Hettich (contoh)","3–4 minggu"],"set"],["Almari terbina dalam, 8 kaki","Almari lantai ke siling dengan pintu gelangsar dan lampu dalaman.",["12 pilihan kemasan","2–3 minggu"],"setiap satu"],["Dinding ciri & lampu","Dinding ciri berpanel atau dicat dengan jalur LED dan pemalap.",["Sehingga 12 kaki lebar","3 hari bekerja"],"setiap satu"],["Kotak sampel bahan","Dua belas sampel sebenar dihantar ke rumah: jubin, lamina, loyang.",["Dikreditkan untuk mana-mana pakej","Dihantar dalam 2 hari"],"kotak"]],
+add:"Tambah",added:"Ditambah ✓",items:"{n} item",emptyC:"Belum ada pakej",emptyP:"Tambah pakej untuk kunci slot anda.",sub:"Jumlah kecil",dep:"Deposit hari ini (30%)",bal:"Baki selepas siap",checkout:"Bayar deposit",fine:"Demo pembayaran · tiada bayaran diambil",payDemo:"Demo: di laman anda, ini membuka pembayaran selamat Kad / FPX / GrabPay / Touch 'n Go untuk deposit.",
+steps:[["Lawatan tapak","Hari 1 · ~90 min","Kami ukur, periksa pendawaian, titik paip dan peraturan pengurusan, dan dengar keperluan anda.","Contoh: percuma, tanpa komitmen"],["Reka bentuk 3D","Minggu 1–3","Pelan berukuran, paparan 3D dan papan bahan yang boleh dipegang. Dua pusingan semakan.","Contoh: yuran reka bentuk, dikreditkan jika bina dengan kami"],["Sebut harga","Minggu 3–4","Item demi item, skop tetap. Setiap jenama, model dan ketebalan ditulis.","Contoh: deposit 20% semasa tandatangan"],["Pembinaan","6–20 minggu","Log foto mingguan dalam satu sembang. Satu ketua projek di tapak setiap minggu.","Contoh: 30% selepas M&E · 30% selepas perabot"],["Serahan","Minggu akhir","Semakan kecacatan bersama dengan senarai semak. Pembaikan dicatat, bertarikh dan ditutup.","Contoh: 15% semasa serahan · 5% selepas tempoh kecacatan"]],
+stage:"PERINGKAT",pay:["Deposit 20%","30% M&E","30% perabot","15%","5%"],
+cats:[["Lantai",["Terrazzo","Papan oak","Simen mikro","Jubin sage"]],["Kabinet",["Venir oak","Lakuer sage","Kapur matte","Biru dakwat"]],["Percikan dinding",["Jubin sage","Zellige putih","Terrazzo","Bilah oak"]],["Perkakasan",["Loyang berus","Hitam matte","Krom berkilat"]]],
+faq:[["Adakah kalkulator ini sebut harga?","Tidak. Ia anggaran contoh menggunakan kadar dalam demo ini. Sebut harga sebenar disenaraikan item demi item dan hanya selepas lawatan tapak serta lukisan berukuran."],["Adakah anda uruskan pejabat pengurusan dan permit?","Kami sediakan permohonan ubah suai, pas kontraktor dan lukisan untuk pejabat pengurusan. Perubahan struktur memerlukan jurutera dan kelulusan majlis, disebut harga berasingan."],["Boleh saya tinggal di unit semasa kerja?","Untuk satu bilik air atau mengecat, selalunya boleh. Untuk dapur atau seluruh unit, kami rancang tempoh pindah keluar dan jadual menunjukkannya dari awal."],["Bagaimana jika skop berubah di tengah jalan?","Setiap perubahan ditulis sebagai arahan perubahan dengan kesan harga dan masa. Tiada kerja tambahan dibina sehingga anda luluskan secara bertulis."],["Bagaimana saya tahu perkembangan di tapak?","Ketua projek menghantar log foto mingguan dan nota ringkas dalam satu sembang, serta lawatan tapak di setiap peringkat bayaran."],["Apa yang dilindungi selepas serahan?","Kecacatan mutu kerja dalam tempoh waranti (contoh: 12 bulan) dibaiki percuma. Waranti jenama untuk kelengkapan diserahkan kepada anda bersama dokumen."]],
+ok:"Terima kasih, {n}. Ketua projek akan menghubungi anda dalam satu hari bekerja. (Demo: tiada apa-apa dihantar.)",okNeed:"Sila isi nama dan nombor anda dahulu.",other:"Lain-lain"},
+zh:{baths:"间浴室（估算）",empty:"请至少勾选一项施工范围。",wk:"周",copied:"已复制",waHi:"您好 {b}，我用过网站的估价工具，想预约上门勘察。",waProp:"物业",waSize:"面积",waScope:"范围",waFin:"档次",waRange:"预算参考",waTime:"工期",waEnd:"请问这周可以安排上门勘察吗？",
+before:"改造前",after:"改造后",photo:"照片",sz:"面积",bb:"预算区间",du:"工期",
+marq:["实测图纸","固定范围报价","每周照片记录","公寓 · 有地住宅 · 店屋","代办管理处申请","一位项目负责人"],
+types:["公寓","有地住宅","店屋"],jobs:["厨房","浴室","整间翻新","定制柜体","只改一个房间"],whens:["越快越好","1–3 个月内","3–6 个月内","先了解看看"],
+msgE:"您好 {b}，我想要免费报价。\n• 物业：{t}\n• 工程：{j}\n• 开工：{w}\n• 地区：{a}\n\n可以安排上门勘察吗？",reE:"{t} · {j}",
+sDate:"日期",sTime:"时间",sType:"物业",sArea:"地区",pick:"请选择时间",left:"空余 {n} 个时段",closed:"休息",bConf:"演示：在你的网站上，这会预约上门勘察，并通过 WhatsApp 通知 {b}：{a} 的{t}，{d} {h}。",
+pk:[["3D 设计套餐","实测平面图、3D 效果图和材料板。若交给我们施工，费用可抵扣。",["2 轮修改","最多 1,500 平方英尺"],"起"],["浴室翻新","一间浴室重铺墙地砖，换新洗手台柜、马桶和淋浴组。",["重做防水","5 个工作日"],"每间"],["厨房橱柜 10 尺","上下柜配石英台面、缓冲铰链和水槽。",["Hettich 级五金（示例）","3–4 周"],"套"],["定制衣柜 8 尺","落地到顶衣柜，配推拉门和内置灯。",["12 种饰面可选","2–3 周"],"个"],["电视墙与灯光","护墙板或涂料造型墙，配 LED 灯带和调光器。",["最宽 12 尺","3 个工作日"],"面"],["材料样品盒","十二片真实样品寄到家：瓷砖、板材、黄铜。",["可抵扣任何套餐","2 天内寄出"],"盒"]],
+add:"加入",added:"已加入 ✓",items:"{n} 项",emptyC:"还没有套餐",emptyP:"加入套餐即可锁定施工时段。",sub:"小计",dep:"今日订金（30%）",bal:"完工后付余款",checkout:"支付订金",fine:"演示结账 · 不会扣款",payDemo:"演示：在你的网站上，这会打开安全的 银行卡 / FPX / GrabPay / Touch 'n Go 订金付款页面。",
+steps:[["上门勘察","第 1 天 · 约 90 分钟","测量尺寸，检查电路、水管位置和管理处规定，并听你的想法。","示例：免费，无义务"],["3D 设计","第 1–3 周","实测平面图、3D 效果图和可以拿在手上的材料板，两轮修改。","示例：设计费，施工可抵扣"],["报价","第 3–4 周","逐项列明、固定范围。每个品牌、型号和厚度都写清楚。","示例：签约付 20% 订金"],["施工","6–20 周","每周在群组发照片记录，项目负责人每周到现场。","示例：水电完成后 30% · 柜体完成后 30%"],["交屋","最后一周","按清单一起验收，问题逐项记录、注明日期并关闭。","示例：交屋付 15% · 保修期后付 5%"]],
+stage:"阶段",pay:["20% 订金","30% 水电","30% 柜体","15%","5%"],
+cats:[["地板",["水磨石","橡木地板","微水泥","鼠尾草绿砖"]],["柜体",["橡木贴皮","鼠尾草绿烤漆","粉笔白哑光","墨蓝"]],["厨房背墙",["鼠尾草绿砖","白色手工砖","水磨石","橡木条"]],["五金",["拉丝黄铜","哑光黑","亮面铬"]]],
+faq:[["估价工具算是报价吗？","不是。这是用本演示内置示例单价算出的预算参考。正式报价会逐项列明，需在上门勘察和实测图纸之后提供。"],["你们会处理管理处和审批吗？","我们会为管理处准备装修申请、承包商通行证和图纸。结构改动需要工程师和市政局批准，另行报价。"],["施工期间可以住在单位里吗？","只做一间浴室或油漆的话，通常可以。厨房或整间翻新会安排搬出时段，工期表一开始就会标明。"],["施工中途改变范围怎么办？","每项变更都会写成变更单，注明价格和工期影响。你书面同意之前，不会多做任何工程。"],["怎么知道工地进度？","项目负责人每周在群组发照片记录和简短进度，每个付款阶段也会一起巡查工地。"],["交屋后保障什么？","保修期内（示例：12 个月）的工艺问题免费修复。五金洁具的品牌保修会连同文件一并交给你。"]],
+ok:"谢谢，{n}。项目负责人会在一个工作日内联系您。（演示：没有发送任何内容。）",okNeed:"请先填写姓名和号码。",other:"其他"}};
+const PL={ms:{"LIVING / DINING":"TAMU / MAKAN","MASTER":"BILIK UTAMA","BED 1":"BILIK 1","BED 2":"BILIK 2","BED 3":"BILIK 3","BED 4":"BILIK 4","KITCHEN":"DAPUR","BATH":"BILIK AIR","LIVING":"RUANG TAMU","OPEN KITCHEN":"DAPUR TERBUKA","ISLAND":"PULAU","STUDY":"BILIK BACAAN","GLASS":"KACA","LIVING + LIGHT":"TAMU + CAHAYA","STAIR":"TANGGA","YARD":"LAMAN","DRY":"KERING","WET KITCHEN":"DAPUR BASAH","POWDER":"TANDAS","HALL":"DEWAN","WALK-IN":"ALMARI","BATH+":"BILIK AIR+","SUITE":"SUITE","UNIT A":"UNIT A","UNIT B":"UNIT B","STORE":"STOR","BACK":"BELAKANG","OPEN SEATING":"TEMPAT DUDUK","BAR":"BAR","PANTRY":"PANTRI","OFFICE":"PEJABAT","OPEN PLAN":"PELAN TERBUKA","RECEPT.":"KAUNTER","WAIT":"MENUNGGU","TREATMENT":"RAWATAN","CONSULT 1":"KONSULTASI 1","CONSULT 2":"KONSULTASI 2"},
+zh:{"LIVING / DINING":"客厅 / 餐厅","MASTER":"主卧","BED 1":"卧室 1","BED 2":"卧室 2","BED 3":"卧室 3","BED 4":"卧室 4","KITCHEN":"厨房","BATH":"浴室","LIVING":"客厅","OPEN KITCHEN":"开放式厨房","ISLAND":"中岛","STUDY":"书房","GLASS":"玻璃","LIVING + LIGHT":"客厅 + 采光","STAIR":"楼梯","YARD":"后院","DRY":"干厨","WET KITCHEN":"湿厨","POWDER":"客用厕所","HALL":"走廊","WALK-IN":"衣帽间","BATH+":"大浴室","SUITE":"套房","UNIT A":"A 单位","UNIT B":"B 单位","STORE":"储藏","BACK":"后区","OPEN SEATING":"开放座位","BAR":"吧台","PANTRY":"茶水间","OFFICE":"办公室","OPEN PLAN":"开放办公","RECEPT.":"前台","WAIT":"等候","TREATMENT":"治疗区","CONSULT 1":"诊室 1","CONSULT 2":"诊室 2"}};
+const pl=w=>lang==='en'?w:((PL[lang]||{})[w]||w);
+const s=(k,v)=>{let x=(S[lang][k]!==undefined?S[lang]:S.en)[k];if(v&&typeof x==='string')Object.keys(v).forEach(n=>x=x.split('{'+n+'}').join(v[n]));return x;};
+const LOC={en:'en-MY',ms:'ms-MY',zh:'zh-CN'};
+const AREAS=()=>{const a=['Kuala Lumpur','Petaling Jaya','Shah Alam','Subang Jaya','Cheras','Puchong','Mont Kiara'];if(K.a&&!a.includes(K.a))a.unshift(K.a);return a;};
+const myNow=()=>{const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuala_Lumpur',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(x=>[x.type,x.value]));return {y:+p.year,mo:+p.month,d:+p.day};};
 
 /* ---------- nav ---------- */
 const links=$('#navlinks'),burger=$('#burger');
 function closeNav(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}
 burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
-$$('.nav-links a').forEach(a=>a.addEventListener('click',closeNav));
-addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
+links.addEventListener('click',e=>{if(e.target.closest('a'))closeNav();});
 
-/* ---------- hero plan draw ---------- */
+/* ---------- hero plan draw + drawing/built slider ---------- */
 const plan=$('#plan');
 function prep(sel){return $$(sel+' path').map(p=>{const L=Math.ceil(p.getTotalLength())+1;p.style.strokeDasharray=L;p.style.strokeDashoffset=reduce?0:L;return {p,L};});}
 const W=prep('.dl-w'),F=prep('.dl-f'),D=prep('.dl-d');
-if(reduce){plan.classList.add('done');$('#shint').style.opacity=0;}
+const pw=$('#pw'),cutr=$('#cutr');let touched=false;
+const setCut=v=>{pw.style.setProperty('--cut',v+'%');cutr.value=v;};
+cutr.addEventListener('input',()=>{touched=true;setCut(+cutr.value);});
+if(reduce){plan.classList.add('done');F.forEach(o=>o.p.style.strokeDashoffset=0);D.forEach(o=>o.p.style.strokeDashoffset=0);setCut(55);}
 else{
- W.forEach((o,i)=>{o.p.style.transition=`stroke-dashoffset ${i===0?1.6:.8}s cubic-bezier(.6,0,.2,1) ${i===0?.2:.9+i*.09}s`;});
- requestAnimationFrame(()=>requestAnimationFrame(()=>W.forEach(o=>o.p.style.strokeDashoffset=0)));
- setTimeout(()=>plan.classList.add('done'),2300);
- const sheet=$('#sheet');let start=0;
- const calc=()=>{const r=sheet.getBoundingClientRect();const top=r.top+scrollY;start=Math.max(0,top-innerHeight*.6);};
- const onScroll=()=>{const k=Math.min(1,Math.max(0,(scrollY-start)/(innerHeight*.35)));
-  F.forEach((o,i)=>{const kk=Math.min(1,Math.max(0,k*1.4-i*.06));o.p.style.strokeDashoffset=o.L*(1-kk);});
-  D.forEach(o=>{o.p.style.strokeDashoffset=o.L*(1-Math.min(1,k*1.2));});
-  $('#shint').style.opacity=k>.05?0:1;};
- calc();onScroll();addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',()=>{calc();onScroll();});
- // crosshair
- const cx=$('#cx'),cy=$('#cy'),co=$('#coord');
+ W.forEach((o,i)=>{o.p.style.transition=`stroke-dashoffset ${i===0?1:.5}s cubic-bezier(.6,0,.2,1) ${i===0?.1:.5+i*.05}s`;});
+ F.forEach((o,i)=>{o.p.style.transition=`stroke-dashoffset .6s cubic-bezier(.6,0,.2,1) ${.9+i*.07}s`;});
+ D.forEach((o,i)=>{o.p.style.transition=`stroke-dashoffset .6s ease ${1.3+i*.08}s`;});
+ requestAnimationFrame(()=>requestAnimationFrame(()=>[...W,...F,...D].forEach(o=>o.p.style.strokeDashoffset=0)));
+ setTimeout(()=>plan.classList.add('done'),1500);
+ setTimeout(()=>{if(touched)return;const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/1100),e=1-Math.pow(1-k,3);if(!touched)setCut(100-45*e);if(k<1)requestAnimationFrame(f);})(st);},1400);
+ const sheet=$('#sheet'),cx=$('#cx'),cy=$('#cy'),co=$('#coord');
  sheet.addEventListener('pointermove',e=>{const r=sheet.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;cx.style.top=y+'px';cy.style.left=x+'px';co.textContent=`X ${String(Math.round(x/r.width*7200)).padStart(4,'0')} · Y ${String(Math.round(y/r.height*5600)).padStart(4,'0')} mm`;});
 }
 
 /* ---------- estimator (sample rates, demo only) ---------- */
-const RATE={
- kit:{label:'sKit',fixed:{condo:16000,landed:26000,shop:20000},wk:3},
- bath:{label:'sBath',per:8500,wk:2},
- floor:{label:'sFloor',psf:11,wk:1.5},
- carp:{label:'sCarp',psf:16,wk:3},
- elec:{label:'sElec',psf:6.5,wk:1.5},
- paint:{label:'sPaint',psf:3.2,wk:1}
-};
+const RATE={kit:{label:'sKit',fixed:{condo:16000,landed:26000,shop:20000},wk:3},bath:{label:'sBath',per:8500,wk:2},floor:{label:'sFloor',psf:11,wk:1.5},carp:{label:'sCarp',psf:16,wk:3},elec:{label:'sElec',psf:6.5,wk:1.5},paint:{label:'sPaint',psf:3.2,wk:1}};
 const FIN=[1,1.5,2.25],PT={condo:1,landed:1.12,shop:1.06},RANGE={condo:[400,3000,1100],landed:[1000,6000,2200],shop:[800,5000,1600]};
 const form=$('#estForm'),size=$('#size'),sizeOut=$('#sizeOut');
 let lastLo=0,lastHi=0,curEst=null;
-const fmt=n=>n.toLocaleString('en-MY');
-const rm=n=>'RM '+fmt(Math.round(n/500)*500);
-function readForm(){
- const type=form.querySelector('input[name=ptype]:checked').value;
- const fin=+form.querySelector('input[name=fin]:checked').value;
- const sq=+size.value;
- const scopes=$$('input[name=scope]').filter(c=>c.checked).map(c=>c.value);
- return {type,fin,sq,scopes};
-}
-function estimate(s){
- const nb=s.type==='shop'?Math.max(1,Math.round(s.sq/1500)):Math.max(1,Math.min(6,Math.round(s.sq/650)));
- const parts={};let total=0,wsum=0;
- Object.keys(RATE).forEach(k=>{const r=RATE[k];let v=0;
-  if(r.fixed)v=r.fixed[s.type]*(s.sq>2500?1.25:1);
-  else if(r.per)v=r.per*nb;
-  else v=r.psf*s.sq;
-  v*=FIN[s.fin]*PT[s.type];parts[k]=v;
-  if(s.scopes.includes(k)){total+=v;wsum+=r.wk+(k==='bath'?(nb-1)*.5:0)+(r.psf?s.sq/2000:0);}
- });
- const base=s.scopes.length?2+wsum*.55+s.fin*.8+(s.type==='landed'?1:0):0;
- return {nb,parts,total,lo:total*.88,hi:total*1.18,wlo:Math.max(2,Math.round(base)),whi:Math.max(3,Math.round(base*1.3+1))};
-}
-function tween(el,a1,b1,a2,b2){
- if(reduce){el.innerHTML=`${rm(a2)} <span>–</span> ${rm(b2)}`;return;}
- const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/450),e=1-Math.pow(1-k,3);el.innerHTML=`${rm(a1+(a2-a1)*e)} <span>–</span> ${rm(b1+(b2-b1)*e)}`;if(k<1)requestAnimationFrame(f);})(st);
-}
+const tl=k=>{const el=document.querySelector(`[data-t="${k}"]`);return lang==='en'?(el?el._en:k):((T[lang]||{})[k]||(el?el._en:k));};
+function readForm(){return {type:form.querySelector('input[name=ptype]:checked').value,fin:+form.querySelector('input[name=fin]:checked').value,sq:+size.value,scopes:$$('input[name=scope]').filter(c=>c.checked).map(c=>c.value)};}
+function estimate(st){const nb=st.type==='shop'?Math.max(1,Math.round(st.sq/1500)):Math.max(1,Math.min(6,Math.round(st.sq/650)));const parts={};let total=0,wsum=0;
+ Object.keys(RATE).forEach(k=>{const r=RATE[k];let v=r.fixed?r.fixed[st.type]*(st.sq>2500?1.25:1):r.per?r.per*nb:r.psf*st.sq;v*=FIN[st.fin]*PT[st.type];parts[k]=v;if(st.scopes.includes(k)){total+=v;wsum+=r.wk+(k==='bath'?(nb-1)*.5:0)+(r.psf?st.sq/2000:0);}});
+ const base=st.scopes.length?2+wsum*.55+st.fin*.8+(st.type==='landed'?1:0):0;
+ return {nb,parts,total,lo:total*.88,hi:total*1.18,wlo:Math.max(2,Math.round(base)),whi:Math.max(3,Math.round(base*1.3+1))};}
+function tween(el,a1,b1,a2,b2){if(reduce){el.innerHTML=`${rm(a2)} <span>–</span> ${rm(b2)}`;return;}const st=performance.now();(function f(n){const k=Math.min(1,(n-st)/450),e=1-Math.pow(1-k,3);el.innerHTML=`${rm(a1+(a2-a1)*e)} <span>–</span> ${rm(b1+(b2-b1)*e)}`;if(k<1)requestAnimationFrame(f);})(st);}
 function updSize(){const p=(size.value-size.min)/(size.max-size.min)*100;size.style.setProperty('--p',p+'%');sizeOut.innerHTML=fmt(+size.value)+'<small>sq ft</small>';}
-function calcUI(){
- const s=readForm(),e=estimate(s);curEst={s,e};updSize();
- $('#sizeHint').textContent=s.scopes.includes('bath')?`≈ ${e.nb} ${t('baths')}`:'';
+function calcUI(){const st=readForm(),e=estimate(st);curEst={s:st,e};updSize();
+ $('#sizeHint').textContent=st.scopes.includes('bath')?`≈ ${e.nb} ${s('baths')}`:'';
  const max=Math.max(...Object.values(e.parts));
- $('#bars').innerHTML=Object.keys(RATE).map(k=>{const on=s.scopes.includes(k);return `<div class="bar${on?'':' off'}"><span>${t(RATE[k].label)}</span><i style="--w:${on?(e.parts[k]/max*100).toFixed(1):0}%"></i><em>${on?rm(e.parts[k]):'—'}</em></div>`;}).join('');
- $('#rEmpty').textContent=s.scopes.length?'':t('empty');
+ $('#bars').innerHTML=Object.keys(RATE).map(k=>{const on=st.scopes.includes(k);return `<div class="bar${on?'':' off'}"><span>${tl(RATE[k].label)}</span><i style="--w:${on?(e.parts[k]/max*100).toFixed(1):0}%"></i><em>${on?rm(e.parts[k]):'—'}</em></div>`;}).join('');
+ $('#rEmpty').textContent=st.scopes.length?'':s('empty');
  tween($('#rRange'),lastLo,lastHi,e.lo,e.hi);lastLo=e.lo;lastHi=e.hi;
- $('#rWeeks').innerHTML=s.scopes.length?`${e.wlo}–${e.whi} <small>${t('wk')}</small>`:`— <small>${t('wk')}</small>`;
- $('#rPsf').textContent=s.scopes.length?'RM '+Math.round((e.lo+e.hi)/2/s.sq):'—';
- $('#sendBtn').disabled=!s.scopes.length;$('#sendBtn').style.opacity=s.scopes.length?1:.5;
- if($('#wa').classList.contains('show'))buildMsg();
-}
-form.addEventListener('change',e=>{
- if(e.target.name==='ptype'){const r=RANGE[e.target.value];size.min=r[0];size.max=r[1];size.value=r[2];$('#tMin').textContent=fmt(r[0]);$('#tMax').textContent=fmt(r[1]);}
- calcUI();
-});
+ $('#rWeeks').innerHTML=st.scopes.length?`${e.wlo}–${e.whi} <small>${s('wk')}</small>`:`— <small>${s('wk')}</small>`;
+ $('#rPsf').textContent=st.scopes.length?'RM '+Math.round((e.lo+e.hi)/2/st.sq):'—';
+ $('#sendBtn').disabled=!st.scopes.length;$('#sendBtn').style.opacity=st.scopes.length?1:.5;
+ if($('#wa').classList.contains('show'))buildMsg();}
+form.addEventListener('change',e=>{if(e.target.name==='ptype'){const r=RANGE[e.target.value];size.min=r[0];size.max=r[1];size.value=r[2];$('#tMin').textContent=fmt(r[0]);$('#tMax').textContent=fmt(r[1]);}calcUI();});
 size.addEventListener('input',calcUI);
-
-/* WhatsApp preview */
-function buildMsg(){
- const {s,e}=curEst;const tl={condo:'tCondo',landed:'tLanded',shop:'tShop'}[s.type];
- const msg=`${t('waHi')}\n\n• ${t('waProp')}: ${t(tl)}\n• ${t('waSize')}: ${fmt(s.sq)} sq ft\n• ${t('waScope')}: ${s.scopes.map(k=>t(RATE[k].label)).join(', ')}\n• ${t('waFin')}: ${t(['fEss','fCom','fSig'][s.fin])}\n• ${t('waRange')}: ${rm(e.lo)} – ${rm(e.hi)}\n• ${t('waTime')}: ${e.wlo}–${e.whi} ${t('wk')}\n\n${t('waEnd')}`;
- const d=new Date();const tm=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
- const b=$('#bub');b.textContent=msg;const sp=document.createElement('span');sp.className='tm';sp.textContent=tm+' ✓✓';b.appendChild(sp);
- return msg;
-}
+function buildMsg(){const {s:st,e}=curEst;const tk={condo:'tCondo',landed:'tLanded',shop:'tShop'}[st.type];
+ const msg=`${s('waHi',{b:NAME()})}\n\n• ${s('waProp')}: ${tl(tk)}\n• ${s('waSize')}: ${fmt(st.sq)} sq ft\n• ${s('waScope')}: ${st.scopes.map(k=>tl(RATE[k].label)).join(', ')}\n• ${s('waFin')}: ${tl(['fEss','fCom','fSig'][st.fin])}\n• ${s('waRange')}: ${rm(e.lo)} – ${rm(e.hi)}\n• ${s('waTime')}: ${e.wlo}–${e.whi} ${s('wk')}\n\n${s('waEnd')}`;
+ const d=new Date();const b=$('#bub');b.textContent=msg;const sp=document.createElement('span');sp.className='tm';sp.textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')+' ✓✓';b.appendChild(sp);return msg;}
 $('#sendBtn').addEventListener('click',()=>{if(!curEst||!curEst.s.scopes.length)return;buildMsg();const w=$('#wa');w.classList.remove('show');void w.offsetWidth;w.classList.add('show');w.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});});
 $('#waX').addEventListener('click',()=>$('#wa').classList.remove('show'));
-$('#waCopy').addEventListener('click',()=>{const m=buildMsg();const btn=$('#waCopy');const done=()=>{btn.textContent=t('copied');setTimeout(()=>btn.textContent=t('copy'),1400);};
- try{if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(m).then(done,()=>{});}else done();}catch(err){done();}});
+$('#waCopy').addEventListener('click',()=>{const m=buildMsg();const btn=$('#waCopy');const done=()=>{btn.textContent=s('copied');setTimeout(()=>btn.textContent=tl('copy'),1400);};try{if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(m).then(done,()=>{});else done();}catch(err){done();}});
 
 /* ---------- projects ---------- */
 const P=[
- {c:'condo',n:'Mont Kiara condo',a:'Kuala Lumpur',sq:'1,250',bud:'RM 90–120k',dur:'10–12 wks',d:'Enclosed kitchen opened to the living room, island added. Wall confirmed non-structural on site.',
-  cw:[[120,10,120,130],[120,70,190,70]],bo:[[10,62,72,62],[72,62,72,10]],ao:[[30,80,88,80],[88,80,88,92],[88,92,30,92],[30,92,30,80]],
-  lb:[[41,38,'KITCHEN'],[65,110,'LIVING'],[155,42,'BED 1'],[155,102,'BED 2']],la:[[44,30,'OPEN KITCHEN'],[59,74,'ISLAND'],[65,114,'LIVING'],[155,42,'BED 1'],[155,102,'BED 2']]},
- {c:'condo',n:'Cheras 3-room unit',a:'Cheras',sq:'950',bud:'RM 55–75k',dur:'8–9 wks',d:'Third bedroom becomes a study with a glass slider, so the living room gains daylight.',
-  cw:[[130,10,130,130],[130,72,190,72]],bo:[[10,64,70,64],[70,64,70,10]],ao:[[70,10,70,30],[10,64,40,64]],
-  lb:[[40,38,'BED 3'],[70,104,'LIVING'],[160,42,'MASTER'],[160,102,'BED 2']],la:[[40,38,'STUDY'],[86,50,'GLASS'],[70,104,'LIVING + LIGHT'],[160,42,'MASTER'],[160,102,'BED 2']]},
- {c:'landed',n:'Subang double-storey terrace',a:'Subang Jaya',sq:'2,400',bud:'RM 210–270k',dur:'16–18 wks',d:'Rear kitchen split into dry and wet zones, with a powder room tucked under the stairs.',
-  cw:[[10,78,190,78],[140,10,140,78]],bo:[[100,78,100,130]],ao:[[70,78,70,130],[140,104,190,104],[140,104,140,130]],
-  lb:[[75,46,'LIVING'],[165,46,'STAIR'],[55,106,'KITCHEN'],[145,106,'YARD']],la:[[75,46,'LIVING'],[165,46,'STAIR'],[40,106,'DRY'],[105,106,'WET KITCHEN'],[165,92,'YARD'],[165,120,'POWDER']]},
- {c:'landed',n:'Shah Alam semi-D master suite',a:'Shah Alam',sq:'3,200',bud:'RM 280–360k',dur:'18–22 wks',d:'Small fourth bedroom absorbed into the master as a walk-in wardrobe and a larger bathroom.',
-  cw:[[100,10,100,130],[10,80,100,80]],bo:[[150,10,150,130],[100,70,150,70]],ao:[[150,10,150,62],[150,62,190,62],[100,92,150,92]],
-  lb:[[55,46,'HALL'],[55,106,'BED 3'],[125,40,'BED 4'],[125,100,'BATH'],[170,70,'MASTER']],la:[[55,46,'HALL'],[55,106,'BED 3'],[125,46,'WALK-IN'],[170,40,'BATH+'],[125,112,'MASTER'],[170,100,'SUITE']]},
- {c:'commercial',n:'PJ shoplot café, ground floor',a:'Petaling Jaya',sq:'1,600',bud:'RM 150–190k',dur:'11–13 wks',d:'Old retail partitions out; open seating, bar counter and a proper back-of-house.',
-  cw:[[140,10,140,130]],bo:[[10,50,140,50],[10,90,140,90]],ao:[[80,96,135,96],[135,96,135,124],[140,60,190,60]],
-  lb:[[75,32,'UNIT A'],[75,72,'UNIT B'],[75,112,'STORE'],[165,70,'BACK']],la:[[60,50,'OPEN SEATING'],[108,112,'BAR'],[165,38,'KITCHEN'],[165,98,'STORE']]},
- {c:'commercial',n:'Puchong clinic, first floor',a:'Puchong',sq:'1,400',bud:'RM 120–160k',dur:'10–12 wks',d:'Open office re-planned into reception, two consult rooms and a treatment bay.',
-  cw:[[10,70,60,70]],bo:[[100,10,100,130]],ao:[[60,10,60,130],[60,50,190,50],[125,50,125,130],[60,96,125,96]],
-  lb:[[35,42,'PANTRY'],[55,106,'OFFICE'],[145,70,'OPEN PLAN']],la:[[35,42,'RECEPT.'],[35,104,'WAIT'],[125,32,'TREATMENT'],[92,74,'CONSULT 1'],[158,92,'CONSULT 2'],[92,114,'STORE']]}
-];
-const ln=(a,cls)=>`<path class="${cls}"${cls==="ao"?" pathLength=\"1\"":""} d="M${a[0]} ${a[1]}L${a[2]} ${a[3]}"/>`;
-const tx=(a,cls)=>`<text class="${cls}" x="${a[0]}" y="${a[1]}">${a[2]}</text>`;
+ {c:'condo',img:'1617228069096-4638a7ffc906',n:['Mont Kiara condo','Kondo Mont Kiara','满家乐公寓'],a:'Kuala Lumpur',sq:'1,250',bud:'RM 90–120k',dur:'10–12',d:['Enclosed kitchen opened to the living room, island added. Wall confirmed non-structural on site.','Dapur tertutup dibuka ke ruang tamu, pulau dapur ditambah. Dinding disahkan bukan struktur di tapak.','封闭式厨房打通到客厅，加了中岛。现场确认该墙非承重墙。'],
+  cw:[[120,10,120,130],[120,70,190,70]],bo:[[10,62,72,62],[72,62,72,10]],ao:[[30,80,88,80],[88,80,88,92],[88,92,30,92],[30,92,30,80]],lb:[[41,38,'KITCHEN'],[65,110,'LIVING'],[155,42,'BED 1'],[155,102,'BED 2']],la:[[44,30,'OPEN KITCHEN'],[59,74,'ISLAND'],[65,114,'LIVING'],[155,42,'BED 1'],[155,102,'BED 2']]},
+ {c:'condo',img:'1600210492486-724fe5c67fb0',n:['Cheras 3-room unit','Unit 3 bilik Cheras','蕉赖三房单位'],a:'Cheras',sq:'950',bud:'RM 55–75k',dur:'8–9',d:['Third bedroom becomes a study with a glass slider, so the living room gains daylight.','Bilik ketiga jadi bilik bacaan dengan pintu kaca gelangsar, jadi ruang tamu dapat cahaya.','第三间卧室改成玻璃推拉门书房，客厅因此更明亮。'],
+  cw:[[130,10,130,130],[130,72,190,72]],bo:[[10,64,70,64],[70,64,70,10]],ao:[[70,10,70,30],[10,64,40,64]],lb:[[40,38,'BED 3'],[70,104,'LIVING'],[160,42,'MASTER'],[160,102,'BED 2']],la:[[40,38,'STUDY'],[86,50,'GLASS'],[70,104,'LIVING + LIGHT'],[160,42,'MASTER'],[160,102,'BED 2']]},
+ {c:'landed',img:'1556912173-3bb406ef7e77',n:['Subang double-storey terrace','Teres dua tingkat Subang','梳邦双层排屋'],a:'Subang Jaya',sq:'2,400',bud:'RM 210–270k',dur:'16–18',d:['Rear kitchen split into dry and wet zones, with a powder room tucked under the stairs.','Dapur belakang dibahagi kepada zon kering dan basah, dengan tandas kecil di bawah tangga.','后厨分成干厨和湿厨，楼梯下加了一间客用厕所。'],
+  cw:[[10,78,190,78],[140,10,140,78]],bo:[[100,78,100,130]],ao:[[70,78,70,130],[140,104,190,104],[140,104,140,130]],lb:[[75,46,'LIVING'],[165,46,'STAIR'],[55,106,'KITCHEN'],[145,106,'YARD']],la:[[75,46,'LIVING'],[165,46,'STAIR'],[40,106,'DRY'],[105,106,'WET KITCHEN'],[165,92,'YARD'],[165,120,'POWDER']]},
+ {c:'landed',img:'1616594039964-ae9021a400a0',n:['Shah Alam semi-D master suite','Suite utama semi-D Shah Alam','莎阿南半独立主卧套房'],a:'Shah Alam',sq:'3,200',bud:'RM 280–360k',dur:'18–22',d:['Small fourth bedroom absorbed into the master as a walk-in wardrobe and a larger bathroom.','Bilik keempat yang kecil digabung ke bilik utama sebagai almari walk-in dan bilik air yang lebih besar.','把小的第四间卧室并入主卧，改成衣帽间和更大的浴室。'],
+  cw:[[100,10,100,130],[10,80,100,80]],bo:[[150,10,150,130],[100,70,150,70]],ao:[[150,10,150,62],[150,62,190,62],[100,92,150,92]],lb:[[55,46,'HALL'],[55,106,'BED 3'],[125,40,'BED 4'],[125,100,'BATH'],[170,70,'MASTER']],la:[[55,46,'HALL'],[55,106,'BED 3'],[125,46,'WALK-IN'],[170,40,'BATH+'],[125,112,'MASTER'],[170,100,'SUITE']]},
+ {c:'commercial',img:'1554118811-1e0d58224f24',n:['PJ shoplot café, ground floor','Kafe rumah kedai PJ, tingkat bawah','八打灵再也店屋咖啡馆（底楼）'],a:'Petaling Jaya',sq:'1,600',bud:'RM 150–190k',dur:'11–13',d:['Old retail partitions out; open seating, bar counter and a proper back-of-house.','Partisyen kedai lama dibuang; tempat duduk terbuka, kaunter bar dan ruang belakang yang sempurna.','拆掉旧零售隔间，改成开放座位、吧台和完整的后场。'],
+  cw:[[140,10,140,130]],bo:[[10,50,140,50],[10,90,140,90]],ao:[[80,96,135,96],[135,96,135,124],[140,60,190,60]],lb:[[75,32,'UNIT A'],[75,72,'UNIT B'],[75,112,'STORE'],[165,70,'BACK']],la:[[60,50,'OPEN SEATING'],[108,112,'BAR'],[165,38,'KITCHEN'],[165,98,'STORE']]},
+ {c:'commercial',img:'1519494026892-80bbd2d6fd0d',n:['Puchong clinic, first floor','Klinik Puchong, tingkat satu','蒲种诊所（一楼）'],a:'Puchong',sq:'1,400',bud:'RM 120–160k',dur:'10–12',d:['Open office re-planned into reception, two consult rooms and a treatment bay.','Pejabat terbuka dirancang semula menjadi kaunter, dua bilik konsultasi dan ruang rawatan.','开放式办公室重新规划为前台、两间诊室和治疗区。'],
+  cw:[[10,70,60,70]],bo:[[100,10,100,130]],ao:[[60,10,60,130],[60,50,190,50],[125,50,125,130],[60,96,125,96]],lb:[[35,42,'PANTRY'],[55,106,'OFFICE'],[145,70,'OPEN PLAN']],la:[[35,42,'RECEPT.'],[35,104,'WAIT'],[125,32,'TREATMENT'],[92,74,'CONSULT 1'],[158,92,'CONSULT 2'],[92,114,'STORE']]}];
+const ln=(a,cls)=>`<path class="${cls}"${cls==="ao"?' pathLength="1"':''} d="M${a[0]} ${a[1]}L${a[2]} ${a[3]}"/>`;
+const tx=(a,cls)=>`<text class="${cls}" x="${a[0]}" y="${a[1]}">${pl(a[2])}</text>`;
+const view={};
 function renderProjects(){
- $('#grid').innerHTML=P.map((p,i)=>`<article class="pcard reveal" data-c="${p.c}">
-  <div class="pc-draw"><span class="stamp">${t('before')}</span><div class="tog" role="group" aria-label="Plan view"><button type="button" aria-pressed="true" data-v="b">${t('before')}</button><button type="button" aria-pressed="false" data-v="a">${t('after')}</button></div>
-  <svg viewBox="0 0 200 140" role="img" aria-label="Plan of ${p.n}"><path class="ow" d="M10 10H190V130H10Z"/>${p.cw.map(a=>`<path class="cw" d="M${a[0]} ${a[1]}L${a[2]} ${a[3]}"/>`).join('')}${p.bo.map(a=>ln(a,'bo')).join('')}${p.ao.map(a=>ln(a,'ao')).join('')}${p.lb.map(a=>tx(a,'lb')).join('')}${p.la.map(a=>tx(a,'la')).join('')}</svg></div>
-  <div class="pc-body"><span class="tag">${String(i+1).padStart(2,'0')} · ${p.a}</span><h3>${p.n}</h3><p>${p.d}</p>
-  <div class="pc-meta"><div>Size<b>${p.sq} sq ft</b></div><div>Budget band<b>${p.bud}</b></div><div>Duration<b>${p.dur}</b></div></div></div></article>`).join('');
- $$('.pcard').forEach(card=>{card.querySelectorAll('.tog button').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.v==='a';card.classList.toggle('after',a);card.querySelectorAll('.tog button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));card.querySelector('.stamp').textContent=a?t('after'):t('before');}));});
- applyFilter();$$('#grid .reveal').forEach(el=>io.observe(el));
-}
+ $('#grid').innerHTML=P.map((p,i)=>{const v=view[i]||'b';return `<article class="pcard${v==='a'?' after':v==='p'?' photo':''}" data-c="${p.c}" data-i="${i}">
+  <div class="pc-draw"><span class="stamp">${s(v==='a'?'after':v==='p'?'photo':'before')}</span><div class="tog" role="group" aria-label="View">${['b','a','p'].map(k=>`<button type="button" aria-pressed="${k===v}" data-v="${k}">${s(k==='b'?'before':k==='a'?'after':'photo')}</button>`).join('')}</div>
+  <svg viewBox="0 0 200 140" role="img" aria-label="${L3(p.n)}"><path class="ow" d="M10 10H190V130H10Z"/>${p.cw.map(a=>`<path class="cw" d="M${a[0]} ${a[1]}L${a[2]} ${a[3]}"/>`).join('')}${p.bo.map(a=>ln(a,'bo')).join('')}${p.ao.map(a=>ln(a,'ao')).join('')}${p.lb.map(a=>tx(a,'lb')).join('')}${p.la.map(a=>tx(a,'la')).join('')}</svg>
+  <img class="pc-photo" loading="lazy" src="${IMG(p.img,700,490)}" alt="${L3(p.n)}"></div>
+  <div class="pc-body"><span class="tag">${String(i+1).padStart(2,'0')} · ${p.a}</span><h3>${L3(p.n)}</h3><p>${L3(p.d)}</p>
+  <div class="pc-meta"><div>${s('sz')}<b>${p.sq} sq ft</b></div><div>${s('bb')}<b>${p.bud}</b></div><div>${s('du')}<b>${p.dur} ${s('wk')}</b></div></div></div></article>`;}).join('');
+ applyFilter();}
+$('#grid').addEventListener('click',e=>{const b=e.target.closest('.tog button');if(!b)return;const card=b.closest('.pcard'),i=+card.dataset.i,v=b.dataset.v;view[i]=v;card.classList.toggle('after',v==='a');card.classList.toggle('photo',v==='p');card.querySelectorAll('.tog button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));card.querySelector('.stamp').textContent=s(v==='a'?'after':v==='p'?'photo':'before');});
 let filt='all';
 function applyFilter(){$$('.pcard').forEach(c=>c.classList.toggle('hide',filt!=='all'&&c.dataset.c!==filt));}
 $$('#filters button').forEach(b=>b.addEventListener('click',()=>{filt=b.dataset.f;$$('#filters button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applyFilter();}));
 
 /* ---------- swatch board ---------- */
-const CATS=[
- {id:'floor',h:'Floor',el:'#r-floor',o:[['terr','Terrazzo TZ-01','t-terr','url(#p-terr)'],['oak','Oak plank OK-03','t-oak','url(#p-oak)'],['conc','Micro-cement MC-02','t-conc','url(#p-conc)'],['sage','Sage tile ST-04','t-sage','url(#p-sage)']]},
- {id:'cab',h:'Cabinetry',el:'#r-lower,#r-upper',o:[['oak','Oak veneer OK-01','t-oak','url(#p-oak)'],['sage','Sage lacquer SG-02','t-sage','#9caf98'],['chalk','Chalk matte CH-01','t-chalk','url(#p-chalk)'],['ink','Ink blue IN-05','t-ink','url(#p-ink)']]},
- {id:'splash',h:'Backsplash',el:'#r-splash',o:[['sage','Sage tile ST-04','t-sage','url(#p-sage)'],['zel','Zellige white ZW-02','t-zel','url(#p-zel)'],['terr','Terrazzo TZ-01','t-terr','url(#p-terr)'],['oak','Oak slat OK-07','t-oak','url(#p-oak)']]},
- {id:'hw',h:'Hardware',el:'.hw',o:[['brass','Brushed brass BR-01','t-brass','url(#g-brass)'],['black','Matte black BK-02','t-black','url(#g-black)'],['chrome','Polished chrome CR-03','t-chrome','url(#g-chrome)']]}
-];
+const CATS=[{id:'floor',el:'#r-floor',o:[['TZ-01','t-terr','url(#p-terr)'],['OK-03','t-oak','url(#p-oak)'],['MC-02','t-conc','url(#p-conc)'],['ST-04','t-sage','url(#p-sage)']]},
+ {id:'cab',el:'#r-lower,#r-upper',o:[['OK-01','t-oak','url(#p-oak)'],['SG-02','t-sage','#9caf98'],['CH-01','t-chalk','url(#p-chalk)'],['IN-05','t-ink','url(#p-ink)']]},
+ {id:'splash',el:'#r-splash',o:[['ST-04','t-sage','url(#p-sage)'],['ZW-02','t-zel','url(#p-zel)'],['TZ-01','t-terr','url(#p-terr)'],['OK-07','t-oak','url(#p-oak)']]},
+ {id:'hw',el:'.hw',o:[['BR-01','t-brass','url(#g-brass)'],['BK-02','t-black','url(#g-black)'],['CR-03','t-chrome','url(#g-chrome)']]}];
 const sel={floor:0,cab:0,splash:0,hw:0};
-$('#cats').innerHTML=CATS.map(c=>`<div class="cat"><h4><span>${c.h}</span><span id="cn-${c.id}"></span></h4><div class="chips">${c.o.map((o,i)=>`<button type="button" class="chip" data-c="${c.id}" data-i="${i}" aria-pressed="${i===0}"><i class="${o[2]}"></i><span>${o[1]}</span></button>`).join('')}</div></div>`).join('');
-function applySw(){
- CATS.forEach(c=>{const o=c.o[sel[c.id]];$$(c.el).forEach(g=>{if(g.tagName.toLowerCase()==='g')g.querySelectorAll('rect,path').forEach(x=>{if(!x.getAttribute('stroke'))x.setAttribute('fill',o[3]);});else g.setAttribute('fill',o[3]);});$('#cn-'+c.id).textContent=o[1].split(' ').pop();});
- $('#spec').innerHTML=CATS.map(c=>`<div>${c.h}<b>${c.o[sel[c.id]][1]}</b></div>`).join('');
-}
-$('#cats').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;sel[b.dataset.c]=+b.dataset.i;$$(`.chip[data-c="${b.dataset.c}"]`).forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applySw();});
-applySw();
+const swName=(ci,oi)=>s('cats')[ci][1][oi]+' '+CATS[ci].o[oi][0];
+function renderCats(){$('#cats').innerHTML=CATS.map((c,ci)=>`<div class="cat"><h4><span>${s('cats')[ci][0]}</span><span id="cn-${c.id}"></span></h4><div class="chips2">${c.o.map((o,i)=>`<button type="button" class="sw" data-c="${c.id}" data-ci="${ci}" data-i="${i}" aria-pressed="${i===sel[c.id]}"><i class="${o[1]}"></i><span>${swName(ci,i)}</span></button>`).join('')}</div></div>`).join('');applySw();}
+function applySw(){CATS.forEach((c,ci)=>{const o=c.o[sel[c.id]];$$(c.el).forEach(g=>{if(g.tagName.toLowerCase()==='g')g.querySelectorAll('rect,path').forEach(x=>{if(!x.getAttribute('stroke'))x.setAttribute('fill',o[2]);});else g.setAttribute('fill',o[2]);});$('#cn-'+c.id).textContent=o[0];});
+ $('#spec').innerHTML=CATS.map((c,ci)=>`<div>${s('cats')[ci][0]}<b>${swName(ci,sel[c.id])}</b></div>`).join('');}
+$('#cats').addEventListener('click',e=>{const b=e.target.closest('.sw');if(!b)return;sel[b.dataset.c]=+b.dataset.i;$$(`.sw[data-c="${b.dataset.c}"]`).forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applySw();});
 
-/* ---------- process track ---------- */
-const steps=$('#steps'),stepEls=$$('.step'),trackI=$('#trackI');
-function track(){const r=steps.getBoundingClientRect();const k=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/(r.height+innerHeight*.25)));trackI.style.setProperty('--k',reduce?1:k);stepEls.forEach((s,i)=>s.classList.toggle('on',reduce||k>=i/stepEls.length+.02));}
-addEventListener('scroll',track,{passive:true});track();
+/* ---------- process ---------- */
+function renderSteps(){$('#steps').innerHTML=`<li class="track" aria-hidden="true"><i id="trackI"></i></li>`+s('steps').map((x,i)=>`<li class="step reveal in"><span class="n">${s('stage')} 0${i+1}</span><h3>${x[0]}</h3><span class="dur">${x[1]}</span><p>${x[2]}</p><span class="pay">${x[3]}</span></li>`).join('');
+ const bg=['#e9e4d7','#cdd9f3','#cfdacd','#e7d6b8','#b08d57'],fl=[20,30,30,15,5];$('#paybar').innerHTML=s('pay').map((x,i)=>`<div style="flex:${fl[i]};background:${bg[i]}${i===4?';color:#fff':''}">${x}</div>`).join('');track();}
+function track(){const steps=$('#steps'),els=$$('.step'),ti=$('#trackI');if(!ti)return;const r=steps.getBoundingClientRect();const k=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/(r.height+innerHeight*.25)));ti.style.setProperty('--k',reduce?1:k);els.forEach((el,i)=>el.classList.toggle('on',reduce||k>=i/els.length+.02));}
+addEventListener('scroll',track,{passive:true});
 
 /* ---------- FAQ ---------- */
-const FAQ=[
- ['Is the estimator a quotation?','No. It is a sample ballpark using rates written into this demo. A real quotation is line-by-line and only follows a site visit and measured drawings.'],
- ['Do you handle the management office and permits?','We prepare the renovation application, contractor passes and drawings for the management office. Structural changes need an engineer and council approval, quoted separately.'],
- ['Can I live in the unit during works?','For a single bathroom or painting, often yes. For kitchen or whole-unit jobs we plan a move-out window, and the schedule shows it from the start.'],
- ['What happens if the scope changes mid-build?','Every change is written as a variation order with its price and time impact. Nothing extra is built until you approve it in writing.'],
- ['How do I know what is happening on site?','Your project lead posts a weekly photo log and a short progress note in one shared chat, plus a site walk at each payment milestone.'],
- ['What is covered after handover?','Workmanship defects during the warranty period (sample: 12 months) are fixed at no charge. Brand warranties for fittings pass to you with the paperwork.']
-];
-$('#faqList').innerHTML=FAQ.map((q,i)=>`<div class="q"><button type="button" aria-expanded="false" aria-controls="qa${i}" id="qb${i}">${q[0]}<i aria-hidden="true"></i></button><div class="qa" id="qa${i}" role="region" aria-labelledby="qb${i}"><div><p>${q[1]}</p></div></div></div>`).join('');
-$$('.q button').forEach(b=>b.addEventListener('click',()=>{const q=b.parentElement,o=!q.classList.contains('open');$$('.q').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});if(o){q.classList.add('open');b.setAttribute('aria-expanded','true');}}));
+function renderFaq(){$('#faqList').innerHTML=s('faq').map((q,i)=>`<div class="q"><button type="button" aria-expanded="false" aria-controls="qa${i}" id="qb${i}">${q[0]}<i aria-hidden="true"></i></button><div class="qa" id="qa${i}" role="region" aria-labelledby="qb${i}"><div><p>${q[1]}</p></div></div></div>`).join('');}
+$('#faqList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const q=b.parentElement,o=!q.classList.contains('open');$$('.q').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});if(o){q.classList.add('open');b.setAttribute('aria-expanded','true');}});
 
-/* ---------- contact (demo) ---------- */
-$('#cform').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=f.n.value.trim(),p=f.p.value.trim();$('#okmsg').textContent=(n&&p)?fill(t('ok'),n.split(' ')[0]):t('okNeed');if(n&&p)f.reset();});
+/* ---------- enquiry ---------- */
+let eT=0,eJ=0;
+function renderEnq(){$('#eType').innerHTML=s('types').map((t,i)=>`<button type="button" data-et="${i}" aria-pressed="${i===eT}"><b>${t}</b></button>`).join('');
+ $('#eJob').innerHTML=s('jobs').map((j,i)=>`<button type="button" class="chip" data-ej="${i}" aria-pressed="${i===eJ}">${j}</button>`).join('');
+ const w=$('#eWhen'),wi=w.selectedIndex<0?1:w.selectedIndex;w.innerHTML=s('whens').map(x=>`<option>${x}</option>`).join('');w.selectedIndex=wi;
+ const t=s('types')[eT],j=s('jobs')[eJ];$('#eRe').textContent=s('reE',{t,j});
+ const n=myNow();$('#eDt').textContent=new Date(Date.UTC(n.y,n.mo-1,n.d)).toLocaleDateString(LOC[lang],{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
+ $('#eMsg').textContent=s('msgE',{b:NAME(),t,j,w:w.value,a:K.a||'Petaling Jaya'});}
+$('#eType').addEventListener('click',e=>{const b=e.target.closest('[data-et]');if(!b)return;eT=+b.dataset.et;renderEnq();});
+$('#eJob').addEventListener('click',e=>{const b=e.target.closest('[data-ej]');if(!b)return;eJ=+b.dataset.ej;renderEnq();});
+$('#eWhen').addEventListener('change',renderEnq);
+$('#eForm').addEventListener('submit',e=>{e.preventDefault();afDemo();});
 
-/* ---------- lang ---------- */
-function setLang(l){
- lang=l;document.documentElement.lang=l==='zh'?'zh-Hans':(l==='ms'?'ms':'en');
- $$('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);});
- $$('[data-i18n-html]').forEach(el=>{el.innerHTML=t(el.dataset.i18nHtml);});
- $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===l)));
- $('#shint').textContent=t('hint');
- $$('.pcard').forEach(c=>{const a=c.classList.contains('after');c.querySelector('.stamp').textContent=a?t('after'):t('before');const bs=c.querySelectorAll('.tog button');bs[0].textContent=t('before');bs[1].textContent=t('after');});
- if(curEst)calcUI();
-}
-$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+/* ---------- site-visit booking ---------- */
+const TIMES=['10:00','11:30','14:00','15:30','17:00'];let bD=null,bH=null,bT=0;
+const bdays=(()=>{const n=myNow(),a=[];for(let i=1;i<=14;i++)a.push(new Date(Date.UTC(n.y,n.mo-1,n.d+i,12)));return a;})();
+const taken=(d,t)=>((d.getUTCDate()*5+t.charCodeAt(0)+t.charCodeAt(1)*3)%4)===0||(d.getUTCDay()===6&&t>'14:00');
+function renderBook(){const loc=LOC[lang];if(!bD)bD=bdays.find(d=>d.getUTCDay()!==0);
+ $('#days').innerHTML=bdays.map((d,i)=>{const cl=d.getUTCDay()===0;return `<button type="button" class="day" data-i="${i}" ${cl?'disabled':''} aria-pressed="${!cl&&+d===+bD}" aria-label="${d.toLocaleDateString(loc,{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'})}${cl?' · '+s('closed'):''}"><small>${d.toLocaleDateString(loc,{weekday:'short',timeZone:'UTC'})}</small><b>${d.getUTCDate()}</b></button>`;}).join('');
+ let free=0;$('#slots').innerHTML=TIMES.map(t=>{const x=taken(bD,t);if(!x)free++;return `<button type="button" class="slot" data-h="${t}" ${x?'disabled':''} aria-pressed="${t===bH}">${t}</button>`;}).join('');
+ if(bH&&taken(bD,bH))bH=null;$('#slotNote').textContent=s('left',{n:free});
+ $('#bType').innerHTML=s('types').map((t,i)=>`<button type="button" data-bt="${i}" aria-pressed="${i===bT}"><b>${t}</b></button>`).join('');
+ const ba=$('#bArea'),cur=ba.value;ba.innerHTML=AREAS().map(a=>`<option>${a}</option>`).join('');ba.value=cur||K.a||'Petaling Jaya';
+ $('#bSum').innerHTML=`<div><dt>${s('sDate')}</dt><dd>${bD.toLocaleDateString(loc,{weekday:'short',day:'numeric',month:'short',timeZone:'UTC'})}</dd></div><div><dt>${s('sTime')}</dt><dd>${bH||'—'}</dd></div><div><dt>${s('sType')}</dt><dd>${s('types')[bT]}</dd></div><div><dt>${s('sArea')}</dt><dd>${ba.value}</dd></div>`;
+ const go=$('#bGo');go.disabled=!bH;go.style.opacity=bH?1:.55;go.querySelector('span').textContent=bH?tl('bGo'):s('pick');}
+$('#days').addEventListener('click',e=>{const b=e.target.closest('.day');if(!b||b.disabled)return;bD=bdays[+b.dataset.i];renderBook();});
+$('#slots').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;bH=b.dataset.h;renderBook();});
+$('#bType').addEventListener('click',e=>{const b=e.target.closest('[data-bt]');if(!b)return;bT=+b.dataset.bt;renderBook();});
+$('#bArea').addEventListener('change',renderBook);
+$('#bGo').addEventListener('click',()=>{if(!bH)return;afDemo(s('bConf',{b:NAME(),t:s('types')[bT],a:$('#bArea').value,d:bD.toLocaleDateString(LOC[lang],{day:'numeric',month:'short',timeZone:'UTC'}),h:bH}));});
 
-/* ---------- reveal ---------- */
+/* ---------- packages + order drawer ---------- */
+const PK=[{id:'d3',p:1500,img:null},{id:'bath',p:8900,img:'1600566752355-35792bedcfea'},{id:'kit',p:12800,img:'1565538810643-b5bdb714032a'},{id:'ward',p:6400,img:'1617104678098-de229db51175'},{id:'wall',p:3200,img:'1615971677499-5467cbab01c0'},{id:'box',p:49,img:'sw'}];
+const cart={};
+const planArt=`<svg viewBox="0 0 200 125" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;background:var(--card)" aria-hidden="true"><g fill="none" stroke="currentColor" style="color:var(--ink)"><path d="M20 15H180V110H20Z" stroke-width="3"/><path d="M100 15V60M100 80V110M20 70H70M140 15V50" stroke-width="2"/></g><g fill="none" style="stroke:var(--blue)" stroke-width="1"><rect x="30" y="25" width="50" height="22"/><circle cx="150" cy="85" r="12"/><rect x="110" y="88" width="24" height="16"/></g><path d="M20 118H180" style="stroke:var(--brass-d)" stroke-width=".8"/><text x="100" y="66" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" style="fill:var(--ink)">3D · A-101</text></svg>`;
+const swArt=`<div class="swbox"><i class="t-terr"></i><i class="t-oak"></i><i class="t-brass"></i><i class="t-sage"></i><i class="t-conc"></i><i class="t-zel"></i><i class="t-ink"></i><i class="t-chalk"></i></div>`;
+const pkMedia=(p,w)=>p.img===null?planArt:p.img==='sw'?swArt:`<img loading="lazy" src="${IMG(p.img,w,Math.round(w*.625))}" alt="">`;
+function renderPk(){$('#pk').innerHTML=PK.map((p,i)=>{const x=s('pk')[i];return `<article class="pkc reveal in"><div class="ph">${pkMedia(p,700)}<span class="stamp">PK-0${i+1}</span></div><div class="bd"><h3>${x[0]}</h3><p>${x[1]}</p><ul>${x[2].map(l=>`<li>${l}</li>`).join('')}</ul><div class="ft"><span class="pr"><small>${x[3]}</small>${rmx(p.p)}</span><button class="btn dark" type="button" data-add="${p.id}">${s('add')}</button></div></div></article>`;}).join('');}
+const byPk=Object.fromEntries(PK.map((p,i)=>[p.id,{...p,i}]));
+function renderCart(){const ids=Object.keys(cart),n=ids.reduce((a,k)=>a+cart[k],0);$('#cartN').textContent=n;$('#cartBtn').classList.toggle('has',n>0);
+ const sub=ids.reduce((a,k)=>a+byPk[k].p*cart[k],0);
+ $('#drItems').innerHTML=ids.length?ids.map(k=>{const p=byPk[k];return `<div class="ci"><div class="th">${p.img&&p.img!=='sw'?`<img src="${IMG(p.img,140,105)}" alt="">`:p.img==='sw'?'<i class="t-terr" style="display:block;width:100%;height:100%"></i>':planArt}</div><div><b>${s('pk')[p.i][0]}</b><span>${rmx(p.p)}</span></div><div class="qty"><button type="button" data-q="${k}" data-d="-1" aria-label="−">−</button><output>${cart[k]}</output><button type="button" data-q="${k}" data-d="1" aria-label="+">+</button></div></div>`;}).join(''):`<div class="dr-empty"><b>${s('emptyC')}</b>${s('emptyP')}</div>`;
+ $('#drF').innerHTML=ids.length?`<div class="ln"><span>${s('sub')}</span><span>${rmx(sub)}</span></div><div class="ln"><span>${s('bal')}</span><span>${rmx(sub*.7)}</span></div><div class="tot"><span style="font-size:18px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em">${s('dep')}</span><span>${rmx(sub*.3)}</span></div><button class="btn brass full" type="button" id="payGo">${s('checkout')} →</button><div class="paybadges"><span class="pb"><i></i>Card</span><span class="pb fpx">FPX</span><span class="pb grab">GrabPay</span><span class="pb tng">Touch 'n Go</span></div><p class="fine">${s('fine')}</p>`:'';}
+const drawer=$('#drawer'),scrim=$('#scrim');let lastF;
+const openCart=()=>{lastF=document.activeElement;drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');setTimeout(()=>$('#drX').focus(),60);};
+const closeCart=()=>{drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');if(lastF)lastF.focus();};
+$('#cartBtn').addEventListener('click',openCart);$('#drX').addEventListener('click',closeCart);scrim.addEventListener('click',closeCart);
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();closeNav();}});
+document.addEventListener('click',e=>{const a=e.target.closest('[data-add]');if(a){cart[a.dataset.add]=(cart[a.dataset.add]||0)+1;renderCart();a.textContent=s('added');setTimeout(()=>a.textContent=s('add'),1200);if(cnt()===1)openCart();return;}
+ const q=e.target.closest('[data-q]');if(q){cart[q.dataset.q]+= +q.dataset.d;if(cart[q.dataset.q]<=0)delete cart[q.dataset.q];renderCart();return;}
+ if(e.target.closest('#payGo'))afDemo(s('payDemo'));});
+const cnt=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+
+/* ---------- contact ---------- */
+$('#cform').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=f.n.value.trim(),p=f.p.value.trim();$('#okmsg').textContent=(n&&p)?s('ok',{n:n.split(' ')[0]}):s('okNeed');if(n&&p)f.reset();});
+
+/* ---------- language ---------- */
+const tEls=$$('[data-t]');tEls.forEach(el=>el._en=el.innerHTML);const pEls=$$('[data-tp]');pEls.forEach(el=>el._en=el.placeholder);
+const plEls=$$('[data-pl]');
+function setLang(l){lang=S[l]?l:'en';H.lang=lang==='zh'?'zh-Hans':lang;try{localStorage.setItem('af-lang',lang);}catch(e){}
+ tEls.forEach(el=>{el.innerHTML=lang==='en'?el._en:((T[lang]||{})[el.dataset.t]??el._en);});
+ pEls.forEach(el=>{el.placeholder=lang==='en'?el._en:((T[lang]||{})[el.dataset.tp]??el._en);});
+ plEls.forEach(el=>el.textContent=pl(el.dataset.pl));
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===lang)));
+ const mq=s('marq').map(x=>`<span>${x}</span>`).join('');$('#marq').innerHTML=mq+mq;
+ const ca=$('#cArea'),cv=ca.value;ca.innerHTML=AREAS().map(a=>`<option>${a}</option>`).join('')+`<option>${s('other')}</option>`;ca.value=cv||K.a||'Petaling Jaya';
+ renderEnq();renderBook();renderPk();renderCart();renderProjects();renderCats();renderSteps();renderFaq();calcUI();
+ if(window.afFill)window.afFill();}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+
+/* ---------- reveal + mobile bar ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 $$('.reveal').forEach(el=>io.observe(el));
+const mbar=$('#mbar');addEventListener('scroll',()=>mbar.classList.toggle('on',scrollY>innerHeight*.6),{passive:true});
 
-renderProjects();calcUI();
+let saved=null;try{saved=localStorage.getItem('af-lang');}catch(e){}
+setLang(K.l||saved||'en');
 })();
 </script>
 </body>

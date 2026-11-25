@@ -57,9 +57,11 @@ if (!st.i) { try { st = {...JSON.parse(store.get('af-state') || '{}'), ...st}; }
 let step = st.i && st.g ? 3 : st.i ? 2 : 1;
 if (st.i && !st.g && qs.get('t')) { st.g = A.ind(st.i).goal; step = 3; }
 
-const cfg = () => ({i: st.i || 'reno', g: st.g || A.ind(st.i || 'reno').goal, n: st.n || '', a: st.a || '', l: st.l || langNow(), v: st.v || 'warm'});
-const previewUrl = (embed) => '/website/preview.html?' + A.toQuery(cfg()) + (embed ? '&embed=1' : '');
-const shareUrl = () => location.origin + '/website/preview.html?' + A.toQuery(cfg());
+const cfg = () => ({i: st.i || 'reno', g: st.g || A.ind(st.i || 'reno').goal, n: st.n || '', a: st.a || '', l: st.l || langNow(), v: st.v || ''});
+/* the preview IS the premium industry sample, personalised by URL params (see fusion/af-kit.js) */
+const sampleUrl = () => '/website/' + A.ind(cfg().i).tpl + '?' + A.toQuery(cfg());
+const previewUrl = (embed) => sampleUrl() + (embed ? '&embed=1' : '');
+const shareUrl = () => location.origin + sampleUrl();
 const waUrl = () => {
   const l = langNow(), t = T[l], c = cfg(), I = A.ind(c.i), tk = A.tierFor(c.i, c.g);
   const lines = [t.waIntro, '', `• ${A.L(I.label, 'en')}`, `• Goal: ${A.L(A.GOALS[c.g], 'en')}`];
@@ -123,7 +125,7 @@ const render = () => {
     const vibes = Object.keys(A.VIBES).map(v => `<button type="button" data-v="${v}" aria-pressed="${c.v === v}"><i style="background:linear-gradient(135deg,${VIBE_C[v][0]} 50%,${VIBE_C[v][1]} 50%);border:1px solid var(--line2)"></i>${esc(A.L(A.VIBES[v], l))}</button>`).join('');
     body.innerHTML = `<div class="fd-pane">
       <button type="button" class="fd-back">${esc(t.back)}</button>
-      <div class="fd-match"><span class="mono">${esc(t.match)}</span><span>${esc(A.L(I.label, l))} · ${esc(A.L(A.GOALS[c.g], l))}</span><a href="${esc(I.tpl)}" target="_blank" rel="noopener">${esc(t.seeTpl)} ↗</a></div>
+      <div class="fd-match"><span class="mono">${esc(t.match)}</span><span>${esc(A.L(I.label, l))} · ${esc(A.L(A.GOALS[c.g], l))}</span><a href="${esc(previewUrl(false))}" target="_blank" rel="noopener">${esc(t.seeTpl)} ↗</a></div>
       <p class="fd-q">${esc(t.rec)}: ${esc(A.L(tier.name, l))} <span style="color:var(--mut);font-weight:400;font-size:.6em">${esc(A.L(tier.sub, l))}</span></p>
       <div class="fd-price">${priceHtml}</div>
       <p class="fd-split">${esc(t.split.split('{x}').join(A.fmt(A.price(tk) / 2)))}</p>

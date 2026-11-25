@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en" data-goal-default="cred">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rumah Kita Community · Aurelion industry sample</title>
+<meta name="description" content="Rumah Kita Community: a community centre and charity in Shah Alam. Weekly programmes, a food bank, volunteering, giving and hall booking. An Aurelion industry sample.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/website/fusion/af-kit.js"></script>
+<style>
+:root{--bg:#fbf6ee;--bg2:#f3eadb;--card:#fff;--ink:#271b35;--mut:#675c70;--line:rgba(39,27,53,.13);--a1:#d9482f;--on1:#fff;--a2:#f4a52a;--on2:#271b35;--a3:#2f7f8a;--a4:#5f8f45;--a5:#9b5ba6;--dk:#271b35;--ondk:#fbf6ee;--disp:"Young Serif",Georgia,"Songti SC",serif;--dw:400;--sans:"Figtree",system-ui,"PingFang SC","Microsoft YaHei",sans-serif;--r:24px;--sh:0 1px 2px rgba(39,27,53,.06),0 18px 40px -24px rgba(39,27,53,.35)}
+html[data-vibe=warm]{--bg:#f6ecdd;--bg2:#eedcc4;--card:#fffaf2;--ink:#3b2417;--mut:#76594a;--line:rgba(59,36,23,.14);--a1:#b9502a;--a2:#e0a24a;--on2:#3b2417;--a3:#8a6a35;--a4:#76834a;--a5:#a0573f;--dk:#3b2417;--ondk:#f6ecdd}
+html[data-vibe=bold]{--bg:#0e0e11;--bg2:#17171c;--card:#1d1d24;--ink:#f4f2ee;--mut:#aaa6b4;--line:rgba(255,255,255,.13);--a1:#c8ff2e;--on1:#0e0e11;--a2:#ff3d7f;--on2:#0e0e11;--a3:#2ee6d6;--a4:#ffd23d;--a5:#a98bff;--dk:#000;--ondk:#f4f2ee;--sh:0 0 0 1px rgba(255,255,255,.08)}
+html[data-vibe=minimal]{--bg:#fff;--bg2:#f5f5f3;--card:#fff;--ink:#111;--mut:#5f5f5f;--line:rgba(0,0,0,.1);--a1:#1f4bff;--on1:#fff;--a2:#1f4bff;--on2:#fff;--a3:#111;--a4:#6b7488;--a5:#1f4bff;--dk:#111;--ondk:#fff;--disp:"Figtree",system-ui,sans-serif;--dw:750;--sh:0 0 0 1px rgba(0,0,0,.08)}
+html[data-vibe=luxe]{--bg:#0d1b2a;--bg2:#12243a;--card:#162b44;--ink:#f3ead7;--mut:#b9ad94;--line:rgba(243,234,215,.15);--a1:#c9a45c;--on1:#0d1b2a;--a2:#e3c47e;--on2:#0d1b2a;--a3:#8fb9ab;--a4:#c9a45c;--a5:#d9b98a;--dk:#07111c;--ondk:#f3ead7;--sh:0 0 0 1px rgba(243,234,215,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh,36px) + 86px)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;background:none;border:0}
+:focus-visible{outline:3px solid var(--a3);outline-offset:3px;border-radius:8px}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+/* nav */
+.nav{position:fixed;top:var(--exh,36px);left:0;right:0;z-index:900;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1320px;margin:0 auto;height:70px;padding:0 28px;display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:var(--dw) 21px/1 var(--disp);white-space:nowrap;min-width:0}
+.logo svg{width:34px;height:34px;flex:none}
+.links{display:flex;gap:2px;margin-left:auto}
+.links a{padding:9px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;transition:background .2s}
+.links a:hover{background:var(--bg2)}
+.lang{display:flex;border-radius:999px;padding:3px;background:var(--bg2);flex:none}
+.lang button{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.ncta{background:var(--a1);color:var(--on1);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14.5px;white-space:nowrap;display:inline-flex;gap:8px;align-items:center}
+.ncta svg{width:16px;height:16px}
+.burger{display:none;white-space:nowrap;padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink);font-weight:700;font-size:13px}
+/* shared */
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+main{display:flex;flex-direction:column}
+main>section{order:4;padding:110px 0}
+main>.hero{order:-2}
+#week{order:1}#give{order:2}#volunteer{order:3}#stories{order:5}#faq{order:6}#visit{order:7}
+html[data-goal=cred] #proof,html[data-goal=book] #book,html[data-goal=sell] #shop,html[data-goal=enq] #ask{order:-1}
+.alt{background:var(--bg2)}
+.kick{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.kick i{width:10px;height:10px;border-radius:50%;background:var(--a1);box-shadow:14px 0 0 var(--a2),28px 0 0 var(--a3);margin-right:28px}
+.h2{font:var(--dw) clamp(36px,4.4vw,62px)/1.05 var(--disp);letter-spacing:-.015em;margin:16px 0 14px;text-wrap:balance}
+.h2 em,.h1 em{font-style:normal;color:var(--a1)}
+.lead{font-size:18px;color:var(--mut);max-width:58ch}
+.head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:700;font-size:15.5px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer}
+.btn.p{background:var(--a1);color:var(--on1)}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px var(--a1)}
+.btn.o{box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--bg)}
+.btn svg{width:18px;height:18px}
+.tagS{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--bg2);color:var(--mut)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.hin{animation:hin .9s cubic-bezier(.2,.7,.2,1) both}.mosaic.hin{animation-delay:.12s}
+@keyframes hin{from{opacity:0;transform:translateY(22px)}}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh)}
+.hero-g>*,.give-g>*,.vol-g>*,.bk-g>*,.ask-g>*,.faq-g>*,.visit-g>*,.head>*,.proof-g>*{min-width:0}
+/* hero */
+.hero{padding:calc(var(--exh,36px) + 108px) 0 70px!important;position:relative;overflow:clip}
+.hero-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;padding:8px 14px 8px 8px;border-radius:999px;background:var(--card);box-shadow:var(--sh)}
+.eyebrow b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--a4);color:#fff;font-size:13px}
+.h1{font:var(--dw) clamp(40px,4.9vw,76px)/1.04 var(--disp);letter-spacing:-.02em;margin:24px 0 20px;text-wrap:balance}
+.h1 em{background:linear-gradient(color-mix(in srgb,var(--a2) 55%,transparent),color-mix(in srgb,var(--a2) 55%,transparent)) no-repeat 0 92%/0% .16em;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:ul 1s .5s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes ul{to{background-size:100% .16em}}
+html[lang^=zh] .h1,html[lang^=zh] .h2{letter-spacing:0;line-height:1.18}
+.hero .lead{font-size:clamp(17px,1.4vw,19.5px);max-width:52ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 26px}
+.today{display:flex;gap:16px;align-items:stretch;background:var(--card);border-radius:20px;box-shadow:var(--sh);padding:14px;max-width:560px}
+.today .dd{flex:none;width:74px;border-radius:14px;background:var(--dk);color:var(--ondk);display:grid;place-items:center;text-align:center;padding:8px 4px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.today .dd b{display:block;font:var(--dw) 28px/1 var(--disp);letter-spacing:0;text-transform:none}
+.today ul{list-style:none;flex:1;min-width:0;display:grid;gap:6px;align-content:center}
+.today li{display:flex;gap:10px;align-items:center;font-size:14px;white-space:nowrap;overflow:hidden}
+.today li span{font-weight:800;min-width:46px;font-variant-numeric:tabular-nums}
+.today li em{font-style:normal;overflow:hidden;text-overflow:ellipsis}
+.today li i{width:8px;height:8px;border-radius:50%;flex:none}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--a4);margin-bottom:2px}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:12px;aspect-ratio:1/1;width:100%}
+.mosaic>*{position:relative;overflow:hidden;min-width:0;min-height:0}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.mosaic>*:hover img{transform:scale(1.05)}
+.m1{grid-area:1/1/5/5;border-radius:220px 30px 30px 30px}
+.m2{grid-area:1/5/3/7;border-radius:50%}
+.m3{grid-area:3/5/5/7;border-radius:30px 30px 120px 30px;background:var(--a2);color:var(--on2);padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.m3 b{font:var(--dw) clamp(32px,3.4vw,54px)/1 var(--disp)}
+.m3 small{font-weight:700;font-size:clamp(11px,.95vw,13px);line-height:1.25;padding-right:18%}
+.m4{grid-area:5/1/7/3;border-radius:30px 120px 30px 30px;background:var(--a3);color:#fff;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+html[data-vibe=bold] .m4,html[data-vibe=luxe] .m4{color:var(--bg)}
+.m4 svg{width:40px;height:40px;margin-bottom:auto}
+.m4 small{font-weight:800;font-size:14px;line-height:1.25}
+.m5{grid-area:5/3/7/7;border-radius:999px}
+.cap{position:absolute;left:14px;bottom:14px;background:rgba(20,14,28,.62);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.m1 .cap{left:auto;right:18px;bottom:18px}.m5 .cap{left:50%;transform:translateX(-50%);white-space:nowrap}
+/* programme board */
+.board-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.days{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.days::-webkit-scrollbar{display:none}
+.days button{flex:none;min-width:62px;padding:10px 12px;border-radius:16px;background:var(--card);box-shadow:var(--sh);font-weight:700;font-size:14px;line-height:1.15;text-align:center}
+.days button small{display:block;font-size:11px;font-weight:600;color:var(--mut)}
+.days button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.days button[aria-pressed=true] small{color:inherit;opacity:.7}
+.cats{display:flex;gap:8px;flex-wrap:wrap}
+.cats button{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.cats button i{width:9px;height:9px;border-radius:50%}
+.cats button[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink);background:var(--card)}
+.bcount{font-weight:700;color:var(--mut);font-size:14px}
+.sessions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;min-height:220px}
+.ses{background:var(--card);border-radius:22px;box-shadow:var(--sh);padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;animation:pop .45s cubic-bezier(.2,.8,.3,1.2) both;transition:transform .25s}
+.ses:hover{transform:translateY(-3px)}
+.ses::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
+@keyframes pop{from{transform:translateY(12px) scale(.98)}}
+.ses .tm{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800;font-variant-numeric:tabular-nums}
+.ses .tm span{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);padding:4px 9px;border-radius:999px}
+.ses h3{font:var(--dw) 22px/1.2 var(--disp)}
+.ses p{font-size:14px;color:var(--mut)}
+.ses .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:8px;border-top:1px dashed var(--line)}
+.ses .fee{font-weight:800;font-size:14px}
+.ses .seat{font-weight:700;font-size:13.5px;padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.ses .seat:hover{background:var(--ink);color:var(--bg)}
+.empty{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--mut);font-weight:600;border:2px dashed var(--line);border-radius:22px}
+/* give */
+.give{background:var(--dk);color:var(--ondk)}
+.give .kick,.give .lead{color:color-mix(in srgb,var(--ondk) 72%,transparent)}
+.give-g{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+.camp{border-radius:28px;overflow:hidden;background:color-mix(in srgb,var(--ondk) 7%,transparent);border:1px solid color-mix(in srgb,var(--ondk) 15%,transparent)}
+.camp img{width:100%;height:260px;object-fit:cover}
+.camp-b{padding:26px}
+.camp h3{font:var(--dw) 28px/1.15 var(--disp);margin:10px 0 18px}
+.raised{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.raised b{font:var(--dw) clamp(40px,4.4vw,58px)/1 var(--disp);color:var(--a2);font-variant-numeric:tabular-nums}
+.raised span{opacity:.75;font-weight:600}
+.meter{height:16px;border-radius:99px;background:color-mix(in srgb,var(--ondk) 14%,transparent);margin:16px 0 10px;position:relative;overflow:hidden}
+.meter i{position:absolute;inset:0 auto 0 0;width:0;border-radius:99px;background:linear-gradient(90deg,var(--a1),var(--a2));transition:width 1.8s cubic-bezier(.2,.7,.2,1)}
+.meter i::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 10px,transparent 10px 20px);animation:mv 1.4s linear infinite}
+@keyframes mv{to{background-position:40px 0}}
+.mstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;opacity:.85}
+.mstats b{display:block;font-size:20px;opacity:1}
+.smp{display:inline-flex;gap:6px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--a2);color:var(--on2)}
+.gform{background:var(--card);color:var(--ink);border-radius:28px;padding:26px}
+.gform h3{font:var(--dw) 26px/1.2 var(--disp);margin-bottom:14px}
+.seg{display:flex;padding:4px;border-radius:999px;background:var(--bg2);margin-bottom:16px}
+.seg button{flex:1;padding:9px 10px;border-radius:999px;font-weight:700;font-size:14px}
+.seg button[aria-pressed=true]{background:var(--card);box-shadow:var(--sh)}
+.amts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.amts button{padding:14px 6px;border-radius:16px;font-weight:800;font-size:17px;box-shadow:inset 0 0 0 1.5px var(--line);transition:.2s}
+.amts button[aria-pressed=true]{background:var(--a1);color:var(--on1);box-shadow:none}
+.cust{display:flex;align-items:center;gap:8px;margin-top:8px;border-radius:16px;box-shadow:inset 0 0 0 1.5px var(--line);padding:0 14px}
+.cust span{font-weight:800;color:var(--mut)}
+.cust input{flex:1;border:0;background:none;padding:13px 0;outline:none;font-weight:700;min-width:0}
+.impact{display:flex;gap:12px;align-items:flex-start;background:var(--bg2);border-radius:16px;padding:14px;margin:14px 0;font-size:14.5px;min-height:76px}
+.impact svg{flex:none;width:36px;height:36px}
+.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.methods button{padding:10px 6px;border-radius:14px;font-weight:700;font-size:13px;box-shadow:inset 0 0 0 1.5px var(--line);line-height:1.2}
+.methods button[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink);background:var(--bg2)}
+.mpanel{min-height:132px;display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.qr{width:124px;height:124px;flex:none;border-radius:12px;background:#fff;padding:8px;box-shadow:inset 0 0 0 1px var(--line)}
+.qr svg{width:100%;height:100%}
+.mpanel p{font-size:13.5px;color:var(--mut)}
+.mpanel select{width:100%;padding:12px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);margin-top:8px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mut);margin:4px 0 14px;cursor:pointer}
+.chk input{margin-top:3px;accent-color:var(--a1)}
+.gform .btn{width:100%}
+.fine{font-size:12px;color:var(--mut);margin-top:10px}
+/* volunteer */
+.vol-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.vol-img{border-radius:200px 200px 28px 28px;overflow:hidden;aspect-ratio:4/4.6}
+.vol-img img{width:100%;height:100%;object-fit:cover}
+.vcard{padding:28px}
+.steps{display:flex;gap:6px;margin-bottom:22px;list-style:none;counter-reset:s}
+.steps li{flex:1;font-size:12.5px;font-weight:700;color:var(--mut);counter-increment:s;padding-top:10px;border-top:4px solid var(--line);transition:.3s}
+.steps li::before{content:counter(s) " · "}
+.steps li.on{border-color:var(--a1);color:var(--ink)}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.role{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px;border-radius:18px;box-shadow:inset 0 0 0 1.5px var(--line);transition:.2s}
+.role:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.role[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--a1);background:color-mix(in srgb,var(--a1) 7%,transparent)}
+.role i{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-style:normal;font-size:19px;background:var(--bg2)}
+.role b{display:block;font-size:15px;line-height:1.25}
+.role small{display:block;font-size:12.5px;color:var(--mut);line-height:1.35;margin-top:2px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.vlbl{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:18px 0 10px;display:block}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fld{display:flex;flex-direction:column;gap:6px}.fld.w{grid-column:1/-1}
+.fld label{font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.fld input,.fld select,.fld textarea{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg);outline:none;width:100%}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--a3)}
+.vnav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;align-items:center}
+.err{color:var(--a1);font-weight:700;font-size:14px;min-height:1.4em}
+.done{text-align:center;padding:12px 0}
+.done .big{width:80px;height:80px;border-radius:50%;margin:0 auto 14px;background:var(--a4);display:grid;place-items:center}
+.done .big svg{width:40px;height:40px}
+.done h3{font:var(--dw) 30px/1.2 var(--disp)}
+.sumlist{list-style:none;text-align:left;margin:16px 0;border-top:1px dashed var(--line)}
+.sumlist li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.sumlist li span{color:var(--mut)}.sumlist li b{text-align:right}
+/* proof */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.stat{padding:24px;border-radius:24px;background:var(--card);box-shadow:var(--sh);position:relative;overflow:hidden}
+.stat b{display:block;font:var(--dw) clamp(38px,3.8vw,54px)/1 var(--disp);color:var(--c)}
+.stat span{font-weight:600;font-size:14.5px;color:var(--mut)}
+.stat::after{content:"";position:absolute;right:-26px;top:-26px;width:80px;height:80px;border-radius:50%;background:var(--c);opacity:.13}
+.proof-g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.split{padding:26px}
+.split h3,.regs h3,.proc h3{font:var(--dw) 24px/1.2 var(--disp);margin-bottom:16px}
+.sbar{display:flex;height:22px;border-radius:99px;overflow:hidden;margin-bottom:14px}
+.sbar i{display:block;height:100%}
+.skey{display:grid;gap:8px;font-size:14.5px}
+.skey div{display:flex;align-items:center;gap:10px}
+.skey i{width:12px;height:12px;border-radius:4px;flex:none}
+.skey b{margin-left:auto}
+.regs{padding:26px;display:grid;gap:10px;align-content:start}
+.reg{display:flex;gap:14px;align-items:center;padding:12px;border-radius:16px;background:var(--bg2)}
+.reg svg{flex:none;width:42px;height:42px}
+.reg b{display:block;font-size:15px}.reg small{color:var(--mut);font-size:13px}
+.partners{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:center;padding:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:28px 0}
+.partners span{font-weight:800;font-size:17px;letter-spacing:-.01em;opacity:.62;white-space:nowrap}
+.partners span:nth-child(2n){font:var(--dw) 19px var(--disp);opacity:.7}
+.partners small{width:100%;text-align:center;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;list-style:none}
+.proc li{padding:22px;border-radius:22px;background:var(--card);box-shadow:var(--sh)}
+.proc li b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--bg);margin-bottom:12px;font-weight:800}
+.proc li h4{font-size:17px;margin-bottom:4px}
+.proc li p{font-size:14px;color:var(--mut)}
+/* hall booking */
+.bk-g{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:start}
+.bk{padding:26px}
+.spaces{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.space{text-align:left;border-radius:18px;overflow:hidden;box-shadow:inset 0 0 0 1.5px var(--line);transition:.2s;background:var(--card)}
+.space img{width:100%;height:84px;object-fit:cover}
+.space div{padding:10px 12px}
+.space b{display:block;font-size:14.5px;line-height:1.2}
+.space small{display:block;font-size:12px;color:var(--mut);line-height:1.35}
+.space[aria-pressed=true]{box-shadow:0 0 0 3px var(--a1)}
+.strip{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding:3px 3px 8px}
+.strip button{flex:none;width:60px;padding:9px 0;border-radius:16px;box-shadow:inset 0 0 0 1.5px var(--line);text-align:center;line-height:1.15;font-weight:800}
+.strip button small{display:block;font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase}
+.strip button b{display:block;font-size:20px}
+.strip button[aria-pressed=true]{background:var(--ink);color:var(--bg);box-shadow:none}
+.strip button[aria-pressed=true] small{color:inherit;opacity:.7}
+.tslots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tslot{padding:14px;border-radius:16px;box-shadow:inset 0 0 0 1.5px var(--line);text-align:left;transition:.2s}
+.tslot b{display:block}.tslot small{color:var(--mut);font-size:12.5px}
+.tslot[aria-pressed=true]{background:var(--a3);color:#fff;box-shadow:none}
+html[data-vibe=bold] .tslot[aria-pressed=true],html[data-vibe=luxe] .tslot[aria-pressed=true]{color:var(--bg)}
+.tslot[aria-pressed=true] small{color:inherit;opacity:.8}
+.tslot:disabled{opacity:.45;cursor:not-allowed;background:repeating-linear-gradient(135deg,transparent 0 6px,var(--line) 6px 8px)}
+.bsum{padding:24px;position:sticky;top:calc(var(--exh,36px) + 90px)}
+.bsum h3{font:var(--dw) 24px/1.2 var(--disp)}
+.bsum .tot{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 4px}
+.bsum .tot b{font:var(--dw) 34px/1 var(--disp)}
+.bsum .btn{width:100%;margin-top:12px}
+.okref{font-weight:700;font-size:13.5px;color:var(--a4);min-height:1.3em;margin-top:10px;text-align:center}
+/* shop */
+.shop-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.cartbtn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:700}
+.cartbtn b{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:99px;background:var(--a2);color:var(--on2);font-size:13px;padding:0 6px}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prod{display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:var(--card);box-shadow:var(--sh);transition:transform .25s}
+.prod:hover{transform:translateY(-4px)}
+.pimg{aspect-ratio:16/10;display:grid;place-items:center;background:var(--c)}
+.pimg svg{width:46%;height:auto;color:var(--ink)}
+.pb{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb h3{font:var(--dw) 20px/1.25 var(--disp)}
+.pb p{font-size:13.5px;color:var(--mut)}
+.pb .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.pb .row b{font-size:18px}
+.add{padding:9px 16px;border-radius:999px;background:var(--a1);color:var(--on1);font-weight:700;font-size:14px}
+.add.ok{background:var(--a4);color:#fff}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:1100;background:var(--bg);box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);transform:translateX(105%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h3{font:var(--dw) 24px var(--disp)}
+.dh button{font-size:26px;line-height:1;padding:4px 8px}
+.dl{flex:1;overflow:auto;padding:10px 22px;list-style:none}
+.dl li{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.dl .sw{width:48px;height:48px;border-radius:12px;flex:none;background:var(--c)}
+.dl .nm{flex:1;min-width:0;font-weight:700;font-size:14.5px;line-height:1.3}
+.dl .nm small{display:block;font-weight:600;color:var(--mut)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:28px;height:28px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--line);font-weight:800}
+.df{padding:20px 22px;border-top:1px solid var(--line)}
+.df .tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-bottom:12px}
+.pays{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pays span{font-size:11.5px;font-weight:800;padding:6px 10px;border-radius:8px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.df .btn{width:100%}
+.scrim{position:fixed;inset:0;background:rgba(10,8,14,.5);z-index:1050;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+/* ask */
+.ask-g{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.askf{padding:28px}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.topics button{padding:10px 15px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.topics button[aria-pressed=true]{background:var(--ink);color:var(--bg);box-shadow:none}
+.askf .fld{margin-top:12px}
+.askf .btn{margin-top:18px;width:100%}
+.wa{border-radius:26px;overflow:hidden;box-shadow:var(--sh);background:#efe7dc;color:#111;max-width:440px;justify-self:center;width:100%}
+.wa-h{background:#1f5e54;color:#fff;display:flex;align-items:center;gap:12px;padding:12px 16px}
+.wa-h i{width:38px;height:38px;border-radius:50%;background:var(--a2);display:grid;place-items:center;font-style:normal;font-weight:800;color:#271b35}
+.wa-h b{display:block;font-size:15px}.wa-h small{opacity:.8;font-size:12px}
+.wa-b{padding:18px 14px;min-height:250px;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:12px 12px;display:flex;flex-direction:column;gap:8px}
+.bub{background:#fff;border-radius:2px 12px 12px 12px;padding:9px 12px;max-width:85%;font-size:14px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.bub.me{background:#d9fdd3;border-radius:12px 2px 12px 12px;align-self:flex-end;white-space:pre-line}
+.bub small{display:block;text-align:right;font-size:10.5px;color:#667;margin-top:3px}
+/* stories */
+.stories{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.story{border-radius:26px;overflow:hidden;background:var(--card);box-shadow:var(--sh);display:flex;flex-direction:column}
+.story img{width:100%;height:240px;object-fit:cover}
+.story:first-child img{height:320px}
+.story div{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.story blockquote{font:var(--dw) 20px/1.4 var(--disp)}
+.story:first-child blockquote{font-size:24px}
+.story p{font-size:14px;color:var(--mut);margin-top:auto}
+/* faq */
+.faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 2px;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bg2);position:relative;transition:transform .3s,background .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{transform:rotate(45deg);background:var(--a2)}
+details p{padding:0 2px 20px;color:var(--mut);max-width:64ch}
+/* visit */
+.visit-g{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+.map{border-radius:28px;overflow:hidden;background:var(--card);box-shadow:var(--sh);min-height:340px;position:relative}
+.map svg{width:100%;height:100%;display:block;position:absolute;inset:0}
+.vinfo{padding:28px;display:flex;flex-direction:column;gap:16px}
+.vinfo h3{font:var(--dw) 26px/1.2 var(--disp)}
+.hrs{list-style:none;display:grid;gap:6px;font-size:15px}
+.hrs li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.hrs li.td{font-weight:800;color:var(--a1)}
+.waBtn{background:#1f8a5b!important;color:#fff!important}
+footer{background:var(--dk);color:var(--ondk);padding:70px 0 30px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+.foot h3{font:var(--dw) 32px/1.1 var(--disp);margin-bottom:12px}
+.foot h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;color:var(--a2)}
+.foot p,.foot li{opacity:.78;font-size:14.5px;list-style:none;margin-bottom:6px}
+.foot a{text-decoration:none}.foot a:hover{text-decoration:underline}
+.legal{margin-top:40px;padding-top:18px;border-top:1px solid color-mix(in srgb,var(--ondk) 15%,transparent);font-size:12.5px;opacity:.6;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mbar{display:none}
+@media(max-width:1100px){.links a{padding:8px 9px;font-size:13.5px}.spaces{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:980px){
+ .burger{display:block}.lang{margin-left:auto}
+ .links{position:fixed;top:calc(var(--exh,36px) + 70px);left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 24px 18px;display:none;max-height:calc(100vh - 110px);overflow:auto}
+ .nav.open .links{display:flex}
+ .links a{font:var(--dw) 22px var(--disp);padding:14px 0;border-radius:0;border-bottom:1px solid var(--line)}
+ .hero-g,.give-g,.vol-g,.bk-g,.ask-g,.faq-g,.visit-g,.head,.proof-g{grid-template-columns:1fr}
+ .head{gap:10px}
+ .mosaic{max-width:620px}
+ .sessions,.prods{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .proc{grid-template-columns:repeat(2,1fr)}
+ .stories{grid-template-columns:1fr 1fr}.story:first-child{grid-column:1/-1}
+ .bsum{position:static}
+ .vol-img{display:none}
+ .foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}
+}
+@media(max-width:700px){
+ main>section{padding:76px 0}.wrap,.nav-in{padding:0 16px}.nav-in{gap:8px}
+ .ncta{display:none}.logo{font-size:18px}.logo svg{width:28px;height:28px}
+ .hero{padding-top:calc(var(--exh,36px) + 92px)!important;padding-bottom:50px!important}
+ .h1{margin:18px 0 14px}
+ .cta-row .btn{flex:1}
+ .today .dd{width:70px}.live{font-size:10px;letter-spacing:.06em}
+ .sessions,.prods,.roles,.stories,.stats{grid-template-columns:1fr}
+ .slots,.tslots{grid-template-columns:1fr 1fr 1fr}
+ .tslot{padding:10px}.tslot small{font-size:11px}
+ .amts{grid-template-columns:repeat(4,1fr)}.amts button{font-size:15px;padding:12px 2px}
+ .camp img{height:190px}.camp-b,.gform,.vcard,.bk,.askf,.vinfo{padding:20px}
+ .mpanel{flex-direction:column;align-items:flex-start}
+ .fg{grid-template-columns:1fr}
+ .proc{grid-template-columns:1fr}
+ .story img,.story:first-child img{height:210px}
+ .foot{grid-template-columns:1fr}
+ .map{min-height:280px}
+ .mbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:950;gap:8px;padding:8px;border-radius:22px;background:var(--dk);box-shadow:0 18px 40px -14px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .4s}
+ .mbar.show{transform:none}
+ .mbar a{flex:1;text-align:center;padding:13px 10px;border-radius:16px;font-weight:800;font-size:14.5px;text-decoration:none;color:var(--ondk);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--ondk) 30%,transparent)}
+ .mbar a.p{background:var(--a1);color:var(--on1);box-shadow:none}
+ body{padding-bottom:84px}
+}
+@media(max-width:400px){.lang button{padding:6px 8px}.logo span{max-width:150px;overflow:hidden;text-overflow:ellipsis}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.h1 em{background-size:100% .16em}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Community centre &amp; charity, open to all</span><a class="exh-cta" href="/website/?t=rumah-kita#finder">Build one like this →</a></div>
+
+<header class="nav" id="nav">
+ <div class="nav-in">
+  <a class="logo" href="#top" aria-label="Home"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="13" r="9" fill="var(--a1)"/><rect x="22" y="4" width="18" height="18" rx="6" fill="var(--a2)"/><rect x="4" y="22" width="18" height="18" rx="9" fill="var(--a3)"/><path d="M22 40V31a9 9 0 0 1 18 0v9z" fill="var(--a4)"/></svg><span data-af-name>Rumah Kita Community</span></a>
+  <nav class="links" id="links" aria-label="Main">
+   <a href="#week" data-i="n1">This week</a><a href="#give" data-i="n2">Give</a><a href="#volunteer" data-i="n3">Volunteer</a><a href="#book" data-i="n4">Book the hall</a><a href="#stories" data-i="n5">Stories</a><a href="#visit" data-i="n6">Visit</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button data-l="ms" aria-pressed="false">BM</button><button data-l="zh" aria-pressed="false">中文</button></div>
+  <a class="ncta" href="#give"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg><span data-i="give">Give</span></a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="links" data-i="menu">Menu</button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div class="wrap hero-g">
+  <div class="hin">
+   <span class="eyebrow"><b>♥</b><span data-i="eye">Community centre &amp; charity ·</span>&nbsp;<span data-af-area>Shah Alam</span></span>
+   <h1 class="h1" id="h1" data-i="h1">Whoever you are, there’s a <em>seat for you</em> this week.</h1>
+   <p class="lead" data-i="lede">Free classes, a weekly food bank, youth nights and a hall for your next kenduri. Run by neighbours, open to people of every faith and none.</p>
+   <div class="cta-row"><a class="btn p" id="heroCta" href="#proof"></a><a class="btn o" href="#give" data-i="giveToday">Give today</a></div>
+   <div class="today" aria-live="polite"><div class="dd" id="tdDay"></div><ul id="tdList"></ul></div>
+  </div>
+  <div class="mosaic hin" aria-label="Life at the centre">
+   <figure class="m1"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=900&q=80" alt="Volunteers packing donated food into boxes" width="900" height="900"><figcaption class="cap" data-i="cap1">Saturday food bank</figcaption></figure>
+   <figure class="m2"><img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&h=500&q=80" alt="A group of young people sitting together and smiling" width="500" height="500"></figure>
+   <div class="m3"><small data-i="m3a">Sessions this week</small><b id="sesCount">16</b><small data-i="m3b">Almost all free</small></div>
+   <div class="m4"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="13" cy="13" r="6"/><circle cx="27" cy="13" r="6"/><path d="M4 34c0-6 4-10 9-10s9 4 9 10M18 34c0-6 4-10 9-10s9 4 9 10"/></svg><small data-i="m4">Open to every faith, and none</small></div>
+   <figure class="m5"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&h=400&q=80" alt="Neighbours cooking together in a shared kitchen" width="800" height="400"><figcaption class="cap" data-i="cap2">Friday community lunch</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<!-- CRED: proof -->
+<section id="proof" class="goal-cred">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="pK">Our impact</span></span><h2 class="h2" data-i="pH">Small centre. <em>Real, counted</em> help.</h2></div><p class="lead" data-i="pP">We publish what we do and where the money goes. The figures below are samples to show the layout; your own numbers go here.</p></div>
+  <div class="stats rv">
+   <div class="stat" style="--c:var(--a1)"><b data-n="420">0</b><span data-i="s1">food baskets a month</span></div>
+   <div class="stat" style="--c:var(--a3)"><b data-n="96">0</b><span data-i="s2">students in free tuition</span></div>
+   <div class="stat" style="--c:var(--a4)"><b data-n="180">0</b><span data-i="s3">active volunteers</span></div>
+   <div class="stat" style="--c:var(--a5)"><b data-n="64">0</b><span data-i="s4">seniors visited weekly</span></div>
+  </div>
+  <p class="fine rv" style="margin:-4px 0 22px"><span class="tagS" data-i="sampleFig">Sample figures</span></p>
+  <div class="proof-g">
+   <div class="card split rv"><h3 data-i="splitH">Where every RM 100 goes</h3>
+    <div class="sbar" role="img" aria-label="82% programmes, 12% running costs, 6% fundraising"><i style="width:82%;background:var(--a1)"></i><i style="width:12%;background:var(--a2)"></i><i style="width:6%;background:var(--a3)"></i></div>
+    <div class="skey"><div><i style="background:var(--a1)"></i><span data-i="sp1">Programmes: food, tuition, care</span><b>RM 82</b></div><div><i style="background:var(--a2)"></i><span data-i="sp2">Rent, utilities, insurance</span><b>RM 12</b></div><div><i style="background:var(--a3)"></i><span data-i="sp3">Fundraising &amp; admin</span><b>RM 6</b></div></div>
+    <p class="fine" data-i="splitF">Sample split. Audited accounts would be linked here every year.</p>
+   </div>
+   <div class="card regs rv"><h3 data-i="regH">Registered and accountable</h3>
+    <div class="reg"><svg viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="var(--a3)"/><path d="M13 22l6 6 11-13" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg><div><b data-i="r1">Registered society (ROS)</b><small data-i="r1s">Reg. no. PPM-000-10-SAMPLE</small></div></div>
+    <div class="reg"><svg viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="var(--a1)"/><path d="M14 12h14v18l-7-4-7 4z" fill="#fff"/></svg><div><b data-i="r2">Tax-exempt receipts</b><small data-i="r2s">Section 44(6) approval (sample)</small></div></div>
+    <div class="reg"><svg viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="var(--a4)"/><path d="M12 30V18M19 30V12M26 30v-8M33 30V15" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg><div><b data-i="r3">Audited accounts every year</b><small data-i="r3s">Published each June (sample)</small></div></div>
+   </div>
+  </div>
+  <div class="partners rv"><small data-i="partK">Working alongside (fictional names)</small><span>Taman Harmoni RA</span><span>Petak Food Rescue</span><span>Lumi Bakers</span><span>Seri Mekar Clinic</span><span>Kampung Tech Club</span><span>Jalan Kebun Hardware</span></div>
+  <h3 class="rv" style="font:var(--dw) 26px/1.2 var(--disp);margin-bottom:16px" data-i="procH">How asking for help works</h3>
+  <ol class="proc">
+   <li class="rv"><b>1</b><h4 data-i="pr1">Reach out</h4><p data-i="pr1p">WhatsApp us or walk in. No forms on the first visit.</p></li>
+   <li class="rv"><b>2</b><h4 data-i="pr2">Sit down with us</h4><p data-i="pr2p">A private chat with a trained volunteer, in BM, English, Chinese or Tamil.</p></li>
+   <li class="rv"><b>3</b><h4 data-i="pr3">Get support</h4><p data-i="pr3p">Food baskets, tuition, a lift to the clinic, or a referral.</p></li>
+   <li class="rv"><b>4</b><h4 data-i="pr4">We check in</h4><p data-i="pr4p">A follow-up call a month later. You are never just a number.</p></li>
+  </ol>
+ </div>
+</section>
+
+<!-- BOOK: hall -->
+<section id="book" class="goal-book alt">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="bK">Hall &amp; rooms</span></span><h2 class="h2" data-i="bH">A hall for your <em>kenduri</em>, class or meeting.</h2></div><p class="lead" data-i="bP">Pick a space, a date and a time. Community groups and non-profits pay less. Every booking helps fund the food bank.</p></div>
+  <div class="bk-g">
+   <div class="card bk rv">
+    <span class="vlbl" style="margin-top:0" data-i="b1">1 · Choose a space</span>
+    <div class="spaces" id="spaces"></div>
+    <span class="vlbl" data-i="b2">2 · Pick a date</span>
+    <div class="strip" id="strip"></div>
+    <span class="vlbl" data-i="b3">3 · Pick a time (choose one or more)</span>
+    <div class="tslots" id="tslots"></div>
+    <div class="fg" style="margin-top:16px">
+     <div class="fld"><label for="bType" data-i="b4">Event</label><select id="bType"></select></div>
+     <div class="fld"><label for="bG" data-i="b5">Guests</label><input id="bG" type="number" min="1" max="300" value="80"></div>
+    </div>
+    <label class="chk" style="margin-top:14px"><input type="checkbox" id="bNp"><span data-i="b6">We are a registered non-profit or residents’ association (40% off)</span></label>
+   </div>
+   <aside class="card bsum rv" id="bsum" aria-live="polite"></aside>
+  </div>
+ </div>
+</section>
+
+<!-- SELL: charity shop -->
+<section id="shop" class="goal-sell">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="shK">Charity shop</span></span><h2 class="h2" data-i="shH">Shop something good. <em>Fund something better.</em></h2></div><div class="shop-top"><p class="lead" data-i="shP">Every ringgit of profit goes to the food bank. Collect at the centre or get it delivered in the Klang Valley.</p><button class="cartbtn" id="cartOpen"><span data-i="cart">Cart</span><b id="cartN">0</b></button></div></div>
+  <div class="prods" id="prods"></div>
+ </div>
+</section>
+
+<!-- ENQ: WhatsApp office -->
+<section id="ask" class="goal-enq alt">
+ <div class="wrap ask-g">
+  <div class="rv">
+   <span class="kick"><i></i><span data-i="aK">Talk to the office</span></span>
+   <h2 class="h2" data-i="aH">Ask us anything. <em>A real person</em> replies.</h2>
+   <p class="lead" data-i="aP">Need help, want to help, or have a question? Pick a topic and we’ll start the WhatsApp message for you.</p>
+   <form class="card askf" id="askF" novalidate style="margin-top:24px">
+    <div class="topics" id="topics" role="group" aria-label="Topic"></div>
+    <div class="fg">
+     <div class="fld"><label for="aN" data-i="aN">Your name</label><input id="aN" autocomplete="given-name"></div>
+     <div class="fld"><label for="aW" data-i="aW">Best time to reply</label><select id="aW"></select></div>
+     <div class="fld w"><label for="aM" data-i="aM">Message (optional)</label><textarea id="aM" rows="2"></textarea></div>
+    </div>
+    <button class="btn p waBtn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.1.1.6-.1 1.2z"/></svg><span data-i="aSend">Open WhatsApp with this message</span></button>
+   </form>
+  </div>
+  <div class="wa rv" aria-label="WhatsApp preview">
+   <div class="wa-h"><i data-af-initial>R</i><div><b data-af-name>Rumah Kita Community</b><small data-i="waSub">Office · usually replies within the day</small></div></div>
+   <div class="wa-b"><div class="bub" data-i="waHi">Hi! This is the <span data-af-name>Rumah Kita Community</span> office. How can we help? 🙂<small>9:02</small></div><div class="bub me" id="waMsg"></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- programme board -->
+<section id="week">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="wK">This week at the centre</span></span><h2 class="h2" data-i="wH">Something on <em>every day.</em></h2></div><p class="lead" data-i="wP">Classes, the food bank, youth nights and seniors’ mornings. Pick a day, filter by what matters to you, and save a seat.</p></div>
+  <div class="board-top rv"><div class="days" id="days" role="group" aria-label="Day"></div><span class="bcount" id="bcount"></span></div>
+  <div class="cats rv" id="cats" role="group" aria-label="Filter" style="margin-bottom:22px"></div>
+  <div class="sessions" id="sessions" aria-live="polite"></div>
+ </div>
+</section>
+
+<!-- giving -->
+<section id="give" class="give">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="gK">Give</span></span><h2 class="h2" data-i="gH">Fill a family’s <em>table</em> this month.</h2></div><p class="lead" data-i="gP">Give once or monthly by FPX, DuitNow QR or card. You get a receipt by email the same day.</p></div>
+  <div class="give-g">
+   <article class="camp rv">
+    <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=1000&h=520&q=80" alt="Volunteers unloading food donations from a lorry" loading="lazy" width="1000" height="520">
+    <div class="camp-b">
+     <span class="smp" data-i="campS">Sample campaign</span>
+     <h3 data-i="campH">Year-end food basket appeal: 1,200 baskets for families in need</h3>
+     <div class="raised"><b id="raised">RM 0</b><span id="raisedOf"></span></div>
+     <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="meter"><i></i></div>
+     <div class="mstats"><div><b id="pct">0%</b><span data-i="m1">funded</span></div><div><b>512</b><span data-i="m2">donors</span></div><div><b>19</b><span data-i="m3">days left</span></div></div>
+    </div>
+   </article>
+   <form class="gform rv" id="gform" novalidate>
+    <h3 data-i="gfH">Choose your gift</h3>
+    <div class="seg" role="group" aria-label="Frequency"><button type="button" data-f="once" aria-pressed="true" data-i="once">One-time</button><button type="button" data-f="month" aria-pressed="false" data-i="monthly">Monthly</button></div>
+    <div class="amts" id="amts" role="group" aria-label="Amount"></div>
+    <label class="cust"><span>RM</span><input id="custom" inputmode="numeric" placeholder="Other amount" data-ph="other" aria-label="Other amount"></label>
+    <div class="impact" aria-live="polite"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="var(--a2)"/><path d="M18 27s-7-4.6-7-9.6A3.9 3.9 0 0 1 18 15a3.9 3.9 0 0 1 7 2.4c0 5-7 9.6-7 9.6z" fill="var(--on2)"/></svg><span id="impact"></span></div>
+    <div class="methods" id="methods" role="group" aria-label="Payment method"><button type="button" data-m="fpx" aria-pressed="true">FPX</button><button type="button" data-m="qr" aria-pressed="false">DuitNow QR</button><button type="button" data-m="card" aria-pressed="false" data-i="card">Card</button></div>
+    <div class="mpanel" id="mpanel"></div>
+    <label class="chk"><input type="checkbox" checked><span data-i="rcpt">Email me a tax-exempt receipt (sample: s44(6) approval)</span></label>
+    <button class="btn p" id="giveBtn"></button>
+    <p class="fine" data-i="gFine">Demo only: no payment is taken. Amounts and impact examples are samples.</p>
+   </form>
+  </div>
+ </div>
+</section>
+
+<!-- volunteer -->
+<section id="volunteer">
+ <div class="wrap vol-g">
+  <div class="rv">
+   <span class="kick"><i></i><span data-i="vK">Volunteer</span></span>
+   <h2 class="h2" data-i="vH">Two hours a week <em>changes a street.</em></h2>
+   <p class="lead" data-i="vP">Tell us what you enjoy and when you are free. We’ll match you with a team and a buddy for your first day.</p>
+   <div class="vol-img" style="margin-top:28px"><img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&h=920&q=80" alt="A volunteer in a bright volunteer shirt at a community event" loading="lazy" width="800" height="920"></div>
+  </div>
+  <div class="card vcard rv" id="vcard">
+   <ol class="steps" id="vsteps"><li class="on" data-i="vs1">What you’d like to do</li><li data-i="vs2">When you’re free</li><li data-i="vs3">Your details</li></ol>
+   <div id="vbody"></div>
+  </div>
+ </div>
+</section>
+
+<!-- stories -->
+<section id="stories" class="alt">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="stK">Stories</span></span><h2 class="h2" data-i="stH">The people behind <em>the numbers.</em></h2></div><p class="lead" data-i="stP">Sample stories written for this concept. On your site, real stories are shared with permission and names changed where asked.</p></div>
+  <div class="stories">
+   <article class="story rv"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&h=640&q=80" alt="An older woman smiling with a volunteer nurse" loading="lazy" width="900" height="640"><div><span class="tagS" data-i="smpStory">Sample story</span><blockquote data-i="st1">“Tuesday tea is the one morning I put on lipstick. They check my blood pressure, and I check on everyone else.”</blockquote><p data-i="st1p">Aunty Mei Ling, 74 · Seniors’ mornings</p></div></article>
+   <article class="story rv"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=700&h=480&q=80" alt="A small class listening to a teacher in a bright room" loading="lazy" width="700" height="480"><div><span class="tagS" data-i="smpStory">Sample story</span><blockquote data-i="st2">“I failed maths in Form 3. Two years of Thursday tuition later, I got an A.”</blockquote><p data-i="st2p">Hafiz, 18 · Free SPM tuition</p></div></article>
+   <article class="story rv"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&h=480&q=80" alt="A long table set for a shared community meal" loading="lazy" width="700" height="480"><div><span class="tagS" data-i="smpStory">Sample story</span><blockquote data-i="st3">“We came for the food bank. Now my husband cooks the Friday lunch for eighty people.”</blockquote><p data-i="st3p">Kavitha, 41 · Community kitchen</p></div></article>
+  </div>
+ </div>
+</section>
+
+<!-- faq -->
+<section id="faq">
+ <div class="wrap faq-g">
+  <div class="rv"><span class="kick"><i></i><span data-i="fK">Questions</span></span><h2 class="h2" data-i="fH">Good to <em>know.</em></h2><p class="lead" data-i="fP">Can’t find your answer? WhatsApp the office and a volunteer will reply.</p></div>
+  <div class="rv" id="faqs">
+   <details open><summary><span data-i="q1">Who can come to the centre?</span><i></i></summary><p data-i="a1">Everyone. We are a community centre, not a place of worship, and we welcome people of every faith and none, every race and every age.</p></details>
+   <details><summary><span data-i="q2">How do I get help from the food bank?</span><i></i></summary><p data-i="a2">WhatsApp us or walk in on Wednesday or Saturday morning. A volunteer will have a short, private chat with you and register your family. Bring your IC if you have it; if not, come anyway.</p></details>
+   <details><summary><span data-i="q3">Will I get a receipt for my donation?</span><i></i></summary><p data-i="a3">Yes, by email the same day. In this sample we show tax-exempt receipts under section 44(6); check your own organisation’s approval before you promise this.</p></details>
+   <details><summary><span data-i="q4">Can I donate food or items instead?</span><i></i></summary><p data-i="a4">Yes. Dry food (rice, oil, tinned fish, milk powder), school supplies and adult diapers are always needed. Drop them at the office, 9 am to 6 pm.</p></details>
+   <details><summary><span data-i="q5">Can anyone book the hall?</span><i></i></summary><p data-i="a5">Yes: kenduri, birthdays, talks, classes and celebrations of any faith or culture. Alcohol is not allowed. Registered non-profits get 40% off.</p></details>
+   <details><summary><span data-i="q6">Is there parking?</span><i></i></summary><p data-i="a6">There are 30 free bays in front, and street parking after 6 pm. The nearest bus stop is a five-minute walk away.</p></details>
+  </div>
+ </div>
+</section>
+
+<!-- visit -->
+<section id="visit" class="alt">
+ <div class="wrap">
+  <div class="head rv"><div><span class="kick"><i></i><span data-i="viK">Visit us</span></span><h2 class="h2" data-i="viH">The door is <em>open.</em></h2></div><p class="lead" data-i="viP">Walk in during office hours, or come straight to any session on the board.</p></div>
+  <div class="visit-g">
+   <div class="map rv"><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrated map showing the centre">
+    <rect width="640" height="400" fill="var(--bg2)"/>
+    <g fill="var(--card)"><rect x="40" y="30" width="150" height="110" rx="14"/><rect x="230" y="30" width="170" height="110" rx="14"/><rect x="440" y="30" width="170" height="110" rx="14"/><rect x="40" y="190" width="150" height="180" rx="14"/><rect x="440" y="190" width="170" height="180" rx="14"/></g>
+    <rect x="230" y="190" width="170" height="180" rx="14" fill="var(--a4)" opacity=".35"/>
+    <g fill="var(--a4)" opacity=".7"><circle cx="270" cy="330" r="16"/><circle cx="300" cy="345" r="11"/><circle cx="365" cy="335" r="14"/></g>
+    <g stroke="var(--line)" stroke-width="2" fill="none"><path d="M0 165H640M210 0V400M420 0V400"/></g><g font-family="Figtree,sans-serif" font-size="13" font-weight="700" fill="var(--mut)"><text x="62" y="92">🏫 SK Taman Harmoni</text><text x="254" y="92">🛒 Pasar pagi</text><text x="462" y="92">🏥 Klinik Seri Mekar</text><text x="60" y="285">🚌 Bus stop · 5 min</text><text x="462" y="285">🅿️ Free parking</text></g>
+    <g fill="var(--mut)" font-family="Figtree,sans-serif" font-size="12" font-weight="800" letter-spacing="2"><text x="20" y="160">JALAN KOMUNITI 7/2</text><text x="430" y="395" transform="rotate(-90 430 395)">JALAN TAMAN</text></g>
+    <g><circle cx="315" cy="250" r="34" fill="var(--a1)" opacity=".18"><animate attributeName="r" values="24;44;24" dur="2.4s" repeatCount="indefinite"/></circle><path d="M315 262c-14-16-20-24-20-33a20 20 0 0 1 40 0c0 9-6 17-20 33z" fill="var(--a1)"/><circle cx="315" cy="229" r="7" fill="var(--bg)"/></g><g><rect x="205" y="270" width="220" height="30" rx="15" fill="var(--ink)"/><text x="315" y="290" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="800" fill="var(--bg)" data-af-name>Rumah Kita Community</text></g>
+   </svg></div>
+   <div class="card vinfo rv">
+    <h3><span data-af-name>Rumah Kita Community</span></h3>
+    <p>No. 12, Jalan Komuniti 7/2, <span data-af-area>Shah Alam</span>, Selangor <span class="tagS" data-i="smpAddr">Sample address</span></p>
+    <ul class="hrs" id="hrs"></ul>
+    <p style="font-size:14px;color:var(--mut)" data-i="hol">Closed on public holidays, except the food bank, which opens the day after.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn p waBtn demo"><span data-i="waOffice">WhatsApp the office</span></button><button class="btn o demo" data-msg="dir"><span data-i="dirs">Directions</span></button></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="foot">
+   <div><h3 data-af-name>Rumah Kita Community</h3><p data-i="ft1">A community centre and charity for everyone in our neighbourhood. Food, learning and company, open to all.</p><p style="margin-top:10px">PPM-000-10-SAMPLE</p></div>
+   <div><h4 data-i="ftE">Explore</h4><ul><li><a href="#week" data-i="n1">This week</a></li><li><a href="#give" data-i="n2">Give</a></li><li><a href="#volunteer" data-i="n3">Volunteer</a></li><li><a href="#book" data-i="n4">Book the hall</a></li></ul></div>
+   <div><h4 data-i="ftC">Contact</h4><ul><li>+60 3-0000 0000 (sample)</li><li>hello@rumahkita.example</li><li><span data-af-area>Shah Alam</span>, Selangor</li></ul></div>
+  </div>
+  <div class="legal"><span>© <span data-af-name>Rumah Kita Community</span> · Aurelion industry sample</span><span data-i="legal">Fictional organisation. All figures, stories and registrations are samples.</span></div>
+ </div>
+</footer>
+
+<div class="mbar" id="mbar"><a href="#give" data-i="give">Give</a><a class="p" id="mCta" href="#proof"></a></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dT">
+ <div class="dh"><h3 id="dT" data-i="yourCart">Your cart</h3><button id="cartClose" aria-label="Close">×</button></div>
+ <ul class="dl" id="dl"></ul>
+ <div class="df"><div class="tot"><span data-i="total">Total</span><span id="dTot">RM 0</span></div><div class="pays"><span>Card</span><span>FPX</span><span>GrabPay</span><span>Touch ’n Go</span></div><button class="btn p" id="checkout" data-i="checkout">Checkout</button></div>
+</aside>
+
+<script>
+(()=>{
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const H=document.documentElement,RM=matchMedia('(prefers-reduced-motion: reduce)').matches,K=window.AFK||{};
+let L=K.l;if(!L){try{L=localStorage.getItem('af-lang')}catch(e){}}if(!['en','ms','zh'].includes(L))L='en';
+const LX={en:0,ms:1,zh:2},LOC={en:'en-MY',ms:'ms-MY',zh:'zh-CN'};
+const EN={};$$('[data-i]').forEach(e=>{if(!(e.dataset.i in EN))EN[e.dataset.i]=e.innerHTML});
+const D={en:{menu:'Menu',close:'Close',cta_cred:'See our impact',cta_book:'Book the hall',cta_sell:'Shop for a cause',cta_enq:'WhatsApp the office',today:'Today',closed:'Nothing on today. Visit us tomorrow!',week:'Week',all:'All',
+c_food:'Food bank',c_class:'Classes',c_youth:'Youth',c_senior:'Seniors',c_family:'Families',free:'Free',seat:'Save a seat',nsess:(n,f)=>n+' sessions · '+f+' free',none:'Nothing in this category on this day. Try another day.',
+of:'of RM {t} goal',imp:{30:'Rice, oil and eggs for one family for a week.',50:'A full weekly food basket for a family of five.',100:'A month of free tuition for one student.',250:'A month of food baskets for a senior living alone.',x:'Every ringgit goes straight to this year’s appeal.'},
+giveBtn:(a,m)=>'Give RM '+a+(m?' monthly':'')+' now',fpxP:'Pay through your bank’s online banking. You return here when done.',bank:'Choose your bank',qrP:'Scan with any banking or e-wallet app that supports DuitNow.',qrS:'Sample QR · not scannable',cardP:'Visa, Mastercard and AmEx. Processed securely by your payment gateway.',
+gDemo:'Demo: on your site this opens a secure FPX, DuitNow or card payment.',seatDemo:'Demo: on your site this sends the office a WhatsApp to save your seat.',
+v1:'Pick one or more',v2:'Pick the times that suit you',next:'Next',back:'Back',send:'Send my sign-up',vErr1:'Pick at least one role.',vErr2:'Pick at least one time.',vErr3:'Add your name and phone number.',
+vName:'Your name',vPhone:'WhatsApp number',vAge:'Age group',ages:['Under 18 (with a parent)','18–30','31–55','56+'],vDoneH:'Welcome to the team, {n}!',vDoneP:'A coordinator will WhatsApp you within two days to plan your first session.',vRoles:'Roles',vTimes:'Times',vSendWa:'Confirm on WhatsApp',vAgain:'Start again',
+roles:[['Food bank crew','Sort, pack and hand out baskets'],['Tutor','Maths, science, English or BM'],['Driver','Deliveries and clinic lifts'],['Seniors’ buddy','Tea, chats and home visits'],['Event crew','Set up, cook and clean up'],['Skills volunteer','Accounts, design, IT or legal']],
+times:['Weekday mornings','Weekday evenings','Weekends'],
+sp:[['Main hall','Up to 250 guests'],['Classroom','Up to 30'],['Community kitchen','Commercial stoves'],['Meeting room','Up to 12']],
+slot:[['Morning','8 am – 12 pm'],['Afternoon','1 pm – 5 pm'],['Evening','6 pm – 10 pm']],booked:'Booked',
+types:['Kenduri / wedding reception','Birthday or family event','Class or workshop','Talk or meeting','Festival or cultural celebration','Other'],
+bsH:'Your booking',bsSpace:'Space',bsDate:'Date',bsTime:'Time',bsGuests:'Guests',bsSub:'Subtotal',bsNp:'Non-profit rate',bsDep:'Refundable deposit',bsTot:'Total due',bsPick:'Pick at least one time slot.',bsCap:'This space fits {n}. Choose a bigger space.',bsBtn:'Send booking request',bsNote:'No payment now. The office confirms within one working day. Sample rates.',bsOk:'Request ready · Ref {r} (demo)',bDemo:'Demo: on your site this sends the booking request to the office on WhatsApp.',
+prods:[['Community tote','Heavy canvas, screen-printed by our youth club'],['Volunteer tee','Soft cotton in five colours'],['Community cookbook','40 family recipes from our neighbours'],['Enamel mug','For your teh tarik, or your kopi'],['Festive card pack','8 cards for every celebration of the year'],['Sponsor a food basket','We pack it and deliver it for you']],
+add:'Add',added:'Added ✓',empty:'Your cart is empty.',each:'each',coDemo:'Demo: on your site this opens checkout with card, FPX, GrabPay or Touch ’n Go.',
+topics:['I need help','I want to volunteer','Donate items','Book the hall','Partner with us'],when:['Any time','Morning','Afternoon','Evening'],
+waTxt:(tp,n,w,m)=>'Hi, '+(n?'this is '+n+'. ':'')+'I’m writing about: '+tp+'.'+(m?'\n'+m:'')+'\nBest time to reply: '+w+'.',
+days7:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],hrs:[['Mon – Fri','9 am – 6 pm'],['Saturday','9 am – 1 pm'],['Sunday','Sessions only']],dir:'Demo: on your site this opens Google Maps or Waze.'},
+ms:{menu:'Menu',close:'Tutup',cta_cred:'Lihat impak kami',cta_book:'Tempah dewan',cta_sell:'Beli untuk kebajikan',cta_enq:'WhatsApp pejabat',today:'Hari ini',closed:'Tiada aktiviti hari ini. Jumpa esok!',week:'Minggu',all:'Semua',
+c_food:'Bank makanan',c_class:'Kelas',c_youth:'Belia',c_senior:'Warga emas',c_family:'Keluarga',free:'Percuma',seat:'Simpan tempat',nsess:(n,f)=>n+' sesi · '+f+' percuma',none:'Tiada aktiviti kategori ini pada hari ini. Cuba hari lain.',
+of:'daripada sasaran RM {t}',imp:{30:'Beras, minyak dan telur untuk satu keluarga selama seminggu.',50:'Bakul makanan mingguan untuk keluarga lima orang.',100:'Sebulan tuisyen percuma untuk seorang pelajar.',250:'Sebulan bakul makanan untuk warga emas yang tinggal seorang diri.',x:'Setiap ringgit terus ke kempen tahun ini.'},
+giveBtn:(a,m)=>'Derma RM '+a+(m?' sebulan':'')+' sekarang',fpxP:'Bayar melalui perbankan dalam talian bank anda. Anda akan kembali ke sini selepas selesai.',bank:'Pilih bank anda',qrP:'Imbas dengan mana-mana aplikasi bank atau e-dompet yang menyokong DuitNow.',qrS:'Contoh QR · tidak boleh diimbas',cardP:'Visa, Mastercard dan AmEx. Diproses dengan selamat oleh gerbang pembayaran anda.',
+gDemo:'Demo: di laman anda, ini membuka pembayaran FPX, DuitNow atau kad yang selamat.',seatDemo:'Demo: di laman anda, ini menghantar WhatsApp kepada pejabat untuk menyimpan tempat anda.',
+v1:'Pilih satu atau lebih',v2:'Pilih masa yang sesuai',next:'Seterusnya',back:'Kembali',send:'Hantar pendaftaran',vErr1:'Pilih sekurang-kurangnya satu peranan.',vErr2:'Pilih sekurang-kurangnya satu masa.',vErr3:'Isi nama dan nombor telefon anda.',
+vName:'Nama anda',vPhone:'Nombor WhatsApp',vAge:'Kumpulan umur',ages:['Bawah 18 (dengan ibu bapa)','18–30','31–55','56 ke atas'],vDoneH:'Selamat datang ke pasukan, {n}!',vDoneP:'Penyelaras akan WhatsApp anda dalam dua hari untuk merancang sesi pertama anda.',vRoles:'Peranan',vTimes:'Masa',vSendWa:'Sahkan di WhatsApp',vAgain:'Mula semula',
+roles:[['Kru bank makanan','Asing, bungkus dan agih bakul'],['Tutor','Matematik, sains, BI atau BM'],['Pemandu','Penghantaran dan bawa ke klinik'],['Teman warga emas','Minum teh, berbual dan ziarah rumah'],['Kru acara','Susun, masak dan kemas'],['Sukarelawan kemahiran','Akaun, reka bentuk, IT atau guaman']],
+times:['Pagi hari bekerja','Petang hari bekerja','Hujung minggu'],
+sp:[['Dewan utama','Hingga 250 tetamu'],['Bilik darjah','Hingga 30'],['Dapur komuniti','Dapur komersial'],['Bilik mesyuarat','Hingga 12']],
+slot:[['Pagi','8 pg – 12 tgh'],['Petang','1 – 5 ptg'],['Malam','6 – 10 mlm']],booked:'Ditempah',
+types:['Kenduri / majlis perkahwinan','Hari jadi atau majlis keluarga','Kelas atau bengkel','Ceramah atau mesyuarat','Perayaan atau majlis budaya','Lain-lain'],
+bsH:'Tempahan anda',bsSpace:'Ruang',bsDate:'Tarikh',bsTime:'Masa',bsGuests:'Tetamu',bsSub:'Jumlah kecil',bsNp:'Kadar badan bukan untung',bsDep:'Deposit (dipulangkan)',bsTot:'Jumlah perlu dibayar',bsPick:'Pilih sekurang-kurangnya satu slot masa.',bsCap:'Ruang ini memuatkan {n} orang. Pilih ruang lebih besar.',bsBtn:'Hantar permohonan tempahan',bsNote:'Tiada bayaran sekarang. Pejabat akan sahkan dalam satu hari bekerja. Kadar contoh.',bsOk:'Permohonan sedia · Ruj {r} (demo)',bDemo:'Demo: di laman anda, ini menghantar permohonan tempahan kepada pejabat melalui WhatsApp.',
+prods:[['Beg tote komuniti','Kanvas tebal, dicetak oleh kelab belia kami'],['Baju sukarelawan','Kapas lembut dalam lima warna'],['Buku resipi komuniti','40 resipi keluarga daripada jiran kami'],['Mug enamel','Untuk teh tarik atau kopi anda'],['Set kad perayaan','8 kad untuk setiap perayaan sepanjang tahun'],['Taja bakul makanan','Kami bungkus dan hantar untuk anda']],
+add:'Tambah',added:'Ditambah ✓',empty:'Troli anda kosong.',each:'seunit',coDemo:'Demo: di laman anda, ini membuka pembayaran dengan kad, FPX, GrabPay atau Touch ’n Go.',
+topics:['Saya perlukan bantuan','Saya mahu jadi sukarelawan','Derma barang','Tempah dewan','Bekerjasama dengan kami'],when:['Bila-bila masa','Pagi','Petang','Malam'],
+waTxt:(tp,n,w,m)=>'Hai, '+(n?'saya '+n+'. ':'')+'Saya ingin bertanya tentang: '+tp+'.'+(m?'\n'+m:'')+'\nMasa sesuai untuk dibalas: '+w+'.',
+days7:['Ahd','Isn','Sel','Rab','Kha','Jum','Sab'],hrs:[['Isn – Jum','9 pg – 6 ptg'],['Sabtu','9 pg – 1 tgh'],['Ahad','Sesi sahaja']],dir:'Demo: di laman anda, ini membuka Google Maps atau Waze.',
+n1:'Minggu ini',n2:'Derma',n3:'Sukarelawan',n4:'Tempah dewan',n5:'Kisah',n6:'Lawati',give:'Derma',eye:'Pusat komuniti &amp; kebajikan ·',h1:'Siapa pun anda, ada <em>tempat untuk anda</em> minggu ini.',lede:'Kelas percuma, bank makanan mingguan, malam belia dan dewan untuk kenduri anda. Dikendalikan oleh jiran, terbuka kepada semua tanpa mengira agama.',giveToday:'Derma hari ini',cap1:'Bank makanan hari Sabtu',m3a:'Sesi minggu ini',m3b:'Hampir semuanya percuma',m4:'Terbuka kepada semua, tanpa mengira agama',cap2:'Makan tengah hari komuniti, Jumaat',
+pK:'Impak kami',pH:'Pusat kecil. Bantuan yang <em>nyata dan dikira.</em>',pP:'Kami umumkan apa yang kami buat dan ke mana wang pergi. Angka di bawah ialah contoh untuk menunjukkan susun atur; angka sebenar anda di sini.',s1:'bakul makanan sebulan',s2:'pelajar tuisyen percuma',s3:'sukarelawan aktif',s4:'warga emas diziarahi setiap minggu',sampleFig:'Angka contoh',splitH:'Ke mana setiap RM 100 pergi',sp1:'Program: makanan, tuisyen, penjagaan',sp2:'Sewa, utiliti, insurans',sp3:'Kutipan dana &amp; pentadbiran',splitF:'Pecahan contoh. Akaun beraudit akan dipautkan di sini setiap tahun.',regH:'Berdaftar dan bertanggungjawab',r1:'Pertubuhan berdaftar (ROS)',r1s:'No. pendaftaran PPM-000-10-SAMPLE',r2:'Resit pengecualian cukai',r2s:'Kelulusan Seksyen 44(6) (contoh)',r3:'Akaun diaudit setiap tahun',r3s:'Diterbitkan setiap Jun (contoh)',partK:'Rakan kerjasama (nama rekaan)',procH:'Cara memohon bantuan',pr1:'Hubungi kami',pr1p:'WhatsApp atau datang terus. Tiada borang pada lawatan pertama.',pr2:'Duduk berbual',pr2p:'Perbualan sulit dengan sukarelawan terlatih, dalam BM, Inggeris, Cina atau Tamil.',pr3:'Terima sokongan',pr3p:'Bakul makanan, tuisyen, tumpang ke klinik atau rujukan.',pr4:'Kami ikuti perkembangan',pr4p:'Panggilan susulan sebulan kemudian. Anda bukan sekadar angka.',
+bK:'Dewan &amp; bilik',bH:'Dewan untuk <em>kenduri</em>, kelas atau mesyuarat anda.',bP:'Pilih ruang, tarikh dan masa. Kumpulan komuniti dan badan bukan untung bayar kurang. Setiap tempahan membantu membiayai bank makanan.',b1:'1 · Pilih ruang',b2:'2 · Pilih tarikh',b3:'3 · Pilih masa (satu atau lebih)',b4:'Majlis',b5:'Tetamu',b6:'Kami badan bukan untung berdaftar atau persatuan penduduk (diskaun 40%)',
+shK:'Kedai amal',shH:'Beli barang baik. <em>Biayai kebaikan.</em>',shP:'Setiap ringgit keuntungan pergi ke bank makanan. Ambil di pusat atau hantar ke seluruh Lembah Klang.',cart:'Troli',
+aK:'Hubungi pejabat',aH:'Tanya apa saja. <em>Orang sebenar</em> akan membalas.',aP:'Perlukan bantuan, mahu membantu atau ada soalan? Pilih topik dan kami sediakan mesej WhatsApp untuk anda.',aN:'Nama anda',aW:'Masa sesuai untuk dibalas',aM:'Mesej (pilihan)',aSend:'Buka WhatsApp dengan mesej ini',waSub:'Pejabat · biasanya membalas pada hari yang sama',waHi:'Hai! Ini pejabat <span data-af-name>Rumah Kita Community</span>. Ada apa yang boleh kami bantu? 🙂<small>9:02</small>',
+wK:'Minggu ini di pusat',wH:'Ada aktiviti <em>setiap hari.</em>',wP:'Kelas, bank makanan, malam belia dan pagi warga emas. Pilih hari, tapis ikut minat anda dan simpan tempat.',
+gK:'Derma',gH:'Isi <em>meja</em> sebuah keluarga bulan ini.',gP:'Derma sekali atau bulanan melalui FPX, DuitNow QR atau kad. Resit dihantar melalui e-mel pada hari yang sama.',campS:'Kempen contoh',campH:'Kempen bakul makanan hujung tahun: 1,200 bakul untuk keluarga memerlukan',m1:'tercapai',m2:'penderma',m3:'hari lagi',gfH:'Pilih sumbangan anda',once:'Sekali',monthly:'Bulanan',card:'Kad',rcpt:'E-mel resit pengecualian cukai kepada saya (contoh: kelulusan s44(6))',gFine:'Demo sahaja: tiada bayaran diambil. Jumlah dan contoh impak ialah contoh.',
+vK:'Sukarelawan',vH:'Dua jam seminggu <em>mengubah sebatang jalan.</em>',vP:'Beritahu kami apa yang anda suka dan bila anda lapang. Kami padankan anda dengan pasukan dan rakan untuk hari pertama.',vs1:'Apa yang anda mahu buat',vs2:'Bila anda lapang',vs3:'Butiran anda',
+stK:'Kisah',stH:'Insan di sebalik <em>angka.</em>',stP:'Kisah contoh untuk konsep ini. Di laman anda, kisah sebenar dikongsi dengan izin dan nama ditukar jika diminta.',smpStory:'Kisah contoh',st1:'“Minum teh hari Selasa ialah satu-satunya pagi saya pakai gincu. Mereka periksa tekanan darah saya, saya pula ambil tahu tentang semua orang.”',st1p:'Aunty Mei Ling, 74 · Pagi warga emas',st2:'“Saya gagal matematik di Tingkatan 3. Dua tahun tuisyen hari Khamis, saya dapat A.”',st2p:'Hafiz, 18 · Tuisyen SPM percuma',st3:'“Kami datang untuk bank makanan. Sekarang suami saya masak makan tengah hari Jumaat untuk lapan puluh orang.”',st3p:'Kavitha, 41 · Dapur komuniti',
+fK:'Soalan',fH:'Perlu <em>tahu.</em>',fP:'Tiada jawapan anda? WhatsApp pejabat dan sukarelawan akan membalas.',q1:'Siapa boleh datang ke pusat ini?',a1:'Semua orang. Kami pusat komuniti, bukan rumah ibadat, dan kami mengalu-alukan semua tanpa mengira agama, bangsa atau umur.',q2:'Bagaimana mendapat bantuan bank makanan?',a2:'WhatsApp kami atau datang pada pagi Rabu atau Sabtu. Sukarelawan akan berbual secara sulit dengan anda dan mendaftar keluarga anda. Bawa IC jika ada; jika tiada, datang juga.',q3:'Adakah saya dapat resit derma?',a3:'Ya, melalui e-mel pada hari yang sama. Dalam contoh ini kami tunjukkan resit pengecualian cukai di bawah seksyen 44(6); semak kelulusan organisasi anda sebelum menjanjikannya.',q4:'Boleh saya derma makanan atau barang?',a4:'Boleh. Makanan kering (beras, minyak, ikan tin, susu tepung), alat tulis sekolah dan lampin dewasa sentiasa diperlukan. Hantar ke pejabat, 9 pagi hingga 6 petang.',q5:'Bolehkah sesiapa menempah dewan?',a5:'Boleh: kenduri, hari jadi, ceramah, kelas dan perayaan apa-apa agama atau budaya. Arak tidak dibenarkan. Badan bukan untung berdaftar dapat diskaun 40%.',q6:'Ada tempat letak kereta?',a6:'Ada 30 petak percuma di hadapan, dan parkir tepi jalan selepas 6 petang. Perhentian bas terdekat lima minit berjalan kaki.',
+viK:'Lawati kami',viH:'Pintu sentiasa <em>terbuka.</em>',viP:'Datang semasa waktu pejabat, atau terus ke mana-mana sesi dalam jadual.',smpAddr:'Alamat contoh',hol:'Tutup pada cuti umum, kecuali bank makanan yang dibuka keesokan harinya.',waOffice:'WhatsApp pejabat',dirs:'Arah jalan',ft1:'Pusat komuniti dan badan kebajikan untuk semua di kejiranan kami. Makanan, ilmu dan teman, terbuka kepada semua.',ftE:'Terokai',ftC:'Hubungi',legal:'Organisasi rekaan. Semua angka, kisah dan pendaftaran ialah contoh.',yourCart:'Troli anda',total:'Jumlah',checkout:'Bayar'},
+zh:{menu:'菜单',close:'关闭',cta_cred:'看看我们的成果',cta_book:'预订礼堂',cta_sell:'爱心义卖',cta_enq:'WhatsApp 联系办公室',today:'今天',closed:'今天没有活动，明天见！',week:'整周',all:'全部',
+c_food:'食物银行',c_class:'课程',c_youth:'青年',c_senior:'乐龄',c_family:'家庭',free:'免费',seat:'预留座位',nsess:(n,f)=>n+' 场活动 · '+f+' 场免费',none:'这一天没有此类活动，换一天看看。',
+of:'目标 RM {t}',imp:{30:'一个家庭一周的米、油和鸡蛋。',50:'五口之家一整周的食物篮。',100:'一名学生一个月的免费补习。',250:'一位独居长者一个月的食物篮。',x:'每一令吉都直接用于今年的募捐。'},
+giveBtn:(a,m)=>(m?'每月':'立即')+'捐 RM '+a,fpxP:'通过你的网上银行付款，完成后会返回此页。',bank:'选择银行',qrP:'用任何支持 DuitNow 的银行或电子钱包 App 扫描。',qrS:'示例二维码 · 无法扫描',cardP:'支持 Visa、Mastercard 和 AmEx，由支付网关安全处理。',
+gDemo:'演示：在你的网站上，这会打开安全的 FPX、DuitNow 或刷卡付款。',seatDemo:'演示：在你的网站上，这会 WhatsApp 办公室为你预留座位。',
+v1:'可多选',v2:'选择方便的时间',next:'下一步',back:'返回',send:'提交报名',vErr1:'请至少选择一个岗位。',vErr2:'请至少选择一个时间。',vErr3:'请填写姓名和电话。',
+vName:'姓名',vPhone:'WhatsApp 号码',vAge:'年龄段',ages:['18 岁以下（需家长陪同）','18–30','31–55','56 岁以上'],vDoneH:'欢迎加入，{n}！',vDoneP:'协调员会在两天内 WhatsApp 你，安排第一次服务。',vRoles:'岗位',vTimes:'时间',vSendWa:'在 WhatsApp 确认',vAgain:'重新开始',
+roles:[['食物银行组','分类、打包和派发食物篮'],['补习老师','数学、科学、英文或国文'],['司机','送货和载人去诊所'],['乐龄陪伴','喝茶聊天、上门探访'],['活动组','布置、煮食和收拾'],['专业志愿者','会计、设计、IT 或法律']],
+times:['平日早上','平日晚上','周末'],
+sp:[['大礼堂','最多 250 人'],['课室','最多 30 人'],['社区厨房','商用炉灶'],['会议室','最多 12 人']],
+slot:[['上午','8am – 12pm'],['下午','1pm – 5pm'],['晚上','6pm – 10pm']],booked:'已订',
+types:['婚宴 / 宴席','生日或家庭聚会','课程或工作坊','讲座或会议','节庆或文化活动','其他'],
+bsH:'你的预订',bsSpace:'场地',bsDate:'日期',bsTime:'时段',bsGuests:'人数',bsSub:'小计',bsNp:'非营利优惠',bsDep:'押金（可退还）',bsTot:'应付总额',bsPick:'请至少选择一个时段。',bsCap:'此场地最多容纳 {n} 人，请选更大的场地。',bsBtn:'发送预订申请',bsNote:'现在无需付款，办公室会在一个工作日内确认。价格为示例。',bsOk:'申请已备好 · 编号 {r}（演示）',bDemo:'演示：在你的网站上，这会通过 WhatsApp 把预订申请发给办公室。',
+prods:[['社区帆布袋','厚帆布，由青年组丝印'],['志愿者 T 恤','柔软纯棉，五种颜色'],['社区食谱','邻居们的 40 道家常菜'],['搪瓷杯','装拉茶或咖啡都合适'],['节日贺卡套装','8 张卡，适合一年里每个节日'],['认捐一个食物篮','我们替你打包并送出']],
+add:'加入',added:'已加入 ✓',empty:'购物车是空的。',each:'每件',coDemo:'演示：在你的网站上，这会打开结账页面，可用刷卡、FPX、GrabPay 或 Touch ’n Go。',
+topics:['我需要帮助','我想当志愿者','捐赠物品','预订礼堂','合作'],when:['随时','上午','下午','晚上'],
+waTxt:(tp,n,w,m)=>'你好，'+(n?'我是'+n+'。':'')+'我想咨询：'+tp+'。'+(m?'\n'+m:'')+'\n方便回复的时间：'+w+'。',
+days7:['日','一','二','三','四','五','六'],hrs:[['周一至周五','9am – 6pm'],['周六','9am – 1pm'],['周日','仅活动时段']],dir:'演示：在你的网站上，这会打开 Google Maps 或 Waze。',
+n1:'本周活动',n2:'捐款',n3:'志愿者',n4:'预订礼堂',n5:'故事',n6:'到访',give:'捐款',eye:'社区中心与慈善团体 ·',h1:'无论你是谁，这周都有<em>你的位子</em>。',lede:'免费课程、每周食物银行、青年之夜，还有可以办喜事的礼堂。由邻居们自发经营，不分宗教，人人欢迎。',giveToday:'今天就捐',cap1:'周六食物银行',m3a:'本周活动',m3b:'几乎全部免费',m4:'不分宗教，人人欢迎',cap2:'周五社区午餐',
+pK:'我们的成果',pH:'小小中心，<em>实实在在</em>的帮助。',pP:'我们公开所做的一切和每一分钱的去向。以下数字为示例，用来展示版面；你的真实数据放在这里。',s1:'每月食物篮',s2:'免费补习学生',s3:'活跃志愿者',s4:'每周探访长者',sampleFig:'示例数据',splitH:'每 RM 100 的去向',sp1:'项目：食物、补习、关怀',sp2:'租金、水电、保险',sp3:'筹款与行政',splitF:'示例比例。每年的审计账目会链接在这里。',regH:'合法注册，公开透明',r1:'注册社团（ROS）',r1s:'注册号 PPM-000-10-SAMPLE',r2:'可扣税收据',r2s:'第 44(6) 条批准（示例）',r3:'每年审计账目',r3s:'每年六月公布（示例）',partK:'合作伙伴（虚构名称）',procH:'如何寻求帮助',pr1:'联系我们',pr1p:'WhatsApp 或直接上门，第一次来不用填表。',pr2:'坐下聊聊',pr2p:'与受过培训的志愿者私下谈，可用国语、英语、华语或淡米尔语。',pr3:'获得支持',pr3p:'食物篮、补习、载你去诊所，或转介服务。',pr4:'持续关心',pr4p:'一个月后回访。你从来不只是一个数字。',
+bK:'礼堂与房间',bH:'办<em>喜宴</em>、上课或开会的好地方。',bP:'选场地、日期和时段。社区团体和非营利组织享优惠，每笔预订都在支持食物银行。',b1:'1 · 选择场地',b2:'2 · 选择日期',b3:'3 · 选择时段（可多选）',b4:'活动',b5:'人数',b6:'我们是注册非营利组织或居民协会（七六折，即减 40%）',
+shK:'慈善商店',shH:'买点好东西，<em>成就更好的事。</em>',shP:'所有盈利都用于食物银行。可到中心自取，或巴生谷内送货。',cart:'购物车',
+aK:'联系办公室',aH:'有问题尽管问，<em>真人</em>回复。',aP:'需要帮助、想帮忙，或有疑问？选个主题，我们帮你写好 WhatsApp 讯息。',aN:'你的名字',aW:'方便回复的时间',aM:'留言（可选）',aSend:'用这条讯息打开 WhatsApp',waSub:'办公室 · 通常当天回复',waHi:'你好！这里是 <span data-af-name>Rumah Kita Community</span> 办公室，有什么可以帮你？🙂<small>9:02</small>',
+wK:'本周中心活动',wH:'<em>每天</em>都有活动。',wP:'课程、食物银行、青年之夜和乐龄早晨。选一天，按兴趣筛选，然后预留座位。',
+gK:'捐款',gH:'这个月，让一个家庭<em>餐桌</em>不空。',gP:'可单次或每月捐款，支持 FPX、DuitNow QR 或刷卡，当天即电邮收据。',campS:'示例募捐',campH:'年终食物篮募捐：为有需要的家庭准备 1,200 个食物篮',m1:'已筹',m2:'位捐款人',m3:'天后截止',gfH:'选择捐款金额',once:'单次',monthly:'每月',card:'刷卡',rcpt:'电邮可扣税收据给我（示例：第 44(6) 条批准）',gFine:'仅为演示，不会扣款。金额与用途示例均为样本。',
+vK:'志愿者',vH:'每周两小时，<em>改变一条街。</em>',vP:'告诉我们你喜欢做什么、什么时候有空，我们会帮你配对团队，第一天还有伙伴带你。',vs1:'想做什么',vs2:'什么时候有空',vs3:'你的资料',
+stK:'故事',stH:'数字背后的<em>人。</em>',stP:'为本概念撰写的示例故事。在你的网站上，真实故事会在征得同意后分享，并按要求更改姓名。',smpStory:'示例故事',st1:'“周二喝茶是我唯一会涂口红的早上。他们帮我量血压，我就关心其他人。”',st1p:'美玲阿姨，74 岁 · 乐龄早晨',st2:'“我中三数学不及格。上了两年周四补习，我拿了 A。”',st2p:'Hafiz，18 岁 · 免费 SPM 补习',st3:'“我们本来是来领食物篮的，现在我丈夫每周五为八十人煮午餐。”',st3p:'Kavitha，41 岁 · 社区厨房',
+fK:'常见问题',fH:'你可能想<em>知道。</em>',fP:'找不到答案？WhatsApp 办公室，志愿者会回复你。',q1:'谁可以来中心？',a1:'每个人都可以。我们是社区中心，不是宗教场所，欢迎任何宗教或无宗教、任何种族和年龄的人。',q2:'怎样向食物银行求助？',a2:'WhatsApp 我们，或在周三、周六早上直接过来。志愿者会私下和你聊聊并登记你的家庭。有身份证就带上，没有也请来。',q3:'捐款有收据吗？',a3:'有，当天电邮给你。本示例展示第 44(6) 条可扣税收据；承诺之前请先确认你所在组织的批准状态。',q4:'可以捐食物或物品吗？',a4:'可以。干粮（米、油、罐头鱼、奶粉）、文具和成人纸尿裤一直都需要。请在早上 9 点至傍晚 6 点送到办公室。',q5:'谁都可以订礼堂吗？',a5:'可以：宴席、生日、讲座、课程，以及任何宗教或文化的庆典。禁止酒精。注册非营利组织享 40% 优惠。',q6:'有停车位吗？',a6:'门前有 30 个免费车位，傍晚 6 点后可路边停车。最近的巴士站步行五分钟。',
+viK:'欢迎到访',viH:'大门一直<em>敞开。</em>',viP:'办公时间随时过来，或直接参加活动表上的任何一场。',smpAddr:'示例地址',hol:'公共假期休息，但食物银行会在假期后一天开放。',waOffice:'WhatsApp 办公室',dirs:'导航',ft1:'为社区里每一个人服务的社区中心与慈善团体。食物、学习与陪伴，人人欢迎。',ftE:'浏览',ftC:'联系',legal:'虚构组织。所有数据、故事和注册信息均为示例。',yourCart:'购物车',total:'总计',checkout:'结账'}};
+const t=k=>{const v=D[L][k];if(v!==undefined)return v;if(L==='en'&&EN[k]!==undefined)return EN[k];return D.en[k]!==undefined?D.en[k]:EN[k]};
+const st=k=>L==='en'?EN[k]:(D[L][k]!==undefined?D[L][k]:EN[k]);
+const fill=(s,o)=>s.replace(/\{(\w+)\}/g,(m,k)=>o[k]);
+const money=n=>'RM '+Math.round(n).toLocaleString('en-MY');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const demo=m=>window.afDemo&&window.afDemo(m);
+const now=new Date(),TD=now.getDay();
+
+/* programme data: d=days(0=Sun), c=category, n=[en,ms,zh], w=place, a=audience, f=fee */
+const CC={food:'var(--a1)',class:'var(--a3)',youth:'var(--a2)',senior:'var(--a4)',family:'var(--a5)'};
+const P=[
+{d:[3,6],t:'10:00–13:00',c:'food',n:['Food bank collection','Kutipan bank makanan','食物银行领取日'],w:['Main hall','Dewan utama','大礼堂'],a:['Registered families','Keluarga berdaftar','已登记家庭'],f:0},
+{d:[2],t:'19:30–21:30',c:'food',n:['Food rescue sorting','Asingan makanan terselamat','剩食分类'],w:['Kitchen','Dapur','厨房'],a:['Volunteers welcome','Sukarelawan dialu-alukan','欢迎志愿者'],f:0},
+{d:[5],t:'12:30–14:00',c:'food',n:['Community lunch, pay what you can','Makan tengah hari komuniti, bayar ikut mampu','社区午餐，随心付'],w:['Main hall','Dewan utama','大礼堂'],a:['Everyone','Semua','所有人'],f:0},
+{d:[1,4],t:'16:30–18:30',c:'class',n:['SPM maths & science tuition','Tuisyen matematik & sains SPM','SPM 数理补习'],w:['Room 2','Bilik 2','2 号室'],a:['Form 4–5 students','Pelajar Tingkatan 4–5','中四至中五学生'],f:0},
+{d:[2],t:'20:00–21:30',c:'class',n:['English conversation circle','Bulatan perbualan bahasa Inggeris','英语会话小组'],w:['Room 1','Bilik 1','1 号室'],a:['Adults, all levels','Dewasa, semua tahap','成人，任何程度'],f:0},
+{d:[6],t:'09:30–12:00',c:'class',n:['Digital skills for job seekers','Kemahiran digital untuk pencari kerja','求职者数码技能'],w:['Computer room','Bilik komputer','电脑室'],a:['Adults','Dewasa','成人'],f:0},
+{d:[3],t:'14:30–16:30',c:'class',n:['Sewing & alterations class','Kelas jahitan & ubah suai','缝纫与改衣班'],w:['Room 1','Bilik 1','1 号室'],a:['Beginners','Pemula','初学者'],f:10},
+{d:[5],t:'20:30–22:30',c:'youth',n:['Youth futsal night','Malam futsal belia','青年足球夜'],w:['Court','Gelanggang','球场'],a:['Ages 13–21','Umur 13–21','13–21 岁'],f:0},
+{d:[1,2,3,4],t:'15:00–17:00',c:'youth',n:['Homework club','Kelab kerja rumah','功课辅导班'],w:['Library corner','Sudut perpustakaan','图书角'],a:['Primary school kids','Murid sekolah rendah','小学生'],f:0},
+{d:[6],t:'15:00–17:00',c:'youth',n:['Youth mentoring circle','Bulatan mentor belia','青年导师小组'],w:['Room 2','Bilik 2','2 号室'],a:['Ages 15–21','Umur 15–21','15–21 岁'],f:0},
+{d:[2,4],t:'08:00–10:00',c:'senior',n:['Seniors’ tea & tai chi','Teh & tai chi warga emas','乐龄茶叙与太极'],w:['Garden','Taman','花园'],a:['60+','60 ke atas','60 岁以上'],f:0},
+{d:[0],t:'09:00–12:00',c:'senior',n:['Free health screening','Saringan kesihatan percuma','免费健康检查'],w:['Room 3','Bilik 3','3 号室'],a:['40+','40 ke atas','40 岁以上'],f:0},
+{d:[3],t:'10:30–12:00',c:'senior',n:['Phone & WhatsApp help','Bantuan telefon & WhatsApp','手机与 WhatsApp 教学'],w:['Computer room','Bilik komputer','电脑室'],a:['Seniors','Warga emas','长者'],f:0},
+{d:[6],t:'10:00–11:30',c:'family',n:['Storytime & crafts','Masa bercerita & kraf','故事时间与手工'],w:['Library corner','Sudut perpustakaan','图书角'],a:['Ages 4–9 with a parent','Umur 4–9 bersama ibu bapa','4–9 岁，需家长陪同'],f:0},
+{d:[0],t:'15:00–16:30',c:'family',n:['Parenting circle','Bulatan keibubapaan','亲子教养小组'],w:['Room 1','Bilik 1','1 号室'],a:['Parents & carers','Ibu bapa & penjaga','家长与照顾者'],f:0},
+{d:[0],t:'07:30–09:30',c:'family',n:['Community garden morning','Pagi taman komuniti','社区菜园早晨'],w:['Garden','Taman','花园'],a:['Everyone','Semua','所有人'],f:0}];
+const totalSes=P.reduce((s,p)=>s+p.d.length,0);
+const B={day:TD,cat:'all'};
+function renderBoard(){const d7=t('days7');
+ $('#days').innerHTML=[1,2,3,4,5,6,0].map(d=>`<button data-d="${d}" aria-pressed="${B.day===d}">${d7[d]}<small>${d===TD?t('today'):'&nbsp;'}</small></button>`).join('')+`<button data-d="-1" aria-pressed="${B.day===-1}">${t('week')}<small>${totalSes}</small></button>`;
+ $('#cats').innerHTML=['all','food','class','youth','senior','family'].map(c=>`<button data-c="${c}" aria-pressed="${B.cat===c}">${c==='all'?'':`<i style="background:${CC[c]}"></i>`}${c==='all'?t('all'):t('c_'+c)}</button>`).join('');
+ let list=[];P.forEach(p=>p.d.forEach(d=>{if((B.day===-1||d===B.day)&&(B.cat==='all'||p.c===B.cat))list.push({p,d})}));
+ list.sort((a,b)=>B.day===-1?(((a.d+6)%7)-((b.d+6)%7)||a.p.t.localeCompare(b.p.t)):a.p.t.localeCompare(b.p.t));
+ const free=list.filter(x=>!x.p.f).length;$('#bcount').textContent=t('nsess')(list.length,free);
+ $('#sessions').innerHTML=list.length?list.map((x,i)=>{const p=x.p;return `<article class="ses" style="--c:${CC[p.c]};animation-delay:${Math.min(i,8)*40}ms"><div class="tm">${B.day===-1?d7[x.d]+' · ':''}${p.t}<span>${t('c_'+p.c)}</span></div><h3>${p.n[LX[L]]}</h3><p>${p.w[LX[L]]} · ${p.a[LX[L]]}</p><div class="ft"><span class="fee">${p.f?money(p.f):t('free')}</span><button class="seat">${t('seat')}</button></div></article>`}).join(''):`<p class="empty">${t('none')}</p>`}
+$('#days').addEventListener('click',e=>{const b=e.target.closest('button');if(b){B.day=+b.dataset.d;renderBoard()}});
+$('#cats').addEventListener('click',e=>{const b=e.target.closest('button');if(b){B.cat=b.dataset.c;renderBoard()}});
+$('#sessions').addEventListener('click',e=>{if(e.target.closest('.seat'))demo(t('seatDemo'))});
+function renderToday(){const d7=t('days7');$('#tdDay').innerHTML=`<div><span class="live">${t('today')}</span><b>${d7[TD]}</b></div>`;
+ const l=P.filter(p=>p.d.includes(TD)).sort((a,b)=>a.t.localeCompare(b.t)).slice(0,3);
+ $('#tdList').innerHTML=l.length?l.map(p=>`<li><i style="background:${CC[p.c]}"></i><span>${p.t.slice(0,5)}</span><em>${p.n[LX[L]]}</em></li>`).join(''):`<li><em>${t('closed')}</em></li>`;$('#sesCount').textContent=totalSes}
+
+/* giving */
+const G={amt:50,f:'once',m:'fpx'},GOAL=60000,RAISED=41280;
+function renderGive(){$('#amts').innerHTML=[30,50,100,250].map(a=>`<button type="button" data-a="${a}" aria-pressed="${G.amt===a&&!$('#custom').value}">RM ${a}</button>`).join('');
+ const imp=t('imp');$('#impact').textContent=imp[G.amt]||imp.x;
+ $('#giveBtn').textContent=t('giveBtn')(G.amt||0,G.f==='month');
+ $$('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===G.f));$$('#methods button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===G.m));
+ const mp=$('#mpanel');
+ if(G.m==='fpx')mp.innerHTML=`<div style="width:100%"><p>${t('fpxP')}</p><select aria-label="${t('bank')}"><option>${t('bank')}</option><option>Maybank2u</option><option>CIMB Clicks</option><option>Public Bank</option><option>RHB Now</option><option>Hong Leong Connect</option><option>Bank Islam</option><option>AmOnline</option></select></div>`;
+ else if(G.m==='qr')mp.innerHTML=`<div class="qr">${qr()}</div><p><b>DuitNow QR</b><br>${t('qrP')}<br><span class="tagS" style="margin-top:8px">${t('qrS')}</span></p>`;
+ else mp.innerHTML=`<p>${t('cardP')}</p><p style="display:flex;gap:6px"><span class="tagS">VISA</span><span class="tagS">Mastercard</span><span class="tagS">AmEx</span></p>`;
+ $('#raisedOf').textContent=fill(t('of'),{t:GOAL.toLocaleString('en-MY')})}
+let qrCache='';function qr(){if(qrCache)return qrCache;const n=25;let s=`<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" aria-hidden="true"><rect width="${n}" height="${n}" fill="#fff"/>`;let x=7;
+ const fin=(a,b)=>`<rect x="${a}" y="${b}" width="7" height="7" fill="#111"/><rect x="${a+1}" y="${b+1}" width="5" height="5" fill="#fff"/><rect x="${a+2}" y="${b+2}" width="3" height="3" fill="#111"/>`;
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){if((i<8&&j<8)||(i<8&&j>n-9)||(i>n-9&&j<8))continue;x=(x*1103515245+12345)&0x7fffffff;if(x%7<3)s+=`<rect x="${j}" y="${i}" width="1" height="1" fill="#111"/>`}
+ s+=fin(0,0)+fin(n-7,0)+fin(0,n-7)+`<rect x="10" y="10" width="5" height="5" fill="#fff"/><circle cx="12.5" cy="12.5" r="2.2" fill="#e5224d"/></svg>`;return qrCache=s}
+$('#amts').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('#custom').value='';G.amt=+b.dataset.a;renderGive()});
+$('#custom').addEventListener('input',e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,6);G.amt=+e.target.value||0;$$('#amts button').forEach(b=>b.setAttribute('aria-pressed','false'));$('#impact').textContent=t('imp').x;$('#giveBtn').textContent=t('giveBtn')(G.amt,G.f==='month')});
+$('.seg').addEventListener('click',e=>{const b=e.target.closest('button');if(b){G.f=b.dataset.f;renderGive()}});
+$('#methods').addEventListener('click',e=>{const b=e.target.closest('button');if(b){G.m=b.dataset.m;renderGive()}});
+$('#gform').addEventListener('submit',e=>{e.preventDefault();demo(t('gDemo'))});
+let meterDone=false;function runMeter(){if(meterDone)return;meterDone=true;const pc=Math.round(RAISED/GOAL*100);$('#meter i').style.width=pc+'%';$('#meter').setAttribute('aria-valuenow',pc);
+ const t0=performance.now(),dur=RM?0:1800;const step=k=>{const p=dur?Math.min(1,(k-t0)/dur):1,e=1-Math.pow(1-p,3);$('#raised').textContent=money(RAISED*e);$('#pct').textContent=Math.round(pc*e)+'%';if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+
+/* volunteer */
+const V={step:0,roles:new Set(),times:new Set(),name:'',phone:'',age:1,done:false};
+const RI=['🧺','📚','🚗','🫖','🍳','💡'];
+function renderVol(){$$('#vsteps li').forEach((li,i)=>li.classList.toggle('on',i<=V.step));const vb=$('#vbody');
+ if(V.done){const n=esc(V.name.split(' ')[0]);vb.innerHTML=`<div class="done"><div class="big"><svg viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 21l7 7 14-15"/></svg></div><h3>${fill(t('vDoneH'),{n})}</h3><p style="color:var(--mut);margin-top:6px">${t('vDoneP')}</p><ul class="sumlist"><li><span>${t('vRoles')}</span><b>${[...V.roles].map(i=>t('roles')[i][0]).join(', ')}</b></li><li><span>${t('vTimes')}</span><b>${[...V.times].map(i=>t('times')[i]).join(', ')}</b></li></ul><div class="vnav" style="justify-content:center"><button class="btn p waBtn" id="vWa">${t('vSendWa')}</button><button class="btn o" id="vAgain">${t('vAgain')}</button></div></div>`;
+  $('#vWa').onclick=()=>demo();$('#vAgain').onclick=()=>{Object.assign(V,{step:0,done:false});V.roles.clear();V.times.clear();renderVol()};return}
+ let h='';
+ if(V.step===0)h=`<span class="vlbl" style="margin-top:0">${t('v1')}</span><div class="roles">${t('roles').map((r,i)=>`<button type="button" class="role" data-r="${i}" aria-pressed="${V.roles.has(i)}"><i>${RI[i]}</i><span><b>${r[0]}</b><small>${r[1]}</small></span></button>`).join('')}</div>`;
+ if(V.step===1)h=`<span class="vlbl" style="margin-top:0">${t('v2')}</span><div class="slots">${t('times').map((r,i)=>`<button type="button" class="role" data-t="${i}" aria-pressed="${V.times.has(i)}"><span><b>${r}</b></span></button>`).join('')}</div>`;
+ if(V.step===2)h=`<div class="fg"><div class="fld"><label for="vN">${t('vName')}</label><input id="vN" autocomplete="name" value="${esc(V.name)}"></div><div class="fld"><label for="vP">${t('vPhone')}</label><input id="vP" type="tel" autocomplete="tel" placeholder="+60" value="${esc(V.phone)}"></div><div class="fld w"><label for="vA">${t('vAge')}</label><select id="vA">${t('ages').map((a,i)=>`<option value="${i}"${i===V.age?' selected':''}>${a}</option>`).join('')}</select></div></div>`;
+ vb.innerHTML=h+`<div class="vnav">${V.step?`<button class="btn o" id="vBack">${t('back')}</button>`:'<span></span>'}<p class="err" id="vErr" aria-live="polite"></p><button class="btn p" id="vNext">${V.step===2?t('send'):t('next')} →</button></div>`;
+ const bk=$('#vBack');if(bk)bk.onclick=()=>{saveV();V.step--;renderVol()};
+ $('#vNext').onclick=()=>{saveV();const er=$('#vErr');if(V.step===0&&!V.roles.size){er.textContent=t('vErr1');return}if(V.step===1&&!V.times.size){er.textContent=t('vErr2');return}
+  if(V.step===2){if(!V.name.trim()||V.phone.replace(/\D/g,'').length<8){er.textContent=t('vErr3');return}V.done=true}else V.step++;renderVol()}}
+function saveV(){const n=$('#vN');if(n){V.name=n.value;V.phone=$('#vP').value;V.age=+$('#vA').value}}
+$('#vbody').addEventListener('click',e=>{const b=e.target.closest('.role');if(!b)return;const set=b.dataset.r!==undefined?V.roles:V.times,i=+(b.dataset.r??b.dataset.t);set.has(i)?set.delete(i):set.add(i);b.setAttribute('aria-pressed',set.has(i))});
+
+/* hall booking */
+const SP=[{img:'1519167758481-83f550bb49b3',cap:250,rate:350,dep:200},{img:'1524178232363-1fb2b075b655',cap:30,rate:90,dep:50},{img:'1556910103-1c02745aae4d',cap:40,rate:120,dep:100},{img:'1517048676732-d65bc937f952',cap:12,rate:60,dep:0}];
+const BK={sp:0,di:2,slots:new Set([2]),ref:''};
+const dayAt=i=>{const d=new Date(now);d.setHours(0,0,0,0);d.setDate(d.getDate()+i);return d};
+const isBooked=(i,s,sp)=>{const d=dayAt(i);return (d.getDate()*7+s*3+sp*5+i)%5===0};
+function renderBook(){const sp=t('sp');
+ $('#spaces').innerHTML=SP.map((s,i)=>`<button class="space" data-s="${i}" aria-pressed="${BK.sp===i}"><img src="https://images.unsplash.com/photo-${s.img}?auto=format&fit=crop&w=320&h=170&q=70" alt="" loading="lazy" width="320" height="170"><div><b>${sp[i][0]}</b><small>${sp[i][1]}</small><small><b style="display:inline;font-size:12px;color:var(--ink)">${money(s.rate)}</b> / ${L==='zh'?'时段':'slot'}</small></div></button>`).join('');
+ $('#strip').innerHTML=Array.from({length:14},(_,i)=>{const d=dayAt(i);return `<button data-x="${i}" aria-pressed="${BK.di===i}" aria-label="${d.toLocaleDateString(LOC[L],{weekday:'long',day:'numeric',month:'long'})}"><small>${t('days7')[d.getDay()]}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString(LOC[L],{month:'short'})}</small></button>`}).join('');
+ [...BK.slots].forEach(s=>{if(isBooked(BK.di,s,BK.sp))BK.slots.delete(s)});
+ $('#tslots').innerHTML=t('slot').map((s,i)=>{const bk=isBooked(BK.di,i,BK.sp);return `<button class="tslot" data-t="${i}" aria-pressed="${BK.slots.has(i)}" ${bk?'disabled':''}><b>${s[0]}</b><small>${bk?t('booked'):s[1]}</small></button>`}).join('');
+ const ty=$('#bType'),tv=ty.selectedIndex;ty.innerHTML=t('types').map(x=>`<option>${x}</option>`).join('');ty.selectedIndex=Math.max(0,tv);
+ sumBook()}
+function sumBook(){const s=SP[BK.sp],n=BK.slots.size,np=$('#bNp').checked,g=+$('#bG').value||0,sub=s.rate*n*(n===3?.85:1),disc=np?sub*.4:0,tot=sub-disc+(n?s.dep:0),d=dayAt(BK.di);
+ const err=!n?t('bsPick'):g>s.cap?fill(t('bsCap'),{n:s.cap}):'';
+ $('#bsum').innerHTML=`<h3>${t('bsH')}</h3><ul class="sumlist"><li><span>${t('bsSpace')}</span><b>${t('sp')[BK.sp][0]}</b></li><li><span>${t('bsDate')}</span><b>${d.toLocaleDateString(LOC[L],{weekday:'short',day:'numeric',month:'short'})}</b></li><li><span>${t('bsTime')}</span><b>${n?[...BK.slots].sort().map(i=>t('slot')[i][0]).join(' + '):'—'}</b></li><li><span>${t('bsGuests')}</span><b>${g}</b></li><li><span>${t('bsSub')}</span><b>${money(sub)}</b></li>${np?`<li><span>${t('bsNp')}</span><b>− ${money(disc)}</b></li>`:''}${s.dep&&n?`<li><span>${t('bsDep')}</span><b>${money(s.dep)}</b></li>`:''}</ul><div class="tot"><span>${t('bsTot')}</span><b>${money(tot)}</b></div><p class="err">${err}</p><button class="btn p" id="bGo" ${err?'disabled style="opacity:.5;cursor:not-allowed"':''}>${t('bsBtn')}</button><p class="okref">${BK.ref?fill(t('bsOk'),{r:BK.ref}):''}</p><p class="fine">${t('bsNote')}</p>`;
+ $('#bGo').onclick=()=>{BK.ref='RK-'+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'-'+Math.floor(100+Math.random()*900);sumBook();demo(t('bDemo'))}}
+$('#spaces').addEventListener('click',e=>{const b=e.target.closest('.space');if(b){BK.sp=+b.dataset.s;BK.ref='';renderBook()}});
+$('#strip').addEventListener('click',e=>{const b=e.target.closest('button');if(b){BK.di=+b.dataset.x;BK.ref='';renderBook()}});
+$('#tslots').addEventListener('click',e=>{const b=e.target.closest('.tslot');if(!b||b.disabled)return;const i=+b.dataset.t;BK.slots.has(i)?BK.slots.delete(i):BK.slots.add(i);BK.ref='';renderBook()});
+$('#bNp').addEventListener('change',sumBook);$('#bG').addEventListener('input',sumBook);
+
+/* shop */
+const PR=[{p:35,c:'color-mix(in srgb,var(--a2) 55%,var(--card))',s:'<path d="M16 26h48l-4 44H20z" fill="currentColor" opacity=".9"/><path d="M28 26c0-14 24-14 24 0" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="40" cy="48" r="7" fill="var(--a1)"/>'},
+{p:45,c:'color-mix(in srgb,var(--a3) 45%,var(--card))',s:'<path d="M28 14l-16 10 6 12 8-4v38h28V32l8 4 6-12-16-10c-2 5-7 8-12 8s-10-3-12-8z" fill="currentColor" opacity=".9"/><path d="M34 44h12" stroke="var(--a2)" stroke-width="4" stroke-linecap="round"/>'},
+{p:38,c:'color-mix(in srgb,var(--a1) 35%,var(--card))',s:'<rect x="18" y="12" width="44" height="56" rx="4" fill="currentColor" opacity=".9"/><rect x="24" y="20" width="32" height="18" rx="3" fill="var(--a2)"/><path d="M26 46h28M26 54h20" stroke="var(--card)" stroke-width="3"/>'},
+{p:28,c:'color-mix(in srgb,var(--a4) 40%,var(--card))',s:'<path d="M16 24h40v30a14 14 0 0 1-14 14h-12a14 14 0 0 1-14-14z" fill="currentColor" opacity=".9"/><path d="M56 32h6a8 8 0 0 1 0 16h-6" fill="none" stroke="currentColor" stroke-width="5"/><path d="M28 10c-3 4 3 6 0 10M40 10c-3 4 3 6 0 10" stroke="var(--a1)" stroke-width="3" fill="none" stroke-linecap="round"/>'},
+{p:20,c:'color-mix(in srgb,var(--a5) 35%,var(--card))',s:'<rect x="14" y="22" width="40" height="30" rx="3" fill="currentColor" opacity=".55" transform="rotate(-8 34 37)"/><rect x="24" y="28" width="42" height="32" rx="3" fill="currentColor" opacity=".9"/><circle cx="45" cy="44" r="7" fill="var(--a2)"/>'},
+{p:50,c:'color-mix(in srgb,var(--a2) 35%,var(--card))',s:'<path d="M12 34h56l-6 34H18z" fill="currentColor" opacity=".9"/><path d="M24 34l10-18M56 34L46 16" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="30" r="6" fill="var(--a1)"/><circle cx="42" cy="28" r="7" fill="var(--a4)"/><circle cx="52" cy="31" r="5" fill="var(--a2)"/>'}];
+const CART={};
+function renderShop(){const pr=t('prods');$('#prods').innerHTML=PR.map((x,i)=>`<article class="prod rv in"><div class="pimg" style="--c:${x.c}"><svg viewBox="0 0 80 80" aria-hidden="true">${x.s}</svg></div><div class="pb"><h3>${pr[i][0]}</h3><p>${pr[i][1]}</p><div class="row"><b>${money(x.p)}</b><button class="add" data-p="${i}">${t('add')}</button></div></div></article>`).join('');renderCart()}
+function renderCart(){const ids=Object.keys(CART).filter(k=>CART[k]>0),pr=t('prods');let tot=0,n=0;
+ $('#dl').innerHTML=ids.length?ids.map(k=>{const x=PR[k];tot+=x.p*CART[k];n+=CART[k];return `<li><span class="sw" style="--c:${x.c}"></span><span class="nm">${pr[k][0]}<small>${money(x.p)} ${t('each')}</small></span><span class="qty"><button data-q="${k}" data-v="-1" aria-label="−">−</button><b>${CART[k]}</b><button data-q="${k}" data-v="1" aria-label="+">+</button></span></li>`}).join(''):`<li style="justify-content:center;color:var(--mut)">${t('empty')}</li>`;
+ $('#dTot').textContent=money(tot);$('#cartN').textContent=n}
+const drawer=$('#drawer'),scrim=$('#scrim');
+const openCart=o=>{drawer.classList.toggle('on',o);scrim.classList.toggle('on',o);if(o)$('#cartClose').focus()};
+$('#prods').addEventListener('click',e=>{const b=e.target.closest('.add');if(!b)return;const i=b.dataset.p;CART[i]=(CART[i]||0)+1;renderCart();b.textContent=t('added');b.classList.add('ok');setTimeout(()=>{b.textContent=t('add');b.classList.remove('ok')},1200);if(!RM)openCart(true)});
+$('#dl').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;CART[b.dataset.q]=Math.max(0,CART[b.dataset.q]+ +b.dataset.v);renderCart()});
+$('#cartOpen').onclick=()=>openCart(true);$('#cartClose').onclick=()=>openCart(false);scrim.onclick=()=>openCart(false);
+addEventListener('keydown',e=>{if(e.key==='Escape')openCart(false)});
+$('#checkout').onclick=()=>demo(t('coDemo'));
+
+/* ask */
+const A={tp:0};
+function renderAsk(){$('#topics').innerHTML=t('topics').map((x,i)=>`<button type="button" data-t="${i}" aria-pressed="${A.tp===i}">${x}</button>`).join('');
+ const w=$('#aW'),wi=w.selectedIndex;w.innerHTML=t('when').map(x=>`<option>${x}</option>`).join('');w.selectedIndex=Math.max(0,wi);waPrev()}
+function waPrev(){const n=$('#aN').value.trim(),m=$('#aM').value.trim(),w=t('when')[$('#aW').selectedIndex]||t('when')[0];
+ $('#waMsg').innerHTML=esc(t('waTxt')(t('topics')[A.tp],n,w,m))+`<small>9:03 ✓✓</small>`}
+$('#topics').addEventListener('click',e=>{const b=e.target.closest('button');if(b){A.tp=+b.dataset.t;renderAsk()}});
+['#aN','#aM','#aW'].forEach(s=>$(s).addEventListener('input',waPrev));
+$('#askF').addEventListener('submit',e=>{e.preventDefault();demo()});
+
+/* visit */
+function renderHrs(){const h=t('hrs'),ix=TD===0?2:TD===6?1:0;$('#hrs').innerHTML=h.map((r,i)=>`<li class="${i===ix?'td':''}"><span>${r[0]}</span><b>${r[1]}</b></li>`).join('')}
+$$('.demo').forEach(b=>b.addEventListener('click',()=>demo(b.dataset.msg==='dir'?t('dir'):undefined)));
+
+/* goal CTAs */
+function goalCta(){const g=H.dataset.goal||'cred',map={cred:'#proof',book:'#book',sell:'#shop',enq:'#ask'};[$('#heroCta'),$('#mCta')].forEach(a=>{a.textContent=t('cta_'+g);a.setAttribute('href',map[g])})}
+
+/* language */
+function applyLang(){H.lang=L==='zh'?'zh-Hans':L;$$('[data-i]').forEach(e=>{const v=st(e.dataset.i);if(typeof v==='string')e.innerHTML=v});
+ $$('[data-ph]').forEach(e=>e.placeholder=L==='en'?'Other amount':L==='ms'?'Jumlah lain':'其他金额');
+ $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===L));$('#burger').textContent=nav.classList.contains('open')?t('close'):t('menu');
+ goalCta();renderToday();renderBoard();renderGive();renderVol();renderBook();renderShop();renderAsk();renderHrs();if(meterDone)$('#raised').textContent=money(RAISED);
+ if(window.afFill)window.afFill()}
+const nav=$('#nav');
+$('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;saveV();L=b.dataset.l;try{localStorage.setItem('af-lang',L)}catch(er){}applyLang()});
+$('#burger').addEventListener('click',()=>{const o=nav.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o);$('#burger').textContent=o?t('close'):t('menu')});
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');$('#burger').setAttribute('aria-expanded','false');$('#burger').textContent=t('menu')}));
+
+applyLang();
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target)}),{threshold:.08});
+$$('.rv').forEach(el=>io.observe(el));
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){runMeter();o.disconnect()}}),{threshold:.3}).observe($('#meter'));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.n,t0=performance.now(),dur=RM?0:1400;const st=k=>{const p=dur?Math.min(1,(k-t0)/dur):1;el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)}),{threshold:.4});
+$$('[data-n]').forEach(el=>cio.observe(el));
+/* sticky mobile bar */
+const hero=$('.hero'),foot=$('footer');let hIn=true,fIn=false;
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.target===hero)hIn=e.isIntersecting;else fIn=e.isIntersecting});$('#mbar').classList.toggle('show',!hIn&&!fIn)}).observe(hero);
+new IntersectionObserver(es=>{es.forEach(e=>{fIn=e.isIntersecting});$('#mbar').classList.toggle('show',!hIn&&!fIn)}).observe(foot);
+})();
+</script>
+</body>
+</html>

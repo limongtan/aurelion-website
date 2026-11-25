@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en" data-goal-default="cred">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Meridian &amp; Co. · Corporate advisory, tax &amp; legal</title>
+<meta name="description" content="Meridian &amp; Co.: corporate advisory, tax and legal counsel for Malaysian companies, near KL Sentral. Fixed-scope fees agreed before work begins.">
+<script src="/website/fusion/af-kit.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--exh:36px;--paper:#f4f0e8;--paper2:#ebe5d8;--card:#faf8f3;--ink:#1c1a17;--mute:#6a6459;--rule:#cdc4b3;--acc:#7a2331;--on:#fff;--dark:#1c1a17;--ondark:#f4f0e8;--serif:"Newsreader","Songti SC","Noto Serif SC",Georgia,serif;--sans:"IBM Plex Sans",system-ui,"PingFang SC","Microsoft YaHei",sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+html[data-vibe=warm]{--paper:#f6ece0;--paper2:#eedfcd;--card:#fbf5ec;--ink:#2e1d12;--mute:#7a6250;--rule:#dcc7ae;--acc:#b5532a;--dark:#3a2416;--ondark:#f6ece0}
+html[data-vibe=bold]{--paper:#0b0b0b;--paper2:#151515;--card:#121212;--ink:#f2f2ee;--mute:#9b9b95;--rule:#2e2e2e;--acc:#e6ff3f;--on:#0b0b0b;--dark:#e6ff3f;--ondark:#0b0b0b}
+html[data-vibe=minimal]{--paper:#fff;--paper2:#f6f6f6;--card:#fff;--ink:#111;--mute:#6b6b6b;--rule:#e2e2e2;--acc:#1d4ed8;--dark:#111;--ondark:#fff}
+html[data-vibe=luxe]{--paper:#0f1a2e;--paper2:#14223a;--card:#132038;--ink:#efe8d6;--mute:#a9a490;--rule:#2b3a55;--acc:#c8a45a;--on:#0f1a2e;--dark:#0a1222;--ondark:#efe8d6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--exh) + 90px)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input,select{font:inherit;color:inherit}button{cursor:pointer}img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+::selection{background:var(--acc);color:var(--on)}
+.exh-bar{position:fixed;top:0;left:0;right:0;height:36px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;background:#0b0b0f;color:#e9e7e1;font:500 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22222a}
+.exh-bar a{color:#e9e7e1;text-decoration:none;white-space:nowrap}.exh-bar a:hover{color:#f5a524}
+.exh-bar .exh-mid{color:#f5a524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.exh-bar .exh-cta{color:#f5a524}
+@media(max-width:720px){.exh-bar .exh-mid{display:none}}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+/* nav */
+.nav{position:fixed;top:var(--exh);left:0;right:0;z-index:900;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-in{max-width:1320px;margin:0 auto;height:74px;display:flex;align-items:center;gap:28px;padding:0 32px}
+.logo{display:flex;align-items:baseline;gap:12px;text-decoration:none;margin-right:auto;min-width:0}
+.logo b{font:500 28px/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.logo b i{color:var(--acc)}
+.logo small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.links{display:flex;gap:24px}
+.links a{text-decoration:none;font-size:14px;color:var(--mute);position:relative;padding:6px 0;transition:color .2s}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.links a:hover{color:var(--ink)}.links a:hover::after{transform:scaleX(1)}
+.lang{display:flex;gap:2px;font-family:var(--mono);font-size:11px}
+.lang button{border:0;background:none;padding:6px 7px;color:var(--mute);letter-spacing:.06em;border-bottom:1px solid transparent}
+.lang button[aria-pressed=true]{color:var(--ink);border-bottom-color:var(--acc)}
+.burger{display:none;border:1px solid var(--rule);background:none;height:42px;padding:0 14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 24px;font-size:14.5px;font-weight:500;letter-spacing:.01em;text-decoration:none;border:1px solid var(--ink);transition:background .25s,color .25s,gap .25s;white-space:nowrap}
+.btn:hover{gap:18px}
+.btn-p{background:var(--dark);color:var(--ondark);border-color:var(--dark)}
+.btn-p:hover{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.btn-o{background:transparent}
+.btn-o:hover{background:var(--ink);color:var(--paper)}
+.btn-s{padding:10px 16px;font-size:13.5px}
+.btn .ar{font-family:var(--serif);font-size:18px;line-height:1}
+.gc{display:none!important}
+html[data-goal=enq] .gc-enq,html[data-goal=book] .gc-book,html[data-goal=sell] .gc-sell,html[data-goal=cred] .gc-cred{display:inline-flex!important}
+main{display:flex;flex-direction:column}
+main>.hero{order:-5}
+html[data-goal=enq] .goal-enq,html[data-goal=book] .goal-book,html[data-goal=sell] .goal-sell,html[data-goal=cred] .goal-cred{order:-4}
+section{padding:110px 32px;border-top:1px solid var(--rule)}
+.wrap{max-width:1320px;margin:0 auto}
+.sh{display:grid;grid-template-columns:200px 1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sh .no{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--acc);text-transform:uppercase;align-self:start;padding-top:12px;border-top:1px solid var(--acc)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+h2{font-size:clamp(38px,4.6vw,64px);line-height:1.02}
+h2 em,h1 em{font-style:italic;color:var(--acc)}
+.lede{font-size:17px;color:var(--mute);max-width:520px}
+.smp{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border:1px solid var(--rule);padding:3px 7px;white-space:nowrap}
+.rv{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+html[lang=zh-Hans] h1 em,html[lang=zh-Hans] h2 em{font-style:normal}html[lang=zh-Hans] .hero h1{word-spacing:-.3em}html[lang=zh-Hans] .hero-p::first-letter{font-size:1em;float:none;padding:0;color:inherit}
+html[lang=zh-Hans] h1,html[lang=zh-Hans] h2{letter-spacing:0;line-height:1.2}
+/* hero */
+.hero{padding:calc(var(--exh) + 74px) 32px 0;border-top:0}
+.dateline{max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.dateline span:nth-child(2){color:var(--ink)}
+.hero-g{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.45fr 1fr;gap:56px;padding:44px 0 46px}
+.hero-g>*,.fx>*,.bk>*,.enq-g>*,.ct-g>*,.faq-g>*,.ins>*,.pr-g>*,.sh>*{min-width:0}
+.kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);display:flex;align-items:center;gap:12px}
+.kick::before{content:"";width:34px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(50px,5.7vw,88px);line-height:.98;margin:26px 0 28px;letter-spacing:-.025em}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:inline-block;animation:rise 1.1s cubic-bezier(.2,.7,.1,1) both}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+@keyframes rise{from{transform:translateY(105%)}}
+.hero-p{font-size:18.5px;line-height:1.6;color:var(--mute);max-width:560px;font-family:var(--serif)}
+.hero-p::first-letter{font-size:3.1em;float:left;line-height:.9;padding:6px 10px 0 0;color:var(--acc)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-fig{position:relative}
+.hero-fig .ph{height:100%;min-height:520px;max-height:640px;overflow:hidden;position:relative}
+.hero-fig img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.95);transform:scale(1.08);animation:zoom 2.4s cubic-bezier(.2,.7,.1,1) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero-fig .ph::after{content:"";position:absolute;inset:0;background:var(--acc);mix-blend-mode:multiply;opacity:.28}
+html[data-vibe=bold] .hero-fig .ph::after{opacity:.12}
+.hero-fig figcaption{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:10px}
+.pull{position:absolute;left:-56px;bottom:56px;width:270px;background:var(--card);border:1px solid var(--rule);padding:20px 22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);animation:fade 1s .9s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.pull p{font:italic 400 19px/1.35 var(--serif)}
+.pull span{display:block;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.ledger{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.ledger a{display:grid;grid-template-columns:44px 1fr auto;gap:8px;align-items:baseline;padding:20px 24px 24px 0;text-decoration:none;border-right:1px solid var(--rule);transition:background .3s}
+.ledger a+a{padding-left:24px}
+.ledger a:last-child{border-right:0}
+.ledger a:hover{background:var(--paper2)}
+.ledger i{font:italic 400 22px var(--serif);color:var(--acc)}
+.ledger b{font:500 21px/1.2 var(--serif)}
+.ledger small{grid-column:2/4;color:var(--mute);font-size:14px}
+.ledger .ar{font-family:var(--serif);font-size:20px;transition:transform .3s}
+.ledger a:hover .ar{transform:translateX(5px)}
+/* proof */
+.cases{border-top:1px solid var(--ink)}
+.case{display:grid;grid-template-columns:70px 1.2fr 2fr 1fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--rule);align-items:start;transition:background .3s}
+.case:hover{background:var(--paper2)}
+.case .smp{font-size:10px;margin-top:10px}
+.case .n{font:italic 400 32px/1 var(--serif);color:var(--acc)}
+.case .sec{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.case h3{font-size:27px;line-height:1.15}
+.case p{color:var(--mute);font-size:15px;margin-top:8px}
+.case .out{border-left:1px solid var(--rule);padding-left:22px}
+.case .out b{display:block;font:400 34px/1 var(--serif)}
+.case .out span{font-size:13px;color:var(--mute)}
+.marks{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid var(--rule);margin-top:50px}
+.marks span{padding:26px 10px;text-align:center;font:500 18px var(--serif);color:var(--mute);border-right:1px solid var(--rule)}
+.marks span:last-child{border-right:0}
+.marks span:nth-child(2){font-family:var(--sans);font-weight:600;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+.marks span:nth-child(4){font-style:italic}
+.marks span:nth-child(5){font-family:var(--mono);font-size:13px}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:56px}
+.cl{list-style:none;border-top:1px solid var(--ink)}
+.cl li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.cl li b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--acc);padding-top:3px}
+.steps{counter-reset:s;list-style:none;border-top:1px solid var(--ink)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:50px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.steps li::before{content:counter(s,upper-roman)".";font:italic 400 20px var(--serif);color:var(--acc)}
+.steps b{font:500 19px var(--serif)}.steps p{font-size:14.5px;color:var(--mute)}
+.h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+/* fee explorer */
+.fees{background:var(--paper2)}
+.fx{display:grid;grid-template-columns:1fr 1.05fr;gap:0;border:1px solid var(--ink);background:var(--card)}
+.fx-l{border-right:1px solid var(--ink)}
+.fx-l .cat{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:14px 24px 8px;border-bottom:1px solid var(--rule);background:var(--paper)}
+.svc{width:100%;display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:baseline;text-align:left;background:none;border:0;border-bottom:1px solid var(--rule);padding:15px 24px;transition:background .2s,padding .3s}
+.svc:last-child{border-bottom:0}
+.svc i{font:italic 400 16px var(--serif);color:var(--mute)}
+.svc b{font:500 19px/1.25 var(--serif)}
+.svc span{font-family:var(--mono);font-size:12px;color:var(--mute);white-space:nowrap}
+.svc:hover{background:var(--paper)}
+.svc[aria-selected=true]{background:var(--dark);color:var(--ondark);padding-left:30px}
+.svc[aria-selected=true] i,.svc[aria-selected=true] span{color:inherit;opacity:.75}
+.fx-r{padding:34px 36px;position:relative}
+.dk-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--rule);padding-bottom:12px}
+.fx-r h3{font-size:38px;line-height:1.05;margin:22px 0 10px}
+.fx-r .sum{color:var(--mute);font-size:15.5px;max-width:520px}
+.cx{display:inline-flex;border:1px solid var(--ink);margin:22px 0 4px}
+.cx button{border:0;background:none;padding:9px 16px;font-size:13.5px}
+.cx button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.fee{display:flex;align-items:baseline;gap:14px;margin:22px 0 4px;flex-wrap:wrap}
+.fee small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.fee b{font:400 64px/1 var(--serif);letter-spacing:-.02em;transition:opacity .2s}
+.fee em{font:italic 400 17px var(--serif);color:var(--mute)}
+.tl{margin:22px 0}
+.tl-bar{display:flex;height:34px;border:1px solid var(--ink)}
+.tl-bar div{display:flex;align-items:center;padding:0 8px;font-size:11.5px;border-right:1px solid var(--ink);overflow:hidden;white-space:nowrap;transition:flex .5s cubic-bezier(.2,.7,.2,1)}
+.tl-bar div:last-child{border-right:0}
+.tl-bar div:nth-child(1){background:var(--paper2)}.tl-bar div:nth-child(2){background:color-mix(in srgb,var(--acc) 18%,var(--card))}.tl-bar div:nth-child(3){background:var(--paper)}
+.tl-k{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--mute);margin-top:6px;letter-spacing:.06em}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)}
+.sc ul{list-style:none;display:grid;gap:7px;font-size:14.5px}
+.sc li{padding-left:20px;position:relative}
+.sc .in li::before{content:"✓";position:absolute;left:0;color:var(--acc)}
+.sc .out li::before{content:"—";position:absolute;left:0;color:var(--mute)}
+.sc .out li{color:var(--mute)}
+.fx-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;align-items:center}
+.fx-n{font-size:12.5px;color:var(--mute);margin-top:16px}
+/* practice */
+.pr-g{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:start}
+.pr-fig{position:sticky;top:calc(var(--exh) + 100px)}
+.pr-fig .ph{height:560px;overflow:hidden}
+.pr-fig img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35)}
+.pr-fig figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:10px}
+.acc{border-top:1px solid var(--ink)}
+.ac{border-bottom:1px solid var(--rule)}
+.ac button{width:100%;display:grid;grid-template-columns:60px 1fr 30px;align-items:baseline;gap:10px;background:none;border:0;text-align:left;padding:26px 0}
+.ac button i{font:italic 400 22px var(--serif);color:var(--acc)}
+.ac button b{font:400 34px/1.1 var(--serif);transition:color .2s}
+.ac button:hover b{color:var(--acc)}
+.ac button span{font:300 28px/1 var(--serif);transition:transform .3s;text-align:right}
+.ac.open button span{transform:rotate(45deg)}
+.ac-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
+.ac-b>div{overflow:hidden}
+.ac.open .ac-b{grid-template-rows:1fr}
+.ac-in{padding:0 0 30px 70px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.ac-in p{color:var(--mute)}
+.ac-in ul{list-style:none;font-size:14.5px;display:grid;gap:6px}
+.ac-in li::before{content:"§ ";color:var(--acc);font-family:var(--serif)}
+/* partners */
+.ptn{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.pt .ph{aspect-ratio:4/5;overflow:hidden;background:var(--paper2);position:relative}
+.pt img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .6s,transform .8s}
+.pt:hover img{filter:grayscale(0);transform:scale(1.03)}
+.pt h3{font-size:26px;margin-top:16px;line-height:1.1}
+.pt .rl{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:6px 0 10px}
+.pt p{font-size:14.5px;color:var(--mute)}
+.pt .q{font-size:12.5px;color:var(--mute);margin-top:12px;padding-top:10px;border-top:1px solid var(--rule)}
+/* insights */
+.ins{display:grid;grid-template-columns:1.35fr 1fr;gap:40px}
+.art{text-decoration:none;display:block;cursor:pointer}
+.art .ph{overflow:hidden;margin-bottom:18px}
+.art img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2);transition:transform .8s}
+.art:hover img{transform:scale(1.04)}
+.art .mt{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);display:flex;gap:14px}
+.art .mt b{color:var(--acc);font-weight:500}
+.art h3{font-size:34px;line-height:1.1;margin:10px 0}
+.art p{color:var(--mute)}
+.art:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.art.big .ph{height:420px}
+.side{display:grid;gap:30px;align-content:start}
+.side .art{display:grid;grid-template-columns:150px 1fr;gap:20px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+.side .art .ph{height:120px;margin:0}
+.side .art h3{font-size:23px;margin:8px 0 6px}
+.side .art p{font-size:14px}
+/* booking */
+.bk{display:grid;grid-template-columns:1.45fr 1fr;gap:0;border:1px solid var(--ink);background:var(--card)}
+.bk-l{padding:34px;border-right:1px solid var(--ink)}
+.fs+.fs{margin-top:28px;padding-top:24px;border-top:1px solid var(--rule)}
+.lg{display:flex;gap:12px;align-items:baseline;margin-bottom:14px}
+.lg i{font:italic 400 20px var(--serif);color:var(--acc)}
+.lg b{font:500 21px var(--serif)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.op{border:1px solid var(--rule);background:var(--paper);padding:10px 15px;font-size:14px;transition:border-color .2s,background .2s}
+.op:hover{border-color:var(--ink)}
+.op[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.op:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.dates{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.dt{flex:none;width:66px;border:1px solid var(--rule);background:var(--paper);padding:10px 0;text-align:center}
+.dt small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.dt b{display:block;font:400 26px/1.1 var(--serif)}
+.dt[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}.dt[aria-pressed=true] small{color:inherit;opacity:.7}
+.bk-r{padding:34px;background:var(--dark);color:var(--ondark);display:flex;flex-direction:column}
+.bk-r .mono{opacity:.65}
+.bk-r h3{font-size:34px;line-height:1.1;margin:16px 0 22px}
+.bk-r dl{display:grid;grid-template-columns:auto 1fr;gap:12px 18px;font-size:14.5px;border-top:1px solid color-mix(in srgb,var(--ondark) 25%,transparent);padding-top:18px}
+.bk-r dt{opacity:.6}.bk-r dd{text-align:right}
+.lock{display:flex;gap:12px;margin:24px 0;font-size:13.5px;line-height:1.5;opacity:.85;padding:14px;border:1px solid color-mix(in srgb,var(--ondark) 25%,transparent)}
+.lock svg{flex:none;width:20px;height:20px}
+.bk-r .btn{margin-top:auto;background:var(--ondark);color:var(--dark);border-color:var(--ondark);justify-content:center}
+.bk-r .btn:hover{background:var(--acc);color:var(--on);border-color:var(--acc)}
+html[data-vibe=bold] .bk-r .btn:hover{background:#0b0b0b;color:#e6ff3f;border-color:#0b0b0b}
+/* enquiry */
+.enq-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ef{border-top:1px solid var(--ink);margin-top:30px}
+.ef .row{padding:18px 0;border-bottom:1px solid var(--rule)}
+.ef label,.ef .row>span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.inp{width:100%;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:8px 0;font:400 20px var(--serif);border-radius:0}
+.inp option{color:#111;font-family:var(--sans);font-size:15px}
+.letter{background:var(--card);border:1px solid var(--rule);padding:40px 42px;box-shadow:0 40px 70px -40px rgba(0,0,0,.35);position:relative}
+.letter::before{content:"";position:absolute;inset:8px;border:1px solid var(--rule);pointer-events:none}
+.letter .hd{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:22px}
+.letter p.msg{font:400 19px/1.55 var(--serif);white-space:pre-line;min-height:200px}
+.letter .ft{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:24px;flex-wrap:wrap}
+.letter .ft small{font-size:12.5px;color:var(--mute)}
+.wbtn{display:inline-flex;align-items:center;gap:10px;background:#1f5e54;color:#fff;border:0;padding:13px 18px;font-size:14px;font-weight:500}
+.wbtn svg{width:18px;height:18px}
+/* shop */
+.pk{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--rule)}
+.pkc{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:30px 28px;display:flex;flex-direction:column;gap:10px;background:var(--card);transition:background .3s}
+.pkc:hover{background:var(--paper)}
+.pkc .mono{color:var(--acc)}
+.pkc h3{font-size:28px;line-height:1.1}
+.pkc p{font-size:14.5px;color:var(--mute)}
+.pkc ul{list-style:none;font-size:13.5px;display:grid;gap:4px;margin:4px 0 8px}
+.pkc li::before{content:"✓ ";color:var(--acc)}
+.pkc .pf{display:flex;justify-content:space-between;align-items:end;margin-top:auto;padding-top:16px;border-top:1px solid var(--rule)}
+.pkc .pf b{font:400 32px/1 var(--serif)}
+.pkc .pf small{display:block;font-family:var(--mono);font-size:10px;color:var(--mute);letter-spacing:.08em;margin-bottom:4px}
+.cartbtn{position:fixed;right:22px;bottom:24px;z-index:800;display:none;align-items:center;gap:10px;background:var(--dark);color:var(--ondark);border:0;padding:14px 20px;font-size:14px;box-shadow:0 20px 40px -16px rgba(0,0,0,.5)}
+.cartbtn.show{display:flex}
+.cartbtn i{font-style:normal;background:var(--acc);color:var(--on);padding:0 8px}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:1200;background:var(--card);border-left:1px solid var(--ink);transform:translateX(100%);visibility:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),visibility 0s .4s;display:flex;flex-direction:column}
+.drawer.open{transform:none;visibility:visible;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--ink)}
+.dr-h h3{font-size:28px}
+.x{width:38px;height:38px;border:1px solid var(--rule);background:none;font-size:20px;line-height:1}
+.dr-l{flex:1;overflow:auto;padding:6px 26px}
+.ci{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule)}
+.ci b{font:500 18px/1.25 var(--serif);display:block}.ci small{color:var(--mute);font-size:13px}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:28px;height:28px;border:1px solid var(--rule);background:none}
+.dr-f{padding:20px 26px;border-top:1px solid var(--ink)}
+.tot{display:flex;justify-content:space-between;font:400 26px var(--serif);margin-bottom:16px}
+.pays{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.pays span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;border:1px solid var(--rule);padding:5px 8px;color:var(--mute)}
+.empty{color:var(--mute);padding:30px 0;text-align:center;font-family:var(--serif);font-style:italic;font-size:18px}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+/* faq */
+.faq-g{display:grid;grid-template-columns:1fr 1.6fr;gap:60px}
+.qa{border-bottom:1px solid var(--rule)}
+.qa:first-child{border-top:1px solid var(--ink)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:20px;background:none;border:0;text-align:left;padding:22px 0;font:400 23px/1.3 var(--serif)}
+.qa button span{font:300 26px/1 var(--serif);transition:transform .3s;color:var(--acc)}
+.qa.open button span{transform:rotate(45deg)}
+.qa-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.qa-a>div{overflow:hidden}
+.qa.open .qa-a{grid-template-rows:1fr}
+.qa-a p{padding:0 0 24px;color:var(--mute);max-width:680px}
+/* contact */
+.ct{background:var(--dark);color:var(--ondark);border-top:0}
+.ct .kick{color:var(--ondark);opacity:.75}
+html[data-vibe=bold] .ct .kick{opacity:1}
+.ct h2 em{color:inherit}
+html:not([data-vibe=bold]) .ct h2 em{color:color-mix(in srgb,var(--acc) 50%,var(--ondark))}
+html[data-vibe=luxe] .ct h2 em{color:var(--acc)}
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.ct h2{margin:18px 0 24px}
+.adr{display:grid;grid-template-columns:1fr 1fr;gap:28px;border-top:1px solid color-mix(in srgb,var(--ondark) 30%,transparent);padding-top:24px;margin-top:20px}
+.adr .mono{opacity:.6;font-size:10.5px;display:block;margin-bottom:8px}
+.adr p{font-size:15px;line-height:1.6}
+.ct .ph{height:440px;overflow:hidden;position:relative}
+.ct .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.5) brightness(.85)}
+.ct .ph span{position:absolute;left:0;bottom:0;background:var(--paper);color:var(--ink);padding:12px 16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+.ct .btn{border-color:var(--ondark);color:var(--ondark);margin-top:30px}
+.ct .btn:hover{background:var(--ondark);color:var(--dark)}
+footer{background:var(--dark);color:var(--ondark);padding:0 32px 40px}
+.ft-in{max-width:1320px;margin:0 auto;border-top:1px solid color-mix(in srgb,var(--ondark) 25%,transparent);padding-top:28px;display:grid;grid-template-columns:1fr 2fr auto;gap:30px;font-size:12.5px;opacity:.75;align-items:start}
+.ft-in b{font:500 22px var(--serif)}
+.mcta{display:none}
+@media(max-width:1180px){.links{gap:16px}.logo small{display:none}}
+@media(max-width:1060px){
+ .burger{display:block}
+ .links{position:fixed;top:calc(var(--exh) + 74px);left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--ink);padding:10px 24px 20px;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .25s,transform .25s}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links a{padding:15px 0;border-bottom:1px solid var(--rule);font:400 22px var(--serif);color:var(--ink)}
+ html[data-goal] .nav-in .nav-cta{display:none!important}
+ .hero-g,.enq-g,.ct-g,.faq-g,.ins,.pr-g{grid-template-columns:1fr}
+ .pull{left:16px;bottom:40px}
+ .fx,.bk{grid-template-columns:1fr}
+ .fx-l,.bk-l{border-right:0;border-bottom:1px solid var(--ink)}
+ .sh{grid-template-columns:1fr;gap:16px}
+ .sh .no{width:max-content}
+ .ptn{grid-template-columns:1fr 1fr}
+ .pk{grid-template-columns:1fr 1fr}
+ .case{grid-template-columns:50px 1fr;gap:16px}
+ .case>div:nth-child(3),.case .out{grid-column:2}
+ .case .out{border-left:0;padding-left:0;display:flex;gap:12px;align-items:baseline}
+ .marks{grid-template-columns:repeat(3,1fr)}.marks span:nth-child(3){border-right:0}.marks span:nth-child(-n+3){border-bottom:1px solid var(--rule)}
+ .creds{grid-template-columns:1fr}
+ .pr-fig{position:relative;top:0}.pr-fig .ph{height:340px}
+ .ft-in{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ section{padding:76px 18px}
+ .nav-in{padding:0 18px;height:64px;gap:12px}
+ .links{top:calc(var(--exh) + 64px)}
+ .logo b{font-size:23px}
+ .lang button{padding:6px 4px}
+ .hero{padding:calc(var(--exh) + 64px) 18px 0}
+ .dateline span:nth-child(3){display:none}
+ .dateline{font-size:10px}
+ .hero-g{padding:28px 0 34px;gap:34px}
+ .hero h1{font-size:46px}
+ html[lang=zh-Hans] .hero h1{font-size:40px}
+ .hero-p{font-size:17px}
+ .hero-fig .ph{min-height:0;height:320px}
+ .pull{position:relative;left:auto;bottom:auto;width:auto;margin:-40px 16px 0}
+ .ledger{grid-template-columns:1fr}
+ .ledger a,.ledger a+a{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule)}
+ .fx-r,.bk-l,.bk-r{padding:22px 20px}
+ .svc{padding:14px 18px}
+ .fx-r h3{font-size:30px}
+ .fee b{font-size:50px}
+ .sc{grid-template-columns:1fr}
+ .ac button b{font-size:26px}.ac button{grid-template-columns:44px 1fr 24px}
+ .ac-in{padding-left:0;grid-template-columns:1fr}
+ .ptn,.pk{grid-template-columns:1fr}
+ .pt .ph{aspect-ratio:1/1}
+ .art.big .ph{height:260px}.art h3{font-size:27px}
+ .side .art{grid-template-columns:110px 1fr;gap:14px}.side .art .ph{height:96px}.side .art h3{font-size:19px}.side .art p{display:none}
+ .marks{grid-template-columns:1fr 1fr}.marks span{border-bottom:1px solid var(--rule)}.marks span:nth-child(2n){border-right:0}.marks span:nth-child(3){border-right:1px solid var(--rule)}
+ .cl li{grid-template-columns:1fr;gap:4px}
+ .letter{padding:28px 24px}
+ .letter p.msg{font-size:17px;min-height:0}
+ .qa button{font-size:19px}
+ .adr{grid-template-columns:1fr}
+ .ct .ph{height:280px}
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:850;background:var(--paper);border-top:1px solid var(--ink);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:8px}
+ .mcta .btn{flex:1;justify-content:center;padding:13px 10px}
+ footer{padding-bottom:100px}
+ .cartbtn{bottom:84px;right:14px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="exh-bar"><a href="/website/#fusion">← Aurelion Exhibition</a><span class="exh-mid">INDUSTRY PICK · Law, tax &amp; advisory · Editorial serif, fixed-fee explorer</span><a class="exh-cta" href="/website/?t=meridian-co#finder">Build one like this →</a></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.3z" fill="currentColor"/></symbol><symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol></svg>
+
+<header class="nav">
+ <div class="nav-in">
+  <a class="logo" href="#top" aria-label="Home"><b data-af-name>Meridian &amp; Co.</b><small data-i="logoS">Advisory · Tax · Legal</small></a>
+  <nav class="links" id="links" aria-label="Main">
+   <a href="#fees" data-i="n1">Fees</a><a href="#practice" data-i="n2">Practice</a><a href="#partners" data-i="n3">Partners</a><a href="#insights" data-i="n4">Insights</a><a href="#faq" data-i="n5">FAQ</a><a href="#contact" data-i="n6">Contact</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ms" aria-pressed="false">BM</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
+  <a class="btn btn-p btn-s nav-cta gc gc-cred" href="#proof" data-i="navCred">Our work</a>
+  <a class="btn btn-p btn-s nav-cta gc gc-book" href="#consult" data-i="navBook">Book a consultation</a>
+  <a class="btn btn-p btn-s nav-cta gc gc-enq" href="#enquire" data-i="navEnq">Ask a question</a>
+  <a class="btn btn-p btn-s nav-cta gc gc-sell" href="#packages" data-i="navSell">Fixed-fee packages</a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="links" data-i="menu">MENU</button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div class="dateline"><span data-i="dl1">Corporate advisory · Tax · Legal</span><span><span data-af-area>KL Sentral</span> · Malaysia</span><span id="today"></span></div>
+ <div class="hero-g">
+  <div>
+   <p class="kick" data-i="kick">Counsel for owner-managed companies</p>
+   <h1 id="h1"><span class="ln"><span data-i="h1a">Clear answers for</span></span><span class="ln"><span data-i="h1b">the decisions that</span></span><span class="ln"><span><em data-i="h1c">shape</em> <span data-i="h1d">your company.</span></span></span></h1>
+   <p class="hero-p" data-ih="heroP">Corporate, tax and legal work for Malaysian SMEs and family businesses, under one roof near <span data-af-area>KL Sentral</span>. Fixed scopes, fees agreed before we start, and a partner on every matter.</p>
+   <div class="hero-cta">
+    <a class="btn btn-p gc gc-cred" href="#proof"><span data-i="cCred">See our work</span><span class="ar">→</span></a>
+    <a class="btn btn-p gc gc-book" href="#consult"><span data-i="cBook">Book a confidential consultation</span><span class="ar">→</span></a>
+    <a class="btn btn-p gc gc-enq" href="#enquire"><span data-i="cEnq">Ask a question in confidence</span><span class="ar">→</span></a>
+    <a class="btn btn-p gc gc-sell" href="#packages"><span data-i="cSell">Buy a fixed-fee package</span><span class="ar">→</span></a>
+    <a class="btn btn-o" href="#fees" data-i="cFees">What does it cost?</a>
+   </div>
+  </div>
+  <figure class="hero-fig">
+   <div class="ph"><img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1000&q=80" alt="A wood-panelled library with marble busts and shelves of books" fetchpriority="high"></div>
+   <figcaption><span data-i="fig">The library, Level 18</span><span data-i="figS">Photograph for illustration</span></figcaption>
+   <blockquote class="pull"><p data-i="pull">"Tell us the decision you're facing. We'll tell you what it costs to get it right."</p><span><span data-i="pullBy">The partners,</span> <span data-af-name>Meridian &amp; Co.</span></span></blockquote>
+  </figure>
+ </div>
+ <div class="ledger">
+  <a href="#practice"><i>I.</i><b data-i="lg1">Corporate &amp; commercial</b><span class="ar">→</span><small data-i="lg1s">Incorporation, shareholder deals, acquisitions</small></a>
+  <a href="#practice"><i>II.</i><b data-i="lg2">Tax &amp; compliance</b><span class="ar">→</span><small data-i="lg2s">Corporate and personal tax, SST, e-invoicing</small></a>
+  <a href="#practice"><i>III.</i><b data-i="lg3">Disputes &amp; employment</b><span class="ar">→</span><small data-i="lg3s">Recovery, contracts, workplace matters</small></a>
+ </div>
+</section>
+
+<!-- GOAL: PROOF -->
+<section class="goal-cred" id="proof">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="pNo">Selected matters</span><h2 data-ih="pH">Work that <em>held up</em> when it mattered.</h2><p class="lede" data-i="pP">A few matters described with our clients' permission and names removed. All figures are sample data for this concept.</p></div>
+  <div class="cases" id="cases"></div>
+  <div class="marks rv" aria-label="Clients (fictional)"><span>Halcyon Foods</span><span>Tanjung Logistics</span><span>Serai Health</span><span>Orchid &amp; Vine</span><span>KLX Robotics</span><span>Baiduri Textiles</span></div>
+  <div class="creds">
+   <div class="rv"><p class="h4"><span data-i="crH">Admissions &amp; memberships</span><span class="smp" data-i="smp">Sample</span></p>
+    <ul class="cl"><li><b>BAR</b><span data-i="cr1">Advocates &amp; Solicitors of the High Court of Malaya</span></li><li><b>MIA</b><span data-i="cr2">Chartered Accountants, Malaysian Institute of Accountants</span></li><li><b>CTIM</b><span data-i="cr3">Members, Chartered Tax Institute of Malaysia</span></li><li><b>SSM</b><span data-i="cr4">Licensed company secretaries</span></li></ul></div>
+   <div class="rv"><p class="h4"><span data-i="stH">How a matter runs</span></p><ol class="steps" id="steps"></ol></div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: BOOKING -->
+<section class="goal-book" id="consult">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="bNo">Consultation</span><h2 data-ih="bH">Book a <em>confidential</em> first meeting.</h2><p class="lede" data-i="bP">Forty-five minutes with a partner, at our office or on a video call. We run a conflict check before we confirm.</p></div>
+  <div class="bk rv">
+   <div class="bk-l">
+    <div class="fs"><p class="lg"><i>i.</i><b data-i="b1">What is it about?</b></p><div class="opts" id="bTopic"></div></div>
+    <div class="fs"><p class="lg"><i>ii.</i><b data-i="b2">Where?</b></p><div class="opts" id="bMode"></div></div>
+    <div class="fs"><p class="lg"><i>iii.</i><b data-i="b3">Which day?</b></p><div class="dates" id="bDates"></div></div>
+    <div class="fs"><p class="lg"><i>iv.</i><b data-i="b4">What time?</b></p><div class="opts" id="bSlots"></div></div>
+   </div>
+   <aside class="bk-r" aria-live="polite">
+    <span class="mono" data-i="bSum">Your appointment</span>
+    <h3 id="sTopic"></h3>
+    <dl><dt data-i="dWhen">When</dt><dd id="sWhen"></dd><dt data-i="dWhere">Where</dt><dd id="sMode"></dd><dt data-i="dWith">With</dt><dd id="sWith"></dd><dt data-i="dFee">First meeting</dt><dd data-i="dFeeV">RM 350, credited to your matter (sample)</dd></dl>
+    <div class="lock"><svg><use href="#lock"/></svg><span data-i="lock">What you tell us is confidential from the first message. We confirm only after a conflict check, usually within one working day.</span></div>
+    <button class="btn" type="button" id="bConfirm"><span data-i="bConf">Request this appointment</span><span class="ar">→</span></button>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: ENQUIRY -->
+<section class="goal-enq" id="enquire">
+ <div class="wrap enq-g">
+  <div class="rv">
+   <p class="kick" data-i="eNo">A question in confidence</p>
+   <h2 data-ih="eH" style="margin-top:18px">Tell us in two lines. <em>A partner replies.</em></h2>
+   <p class="lede" data-i="eP" style="margin-top:16px">No forms to fill in. Choose the topic and how soon you need help, and we'll open a WhatsApp chat with a partner, not a call centre.</p>
+   <div class="ef">
+    <div class="row"><label for="eTopic" data-i="eT">Topic</label><select class="inp" id="eTopic"></select></div>
+    <div class="row"><span data-i="eU">How soon?</span><div class="opts" id="eUrg"></div></div>
+    <div class="row"><label for="eName" data-i="eN">Your name</label><input class="inp" id="eName" maxlength="40" autocomplete="name" placeholder="Lee Mei Ling"></div>
+   </div>
+  </div>
+  <div class="letter rv" aria-live="polite">
+   <div class="hd"><span><span data-i="eTo">To:</span> <span data-af-name>Meridian &amp; Co.</span></span><span data-i="eConf">Private &amp; confidential</span></div>
+   <p class="msg" id="eMsg"></p>
+   <div class="ft"><small data-i="eFt">Preview of your WhatsApp message</small><button class="wbtn demo-wa" type="button"><svg><use href="#wa"/></svg><span data-i="eSend">Send on WhatsApp</span></button></div>
+  </div>
+ </div>
+</section>
+
+<!-- FEE EXPLORER -->
+<section class="fees" id="fees">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="fNo">What does it cost?</span><h2 data-ih="fH">Fees you can <em>read before</em> you ring.</h2><p class="lede" data-i="fP">Pick a service to see its scope, the usual timeline and the fee it starts from. Every engagement is confirmed in a scope letter before work begins.</p></div>
+  <div class="fx rv">
+   <div class="fx-l" role="tablist" aria-label="Services" id="svcList"></div>
+   <div class="fx-r" role="tabpanel" aria-live="polite" id="docket"></div>
+  </div>
+ </div>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="aNo">Practice areas</span><h2 data-ih="aH">One firm for the <em>whole</em> question.</h2><p class="lede" data-i="aP">Most business problems are legal, tax and commercial at once. Our lawyers and accountants sit on the same floor and share the file.</p></div>
+  <div class="pr-g">
+   <figure class="pr-fig rv"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80" alt="Quiet open-plan office with desks by tall windows"></div><figcaption data-i="prFig">Level 18 · Working floor</figcaption></figure>
+   <div class="acc rv" id="acc"></div>
+  </div>
+ </div>
+</section>
+
+<!-- GOAL: SHOP -->
+<section class="goal-sell" id="packages" style="background:var(--paper2)">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="kNo">Fixed-fee packages</span><h2 data-ih="kH">Routine work, <em>priced</em> and ready.</h2><p class="lede" data-i="kP">Order online and pay by card, FPX, GrabPay or Touch 'n Go eWallet. A named associate picks it up the next working day.</p></div>
+  <div class="pk rv" id="pk"></div>
+ </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="tNo">Partners</span><h2 data-ih="tH">The people who <em>sign off.</em></h2><p class="lede" data-i="tP">Every matter has a partner's name on it, and you'll have their direct line. Profiles are fictional for this concept.</p></div>
+  <div class="ptn" id="ptn"></div>
+ </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" style="background:var(--paper2)">
+ <div class="wrap">
+  <div class="sh rv"><span class="no" data-i="iNo">Insights</span><h2 data-ih="iH">Short reads for <em>busy</em> directors.</h2><p class="lede" data-i="iP">Plain-language notes on the rules that changed, and what to do about them this quarter.</p></div>
+  <div class="ins" id="ins"></div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+ <div class="wrap faq-g">
+  <div class="rv"><p class="kick" data-i="qNo">Questions</p><h2 data-ih="qH" style="margin-top:18px">Before the <em>first</em> meeting.</h2></div>
+  <div id="faqList" class="rv"></div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section class="ct" id="contact">
+ <div class="wrap ct-g">
+  <div class="rv">
+   <p class="kick" data-i="cNo">Contact</p>
+   <h2 data-ih="cH">Two minutes from <em data-af-area>KL Sentral</em>.</h2>
+   <p style="font:400 19px/1.55 var(--serif);opacity:.85;max-width:520px" data-i="cP">Take the covered walkway from the station. Reception on Level 18 will bring you up to the meeting rooms.</p>
+   <div class="adr">
+    <div><span class="mono" data-i="cA">Office</span><p><span data-af-name>Meridian &amp; Co.</span><br><span data-i="cAd">Level 18, Menara Sample, Jalan Stesen Sentral, 50470 Kuala Lumpur (sample address)</span><br><span data-af-area>KL Sentral</span></p></div>
+    <div><span class="mono" data-i="cH2">Hours</span><p data-i="cHr">Monday to Friday, 9am to 6pm. Evening calls by arrangement. Closed on public holidays.</p><p style="margin-top:10px">+60 3-0000 0000 <span data-i="smpN">(sample)</span></p></div>
+   </div>
+   <a class="btn demo-wa" href="#"><span data-i="cWa">Message a partner on WhatsApp</span><span class="ar">→</span></a>
+  </div>
+  <div class="ph rv"><img loading="lazy" src="https://images.unsplash.com/photo-1462826303086-329426d1aef5?auto=format&fit=crop&w=1000&q=80" alt="Long boardroom table by floor-to-ceiling windows"><span data-i="cRoom">Meeting room · Level 18</span></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="ft-in"><b data-af-name>Meridian &amp; Co.</b><span data-i="ft1">Information on this site is general and is not legal or tax advice. Meridian &amp; Co. is a fictional firm created for a design concept; names, credentials, matters and fees are samples. A real law practice's site is prepared under the Bar's publicity rules.</span><span data-i="ft2">Design concept by Aurelion</span></div>
+</footer>
+
+<div class="mcta">
+ <a class="btn btn-o" href="#fees" data-i="mFees">Fees</a>
+ <a class="btn btn-p gc gc-cred" href="#proof" data-i="navCred">Our work</a>
+ <a class="btn btn-p gc gc-book" href="#consult" data-i="mBook">Book</a>
+ <a class="btn btn-p gc gc-enq" href="#enquire" data-i="navEnq">Ask a question</a>
+ <a class="btn btn-p gc gc-sell" href="#packages" data-i="mSell">Packages</a>
+</div>
+<button class="cartbtn" id="cartBtn" type="button"><span data-i="cart">Your order</span><i id="cartN">0</i></button>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Order" aria-hidden="true">
+ <div class="dr-h"><h3 data-i="cart">Your order</h3><button class="x" type="button" data-close aria-label="Close">×</button></div>
+ <div class="dr-l" id="cartL"></div>
+ <div class="dr-f"><div class="tot"><span data-i="total">Total</span><span id="cartT">RM 0</span></div><button class="btn btn-p" type="button" id="checkout" style="width:100%;justify-content:center"><span data-i="checkout">Proceed to payment</span><span class="ar">→</span></button><div class="pays"><span>Card</span><span>FPX</span><span>GrabPay</span><span>Touch 'n Go</span></div></div>
+</aside>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var H=document.documentElement,K=window.AFK||{},L='en';
+var U=function(id,w){return 'https://images.unsplash.com/photo-'+id+'?auto=format&fit=crop&w='+(w||700)+'&q=80'};
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var fmt=function(n){return 'RM '+Math.round(n).toLocaleString('en-MY')};
+var T={
+en:{logoS:'Advisory · Tax · Legal',n1:'Fees',n2:'Practice',n3:'Partners',n4:'Insights',n5:'FAQ',n6:'Contact',navCred:'Our work',navBook:'Book a consultation',navEnq:'Ask a question',navSell:'Fixed-fee packages',menu:'MENU',
+dl1:'Corporate advisory · Tax · Legal',kick:'Counsel for owner-managed companies',h1a:'Clear answers for',h1b:'the decisions that',h1c:'shape',h1d:'your company.',heroP:'Corporate, tax and legal work for Malaysian SMEs and family businesses, under one roof near <span data-af-area>KL Sentral</span>. Fixed scopes, fees agreed before we start, and a partner on every matter.',
+cCred:'See our work',cBook:'Book a confidential consultation',cEnq:'Ask a question in confidence',cSell:'Buy a fixed-fee package',cFees:'What does it cost?',fig:'The library, Level 18',figS:'Photograph for illustration',pull:'"Tell us the decision you’re facing. We’ll tell you what it costs to get it right."',pullBy:'The partners,',
+lg1:'Corporate & commercial',lg1s:'Incorporation, shareholder deals, acquisitions',lg2:'Tax & compliance',lg2s:'Corporate and personal tax, SST, e-invoicing',lg3:'Disputes & employment',lg3s:'Recovery, contracts, workplace matters',
+pNo:'Selected matters',pH:'Work that <em>held up</em> when it mattered.',pP:'A few matters described with our clients’ permission and names removed. All figures are sample data for this concept.',crH:'Admissions & memberships',smp:'Sample',cr1:'Advocates & Solicitors of the High Court of Malaya',cr2:'Chartered Accountants, Malaysian Institute of Accountants',cr3:'Members, Chartered Tax Institute of Malaysia',cr4:'Licensed company secretaries',stH:'How a matter runs',smpM:'Sample matter',
+bNo:'Consultation',bH:'Book a <em>confidential</em> first meeting.',bP:'Forty-five minutes with a partner, at our office or on a video call. We run a conflict check before we confirm.',b1:'What is it about?',b2:'Where?',b3:'Which day?',b4:'What time?',bSum:'Your appointment',dWhen:'When',dWhere:'Where',dWith:'With',dFee:'First meeting',dFeeV:'RM 350, credited to your matter (sample)',lock:'What you tell us is confidential from the first message. We confirm only after a conflict check, usually within one working day.',bConf:'Request this appointment',pick:'Choose a time',bDemo:'Demo: on your site this sends the request to the partner’s diary, and the client gets a confirmation after the conflict check.',
+mOffice:'Our office, KL Sentral',mVideo:'Video call',mPhone:'Phone call',
+eNo:'A question in confidence',eH:'Tell us in two lines. <em>A partner replies.</em>',eP:'No forms to fill in. Choose the topic and how soon you need help, and we’ll open a WhatsApp chat with a partner, not a call centre.',eT:'Topic',eU:'How soon?',eN:'Your name',eTo:'To:',eConf:'Private & confidential',eFt:'Preview of your WhatsApp message',eSend:'Send on WhatsApp',
+u1:'This week',u2:'This month',u3:'Planning ahead',eMsg:'Dear {n},\n\nMy name is {name}. I’d like advice on {t}, ideally {u}.\n\nCould a partner let me know a good time to talk? I’m happy to sign an NDA first.\n\nThank you.',
+fNo:'What does it cost?',fH:'Fees you can <em>read before</em> you ring.',fP:'Pick a service to see its scope, the usual timeline and the fee it starts from. Every engagement is confirmed in a scope letter before work begins.',
+catC:'Corporate',catT:'Tax',catL:'Legal',feeFrom:'Fee from',std:'Standard',cpx:'More complex',wk:'wk',wks:'weeks',inc:'What’s included',exc:'Not included',tlK:['Kick-off','Work','Close-out'],discuss:'Discuss this matter',feeSmp:'Fees are samples for this concept, exclude SST, government and stamp fees, and are confirmed in writing before any work starts.',docket:'Docket',
+aNo:'Practice areas',aH:'One firm for the <em>whole</em> question.',aP:'Most business problems are legal, tax and commercial at once. Our lawyers and accountants sit on the same floor and share the file.',prFig:'Level 18 · Working floor',
+kNo:'Fixed-fee packages',kH:'Routine work, <em>priced</em> and ready.',kP:"Order online and pay by card, FPX, GrabPay or Touch 'n Go eWallet. A named associate picks it up the next working day.",add:'Add to order',added:'Added ✓',perYr:'/ year',cart:'Your order',total:'Total',checkout:'Proceed to payment',emptyC:'Nothing in your order yet.',coDemo:'Demo: on your site this opens a secure payment page with card, FPX, GrabPay and Touch ’n Go.',smpP:'SAMPLE PRICE',
+tNo:'Partners',tH:'The people who <em>sign off.</em>',tP:'Every matter has a partner’s name on it, and you’ll have their direct line. Profiles are fictional for this concept.',speaks:'Speaks',
+iNo:'Insights',iH:'Short reads for <em>busy</em> directors.',iP:'Plain-language notes on the rules that changed, and what to do about them this quarter.',min:'min read',artDemo:'Demo: on your site this opens the full article.',
+qNo:'Questions',qH:'Before the <em>first</em> meeting.',
+cNo:'Contact',cH:'Two minutes from <em data-af-area>KL Sentral</em>.',cP:'Take the covered walkway from the station. Reception on Level 18 will bring you up to the meeting rooms.',cA:'Office',cAd:'Level 18, Menara Sample, Jalan Stesen Sentral, 50470 Kuala Lumpur (sample address)',cH2:'Hours',cHr:'Monday to Friday, 9am to 6pm. Evening calls by arrangement. Closed on public holidays.',smpN:'(sample)',cWa:'Message a partner on WhatsApp',cRoom:'Meeting room · Level 18',
+ft1:'Information on this site is general and is not legal or tax advice. Meridian & Co. is a fictional firm created for a design concept; names, credentials, matters and fees are samples. A real law practice’s site is prepared under the Bar’s publicity rules.',ft2:'Design concept by Aurelion',mFees:'Fees',mBook:'Book',mSell:'Packages'},
+ms:{logoS:'Nasihat · Cukai · Guaman',n1:'Yuran',n2:'Bidang',n3:'Rakan kongsi',n4:'Wawasan',n5:'Soalan',n6:'Hubungi',navCred:'Hasil kerja',navBook:'Tempah konsultasi',navEnq:'Tanya soalan',navSell:'Pakej yuran tetap',menu:'MENU',
+dl1:'Nasihat korporat · Cukai · Guaman',kick:'Penasihat untuk syarikat milik pengasas',h1a:'Jawapan jelas untuk',h1b:'keputusan yang',h1c:'membentuk',h1d:'syarikat anda.',heroP:'Khidmat korporat, cukai dan guaman untuk PKS dan perniagaan keluarga Malaysia, di bawah satu bumbung berhampiran <span data-af-area>KL Sentral</span>. Skop tetap, yuran dipersetujui sebelum bermula, dan seorang rakan kongsi untuk setiap perkara.',
+cCred:'Lihat hasil kerja kami',cBook:'Tempah konsultasi sulit',cEnq:'Tanya soalan secara sulit',cSell:'Beli pakej yuran tetap',cFees:'Berapa kosnya?',fig:'Perpustakaan, Aras 18',figS:'Gambar untuk ilustrasi',pull:'"Ceritakan keputusan yang anda hadapi. Kami beritahu kos untuk melakukannya dengan betul."',pullBy:'Rakan kongsi,',
+lg1:'Korporat & komersial',lg1s:'Pemerbadanan, perjanjian pemegang saham, pengambilalihan',lg2:'Cukai & pematuhan',lg2s:'Cukai syarikat dan individu, SST, e-invois',lg3:'Pertikaian & pekerjaan',lg3s:'Tuntutan hutang, kontrak, isu tempat kerja',
+pNo:'Perkara terpilih',pH:'Kerja yang <em>kukuh</em> ketika paling penting.',pP:'Beberapa perkara yang dikongsi dengan izin klien dan tanpa nama. Semua angka ialah data contoh untuk konsep ini.',crH:'Kelayakan & keahlian',smp:'Contoh',cr1:'Peguam Bela & Peguam Cara Mahkamah Tinggi Malaya',cr2:'Akauntan Bertauliah, Institut Akauntan Malaysia',cr3:'Ahli, Chartered Tax Institute of Malaysia',cr4:'Setiausaha syarikat berlesen',stH:'Bagaimana sesuatu perkara dijalankan',smpM:'Perkara contoh',
+bNo:'Konsultasi',bH:'Tempah pertemuan pertama yang <em>sulit.</em>',bP:'Empat puluh lima minit bersama rakan kongsi, di pejabat kami atau melalui panggilan video. Kami buat semakan konflik sebelum mengesahkan.',b1:'Tentang apa?',b2:'Di mana?',b3:'Hari apa?',b4:'Pukul berapa?',bSum:'Temu janji anda',dWhen:'Bila',dWhere:'Di mana',dWith:'Bersama',dFee:'Pertemuan pertama',dFeeV:'RM 350, ditolak daripada yuran perkara anda (contoh)',lock:'Apa yang anda kongsikan adalah sulit sejak mesej pertama. Kami mengesahkan hanya selepas semakan konflik, biasanya dalam satu hari bekerja.',bConf:'Mohon temu janji ini',pick:'Pilih masa',bDemo:'Demo: di laman anda, permintaan ini masuk ke diari rakan kongsi dan klien menerima pengesahan selepas semakan konflik.',
+mOffice:'Pejabat kami, KL Sentral',mVideo:'Panggilan video',mPhone:'Panggilan telefon',
+eNo:'Soalan secara sulit',eH:'Ceritakan dalam dua baris. <em>Rakan kongsi akan membalas.</em>',eP:'Tiada borang panjang. Pilih topik dan bila anda perlukan bantuan, kami akan buka sembang WhatsApp terus dengan rakan kongsi, bukan pusat panggilan.',eT:'Topik',eU:'Bila diperlukan?',eN:'Nama anda',eTo:'Kepada:',eConf:'Peribadi & sulit',eFt:'Pratonton mesej WhatsApp anda',eSend:'Hantar di WhatsApp',
+u1:'Minggu ini',u2:'Bulan ini',u3:'Merancang awal',eMsg:'Kepada {n},\n\nNama saya {name}. Saya ingin mendapatkan nasihat tentang {t}, sebaik-baiknya {u}.\n\nBoleh rakan kongsi maklumkan masa yang sesuai untuk berbincang? Saya bersedia menandatangani NDA terlebih dahulu.\n\nTerima kasih.',
+fNo:'Berapa kosnya?',fH:'Yuran yang boleh <em>dibaca dahulu</em> sebelum menelefon.',fP:'Pilih perkhidmatan untuk melihat skop, tempoh biasa dan yuran permulaan. Setiap tugasan disahkan dalam surat skop sebelum kerja bermula.',
+catC:'Korporat',catT:'Cukai',catL:'Guaman',feeFrom:'Yuran dari',std:'Standard',cpx:'Lebih kompleks',wk:'mgg',wks:'minggu',inc:'Termasuk',exc:'Tidak termasuk',tlK:['Mula','Kerja','Penutupan'],discuss:'Bincang perkara ini',feeSmp:'Yuran ialah contoh untuk konsep ini, tidak termasuk SST, fi kerajaan dan duti setem, dan disahkan secara bertulis sebelum kerja bermula.',docket:'Fail',
+aNo:'Bidang amalan',aH:'Satu firma untuk <em>keseluruhan</em> soalan.',aP:'Kebanyakan masalah perniagaan melibatkan undang-undang, cukai dan komersial serentak. Peguam dan akauntan kami di aras yang sama dan berkongsi fail.',prFig:'Aras 18 · Ruang kerja',
+kNo:'Pakej yuran tetap',kH:'Kerja rutin, <em>berharga tetap</em> dan sedia.',kP:"Pesan dalam talian dan bayar dengan kad, FPX, GrabPay atau Touch 'n Go eWallet. Seorang associate akan mengambilnya pada hari bekerja berikutnya.",add:'Tambah ke pesanan',added:'Ditambah ✓',perYr:'/ tahun',cart:'Pesanan anda',total:'Jumlah',checkout:'Teruskan pembayaran',emptyC:'Belum ada apa-apa dalam pesanan.',coDemo:'Demo: di laman anda, ini membuka halaman pembayaran selamat dengan kad, FPX, GrabPay dan Touch ’n Go.',smpP:'HARGA CONTOH',
+tNo:'Rakan kongsi',tH:'Mereka yang <em>menandatangani.</em>',tP:'Setiap perkara mempunyai nama rakan kongsi, dan anda akan ada talian terus mereka. Profil adalah rekaan untuk konsep ini.',speaks:'Bertutur',
+iNo:'Wawasan',iH:'Bacaan ringkas untuk pengarah yang <em>sibuk.</em>',iP:'Nota dalam bahasa mudah tentang peraturan yang berubah, dan apa yang perlu dibuat suku tahun ini.',min:'min bacaan',artDemo:'Demo: di laman anda, ini membuka artikel penuh.',
+qNo:'Soalan',qH:'Sebelum pertemuan <em>pertama.</em>',
+cNo:'Hubungi',cH:'Dua minit dari <em data-af-area>KL Sentral</em>.',cP:'Ikut laluan pejalan kaki berbumbung dari stesen. Penyambut tetamu di Aras 18 akan membawa anda ke bilik mesyuarat.',cA:'Pejabat',cAd:'Aras 18, Menara Sample, Jalan Stesen Sentral, 50470 Kuala Lumpur (alamat contoh)',cH2:'Waktu',cHr:'Isnin hingga Jumaat, 9 pagi hingga 6 petang. Panggilan malam dengan temu janji. Tutup pada cuti umum.',smpN:'(contoh)',cWa:'Mesej rakan kongsi di WhatsApp',cRoom:'Bilik mesyuarat · Aras 18',
+ft1:'Maklumat di laman ini bersifat umum dan bukan nasihat guaman atau cukai. Meridian & Co. ialah firma rekaan untuk konsep reka bentuk; nama, kelayakan, perkara dan yuran ialah contoh. Laman firma guaman sebenar disediakan mengikut peraturan publisiti Majlis Peguam.',ft2:'Konsep reka bentuk oleh Aurelion',mFees:'Yuran',mBook:'Tempah',mSell:'Pakej'},
+zh:{logoS:'咨询 · 税务 · 法律',n1:'收费',n2:'业务领域',n3:'合伙人',n4:'观点',n5:'常见问题',n6:'联系',navCred:'我们的案例',navBook:'预约咨询',navEnq:'提问',navSell:'固定收费套餐',menu:'菜单',
+dl1:'企业咨询 · 税务 · 法律',kick:'服务创办人经营的企业',h1a:'为影响公司发展的',h1b:'每一个重要决定，',h1c:'给出',h1d:'清晰答案。',heroP:'为马来西亚中小企业和家族企业提供企业、税务与法律服务，一站式办公室就在 <span data-af-area>KL Sentral</span> 附近。范围固定，开工前先谈好费用，每个案件都有合伙人负责。',
+cCred:'查看我们的案例',cBook:'预约保密咨询',cEnq:'保密提问',cSell:'购买固定收费套餐',cFees:'费用是多少？',fig:'18 楼图书室',figS:'示意照片',pull:'“告诉我们你面对的决定，我们告诉你把它做好需要多少钱。”',pullBy:'合伙人团队，',
+lg1:'企业与商业',lg1s:'公司注册、股东协议、收购',lg2:'税务与合规',lg2s:'公司税与个人税、SST、电子发票',lg3:'争议与雇佣',lg3s:'追讨欠款、合同、职场事务',
+pNo:'精选案例',pH:'关键时刻<em>经得起考验</em>的工作。',pP:'以下案例经客户同意分享，已隐去名称。所有数字均为本概念的示例数据。',crH:'执业资格与会员',smp:'示例',cr1:'马来亚高等法院辩护律师及代理律师',cr2:'马来西亚会计师公会特许会计师',cr3:'马来西亚特许税务学会会员',cr4:'持牌公司秘书',stH:'案件如何进行',smpM:'示例案例',
+bNo:'咨询',bH:'预约一次<em>保密</em>的初次会面。',bP:'与合伙人面谈 45 分钟，可在我们办公室或视频进行。确认前我们会先做利益冲突审查。',b1:'关于什么事？',b2:'在哪里？',b3:'哪一天？',b4:'几点？',bSum:'你的预约',dWhen:'时间',dWhere:'地点',dWith:'合伙人',dFee:'初次会面',dFeeV:'RM 350，可抵扣后续费用（示例）',lock:'从第一条信息开始，你告诉我们的一切都保密。我们会在利益冲突审查后确认，通常在一个工作日内。',bConf:'申请这个时段',pick:'请选择时间',bDemo:'演示：在你的网站上，这会把预约请求送进合伙人的日程，客户在利益冲突审查后收到确认。',
+mOffice:'我们的办公室（KL Sentral）',mVideo:'视频通话',mPhone:'电话',
+eNo:'保密提问',eH:'两句话说清楚，<em>由合伙人回复。</em>',eP:'不用填长表格。选择主题和需要的时间，我们会直接开启与合伙人的 WhatsApp 对话，而不是客服中心。',eT:'主题',eU:'多快需要？',eN:'你的名字',eTo:'致：',eConf:'私人及保密',eFt:'WhatsApp 消息预览',eSend:'用 WhatsApp 发送',
+u1:'本周',u2:'本月',u3:'提前规划',eMsg:'{n} 您好：\n\n我是 {name}，想咨询关于{t}的问题，希望{u}能处理。\n\n请问合伙人什么时候方便沟通？如有需要，我可以先签保密协议。\n\n谢谢。',
+fNo:'费用是多少？',fH:'打电话之前，<em>先看清</em>收费。',fP:'选择一项服务，即可查看范围、一般所需时间和起步费用。每项委托在开工前都会以范围确认函确认。',
+catC:'企业',catT:'税务',catL:'法律',feeFrom:'起步费用',std:'标准',cpx:'较复杂',wk:'周',wks:'周',inc:'包含',exc:'不包含',tlK:['启动','执行','结案'],discuss:'讨论这件事',feeSmp:'费用为本概念的示例，不含 SST、政府费用及印花税，开工前会以书面确认。',docket:'卷宗',
+aNo:'业务领域',aH:'一家事务所，处理<em>整个</em>问题。',aP:'大多数商业问题同时涉及法律、税务和商业层面。我们的律师和会计师在同一层楼办公，共享档案。',prFig:'18 楼 · 办公区',
+kNo:'固定收费套餐',kH:'常规事务，<em>明码标价</em>，随时可办。',kP:"在线下单，可用信用卡、FPX、GrabPay 或 Touch 'n Go 电子钱包付款。指定专员会在下一个工作日跟进。",add:'加入订单',added:'已加入 ✓',perYr:'/ 年',cart:'你的订单',total:'合计',checkout:'前往付款',emptyC:'订单里还没有项目。',coDemo:'演示：在你的网站上，这会打开支持信用卡、FPX、GrabPay 和 Touch ’n Go 的安全付款页面。',smpP:'示例价格',
+tNo:'合伙人',tH:'为结果<em>签字负责</em>的人。',tP:'每个案件都有合伙人署名，你也会有他们的直线电话。人物资料为本概念虚构。',speaks:'语言',
+iNo:'观点',iH:'写给<em>忙碌</em>董事的短文。',iP:'用浅白的语言说明哪些规定改了，以及本季度该怎么做。',min:'分钟阅读',artDemo:'演示：在你的网站上，这会打开完整文章。',
+qNo:'常见问题',qH:'<em>初次</em>会面之前。',
+cNo:'联系',cH:'距 <em data-af-area>KL Sentral</em> 两分钟。',cP:'从车站走有盖人行道过来。18 楼前台会带你到会议室。',cA:'办公室',cAd:'Level 18, Menara Sample, Jalan Stesen Sentral, 50470 吉隆坡（示例地址）',cH2:'办公时间',cHr:'周一至周五，上午 9 点至下午 6 点。晚间通话需预约。公共假期休息。',smpN:'（示例）',cWa:'用 WhatsApp 联系合伙人',cRoom:'18 楼会议室',
+ft1:'本网站信息仅供一般参考，不构成法律或税务意见。Meridian & Co. 是为设计概念虚构的事务所，名称、资格、案例和费用均为示例。真实律师事务所的网站须遵守律师公会的宣传规定。',ft2:'设计概念：Aurelion',mFees:'收费',mBook:'预约',mSell:'套餐'}
+};
+var t=function(k){var v=T[L][k];return v==null?T.en[k]:v};
+var tx=function(o){return o[L]||o.en};
+
+/* data */
+var PT=[
+ {n:'Arjun Nair',img:'1519085360753-af0119f7cbe7',r:{en:'Managing Partner · Corporate & M&A',ms:'Rakan Kongsi Urusan · Korporat & M&A',zh:'管理合伙人 · 企业与并购'},b:{en:'Twenty years on shareholder deals and family-business succession. Calm in a negotiation.',ms:'Dua puluh tahun dalam urusan pemegang saham dan penggantian perniagaan keluarga. Tenang ketika berunding.',zh:'二十年股东交易和家族企业传承经验，谈判时沉稳冷静。'},q:'LL.B (Hons) · Advocate & Solicitor (sample)',l:'English, BM, Tamil'},
+ {n:'Nurul Huda Ismail',img:'1573497019940-1c28c88b4f3e',r:{en:'Partner · Tax',ms:'Rakan Kongsi · Cukai',zh:'合伙人 · 税务'},b:{en:'Corporate tax, audits and e-invoicing readiness. Explains LHDN letters in plain words.',ms:'Cukai korporat, audit dan persediaan e-invois. Menerangkan surat LHDN dengan bahasa mudah.',zh:'专注公司税、税务审查和电子发票准备，能用浅白的话解释 LHDN 来信。'},q:'Chartered Accountant, CTIM member (sample)',l:'BM, English'},
+ {n:'Daniel Hartley',img:'1560250097-0b93528c311a',r:{en:'Partner · Cross-border advisory',ms:'Rakan Kongsi · Nasihat rentas sempadan',zh:'合伙人 · 跨境咨询'},b:{en:'Helps foreign founders set up in Malaysia and Malaysian firms expand into the region.',ms:'Membantu pengasas asing bertapak di Malaysia dan firma tempatan berkembang ke serantau.',zh:'协助外国创办人在马来西亚设立公司，也帮助本地企业拓展区域市场。'},q:'Chartered Accountant (ICAEW) (sample)',l:'English'},
+ {n:'Sarah Chong',img:'1573496359142-b8d87734a5a2',r:{en:'Partner · Disputes & Employment',ms:'Rakan Kongsi · Pertikaian & Pekerjaan',zh:'合伙人 · 争议与雇佣'},b:{en:'Debt recovery, contract disputes and difficult HR situations, ideally settled before court.',ms:'Tuntutan hutang, pertikaian kontrak dan situasi HR yang sukar, sebaik-baiknya selesai sebelum ke mahkamah.',zh:'处理追讨欠款、合同争议和棘手的人事问题，尽量在上法庭前解决。'},q:'LL.B (Hons) · Advocate & Solicitor (sample)',l:'English, 中文, Cantonese, BM'}
+];
+var SV=[
+ {c:'C',n:{en:'Sdn Bhd incorporation',ms:'Pemerbadanan Sdn Bhd',zh:'私人有限公司注册'},f:[2400,3800],w:[[1,2,1],[1,3,1]],s:{en:'Register a private limited company with SSM, with a constitution written for how you actually plan to run it.',ms:'Daftar syarikat sendirian berhad dengan SSM, dengan perlembagaan yang ditulis mengikut cara anda mahu mengendalikannya.',zh:'在 SSM 注册私人有限公司，并按你的实际经营方式拟定公司章程。'},i:{en:['Name search and SSM filing','Tailored constitution','First board resolutions','Bank account opening letter'],ms:['Carian nama dan pemfailan SSM','Perlembagaan khusus','Resolusi lembaga pertama','Surat pembukaan akaun bank'],zh:['名称查询与 SSM 申报','定制公司章程','首批董事会决议','银行开户证明函']},x:{en:['SSM fees','Licences for regulated trades'],ms:['Fi SSM','Lesen untuk perniagaan terkawal'],zh:['SSM 规费','受监管行业的执照']}},
+ {c:'C',n:{en:'Shareholders’ agreement',ms:'Perjanjian pemegang saham',zh:'股东协议'},f:[6500,12000],w:[[1,3,1],[1,5,2]],s:{en:'Set out who decides what, what happens if a founder leaves, and how shares are valued before anyone needs to ask.',ms:'Tetapkan siapa memutuskan apa, apa berlaku jika pengasas keluar, dan cara menilai saham sebelum timbul pertikaian.',zh:'事先约定谁决定什么、创办人离开怎么办、股份如何估值，免得日后争执。'},i:{en:['Founder workshop (2 hours)','Drafting and two rounds of revisions','Vesting and exit clauses','Signing pack'],ms:['Bengkel pengasas (2 jam)','Draf dan dua pusingan semakan','Klausa vesting dan keluar','Pakej tandatangan'],zh:['创办人工作坊（2 小时）','起草及两轮修改','股份兑现与退出条款','签署文件包']},x:{en:['Stamp duty','Valuation reports'],ms:['Duti setem','Laporan penilaian'],zh:['印花税','估值报告']}},
+ {c:'C',n:{en:'Acquisition due diligence',ms:'Usaha wajar pengambilalihan',zh:'收购尽职调查'},f:[18000,35000],w:[[1,4,1],[2,7,2]],s:{en:'Legal and tax review of a business you plan to buy, with a red-flag report your board can read in one sitting.',ms:'Semakan guaman dan cukai terhadap perniagaan yang ingin dibeli, dengan laporan tanda bahaya yang boleh dibaca lembaga sekali duduk.',zh:'对拟收购企业进行法律和税务审查，提供董事会一次就能读完的风险报告。'},i:{en:['Data-room review','Tax exposure summary','Red-flag report','Call with your bank or investor'],ms:['Semakan bilik data','Ringkasan pendedahan cukai','Laporan tanda bahaya','Panggilan bersama bank atau pelabur'],zh:['资料室审阅','税务风险摘要','风险警示报告','与银行或投资方通话']},x:{en:['Financial audit','Site visits outside Klang Valley'],ms:['Audit kewangan','Lawatan tapak di luar Lembah Klang'],zh:['财务审计','巴生谷以外的实地考察']}},
+ {c:'T',n:{en:'Corporate tax return (Form C)',ms:'Penyata cukai syarikat (Borang C)',zh:'公司报税（Form C）'},f:[3200,6000],w:[[1,2,1],[1,3,1]],s:{en:'Computation and filing of your company’s annual return, with planning notes for next year.',ms:'Pengiraan dan pemfailan penyata tahunan syarikat, dengan nota perancangan untuk tahun depan.',zh:'计算并申报公司年度税务，并附上来年的税务规划建议。'},i:{en:['Tax computation','Capital allowance schedule','e-Filing with LHDN','Planning memo'],ms:['Pengiraan cukai','Jadual elaun modal','e-Filing dengan LHDN','Memo perancangan'],zh:['税务计算','资本津贴明细','向 LHDN 电子申报','规划备忘录']},x:{en:['Audit of accounts','Tax audits by LHDN'],ms:['Audit akaun','Audit cukai oleh LHDN'],zh:['账目审计','LHDN 税务稽查']}},
+ {c:'T',n:{en:'e-Invoicing readiness review',ms:'Semakan kesediaan e-invois',zh:'电子发票准备评估'},f:[2800,5500],w:[[1,2,1],[1,3,2]],s:{en:'Check your invoicing flow against LHDN’s e-invoicing rules and get a short, ordered action list.',ms:'Semak aliran invois anda berbanding peraturan e-invois LHDN dan dapatkan senarai tindakan yang ringkas dan tersusun.',zh:'对照 LHDN 电子发票规定检查你的开票流程，并给出简短、按顺序的行动清单。'},i:{en:['Process walkthrough','Gap list','System options shortlist','Staff briefing (1 hour)'],ms:['Penerangan proses','Senarai jurang','Senarai pendek pilihan sistem','Taklimat kakitangan (1 jam)'],zh:['流程梳理','差距清单','系统方案筛选','员工简报（1 小时）']},x:{en:['Software licences','System integration'],ms:['Lesen perisian','Integrasi sistem'],zh:['软件授权','系统集成']}},
+ {c:'L',n:{en:'Employment contracts & handbook',ms:'Kontrak pekerjaan & buku panduan',zh:'雇佣合同与员工手册'},f:[4500,8000],w:[[1,2,1],[1,4,1]],s:{en:'Contracts and a staff handbook aligned with the Employment Act, written so managers can actually use them.',ms:'Kontrak dan buku panduan kakitangan selaras dengan Akta Kerja, ditulis supaya pengurus boleh benar-benar menggunakannya.',zh:'符合《雇佣法》的合同和员工手册，写得让主管真正用得上。'},i:{en:['Three contract templates','Handbook (leave, conduct, IT)','Disciplinary procedure','Manager briefing'],ms:['Tiga templat kontrak','Buku panduan (cuti, tatakelakuan, IT)','Prosedur tatatertib','Taklimat pengurus'],zh:['三份合同模板','员工手册（假期、行为、IT）','纪律处分程序','主管简报']},x:{en:['Translation','Union negotiations'],ms:['Terjemahan','Rundingan kesatuan'],zh:['翻译','工会谈判']}},
+ {c:'L',n:{en:'Debt recovery: letter of demand',ms:'Tuntutan hutang: surat tuntutan',zh:'追讨欠款：律师信'},f:[600,1500],w:[[1,1,1],[1,2,2]],s:{en:'A lawyer’s letter of demand, follow-up and a clear view on whether going further is worth it.',ms:'Surat tuntutan peguam, susulan dan pandangan jelas sama ada berbaloi untuk meneruskan.',zh:'律师信、后续跟进，并清楚评估是否值得进一步追讨。'},i:{en:['Review of invoices and contract','Letter of demand','One follow-up','Next-step advice'],ms:['Semakan invois dan kontrak','Surat tuntutan','Satu susulan','Nasihat langkah seterusnya'],zh:['审阅发票与合同','发出律师信','一次跟进','下一步建议']},x:{en:['Court filing fees','Litigation'],ms:['Fi pemfailan mahkamah','Litigasi'],zh:['法院立案费','诉讼']}}
+];
+var CS=[
+ {s:{en:'Manufacturing · Family business',ms:'Pembuatan · Perniagaan keluarga',zh:'制造业 · 家族企业'},h:{en:'A second-generation handover without a family rift',ms:'Penyerahan generasi kedua tanpa keretakan keluarga',zh:'第二代接班，家人不伤和气'},d:{en:'Restructured shareholdings across three siblings, with a buy-sell agreement and a tax-efficient transfer.',ms:'Menyusun semula pegangan saham tiga beradik, dengan perjanjian jual-beli dan pindahan yang cekap cukai.',zh:'为三兄妹重组股权，签订买卖协议，并以节税方式完成转让。'},o:'14',ou:{en:'weeks, start to signing',ms:'minggu, dari mula hingga tandatangan',zh:'周，从启动到签署'}},
+ {s:{en:'Logistics · Acquisition',ms:'Logistik · Pengambilalihan',zh:'物流 · 收购'},h:{en:'Due diligence that cut the price, not the deal',ms:'Usaha wajar yang menurunkan harga, bukan membatalkan urusan',zh:'尽职调查压低了价格，而没有谈崩交易'},d:{en:'Found unpaid SST and a disputed lease. The buyer renegotiated and closed on schedule.',ms:'Menemui SST tertunggak dan pajakan yang dipertikaikan. Pembeli berunding semula dan selesai mengikut jadual.',zh:'发现未缴 SST 和一份有争议的租约，买方重新议价并如期完成交易。'},o:'RM 1.2M',ou:{en:'off the asking price',ms:'dikurangkan daripada harga',zh:'从报价中减去'}},
+ {s:{en:'Healthcare · Tax',ms:'Penjagaan kesihatan · Cukai',zh:'医疗 · 税务'},h:{en:'A tax audit closed in one round',ms:'Audit cukai selesai dalam satu pusingan',zh:'税务稽查一轮结案'},d:{en:'Rebuilt three years of records for a clinic group and answered LHDN’s queries in a single submission.',ms:'Membina semula rekod tiga tahun untuk kumpulan klinik dan menjawab pertanyaan LHDN dalam satu penyerahan.',zh:'为一家诊所集团重建三年账目，一次提交就回应了 LHDN 的全部问题。'},o:'1',ou:{en:'submission, no penalty',ms:'penyerahan, tanpa penalti',zh:'次提交，未被罚款'}}
+];
+var ST={en:[['Consult','A 45-minute meeting with a partner. We listen first.'],['Scope letter','What we will do, by when, and the fee. Signed before work starts.'],['The work','One partner, one associate, weekly updates by email or WhatsApp.'],['Close-out','A short memo of what was done and what to watch next year.']],ms:[['Konsultasi','Pertemuan 45 minit dengan rakan kongsi. Kami mendengar dahulu.'],['Surat skop','Apa yang kami buat, bila, dan yurannya. Ditandatangani sebelum kerja bermula.'],['Pelaksanaan','Seorang rakan kongsi, seorang associate, kemas kini mingguan melalui e-mel atau WhatsApp.'],['Penutupan','Memo ringkas tentang kerja yang dibuat dan perkara yang perlu diperhati tahun depan.']],zh:[['咨询','与合伙人面谈 45 分钟，我们先聆听。'],['范围确认函','列明工作内容、时间和费用，开工前签署。'],['执行','一位合伙人加一位专员，每周以电邮或 WhatsApp 汇报。'],['结案','一份简短备忘录，说明完成的工作和来年需注意的事项。']]};
+var PA=[
+ {n:{en:'Corporate & commercial',ms:'Korporat & komersial',zh:'企业与商业'},d:{en:'From the day you incorporate to the day you sell. We draft the documents that decide who owns what and who decides what.',ms:'Dari hari pemerbadanan hingga hari anda menjual. Kami mendraf dokumen yang menentukan siapa memiliki apa dan siapa memutuskan apa.',zh:'从公司成立到出售的每一步，我们起草决定所有权和决策权的文件。'},l:{en:['Incorporation & restructuring','Shareholders’ agreements','Mergers & acquisitions','Commercial contracts'],ms:['Pemerbadanan & penstrukturan semula','Perjanjian pemegang saham','Penggabungan & pengambilalihan','Kontrak komersial'],zh:['公司注册与重组','股东协议','并购','商业合同']}},
+ {n:{en:'Tax & compliance',ms:'Cukai & pematuhan',zh:'税务与合规'},d:{en:'Annual returns, audits and planning, handled by people who also understand the legal side of the decision.',ms:'Penyata tahunan, audit dan perancangan, diuruskan oleh mereka yang turut memahami aspek guaman keputusan itu.',zh:'年度报税、稽查和规划，由同样懂法律层面的团队处理。'},l:{en:['Corporate & personal tax','SST registration & reviews','e-Invoicing readiness','LHDN audits & appeals'],ms:['Cukai syarikat & individu','Pendaftaran & semakan SST','Kesediaan e-invois','Audit & rayuan LHDN'],zh:['公司税与个人税','SST 注册与审查','电子发票准备','LHDN 稽查与上诉']}},
+ {n:{en:'Disputes & recovery',ms:'Pertikaian & tuntutan',zh:'争议与追讨'},d:{en:'Letters of demand, mediation and, when it is worth it, court. We tell you the likely cost before you commit.',ms:'Surat tuntutan, pengantaraan dan, jika berbaloi, mahkamah. Kami beritahu anggaran kos sebelum anda memutuskan.',zh:'律师信、调解，必要时上法庭。在你决定之前，我们先说明可能的费用。'},l:{en:['Debt recovery','Contract disputes','Shareholder disputes','Mediation'],ms:['Tuntutan hutang','Pertikaian kontrak','Pertikaian pemegang saham','Pengantaraan'],zh:['追讨欠款','合同争议','股东纠纷','调解']}},
+ {n:{en:'Employment',ms:'Pekerjaan',zh:'雇佣'},d:{en:'Contracts, handbooks and the hard conversations: misconduct, retrenchment and restraint of trade.',ms:'Kontrak, buku panduan dan perbualan sukar: salah laku, pemberhentian dan sekatan perdagangan.',zh:'合同、员工手册，以及棘手的谈话：失当行为、裁员和竞业限制。'},l:{en:['Contracts & handbooks','Domestic inquiries','Retrenchment planning','Industrial Court matters'],ms:['Kontrak & buku panduan','Siasatan dalaman','Perancangan pemberhentian','Perkara Mahkamah Perusahaan'],zh:['合同与员工手册','内部纪律调查','裁员规划','劳资法庭事务']}}
+];
+var PK=[
+ {id:'inc',p:2400,n:{en:'Company starter',ms:'Permulaan syarikat',zh:'公司启动套餐'},d:{en:'Sdn Bhd incorporation with a standard constitution.',ms:'Pemerbadanan Sdn Bhd dengan perlembagaan standard.',zh:'私人有限公司注册，含标准章程。'},l:{en:['SSM filing','Board resolutions','Bank letter'],ms:['Pemfailan SSM','Resolusi lembaga','Surat bank'],zh:['SSM 申报','董事会决议','银行证明函']}},
+ {id:'sec',p:1800,y:1,n:{en:'Company secretary',ms:'Setiausaha syarikat',zh:'公司秘书服务'},d:{en:'A licensed secretary for your annual filings.',ms:'Setiausaha berlesen untuk pemfailan tahunan.',zh:'由持牌秘书处理年度申报。'},l:{en:['Annual return','AGM papers','Registers kept'],ms:['Penyata tahunan','Dokumen AGM','Daftar diselenggara'],zh:['年度申报','股东大会文件','法定登记册']}},
+ {id:'ptx',p:450,n:{en:'Personal tax filing',ms:'Pemfailan cukai individu',zh:'个人报税'},d:{en:'Form BE or B, with reliefs checked line by line.',ms:'Borang BE atau B, dengan pelepasan disemak satu per satu.',zh:'Form BE 或 B，逐项核对税务减免。'},l:{en:['Relief review','e-Filing','Receipts checklist'],ms:['Semakan pelepasan','e-Filing','Senarai semak resit'],zh:['减免审查','电子申报','收据清单']}},
+ {id:'wil',p:900,n:{en:'Will & estate pack',ms:'Pakej wasiat & harta pusaka',zh:'遗嘱与遗产套餐'},d:{en:'A simple will for non-Muslim clients, with executor guidance.',ms:'Wasiat ringkas untuk klien bukan Islam, dengan panduan wasi.',zh:'适用于非穆斯林客户的简单遗嘱，附执行人指引。'},l:{en:['One-hour meeting','Signed will','Safe custody'],ms:['Pertemuan sejam','Wasiat ditandatangani','Simpanan selamat'],zh:['一小时面谈','签署遗嘱','安全保管']}},
+ {id:'ten',p:350,n:{en:'Tenancy review',ms:'Semakan perjanjian sewa',zh:'租约审阅'},d:{en:'A lawyer reads your tenancy before you sign it.',ms:'Peguam membaca perjanjian sewa sebelum anda menandatanganinya.',zh:'签约前由律师审阅你的租约。'},l:{en:['Marked-up draft','Risk notes','15-minute call'],ms:['Draf bertanda','Nota risiko','Panggilan 15 minit'],zh:['批注版草稿','风险说明','15 分钟通话']}},
+ {id:'emp',p:1200,n:{en:'Employment contract kit',ms:'Kit kontrak pekerjaan',zh:'雇佣合同套件'},d:{en:'Three templates for full-time, part-time and interns.',ms:'Tiga templat untuk sepenuh masa, separuh masa dan pelatih.',zh:'全职、兼职和实习生三份模板。'},l:{en:['Three templates','Usage notes','One revision'],ms:['Tiga templat','Nota penggunaan','Satu semakan'],zh:['三份模板','使用说明','一次修改']}}
+];
+var AR=[
+ {img:'1554224155-6726b3ff858f',tag:{en:'Tax',ms:'Cukai',zh:'税务'},m:6,h:{en:'e-Invoicing for SMEs: a practical checklist for the next quarter',ms:'E-invois untuk PKS: senarai semak praktikal untuk suku tahun akan datang',zh:'中小企业电子发票：下个季度的实用清单'},d:{en:'What to fix in your invoicing flow first, and what can safely wait.',ms:'Apa yang perlu dibetulkan dahulu dalam aliran invois, dan apa yang boleh ditangguhkan.',zh:'开票流程中哪些要先改，哪些可以稍后处理。'}},
+ {img:'1450101499163-c8848c66ca85',tag:{en:'Corporate',ms:'Korporat',zh:'企业'},m:4,h:{en:'Five clauses founders forget in a shareholders’ agreement',ms:'Lima klausa yang dilupakan pengasas dalam perjanjian pemegang saham',zh:'创办人在股东协议中常忘记的五个条款'},d:{en:'Deadlock, drag-along and the leaver clause you’ll wish you had.',ms:'Kebuntuan, drag-along dan klausa keluar yang anda pasti mahukan.',zh:'僵局、领售权，以及你一定会希望有的离职条款。'}},
+ {img:'1521791136064-7986c2920216',tag:{en:'M&A',ms:'M&A',zh:'并购'},m:5,h:{en:'Selling your company? Start due diligence on yourself',ms:'Mahu jual syarikat? Mulakan usaha wajar ke atas diri sendiri',zh:'准备出售公司？先对自己做尽职调查'},d:{en:'The documents buyers ask for first, and how long they take to find.',ms:'Dokumen yang pertama diminta pembeli, dan berapa lama untuk mencarinya.',zh:'买方最先要求的文件，以及找齐它们需要多久。'}}
+];
+var FQ={en:[['How are fees agreed?','After the first meeting we send a scope letter with the work, the timeline and a fixed fee or a capped estimate. Nothing starts until you sign it.'],['Is the first conversation confidential?','Yes. Anything you tell us is confidential from the first message, even if you do not go on to instruct us.'],['Do you act for individuals?','Mainly for companies and their owners, so we often help directors with personal tax, wills and property alongside the business.'],['Can we work in Bahasa Malaysia or Chinese?','Yes. Our partners work in English, Bahasa Malaysia, Mandarin, Cantonese and Tamil between them.'],['Is there parking?','There is paid parking in the building and at KL Sentral. Most clients come by LRT, KTM or the airport train.']],
+ms:[['Bagaimana yuran dipersetujui?','Selepas pertemuan pertama, kami hantar surat skop dengan kerja, tempoh dan yuran tetap atau anggaran berhad. Tiada kerja bermula sehingga anda menandatanganinya.'],['Adakah perbualan pertama sulit?','Ya. Apa sahaja yang anda kongsikan adalah sulit sejak mesej pertama, walaupun anda tidak melantik kami.'],['Adakah anda mewakili individu?','Kebanyakannya syarikat dan pemiliknya, jadi kami kerap membantu pengarah dengan cukai peribadi, wasiat dan hartanah bersama urusan perniagaan.'],['Bolehkah berurusan dalam Bahasa Malaysia atau Cina?','Boleh. Rakan kongsi kami bertutur dalam Bahasa Inggeris, Bahasa Malaysia, Mandarin, Kantonis dan Tamil.'],['Adakah tempat letak kereta?','Ada parkir berbayar di bangunan dan di KL Sentral. Kebanyakan klien datang dengan LRT, KTM atau tren lapangan terbang.']],
+zh:[['费用怎么谈？','初次会面后，我们会发出范围确认函，列明工作内容、时间，以及固定费用或封顶估价。你签署后我们才开工。'],['第一次沟通是保密的吗？','是的。从第一条信息开始，你告诉我们的一切都保密，即使你最后没有委托我们。'],['你们也为个人服务吗？','主要服务公司及其股东，所以我们也常协助董事处理个人税务、遗嘱和房产。'],['可以用马来文或中文沟通吗？','可以。我们的合伙人能使用英语、马来语、华语、粤语和淡米尔语。'],['有停车位吗？','大楼和 KL Sentral 都有收费停车场。多数客户搭 LRT、KTM 或机场快铁前来。']]};
+
+/* reveal */
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px'}):null;
+var reveal=function(){$$('.rv:not(.in)').forEach(function(el){io?io.observe(el):el.classList.add('in')})};
+var biz=function(){var n=$('.logo [data-af-name]');return n?n.textContent:'Meridian & Co.'};
+
+/* fee explorer */
+var FX={i:0,c:0};
+function fxRender(){
+ var cats={C:t('catC'),T:t('catT'),L:t('catL')},last='',h='';
+ SV.forEach(function(s,i){if(s.c!==last){h+='<div class="cat">'+cats[s.c]+'</div>';last=s.c}h+='<button type="button" class="svc" role="tab" data-i="'+i+'" aria-selected="'+(FX.i===i)+'"><i>'+(i<9?'0':'')+(i+1)+'</i><b>'+tx(s.n)+'</b><span>'+fmt(s.f[0])+'</span></button>'});
+ $('#svcList').innerHTML=h;
+ var s=SV[FX.i],w=s.w[FX.c],tot=w[0]+w[1]+w[2],k=t('tlK');
+ var cta=H.dataset.goal==='book'?'#consult':H.dataset.goal==='sell'?'#packages':'#enquire';
+ $('#docket').innerHTML='<div class="dk-top"><span>'+t('docket')+' № '+(FX.i+101)+' · '+cats[s.c]+'</span><span class="smp">'+t('smp')+'</span></div><h3>'+tx(s.n)+'</h3><p class="sum">'+tx(s.s)+'</p><div class="cx" role="group"><button type="button" data-c="0" aria-pressed="'+(FX.c===0)+'">'+t('std')+'</button><button type="button" data-c="1" aria-pressed="'+(FX.c===1)+'">'+t('cpx')+'</button></div><div class="fee"><small>'+t('feeFrom')+'</small><b>'+fmt(s.f[FX.c])+'</b><em>· ≈ '+tot+' '+t('wks')+'</em></div><div class="tl"><div class="tl-bar">'+w.map(function(x,j){return '<div style="flex:'+x+'">'+k[j]+' · '+x+t('wk')+'</div>'}).join('')+'</div><div class="tl-k"><span>'+t('wk')+' 0</span><span>'+t('wk')+' '+tot+'</span></div></div><div class="sc"><div><p class="h4">'+t('inc')+'</p><ul class="in">'+tx(s.i).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div><p class="h4">'+t('exc')+'</p><ul class="out">'+tx(s.x).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div><div class="fx-cta"><a class="btn btn-p" href="'+cta+'"><span>'+t('discuss')+'</span><span class="ar">→</span></a></div><p class="fx-n">'+t('feeSmp')+'</p>';
+}
+$('#svcList').addEventListener('click',function(e){var b=e.target.closest('.svc');if(b){FX.i=+b.dataset.i;FX.c=0;fxRender()}});
+$('#svcList').addEventListener('keydown',function(e){if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;e.preventDefault();FX.i=(FX.i+(e.key==='ArrowDown'?1:SV.length-1))%SV.length;FX.c=0;fxRender();$('#svcList .svc[aria-selected=true]').focus()});
+$('#docket').addEventListener('click',function(e){var b=e.target.closest('[data-c]');if(b){FX.c=+b.dataset.c;fxRender()}});
+
+/* booking */
+var BK={tp:0,m:0,d:0,s:-1};var SL=['09:30','11:00','14:30','16:00','17:30'];
+var TOP={en:['Starting a company','Shareholders & deals','Tax or an LHDN letter','Employment issue','Recovering a debt','Something else'],ms:['Menubuhkan syarikat','Pemegang saham & urusan','Cukai atau surat LHDN','Isu pekerjaan','Menuntut hutang','Lain-lain'],zh:['成立公司','股东与交易','税务或 LHDN 来信','雇佣问题','追讨欠款','其他事项']};
+var TPW=[0,0,1,3,3,2];
+var DN={en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],ms:['Ahd','Isn','Sel','Rab','Kha','Jum','Sab'],zh:['周日','周一','周二','周三','周四','周五','周六']};
+var MN={en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],ms:['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogo','Sep','Okt','Nov','Dis']};
+var WD=(function(){var a=[],d=new Date();d.setHours(12);while(a.length<10){d.setDate(d.getDate()+1);if(d.getDay()%6)a.push(new Date(d))}return a})();
+var dLong=function(d){return L==='zh'?(d.getMonth()+1)+'月'+d.getDate()+'日（'+DN.zh[d.getDay()]+'）':DN[L][d.getDay()]+', '+d.getDate()+' '+MN[L][d.getMonth()]};
+function bkRender(){
+ $('#bTopic').innerHTML=TOP[L].map(function(x,i){return '<button type="button" class="op" data-tp="'+i+'" aria-pressed="'+(BK.tp===i)+'">'+x+'</button>'}).join('');
+ $('#bMode').innerHTML=['mOffice','mVideo','mPhone'].map(function(k,i){return '<button type="button" class="op" data-m="'+i+'" aria-pressed="'+(BK.m===i)+'">'+t(k)+'</button>'}).join('');
+ $('#bDates').innerHTML=WD.map(function(d,i){return '<button type="button" class="dt" data-d="'+i+'" aria-pressed="'+(BK.d===i)+'"><small>'+DN[L][d.getDay()]+'</small><b>'+d.getDate()+'</b></button>'}).join('');
+ $('#bSlots').innerHTML=SL.map(function(s,i){var off=(BK.d*3+i*2+BK.tp)%4===0;return '<button type="button" class="op" data-s="'+i+'"'+(off?' disabled':'')+' aria-pressed="'+(BK.s===i)+'">'+s+'</button>'}).join('');
+ $('#sTopic').textContent=TOP[L][BK.tp];
+ $('#sWhen').textContent=BK.s<0?t('pick'):dLong(WD[BK.d])+' · '+SL[BK.s];
+ $('#sMode').textContent=t(['mOffice','mVideo','mPhone'][BK.m]);
+ $('#sWith').textContent=PT[TPW[BK.tp]].n;
+}
+$('#consult').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;var d=b.dataset;
+ if(d.tp!=null){BK.tp=+d.tp;BK.s=-1}else if(d.m!=null){BK.m=+d.m}else if(d.d!=null){BK.d=+d.d;BK.s=-1}else if(d.s!=null){BK.s=+d.s}else if(b.id==='bConfirm'){if(BK.s<0){$('#sWhen').textContent='— '+t('pick')+' —';var f=$('#bSlots .op:not([disabled])');f&&f.focus();return}window.afDemo&&window.afDemo(t('bDemo'));return}else return;bkRender()});
+
+/* enquiry */
+var EQ={u:0};
+function eqRender(){var s=$('#eTopic'),v=s.selectedIndex;s.innerHTML=TOP[L].map(function(x){return '<option>'+x+'</option>'}).join('');s.selectedIndex=v<0?2:v;
+ $('#eUrg').innerHTML=['u1','u2','u3'].map(function(k,i){return '<button type="button" class="op" data-u="'+i+'" aria-pressed="'+(EQ.u===i)+'">'+t(k)+'</button>'}).join('');eqMsg()}
+function eqMsg(){var nm=$('#eName').value.trim()||$('#eName').placeholder,tp=$('#eTopic').value;if(L!=='zh')tp=tp.charAt(0).toLowerCase()+tp.slice(1);
+ $('#eMsg').textContent=t('eMsg').replace('{n}',biz()).replace('{name}',nm).replace('{t}',tp).replace('{u}',t(['u1','u2','u3'][EQ.u]).toLowerCase())}
+$('#eUrg').addEventListener('click',function(e){var b=e.target.closest('.op');if(b){EQ.u=+b.dataset.u;eqRender()}});
+$('#eTopic').addEventListener('change',eqMsg);$('#eName').addEventListener('input',eqMsg);
+
+/* static */
+function renderStatic(){
+ $('#cases').innerHTML=CS.map(function(c,i){return '<article class="case rv"><div class="n">0'+(i+1)+'</div><div><p class="sec">'+tx(c.s)+'</p><p class="smp" style="display:inline-block;margin-top:10px">'+t('smpM')+'</p></div><div><h3>'+tx(c.h)+'</h3><p>'+tx(c.d)+'</p></div><div class="out"><b>'+c.o+'</b><span>'+tx(c.ou)+'</span></div></article>'}).join('');
+ $('#steps').innerHTML=ST[L].map(function(s){return '<li><div><b>'+s[0]+'</b><p>'+s[1]+'</p></div></li>'}).join('');
+ var op=$$('#acc .ac.open').map(function(a){return a.dataset.i});
+ $('#acc').innerHTML=PA.map(function(p,i){var o=op.length?op.indexOf(String(i))>=0:i===0;return '<div class="ac'+(o?' open':'')+'" data-i="'+i+'"><button type="button" aria-expanded="'+o+'"><i>'+['I','II','III','IV'][i]+'.</i><b>'+tx(p.n)+'</b><span aria-hidden="true">+</span></button><div class="ac-b"><div><div class="ac-in"><p>'+tx(p.d)+'</p><ul>'+tx(p.l).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div></div></div>'}).join('');
+ $('#ptn').innerHTML=PT.map(function(p){return '<article class="pt rv"><div class="ph"><img loading="lazy" src="'+U(p.img,600)+'" alt="Portrait of '+p.n+'"></div><h3>'+p.n+'</h3><p class="rl">'+tx(p.r)+'</p><p>'+tx(p.b)+'</p><p class="q">'+p.q+'<br>'+t('speaks')+': '+p.l+'</p></article>'}).join('');
+ $('#pk').innerHTML=PK.map(function(p){var c=CART[p.id];return '<article class="pkc"><span class="mono">'+t('smpP')+'</span><h3>'+tx(p.n)+'</h3><p>'+tx(p.d)+'</p><ul>'+tx(p.l).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><div class="pf"><div><b>RM '+p.p.toLocaleString('en-MY')+'</b>'+(p.y?' <small style="display:inline">'+t('perYr')+'</small>':'')+'</div><button type="button" class="btn '+(c?'btn-p':'btn-o')+' btn-s" data-add="'+p.id+'">'+(c?t('added'):t('add'))+'</button></div></article>'}).join('');
+ $('#ins').innerHTML='<a class="art big rv" href="#insights" data-art><div class="ph"><img loading="lazy" src="'+U(AR[0].img,1000)+'" alt=""></div><div class="mt"><b>'+tx(AR[0].tag)+'</b><span>'+AR[0].m+' '+t('min')+'</span></div><h3>'+tx(AR[0].h)+'</h3><p>'+tx(AR[0].d)+'</p></a><div class="side">'+AR.slice(1).map(function(a){return '<a class="art rv" href="#insights" data-art><div class="ph"><img loading="lazy" src="'+U(a.img,400)+'" alt=""></div><div><div class="mt"><b>'+tx(a.tag)+'</b><span>'+a.m+' '+t('min')+'</span></div><h3>'+tx(a.h)+'</h3><p>'+tx(a.d)+'</p></div></a>'}).join('')+'</div>';
+ var oq=$$('#faqList .qa.open').map(function(q){return q.dataset.i});
+ $('#faqList').innerHTML=FQ[L].map(function(q,i){var o=oq.indexOf(String(i))>=0;return '<div class="qa'+(o?' open':'')+'" data-i="'+i+'"><button type="button" aria-expanded="'+o+'">'+q[0]+'<span aria-hidden="true">+</span></button><div class="qa-a"><div><p>'+q[1]+'</p></div></div></div>'}).join('');
+}
+['#acc','#faqList'].forEach(function(id){$(id).addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var p=b.parentNode,o=!p.classList.contains('open');p.classList.toggle('open',o);b.setAttribute('aria-expanded',o)})});
+
+/* cart */
+var CART={};
+function cartRender(){var ids=Object.keys(CART),n=0,tot=0;
+ $('#cartL').innerHTML=ids.length?ids.map(function(id){var p=PK.filter(function(x){return x.id===id})[0],q=CART[id];n+=q;tot+=q*p.p;return '<div class="ci"><div><b>'+tx(p.n)+'</b><small>'+fmt(p.p)+(p.y?' '+t('perYr'):'')+'</small></div><div class="qty"><button type="button" data-q="'+id+'" data-v="-1" aria-label="-">−</button><span>'+q+'</span><button type="button" data-q="'+id+'" data-v="1" aria-label="+">+</button></div></div>'}).join(''):'<p class="empty">'+t('emptyC')+'</p>';
+ $('#cartN').textContent=n;$('#cartT').textContent=fmt(tot);$('#cartBtn').classList.toggle('show',n>0)}
+var lastF=null;
+function openD(){lastF=document.activeElement;var d=$('#drawer');d.classList.add('open');d.setAttribute('aria-hidden','false');$('#scrim').classList.add('on');$('#drawer .x').focus()}
+function closeD(){var d=$('#drawer');if(!d.classList.contains('open'))return;d.classList.remove('open');d.setAttribute('aria-hidden','true');$('#scrim').classList.remove('on');lastF&&lastF.focus&&lastF.focus()}
+document.addEventListener('click',function(e){
+ var a=e.target.closest('[data-add]');if(a){CART[a.dataset.add]=(CART[a.dataset.add]||0)+1;cartRender();renderStatic();reveal();openD();return}
+ var q=e.target.closest('[data-q]');if(q){var k=q.dataset.q;CART[k]+= +q.dataset.v;if(CART[k]<=0)delete CART[k];cartRender();renderStatic();reveal();return}
+ if(e.target.closest('[data-close]')||e.target===$('#scrim')){closeD();return}
+ var w=e.target.closest('.demo-wa');if(w){e.preventDefault();window.afDemo&&window.afDemo();return}
+ var ar=e.target.closest('[data-art]');if(ar){e.preventDefault();window.afDemo&&window.afDemo(t('artDemo'))}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD()});
+$('#cartBtn').addEventListener('click',openD);
+$('#checkout').addEventListener('click',function(){window.afDemo&&window.afDemo(t('coDemo'))});
+
+/* lang */
+function today(){var d=new Date();$('#today').textContent=L==='zh'?d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日':DN[L][d.getDay()]+', '+d.getDate()+' '+MN[L][d.getMonth()]+' '+d.getFullYear()}
+function setLang(l){L=T[l]?l:'en';H.lang=L==='zh'?'zh-Hans':L;try{localStorage.setItem('af-lang',L)}catch(e){}
+ $$('[data-i]').forEach(function(el){var v=T[L][el.dataset.i];if(typeof v==='string')el.textContent=v});
+ $$('[data-ih]').forEach(function(el){var v=T[L][el.dataset.ih];if(v!=null)el.innerHTML=v});
+ $$('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===L)});
+ today();fxRender();bkRender();eqRender();renderStatic();cartRender();
+ if(window.afFill)window.afFill();eqMsg();reveal()}
+$$('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+var bg=$('#burger'),lk=$('#links');
+bg.addEventListener('click',function(){var o=bg.getAttribute('aria-expanded')!=='true';bg.setAttribute('aria-expanded',o);lk.classList.toggle('open',o)});
+lk.addEventListener('click',function(e){if(e.target.closest('a')){bg.setAttribute('aria-expanded','false');lk.classList.remove('open')}});
+var saved=null;try{saved=localStorage.getItem('af-lang')}catch(e){}
+setLang(K.l||saved||'en');
+})();
+</script>
+</body>
+</html>

@@ -27,14 +27,30 @@ const waLink = msg => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
 
 /* ---------- Data ---------- */
 const FUSION = [
-  {slug:'batu-beam', no:'F-12', name:'Batu & Beam', a:'Blueprint Drafting', b:'Material Swatch Board', aud:'sme', c:['#eef1f4','#1d3a5f','#c08a3e','#14202e'],
+  {slug:'batu-beam', grp:'ind', no:'F-12', name:'Batu & Beam', a:'Blueprint Drafting', b:'Material Swatch Board', aud:'sme', c:['#eef1f4','#1d3a5f','#c08a3e','#14202e'],
    pitch:{en:'A renovation and interior design contractor. Plans draw themselves, an illustrative cost estimator gives a ballpark, and the estimate goes to WhatsApp.', zh:'装修与室内设计公司。平面图自动绘出，示意报价器给出预算范围，再一键发到 WhatsApp。', ms:'Kontraktor ubah suai dan reka bentuk dalaman. Pelan terlukis sendiri, anggaran kos ilustrasi beri julat harga, dan anggaran dihantar ke WhatsApp.'}},
-  {slug:'seri-dental', no:'F-13', name:'Seri Dental', a:'Japanese Wayfinding', b:'Soft Clinical', aud:'sme', c:['#f3f7f5','#1f6f63','#f2b84b','#13302b'],
+  {slug:'seri-dental', grp:'ind', no:'F-13', name:'Seri Dental', a:'Japanese Wayfinding', b:'Soft Clinical', aud:'sme', c:['#f3f7f5','#1f6f63','#f2b84b','#13302b'],
    pitch:{en:'A family dental clinic: live open-now hours, a numbered treatment explorer with fees from, and appointment requests. Written to stay within clinic advertising rules.', zh:'家庭牙科诊所：实时营业状态、编号疗程导览与收费起价、在线预约申请。内容符合诊所广告规范。', ms:'Klinik pergigian keluarga: waktu buka langsung, peneroka rawatan bernombor dengan yuran bermula, dan permintaan temujanji. Ditulis mengikut peraturan iklan klinik.'}},
-  {slug:'little-orbit', no:'F-14', name:'Little Orbit', a:'Sticker-book Play', b:'School Timetable', aud:'sme', c:['#fff8ec','#3b5bdb','#ff6b4a','#1b1f3b'],
+  {slug:'little-orbit', grp:'ind', no:'F-14', name:'Little Orbit', a:'Sticker-book Play', b:'School Timetable', aud:'sme', c:['#fff8ec','#3b5bdb','#ff6b4a','#1b1f3b'],
    pitch:{en:'A tuition and enrichment centre parents can use at 11pm: find a class by age and subject, see seats left, book a free trial.', zh:'家长晚上 11 点也能用的补习与才艺中心：按年龄和科目找课、看剩余名额、预约免费试课。', ms:'Pusat tuisyen dan pengayaan yang ibu bapa boleh guna jam 11 malam: cari kelas ikut umur dan subjek, lihat tempat kosong, tempah kelas percubaan percuma.'}},
-  {slug:'rumah-teduh', no:'F-15', name:'Rumah Teduh', a:'Batik Editorial', b:'Booking App', aud:'sme', c:['#f5ecdf','#1f3d5a','#c4643b','#1a2433'],
+  {slug:'rumah-teduh', grp:'ind', no:'F-15', name:'Rumah Teduh', a:'Batik Editorial', b:'Booking App', aud:'sme', c:['#f5ecdf','#1f3d5a','#c4643b','#1a2433'],
    pitch:{en:'A heritage shophouse stay in George Town. Shutters open, the calendar shows sample nightly rates, and guests book direct.', zh:'乔治市百年店屋民宿。百叶窗缓缓打开，日历显示示例房价，客人直接预订。', ms:'Penginapan rumah kedai warisan di George Town. Tingkap terbuka, kalendar tunjuk kadar sampel semalam, dan tetamu tempah terus.'}},
+  {slug:'ember-salt', no:'F-16', name:"Ember & Salt", a:"Menu Board", b:"Wood-fire Grill", aud:'sme', grp:'ind', c:["#15110e","#e0662f","#f3c46b","#f6efe6"],
+   pitch:{en:"A wood-fire grill and café: a live menu board with halal-friendly tags and RM prices, a kitchen-open ticker, and WhatsApp orders and catering quotes in one tap.", zh:"柴火烧烤与咖啡馆：实时菜单板（含清真友好标签与价格）、厨房营业提示，一键 WhatsApp 点餐与到会报价。", ms:"Gril kayu api dan kafe: papan menu langsung dengan tag mesra halal dan harga RM, penanda dapur dibuka, dan pesanan serta sebut harga katering WhatsApp dengan satu tekan."}},
+  {slug:'loom-lantern', no:'F-17', name:"Loom & Lantern", a:"Shoppable Lookbook", b:"Batik Modern", aud:'sme', grp:'ind', c:["#f4efe7","#2d4a3e","#c9773b","#1d1a16"],
+   pitch:{en:"A homeware and lifestyle shop: tap a styled room to add pieces to the cart, build a gift set, and pay with card, FPX, GrabPay or Touch ’n Go.", zh:"家居与生活风格网店：点击布置好的房间即可加入购物车、组合礼盒，用银行卡、FPX、GrabPay 或 Touch ’n Go 付款。", ms:"Kedai barangan rumah dan gaya hidup: tekan bilik yang digayakan untuk tambah ke troli, bina set hadiah, dan bayar dengan kad, FPX, GrabPay atau Touch ’n Go."}},
+  {slug:'laman-realty', no:'F-18', name:"Laman Realty", a:"Map Split View", b:"Listing Cards", aud:'sme', grp:'ind', c:["#f5f3ef","#0f3b3a","#d8a657","#111b1a"],
+   pitch:{en:"A property agency: listings beside a live map, filters for buy or rent, an RM instalment calculator, and viewing requests straight to WhatsApp.", zh:"房地产中介：房源与地图并排、买卖或租赁筛选、马币月供计算器，看房申请直达 WhatsApp。", ms:"Agensi hartanah: senarai di sebelah peta, penapis beli atau sewa, kalkulator ansuran RM, dan permintaan lawatan terus ke WhatsApp."}},
+  {slug:'meridian-co', no:'F-19', name:"Meridian & Co.", a:"Editorial Serif", b:"Fee Explorer", aud:'sme', grp:'ind', c:["#f7f5f0","#1b2a41","#9c7a3c","#0d1420"],
+   pitch:{en:"A corporate advisory, tax and legal practice: quietly confident editorial design, a fixed-scope fee explorer, partner profiles and confidential consultation requests.", zh:"企业咨询、税务与法律事务所：沉稳的杂志式设计、固定范围收费说明、合伙人介绍与保密咨询预约。", ms:"Firma nasihat korporat, cukai dan guaman: reka bentuk editorial yang yakin, peneroka yuran skop tetap, profil rakan kongsi dan permintaan konsultasi sulit."}},
+  {slug:'kompas-academy', no:'F-20', name:"Kompas Academy", a:"Programme Finder", b:"Training Calendar", aud:'sme', grp:'ind', c:["#f2f4f7","#22306b","#ff7a45","#0f1530"],
+   pitch:{en:"A corporate training provider: a programme finder by team size and challenge, public runs with seats left, and HRD Corp claims explained in three steps.", zh:"企业培训机构：按团队规模与挑战找课程、公开课剩余名额，三步看懂 HRD Corp 申请。", ms:"Penyedia latihan korporat: pencari program ikut saiz pasukan dan cabaran, sesi awam dengan tempat kosong, dan tuntutan HRD Corp dalam tiga langkah."}},
+  {slug:'studio-wren', no:'F-21', name:"Studio Wren", a:"Editorial Portfolio", b:"Rate-card Builder", aud:'sme', grp:'ind', c:["#111111","#f2efe9","#ff5a36","#f2efe9"],
+   pitch:{en:"A photographer and creator’s personal brand: an immersive filtered portfolio, a live rate-card builder, brand collaborations and an availability calendar.", zh:"摄影师与创作者个人品牌：沉浸式作品集筛选、实时报价单、品牌合作与档期日历。", ms:"Jenama peribadi jurugambar dan pencipta kandungan: portfolio imersif bertapis, pembina kad kadar langsung, kolaborasi jenama dan kalendar kekosongan."}},
+  {slug:'rumah-kita', no:'F-22', name:"Rumah Kita", a:"Programme Board", b:"Giving Meter", aud:'sme', grp:'ind', c:["#f6f1e8","#2f5d50","#e2a03f","#1c2622"],
+   pitch:{en:"A community centre and charity for any faith or cause: this week’s programmes, a giving campaign with FPX and DuitNow, volunteer sign-up and hall booking.", zh:"适合任何宗教或公益团体的社区中心：本周活动、FPX 与 DuitNow 捐款、义工报名与礼堂预约。", ms:"Pusat komuniti dan badan amal untuk apa jua agama atau tujuan: program minggu ini, kempen derma FPX dan DuitNow, pendaftaran sukarelawan dan tempahan dewan."}},
+  {slug:'cahaya-works', no:'F-23', name:"Cahaya Works", a:"Industrial Modern", b:"RFQ Builder", aud:'sme', grp:'ind', c:["#eef0f2","#14213d","#fca311","#0b1221"],
+   pitch:{en:"A B2B engineering and supply company: a capabilities explorer, before-and-after projects, certifications and a quotation request that writes itself.", zh:"B2B 工程与供应公司：能力导览、项目前后对比、认证资质，询价单自动生成。", ms:"Syarikat kejuruteraan dan bekalan B2B: peneroka keupayaan, projek sebelum dan selepas, pensijilan dan permintaan sebut harga yang tersusun sendiri."}},
   {slug:'harbour-lane', no:'F-09', name:'Harbour Lane 港巷', a:'Neon Noir', b:'Swiss Listings', aud:'sme', c:['#0a1230','#16204a','#ff2e88','#19e3d1'],
    pitch:{en:'A Hong Kong property boutique under a flickering neon sign. Bilingual toggle, live property finder and mortgage maths.', zh:'霓虹招牌下的香港精品地产。双语切换、实时房源筛选和房贷计算。', ms:'Agensi hartanah butik Hong Kong di bawah papan tanda neon. Togol dwibahasa, pencari hartanah langsung dan kiraan pinjaman.'}},
   {slug:'forge-field', no:'F-07', name:'Forge & Field', a:'Risograph Print', b:'E-commerce', aud:'sme', c:['#f3ecdc','#2c4bdc','#ff3fa4','#1f1d36'],
@@ -266,39 +282,79 @@ if (zoom) {
 }
 
 /* ---------- Fusion Lab track ---------- */
-const track = $('.fx-track'), pin = $('.fx-pin'), bar = $('.fx-bar i'), fcount = $('.fx-count b');
-track.innerHTML = FUSION.map((f, i) => `
+/* industry picks (finder order) + signature fusions; free horizontal scroll, never hijacks the page scroll */
+const IND_ORDER = ['batu-beam', 'seri-dental', 'little-orbit', 'rumah-teduh', 'ember-salt', 'loom-lantern', 'laman-realty', 'meridian-co', 'kompas-academy', 'studio-wren', 'rumah-kita', 'cahaya-works'];
+const IND_LAB = {
+  'batu-beam': {en:'Renovation · Interior design', zh:'装修 · 室内设计', ms:'Ubah suai · Reka bentuk dalaman'},
+  'seri-dental': {en:'Clinic · Dental · Aesthetics', zh:'诊所 · 牙科 · 医美', ms:'Klinik · Pergigian · Estetik'},
+  'little-orbit': {en:'Tuition · Enrichment · Preschool', zh:'补习 · 才艺 · 幼儿园', ms:'Tuisyen · Pengayaan · Prasekolah'},
+  'rumah-teduh': {en:'Homestay · Hotel · Travel', zh:'民宿 · 酒店 · 旅游', ms:'Homestay · Hotel · Pelancongan'},
+  'ember-salt': {en:'F&B · Café · Catering', zh:'餐饮 · 咖啡馆 · 到会', ms:'F&B · Kafe · Katering'},
+  'loom-lantern': {en:'Retail · Online shop', zh:'零售 · 网店', ms:'Runcit · Kedai dalam talian'},
+  'laman-realty': {en:'Property · Real estate agent', zh:'房地产 · 中介', ms:'Hartanah · Ejen hartanah'},
+  'meridian-co': {en:'Law · Accounting · Consulting', zh:'法律 · 会计 · 咨询', ms:'Guaman · Perakaunan · Perundingan'},
+  'kompas-academy': {en:'Training provider · Coach', zh:'培训机构 · 教练', ms:'Penyedia latihan · Jurulatih'},
+  'studio-wren': {en:'Creator · Freelancer · Personal brand', zh:'创作者 · 自由职业 · 个人品牌', ms:'Pencipta · Pekerja bebas · Jenama peribadi'},
+  'rumah-kita': {en:'Mosque · Church · Temple · NGO', zh:'清真寺 · 教堂 · 庙宇 · 非营利', ms:'Masjid · Gereja · Kuil · NGO'},
+  'cahaya-works': {en:'Any other business', zh:'其他行业', ms:'Perniagaan lain'},
+};
+const track = $('.fx-track'), bar = $('.fx-bar i'), fcount = $('.fx-count b'), fxTot = $('.fx-count i');
+let fxGrp = 'ind', fxList = [], fxEls = [], fxDragged = false;
+const fxItemsOf = g => g === 'ind' ? IND_ORDER.map(s => FUSION.find(f => f.slug === s)).filter(Boolean) : FUSION.filter(f => f.grp !== 'ind');
+const fxStep = () => fxEls[0] ? fxEls[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) : track.clientWidth;
+const fxIdx = () => clamp(Math.round(track.scrollLeft / Math.max(1, fxStep())), 0, Math.max(0, fxList.length - 1));
+function fxUpd() {
+  const max = track.scrollWidth - track.clientWidth, p = max > 0 ? track.scrollLeft / max : 0, i = fxIdx();
+  bar.style.transform = `scaleX(${Math.max(.04, p)})`;
+  fcount.textContent = String(i + 1).padStart(2, '0'); if (fxTot) fxTot.textContent = String(fxList.length).padStart(2, '0');
+  $$('.fx-dots button').forEach((b, k) => b.setAttribute('aria-current', k === i));
+  const pv = $('.fx-prev'), nx = $('.fx-next'); if (pv) pv.disabled = track.scrollLeft < 8; if (nx) nx.disabled = track.scrollLeft > max - 8;
+  const on = $('.fx-dots button[aria-current="true"]'); if (on) { const r = on.parentElement; const x = on.offsetLeft - r.clientWidth / 2 + on.offsetWidth / 2; r.scrollTo({left: x, behavior: 'smooth'}); }
+}
+const fxGo = i => { const el = fxEls[clamp(i, 0, fxEls.length - 1)]; if (el) track.scrollTo({left: el.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft), behavior: reduce ? 'auto' : 'smooth'}); };
+function buildFx() {
+  fxList = fxItemsOf(fxGrp);
+  const end = fxGrp === 'sig'
+    ? `<div class="fx-end"><span class="mono" style="color:var(--acc-t)">F-${String(FUSION.length + 1).padStart(2, '0')} · <span data-i18n="fx.reserved">${esc(t('fx.reserved'))}</span></span><h3><span data-i18n-html="fx.endH">${t('fx.endH')}</span><span class="dot"></span></h3><a class="ex-btn solid" data-wa="wa.msg" href="${waLink(t('wa.msg'))}" target="_blank" rel="noopener"><span data-i18n="fx.endBtn">${esc(t('fx.endBtn'))}</span> <span class="arr">→</span></a></div>`
+    : `<div class="fx-end"><span class="mono" style="color:var(--acc-t)" data-i18n="fx.endIndK">${esc(t('fx.endIndK'))}</span><h3><span data-i18n-html="fx.endIndH">${t('fx.endIndH')}</span><span class="dot"></span></h3><a class="ex-btn solid" href="#finder"><span data-i18n="fx.endIndBtn">${esc(t('fx.endIndBtn'))}</span> <span class="arr">→</span></a></div>`;
+  track.innerHTML = fxList.map((f, i) => `
   <article class="fx" tabindex="0" role="button" data-i="${i}" data-cursor="cur.step" aria-label="${esc(f.name)}" style="--c1:${f.c[0]};--c4:${f.c[3]}">
-    <div class="fx-screen"><div class="fx-inner"><div class="fx-poster snap" style="background-image:url(fusion/thumbs/${f.slug}.webp)">${esc(f.name)}</div></div></div>
-    <div class="fx-cap"><span class="mono">${f.no}</span><h3>${esc(f.name)}</h3><span class="mono formula">${esc(f.a)} × ${esc(f.b)}</span><p></p></div>
-  </article>`).join('') + `<div class="fx-end"><span class="mono" style="color:var(--acc-t)">F-${String(FUSION.length + 1).padStart(2, '0')} · <span data-i18n="fx.reserved"></span></span><h3><span data-i18n-html="fx.endH"></span><span class="dot"></span></h3><a class="ex-btn solid" data-wa="wa.msg"><span data-i18n="fx.endBtn"></span> <span class="arr">→</span></a></div>`;
-const fxEls = $$('.fx', track);
-fxEls.forEach(el => {
-  if (!lite) liveFrame($('.fx-inner', el), 'fusion/' + FUSION[+el.dataset.i].slug + '.html');
-  const open = () => openViewer(FITEMS, +el.dataset.i);
-  el.addEventListener('click', open);
-  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-});
-const renderFusion = () => fxEls.forEach(el => { $('.fx-cap p', el).textContent = L(FUSION[+el.dataset.i].pitch); });
-let pinOn = false, travel = 0;
-const movePin = () => {
-  if (!pinOn) return;
-  const r = pin.getBoundingClientRect(), p = clamp(-r.top / Math.max(1, travel), 0, 1);
-  track.style.transform = `translate3d(${-p * travel}px,0,0)`;
-  bar.style.transform = `scaleX(${p})`;
-  fcount.textContent = String(clamp(Math.round(p * (FUSION.length - 1)) + 1, 1, FUSION.length)).padStart(2, '0');
-};
-const sizePin = () => {
-  pinOn = innerWidth > 800 && !reduce;
-  if (!pinOn) { pin.style.height = ''; track.style.transform = ''; return; }
-  travel = Math.max(0, track.scrollWidth - innerWidth);
-  pin.style.height = (innerHeight + travel) + 'px';
-  movePin();
-};
-addEventListener('scroll', () => requestAnimationFrame(movePin), {passive:true});
+    <div class="fx-screen"><div class="fx-inner"><div class="fx-poster snap" style="background-image:url(fusion/thumbs/${f.slug}.webp)">${esc(f.name)}</div></div>${fxGrp === 'ind' ? `<span class="fx-tag mono">${esc(L(IND_LAB[f.slug]))}</span>` : ''}</div>
+    <div class="fx-cap"><span class="mono">${fxGrp === 'ind' ? String(i + 1).padStart(2, '0') : f.no}</span><h3>${esc(f.name)}</h3><span class="mono formula">${esc(f.a)} × ${esc(f.b)}</span><p></p></div>
+  </article>`).join('') + end;
+  fxEls = $$('.fx', track);
+  fxEls.forEach(el => {
+    const f = fxList[+el.dataset.i];
+    if (!lite) liveFrame($('.fx-inner', el), 'fusion/' + f.slug + '.html' + (f.grp === 'ind' ? '?l=' + lang : ''));
+    const open = () => openViewer(fxList.map(x => FITEMS.find(it => it.f === x)), +el.dataset.i);
+    el.addEventListener('click', e => { if (fxDragged) { e.preventDefault(); return; } open(); });
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  $('.fx-dots').innerHTML = fxList.map((f, i) => `<button type="button" data-j="${i}" aria-label="${esc(f.name)}"><span class="mono">${String(i + 1).padStart(2, '0')}</span>${esc(f.name)}</button>`).join('');
+  track.scrollLeft = 0; renderFusion(); requestAnimationFrame(fxUpd);
+}
+function renderFusion() {
+  fxEls.forEach(el => { const f = fxList[+el.dataset.i]; $('.fx-cap p', el).textContent = L(f.pitch); const tg = $('.fx-tag', el); if (tg) tg.textContent = L(IND_LAB[f.slug]); });
+  const lb = $('.fx-top [data-i18n-html^="fx.label"]'); if (lb) { lb.dataset.i18nHtml = fxGrp === 'ind' ? 'fx.labeli' : 'fx.label'; lb.innerHTML = t(lb.dataset.i18nHtml); }
+  const h = $('#fx-title'), ld = $('.fx-top .ex-lead');
+  if (h) { h.dataset.i18nHtml = fxGrp === 'ind' ? 'fx.h2i' : 'fx.h2'; h.innerHTML = t(h.dataset.i18nHtml); }
+  if (ld) { ld.dataset.i18n = fxGrp === 'ind' ? 'fx.leadi' : 'fx.lead'; ld.textContent = t(ld.dataset.i18n); }
+  $$('.fx-tabs button').forEach(b => { b.setAttribute('aria-selected', b.dataset.grp === fxGrp); $('i', b).textContent = fxItemsOf(b.dataset.grp).length; });
+}
+$$('.fx-tabs button').forEach(b => b.addEventListener('click', () => { if (b.dataset.grp === fxGrp) return; fxGrp = b.dataset.grp; buildFx(); }));
+$('.fx-prev').addEventListener('click', () => fxGo(fxIdx() - 1));
+$('.fx-next').addEventListener('click', () => fxGo(fxIdx() + 1));
+$('.fx-dots').addEventListener('click', e => { const b = e.target.closest('button'); if (b) fxGo(+b.dataset.j); });
+track.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); const i = fxIdx() + (e.key === 'ArrowRight' ? 1 : -1); fxGo(i); setTimeout(() => fxEls[clamp(i, 0, fxEls.length - 1)]?.focus({preventScroll: true}), 350); } });
+track.addEventListener('scroll', () => requestAnimationFrame(fxUpd), {passive: true});
+/* mouse drag to scroll (touch scrolls natively) */
+let fxDown = null;
+track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; fxDown = {x: e.clientX, s: track.scrollLeft}; fxDragged = false; });
+addEventListener('pointermove', e => { if (!fxDown) return; const dx = e.clientX - fxDown.x; if (!fxDragged && Math.abs(dx) > 6) { fxDragged = true; track.classList.add('drag'); } if (fxDragged) track.scrollLeft = fxDown.s - dx; });
+addEventListener('pointerup', () => { if (!fxDown) return; fxDown = null; if (fxDragged) { track.classList.remove('drag'); setTimeout(() => { fxDragged = false; }, 60); requestAnimationFrame(() => fxGo(fxIdx())); } });
+const sizePin = () => fxUpd();
 addEventListener('resize', () => { clearTimeout(sizePin._t); sizePin._t = setTimeout(sizePin, 120); });
-addEventListener('load', sizePin);
-track.addEventListener('scroll', () => { if (!pinOn) fcount.textContent = String(clamp(Math.round(track.scrollLeft / fxEls[0].offsetWidth) + 1, 1, FUSION.length)).padStart(2, '0'); }, {passive:true});
+buildFx();
 
 /* ---------- FAQ card spotlight ---------- */
 if (fine) $$('.faq-c').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
@@ -509,7 +565,7 @@ vIfr.addEventListener('load', () => {
   doc.addEventListener('click', e => {
     const a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     const u = new URL(a.getAttribute('href'), doc.baseURI);
-    if (isShowcase(u)) { e.preventDefault(); closeViewer(); }
+    if (isShowcase(u)) { e.preventDefault(); closeViewer(); if (u.search) location.href = u.pathname + u.search + u.hash; else if (u.hash) document.querySelector(u.hash)?.scrollIntoView({behavior: 'smooth'}); }
     else if (u.origin === location.origin && /^\/contact(\.html)?$/.test(u.pathname)) { e.preventDefault(); window.open(waLink(t('vw.like', {n: vList[vI]?.name || ''})), '_blank', 'noopener'); }
   }, true);
 });
