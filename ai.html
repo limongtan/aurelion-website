@@ -470,7 +470,7 @@ body > main { padding-top:94px; } body > main > section { background:var(--bg); 
 <footer class="site-footer">
   <div class="shell footer-main"><a href="index.html" class="brand"><img class="brand-mark" src="assets/images/aurelion-full-night.webp" data-dark-src="assets/images/aurelion-full-night.webp" data-light-src="assets/images/aurelion-full-day.webp" alt="Aurelion"></a><p>Accelerating human adaptive capacity in the AI era.</p><nav aria-label="Footer navigation"><a href="hrd-courses.html">HRD Courses</a><a href="team-performance.html">Team Performance</a><a href="https://insights.aurelion-earth.com">Aurelion Insights</a><a href="about-aurelion.html">About Aurelion</a><a href="partnerships.html">Partnerships &amp; CSR</a><a href="index.html#inquiry">Contact us</a></nav></div>
   <div class="shell footer-connect"><div><h2>Contact us</h2><address>Unit 773, Regus Tribeca<br>Residensi Tribeca, 215 Jalan Imbi<br>Bukit Bintang, 55100 Kuala Lumpur, Malaysia</address><a href="https://wa.me/601110541499" target="_blank" rel="noopener noreferrer">WhatsApp +60 11-1054 1499</a><a href="mailto:andy.tan@aurelion-earth.com">andy.tan@aurelion-earth.com</a></div><div><h2>Follow Aurelion</h2><a href="https://www.instagram.com/the.aurelion.earth/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.life-gardens.com/growth-report" target="_blank" rel="noopener noreferrer">Life Garden</a></div></div>
-  <div class="shell footer-bottom"><span>© 2026 AURELION SDN BHD</span><a href="index.html">Back to home</a></div>
+  <div class="shell footer-bottom"><span>© 2026 AURELION SDN BHD · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span><a href="index.html">Back to home</a></div>
 </footer>
 <a class="sticky-cta btn btn-primary" href="https://formhug.ai/f/zx1z9C" data-form target="_blank" rel="noopener">Ask about the AI course</a>
 <script>
@@ -492,5 +492,6 @@ body > main { padding-top:94px; } body > main > section { background:var(--bg); 
 <script src="assets/enquire.js"></script>
 <script>
 (() => { const root = document.documentElement; const button = document.querySelector('#theme-toggle'); const setTheme = theme => { root.dataset.theme = theme; button.setAttribute('aria-pressed', String(theme === 'light')); button.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} theme`); button.querySelector('.theme-glyph').textContent = theme === 'light' ? '◐' : '☼'; document.querySelectorAll('[data-dark-src]').forEach(image => { image.src = image.dataset[theme === 'light' ? 'lightSrc' : 'darkSrc']; }); }; setTheme(localStorage.getItem('aurelion-theme') === 'light' ? 'light' : 'dark'); button.addEventListener('click', () => { const next = root.dataset.theme === 'light' ? 'dark' : 'light'; localStorage.setItem('aurelion-theme', next); setTheme(next); }); })();
-</script></body>
+</script><script src="/assets/site-analytics.js" defer></script>
+</body>
 </html>
