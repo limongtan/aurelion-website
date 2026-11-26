@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /vibe-coding/graphify-out/
+
+Sitemap: https://www.aurelion-earth.com/sitemap.xml
