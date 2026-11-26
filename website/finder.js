@@ -46,6 +46,29 @@ const T = {
    live:'Pratonton langsung', capL:'Dikemas kini semasa anda menaip.', capR:'Buka saiz penuh ↗', fab:'Lihat laman web anda percuma →',
    waIntro:'Hai Aurelion! Saya guna pencari laman web.', waAsk:'Boleh hantar sebut harga dan langkah seterusnya?'},
 };
+const T2 = {
+ en:{back2:'Back', reset:'Start over', stepOf:'Step {n} of 3', stepL:['Business','Goal','Your site'], yourBiz:'Your business', change:'Change',
+   rec:'Recommended', previewing:'Previewing', hint1:'Hover a business to preview its sample site on the right.', hint1t:'Your preview is just below.',
+   hint2:'Hover an option to preview that layout. Press A, B, C or D to choose.', hint2t:'Tap one. You can change it on the next screen.',
+   gd:{enq:'A quick enquiry form up top that opens WhatsApp with the details already filled in.', book:'A booking calendar with time slots right under your headline.', sell:'Products, a cart and Card · FPX · GrabPay checkout up front.', cred:'Case studies, credentials and past work first, for bigger clients.'}},
+ zh:{back2:'返回', reset:'重新开始', stepOf:'第 {n} 步，共 3 步', stepL:['生意类型','网站目标','你的网站'], yourBiz:'你的生意', change:'更改',
+   rec:'推荐', previewing:'预览中', hint1:'把鼠标移到生意类型上，右边会显示样本网站。', hint1t:'预览就在下方。',
+   hint2:'把鼠标移到选项上即可预览版面。按 A、B、C 或 D 选择。', hint2t:'点一个。下一页还可以更改。',
+   gd:{enq:'首屏就有快速询问表格，一按就打开 WhatsApp，资料自动填好。', book:'标题下方直接显示预约日历和时段。', sell:'商品、购物车和银行卡 · FPX · GrabPay 结账放在最前面。', cred:'先展示案例、资质和过往作品，赢得大客户信任。'}},
+ ms:{back2:'Kembali', reset:'Mula semula', stepOf:'Langkah {n} daripada 3', stepL:['Perniagaan','Matlamat','Laman anda'], yourBiz:'Perniagaan anda', change:'Tukar',
+   rec:'Disyorkan', previewing:'Pratonton', hint1:'Halakan tetikus pada perniagaan untuk lihat laman sampelnya di sebelah kanan.', hint1t:'Pratonton anda ada di bawah.',
+   hint2:'Halakan tetikus pada pilihan untuk pratonton susun atur. Tekan A, B, C atau D untuk memilih.', hint2t:'Tekan satu. Anda boleh tukar di skrin seterusnya.',
+   gd:{enq:'Borang pertanyaan pantas di atas yang membuka WhatsApp dengan butiran sedia diisi.', book:'Kalendar tempahan dengan slot masa terus di bawah tajuk.', sell:'Produk, troli dan bayaran Kad · FPX · GrabPay di hadapan.', cred:'Kajian kes, kelayakan dan hasil kerja dahulu, untuk klien besar.'}},
+};
+Object.keys(T2).forEach(l => Object.assign(T[l], T2[l]));
+const GOAL_IC = {
+  enq:'<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-5 4v-4.2A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/>',
+  book:'<rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/>',
+  sell:'<path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
+  cred:'<circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.5 5 2.5-1.5-7.5"/>',
+};
+const ic = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + '</svg>';
+const fineP = matchMedia('(hover:hover) and (pointer:fine)').matches;
 const VIBE_C = {warm:['#f6efe4','#c0623b'], bold:['#0e0e0e','#d6ff3d'], minimal:['#ffffff','#2f5bff'], luxe:['#0f2a24','#c9a45c']};
 const GOAL_ORDER = ['enq','book','sell','cred'];
 
@@ -59,7 +82,8 @@ if (st.i && !st.g && qs.get('t')) { st.g = A.ind(st.i).goal; step = 3; }
 
 const cfg = () => ({i: st.i || 'reno', g: st.g || A.ind(st.i || 'reno').goal, n: st.n || '', a: st.a || '', l: st.l || langNow(), v: st.v || ''});
 /* the preview IS the premium industry sample, personalised by URL params (see fusion/af-kit.js) */
-const sampleUrl = () => '/website/' + A.ind(cfg().i).tpl + '?' + A.toQuery(cfg());
+const urlFor = (c, embed) => '/website/' + A.ind(c.i).tpl + '?' + A.toQuery(c) + (embed ? '&embed=1' : '');
+const sampleUrl = () => urlFor(cfg(), false);
 const previewUrl = (embed) => sampleUrl() + (embed ? '&embed=1' : '');
 const shareUrl = () => location.origin + sampleUrl();
 const waUrl = () => {
@@ -78,10 +102,10 @@ root.innerHTML = `
   <p class="ex-lead" data-f="lead"></p>
 </div>
 <div class="fd-grid">
-  <div class="fd-panel"><div class="fd-steps" aria-hidden="true"><i></i><i></i><i></i></div><div class="fd-body" aria-live="polite"></div></div>
+  <div class="fd-panel"><div class="fd-nav"></div><div class="fd-body" aria-live="polite"></div></div>
   <div class="fd-dev">
     <div class="fd-frame"><div class="fd-chrome"><i></i><i></i><i></i><span class="fd-url"></span></div>
-      <div class="fd-view"><span class="fd-live" data-f="live"></span><iframe title="Website preview" loading="lazy" tabindex="-1"></iframe></div></div>
+      <div class="fd-view"><span class="fd-live" data-f="live"></span><span class="fd-peek" aria-hidden="true"></span><iframe title="Website preview" loading="lazy" tabindex="-1"></iframe></div></div>
     <div class="fd-cap"><span data-f="capL"></span><a class="fd-full" target="_blank" rel="noopener" data-f="capR"></a></div>
   </div>
 </div>`;
@@ -109,13 +133,17 @@ const render = () => {
   root.querySelectorAll('[data-f]').forEach(el => { el.innerHTML = t[el.dataset.f]; });
   root.querySelectorAll('[data-fh]').forEach(el => { el.innerHTML = t[el.dataset.fh]; });
   root.querySelectorAll('[data-f-list]').forEach(el => { el.innerHTML = t[el.dataset.fList].map(x => `<span>${esc(x)}</span>`).join(''); });
-  root.querySelectorAll('.fd-steps i').forEach((el, i) => el.classList.toggle('on', i < step));
+  const BK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
+  const RS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>';
+  $('.fd-nav').innerHTML = `<div class="fd-trail">${[1, 2, 3].map(n => `<button type="button" class="fd-st${n < step ? ' done' : ''}${n === step ? ' cur' : ''}" data-step="${n}"${n < step ? '' : ' disabled'}${n === step ? ' aria-current="step"' : ''}><i></i><span><b>${n}</b>${esc(t.stepL[n - 1])}</span></button>`).join('')}</div>
+    <div class="fd-ctl">${step > 1 ? `<button type="button" class="fd-back">${BK}<span>${esc(t.back2)}</span></button>` : `<span class="fd-stepof">${esc(t.stepOf.replace('{n}', step))}</span>`}${step > 1 || st.i ? `<button type="button" class="fd-reset">${RS}<span>${esc(t.reset)}</span></button>` : ''}</div>`;
   if (step === 1) {
     body.innerHTML = `<div class="fd-pane"><p class="fd-q">${esc(t.q1)}</p><p class="fd-sub">${esc(t.s1)}</p><div class="fd-opts">${A.IND.map((x, i) =>
-      `<button type="button" class="fd-opt" data-i="${x.k}" aria-pressed="${st.i === x.k}"><b>${String(i + 1).padStart(2, '0')}</b>${esc(A.L(x.label, l))}</button>`).join('')}</div></div>`;
+      `<button type="button" class="fd-opt" data-i="${x.k}" aria-pressed="${st.i === x.k}"><b>${String(i + 1).padStart(2, '0')}</b>${esc(A.L(x.label, l))}</button>`).join('')}</div><p class="fd-hint">${esc(fineP ? t.hint1 : t.hint1t)}</p></div>`;
   } else if (step === 2) {
-    body.innerHTML = `<div class="fd-pane"><button type="button" class="fd-back">${esc(t.back)}</button><p class="fd-q">${esc(t.q2)}</p><p class="fd-sub">${esc(t.s2)}</p><div class="fd-opts g4">${GOAL_ORDER.map((g, i) =>
-      `<button type="button" class="fd-opt" data-g="${g}" aria-pressed="${st.g === g}"><b>${String.fromCharCode(65 + i)}</b>${esc(A.L(A.GOALS[g], l))}</button>`).join('')}</div></div>`;
+    const I0 = A.ind(st.i);
+    body.innerHTML = `<div class="fd-pane"><div class="fd-picked"><span class="mono">${esc(t.yourBiz)}</span><b>${esc(A.L(I0.label, l))}</b><button type="button" class="fd-change" data-step="1">${esc(t.change)}</button></div><p class="fd-q">${esc(t.q2)}</p><p class="fd-sub">${esc(t.s2)}</p><div class="fd-opts g4">${GOAL_ORDER.map((g, i) =>
+      `<button type="button" class="fd-opt fd-goal" data-g="${g}" aria-pressed="${st.g === g}"><span class="fd-gi">${ic(GOAL_IC[g])}</span><span class="fd-gt"><strong>${esc(A.L(A.GOALS[g], l))}${I0.goal === g ? `<em>${esc(t.rec)}</em>` : ''}</strong><small>${esc(t.gd[g])}</small></span><kbd>${String.fromCharCode(65 + i)}</kbd></button>`).join('')}</div><p class="fd-hint">${esc(fineP ? t.hint2 : t.hint2t)}</p></div>`;
   } else {
     const c = cfg(), I = A.ind(c.i), tk = A.tierFor(c.i, c.g), tier = A.TIERS[tk], promo = A.promo();
     const priceHtml = promo
@@ -124,8 +152,7 @@ const render = () => {
     const langOpts = [['en','English'],['ms','Bahasa Melayu'],['zh','中文']].map(([k, n]) => `<option value="${k}"${c.l === k ? ' selected' : ''}>${n}</option>`).join('');
     const vibes = Object.keys(A.VIBES).map(v => `<button type="button" data-v="${v}" aria-pressed="${c.v === v}"><i style="background:linear-gradient(135deg,${VIBE_C[v][0]} 50%,${VIBE_C[v][1]} 50%);border:1px solid var(--line2)"></i>${esc(A.L(A.VIBES[v], l))}</button>`).join('');
     body.innerHTML = `<div class="fd-pane">
-      <button type="button" class="fd-back">${esc(t.back)}</button>
-      <div class="fd-match"><span class="mono">${esc(t.match)}</span><span>${esc(A.L(I.label, l))} · ${esc(A.L(A.GOALS[c.g], l))}</span><a href="${esc(previewUrl(false))}" target="_blank" rel="noopener">${esc(t.seeTpl)} ↗</a></div>
+      <div class="fd-match"><span class="mono">${esc(t.match)}</span><button type="button" class="fd-chip" data-step="1">${esc(A.L(I.label, l))} <i aria-hidden="true">✎</i></button><button type="button" class="fd-chip" data-step="2">${esc(A.L(A.GOALS[c.g], l))} <i aria-hidden="true">✎</i></button><a href="${esc(previewUrl(false))}" target="_blank" rel="noopener">${esc(t.seeTpl)} ↗</a></div>
       <p class="fd-q">${esc(t.rec)}: ${esc(A.L(tier.name, l))} <span style="color:var(--mut);font-weight:400;font-size:.6em">${esc(A.L(tier.sub, l))}</span></p>
       <div class="fd-price">${priceHtml}</div>
       <p class="fd-split">${esc(t.split.split('{x}').join(A.fmt(A.price(tk) / 2)))}</p>
@@ -148,12 +175,42 @@ const render = () => {
 };
 const syncLinks = () => { const w = $('.fd-wa'), o = $('.fd-open'); if (w) w.href = waUrl(); if (o) o.href = previewUrl(false); };
 
-body.addEventListener('click', e => {
-  const b = e.target.closest('button, a'); if (!b) return;
-  if (b.dataset.i) { st.i = b.dataset.i; step = 2; save(); track('finder_industry', {industry: st.i}); render(); refresh(true); }
-  else if (b.dataset.g) { st.g = b.dataset.g; step = 3; save(); track('finder_result', {industry: st.i, goal: st.g, tier: A.tierFor(st.i, st.g)}); render(); refresh(true);
+const panel = $('.fd-panel');
+const reset = () => {
+  st = {}; step = 1; save();
+  try { const u = new URL(location.href); ['i', 'g', 'n', 'a', 'l', 'v', 't'].forEach(k => u.searchParams.delete(k)); history.replaceState(null, '', u.pathname + u.search + u.hash); } catch (_) {}
+  render(); refresh(true); track('finder_reset', {});
+  const top = panel.getBoundingClientRect().top; if (top < 0) panel.scrollIntoView({behavior: 'smooth', block: 'start'});
+  panel.querySelector('.fd-opt')?.focus({preventScroll: true});
+};
+/* hover / focus an option: preview it live in the device frame */
+let peekT;
+const peekLbl = $('.fd-peek');
+const peek = (b) => { clearTimeout(peekT); peekT = setTimeout(() => {
+  if (!b) { peekLbl.classList.remove('on'); view.classList.remove('peeking'); refresh(true); return; }
+  const c = b.dataset.i ? {...cfg(), i: b.dataset.i, g: st.g || A.ind(b.dataset.i).goal} : {...cfg(), g: b.dataset.g};
+  const src = urlFor(c, true); if (src !== lastSrc) { lastSrc = src; frame.src = src; }
+  const l = langNow(); peekLbl.textContent = T[l].previewing + ': ' + (b.dataset.i ? A.L(A.ind(b.dataset.i).label, l) : A.L(A.GOALS[b.dataset.g], l));
+  peekLbl.classList.add('on'); view.classList.add('peeking');
+}, b ? 260 : 160); };
+if (fineP) {
+  body.addEventListener('pointerover', e => { const b = e.target.closest('.fd-opt'); if (b && e.pointerType === 'mouse') peek(b); });
+  body.addEventListener('pointerleave', () => { if (view.classList.contains('peeking')) peek(null); });
+  body.addEventListener('focusin', e => { const b = e.target.closest('.fd-opt'); if (b && b.matches(':focus-visible')) peek(b); });
+}
+root.addEventListener('keydown', e => {
+  if (step !== 2 || e.ctrlKey || e.metaKey || e.altKey || /INPUT|SELECT|TEXTAREA/.test(e.target.tagName)) return;
+  const k = 'abcd'.indexOf(e.key.toLowerCase()); if (k < 0) return;
+  const b = body.querySelectorAll('.fd-goal')[k]; if (b) { e.preventDefault(); b.click(); }
+});
+panel.addEventListener('click', e => {
+  const b = e.target.closest('button, a'); if (!b || !panel.contains(b)) return;
+  if (b.classList.contains('fd-reset')) { reset(); return; }
+  if (b.dataset.step && !b.disabled) { clearTimeout(peekT); step = +b.dataset.step; render(); refresh(true); return; }
+  if (b.dataset.i) { clearTimeout(peekT); peekLbl.classList.remove('on'); view.classList.remove('peeking'); st.i = b.dataset.i; step = 2; save(); track('finder_industry', {industry: st.i}); render(); refresh(true); }
+  else if (b.dataset.g) { clearTimeout(peekT); peekLbl.classList.remove('on'); view.classList.remove('peeking'); st.g = b.dataset.g; step = 3; save(); track('finder_result', {industry: st.i, goal: st.g, tier: A.tierFor(st.i, st.g)}); render(); refresh(true);
     if (innerWidth < 900) root.querySelector('.fd-panel').scrollIntoView({behavior: 'smooth', block: 'start'}); }
-  else if (b.classList.contains('fd-back')) { step = Math.max(1, step - 1); render(); }
+  else if (b.classList.contains('fd-back')) { step = Math.max(1, step - 1); render(); refresh(true); }
   else if (b.dataset.v) { st.v = b.dataset.v; save(); b.parentElement.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); syncLinks(); refresh(true); }
   else if (b.classList.contains('fd-copy')) {
     const u = shareUrl(), ok = () => { toast.textContent = T[langNow()].copied; toast.classList.add('on'); setTimeout(() => toast.classList.remove('on'), 1800); };
