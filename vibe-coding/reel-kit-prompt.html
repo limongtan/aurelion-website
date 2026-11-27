@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" class="sub">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Both tools got the same brief. Compare their prompts for building a kit that turns an idea into a finished reel.">
+<title>Reel Kit prompt: Claude vs ChatGPT | Vibe Coding Field Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='16' text-anchor='middle' dominant-baseline='central' font-size='29' fill='%233358ed'%3E%E2%9C%B3%3C/text%3E%3C/svg%3E">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/reel-kit-prompt.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="guide.css?v=2">
+<link rel="stylesheet" href="resources.css">
+<script src="copy.js?v=2" defer></script>
+</head>
+<body class="guide-page resource-page">
+<a class="guide-skip" href="#guide-main">Skip to the guide</a>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">vibe coding</a>
+  <nav class="tracks" aria-label="Learning routes">
+    <a href="systems.html">Build a website</a>
+    <a href="videos.html">Make videos</a>
+    <a href="setup.html">Toolkit</a>
+  </nav>
+  <span class="guide-language-note">English resource</span>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+<nav class="guide-context guide-breadcrumb" aria-label="Breadcrumb">
+  <a href="./">All guides</a><span class="separator" aria-hidden="true">/</span><span class="current" aria-current="page">Reel Kit prompt: Claude vs ChatGPT</span>
+</nav>
+<main class="guide-article resource-article" id="guide-main">
+<header class="hero">
+  <h1>Reel Kit prompt: Claude vs ChatGPT</h1>
+  <p class="lead">Both tools got the same brief. Compare their prompts for building a kit that turns an idea into a finished reel.</p>
+<p><a href="https://www.instagram.com/reel/De9nXY4zTP1/">Watch the source reel ↗</a></p>
+</header>
+
+<section id="differences" aria-labelledby="differences-title">
+  <h2 id="differences-title">The differences</h2>
+<div class="tablebox">
+  <table class="resource-table" role="table">
+    <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Feature</th><th role="columnheader" scope="col">Claude</th><th role="columnheader" scope="col">ChatGPT</th></tr></thead>
+    <tbody role="rowgroup">
+    <tr role="row"><th role="rowheader" scope="row">Length</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>74 lines, 741 words</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>130 lines, 1,275 words</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Written for</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>The owner: short plain lines</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>An engineer: TypeScript, H.264/AAC, .env, ffprobe</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">How you make the next reel</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Type <code>/reel [topic]</code> in the Claude chat. No terminal</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span><code>npm run reel -- "..."</code> in a terminal</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Who writes each script</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Claude, fresh every time</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>Claude, or fill-in templates when offline</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Video tool</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Claude picks HyperFrames or Remotion (the reel itself looks like HTML/JS)</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>Fixed: Remotion + React</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Quality check</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Watches the <strong>finished video</strong>: measures a change every 0.6 s from the frames, looks at them, fixes anything under 8/10, up to 3 rounds</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>Checks the <strong>plan before rendering</strong>, revises once. Never looks at the actual video</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Learns from viral reels</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Yes: "decode this reel [link]" adds new scenes and rules</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>No. Bigger starting list of scenes, but it never grows</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Talking-head editing</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Cuts pauses over 0.4 s and filler words</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>More careful: only cuts fillers it's sure of, gives you a list of every cut to review, follows your face</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Cartoon host</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>From your photo, or a simple one</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>Drawn in code from your description. No image service needed</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Honesty and safety</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Never invent facts, numbers or reviews</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>No copyrighted assets, no keys in files</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Final check</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>Tests each tool with a 3-second clip first</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>Checks the finished MP4's length, size and sound</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Languages</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>English / 中文 / BM option</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>Not mentioned</td></tr>
+    <tr role="row"><th role="rowheader" scope="row">Things to fill in</th><td role="cell"><span class="cell-label" aria-hidden="true">Claude</span>7</td><td role="cell"><span class="cell-label" aria-hidden="true">ChatGPT</span>11</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section id="verdict" aria-labelledby="verdict-title">
+  <h2 id="verdict-title">Verdict</h2>
+<ul>
+  <li><strong>Claude's</strong> is the better fit for a small-business owner who uses Claude every day: shorter, chat commands instead of a terminal, and its quality check watches the real video. That's what the reel promises ("scores its own motion").</li>
+  <li><strong>ChatGPT's</strong> is the better engineering spec. It wins on talking-head safety (list of cuts, careful filler removal), the code-drawn host, the copyright rule and the final file check.</li>
+  <li><strong>Best result:</strong> start from Claude's and add those 4 things from ChatGPT's.</li>
+</ul>
+</section>
+
+<section id="prompts" aria-labelledby="prompts-title">
+  <h2 id="prompts-title">Full prompts</h2>
+<div class="stack">
+<div class="pcard">
+  <div class="phead"><h3>Claude’s prompt</h3><button class="copy" type="button" aria-label="Copy Claude’s prompt">Copy</button></div>
+  <p class="prompt-use muted">Recommended for owners.</p>
+  <pre>Build me a "Reel Kit": one folder on my computer that turns one line of text into a
+finished vertical reel, made with code (HTML/CSS/JS animation rendered to MP4), not by
+an AI video model. Do every step yourself: install what you need, write the files, run
+the commands, fix errors. Only stop when I must sign in, pay, or approve something.
+
+ABOUT ME
+- Business / account: [name], [what I post about], for [who watches]
+- Language of the voice and captions: [English / 中文 / BM]
+- Brand colours: [e.g. #F4EFE6 cream, #E8452C red, #16212B ink]. Fonts: [or "you choose"]
+- My photos and videos: [folder path, or "none"]
+- A photo of me for the cartoon host: [file path, or "make a simple host character"]
+- Voice: [female / male], [accent], [calm / energetic]
+
+1. SET UP (once)
+- Create the folder [Documents/reel-kit] and open it as the project.
+- Install: Node.js, ffmpeg, an HTML-to-video renderer (HyperFrames or Remotion, pick
+  the one that works best on my computer and say why), a free voice (edge-tts) or
+  [ElevenLabs, I will paste the key], and Whisper for word-level timestamps.
+- Test each tool with a 3-second sample before going on. Tell me what you installed.
+
+2. FOLDER LAYOUT
+reel-kit/
+  CLAUDE.md            how to use the kit; you read it every time
+  brand/brand.json     my colours, fonts, handle, host character, voice
+  styles/              print/, 3d/, toybox/, talking-head/  (one template each)
+  studio/scenebank/    reusable scenes + scenes.json (name, purpose, length, style)
+  studio/rules/        hooks.md, pacing.md, captions.md, score.md
+  scripts/             voice, render, score and cut scripts
+  inbox/               I drop my talking-head videos here
+  reels/&lt;date-topic&gt;/  script.md, voice.mp3, words.json, scenes, final.mp4, score.json
+
+3. THE FOUR STYLES (all read brand.json, 1080x1920, 30 fps)
+- Print: cream paper texture, big editorial type, one accent word in my colour,
+  hand-drawn host in a corner, chapter labels like "// 02 — the problem".
+- 3D: three.js scene, soft light, objects that build the idea on screen.
+- Toybox: chunky rounded shapes, bouncy springs, little physics jolts on key words.
+- Talking head: my own video, cropped 9:16, with captions and pop-in graphics.
+
+4. THE SCENE BANK AND RULES
+Start the bank with at least 12 scenes: hook question, big number, myth vs fact,
+checklist, before/after, progress card, phone mock-up, code or chat window, list
+count-up, quote, chapter title, call to action. Each scene is a parameterised component.
+Write these rules into studio/rules/ and follow them on every reel:
+- Hook: the payoff or tension is clear within 1.5 s. No logo intros, no "hi guys".
+- Pacing: something changes on screen at least every 0.6 s (text, cut, zoom, move).
+- Captions: kinetic, word by word, timed to the voice from words.json, 3-5 words on
+  screen, the key word in my accent colour, never covered by the host or UI.
+- Length 30-60 s. End with one clear action (follow / comment a word / WhatsApp).
+- Never invent facts, numbers, reviews or results. Mark anything you are unsure of.
+Add a command so I can grow the bank: "decode this reel [link]" downloads it, studies
+the hook, pacing and caption style, and saves the useful patterns as new scenes or rules.
+
+5. ONE-LINE COMMANDS (save as Claude Code slash commands in .claude/commands/)
+/reel [topic] [style]
+  1) Write the script (hook, 3 beats, call to action), show me the word count.
+  2) Record the voice, then get word timestamps with Whisper.
+  3) Pick scenes from the bank and animate every beat to the timestamps.
+  4) Render final.mp4. Show progress as "1/4 Script ... 4/4 Render".
+/talkinghead [file in inbox]
+  Transcribe, cut silences over 0.4 s and filler words (um, uh, so, like, you know),
+  keep natural breaths, add kinetic captions and 3-5 graphics, export 9:16.
+/score [reel]
+  Before I see anything, score the reel 1-10 on: hook in 1.5 s, change every 0.6 s
+  (measure it from the frames with ffmpeg), caption sync, text readable on a phone,
+  nothing off-screen. Look at sampled frames yourself. Fix anything under 8, re-render,
+  score again (max 3 rounds). Save score.json and tell me what you fixed.
+/reel always runs /score automatically before showing me the video.
+
+6. PROVE IT WORKS
+Make my first reel now: /reel [why my customers should know about ___] print
+Then show me final.mp4, the script and the score. Explain in 5 short lines how I make
+the next one. Write all of this into CLAUDE.md so it works the same way every time.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>ChatGPT’s prompt</h3><button class="copy" type="button" aria-label="Copy ChatGPT’s prompt">Copy</button></div>
+  <pre>Build me a complete local “Reel Kit” project folder from scratch, then use it to create and render one finished example reel.
+
+I am non-technical. Make sensible choices, install required dependencies, create all files, run the project, fix errors, and leave me with a simple repeatable workflow. Do not merely give me instructions or a plan: actually build and test it on my computer.
+
+My details:
+- Business / creator name: [BUSINESS NAME]
+- What I do: [WHAT YOU SELL OR HELP PEOPLE WITH]
+- Target audience: [TARGET AUDIENCE]
+- Brand colours: [PRIMARY HEX COLOUR], [SECONDARY HEX COLOUR], [ACCENT HEX COLOUR]
+- Preferred font feeling: [e.g. bold editorial / playful / modern luxury]
+- Host character description: [e.g. friendly illustrated woman with curly dark hair, green blazer, glasses]
+- Default reel style: [Print / 3D / Toybox / Talking Head]
+- Voice preference: [e.g. warm female British English / energetic male American English]
+- First reel topic: [FIRST REEL TOPIC]
+- Optional logo file path: [LOGO PATH OR “none”]
+- Optional talking-head source video path: [VIDEO PATH OR “none”]
+
+Create the project in a new folder named `reel-kit` in my current working directory. It must work locally from a terminal and be easy to reuse.
+
+Build this as a production-ready JavaScript/TypeScript project using:
+- Node.js
+- Remotion for deterministic code-driven video rendering
+- React/TypeScript for scenes
+- FFmpeg for audio/video processing
+- A local or API-based text-to-speech adapter, with clear configuration. Prefer a no-cost local option if practical; otherwise support OpenAI TTS through an environment variable, but do not expose secrets in source files.
+- Whisper or another reliable transcription option for talking-head mode, with clear fallback instructions if a local model is unavailable
+- 1080x1920 vertical MP4 output, 30 fps, H.264 video + AAC audio
+
+The folder must include:
+1. A simple command-line workflow where I can run something like:
+   - `npm run reel -- "make a reel about why casinos have no clocks"`
+   - `npm run talking-head -- "[path to video]"`
+   - `npm run preview`
+   - `npm run render`
+2. A `README.md` written for a non-technical owner: exact setup, how to add API keys if needed, how to make a new reel, how to change brand details, how to use talking-head mode, where finished videos appear, and troubleshooting.
+3. A `.env.example` with placeholders only, never real credentials.
+4. A central editable brand configuration file containing my name, palette, type choices, logo, host character, voice, and style defaults.
+5. A `studio/scenebank/` library of reusable scene components, not one hard-coded video.
+6. A clear content pipeline that creates:
+   - a concise, high-retention script around 45–55 seconds;
+   - scene directions and on-screen copy;
+   - AI voiceover audio;
+   - timed word-level captions;
+   - animated scenes;
+   - a rendered MP4.
+7. A progress display for the four stages:
+   - 1/4 Write script
+   - 2/4 Record voiceover
+   - 3/4 Animate scenes
+   - 4/4 Render file
+8. A self-review / quality-score step before final rendering. It should inspect the generated reel plan against rules such as hook clarity, payoff in the first 1.5 seconds, visual changes at least every 0.6 seconds, readable captions, contrast, safe margins, pacing, and ending CTA. If weak, automatically revise the script or scene plan once and save the score/report.
+9. Generated files saved cleanly under `output/[slug]/`, including script, scene plan, captions, audio, quality report, preview if possible, and final MP4.
+
+Implement four visual styles selectable by config or command flag:
+- Print: cream paper, ink texture, editorial typography, collage-like layouts, hand-drawn illustrated host.
+- 3D: polished dimensional objects, depth, soft shadows, bold kinetic title moments.
+- Toybox: colourful playful shapes, miniature-object energy, cheerful motion.
+- Talking Head: processes an imported talking-head video, removes long pauses and common filler words where feasible, reframes for 9:16, adds branded kinetic captions, b-roll-style graphic inserts, chapter labels, and progress counters.
+
+For generated explainers, include a recurring illustrated/cartoon host based on my host description. Make it a reusable vector/CSS/SVG character rather than requiring an image-generation service. It should appear naturally in several scenes, with expressions or poses where practical.
+
+Create a robust scenebank with reusable components such as:
+- Cold-open hook / pattern interrupt
+- Big kinetic headline
+- Host reaction / host explainer
+- Chapter label formatted like `// 04 — myth 2 · hard to use`
+- Counter formatted like `MYTHS 2/3`
+- Word-by-word beat captions
+- Statistic / number reveal
+- Comparison / before-and-after
+- Timeline
+- Myth-versus-fact
+- Checklist
+- Quote card
+- Product or CTA card
+- Animated arrows, circles, underlines, scribbles, stickers, and transitions
+- Audio-reactive or beat-aware emphasis where timing data is available
+
+Use good reel rules throughout:
+- Make the central payoff or intrigue clear within 1.5 seconds.
+- Change something visually at least every 0.6 seconds: text, composition, object, host pose, background, camera movement, or transition.
+- Keep captions large, high contrast, and within vertical safe zones.
+- Caption key words individually or in short groups, with emphasis synced to voice timing.
+- Avoid copyright-dependent assets. Generate simple visuals from SVG/CSS/canvas, use public-domain/free assets only when automated and clearly attributed, or use placeholders that do not block rendering.
+- Keep reels approximately 50 seconds unless the script needs a slightly different duration.
+- End with a natural CTA relevant to my business, not a generic “follow for more.”
+
+Design the project so it runs even if no external API keys are configured:
+- Include a fully working “demo/offline mode” with a bundled sample narration audio or browser/system speech fallback, deterministic captions, and demo script generation based on templates.
+- If API credentials are available, use the higher-quality script and TTS adapters automatically.
+- Clearly report which mode was used.
+- Never stop at an API limitation if a local demo result can still be rendered.
+
+For talking-head mode:
+- Accept a video path.
+- Extract audio and transcribe it.
+- Detect and remove or reduce pauses longer than a sensible threshold.
+- Detect common fillers such as “um,” “uh,” “like,” “you know,” and “so,” conservatively; preserve speech if uncertain.
+- Produce an edit decision list/report so I can review what was removed.
+- Create 9:16 framing with a sensible centre crop or face tracking if an available local library supports it; otherwise use a safe centre crop.
+- Add branded captions and graphic scene inserts without changing the speaker’s meaning.
+- Render an edited final MP4.
+
+Use a maintainable structure, for example:
+- `src/`
+- `src/components/`
+- `src/styles/`
+- `studio/scenebank/`
+- `scripts/`
+- `config/brand.ts`
+- `output/`
+- `assets/`
+- `README.md`
+
+Now do all of the following in order:
+1. Inspect my environment and confirm Node, npm, FFmpeg, and any needed prerequisites. Install project-local dependencies and, if a prerequisite is missing, attempt a safe installation or provide the exact one-command fix while continuing as far as possible.
+2. Create the full project folder and all source files.
+3. Configure it with my supplied details.
+4. Build the first explainer reel about: “[FIRST REEL TOPIC]”.
+5. Run the quality review and automatically improve weak items once.
+6. Render the final vertical MP4.
+7. Verify the output file exists and inspect duration, dimensions, codec, and audio stream with FFprobe or equivalent.
+8. At the end, give me a short plain-English summary containing:
+   - the exact path to the final MP4;
+   - the exact command to make my next reel;
+   - whether demo/offline mode or API mode was used;
+   - any one-time setup item I still need to do.
+
+Prioritize a genuinely working rendered example over extra theoretical features. Do not ask me technical questions unless an unavoidable permission or missing-value issue prevents you from rendering the first reel. Make reasonable defaults for everything else.</pre>
+</div>
+</div>
+</section>
+</main>
+<footer class="guide-footer">
+  <a href="../">AURELION EARTH ↗</a>
+  <span>A field guide for human ideas.</span>
+</footer>
+</div>
+</body>
+</html>

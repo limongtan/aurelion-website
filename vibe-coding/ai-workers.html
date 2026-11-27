@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" class="sub">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Use the least paid quota by saving the most expensive model, Opus, for thinking and decisions.">
+<title>Opus designs, Codex builds | Vibe Coding Field Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='16' text-anchor='middle' dominant-baseline='central' font-size='29' fill='%233358ed'%3E%E2%9C%B3%3C/text%3E%3C/svg%3E">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/ai-workers.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="guide.css?v=2">
+<link rel="stylesheet" href="resources.css">
+<script src="copy.js?v=2" defer></script>
+</head>
+<body class="guide-page resource-page">
+<a class="guide-skip" href="#guide-main">Skip to the guide</a>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">vibe coding</a>
+  <nav class="tracks" aria-label="Learning routes">
+    <a href="systems.html">Build a website</a>
+    <a href="videos.html">Make videos</a>
+    <a href="setup.html">Toolkit</a>
+  </nav>
+  <span class="guide-language-note">English resource</span>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+<nav class="guide-context guide-breadcrumb" aria-label="Breadcrumb">
+  <a href="./">All guides</a><span class="separator" aria-hidden="true">/</span><span class="current" aria-current="page">Opus designs, Codex builds</span>
+</nav>
+<main class="guide-article resource-article" id="guide-main">
+<header class="hero">
+  <h1>Opus designs, Codex builds</h1>
+  <p class="lead">Use the least paid quota by saving the most expensive model, Opus, for thinking and decisions.</p>
+<nav class="resource-actions" aria-label="Download the worker rules">
+  <a class="btn" href="files/ai-worker-rules.md" download>Download Markdown</a>
+  <a class="btn" href="files/ai-worker-rules.pdf" download>Download PDF</a>
+</nav>
+</header>
+
+<section id="call-order" aria-labelledby="call-order-title">
+  <h2 id="call-order-title">Call order</h2>
+<div class="worker-flow" role="group" aria-label="Worker handoffs">
+  <div class="flow-start">
+    <div class="node"><b>1. Opus designs</b><span>Gather the photos and one design picture. You approve the design, then Opus writes one brief.</span></div>
+    <span class="flow-side" aria-hidden="true"></span>
+    <div class="node"><b>2. Codex builds and checks</b><span>Medium effort to build. Low effort to check.</span></div>
+  </div>
+  <p class="flow-caption">↓ If Codex runs out of quota</p>
+  <div class="flow-branches">
+    <div class="node"><b>3. Can wait → Wait for the reset</b><span>A scheduled task restarts Codex.</span></div>
+    <div class="node"><b>4. Urgent → Use a Claude helper</b><span>Haiku checks. Sonnet builds. Both use the brief and <code>progress.md</code>.</span></div>
+  </div>
+  <p class="flow-caption">↓ When Codex or a helper finishes</p>
+  <div class="flow-end">
+    <div class="node"><b>5. Opus reviews</b><span>Opus reads the short report and one contact sheet.</span></div>
+    <span class="flow-side" aria-hidden="true"></span>
+    <div class="node"><b>You give the final OK</b><span>You decide whether to merge.</span></div>
+  </div>
+</div>
+<ol>
+  <li><strong>Opus designs.</strong> Collect all photos and one design picture first. You OK it. Then write ONE brief with all related changes grouped.</li>
+  <li><strong>Codex builds</strong> at medium effort (checks at low effort).</li>
+  <li><strong>Codex out of quota, job can wait:</strong> wait for the reset. A scheduled task restarts Codex then. This costs no Claude quota.</li>
+  <li><strong>Codex out of quota, job is urgent:</strong> a small Claude helper continues from the brief + <code>progress.md</code>. Haiku for checks, Sonnet for builds.</li>
+  <li><strong>Opus reviews</strong> only the short report and one contact sheet, then asks you before merging.</li>
+</ol>
+</section>
+
+<section id="roles" aria-labelledby="roles-title">
+  <h2 id="roles-title">Who does what</h2>
+<div class="tablebox">
+  <table class="resource-table" role="table">
+    <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Worker</th><th role="columnheader" scope="col">Does</th><th role="columnheader" scope="col">Never does</th></tr></thead>
+    <tbody role="rowgroup">
+    <tr role="row"><th role="rowheader" scope="row"><strong>Claude Opus</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Design choices, the design picture, writing short briefs, reviewing the short report + 1 contact sheet, talking to you, asking for merge OK</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Reading or editing big code files, running long checks</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Codex, medium effort</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Builds: writes the code from one brief</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Design choices</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Codex, low effort</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Tests, checks, load times, small fixes</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Big builds</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Claude Sonnet</strong> (helper)</th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Urgent builds when Codex is out of quota</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Design choices</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Claude Haiku</strong> (helper)</th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Urgent checks when Codex is out of quota: runs the check script, reports PASS/FAIL</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Building</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section id="main-session" aria-labelledby="main-session-title">
+  <h2 id="main-session-title">If the main session isn't Opus</h2>
+<p>At the start, the session checks which model it runs on. A session can't change its own model; only you can, in the model menu. It can start a helper on a stronger model (Agent tool, <code>model: "opus"</code>) for one question.</p>
+<div class="tablebox">
+  <table class="resource-table" role="table">
+    <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Main session is…</th><th role="columnheader" scope="col">It may do itself</th><th role="columnheader" scope="col">It must hand off</th></tr></thead>
+    <tbody role="rowgroup">
+    <tr role="row"><th role="rowheader" scope="row"><strong>Opus</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Design, briefs, reviews, talking to you</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds → Codex medium; checks → Codex low (or a Haiku helper)</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Sonnet</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Briefs, reviews, small decisions</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds → Codex. Big design choices: ask you to switch to Opus, or ask an Opus helper that one question</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Haiku</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Status, running check scripts, reading short reports, simple questions</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds → Codex. Any design or judgment call: stop and say "This needs Opus. Switch the model in the menu, or should I ask an Opus helper?"</td></tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>Tip:</strong> start design chats on Opus. Use Haiku chats for status and checks.</p>
+</section>
+
+<section id="every-job" aria-labelledby="every-job-title">
+  <h2 id="every-job-title">Every job</h2>
+<ul>
+  <li>One topic = one job = one owner. Write the owner on the shared board before starting.</li>
+  <li>Design picture + all photos agreed <strong>before</strong> the build. Small tweaks wait for the next build.</li>
+  <li>Keep <code>jobs/&lt;topic&gt;/progress.md</code> current (5–10 lines: done, next, files touched, open problems). If a worker stops, the next one reads only the brief + progress.md and continues.</li>
+  <li>Reports are short (under 25 lines). On a failure, read only the last ~20 log lines.</li>
+  <li>Only one heavy job (headless browser, load test) at a time.</li>
+</ul>
+</section>
+
+<section id="reminder" aria-labelledby="reminder-title">
+  <h2 id="reminder-title">The reminder</h2>
+<p>At the start of every task that builds or checks something, Claude writes one line before starting:</p>
+<blockquote class="lesson"><strong>Worker plan:</strong> design = Opus · build = Codex medium · checks = Codex low · if Codex is out: wait, or Haiku/Sonnet if urgent.</blockquote>
+<p>If Claude is about to edit code itself, it must say why (for example, "a 1-line fix, cheaper than a brief") or ask you first.</p>
+</section>
+
+<section id="install" aria-labelledby="install-title">
+  <h2 id="install-title">Install the rules</h2>
+<ol class="install-steps">
+  <li>Save this file as <code>~/.claude/WORKER_RULES.md</code>
+    <ul>
+      <li>Windows: <code>C:\Users\&lt;you&gt;\.claude\WORKER_RULES.md</code></li>
+      <li>Mac: <code>/Users/&lt;you&gt;/.claude/WORKER_RULES.md</code></li>
+    </ul>
+  </li>
+  <li>Open <code>~/.claude/CLAUDE.md</code> (create it if it's missing) and add these two lines:
+    <pre class="rule-code"><code># Must follow in every session
+@WORKER_RULES.md</code></pre>
+    <p>Claude loads this file in every session. The <code>@</code> line pulls in the worker rules.</p>
+  </li>
+  <li>Optional but recommended: a start-of-session reminder. In <code>~/.claude/settings.json</code>, add:
+    <pre class="rule-code"><code>"hooks": {
+  "SessionStart": [{ "hooks": [{ "type": "command",
+    "command": "echo 'Reminder: follow ~/.claude/WORKER_RULES.md. Opus designs, Codex builds (medium), Codex checks (low), out of quota = wait or Haiku/Sonnet if urgent. Write the Worker plan line first.'" }] }]
+}</code></pre>
+  </li>
+  <li>Install Codex (<code>npm install -g @openai/codex</code>) and log in once with <code>codex login</code>. Log in to the Claude CLI once: run <code>claude</code>, type <code>/login</code>.</li>
+  <li>Test: open a new Claude session and ask <em>"What are your worker rules?"</em> It should repeat the call order.</li>
+</ol>
+<div class="pcard">
+  <div class="phead"><h3>Paste into Claude Code</h3><button class="copy" type="button" aria-label="Copy Paste into Claude Code">Copy</button></div>
+  <pre>Install my AI worker rules. Save the file I attached as ~/.claude/WORKER_RULES.md.
+Add the lines "# Must follow in every session" and "@WORKER_RULES.md" to ~/.claude/CLAUDE.md
+(create the file if it's missing; keep anything already there). Add the SessionStart reminder
+hook from section "Install" step 3 to ~/.claude/settings.json without removing existing settings.
+Then tell me what you changed and how to test it.</pre>
+</div>
+</section>
+
+<section id="commands" aria-labelledby="commands-title">
+  <h2 id="commands-title">Commands</h2>
+<pre class="rule-code"><code># Codex build (medium) and check (low). Always close stdin with &lt; /dev/null.
+codex exec --sandbox danger-full-access --skip-git-repo-check -C &lt;folder&gt; -c model_reasoning_effort="medium" "Read &lt;rules file&gt; first. &lt;brief&gt;" &lt; /dev/null &gt; build.log 2&gt;&amp;1
+codex exec --sandbox danger-full-access --skip-git-repo-check -C &lt;folder&gt; -c model_reasoning_effort="low" "&lt;check brief&gt;" &lt; /dev/null &gt; check.log 2&gt;&amp;1
+
+# Small Claude helper as a separate run (needs the claude CLI logged in once: run claude, type /login)
+claude -p --model sonnet "Read jobs/&lt;topic&gt;/brief.md and progress.md, continue the job, write a short report." &lt; /dev/null &gt; out.md
+claude -p --model haiku  "Run the check script and report PASS/FAIL in under 10 lines." &lt; /dev/null &gt; check.md</code></pre>
+<p>Inside a chat, Opus can also start a helper with the Agent tool and <code>model: "haiku"</code> or <code>model: "sonnet"</code>. Only the short answer comes back, so the chat stays small.</p>
+</section>
+
+<section id="measure" aria-labelledby="measure-title">
+  <h2 id="measure-title">Measure it</h2>
+<p>Track usage for one week.</p>
+<ul>
+  <li>After each job, add one line to <code>usage_log.csv</code>: date, topic, worker, model, effort, tokens, minutes. Codex prints tokens used at the end of a run. <code>claude -p --output-format json</code> shows usage. Agent helpers report their token count.</li>
+  <li>Once a day, note the usage % on the Claude usage page and Codex's <code>/status</code>.</li>
+  <li>After 7 days, compare with the week before. Keep only what the numbers support.</li>
+</ul>
+</section>
+</main>
+<footer class="guide-footer">
+  <a href="../">AURELION EARTH ↗</a>
+  <span>A field guide for human ideas.</span>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+.resource-article {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+body.resource-page .resource-article > section,
+body.resource-page .resource-article > header {
+  grid-template-columns: minmax(0, 1fr);
+  scroll-margin-top: 20px;
+}
+
+.resource-page .guide-context {
+  justify-content: flex-start;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.resource-article ul,
+.resource-article ol {
+  margin: 0;
+  padding-inline-start: 1.4em;
+}
+
+.resource-article li + li { margin-top: .4em; }
+.resource-article .lesson { margin: 0; }
+
+body.resource-page .prompt-use { padding: 7px 24px 0; }
+body.resource-page pre.rule-code {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.resource-article li > pre.rule-code { margin-block: 8px; }
+.resource-article .tablebox { min-width: 0; overflow: visible; }
+body.resource-page .resource-table { min-width: 0; table-layout: fixed; }
+.resource-table th,
+.resource-table td { overflow-wrap: anywhere; }
+.resource-table thead th:first-child { width: 22%; }
+body.resource-page .resource-table tbody th {
+  color: var(--ink);
+  background: var(--paper);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.resource-table tbody tr:last-child th { border-bottom: 0; }
+.cell-label { display: none; }
+
+.worker-flow {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+}
+.flow-start, .flow-end {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr);
+}
+.flow-branches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+.worker-flow .node { padding: 12px 14px; background: var(--card); }
+.worker-flow .node b { font-size: 1rem; }
+.worker-flow .node span { font-size: .88rem; overflow-wrap: anywhere; }
+.worker-flow .node code { font-size: inherit; }
+.worker-flow .flow-caption {
+  margin: 0 auto;
+  color: var(--accent);
+  font-size: .88rem;
+  font-weight: 700;
+  text-align: center;
+}
+.flow-side {
+  align-self: center;
+  color: var(--accent);
+  text-align: center;
+}
+.flow-side::before { content: "→"; }
+
+@media (max-width: 600px) {
+  body.resource-page .prompt-use { padding: 5px 17px 0; }
+  .worker-flow { padding: 12px; }
+  .flow-start, .flow-end { grid-template-columns: minmax(0, 1fr); }
+  .flow-side::before { content: "↓"; }
+  .flow-branches { gap: 8px; }
+  .worker-flow .node { padding: 9px 10px; }
+
+  .resource-table, .resource-table tbody { display: block; }
+  .resource-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .resource-table tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resource-table tbody tr + tr { border-top: 1px solid var(--line); }
+  body.resource-page .resource-table tbody th { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
+  body.resource-page .resource-table td { border-bottom: 0; }
+  .resource-table td + td { border-inline-start: 1px solid var(--line); }
+  .cell-label {
+    display: block;
+    color: var(--muted);
+    font-size: .82rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html.sub:root body.resource-page {
+    --paper: #121820;
+    --card: #1c2633;
+    --ink: #eef2fa;
+    --muted: #b7c3d6;
+    --line: #384659;
+    --accent: #a5baff;
+    --accent-ink: #121820;
+    --slip: #263451;
+    color-scheme: dark;
+  }
+  body.resource-page .pcard,
+  body.resource-page pre,
+  body.resource-page .tablebox,
+  body.resource-page .copy {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  body.resource-page .phead,
+  body.resource-page th,
+  body.resource-page .lesson {
+    background: var(--slip);
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  body.resource-page .phead h3 { color: var(--ink); }
+  body.resource-page .btn,
+  body.resource-page .btn:hover,
+  body.resource-page .copy:hover,
+  body.resource-page .copy[data-done] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+}
