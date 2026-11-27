@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en" class="sub">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Choose your course and work through the 13 prompts in order.">
+<title>Student prompts for both courses | Vibe Coding Field Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='16' text-anchor='middle' dominant-baseline='central' font-size='29' fill='%233358ed'%3E%E2%9C%B3%3C/text%3E%3C/svg%3E">
+<link rel="alternate" hreflang="en" href="https://www.aurelion-earth.com/vibe-coding/course-prompts.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="guide.css?v=2">
+<link rel="stylesheet" href="resources.css">
+<script src="copy.js?v=2" defer></script>
+</head>
+<body class="guide-page resource-page">
+<a class="guide-skip" href="#guide-main">Skip to the guide</a>
+<div class="wrap">
+<header class="gnav">
+  <a class="brand" href="./">vibe coding</a>
+  <nav class="tracks" aria-label="Learning routes">
+    <a href="systems.html">Build a website</a>
+    <a href="videos.html">Make videos</a>
+    <a href="setup.html">Toolkit</a>
+  </nav>
+  <span class="guide-language-note">English resource</span>
+  <a class="out" href="../">← Aurelion Earth</a>
+</header>
+<nav class="guide-context guide-breadcrumb" aria-label="Breadcrumb">
+  <a href="./">All guides</a><span class="separator" aria-hidden="true">/</span><span class="current" aria-current="page">Student prompts for both courses</span>
+</nav>
+<main class="guide-article resource-article" id="guide-main">
+<header class="hero">
+  <h1>Student prompts for both courses</h1>
+  <p class="lead">Choose your course and work through the 13 prompts in order.</p>
+<nav class="resource-actions" aria-label="Choose your course">
+  <a class="btn" href="#from-zero-to-app-builder">From Zero to App Builder</a>
+  <a class="btn" href="#ai-for-professionals">AI for Professionals</a>
+</nav>
+</header>
+
+<section id="from-zero-to-app-builder" aria-labelledby="from-zero-to-app-builder-title">
+  <h2 id="from-zero-to-app-builder-title">From Zero to App Builder</h2>
+<p>Open an empty folder in VS Code, open Claude Code, and paste these one at a time. Change only the words in [BRACKETS]. Never paste a password into the chat.</p>
+<div class="stack">
+<div class="pcard">
+  <div class="phead"><h3>P01 · Check my laptop</h3><button class="copy" type="button" aria-label="Copy P01 · Check my laptop">Copy</button></div>
+  <p class="prompt-use muted">Before you build, check that your laptop has the tools you need.</p>
+  <pre>I am a complete beginner on Windows and I have never coded. Do all the technical work for me and explain everything in plain English.
+
+Check this laptop has what I need to build a web app and put it online: Python 3, Git and the GitHub tool (gh).
+
+For anything missing, install it from the official source, one at a time. Tell me first if Windows will show an "Allow changes?" popup.
+Apart from those installs, don't touch any files outside this folder.
+
+Finish with a short list of what is OK, then the word READY, or NOT READY with plain steps for me.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P02 · Tell and Detail: build my portfolio app</h3><button class="copy" type="button" aria-label="Copy P02 · Tell and Detail: build my portfolio app">Copy</button></div>
+  <p class="prompt-use muted">Start here when you’re ready to build your portfolio.</p>
+  <pre>I have never coded. Build me a simple portfolio web app in this folder and do all the technical work yourself. Choose sensible defaults instead of asking me technical questions.
+
+ABOUT ME
+Name: [Aina Rahman]
+The job I want: [junior data analyst]
+About me: [Fresh accounting graduate who likes finding patterns in messy numbers.]
+My projects: [1. Final-year project on small business cash flow. 2. Volunteer sign-up sheet for my campus club.]
+
+WHAT THE APP DOES
+1. A public home page with my name, the job I want, the About me text, my projects, and a contact form asking for name, email and message.
+2. After sending, the visitor sees a thank-you message.
+3. A private page at /admin that lists all messages, newest first, with date and time.
+
+HOW TO BUILD IT
+- Use Python with Flask.
+- Save messages in a real database: Postgres when a DATABASE_URL setting exists, otherwise a local SQLite file.
+- My home page must still open if the database is ever unavailable. In that case only the contact form shows a friendly message.
+- Messages are private, so the private page must ask for a password. Read it from a setting called ADMIN_PASSWORD. Create a random password in a private .env file and keep that file out of GitHub. Never write a password in the code.
+- The private page asks for the password only, with no username.
+- Check the form properly: every field is required, the email must look like an email, and bad input must not crash the app.
+- Show all dates and times in Malaysia time.
+- It must look clean and work on a phone.
+- Use a free port, and check that the page that opens really is this app.
+- Install what it needs inside this folder only.
+- Make it ready to run on an online host later: list its requirements and read the port from a setting.
+
+WHEN YOU FINISH
+Start the app and test it yourself: send a test message, then log in and check it shows on the private page. Delete your test data.
+Then tell me in plain English: the link to open, how to see my password in VS Code, and 3 things I should try. Leave the app running for me, and restart it yourself whenever you change something.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P03 · Improve: make it mine</h3><button class="copy" type="button" aria-label="Copy P03 · Improve: make it mine">Copy</button></div>
+  <p class="prompt-use muted">After opening your app, add your skills, LinkedIn profile and colours.</p>
+  <pre>I opened my app. Please improve it:
+1. Add a section called Skills with these: [Excel, SQL basics, presenting to clients].
+2. Add a button that opens my LinkedIn page: [https://www.linkedin.com/in/your-name].
+3. Make the page look more professional, using colours that suit [a young data analyst].
+
+Keep everything else working. Test it again yourself, delete your test data, restart the app so I can see the changes, then tell me in one or two sentences what changed.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P04 · Save my work to GitHub</h3><button class="copy" type="button" aria-label="Copy P04 · Save my work to GitHub">Copy</button></div>
+  <p class="prompt-use muted">When your app works on your laptop, save a private copy on GitHub.</p>
+  <pre>Save my project to a new PRIVATE GitHub repository called [my-portfolio].
+
+If I am not logged in to GitHub, start the login for me and tell me exactly what to click.
+Before you upload, check that no password, .env file or database file will be uploaded.
+
+Then give me the link to my repository and explain in one sentence what GitHub does for me.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P05 · Deploy: put it on the internet</h3><button class="copy" type="button" aria-label="Copy P05 · Deploy: put it on the internet">Copy</button></div>
+  <p class="prompt-use muted">After saving to GitHub, put your portfolio online.</p>
+  <pre>Put my app live on the internet using Render's free plan, so anyone can open it. Do all the technical work yourself, and tell me exactly what to click on the Render website, one step at a time.
+
+1. Add a Render blueprint file (render.yaml) with a free web service and a free Postgres database, both in the Singapore region. DATABASE_URL comes from that database. Block outside connections to the database. Render must generate ADMIN_PASSWORD and any other secret randomly. Save this to GitHub, and check the file really is on GitHub.
+2. Then guide me on the Render website: log in with GitHub, allow Render to see this repository, click New, then Blueprint, connect my repository, and deploy it. Wait for me while I do this, and ask me to paste my live link when it is ready.
+3. Tell me where on Render I can see my ADMIN_PASSWORD. Never ask me for that password and never show it in the chat.
+4. When I paste my live link, test it yourself: the home page opens, and /admin refuses a wrong password. Then ask me to send a message from my phone, log in to /admin and tell you if I can see it.
+
+If Render asks for a payment card or money at any point, stop and tell me before I go on.
+
+Finish with my live link, what was tested and the result, and the date my free database expires, which is 30 days from today.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P06 · How my app really works</h3><button class="copy" type="button" aria-label="Copy P06 · How my app really works">Copy</button></div>
+  <p class="prompt-use muted">Once the contact form works, see how a message reaches your private page.</p>
+  <pre>Explain my own app to me in plain language, as if I have never coded. Don't change anything.
+
+Use a small table with these rows: Front end (what visitors see and click), Back end (the logic behind the scenes), Database (where information is kept). For each row give a one-sentence meaning, the exact files in my project, and one thing from my app as an example.
+
+Then follow one message step by step, from a visitor pressing Send to it appearing on my private page. Keep the whole answer under 150 words.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P07 · Automatic tests before going live</h3><button class="copy" type="button" aria-label="Copy P07 · Automatic tests before going live">Copy</button></div>
+  <p class="prompt-use muted">Before your next update goes live, set up tests that run on their own.</p>
+  <pre>Add automatic tests to my app, and explain them in plain words. Test that the home page opens, that a good message is saved, that a bad message is refused, and that the private page refuses a wrong password.
+
+Make them run by themselves on GitHub every time my work is saved to GitHub. In render.yaml, set autoDeployTrigger to checksPass, so a failed test can't put a broken app online.
+
+Run the tests now and show me the result in a simple list. Save my work to GitHub, check the tests passed on GitHub too, then check my live link still works: [paste your live link].</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P08 · Practice: break it on purpose</h3><button class="copy" type="button" aria-label="Copy P08 · Practice: break it on purpose">Copy</button></div>
+  <p class="prompt-use muted">When you’re ready to practise debugging, create a form error on your laptop.</p>
+  <pre>I want to practise finding errors. On this laptop only, break my app on purpose so that pressing Send on the contact form fails. Don't save this to GitHub and don't put it online. Keep the app running on this laptop, and save its errors to a file called app.log.
+
+Don't tell me what you broke. Give me these steps instead:
+1. How to open the browser's console and network tabs with F12.
+2. What to do to see the error.
+3. Which words to copy for you, including the newest error in app.log.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P09 · Report a problem to AI</h3><button class="copy" type="button" aria-label="Copy P09 · Report a problem to AI">Copy</button></div>
+  <p class="prompt-use muted">After the form fails, use the error message to ask for a fix.</p>
+  <pre>On my laptop, on the home page, I filled in the form and pressed Send. I expected a thank-you message, but it failed. Here is what I can see: [paste the red error from the console or network tab, and the newest error from app.log].
+
+Find the cause and fix it, test it again yourself, and tell me in one sentence what was wrong. Then show me that my laptop's files match the last version saved on GitHub.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P10 · Write my app&#x27;s manual</h3><button class="copy" type="button" aria-label="Copy P10 · Write my app&#x27;s manual">Copy</button></div>
+  <p class="prompt-use muted">Once the app is live, write down how to run and update it.</p>
+  <pre>Write a README file for my app, for someone who has never coded. Explain what the app does, my live link, how to start it on my laptop, where to see my password, how to make a change using Claude, and what to do if something breaks.
+
+Also explain my free plan: the live site sleeps when nobody visits and takes about a minute to wake up, and my free database expires on [the date from P05]. Say what stops working on that date and what to do before it: copy my messages from the private page, or pay Render to keep the database.
+
+Put no passwords in it. Save my work to GitHub, and check the live link still works afterwards.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P11 · Add a database feature</h3><button class="copy" type="button" aria-label="Copy P11 · Add a database feature">Copy</button></div>
+  <p class="prompt-use muted">When you’re ready to manage replies, add a filter and a download.</p>
+  <pre>Add a new feature to my app: on the private page, each message gets a "Mark as replied" button, I can show only the messages not yet replied to, and a "Download Excel" button downloads all messages as a file Excel can open.
+
+Existing messages on my live app must not be lost. Update the automatic tests to cover this.
+
+Test it on my laptop, delete your test data, save to GitHub, and wait until it is live. Then check that my live link still opens and tell me exactly what to try on the live private page myself: mark a message as replied, and download the file. Don't ask for my password. Tell me the result in simple words after I report back.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P12 · Go back to an old version</h3><button class="copy" type="button" aria-label="Copy P12 · Go back to an old version">Copy</button></div>
+  <p class="prompt-use muted">After adding the reply button, practise switching between saved versions.</p>
+  <pre>Teach me how to go back in time, using my real app:
+1. Show me my saved versions as a simple list, with the date and what each one changed.
+2. Use git revert to bring my LIVE app back to the version from before the "Mark as replied" feature, without losing any data. Wait until it is live, then ask me to check on the private page that the button has gone.
+3. Then bring the latest version back, wait until it is live, and ask me to check that the button has returned and my messages are still there.
+
+Explain in two sentences what happened, and add this to CLAUDE.md so I can do it again by asking you. Don't ask for my password.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P13 · Final check before I present</h3><button class="copy" type="button" aria-label="Copy P13 · Final check before I present">Copy</button></div>
+  <p class="prompt-use muted">Before you present, check the live app and prepare what you’ll say.</p>
+  <pre>I am about to show my app to the class. Check my LIVE link for me and fix small problems: [paste your live link]
+- Every public page and button works, on phone size and laptop size.
+- The private page and its download refuse anyone without the password.
+- No password or private file is in my GitHub repository, including old versions.
+- My repository is private.
+- My public page shows no IC number, home address or anything else I wouldn't give a stranger.
+- For Malaysia's PDPA: the form says in simple words why I collect the details and who to contact to see or delete them. Add it if it's missing, using [aina@example.com] as the contact.
+
+Save and test any fix on the live link. Then give me a short list of what passed and what you fixed, 3 sentences I can say when I present, 2 lines for my CV, and one honest answer for an interview when they ask how I built it with AI.</pre>
+</div>
+</div>
+</section>
+
+<section id="ai-for-professionals" aria-labelledby="ai-for-professionals-title">
+  <h2 id="ai-for-professionals-title">AI for Professionals</h2>
+<p>Open an empty folder in VS Code, open Claude Code, and paste these one at a time. Change only the words in [BRACKETS]. Never paste a password into the chat. In class, use made-up staff names only, never real company data.</p>
+<div class="stack">
+<div class="pcard">
+  <div class="phead"><h3>P01 · Check my laptop</h3><button class="copy" type="button" aria-label="Copy P01 · Check my laptop">Copy</button></div>
+  <p class="prompt-use muted">Before you build, check that your laptop has the tools you need.</p>
+  <pre>I am a complete beginner on Windows and I have never coded. Do all the technical work for me and explain everything in plain English.
+
+Check this laptop has what I need to build a web app and put it online: Python 3, Git and the GitHub tool (gh).
+
+For anything missing, install it from the official source, one at a time. Tell me first if Windows will show an "Allow changes?" popup.
+Apart from those installs, don't touch any files outside this folder.
+
+Finish with a short list of what is OK, then the word READY, or NOT READY with plain steps for me.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P02 · Tell and Detail: build my internal tool</h3><button class="copy" type="button" aria-label="Copy P02 · Tell and Detail: build my internal tool">Copy</button></div>
+  <p class="prompt-use muted">Start here to build a tracker for your team.</p>
+  <p class="prompt-use muted">Leave and claims both work here. Change the words in brackets to suit your own task.</p>
+  <pre>I have never coded. Build me a simple internal web app for my team in this folder and do all the technical work yourself. Choose sensible defaults instead of asking me technical questions.
+
+MY TEAM: [the operations team at Kopi Corner Sdn Bhd]
+WHAT WE TRACK: [leave requests]
+WHAT STAFF FILL IN: [staff name, department, leave type, start date, end date, reason]
+
+WHAT THE APP DOES
+1. A staff page with a form for filling in the details above.
+2. After sending, the staff member sees a thank-you message and a list of all requests showing only the staff name, dates and status, never reasons or amounts. New requests start as Pending.
+3. A manager page at /admin that lists all requests, newest first, with date and time.
+
+HOW TO BUILD IT
+- Use Python with Flask.
+- Save requests in a real database: Postgres when a DATABASE_URL setting exists, otherwise a local SQLite file.
+- This is private company information, so nobody can see any page without a password. Staff use a team password, read from a setting called TEAM_PASSWORD. The manager page needs a different password, read from a setting called ADMIN_PASSWORD. Create random passwords in a private .env file and keep that file out of GitHub. Never write a password in the code.
+- Each login page asks for the password only, with no username.
+- Check the form properly: every field is required, dates must make sense, amounts must be positive RM numbers with 2 decimals, and bad input must not crash the app.
+- Show all dates and times in Malaysia time.
+- It must look clean and work on a phone.
+- Use a free port, and check that the page that opens really is this app.
+- Install what it needs inside this folder only.
+- Make it ready to run on an online host later: list its requirements and read the port from a setting.
+
+WHEN YOU FINISH
+Start the app and test it yourself: send a test request, then log in as manager and check it shows. Delete your test data.
+Then tell me in plain English: the link to open, how to see both passwords in VS Code, and 3 things I should try. Leave the app running for me, and restart it yourself whenever you change something.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P03 · Improve: make it ours</h3><button class="copy" type="button" aria-label="Copy P03 · Improve: make it ours">Copy</button></div>
+  <p class="prompt-use muted">After opening your tool, add team choices, a pending count and your colours.</p>
+  <pre>I opened my app. Please improve it:
+1. Make [leave type] a drop-down with these choices: [Annual, Medical, Emergency, Unpaid].
+2. At the top of the manager page, show how many requests are still Pending.
+3. Make it look like a tidy company tool, using these colours: [navy and white], with our name at the top: [Kopi Corner Sdn Bhd].
+
+Keep everything else working. Test it again yourself, delete your test data, restart the app so I can see the changes, then tell me in one or two sentences what changed.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P04 · Save my work to GitHub</h3><button class="copy" type="button" aria-label="Copy P04 · Save my work to GitHub">Copy</button></div>
+  <p class="prompt-use muted">When your tool works on your laptop, save a private copy on GitHub.</p>
+  <pre>Save my project to a new PRIVATE GitHub repository called [team-leave-tracker].
+
+If I am not logged in to GitHub, start the login for me and tell me exactly what to click.
+Before you upload, check that no password, .env file or database file will be uploaded.
+
+Then give me the link to my repository and explain in one sentence what GitHub does for me.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P05 · Deploy: put it on the internet</h3><button class="copy" type="button" aria-label="Copy P05 · Deploy: put it on the internet">Copy</button></div>
+  <p class="prompt-use muted">After saving to GitHub, put your tool online for the team.</p>
+  <pre>Put my app live on the internet using Render's free plan, so my team can open it. Do all the technical work yourself, and tell me exactly what to click on the Render website, one step at a time.
+
+1. Add a Render blueprint file (render.yaml) with a free web service and a free Postgres database, both in the Singapore region. DATABASE_URL comes from that database. Block outside connections to the database. Render must generate TEAM_PASSWORD, ADMIN_PASSWORD and any other secret randomly. Save this to GitHub, and check the file really is on GitHub.
+2. Then guide me on the Render website: log in with GitHub, allow Render to see this repository, click New, then Blueprint, connect my repository, and deploy it. Wait for me while I do this, and ask me to paste my live link when it is ready.
+3. Tell me where on Render I can see both passwords. Never ask me for them and never show them in the chat.
+4. When I paste my live link, test it yourself: the staff page refuses a wrong password, and so does /admin. Then ask me to log in on my phone, send a request, log in to /admin and tell you if I can see it.
+
+If Render asks for a payment card or money at any point, stop and tell me before I go on.
+
+Finish with my live link, what was tested and the result, and the date my free database expires, which is 30 days from today.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P06 · How my tool really works</h3><button class="copy" type="button" aria-label="Copy P06 · How my tool really works">Copy</button></div>
+  <p class="prompt-use muted">Once requests work, trace one from the staff form to the manager page.</p>
+  <pre>Explain my own app to me in plain language, as if I have never coded. Don't change anything.
+
+Use a small table with these rows: Front end (what staff see and click), Back end (the logic behind the scenes), Database (where team data is kept). For each row give a one-sentence meaning, the exact files in my project, and one thing from my app as an example.
+
+Then follow one request step by step, from a staff member pressing Send to it appearing on the manager page. Say who can see that data at each step. Keep the whole answer under 150 words.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P07 · Automatic tests before going live</h3><button class="copy" type="button" aria-label="Copy P07 · Automatic tests before going live">Copy</button></div>
+  <p class="prompt-use muted">Before your next update goes live, set up tests for requests and passwords.</p>
+  <pre>Add automatic tests to my app, and explain them in plain words. Test that pages refuse anyone without the team password, that a good request is saved, that a bad request is refused, and that the manager page refuses a wrong password and refuses the team password.
+
+Make them run by themselves on GitHub every time my work is saved to GitHub. In render.yaml, set autoDeployTrigger to checksPass, so a failed test can't put a broken app online.
+
+Run the tests now and show me the result in a simple list. Save my work to GitHub, check the tests passed on GitHub too, then check my live link still works: [paste your live link].</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P08 · Practice: break it on purpose</h3><button class="copy" type="button" aria-label="Copy P08 · Practice: break it on purpose">Copy</button></div>
+  <p class="prompt-use muted">When you’re ready to practise debugging, create a form error on your laptop.</p>
+  <pre>I want to practise finding errors. On this laptop only, break my app on purpose so that pressing Send on the request form fails. Don't save this to GitHub and don't put it online. Keep the app running on this laptop, and save its errors to a file called app.log.
+
+Don't tell me what you broke. Give me these steps instead:
+1. How to open the browser's console and network tabs with F12.
+2. What to do to see the error.
+3. Which words to copy for you, including the newest error in app.log.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P09 · Report a problem to AI</h3><button class="copy" type="button" aria-label="Copy P09 · Report a problem to AI">Copy</button></div>
+  <p class="prompt-use muted">After the request fails, use the error message to ask for a fix.</p>
+  <pre>On my laptop, on the staff page, I filled in the form and pressed Send. I expected a thank-you message, but it failed. Here is what I can see: [paste the red error from the console or network tab, and the newest error from app.log].
+
+Find the cause and fix it, test it again yourself, and tell me in one sentence what was wrong. Then show me that my laptop's files match the last version saved on GitHub.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P10 · Write my tool&#x27;s manual</h3><button class="copy" type="button" aria-label="Copy P10 · Write my tool&#x27;s manual">Copy</button></div>
+  <p class="prompt-use muted">Once the tool is live, write a guide a colleague can follow.</p>
+  <pre>Write a README file for my app, for a colleague who has never coded. Explain what the app does, the live link, how to start it on a laptop, where to see the passwords, how to make a change using Claude, and what to do if something breaks.
+
+Also explain the free plan: the live site sleeps when nobody visits and takes about a minute to wake up, there are no database backups, and the free database expires on [the date from P05]. Say what stops working on that date, that the data is deleted 14 days later, and that a team relying on this tool must move to a paid database first.
+
+Put no passwords in it. Save my work to GitHub, and check the live link still works afterwards.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P11 · Add a team feature</h3><button class="copy" type="button" aria-label="Copy P11 · Add a team feature">Copy</button></div>
+  <p class="prompt-use muted">When the tracker works, add approvals, a pending filter and a download.</p>
+  <pre>Add a team feature to my app: on the manager page, each request gets Approve and Reject buttons, and the manager can show only the Pending ones. Staff see the new status on their list. Add a "Download Excel" button on the manager page that downloads all requests as a file Excel can open.
+
+Existing requests on my live app must not be lost. Update the automatic tests to cover this, including that staff with only the team password can't approve, reject or download.
+
+Test it on my laptop, delete your test data, save to GitHub, and wait until it is live. Then check that my live link still opens and tell me exactly what to try on the live manager page myself: approve a request, then download the file. Don't ask for any password. Tell me the result in simple words after I report back.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P12 · Go back to an old version</h3><button class="copy" type="button" aria-label="Copy P12 · Go back to an old version">Copy</button></div>
+  <p class="prompt-use muted">After adding approvals, practise switching between saved versions.</p>
+  <pre>Teach me how to go back in time, using my real app:
+1. Show me my saved versions as a simple list, with the date and what each one changed.
+2. Use git revert to bring my LIVE app back to the version from before the Approve and Reject feature, without losing any data. Wait until it is live, then ask me to check on the manager page that the buttons have gone.
+3. Then bring the latest version back, wait until it is live, and ask me to check that the buttons have returned and the requests and their statuses are still there.
+
+Explain in two sentences what happened, and add this to CLAUDE.md so I can do it again by asking you. Don't ask for any password.</pre>
+</div>
+<div class="pcard">
+  <div class="phead"><h3>P13 · Responsible use and final check</h3><button class="copy" type="button" aria-label="Copy P13 · Responsible use and final check">Copy</button></div>
+  <p class="prompt-use muted">Before presenting or using real staff data, check access and how you handle requests.</p>
+  <pre>I am about to show my tool to the class. Check my LIVE link for me and fix small problems: [paste your live link]
+- Every page and button works, on phone size and laptop size.
+- Every page, and the download, refuses anyone without the right password.
+- No password or private file is in my GitHub repository, including old versions.
+- My repository is private.
+- For Malaysia's PDPA: the form says in simple words why we collect these details, who can see them, and who to contact to see or correct them. Add it if it's missing, using [hr@example.com] as the contact.
+- The manager can delete a request when the company no longer needs it, after a confirmation. Add this if it's missing.
+
+Save and test any fix on the live link. Then give me a short list of what passed and what you fixed, 3 sentences I can say when I present, and a short list of what my company must check before real staff data goes in, including who approves it and how the data is backed up.</pre>
+</div>
+</div>
+</section>
+</main>
+<footer class="guide-footer">
+  <a href="../">AURELION EARTH ↗</a>
+  <span>A field guide for human ideas.</span>
+</footer>
+</div>
+</body>
+</html>
