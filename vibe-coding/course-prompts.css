@@ -1,0 +1,229 @@
+.course-prompts [hidden] {
+  display: none !important;
+}
+
+body.course-prompts .resource-article > .hero {
+  gap: 12px;
+  padding-bottom: 18px;
+}
+
+body.course-prompts .hero h1 {
+  margin: 0;
+  max-width: none;
+}
+
+.course-switch,
+.prompt-jumps,
+.prompt-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body.course-prompts .course-switch a,
+body.course-prompts .prompt-jumps a,
+body.course-prompts .prompt-toggle {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 5px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.course-switch a {
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+body.course-prompts .course-switch a[aria-current] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+body.course-prompts .course-switch a:hover,
+body.course-prompts .prompt-jumps a:hover,
+body.course-prompts .prompt-toggle:hover {
+  border-color: var(--accent);
+}
+
+.prompt-jumps a {
+  min-height: 36px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prompt-jumps span,
+.prompt-number {
+  color: var(--muted);
+  font: 500 12px var(--mono);
+}
+
+.prompt-controls {
+  margin-bottom: 20px;
+}
+
+.prompt-controls label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+#prompt-search {
+  flex: 1 1 180px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--card);
+  color: var(--ink);
+  font-family: inherit;
+}
+
+body.course-prompts .resource-article > .prompt-course {
+  gap: 14px;
+  padding-block: 18px 24px;
+}
+
+.prompt-course > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.prompt-status:empty {
+  position: absolute;
+}
+
+.prompt-group {
+  gap: 6px;
+  padding: 0;
+  border: 0;
+}
+
+body.course-prompts .prompt-group h3 {
+  margin-block: 4px 1px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+body.course-prompts .pcard {
+  display: block;
+  margin: 0;
+  border-color: var(--line);
+  background: var(--card);
+  box-shadow: none;
+}
+
+.pcard > summary {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 3px 10px;
+  padding: 9px 12px;
+  min-height: 44px;
+  list-style: none;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.pcard > summary::-webkit-details-marker {
+  display: none;
+}
+
+.pcard > summary::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  align-self: center;
+  border: solid var(--accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+}
+
+.pcard[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.pcard[open] > summary,
+.pcard > summary:hover {
+  background: var(--slip);
+}
+
+body.course-prompts .pcard > summary:focus-visible {
+  outline-offset: -3px;
+}
+
+.prompt-title {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.prompt-number {
+  margin-inline-end: 4px;
+  color: var(--accent);
+}
+
+.prompt-hint,
+.prompt-note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.prompt-hint {
+  text-align: right;
+}
+
+.prompt-box {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.prompt-box .copy {
+  justify-self: end;
+}
+
+body.course-prompts .prompt-box pre {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+@media (max-width: 650px) {
+  body.course-prompts .course-switch a {
+    padding-inline: 9px;
+    font-size: 13px;
+  }
+
+  .prompt-jumps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.course-prompts .prompt-jumps a {
+    padding-inline: 9px;
+  }
+
+  .pcard > summary {
+    grid-template-columns: 12px minmax(0, 1fr);
+  }
+
+  .prompt-hint {
+    grid-column: 2;
+    text-align: start;
+  }
+}
