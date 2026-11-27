@@ -1,0 +1,388 @@
+.home-nav {
+  gap: 20px;
+  height: 88px;
+}
+
+.home-nav .wordmark,
+.home-nav .nav-end {
+  flex: none;
+}
+
+.home-nav .home-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: clamp(12px, 1.7vw, 24px);
+  row-gap: 0;
+}
+
+.home-menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.home-nav .home-link {
+  display: grid;
+}
+
+.home-intro {
+  padding-block: clamp(28px, 4.2vw, 65px) 36px;
+}
+
+.home-intro h1 {
+  font-size: clamp(52px, 7.3vw, 126px);
+  letter-spacing: -.065em;
+  line-height: 1;
+}
+
+.hero-line {
+  display: inline-block;
+}
+
+.home-intro h2 {
+  font: 500 clamp(20px, 2.2vw, 32px)/1.2 var(--display);
+  margin: 28px 0 16px;
+}
+
+.door-grid,
+.library-grid,
+.toolkit-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.door-grid,
+.toolkit-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.library-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.door,
+.resource-card {
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.door {
+  background: #e6ebff;
+}
+
+.door-reels {
+  background: #e9eddd;
+}
+
+.door-courses {
+  background: #eee7f2;
+}
+
+.door-workers {
+  background: #e3e8f4;
+}
+
+.door img,
+.door-icon {
+  display: block;
+  width: 84px;
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+.door img {
+  object-fit: contain;
+  object-position: left center;
+  mix-blend-mode: multiply;
+}
+
+.door-icon {
+  color: var(--blue);
+  font: 52px/60px var(--display);
+}
+
+.door h3,
+.resource-card h3 {
+  font: 500 clamp(19px, 2vw, 28px)/1.12 var(--display);
+  letter-spacing: -.035em;
+  margin: 0 0 8px;
+}
+
+.door p,
+.resource-card > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-arrow {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff9;
+  font: 19px/1 var(--sans);
+  transition: color .25s, background .25s, transform .35s;
+}
+
+.door:hover .card-arrow,
+.resource-card:hover .card-arrow,
+.rules-card h3 a:focus-visible .card-arrow {
+  background: var(--blue);
+  color: #fff;
+  transform: rotate(12deg);
+}
+
+.home-library,
+.home-toolkit {
+  margin: 0 4%;
+  padding-block: 34px 48px;
+  border-top: 1px solid var(--line);
+}
+
+.resource-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 22px;
+}
+
+.resource-heading h2 {
+  font: 400 clamp(36px, 5vw, 70px)/1.02 var(--display);
+  letter-spacing: -.06em;
+  margin: 0;
+}
+
+.resource-heading em {
+  color: var(--blue);
+}
+
+.resource-heading .text-link {
+  min-height: 44px;
+}
+
+.resource-card {
+  background: #fff;
+  min-height: 144px;
+}
+
+.prompt-count {
+  display: inline-block;
+  background: #e8edff;
+  color: #2442b9;
+  border-radius: 20px;
+  font: 12px/1.4 var(--mono);
+  padding: 4px 9px;
+  margin-bottom: 14px;
+}
+
+.library-grid .resource-card > p {
+  max-width: 36ch;
+}
+
+.starter-card {
+  background: #eef1ff;
+  border-color: #c9d3fb;
+}
+
+.library-grid .starter-card > p {
+  max-width: none;
+  color: var(--ink);
+}
+
+.starter-actions {
+  margin-top: 14px;
+}
+
+.starter-actions .copy-status {
+  min-height: 0;
+  margin: 6px 0 0;
+}
+
+.starter-actions .copy-status:empty {
+  margin: 0;
+}
+
+.toolkit-grid h3 {
+  padding-right: 26px;
+}
+
+.rule-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.rule-downloads a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #2442b9;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rule-downloads a:hover {
+  color: var(--ink);
+}
+
+.home-outro {
+  padding-top: clamp(42px, 6vw, 85px);
+  background: var(--blue);
+}
+
+.home-outro h2 {
+  font: 400 clamp(34px, 6.4vw, 96px)/1.02 var(--display);
+  letter-spacing: -.06em;
+  margin: 0 0 26px;
+}
+
+.home-outro h2 em {
+  color: #e0e8ff;
+}
+
+.home-outro .closing-action {
+  display: inline-flex;
+  width: fit-content;
+  background: #fff;
+  color: #2442b9;
+  font: 700 14px/1.4 var(--sans);
+  letter-spacing: normal;
+}
+
+.home-outro .closing-action:hover {
+  background: #e0e8ff;
+}
+
+.home-outro .closing-action > span {
+  position: static;
+  font-size: 1.2em;
+}
+
+.home-outro .closing-action:hover > span {
+  transform: translate(2px, -2px);
+}
+
+.home-outro a:focus-visible {
+  outline-color: #fff;
+}
+
+.home-outro .outro-bottom a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .home-nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: auto;
+    gap: 0 12px;
+    padding-top: 10px;
+  }
+
+  .home-nav .home-menu {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    column-gap: clamp(12px, 3.5vw, 25px);
+  }
+
+  .home-nav .nav-end {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .door-grid,
+  .toolkit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .home-nav .nav-end {
+    gap: 8px;
+  }
+
+  .home-nav .home-menu {
+    font-size: 13px;
+  }
+
+  .home-intro h1 {
+    font-size: clamp(42px, 11vw, 63px);
+  }
+
+  .home-intro h2 {
+    margin-top: 18px;
+  }
+
+  .home-library,
+  .home-toolkit {
+    margin-inline: 6%;
+    padding-block: 28px 34px;
+  }
+
+  .door-grid,
+  .library-grid,
+  .toolkit-grid {
+    gap: 10px;
+  }
+
+  .library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .library-grid > :nth-last-child(-n+2) {
+    grid-column: 1 / -1;
+  }
+
+  .door,
+  .resource-card {
+    padding: 14px;
+  }
+
+  .resource-card {
+    min-height: 0;
+  }
+
+  .door p,
+  .resource-card > p {
+    font-size: 13px;
+  }
+
+  .card-arrow {
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .prompt-count {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .resource-heading {
+    margin-bottom: 16px;
+  }
+
+  .resource-heading .text-link {
+    gap: 12px;
+  }
+}
