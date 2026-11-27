@@ -64,6 +64,27 @@ At the start of every task that builds or checks something, Claude writes one li
 
 If Claude is about to edit code itself, it must say why (for example, "a 1-line fix, cheaper than a brief") or ask you first.
 
+## Long chats: hand over to a fresh session
+
+A long chat re-reads its whole history on every reply, so it burns tokens. **A chat counts as too long when any one of these is true:**
+1. The chat has been **auto-summarized** once (Claude sees "summary of earlier conversation" at the top). This is the clearest sign.
+2. You have sent about **30 messages** in it.
+3. A task is **finished** and the next one is a different topic.
+4. It has run **over about 3 hours** of active work.
+
+**What Claude does then:**
+1. Finishes or pauses the current step safely (nothing half-edited).
+2. Writes a handover note, `handover/<topic>.md` (or the job's `progress.md`), in 10–15 lines: goal, done, next step, files and branches, open questions, rules that apply.
+3. **Tells you in one line first:** "This chat is long. I'll move the work to a new session."
+4. Opens the new session with the hand-off tool, starting from only the handover note (fresh, small context), and links it.
+5. Once the new session has started and has the handover note, Claude **archives the old chat itself** (the app's archive-session tool), then says so in one line. It only asks you to archive it if the tool fails.
+
+**If it can't open the session** (the app refuses, or the tool isn't available): Claude tells you the handover file path and asks you to open a new session and paste: "Read `<handover file>` and continue." It repeats that request at the end of every reply until you've done it or say "keep going here".
+
+## Sending files to you
+
+Chat attachments may not open on your phone or other devices. So every file Claude makes for you (pictures, screenshots, PDFs, videos, documents, any file) is also copied to your synced cloud folder (Google Drive), in a dated folder: `Claude outputs/<YYYY-MM-DD> <topic>/`. Pictures are saved as JPG. Claude then tells you the folder path. Your folder is set in `~/.claude/CLAUDE.md`.
+
 ## Install on any computer (so every Claude session follows it)
 
 1. Save this file as `~/.claude/WORKER_RULES.md`

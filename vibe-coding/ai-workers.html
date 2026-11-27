@@ -120,6 +120,35 @@
 <p>If Claude is about to edit code itself, it must say why (for example, "a 1-line fix, cheaper than a brief") or ask you first.</p>
 </section>
 
+<section id="long-chats" aria-labelledby="long-chats-title">
+  <h2 id="long-chats-title">Long chats</h2>
+<p>A long chat re-reads its whole history with every reply, using more tokens. Start a fresh session when any of these happens:</p>
+<ul>
+  <li>The chat has been auto-summarized once.</li>
+  <li>You have sent about 30 messages.</li>
+  <li>The task is done and the next topic is different.</li>
+  <li>The chat has run for more than about 3 hours of active work.</li>
+</ul>
+<p>Claude then follows these steps:</p>
+<ol>
+  <li>Finish or safely pause the current step.</li>
+  <li>Write a 10&ndash;15-line note in <code>handover/&lt;topic&gt;.md</code> or the job's <code>progress.md</code>. Include the goal, work done, next step, files, branches, open questions, and rules.</li>
+  <li>Tell you in one line that the chat is long and the work is moving to a new session.</li>
+  <li>Open a fresh session with only the handover note and share its link.</li>
+  <li>Once the new session has the note, archive the old chat and tell you. Ask you to archive it if the tool fails.</li>
+</ol>
+<p>If Claude can't open a new session, it gives you the note's path and asks you to open one and paste <code>Read &lt;handover file&gt; and continue.</code> It repeats the request until you do it or say &ldquo;keep going here&rdquo;.</p>
+</section>
+
+<section id="sending-files" aria-labelledby="sending-files-title">
+  <h2 id="sending-files-title">Sending files</h2>
+<p>Claude also copies every file it makes for you to <code>Claude outputs/&lt;YYYY-MM-DD&gt; &lt;topic&gt;/</code> in your synced Google Drive folder.</p>
+<ul>
+  <li>Claude saves pictures as JPG and tells you the folder path.</li>
+  <li>The synced folder is set in <code>~/.claude/CLAUDE.md</code>.</li>
+</ul>
+</section>
+
 <section id="install" aria-labelledby="install-title">
   <h2 id="install-title">Install the rules</h2>
 <ol class="install-steps">
