@@ -1,6 +1,6 @@
 # AI Worker Rules: Opus designs, Codex builds
 
-Version 1 · 28 Nov 2026 · Aurelion
+Version 2 · 28 Nov 2026 · Aurelion (Codex: gpt-6.2-sol low by default)
 
 **Goal:** get the work done with the least paid quota. The most expensive brain (Claude Opus) only thinks and decides. Cheaper workers do the typing.
 
@@ -9,15 +9,17 @@ Version 1 · 28 Nov 2026 · Aurelion
 | Worker | Does | Never does |
 |---|---|---|
 | **Claude Opus** | Design choices, the design picture, writing short briefs, reviewing the short report + 1 contact sheet, talking to you, asking for merge OK | Reading or editing big code files, running long checks |
-| **Codex, medium effort** | Builds: writes the code from one brief | Design choices |
-| **Codex, low effort** | Tests, checks, load times, small fixes | Big builds |
+| **Codex, low effort** (default) | Small builds (one or a few files), tests, checks, load times, small fixes | Design choices |
+| **Codex, medium effort** | Big builds that change many files, or a build that failed its checks on low | Design choices |
 | **Claude Sonnet** (helper) | Urgent builds when Codex is out of quota | Design choices |
 | **Claude Haiku** (helper) | Urgent checks when Codex is out of quota: runs the check script, reports PASS/FAIL | Building |
+
+**Which Codex model (tested 28 Nov 2026, 5 tests):** `gpt-6.2-sol` on low was right every time and the cheapest or near-cheapest. The cheap `gpt-6-luna` got a judging check wrong and cost more on builds; medium effort and `gpt-6.2-astra` gave the same result for more tokens. Results: `lumio-notes/jobs/model-test/results.md`.
 
 ## Call order (who gets the job first)
 
 1. **Opus designs.** Collect all photos and one design picture first. You OK it. Then write ONE brief with all related changes grouped.
-2. **Codex builds** at medium effort (checks at low effort).
+2. **Codex builds and checks** at low effort, model `gpt-6.2-sol`. Big multi-file builds use medium; if a low build fails its checks, rerun it on medium.
 3. **Codex out of quota, job can wait:** wait for the reset. A scheduled task restarts Codex then. This costs no Claude quota.
 4. **Codex out of quota, job is urgent:** a small Claude helper continues from the brief + `progress.md`. Haiku for checks, Sonnet for builds.
 5. **Opus reviews** only the short report and one contact sheet, then asks you before merging.
@@ -28,7 +30,7 @@ At the start, the session checks which model it runs on. A session can't change 
 
 | Main session is… | It may do itself | It must hand off |
 |---|---|---|
-| **Opus** | Design, briefs, reviews, talking to you | Builds → Codex medium; checks → Codex low (or a Haiku helper) |
+| **Opus** | Design, briefs, reviews, talking to you | Builds and checks → Codex low (big builds medium); checks can also go to a Haiku helper |
 | **Sonnet** | Briefs, reviews, small decisions | Builds → Codex. Big design choices: ask you to switch to Opus, or ask an Opus helper that one question |
 | **Haiku** | Status, running check scripts, reading short reports, simple questions | Builds → Codex. Any design or judgment call: stop and say "This needs Opus. Switch the model in the menu, or should I ask an Opus helper?" |
 
@@ -37,9 +39,10 @@ Tip: start design chats on Opus. Use Haiku chats for status and checks.
 ## Commands
 
 ```bash
-# Codex build (medium) and check (low). Always close stdin with < /dev/null.
-codex exec --sandbox danger-full-access --skip-git-repo-check -C <folder> -c model_reasoning_effort="medium" "Read <rules file> first. <brief>" < /dev/null > build.log 2>&1
-codex exec --sandbox danger-full-access --skip-git-repo-check -C <folder> -c model_reasoning_effort="low" "<check brief>" < /dev/null > check.log 2>&1
+# Codex: model gpt-6.2-sol, effort low by default; medium only for big multi-file builds. Always close stdin with < /dev/null.
+# Use --sandbox danger-full-access (read-only blocks file reads on Windows); for a check, say "do not edit" in the brief.
+codex exec --sandbox danger-full-access --skip-git-repo-check -C <folder> -m gpt-6.2-sol -c model_reasoning_effort="low" "Read <rules file> first. <brief>" < /dev/null > build.log 2>&1
+codex exec --sandbox danger-full-access --skip-git-repo-check -C <folder> -m gpt-6.2-sol -c model_reasoning_effort="low" "<check brief>" < /dev/null > check.log 2>&1
 
 # Small Claude helper as a separate run (needs the claude CLI logged in once: run claude, type /login)
 claude -p --model sonnet "Read jobs/<topic>/brief.md and progress.md, continue the job, write a short report." < /dev/null > out.md
@@ -60,7 +63,7 @@ Inside a chat, Opus can also start a helper with the Agent tool and `model: "hai
 
 At the start of every task that builds or checks something, Claude writes one line before starting:
 
-> **Worker plan:** design = Opus · build = Codex medium · checks = Codex low · if Codex is out: wait, or Haiku/Sonnet if urgent.
+> **Worker plan:** design = Opus · build = Codex low (big = medium) · checks = Codex low · if Codex is out: wait, or Haiku/Sonnet if urgent.
 
 If Claude is about to edit code itself, it must say why (for example, "a 1-line fix, cheaper than a brief") or ask you first.
 
@@ -100,7 +103,7 @@ Chat attachments may not open on your phone or other devices. So every file Clau
    ```json
    "hooks": {
      "SessionStart": [{ "hooks": [{ "type": "command",
-       "command": "echo 'Reminder: follow ~/.claude/WORKER_RULES.md. Opus designs, Codex builds (medium), Codex checks (low), out of quota = wait or Haiku/Sonnet if urgent. Write the Worker plan line first.'" }] }]
+       "command": "echo 'Reminder: follow ~/.claude/WORKER_RULES.md. Opus designs, Codex (gpt-6.2-sol, low effort; big builds medium) builds and checks, out of quota = wait or Haiku/Sonnet if urgent. Write the Worker plan line first.'" }] }]
    }
    ```
 4. Install Codex (`npm install -g @openai/codex`) and log in once with `codex login`. Log in to the Claude CLI once: run `claude`, type `/login`.
