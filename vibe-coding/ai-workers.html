@@ -47,7 +47,7 @@
   <div class="flow-start">
     <div class="node"><b>1. Opus designs</b><span>Gather the photos and one design picture. You approve the design, then Opus writes one brief.</span></div>
     <span class="flow-side" aria-hidden="true"></span>
-    <div class="node"><b>2. Codex builds and checks</b><span>Medium effort to build. Low effort to check.</span></div>
+    <div class="node"><b>2. Codex builds and checks</b><span>Use <code>gpt-6.2-sol</code> at low effort by default. Use medium for big multi-file builds or to retry a low-effort build that failed its checks.</span></div>
   </div>
   <p class="flow-caption">↓ If Codex runs out of quota</p>
   <div class="flow-branches">
@@ -63,7 +63,7 @@
 </div>
 <ol>
   <li><strong>Opus designs.</strong> Collect all photos and one design picture first. You OK it. Then write ONE brief with all related changes grouped.</li>
-  <li><strong>Codex builds</strong> at medium effort (checks at low effort).</li>
+  <li><strong>Codex builds and checks</strong> at low effort, model <code>gpt-6.2-sol</code>. Big multi-file builds use medium. If a low-effort build fails its checks, rerun it on medium.</li>
   <li><strong>Codex out of quota, job can wait:</strong> wait for the reset. A scheduled task restarts Codex then. This costs no Claude quota.</li>
   <li><strong>Codex out of quota, job is urgent:</strong> a small Claude helper continues from the brief + <code>progress.md</code>. Haiku for checks, Sonnet for builds.</li>
   <li><strong>Opus reviews</strong> only the short report and one contact sheet, then asks you before merging.</li>
@@ -77,13 +77,14 @@
     <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Worker</th><th role="columnheader" scope="col">Does</th><th role="columnheader" scope="col">Never does</th></tr></thead>
     <tbody role="rowgroup">
     <tr role="row"><th role="rowheader" scope="row"><strong>Claude Opus</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Design choices, the design picture, writing short briefs, reviewing the short report + 1 contact sheet, talking to you, asking for merge OK</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Reading or editing big code files, running long checks</td></tr>
-    <tr role="row"><th role="rowheader" scope="row"><strong>Codex, medium effort</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Builds: writes the code from one brief</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Design choices</td></tr>
-    <tr role="row"><th role="rowheader" scope="row"><strong>Codex, low effort</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Tests, checks, load times, small fixes</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Big builds</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Codex, low effort</strong> (default)</th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Small builds (one or a few files), tests, checks, load times, small fixes</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Design choices</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Codex, medium effort</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Big builds that change many files, or a build that failed its checks on low</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Design choices</td></tr>
     <tr role="row"><th role="rowheader" scope="row"><strong>Claude Sonnet</strong> (helper)</th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Urgent builds when Codex is out of quota</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Design choices</td></tr>
     <tr role="row"><th role="rowheader" scope="row"><strong>Claude Haiku</strong> (helper)</th><td role="cell"><span class="cell-label" aria-hidden="true">Does</span>Urgent checks when Codex is out of quota: runs the check script, reports PASS/FAIL</td><td role="cell"><span class="cell-label" aria-hidden="true">Never does</span>Building</td></tr>
     </tbody>
   </table>
 </div>
+<p><strong>Which Codex model (tested 28 Nov 2026, 5 tests):</strong> <code>gpt-6.2-sol</code> on low was right every time and the cheapest or near-cheapest. The cheap <code>gpt-6-luna</code> got a judging check wrong and cost more on builds; medium effort and <code>gpt-6.2-astra</code> gave the same result for more tokens.</p>
 </section>
 
 <section id="main-session" aria-labelledby="main-session-title">
@@ -93,7 +94,7 @@
   <table class="resource-table" role="table">
     <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Main session is…</th><th role="columnheader" scope="col">It may do itself</th><th role="columnheader" scope="col">It must hand off</th></tr></thead>
     <tbody role="rowgroup">
-    <tr role="row"><th role="rowheader" scope="row"><strong>Opus</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Design, briefs, reviews, talking to you</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds → Codex medium; checks → Codex low (or a Haiku helper)</td></tr>
+    <tr role="row"><th role="rowheader" scope="row"><strong>Opus</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Design, briefs, reviews, talking to you</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds and checks → Codex low (medium for big builds or retries after failed low-effort build checks). Checks can also go to a Haiku helper.</td></tr>
     <tr role="row"><th role="rowheader" scope="row"><strong>Sonnet</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Briefs, reviews, small decisions</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds → Codex. Big design choices: ask you to switch to Opus, or ask an Opus helper that one question</td></tr>
     <tr role="row"><th role="rowheader" scope="row"><strong>Haiku</strong></th><td role="cell"><span class="cell-label" aria-hidden="true">It may do itself</span>Status, running check scripts, reading short reports, simple questions</td><td role="cell"><span class="cell-label" aria-hidden="true">It must hand off</span>Builds → Codex. Any design or judgment call: stop and say "This needs Opus. Switch the model in the menu, or should I ask an Opus helper?"</td></tr>
     </tbody>
@@ -116,7 +117,7 @@
 <section id="reminder" aria-labelledby="reminder-title">
   <h2 id="reminder-title">The reminder</h2>
 <p>At the start of every task that builds or checks something, Claude writes one line before starting:</p>
-<blockquote class="lesson"><strong>Worker plan:</strong> design = Opus · build = Codex medium · checks = Codex low · if Codex is out: wait, or Haiku/Sonnet if urgent.</blockquote>
+<blockquote class="lesson"><strong>Worker plan:</strong> design = Opus · build = Codex low (big = medium) · checks = Codex low · if Codex is out: wait, or Haiku/Sonnet if urgent.</blockquote>
 <p>If Claude is about to edit code itself, it must say why (for example, "a 1-line fix, cheaper than a brief") or ask you first.</p>
 </section>
 
@@ -124,7 +125,7 @@
   <h2 id="long-chats-title">Long chats</h2>
 <p>A long chat re-reads its whole history with every reply, using more tokens. Start a fresh session when any of these happens:</p>
 <ul>
-  <li>The chat has been auto-summarized once.</li>
+  <li>The chat has been auto-summarized once (Claude sees &ldquo;summary of earlier conversation&rdquo; at the top).</li>
   <li>You have sent about 30 messages.</li>
   <li>The task is done and the next topic is different.</li>
   <li>The chat has run for more than about 3 hours of active work.</li>
@@ -137,12 +138,12 @@
   <li>Open a fresh session with only the handover note and share its link.</li>
   <li>Once the new session has the note, archive the old chat and tell you. Ask you to archive it if the tool fails.</li>
 </ol>
-<p>If Claude can't open a new session, it gives you the note's path and asks you to open one and paste <code>Read &lt;handover file&gt; and continue.</code> It repeats the request until you do it or say &ldquo;keep going here&rdquo;.</p>
+<p>If Claude can't open a new session, it gives you the note's path and asks you to open one and paste <code>Read &lt;handover file&gt; and continue.</code> It repeats the request at the end of every reply until you do it or say &ldquo;keep going here&rdquo;.</p>
 </section>
 
 <section id="sending-files" aria-labelledby="sending-files-title">
   <h2 id="sending-files-title">Sending files</h2>
-<p>Claude also copies every file it makes for you to <code>Claude outputs/&lt;YYYY-MM-DD&gt; &lt;topic&gt;/</code> in your synced Google Drive folder.</p>
+<p>Chat attachments may fail to open on your phone or other devices. Claude also copies every file it makes for you to <code>Claude outputs/&lt;YYYY-MM-DD&gt; &lt;topic&gt;/</code> in your synced Google Drive folder.</p>
 <ul>
   <li>Claude saves pictures as JPG and tells you the folder path.</li>
   <li>The synced folder is set in <code>~/.claude/CLAUDE.md</code>.</li>
@@ -161,12 +162,12 @@
   <li>Open <code>~/.claude/CLAUDE.md</code> (create it if it's missing) and add these two lines:
     <pre class="rule-code"><code># Must follow in every session
 @WORKER_RULES.md</code></pre>
-    <p>Claude loads this file in every session. The <code>@</code> line pulls in the worker rules.</p>
+    <p>Claude loads this file in every session on that computer, in every folder. The <code>@</code> line pulls in the worker rules.</p>
   </li>
   <li>Optional but recommended: a start-of-session reminder. In <code>~/.claude/settings.json</code>, add:
     <pre class="rule-code"><code>"hooks": {
   "SessionStart": [{ "hooks": [{ "type": "command",
-    "command": "echo 'Reminder: follow ~/.claude/WORKER_RULES.md. Opus designs, Codex builds (medium), Codex checks (low), out of quota = wait or Haiku/Sonnet if urgent. Write the Worker plan line first.'" }] }]
+    "command": "echo 'Reminder: follow ~/.claude/WORKER_RULES.md. Opus designs, Codex (gpt-6.2-sol, low effort; big builds medium) builds and checks, out of quota = wait or Haiku/Sonnet if urgent. Write the Worker plan line first.'" }] }]
 }</code></pre>
   </li>
   <li>Install Codex (<code>npm install -g @openai/codex</code>) and log in once with <code>codex login</code>. Log in to the Claude CLI once: run <code>claude</code>, type <code>/login</code>.</li>
@@ -184,9 +185,10 @@ Then tell me what you changed and how to test it.</pre>
 
 <section id="commands" aria-labelledby="commands-title">
   <h2 id="commands-title">Commands</h2>
-<pre class="rule-code"><code># Codex build (medium) and check (low). Always close stdin with &lt; /dev/null.
-codex exec --sandbox danger-full-access --skip-git-repo-check -C &lt;folder&gt; -c model_reasoning_effort="medium" "Read &lt;rules file&gt; first. &lt;brief&gt;" &lt; /dev/null &gt; build.log 2&gt;&amp;1
-codex exec --sandbox danger-full-access --skip-git-repo-check -C &lt;folder&gt; -c model_reasoning_effort="low" "&lt;check brief&gt;" &lt; /dev/null &gt; check.log 2&gt;&amp;1
+<pre class="rule-code"><code># Codex: model gpt-6.2-sol, effort low by default; medium only for big multi-file builds. Always close stdin with &lt; /dev/null.
+# Use --sandbox danger-full-access (read-only blocks file reads on Windows); for a check, say "do not edit" in the brief.
+codex exec --sandbox danger-full-access --skip-git-repo-check -C &lt;folder&gt; -m gpt-6.2-sol -c model_reasoning_effort="low" "Read &lt;rules file&gt; first. &lt;brief&gt;" &lt; /dev/null &gt; build.log 2&gt;&amp;1
+codex exec --sandbox danger-full-access --skip-git-repo-check -C &lt;folder&gt; -m gpt-6.2-sol -c model_reasoning_effort="low" "&lt;check brief&gt;" &lt; /dev/null &gt; check.log 2&gt;&amp;1
 
 # Small Claude helper as a separate run (needs the claude CLI logged in once: run claude, type /login)
 claude -p --model sonnet "Read jobs/&lt;topic&gt;/brief.md and progress.md, continue the job, write a short report." &lt; /dev/null &gt; out.md
